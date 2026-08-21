@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
- * Description: Replaces the dated Avalon full-page home with a readable JA/EN layout, and clarifies company, service, and profile copy without oversharing personal detail.
- * Version: 1.0.0
+ * Description: Photo-led JA/EN home. Replace images later via Customizer or by swapping files in uploads/kocorolab-refresh/.
+ * Version: 1.1.0
  * Author: Kohei Noda
  */
 
@@ -39,6 +39,56 @@ function kocorolab_refresh_url( $ja_path, $en_path = null ) {
 	$en_path = null === $en_path ? $ja_path : $en_path;
 	$path    = ( 'en' === kocorolab_refresh_lang() ) ? $en_path : $ja_path;
 	return function_exists( 'home_url' ) ? home_url( $path ) : $path;
+}
+
+function kocorolab_refresh_image_files() {
+	return array(
+		'hero'        => 'hero-horizon.jpg',
+		'spirit'      => 'spirit-sky.jpg',
+		'society'     => 'society-green.jpg',
+		'environment' => 'environment-ocean.jpg',
+	);
+}
+
+/**
+ * Image lookup, in order:
+ * 1. Attachment chosen in Customizer (外観 → カスタマイズ → ココロラボの写真)
+ * 2. Same filename dropped into wp-content/uploads/kocorolab-refresh/
+ * 3. Bundled placeholder in this plugin's images/ folder
+ */
+function kocorolab_refresh_image_url( $key ) {
+	$files = kocorolab_refresh_image_files();
+	if ( ! isset( $files[ $key ] ) ) {
+		return '';
+	}
+	$file = $files[ $key ];
+
+	if ( function_exists( 'get_option' ) ) {
+		$attachment_id = absint( get_option( 'kocorolab_img_' . $key ) );
+		if ( $attachment_id && function_exists( 'wp_get_attachment_image_url' ) ) {
+			$url = wp_get_attachment_image_url( $attachment_id, 'full' );
+			if ( $url ) {
+				return $url;
+			}
+		}
+	}
+
+	if ( function_exists( 'wp_upload_dir' ) ) {
+		$upload = wp_upload_dir();
+		$path   = trailingslashit( $upload['basedir'] ) . 'kocorolab-refresh/' . $file;
+		if ( is_readable( $path ) ) {
+			return trailingslashit( $upload['baseurl'] ) . 'kocorolab-refresh/' . $file;
+		}
+	}
+
+	if ( defined( 'KOCOROLAB_REFRESH_DIR' ) && is_readable( KOCOROLAB_REFRESH_DIR . '/images/' . $file ) ) {
+		if ( function_exists( 'content_url' ) ) {
+			return content_url( 'mu-plugins/kocorolab-site-refresh/images/' . $file );
+		}
+		return 'images/' . $file;
+	}
+
+	return 'images/' . $file;
 }
 
 function kocorolab_refresh_page_slugs() {
@@ -86,7 +136,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.0.0' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.1.0' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
@@ -110,4 +160,47 @@ add_filter(
 		return $html ? $html : $content;
 	},
 	12
+);
+
+add_action(
+	'customize_register',
+	function ( $wp_customize ) {
+		$wp_customize->add_section(
+			'kocorolab_refresh_images',
+			array(
+				'title'       => 'ココロラボの写真',
+				'description' => 'トップの空・緑・海は、あとから自分で撮った写真に差し替えできます。メディアから選ぶか、wp-content/uploads/kocorolab-refresh/ に同じファイル名で置いてください（hero-horizon.jpg / spirit-sky.jpg / society-green.jpg / environment-ocean.jpg）。',
+				'priority'    => 40,
+			)
+		);
+
+		$labels = array(
+			'hero'        => 'トップ（空と海）',
+			'spirit'      => '精神（空）',
+			'society'     => '社会（緑）',
+			'environment' => '環境（海）',
+		);
+
+		foreach ( $labels as $key => $label ) {
+			$wp_customize->add_setting(
+				'kocorolab_img_' . $key,
+				array(
+					'type'              => 'option',
+					'sanitize_callback' => 'absint',
+				)
+			);
+			$wp_customize->add_control(
+				new WP_Customize_Media_Control(
+					$wp_customize,
+					'kocorolab_img_' . $key,
+					array(
+						'label'     => $label,
+						'section'   => 'kocorolab_refresh_images',
+						'mime_type' => 'image',
+						'settings'  => 'kocorolab_img_' . $key,
+					)
+				)
+			);
+		}
+	}
 );

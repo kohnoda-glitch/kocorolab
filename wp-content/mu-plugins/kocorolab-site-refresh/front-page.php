@@ -1,56 +1,66 @@
 <?php
 get_header();
-$options = function_exists( 'get_desing_plus_option' ) ? get_desing_plus_option() : array();
-$lang    = kocorolab_refresh_lang();
+$lang      = kocorolab_refresh_lang();
+$hero      = kocorolab_refresh_image_url( 'hero' );
+$spirit    = kocorolab_refresh_image_url( 'spirit' );
+$society   = kocorolab_refresh_image_url( 'society' );
+$environment = kocorolab_refresh_image_url( 'environment' );
+
+$news_posts = array();
+if ( function_exists( 'get_posts' ) ) {
+	$news_posts = get_posts(
+		array(
+			'post_type'        => 'news',
+			'posts_per_page'   => 4,
+			'orderby'          => 'date',
+			'order'            => 'DESC',
+			'suppress_filters' => false,
+		)
+	);
+}
 ?>
 <div id="edit-area" class="mt0 kl-home-wrap">
-	<?php if ( ! empty( $options['news_visible'] ) ) : ?>
-		<?php
-		$news_posts = get_posts(
-			array(
-				'post_type'   => 'news',
-				'numberposts' => isset( $options['news_count'] ) ? (int) $options['news_count'] : 5,
-				'order'       => 'DESC',
-				'orderby'     => 'post_date',
-			)
-		);
-		?>
-		<?php if ( $news_posts ) : ?>
-			<div id="index_news">
-				<div id="newsticker">
-					<div class="row no-gutters">
-						<div class="ticker col-md-10" rel="fade">
-							<ul>
-								<?php foreach ( $news_posts as $post ) : setup_postdata( $post ); ?>
-									<li>
-										<time class="date" datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?></time>
-										<span class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span>
-									</li>
-								<?php endforeach; wp_reset_postdata(); ?>
-							</ul>
-						</div>
-						<div class="archive_link col-md-2">
-							<a href="<?php echo esc_url( get_post_type_archive_link( 'news' ) ); ?>"><?php echo esc_html( isset( $options['news_linktext'] ) ? $options['news_linktext'] : 'News' ); ?></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		<?php endif; ?>
-	<?php endif; ?>
-
 	<main class="kl-home" lang="<?php echo esc_attr( $lang ); ?>">
-		<section class="kl-hero">
-			<p class="kl-kicker"><?php kocorolab_refresh_e( 'hero_kicker' ); ?></p>
-			<h1><?php kocorolab_refresh_e( 'hero_title' ); ?></h1>
-			<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
-			<p class="kl-actions">
-				<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
-				<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/hakkou/', '/en/publications/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
-			</p>
+		<section class="kl-hero" style="--kl-hero-image: url('<?php echo esc_url( $hero ); ?>');">
+			<div class="kl-hero-inner">
+				<p class="kl-kicker"><?php kocorolab_refresh_e( 'hero_kicker' ); ?></p>
+				<h1><?php kocorolab_refresh_e( 'hero_title' ); ?></h1>
+				<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
+				<p class="kl-actions">
+					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
+					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/en/news/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
+				</p>
+			</div>
+		</section>
+
+		<section class="kl-section kl-world">
+			<h2><?php kocorolab_refresh_e( 'section_world' ); ?></h2>
+			<p class="kl-lead"><?php kocorolab_refresh_e( 'world_lead' ); ?></p>
+			<div class="kl-domains">
+				<article class="kl-domain">
+					<figure class="kl-domain-photo"><img src="<?php echo esc_url( $spirit ); ?>" alt=""></figure>
+					<p class="kl-kicker"><?php kocorolab_refresh_e( 'domain1_kicker' ); ?></p>
+					<h3><?php kocorolab_refresh_e( 'domain1_title' ); ?></h3>
+					<p><?php kocorolab_refresh_e( 'domain1_body' ); ?></p>
+				</article>
+				<article class="kl-domain">
+					<figure class="kl-domain-photo"><img src="<?php echo esc_url( $society ); ?>" alt=""></figure>
+					<p class="kl-kicker"><?php kocorolab_refresh_e( 'domain2_kicker' ); ?></p>
+					<h3><?php kocorolab_refresh_e( 'domain2_title' ); ?></h3>
+					<p><?php kocorolab_refresh_e( 'domain2_body' ); ?></p>
+				</article>
+				<article class="kl-domain">
+					<figure class="kl-domain-photo"><img src="<?php echo esc_url( $environment ); ?>" alt=""></figure>
+					<p class="kl-kicker"><?php kocorolab_refresh_e( 'domain3_kicker' ); ?></p>
+					<h3><?php kocorolab_refresh_e( 'domain3_title' ); ?></h3>
+					<p><?php kocorolab_refresh_e( 'domain3_body' ); ?></p>
+				</article>
+			</div>
 		</section>
 
 		<section class="kl-section">
 			<h2><?php kocorolab_refresh_e( 'section_work' ); ?></h2>
+			<p class="kl-lead"><?php kocorolab_refresh_e( 'work_lead' ); ?></p>
 			<div class="kl-cards">
 				<article class="kl-card">
 					<h3><?php kocorolab_refresh_e( 'card1_title' ); ?></h3>
@@ -65,6 +75,29 @@ $lang    = kocorolab_refresh_lang();
 					<p><?php kocorolab_refresh_e( 'card3_body' ); ?></p>
 				</article>
 			</div>
+			<p class="kl-actions">
+				<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'work_link' ); ?></a>
+			</p>
+		</section>
+
+		<section class="kl-section kl-news">
+			<h2><?php kocorolab_refresh_e( 'section_news' ); ?></h2>
+			<p class="kl-lead"><?php kocorolab_refresh_e( 'news_lead' ); ?></p>
+			<?php if ( $news_posts ) : ?>
+				<ul class="kl-news-list">
+					<?php foreach ( $news_posts as $post ) : setup_postdata( $post ); ?>
+						<li>
+							<time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?></time>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</li>
+					<?php endforeach; wp_reset_postdata(); ?>
+				</ul>
+			<?php else : ?>
+				<p><?php kocorolab_refresh_e( 'news_empty' ); ?></p>
+			<?php endif; ?>
+			<p class="kl-actions">
+				<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/en/news/' ) ); ?>"><?php kocorolab_refresh_e( 'news_link' ); ?></a>
+			</p>
 		</section>
 
 		<section class="kl-section kl-section-who">
