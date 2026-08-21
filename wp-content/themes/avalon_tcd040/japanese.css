@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+input, textarea {
+  font-family: Verdana, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, sans-serif;
+}
+body.font_1 { font-family: var(--tcd-font-type1); }
+body.font_2 { font-family: var(--tcd-font-type2); }
+body.font_3 { font-family: var(--tcd-font-type3); }
+
+

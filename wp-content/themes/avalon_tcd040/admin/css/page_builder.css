@@ -1,0 +1,172 @@
+
+
+
+/* 説明文 */
+.pb_desc { margin:0 0 25px 0; border-bottom:1px dotted #ccc; }
+
+
+
+/* ボタン */
+#pb_button_list li { float:left; width:160px; margin:0 10px 10px 0; }
+#pb_button_list li a {
+  color:#fff; display:block; text-align:center; text-decoration:none; height:45px; line-height:45px;
+  background:#0073aa; border:1px solid #005177;
+  -moz-border-radius:3px; -khtml-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
+}
+#pb_button_list li a:hover { background:#13cae0; border:1px solid #3ea5b1; color:#fff; }
+#pb_button_list li a:active { box-shadow:none; bottom:-2px; position:relative; }
+
+
+
+/* 入力欄　枠 */
+.pb_wrap { background:#fff; border-radius:5px; border:1px solid #ccc; box-shadow:0 0 4px 1px rgba(0,0,0,0.2); overflow:hidden; margin:0 0 10px 0; }
+
+
+
+/* 入力欄 見出し */
+.pb_header {
+  display:block; height:45px; line-height:45px; box-shadow:0 0px 3px 1px rgba(0,0,0,0.2);
+  background:#3b464a;
+}
+.pb_header .title { color:#eee; float:left; height:45px; line-height:45px; font-size:14px; margin:0 0 0 20px; }
+.pb_header .short_code { color:#eee; float:left; height:45px; line-height:45px; font-size:11px; margin:0 0 0 20px; }
+.pb_header .open {
+  width:70px; text-align:center; border-left:1px solid #222; overflow:hidden; text-indent:-300px; text-decoration:none; float:right;
+  height:45px; line-height:45px; font-size:14px;
+  background:url(../img/accordion_arrow2.png) no-repeat top;
+  transition: none;
+}
+.pb_header .open:hover { background-color:#13cae0; }
+.pb_header .open:hover { background-position:center -90px; }
+.pb_wrap.active .pb_header .open { background-position:center -45px; }
+.pb_wrap.active .pb_header .open:hover { background-position:center -135px; }
+
+.pb_header .open:focus, .pb_header .open:active { box-shadow:none; }
+
+
+
+/* 入力欄 */
+.pb_content { padding:20px; display:none; }
+.pb_wrap.active .pb_content { display:block; }
+.pb_content .short_code { margin:0 0 30px 0; }
+.pb_content .short_code .label { margin:0 0 10px 0; display:block; font-size:12px; }
+
+.pb_content .headline { font-weight:bold; font-size:15px; padding:0 0 12px 0; border-bottom:1px solid #ccc; margin:0 0 10px 0; }
+.pb_content .headline:before { content:''; display:block; float:left; width:5px; height:20px; background:#0097c9; margin:0px 8px 0 0; -moz-border-radius:1px; -khtml-border-radius:1px; -webkit-border-radius:1px; border-radius:1px; }
+
+.pb_content .input { margin:0 0 30px 0; }
+.pb_content .input .preview_field img { width:200px; max-width:100%; height:auto; display:block; margin:0 0 15px 0; }
+.pb_content .mce-tinymce iframe { min-height:250px !important; }
+
+
+
+/* 削除ボタン */
+.pb_content .delete_button {
+  color:#fff; font-size:14px; display:inline-block; text-align:center; text-decoration:none; padding:0 20px; height:35px; line-height:35px;
+  background:#0073aa; border:1px solid #005177;
+  -moz-border-radius:3px; -khtml-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.pb_content .delete_button:hover { background:#13cae0; border:1px solid #3ea5b1; color:#fff; }
+.pb_content .delete_button:active { box-shadow:none; bottom:-2px; position:relative; }
+
+
+
+/* レイアウト用ボックス */
+.pb_layout_box_wrap { margin:0 -10px 20px 0; position:relative; }
+.pb_layout_box_inner {
+  border:1px solid #ccc; padding:15px 15px 0; border-radius:5px; box-shadow:0 0 2px 0 rgba(0,0,0,0.1);
+  float:left; width:-webkit-calc(50% - 10px); width:-moz-calc(50% - 10px); width:calc(50% - 10px); margin:0 10px 10px 0;
+  -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box;
+}
+.pb_layout_box_headline {
+  margin:-15px -15px 0 -15px; padding:10px 15px; background:#f2f2f2; cursor:pointer; border-radius:5px;
+  background:#f2f2f2; background: -webkit-linear-gradient(top, #ffffff, #f2f2f2); background: -moz-linear-gradient(top, #ffffff, #f2f2f2); background: -ms-linear-gradient(top, #ffffff, #f2f2f2); background: -o-linear-gradient(top, #ffffff, #f2f2f2); background: linear-gradient(to bottom, #ffffff, #f2f2f2); filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#ffffff', EndColorStr='#f2f2f2');
+}
+.pb_layout_box_headline:hover {
+  background: #d9f4f4;  
+  background: -webkit-linear-gradient(top, #effcfc, #d9f4f4);
+  background: -moz-linear-gradient(top, #effcfc, #d9f4f4);
+  background: -ms-linear-gradient(top, #effcfc, #d9f4f4);
+  background: -o-linear-gradient(top, #effcfc, #d9f4f4);
+  background: linear-gradient(top, #effcfc, #d9f4f4);
+}
+.pb_layout_box_headline:after { content:""; display:block; margin:-10px -15px 0 0; width:30px; height:38px; float:right; background:url(../img/accordion_arrow2.png) no-repeat center -5px; }
+.pb_layout_box_inner .pb_input_area { display:none; }
+.pb_layout_box_inner.open .pb_input_area { display:block; }
+.pb_layout_box_inner.open .pb_layout_box_headline { margin-bottom:15px; border-radius:5px 5px 0 0; border-bottom:1px solid #ccc; }
+.pb_layout_box_inner.open .pb_layout_box_headline:after { background-position:center -50px; }
+
+#page_builder_meta_box.small .pb_layout_box_wrap { margin:0 0 20px 0; }
+#page_builder_meta_box.small .pb_layout_box_inner { float:none; width:100%; margin:0 0 10px 0; }
+
+
+
+/* Google Map */
+.pb_input_area-map_code2 { display:none; }
+
+
+
+/* clearfix */
+.clearfix:after { content: "."; display:block; clear:both; height:0; font-size:0.1em; line-height:0; visibility:hidden; overflow:hidden; }
+.clearfix { display:inline-block; }
+/* exlude MacIE5 \*/
+* html .clearfix { height:1% }
+.clearfix { display:block;}
+/* end MacIE5 */
+
+
+
+/* リピーター 追加ボタン */
+.pb_repeater { margin: 0 0 15px 0; }
+
+/* リピーター 追加ボタン */
+.pb_input_area-add_repeater { margin:15px 0; }
+
+/* リピーター 移動、削除ボタン */
+.pb_repeater_button { margin:0; }
+.pb_repeater_button li { float:left; margin:0; margin:0; font-size:12px; }
+.pb_repeater_button .pb_repeater_move { background:#ddd; cursor:move; display:block; padding:0px 20px 0 30px; height:25px; line-height:25px; z-index:2; position:relative; border-radius:4px 0 0 0 ; }
+.pb_repeater_button .pb_repeater_move:after {
+ content:''; display:block; width:0; height:0; position:absolute; top:0px; right:-25px;
+ border-style: solid; border-width: 25px 0 0 25px; border-color: transparent transparent transparent #ddd;
+}
+.pb_repeater_button .pb_repeater_delete { background:#ccc; display:block; cursor:pointer; padding:0 10px 0 35px; height:25px; line-height:25px; z-index:1; position:relative; }
+.pb_repeater_button .pb_repeater_delete:after {
+ content:''; display:block; width:0; height:0; position:absolute; top:0px; right:-25px;
+ border-style: solid; border-width: 25px 0 0 25px; border-color: transparent transparent transparent #ccc;
+}
+.pb_repeater_button .pb_repeater_delete:hover { background:#d01010; color:#fff; }
+.pb_repeater_button .pb_repeater_delete:hover:after { border-color: transparent transparent transparent #d01010; }
+
+/* リピーター コンテンツ */
+.pb_repeater_content { background:#ddd; border-radius:0 4px 4px 4px; padding:10px; }
+.pb_repeater_field { background:#fff; padding:15px; margin:0; border:1px solid #ccc; border-top:none; display:none; }
+.pb_repeater.open .pb_repeater_field { display:block; }
+.pb_repeater_field .input-textarea textarea.small { height:70px; }
+
+/* リピーター 見出し */
+.pb_repeater_headline {
+  font-size:14px; color:#333;
+  margin:0; padding:0px 5px 0 15px; height:50px; line-height:50px; border:1px solid #ccc;
+  box-shadow:0px 0px 0px 1px #fff inset, 0px 2px 2px 0px rgba(0,0,0,0.05);
+  background:#f2f2f2; background: -webkit-linear-gradient(top, #ffffff, #f2f2f2); background: -moz-linear-gradient(top, #ffffff, #f2f2f2); background: -ms-linear-gradient(top, #ffffff, #f2f2f2); background: -o-linear-gradient(top, #ffffff, #f2f2f2); background: linear-gradient(to bottom, #ffffff, #f2f2f2); filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#ffffff', EndColorStr='#f2f2f2');
+}
+.pb_repeater_headline:hover {
+  cursor:pointer; border-color:#70cece;
+  background:#d9f4f4; background: -webkit-linear-gradient(top, #effcfc, #d9f4f4); background: -moz-linear-gradient(top, #effcfc, #d9f4f4); background: -ms-linear-gradient(top, #effcfc, #d9f4f4); background: -o-linear-gradient(top, #effcfc, #d9f4f4); background: linear-gradient(to bottom, #effcfc, #d9f4f4); filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#effcfc', EndColorStr='#d9f4f4');
+}
+.pb_repeater_headline a {
+  display:block; text-indent:-9999px; width:51px; height:33px; line-height:33px; background:url(../img/accordion_arrow.png) no-repeat left bottom; float:right; margin:10px 0 0 0;
+  transition-duration:none; transition-property:none; transition-timing-function:none; outline:0;
+}
+.pb_repeater.open .pb_repeater_headline a { background-position:left top; }
+
+/* リピーター ドラッグしている時のプレースホルダー */
+.pb_repeater_wrap .ui-sortable-placeholder {
+  border:1px dashed #70cece; background-color:#d9f4f4; height:95px; 
+  visibility: visible !important;
+  -moz-border-radius:3px; -khtml-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;
+}
+.pb_repeater.ui-sortable-helper { opacity:0.8; }

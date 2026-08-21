@@ -1,0 +1,1842 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: design-plus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-14 12:16+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mono-lab <mail@mono-lab.net>\n"
+"Language-Team: design plus\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:16 404.php:27 breadcrumb.php:52
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: admin/theme-options.php:84
+msgid "Blog list"
+msgstr ""
+
+#: admin/theme-options.php:99
+msgid "News list"
+msgstr ""
+
+#: admin/theme-options.php:114
+msgid "News archive"
+msgstr ""
+
+#: admin/theme-options.php:203
+msgid "MORE PRODUCT"
+msgstr ""
+
+#: admin/theme-options.php:229 admin/theme-options.php:318
+msgid "Theme Options"
+msgstr ""
+
+#: admin/theme-options.php:236
+msgid "Normal header"
+msgstr ""
+
+#: admin/theme-options.php:237
+msgid "Fix at top after page scroll"
+msgstr ""
+
+#: admin/theme-options.php:243
+msgid "Layout type1"
+msgstr ""
+
+#: admin/theme-options.php:244
+msgid "Layout type2"
+msgstr ""
+
+#: admin/theme-options.php:250
+msgid "Basefont meiryo"
+msgstr ""
+
+#: admin/theme-options.php:251
+msgid "Basefont yugothic"
+msgstr ""
+
+#: admin/theme-options.php:257
+msgid "Use responsive design"
+msgstr ""
+
+#: admin/theme-options.php:258
+msgid "Do not use responsive design"
+msgstr ""
+
+#: admin/theme-options.php:265
+msgid "Button type1 - left align with color"
+msgstr ""
+
+#: admin/theme-options.php:266
+msgid "Button type2 - left align with monotone"
+msgstr ""
+
+#: admin/theme-options.php:267
+msgid "Button type3 - full width with color"
+msgstr ""
+
+#: admin/theme-options.php:268
+msgid "Button type4 - full width with monotone"
+msgstr ""
+
+#: admin/theme-options.php:269
+msgid "Button type5 - default design"
+msgstr ""
+
+#: admin/theme-options.php:276
+msgid "3 second"
+msgstr ""
+
+#: admin/theme-options.php:277
+msgid "4 second"
+msgstr ""
+
+#: admin/theme-options.php:278
+msgid "5 second"
+msgstr ""
+
+#: admin/theme-options.php:279
+msgid "6 second"
+msgstr ""
+
+#: admin/theme-options.php:280
+msgid "7 second"
+msgstr ""
+
+#: admin/theme-options.php:281
+msgid "8 second"
+msgstr ""
+
+#: admin/theme-options.php:282
+msgid "9 second"
+msgstr ""
+
+#: admin/theme-options.php:283
+msgid "10 second"
+msgstr ""
+
+#: admin/theme-options.php:290
+msgid "Display all product"
+msgstr ""
+
+#: admin/theme-options.php:291
+msgid "Display product in same category"
+msgstr ""
+
+#: admin/theme-options.php:298
+msgid "style1"
+msgstr ""
+
+#: admin/theme-options.php:299
+msgid "style2"
+msgstr ""
+
+#: admin/theme-options.php:300
+msgid "style3"
+msgstr ""
+
+#: admin/theme-options.php:301
+msgid "style4"
+msgstr ""
+
+#: admin/theme-options.php:302
+msgid "style5"
+msgstr ""
+
+#: admin/theme-options.php:323
+msgid "Updated"
+msgstr ""
+
+#: admin/theme-options.php:338
+msgid "Basic"
+msgstr ""
+
+#: admin/theme-options.php:339
+msgid "Logo"
+msgstr ""
+
+#: admin/theme-options.php:340 admin/theme-options.php:341
+#: admin/theme-options.php:342 admin/theme-options.php:343
+msgid "Index page"
+msgstr ""
+
+#: admin/theme-options.php:344
+msgid "Blog"
+msgstr ""
+
+#: admin/theme-options.php:345 breadcrumb.php:19 breadcrumb.php:55
+#: functions.php:460 functions.php:461 functions.php:474
+msgid "News"
+msgstr ""
+
+#: admin/theme-options.php:346
+msgid "Shop navi"
+msgstr ""
+
+#: admin/theme-options.php:364
+msgid "Color setting"
+msgstr ""
+
+#: admin/theme-options.php:365
+msgid "Primary color setting"
+msgstr ""
+
+#: admin/theme-options.php:367 admin/theme-options.php:370
+#: admin/theme-options.php:671 admin/theme-options.php:694
+#: admin/theme-options.php:710 admin/theme-options.php:733
+#: admin/theme-options.php:823 admin/theme-options.php:829
+#: admin/theme-options.php:1181 admin/theme-options.php:1187
+#: functions/page_cf2.php:64 functions/page_cf2.php:78
+msgid "Default color"
+msgstr ""
+
+#: admin/theme-options.php:368
+msgid "Secondary color setting"
+msgstr ""
+
+#: admin/theme-options.php:371 admin/theme-options.php:404
+#: admin/theme-options.php:431 admin/theme-options.php:440
+#: admin/theme-options.php:448 admin/theme-options.php:474
+#: admin/theme-options.php:495 admin/theme-options.php:513
+#: admin/theme-options.php:623 admin/theme-options.php:736
+#: admin/theme-options.php:755 admin/theme-options.php:769
+#: admin/theme-options.php:789 admin/theme-options.php:811
+#: admin/theme-options.php:833 admin/theme-options.php:843
+#: admin/theme-options.php:865 admin/theme-options.php:967
+#: admin/theme-options.php:999 admin/theme-options.php:1026
+#: admin/theme-options.php:1059 admin/theme-options.php:1086
+#: admin/theme-options.php:1120 admin/theme-options.php:1147
+#: admin/theme-options.php:1169 admin/theme-options.php:1195
+#: admin/theme-options.php:1232 admin/theme-options.php:1245
+msgid "Save Changes"
+msgstr ""
+
+#: admin/theme-options.php:377
+msgid "Layout"
+msgstr ""
+
+#: admin/theme-options.php:410
+msgid "Basefont"
+msgstr ""
+
+#: admin/theme-options.php:437
+msgid "Free input area for user definition CSS."
+msgstr ""
+
+#: admin/theme-options.php:438
+msgid "Code example:<br /><strong>.example { font-size:12px; }</strong>"
+msgstr ""
+
+#: admin/theme-options.php:445
+msgid "Emoji setup"
+msgstr ""
+
+#: admin/theme-options.php:446
+msgid ""
+"We recommend to checkoff this option if you dont use any Emoji in your post "
+"content."
+msgstr ""
+
+#: admin/theme-options.php:447
+msgid "Use emoji"
+msgstr ""
+
+#: admin/theme-options.php:453
+msgid "Responsive design setting"
+msgstr ""
+
+#: admin/theme-options.php:479
+msgid "Loading screen setting"
+msgstr ""
+
+#: admin/theme-options.php:480
+msgid ""
+"Please set the maximum display time of the loading screen.<br />Even if all "
+"the content is not loaded, loading screen will disappear automatically after "
+"a lapse of time you have set at follwing."
+msgstr ""
+
+#: admin/theme-options.php:500
+msgid "Hover effect of thumbnails"
+msgstr ""
+
+#: admin/theme-options.php:503
+msgid "Monotone"
+msgstr ""
+
+#: admin/theme-options.php:507
+msgid "Transparent"
+msgstr ""
+
+#: admin/theme-options.php:511
+msgid "Zoom"
+msgstr ""
+
+#: admin/theme-options.php:526
+msgid "Step 1 : Upload image to use for logo."
+msgstr ""
+
+#: admin/theme-options.php:527
+msgid ""
+"Upload image to use for logo from your computer.<br />You can resize your "
+"logo image in step 2."
+msgstr ""
+
+#: admin/theme-options.php:529
+msgid "Select image to use for logo from your computer."
+msgstr ""
+
+#: admin/theme-options.php:531
+msgid "Upload"
+msgstr ""
+
+#: admin/theme-options.php:535
+msgid "Uploaded image."
+msgstr ""
+
+#: admin/theme-options.php:539
+#, php-format
+msgid "Original image size : width %1$dpx, height %2$dpx"
+msgstr ""
+
+#: admin/theme-options.php:543
+msgid ""
+"The image has not been uploaded yet.<br />A normal text will be used for a "
+"site logo."
+msgstr ""
+
+#: admin/theme-options.php:551
+msgid "Step 2 : Resize uploaded image."
+msgstr ""
+
+#: admin/theme-options.php:552
+msgid "You can resize uploaded image."
+msgstr ""
+
+#: admin/theme-options.php:554
+msgid "Please drag the range to cut off."
+msgstr ""
+
+#: admin/theme-options.php:559
+msgid "Ratio"
+msgstr ""
+
+#: admin/theme-options.php:560
+msgid "Width"
+msgstr ""
+
+#: admin/theme-options.php:561
+msgid "Height"
+msgstr ""
+
+#: admin/theme-options.php:564
+msgid "Resize"
+msgstr ""
+
+#: admin/theme-options.php:569
+#, php-format
+msgid "Resized image : width %1$dpx, height %2$dpx"
+msgstr ""
+
+#: admin/theme-options.php:602
+msgid "Delete logo image."
+msgstr ""
+
+#: admin/theme-options.php:603
+msgid "If you delete the logo image, normal text will be used for a site logo."
+msgstr ""
+
+#: admin/theme-options.php:604
+msgid "Are you sure to delete logo image?"
+msgstr ""
+
+#: admin/theme-options.php:604 admin/theme-options.php:648
+msgid "Delete Image"
+msgstr ""
+
+#: admin/theme-options.php:610
+msgid "Logo for mobile device"
+msgstr ""
+
+#: admin/theme-options.php:611
+msgid ""
+"This logo image will be displayed at mobile device.<br />Recommend image "
+"size. Width:Free, Height:20px."
+msgstr ""
+
+#: admin/theme-options.php:612
+msgid ""
+"If you not register the logo image, normal text will be used for a site logo."
+msgstr ""
+
+#: admin/theme-options.php:618 admin/theme-options.php:806
+#: admin/theme-options.php:990 admin/theme-options.php:1017
+#: admin/theme-options.php:1050 admin/theme-options.php:1077
+#: admin/theme-options.php:1111 admin/theme-options.php:1138
+#: admin/theme-options.php:1164 functions/page_cf.php:402 widget/ad.php:90
+msgid "Select Image"
+msgstr ""
+
+#: admin/theme-options.php:619 admin/theme-options.php:807
+#: admin/theme-options.php:991 admin/theme-options.php:1018
+#: admin/theme-options.php:1051 admin/theme-options.php:1078
+#: admin/theme-options.php:1112 admin/theme-options.php:1139
+#: admin/theme-options.php:1165 functions/page_cf.php:403 widget/ad.php:91
+msgid "Remove Image"
+msgstr ""
+
+#: admin/theme-options.php:633
+msgid "Background Image setup"
+msgstr ""
+
+#: admin/theme-options.php:635
+msgid "Recommend image size. Width:1180px, Height:1200px"
+msgstr ""
+
+#: admin/theme-options.php:636
+#, php-format
+msgid "Maximum upload file size: %s."
+msgstr ""
+
+#: admin/theme-options.php:641
+msgid "Save Image"
+msgstr ""
+
+#: admin/theme-options.php:648
+msgid "Are you sure to delete this image?"
+msgstr ""
+
+#: admin/theme-options.php:656
+msgid "Headline and copy Settings"
+msgstr ""
+
+#: admin/theme-options.php:658 functions/page_cf.php:269
+#: functions/page_cf.php:293 functions/repeater_menu.php:11
+#: functions/repeater_staff.php:29 functions/repeater_staff.php:60
+msgid "Headline"
+msgstr ""
+
+#: admin/theme-options.php:664
+msgid "Font size of headline"
+msgstr ""
+
+#: admin/theme-options.php:666
+msgid "Style setting of headline"
+msgstr ""
+
+#: admin/theme-options.php:669 admin/theme-options.php:708
+#: functions/page_cf2.php:29
+msgid "Text Color"
+msgstr ""
+
+#: admin/theme-options.php:674 admin/theme-options.php:713
+#: functions/page_cf2.php:33
+msgid "The position of the horizontal shadow."
+msgstr ""
+
+#: admin/theme-options.php:680 admin/theme-options.php:719
+#: functions/page_cf2.php:35
+msgid "The position of the vertical shadow."
+msgstr ""
+
+#: admin/theme-options.php:686 admin/theme-options.php:725
+#: functions/page_cf2.php:37
+msgid "The blur radius."
+msgstr ""
+
+#: admin/theme-options.php:692 admin/theme-options.php:731
+#: functions/page_cf2.php:39
+msgid "The Color of the shadow."
+msgstr ""
+
+#: admin/theme-options.php:697
+msgid "Copy"
+msgstr ""
+
+#: admin/theme-options.php:703
+msgid "Font size of copy"
+msgstr ""
+
+#: admin/theme-options.php:705
+msgid "Style setting of copy"
+msgstr ""
+
+#: admin/theme-options.php:741
+msgid "Link button setup"
+msgstr ""
+
+#: admin/theme-options.php:743
+msgid "Link button text"
+msgstr ""
+
+#: admin/theme-options.php:749
+msgid "Link button URL"
+msgstr ""
+
+#: admin/theme-options.php:761
+msgid "News ticker setting"
+msgstr ""
+
+#: admin/theme-options.php:762
+msgid "Display News ticker on top page"
+msgstr ""
+
+#: admin/theme-options.php:763
+msgid "Number of News ticker"
+msgstr ""
+
+#: admin/theme-options.php:767
+msgid "Label for News archive page button"
+msgstr ""
+
+#: admin/theme-options.php:778
+msgid "Blog content"
+msgstr ""
+
+#: admin/theme-options.php:779
+msgid "Headline of Blog list"
+msgstr ""
+
+#: admin/theme-options.php:781 admin/theme-options.php:819
+#: admin/theme-options.php:838 admin/theme-options.php:1177
+#: functions/page_cf2.php:25
+msgid "Font size"
+msgstr ""
+
+#: admin/theme-options.php:783
+msgid "Number of post to show at Blog list"
+msgstr ""
+
+#: admin/theme-options.php:787
+msgid "Label for Blog archive page button"
+msgstr ""
+
+#: admin/theme-options.php:795
+msgid "This header image will be displayed in blog index page."
+msgstr ""
+
+#: admin/theme-options.php:799 admin/theme-options.php:1157
+msgid "Header image"
+msgstr ""
+
+#: admin/theme-options.php:800 admin/theme-options.php:1158
+#: functions/page_cf2.php:48
+msgid "Recommend image size. Width:1180px, Height:550px"
+msgstr ""
+
+#: admin/theme-options.php:816 admin/theme-options.php:1174
+msgid "Header catchphrase"
+msgstr ""
+
+#: admin/theme-options.php:817 admin/theme-options.php:1175
+#: functions/page_cf.php:50 functions/page_cf.php:57 functions/page_cf2.php:21
+msgid "Catchphrase"
+msgstr ""
+
+#: admin/theme-options.php:821 admin/theme-options.php:1179
+msgid "Font color"
+msgstr ""
+
+#: admin/theme-options.php:824 admin/theme-options.php:1182
+msgid "Dropshadow"
+msgstr ""
+
+#: admin/theme-options.php:826 admin/theme-options.php:1184
+msgid "Dropshadow position (left)"
+msgstr ""
+
+#: admin/theme-options.php:827 admin/theme-options.php:1185
+msgid "Dropshadow position (top)"
+msgstr ""
+
+#: admin/theme-options.php:828 admin/theme-options.php:1186
+msgid "Dropshadow size"
+msgstr ""
+
+#: admin/theme-options.php:829 admin/theme-options.php:1187
+msgid "Dropshadow color"
+msgstr ""
+
+#: admin/theme-options.php:831 functions/page_cf.php:274
+#: functions/page_cf.php:298
+msgid "Description"
+msgstr ""
+
+#: admin/theme-options.php:839 admin/theme-options.php:1193
+msgid "Font size of post title"
+msgstr ""
+
+#: admin/theme-options.php:841
+msgid "Font size of post contents"
+msgstr ""
+
+#: admin/theme-options.php:848
+msgid "Display setting"
+msgstr ""
+
+#: admin/theme-options.php:849
+msgid "Post list of the top and archive page"
+msgstr ""
+
+#: admin/theme-options.php:851 admin/theme-options.php:856
+#: widget/styled_post_list1.php:135
+msgid "Display date"
+msgstr ""
+
+#: admin/theme-options.php:852 admin/theme-options.php:857
+msgid "Display category"
+msgstr ""
+
+#: admin/theme-options.php:854
+msgid "Post page"
+msgstr ""
+
+#: admin/theme-options.php:858
+msgid "Display tags"
+msgstr ""
+
+#: admin/theme-options.php:859
+msgid "Display author"
+msgstr ""
+
+#: admin/theme-options.php:860
+msgid "Display thumbnail"
+msgstr ""
+
+#: admin/theme-options.php:861
+msgid "Display next previous post link"
+msgstr ""
+
+#: admin/theme-options.php:862
+msgid "Display related post"
+msgstr ""
+
+#: admin/theme-options.php:863
+msgid "Display comment and trackback"
+msgstr ""
+
+#: admin/theme-options.php:870
+msgid "Social button Setup"
+msgstr ""
+
+#: admin/theme-options.php:872
+msgid "Set of articles top buttons"
+msgstr ""
+
+#: admin/theme-options.php:874
+msgid "Buttons to the article top"
+msgstr ""
+
+#: admin/theme-options.php:876
+msgid "Type of button on article top"
+msgstr ""
+
+#: admin/theme-options.php:903
+msgid "Select the social button to show on article top"
+msgstr ""
+
+#: admin/theme-options.php:905 admin/theme-options.php:952
+msgid "Display twitter button"
+msgstr ""
+
+#: admin/theme-options.php:906
+msgid "Display facebook like button -Button type 5 (Default button) only"
+msgstr ""
+
+#: admin/theme-options.php:907 admin/theme-options.php:954
+msgid "Display facebook share button"
+msgstr ""
+
+#: admin/theme-options.php:908 admin/theme-options.php:955
+msgid "Display google+ button"
+msgstr ""
+
+#: admin/theme-options.php:909 admin/theme-options.php:956
+msgid "Display hatena button"
+msgstr ""
+
+#: admin/theme-options.php:910 admin/theme-options.php:957
+msgid "Display pocket button"
+msgstr ""
+
+#: admin/theme-options.php:911 admin/theme-options.php:958
+msgid "Display feedly button"
+msgstr ""
+
+#: admin/theme-options.php:912 admin/theme-options.php:959
+msgid "Display rss button"
+msgstr ""
+
+#: admin/theme-options.php:913 admin/theme-options.php:960
+msgid "Display pinterest button"
+msgstr ""
+
+#: admin/theme-options.php:920
+msgid "Set of articles bottom buttons"
+msgstr ""
+
+#: admin/theme-options.php:921
+msgid "Buttons to the article bottom"
+msgstr ""
+
+#: admin/theme-options.php:922
+msgid "Type of button on article bottom"
+msgstr ""
+
+#: admin/theme-options.php:950
+msgid "Select the social button to show on article bottom"
+msgstr ""
+
+#: admin/theme-options.php:953
+msgid "Display facebook like button-Button type 5 (Default button) only"
+msgstr ""
+
+#: admin/theme-options.php:964
+msgid "Setting for the twitter button"
+msgstr ""
+
+#: admin/theme-options.php:965
+msgid "Set of twitter account. (ex.designplus)"
+msgstr ""
+
+#: admin/theme-options.php:973 admin/theme-options.php:1033
+#: admin/theme-options.php:1093
+msgid "Single page banner setup"
+msgstr ""
+
+#: admin/theme-options.php:974
+msgid "This banner will be displayed under contents."
+msgstr ""
+
+#: admin/theme-options.php:976 admin/theme-options.php:1036
+#: admin/theme-options.php:1097
+msgid "Left banner"
+msgstr ""
+
+#: admin/theme-options.php:978 admin/theme-options.php:1005
+#: admin/theme-options.php:1038 admin/theme-options.php:1065
+#: admin/theme-options.php:1099 admin/theme-options.php:1126
+msgid "Banner code"
+msgstr ""
+
+#: admin/theme-options.php:979 admin/theme-options.php:1006
+#: admin/theme-options.php:1039 admin/theme-options.php:1066
+#: admin/theme-options.php:1100 admin/theme-options.php:1127
+msgid "If you are using google adsense, enter all code below."
+msgstr ""
+
+#: admin/theme-options.php:982 admin/theme-options.php:1009
+#: admin/theme-options.php:1042 admin/theme-options.php:1069
+#: admin/theme-options.php:1103 admin/theme-options.php:1130
+msgid ""
+"If you are not using google adsense, you can register your banner image and "
+"affiliate code individually."
+msgstr ""
+
+#: admin/theme-options.php:984 admin/theme-options.php:1011
+#: admin/theme-options.php:1044 admin/theme-options.php:1071
+#: admin/theme-options.php:1105 admin/theme-options.php:1132
+msgid "Register banner image."
+msgstr ""
+
+#: admin/theme-options.php:984 admin/theme-options.php:1011
+#: admin/theme-options.php:1044 admin/theme-options.php:1071
+#: admin/theme-options.php:1105 admin/theme-options.php:1132
+msgid "Recommend size. Width:300px Height:250px"
+msgstr ""
+
+#: admin/theme-options.php:997 admin/theme-options.php:1024
+#: admin/theme-options.php:1057 admin/theme-options.php:1084
+#: admin/theme-options.php:1118 admin/theme-options.php:1145
+msgid "Register affiliate code"
+msgstr ""
+
+#: admin/theme-options.php:1003 admin/theme-options.php:1063
+#: admin/theme-options.php:1124
+msgid "Right banner"
+msgstr ""
+
+#: admin/theme-options.php:1034
+msgid "This banner will be displayed at bottom of the page."
+msgstr ""
+
+#: admin/theme-options.php:1094
+msgid ""
+"Please copy and paste the short code inside the content to show this banner."
+msgstr ""
+
+#: admin/theme-options.php:1095 functions/repeater.php:535
+msgid "Short code"
+msgstr ""
+
+#: admin/theme-options.php:1189
+msgid "Number of post to show at News archive page"
+msgstr ""
+
+#: admin/theme-options.php:1203
+msgid "SNS button setting"
+msgstr ""
+
+#: admin/theme-options.php:1204
+msgid ""
+"Enter url of your SNS page. If it is blank SNS button will not be shown."
+msgstr ""
+
+#: admin/theme-options.php:1207
+msgid "your twitter URL"
+msgstr ""
+
+#: admin/theme-options.php:1211
+msgid "your facebook URL"
+msgstr ""
+
+#: admin/theme-options.php:1215
+msgid "your instagram URL"
+msgstr ""
+
+#: admin/theme-options.php:1219
+msgid "your pinterest URL"
+msgstr ""
+
+#: admin/theme-options.php:1223
+msgid "your flickr URL"
+msgstr ""
+
+#: admin/theme-options.php:1227
+msgid "your tumblr URL"
+msgstr ""
+
+#: admin/theme-options.php:1237
+msgid "Shop information"
+msgstr ""
+
+#: admin/theme-options.php:1238
+msgid "Shop name"
+msgstr ""
+
+#: admin/theme-options.php:1240
+msgid "Shop address"
+msgstr ""
+
+#: admin/theme-options.php:1242
+msgid "Shop telephone number"
+msgstr ""
+
+#: archive-news.php:45 front-page.php:155 index.php:89
+#: widget/styled_post_list1.php:71 widget/styled_post_list1_bk.php:48
+msgid "There is no registered post."
+msgstr ""
+
+#: breadcrumb.php:4
+msgid "Home"
+msgstr ""
+
+#: breadcrumb.php:7 breadcrumb.php:15 breadcrumb.php:59
+msgid "Product"
+msgstr ""
+
+#: breadcrumb.php:34 comments.php:101 functions.php:778 functions/seo.php:137
+#: functions/seo.php:216 index.php:45
+msgid "F jS, Y"
+msgstr ""
+
+#: breadcrumb.php:37 functions/seo.php:141 functions/seo.php:220 index.php:48
+msgid "F, Y"
+msgstr ""
+
+#: breadcrumb.php:40 functions/seo.php:145 functions/seo.php:224 index.php:51
+msgid "Y"
+msgstr ""
+
+#: breadcrumb.php:46
+msgid "Search Result"
+msgstr ""
+
+#: breadcrumb.php:49
+msgid "Blog Archives"
+msgstr ""
+
+#: comments.php:7 comments.php:13
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:29 single.php:68
+msgid "Comment"
+msgstr ""
+
+#: comments.php:35
+msgid "Trackback"
+msgstr ""
+
+#: comments.php:36 comments.php:39
+msgid "Comments"
+msgstr ""
+
+#: comments.php:38
+msgid "Trackback are closed"
+msgstr ""
+
+#: comments.php:70
+msgid "No comments yet."
+msgstr ""
+
+#: comments.php:102
+msgid "[ EDIT ]"
+msgstr ""
+
+#: comments.php:105
+msgid "Trackback from : "
+msgstr ""
+
+#: comments.php:110
+msgid "No trackbacks yet."
+msgstr ""
+
+#: comments.php:115
+msgid "TRACKBACK URL"
+msgstr ""
+
+#: comments.php:141
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:157
+#, php-format
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+msgstr ""
+
+#: comments.php:157
+msgid "Log out of this account"
+msgstr ""
+
+#: comments.php:157
+msgid "[ Log out ]"
+msgstr ""
+
+#: comments.php:163
+msgid "NAME"
+msgstr ""
+
+#: comments.php:163 comments.php:164
+msgid "( required )"
+msgstr ""
+
+#: comments.php:164
+msgid "E-MAIL"
+msgstr ""
+
+#: comments.php:164
+msgid "- will not be published -"
+msgstr ""
+
+#: comments.php:165
+msgid "URL"
+msgstr ""
+
+#: comments.php:179
+msgid "Submit Comment"
+msgstr ""
+
+#: footer.php:61
+msgid "PAGE TOP"
+msgstr ""
+
+#: functions.php:34
+msgid "Please Select Image"
+msgstr ""
+
+#: functions.php:34
+msgid "Use this Image"
+msgstr ""
+
+#: functions.php:271
+msgid "Single page"
+msgstr ""
+
+#: functions.php:279
+msgid "Single page (mobile)"
+msgstr ""
+
+#: functions.php:280 functions.php:297
+msgid ""
+"This widget will be replaced with normal widget when a user accesses the "
+"site by smartphone."
+msgstr ""
+
+#: functions.php:288
+msgid "Static page"
+msgstr ""
+
+#: functions.php:296
+msgid "Static page (mobile)"
+msgstr ""
+
+#: functions.php:431
+msgid "Global menu"
+msgstr ""
+
+#: functions.php:432
+msgid "Footer menu (first column)"
+msgstr ""
+
+#: functions.php:433
+msgid "Footer menu (second column)"
+msgstr ""
+
+#: functions.php:434
+msgid "Footer menu (third column)"
+msgstr ""
+
+#: functions.php:435
+msgid "Footer menu (fourth column)"
+msgstr ""
+
+#: functions.php:462
+msgid "Add New"
+msgstr ""
+
+#: functions.php:463
+msgid "Add New Item"
+msgstr ""
+
+#: functions.php:464
+msgid "Edit"
+msgstr ""
+
+#: functions.php:465 functions/repeater.php:600
+msgid "New item"
+msgstr ""
+
+#: functions.php:466
+msgid "View Item"
+msgstr ""
+
+#: functions.php:467
+msgid "Search Items"
+msgstr ""
+
+#: functions.php:468
+msgid "Not Found"
+msgstr ""
+
+#: functions.php:469
+msgid "Not found in trash"
+msgstr ""
+
+#: functions.php:493 functions.php:514
+msgid "Featured Image"
+msgstr ""
+
+#: functions.php:513 functions/recommend.php:6
+msgid "Recommend post"
+msgstr ""
+
+#: functions.php:527 widget/styled_post_list1.php:104
+msgid "Recommend post1"
+msgstr ""
+
+#: functions.php:528 widget/styled_post_list1.php:105
+msgid "Recommend post2"
+msgstr ""
+
+#: functions.php:529
+msgid "Pickup post<br />"
+msgstr ""
+
+#: functions.php:530
+msgid "Featured post<br />"
+msgstr ""
+
+#: functions.php:585
+msgid "<p>Please upload image by size Width:600px Height:400px.</p>"
+msgstr ""
+
+#: functions.php:590
+msgid "<p>This image are not displayed at Static Page.</p>"
+msgstr ""
+
+#: functions.php:778
+msgid " g:ia"
+msgstr ""
+
+#: functions.php:785 functions.php:787 functions.php:790
+msgid "REPLY"
+msgstr ""
+
+#: functions.php:792
+msgid "QUOTE"
+msgstr ""
+
+#: functions.php:793
+msgid "EDIT"
+msgstr ""
+
+#: functions.php:799
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions/box_size.php:6
+msgid "Set box size for post list"
+msgstr ""
+
+#: functions/box_size.php:22
+msgid "Box size"
+msgstr ""
+
+#: functions/box_size.php:27
+msgid "Box size1<br />(Width:600px Height:600px)"
+msgstr ""
+
+#: functions/box_size.php:28
+msgid "Box size2<br />(Width:1200px Height:600px)"
+msgstr ""
+
+#: functions/custom_css.php:6
+msgid "You don't need to enter &lt;style&gt; tag."
+msgstr ""
+
+#: functions/custom_css.php:11
+msgid "Custom CSS for this post"
+msgstr ""
+
+#: functions/custom_css.php:12
+msgid "Custom CSS for this page"
+msgstr ""
+
+#: functions/custom_page_link.php:4
+msgid "Pages:"
+msgstr ""
+
+#: functions/custom_page_link.php:9
+msgid "Next page"
+msgstr ""
+
+#: functions/custom_page_link.php:10
+msgid "Previous page"
+msgstr ""
+
+#: functions/header-logo.php:222 functions/index-page.php:159
+#, php-format
+msgid ""
+"Cannot create upload directory. Please make sure <code>%s</code> is writable."
+msgstr ""
+
+#: functions/header-logo.php:234 functions/index-page.php:171
+#, php-format
+msgid ""
+"Cannot save uploaded file. Please make sure <code>%s</code> is writable."
+msgstr ""
+
+#: functions/header-logo.php:245 functions/index-page.php:182
+msgid ""
+"Uploaded file type is not allowed. Allowed file types are PNG, JPG and GIF."
+msgstr ""
+
+#: functions/header-logo.php:257 functions/index-page.php:193
+#, php-format
+msgid "Cannot delete existing file <code>%s</code>"
+msgstr ""
+
+#: functions/header-logo.php:267 functions/index-page.php:202
+msgid "Sorry, but cannot save uploaded file."
+msgstr ""
+
+#: functions/header-logo.php:273
+msgid "Logo file was successfully uploaded."
+msgstr ""
+
+#: functions/header-logo.php:305 functions/index-page.php:246
+#, php-format
+msgid ""
+"Failed to delete image. Please check permisson of %s. All files must be "
+"writable."
+msgstr ""
+
+#: functions/header-logo.php:312 functions/index-page.php:253
+msgid "Images are successfully deleted."
+msgstr ""
+
+#: functions/header-logo.php:335 functions/header-logo.php:348
+#: functions/header-logo.php:385
+msgid "Logo file not exists."
+msgstr ""
+
+#: functions/header-logo.php:415
+#, php-format
+msgid "Failed to save resized logo. Please check permission of <code>%s</code>"
+msgstr ""
+
+#: functions/header-logo.php:425
+msgid "Logo image is successfully resized."
+msgstr ""
+
+#: functions/header-logo.php:437
+msgid "Uploaded file size is larger than limit set in php.ini."
+msgstr ""
+
+#: functions/header-logo.php:440
+msgid "Uploaded file size is larget than post file size."
+msgstr ""
+
+#: functions/header-logo.php:443
+msgid ""
+"The file has been uploaded only partially. Connection error may have occured"
+msgstr ""
+
+#: functions/header-logo.php:446
+msgid "Uploaded file size is too large."
+msgstr ""
+
+#: functions/header-logo.php:449
+msgid "No temporary directory exists. Please check PHP Setting is valid."
+msgstr ""
+
+#: functions/header-logo.php:452
+msgid "Failed to write to disk. OS file setting or something is wrong."
+msgstr ""
+
+#: functions/header-logo.php:455
+msgid "PHP extension module stops uploading. Check PHP setting."
+msgstr ""
+
+#: functions/header-logo.php:458
+msgid "Upload failed. Sorry, but reasons cannot be detected."
+msgstr ""
+
+#: functions/index-page.php:208
+msgid "Background image file was successfully uploaded."
+msgstr ""
+
+#: functions/news.php:6
+msgid "News link setting"
+msgstr ""
+
+#: functions/news.php:20
+msgid "Link URL for this post"
+msgstr ""
+
+#: functions/news.php:20
+msgid "Please enter URL if you want to link this post to other website"
+msgstr ""
+
+#: functions/page_cf.php:6
+msgid "Page template setting"
+msgstr ""
+
+#: functions/page_cf.php:22
+msgid "Page template type"
+msgstr ""
+
+#: functions/page_cf.php:27
+msgid "Normal template"
+msgstr ""
+
+#: functions/page_cf.php:28
+msgid "Template_Sideless"
+msgstr ""
+
+#: functions/page_cf.php:29 functions/page_cf.php:108
+msgid "Template_About"
+msgstr ""
+
+#: functions/page_cf.php:30 functions/page_cf.php:178
+msgid "Template_Staff"
+msgstr ""
+
+#: functions/page_cf.php:31 functions/page_cf.php:266
+msgid "Template_Menu"
+msgstr ""
+
+#: functions/page_cf.php:32 functions/page_cf.php:290
+msgid "Template_Access"
+msgstr ""
+
+#: functions/page_cf.php:50 functions/page_cf.php:57
+msgid "Enter catchphrase for sub description area."
+msgstr ""
+
+#: functions/page_cf.php:64
+msgid "Hide shop navi"
+msgstr ""
+
+#: functions/page_cf.php:78
+msgid "View image"
+msgstr ""
+
+#: functions/page_cf.php:111 functions/page_cf.php:181
+msgid "Headline for row1"
+msgstr ""
+
+#: functions/page_cf.php:116 functions/page_cf.php:186
+msgid "Content for row2 left col"
+msgstr ""
+
+#: functions/page_cf.php:120 functions/page_cf.php:190
+msgid "Image for row2 right col"
+msgstr ""
+
+#: functions/page_cf.php:121 functions/page_cf.php:126
+#: functions/page_cf.php:153 functions/page_cf.php:166
+#: functions/page_cf.php:191 functions/page_cf.php:196
+#: functions/repeater_menu.php:21
+msgid "Register image.<br />Image size. Width:450px Height:330px"
+msgstr ""
+
+#: functions/page_cf.php:122 functions/page_cf.php:127
+#: functions/page_cf.php:136 functions/page_cf.php:154
+#: functions/page_cf.php:167 functions/page_cf.php:192
+#: functions/page_cf.php:197 functions/page_cf.php:206
+#: functions/page_cf2.php:47 functions/page_cf2.php:49 functions/product.php:73
+#: functions/product.php:93 functions/product.php:113
+#: functions/repeater_menu.php:19 functions/repeater_staff.php:21
+#: functions/repeater_staff.php:51
+msgid "Image"
+msgstr ""
+
+#: functions/page_cf.php:125 functions/page_cf.php:195
+msgid "Image for row3 left col"
+msgstr ""
+
+#: functions/page_cf.php:129 functions/page_cf.php:199
+msgid "Content for row3 right col"
+msgstr ""
+
+#: functions/page_cf.php:134 functions/page_cf.php:204
+msgid "Image for row4"
+msgstr ""
+
+#: functions/page_cf.php:135 functions/page_cf.php:205
+msgid "Register image.<br />Image size. Width:1180px Height:350px"
+msgstr ""
+
+#: functions/page_cf.php:138 functions/page_cf.php:208
+msgid "Headline for row4"
+msgstr ""
+
+#: functions/page_cf.php:142 functions/page_cf.php:212
+msgid "Content for row4"
+msgstr ""
+
+#: functions/page_cf.php:147
+msgid "Content for row5"
+msgstr ""
+
+#: functions/page_cf.php:152
+msgid "Image for row6 left col"
+msgstr ""
+
+#: functions/page_cf.php:156
+msgid "Content for row6 right col"
+msgstr ""
+
+#: functions/page_cf.php:161
+msgid "Content for row7 left col"
+msgstr ""
+
+#: functions/page_cf.php:165
+msgid "Image for row7 right col"
+msgstr ""
+
+#: functions/page_cf.php:217
+msgid "Settings for staff contents"
+msgstr ""
+
+#: functions/page_cf.php:218
+msgid ""
+"You can register plural group of image and sentence, and use as Shortcode."
+msgstr ""
+
+#: functions/page_cf.php:222
+msgid "Letter body for row5"
+msgstr ""
+
+#: functions/page_cf.php:223
+msgid ""
+"Enter letter body for row5. You can use Shortcode that is made in above."
+msgstr ""
+
+#: functions/page_cf.php:279
+msgid "Settings for menu contents"
+msgstr ""
+
+#: functions/page_cf.php:280
+msgid "You can register plural group of image and sentence for menu."
+msgstr ""
+
+#: functions/page_cf.php:303
+msgid "Free entry"
+msgstr ""
+
+#: functions/page_cf.php:304 functions/page_cf.php:312
+#: functions/page_cf.php:320
+msgid "You can use HTML tags."
+msgstr ""
+
+#: functions/page_cf.php:311
+msgid "Sub description(Left)"
+msgstr ""
+
+#: functions/page_cf.php:319
+msgid "Sub description(Right)"
+msgstr ""
+
+#: functions/page_cf.php:327
+msgid "Google map"
+msgstr ""
+
+#: functions/page_cf.php:328
+msgid "Enter address. Google map will automatically build."
+msgstr ""
+
+#: functions/page_cf.php:332
+msgid "API Key"
+msgstr ""
+
+#: functions/page_cf.php:333
+msgid "Enter API Key for Google Maps."
+msgstr ""
+
+#: functions/page_cf2.php:33 functions/page_cf2.php:35
+#: functions/page_cf2.php:37
+msgid "If you want enter 0, please leave the field blank."
+msgstr ""
+
+#: functions/product.php:6
+msgid "Product page contents"
+msgstr ""
+
+#: functions/product.php:20
+msgid "Main catchphrase for this product"
+msgstr ""
+
+#: functions/product.php:20
+msgid ""
+"This catchphrase will be displayed at product list and product single page.."
+"<br />If this field is empty product title will be displayed at product list."
+msgstr ""
+
+#: functions/product.php:24
+msgid "Catchphrase for first row"
+msgstr ""
+
+#: functions/product.php:24
+msgid "Enter catchphrase for first row."
+msgstr ""
+
+#: functions/product.php:31
+msgid "Catchphrase for second row"
+msgstr ""
+
+#: functions/product.php:31
+msgid "Enter catchphrase for second row."
+msgstr ""
+
+#: functions/product.php:38
+msgid "Catchphrase for third row"
+msgstr ""
+
+#: functions/product.php:38
+msgid "Enter catchphrase for third row."
+msgstr ""
+
+#: functions/product.php:62
+msgid "Description for first row"
+msgstr ""
+
+#: functions/product.php:63
+msgid "Enter description for first row."
+msgstr ""
+
+#: functions/product.php:71
+msgid "Image for first row"
+msgstr ""
+
+#: functions/product.php:72
+msgid "Register image for first row.<br />Image size. Width:600px Height:600px"
+msgstr ""
+
+#: functions/product.php:82
+msgid "Description for second row"
+msgstr ""
+
+#: functions/product.php:83
+msgid "Enter description for second row."
+msgstr ""
+
+#: functions/product.php:91
+msgid "Image for second row"
+msgstr ""
+
+#: functions/product.php:92
+msgid ""
+"Register image for second row.<br />Image size. Width:600px Height:600px"
+msgstr ""
+
+#: functions/product.php:102
+msgid "Description for third row"
+msgstr ""
+
+#: functions/product.php:103
+msgid "Enter description for third row."
+msgstr ""
+
+#: functions/product.php:111
+msgid "Image for third row"
+msgstr ""
+
+#: functions/product.php:112
+msgid "Register image for third row.<br />Image size. Width:600px Height:600px"
+msgstr ""
+
+#: functions/product.php:117
+msgid "Description for fourth row"
+msgstr ""
+
+#: functions/product.php:118
+msgid "Enter description for fourth row."
+msgstr ""
+
+#: functions/recommend.php:25
+msgid "Check if you wan't to show this post for recommend post."
+msgstr ""
+
+#: functions/recommend.php:27
+msgid "Show this post for recommend post 1."
+msgstr ""
+
+#: functions/recommend.php:28
+msgid "Show this post for recommend post 2."
+msgstr ""
+
+#: functions/recommend.php:29
+msgid "Show this post for pickup post."
+msgstr ""
+
+#: functions/recommend.php:30
+msgid "Show this post for featured post."
+msgstr ""
+
+#: functions/repeater.php:536
+msgid "This short code can only set one to one article."
+msgstr ""
+
+#: functions/repeater.php:554 functions/repeater.php:595
+msgid "Move"
+msgstr ""
+
+#: functions/repeater.php:555 functions/repeater.php:596
+msgid "Are you sure you want to delete this item?"
+msgstr ""
+
+#: functions/repeater.php:555 functions/repeater.php:596
+msgid "Delete"
+msgstr ""
+
+#: functions/repeater.php:559 functions/repeater.php:600
+msgid "Open"
+msgstr ""
+
+#: functions/repeater.php:589
+msgid "Add item"
+msgstr ""
+
+#: functions/repeater_menu.php:27 functions/repeater_staff.php:44
+#: functions/repeater_staff.php:77
+msgid "Letter body"
+msgstr ""
+
+#: functions/repeater_menu.php:29
+msgid "Please input product name and price like 'Product|Price'."
+msgstr ""
+
+#: functions/repeater_staff.php:11
+msgid "Layout selection"
+msgstr ""
+
+#: functions/repeater_staff.php:13
+msgid ""
+"1 column is displayed center, 2 columns is displayed 2 items with Side-by-"
+"side."
+msgstr ""
+
+#: functions/repeater_staff.php:15
+msgid "1 column"
+msgstr "1カラム"
+
+#: functions/repeater_staff.php:15
+msgid "2 columns"
+msgstr "2カラム"
+
+#: functions/repeater_staff.php:23 functions/repeater_staff.php:53
+msgid "Recommend image size. Width:280px, Height:280px"
+msgstr ""
+
+#: functions/repeater_staff.php:37 functions/repeater_staff.php:69
+msgid "Headline(sub)"
+msgstr ""
+
+#: functions/seo.php:6
+msgid "Meta title and description"
+msgstr ""
+
+#: functions/seo.php:21
+msgid "Meta title"
+msgstr ""
+
+#: functions/seo.php:21
+msgid "Enter meta title here."
+msgstr ""
+
+#: functions/seo.php:25
+msgid "Meta description"
+msgstr ""
+
+#: functions/seo.php:25
+msgid "Enter meta description here."
+msgstr ""
+
+#: functions/seo.php:47
+msgid "word count:"
+msgstr ""
+
+#: functions/seo.php:125 functions/seo.php:129 functions/seo.php:133
+#: functions/seo.php:234
+#, php-format
+msgid "Post list for %s"
+msgstr ""
+
+#: functions/seo.php:137 functions/seo.php:141 functions/seo.php:145
+#: functions/seo.php:151 functions/seo.php:216 functions/seo.php:220
+#: functions/seo.php:224 functions/seo.php:230
+#, php-format
+msgid "Archive for %s"
+msgstr ""
+
+#: functions/seo.php:162
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: index.php:39
+#, php-format
+msgid "Search results for - %s"
+msgstr ""
+
+#: index.php:41
+msgid "Search result"
+msgstr ""
+
+#: index.php:45 index.php:48 index.php:51
+#, php-format
+msgid "Archive for &#8216; %s &#8217;"
+msgstr ""
+
+#: index.php:55
+#, php-format
+msgid "Archive for the &#8216; %s &#8217;"
+msgstr ""
+
+#: navigation.php:19
+msgid "RETURN HOME"
+msgstr ""
+
+#: single-news.php:30 single.php:54
+msgid "Read more"
+msgstr ""
+
+#: single.php:65
+msgid "Author"
+msgstr ""
+
+#: single.php:111
+msgid "Related posts"
+msgstr ""
+
+#: widget/ad.php:6
+msgid "Show AdSense at random in front page."
+msgstr ""
+
+#: widget/ad.php:8
+msgid "AdSense (tcd ver)"
+msgstr ""
+
+#: widget/ad.php:71
+msgid "One out of three AdSense will be displayed at random in front page."
+msgstr ""
+
+#: widget/ad.php:76
+msgid "AdSense"
+msgstr ""
+
+#: widget/ad.php:79
+msgid "Register AdSense code"
+msgstr ""
+
+#: widget/ad.php:80
+msgid ""
+"If you are using Google AdSense or similar kind of AdSense, enter all code "
+"below."
+msgstr ""
+
+#: widget/ad.php:83
+msgid ""
+"If you want to register banner image and affiliate code individually, leave "
+"the field above blank and use the field below."
+msgstr ""
+
+#: widget/ad.php:85
+msgid "Register AdSense image"
+msgstr ""
+
+#: widget/ad.php:96
+msgid "Register affiliate code or link url for registered image"
+msgstr ""
+
+#: widget/archive_list.php:8 widget/archive_list.php:39
+msgid "Displays designed archive dropdown menu."
+msgstr ""
+
+#: widget/archive_list.php:10
+msgid "Archive list (tcd ver)"
+msgstr ""
+
+#: widget/archive_list.php:25
+msgid "Archives"
+msgstr ""
+
+#: widget/category_list.php:10
+#, php-format
+msgid "View all posts filed under %s"
+msgstr ""
+
+#: widget/category_list.php:44
+msgid "Displays designed category list."
+msgstr ""
+
+#: widget/category_list.php:46
+msgid "Category list (tcd ver)"
+msgstr ""
+
+#: widget/category_list.php:91 widget/custom_menu.php:51
+msgid "Category list"
+msgstr ""
+
+#: widget/category_list.php:95 widget/custom_menu.php:57
+#: widget/styled_post_list1.php:97 widget/styled_post_list1_bk.php:73
+msgid "Title:"
+msgstr ""
+
+#: widget/category_list.php:99
+msgid "Categories To Exclude:"
+msgstr ""
+
+#: widget/category_list.php:101
+msgid ""
+"Enter a comma-seperated list of category ID numbers, example 2,4,10<br /"
+">(Don't enter comma for last number)."
+msgstr ""
+
+#: widget/custom_menu.php:8
+msgid "Displays designed custom menu."
+msgstr ""
+
+#: widget/custom_menu.php:10
+msgid "Designed custom menu (tcd ver)"
+msgstr ""
+
+#: widget/custom_menu.php:68
+#, php-format
+msgid "No menus have been created yet. <a href=\"%s\">Create some</a>."
+msgstr ""
+
+#: widget/custom_menu.php:72
+msgid "Select Menu:"
+msgstr ""
+
+#: widget/custom_menu.php:74
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#: widget/google_search.php:8
+msgid "Displays Google Custom Search form."
+msgstr ""
+
+#: widget/google_search.php:10
+msgid "Google Custom Search (tcd-w ver)"
+msgstr ""
+
+#: widget/google_search.php:27
+msgid "Search"
+msgstr ""
+
+#: widget/google_search.php:51
+msgid ""
+"If you wan't to use google custom search for your wordpress, enter your "
+"google custom search ID.<br /><a href=\"http://www.google.com/cse/\" target="
+"\"_blank\">Read more about Google custom search page.</a>"
+msgstr ""
+
+#: widget/google_search.php:53
+msgid "Google custom search ID"
+msgstr ""
+
+#: widget/styled_post_list1.php:27 widget/styled_post_list1_bk.php:8
+msgid "Displays styled post list."
+msgstr ""
+
+#: widget/styled_post_list1.php:29 widget/styled_post_list1_bk.php:10
+msgid "Styled post list (tcd ver)"
+msgstr ""
+
+#: widget/styled_post_list1.php:93 widget/styled_post_list1.php:103
+#: widget/styled_post_list1_bk.php:69
+msgid "Recent post"
+msgstr ""
+
+#: widget/styled_post_list1.php:101
+msgid "Post type:"
+msgstr ""
+
+#: widget/styled_post_list1.php:106
+msgid "Pickup post"
+msgstr ""
+
+#: widget/styled_post_list1.php:107
+msgid "Featured post"
+msgstr ""
+
+#: widget/styled_post_list1.php:111 widget/styled_post_list1_bk.php:77
+msgid "Number of post:"
+msgstr ""
+
+#: widget/styled_post_list1.php:126 widget/styled_post_list1_bk.php:92
+msgid "Post order:"
+msgstr ""
+
+#: widget/styled_post_list1.php:128 widget/styled_post_list1_bk.php:94
+msgid "Date (DESC)"
+msgstr ""
+
+#: widget/styled_post_list1.php:129 widget/styled_post_list1_bk.php:95
+msgid "Date (ASC)"
+msgstr ""
+
+#: widget/styled_post_list1.php:130 widget/styled_post_list1_bk.php:96
+msgid "Random"
+msgstr ""
+
+#~ msgid "Top page2"
+#~ msgstr "Top page2"
+
+#~ msgid "Top page3"
+#~ msgstr "Top page3"
