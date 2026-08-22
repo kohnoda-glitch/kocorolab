@@ -5,10 +5,7 @@
 
 ## ブラウザで見る
 
-コミット後の URL はプルリクエスト本文にあります。例:
-
-- 日本語トップ: `https://cdn.jsdelivr.net/gh/kohnoda-glitch/kocorolab@<SHA>/preview-site/index.html`
-- English: `https://cdn.jsdelivr.net/gh/kohnoda-glitch/kocorolab@<SHA>/preview-site/en/index.html`
+プルリクエスト本文のリンクを開いてください（HTML をページとして表示できる配信を使っています）。
 
 右上の English / 日本語 で切り替えできます。ナビからサービス、活動・新着、発表文献、会社概要、お問い合わせも開けます。
 
