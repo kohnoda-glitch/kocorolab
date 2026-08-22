@@ -1,0 +1,421 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>株式会社ココロラボ</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Photo-led Kocoro Lab overlay: sky, green, ocean. */
+
+body.kl-refresh-home #fullpage,
+body.kl-refresh-home #fp-nav {
+  display: none !important;
+}
+
+body.kl-refresh-home #main_col,
+body.kl-refresh-page #main_col {
+  background: #eef4f6;
+}
+
+body.kl-refresh-home #edit-area.kl-home-wrap {
+  background: transparent;
+  padding: 0;
+}
+
+.kl-home,
+.kl-page {
+  color: #163038;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.kl-page {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.kl-kicker {
+  margin: 0 0 0.55rem;
+  color: #3d7a86;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.kl-home h1 {
+  margin: 0 0 1rem;
+  color: #fff;
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  text-shadow: 0 8px 28px rgba(8, 24, 32, 0.35);
+}
+
+.kl-hero .kl-lead {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.08rem;
+  max-width: 36rem;
+}
+
+.kl-hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 38, 48, 0.15) 0%, rgba(12, 38, 48, 0.62) 100%),
+    var(--kl-hero-image) center/cover no-repeat;
+}
+
+.kl-hero-inner {
+  width: min(52rem, calc(100% - 2.4rem));
+  margin: 0 auto 3.2rem;
+}
+
+.kl-hero .kl-kicker {
+  color: #d7f0e8;
+}
+
+.kl-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 0.9rem;
+  margin: 1.5rem 0 0;
+}
+
+.kl-btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  background: #0f6b63;
+  color: #f4fffb !important;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(8, 40, 38, 0.18);
+}
+
+.kl-btn:hover {
+  background: #0b544e;
+}
+
+.kl-btn-ghost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+.kl-section .kl-btn-ghost {
+  background: transparent;
+  color: #0f6b63 !important;
+  box-shadow: inset 0 0 0 1px #0f6b63;
+}
+
+.kl-section .kl-btn-ghost:hover {
+  background: #0f6b63;
+  color: #f4fffb !important;
+}
+
+.kl-section {
+  width: min(52rem, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 3.2rem 0 0.4rem;
+}
+
+.kl-section h2,
+.kl-page h2,
+.kl-refresh .entry-content h2 {
+  margin: 0 0 0.9rem;
+  color: #12343c;
+  font-size: 1.28rem;
+  font-weight: 700;
+  padding-left: 0.75rem;
+  border-left: 4px solid #1aa07a;
+}
+
+.kl-lead {
+  margin: 0 0 1.3rem;
+  color: #35555c;
+}
+
+.kl-domains {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.kl-domain {
+  overflow: hidden;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(16, 48, 56, 0.08);
+}
+
+.kl-domain-photo {
+  margin: 0;
+  height: 11.5rem;
+  overflow: hidden;
+}
+
+.kl-domain-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kl-domain .kl-kicker,
+.kl-domain h3,
+.kl-domain p {
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+}
+
+.kl-domain .kl-kicker {
+  margin-top: 1rem;
+}
+
+.kl-domain h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.kl-domain p:last-child {
+  padding-bottom: 1.2rem;
+}
+
+.kl-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kl-card {
+  padding: 1.2rem 1.15rem 1.3rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(16, 48, 56, 0.06);
+}
+
+.kl-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.kl-news-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.kl-news-list li {
+  display: grid;
+  grid-template-columns: 7.2rem 1fr;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0.95rem 1.15rem;
+  border-bottom: 1px solid #e4eef0;
+}
+
+.kl-news-list time {
+  color: #5b7a80;
+  font-size: 0.88rem;
+}
+
+.kl-section-who {
+  margin-top: 3.2rem;
+  padding: 1.6rem 1.4rem 1.3rem;
+  background: #fff;
+  border-radius: 18px;
+}
+
+.kl-section-who h2 {
+  margin-top: 0;
+}
+
+.kl-list {
+  margin: 0 0 1.3rem;
+  padding-left: 1.1rem;
+}
+
+.kl-list li {
+  margin: 0 0 0.7rem;
+}
+
+.kl-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.kl-table th,
+.kl-table td {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid #e4eef0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.kl-table th {
+  width: 8.5rem;
+  color: #5b7a80;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body.kl-refresh .entry-content {
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+body.kl-refresh .entry-content a,
+.kl-page a,
+.kl-section-who a {
+  color: #0f6b63;
+}
+
+@media (max-width: 900px) {
+  .kl-domains,
+  .kl-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .kl-hero {
+    min-height: 70vh;
+  }
+
+  .kl-news-list li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .kl-table th {
+    display: block;
+    width: auto;
+    padding-bottom: 0.15rem;
+    border-bottom: 0;
+  }
+
+  .kl-table td {
+    display: block;
+    padding-top: 0.15rem;
+  }
+}
+body.kcl-preview{margin:0;background:#eef4f6;}
+.kcl-banner{margin:0;padding:8px 22px;background:#12324a;color:#fff;font-size:12px;letter-spacing:.04em;line-height:1.5}
+.kcl-banner a{color:#9ee6d2}
+.kcl-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.85rem 1.4rem;background:#0c262f;color:#fff;position:sticky;top:0;z-index:20}
+.kcl-bar a{color:#e8f4f2;text-decoration:none;font-size:.88rem}
+.kcl-bar nav{display:flex;flex-wrap:wrap;gap:.55rem 1rem;align-items:center}
+.kcl-bar a.is-current{color:#fff;box-shadow:inset 0 -2px 0 #7ee0c6}
+.kcl-logo{font-weight:700;letter-spacing:.08em;color:#fff !important}
+.kcl-lang{padding:.2rem .7rem;border:1px solid rgba(255,255,255,.45);border-radius:999px}
+.kcl-foot{padding:2.5rem 1.4rem 3rem;color:#5b7a80;font-size:.88rem;text-align:center}
+.kl-page h1{margin:0 0 1.2rem;font-size:clamp(1.6rem,3vw,2.1rem);color:#12343c;font-weight:700;letter-spacing:.03em}</style></head><body class="kl-refresh kl-refresh-home kcl-preview"><p class="kcl-banner">静的プレビュー · 日本語 — 本番サイト（kocorolab.com）はまだ変わっていません。右上から English に切り替えできます。</p><header class="kcl-bar">
+  <a class="kcl-logo" href="index.html">ココロラボ</a>
+  <nav>
+        <a href="index.html" class="is-current">ホーム</a>
+        <a href="service.html">サービス</a>
+        <a href="news.html">活動・新着</a>
+        <a href="hakkou.html">発表文献</a>
+        <a href="company.html">会社概要</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a class="kcl-lang" href="en/index.html">English</a>
+  </nav>
+</header>
+	<div id="edit-area" class="mt0 kl-home-wrap">
+	<main class="kl-home" lang="ja">
+		<section class="kl-hero" style="--kl-hero-image: url('images/hero-horizon.jpg');">
+			<div class="kl-hero-inner">
+				<p class="kl-kicker">株式会社ココロラボ</p>
+				<h1>精神、社会、環境の分断をほどく</h1>
+				<p class="kl-lead">個人の心、人と人のしくみ、地球環境。分かれがちな三つを、認知科学と現場の人事実務からつなぎ直します。</p>
+				<p class="kl-actions">
+					<a class="kl-btn" href="service.html">サービス</a>
+					<a class="kl-btn kl-btn-ghost" href="news.html">活動・新着</a>
+				</p>
+			</div>
+		</section>
+
+		<section class="kl-section kl-world">
+			<h2>こころ・社会・環境</h2>
+			<p class="kl-lead">空、緑、海のように、もともとつながっているものを、もう一度一つの風景として見る。それがココロラボの仕事です。</p>
+			<div class="kl-domains">
+				<article class="kl-domain">
+					<figure class="kl-domain-photo"><img src="images/spirit-sky.jpg" alt=""></figure>
+					<p class="kl-kicker">精神</p>
+					<h3>心の状態を、科学で扱う</h3>
+					<p>感情の認知科学とメンタルヘルス検査 MHQ。個人の内側を、感覚だけで終わらせない。</p>
+				</article>
+				<article class="kl-domain">
+					<figure class="kl-domain-photo"><img src="images/society-green.jpg" alt=""></figure>
+					<p class="kl-kicker">社会</p>
+					<h3>人と組織のあいだを整える</h3>
+					<p>リーダーシップ教育、人事、組織づくり。上場前と上場後の事業会社で人事責任者を務めた経験を、現場で使える形にします。</p>
+				</article>
+				<article class="kl-domain">
+					<figure class="kl-domain-photo"><img src="images/environment-ocean.jpg" alt=""></figure>
+					<p class="kl-kicker">環境</p>
+					<h3>持続可能な未来とつなぐ</h3>
+					<p>MIT Sloan IDEAS Asia Pacific や気候変動に関する市民活動など、社会と地球のあいだでも実践します。</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="kl-section">
+			<h2>サービス</h2>
+			<p class="kl-lead">細かい下層ページは増やしません。必要なものは、この一枚と新着にまとめます。</p>
+			<div class="kl-cards">
+				<article class="kl-card">
+					<h3>リーダーシップ教育</h3>
+					<p>グロービス経営大学院と MIT Sloan IDEAS Asia Pacific での教育・研究。U理論などを用いた学び。</p>
+				</article>
+				<article class="kl-card">
+					<h3>メンタルヘルス（MHQ）</h3>
+					<p>MHQ と EQ 検査。採用や人材育成に使えます。詳しい案内や更新は新着へ載せます。</p>
+				</article>
+				<article class="kl-card">
+					<h3>人事・組織支援</h3>
+					<p>人事制度、研修、コーチング、調査研究。</p>
+				</article>
+			</div>
+			<p class="kl-actions">
+				<a class="kl-btn" href="service.html">サービスを見る</a>
+			</p>
+		</section>
+
+		<section class="kl-section kl-news">
+			<h2>活動・新着</h2>
+			<p class="kl-lead">IDEAS の案内、MHQ の更新、講演や公開資料など、ときどきのお知らせをここに載せます。日記ブログではありません。</p>
+							<ul class="kl-news-list">
+											<li>
+							<time datetime="2026-03-01">2026.03.01</time>
+							<a href="news.html">MIT Sloan IDEAS Asia Pacific のパンフレット</a>
+						</li>
+											<li>
+							<time datetime="2025-09-06">2025.09.06</time>
+							<a href="hakkou.html">日本認知科学会第42回大会で発表</a>
+						</li>
+									</ul>
+						<p class="kl-actions">
+				<a class="kl-btn kl-btn-ghost" href="news.html">新着一覧</a>
+			</p>
+		</section>
+
+		<section class="kl-section kl-section-who">
+			<h2>代表</h2>
+			<p>野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院准教授、MIT Sloan IDEAS Asia Pacific リージョナルファカルティです。</p>
+			<p>人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。担当した会社はガリバー、イントループ、チェンジです。個別案件や当時の関係者には触れません。</p>
+			<p><a href="member.html">プロフィール</a></p>
+		</section>
+
+		<section class="kl-section">
+			<h2>発表文献</h2>
+			<p>日本認知科学会などでの発表を続けています。2025年は「U理論の認知感情モデル」を第42回大会予稿集（pp. 466-469）に掲載しました。</p>
+			<p class="kl-actions">
+				<a class="kl-btn kl-btn-ghost" href="hakkou.html">文献一覧</a>
+				<a class="kl-btn" href="contact.html">問い合わせ</a>
+			</p>
+		</section>
+	</main>
+</div>
+<footer class="kcl-foot"><p>精神・社会・環境のトランジションを扱う小さな研究所。</p><p>© 株式会社ココロラボ / Kocoro Laboratory, Inc.</p></footer></body></html>
