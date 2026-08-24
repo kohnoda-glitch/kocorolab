@@ -43,9 +43,9 @@ foreach ( $images as $file ) {
 
 $checks = array(
 	'JA uses GLOBIS faculty' => ( false !== strpos( $ja['who_body'], '教員' ) && false !== strpos( $ja['cred2'], '教員' ) ),
-	'EN uses GLOBIS faculty' => false !== strpos( $en['who_body'], 'GLOBIS faculty' ),
-	'research faculty JA' => false !== strpos( $ja['cred1'], 'research faculty' ) && false !== strpos( $ja['who_body'], 'research faculty' ),
-	'research faculty EN' => false !== strpos( $en['cred1'], 'research faculty' ),
+	'EN uses Globis University, Research Faculty' => false !== strpos( $en['cred2'], 'Globis University, Research Faculty' ) && false !== strpos( $en['who_body'], 'Globis University, Research Faculty' ),
+	'MIT regional faculty JA' => false !== strpos( $ja['cred1'], 'regional faculty' ) && false !== strpos( $ja['who_body'], 'regional faculty' ),
+	'MIT regional faculty EN' => false !== strpos( $en['cred1'], 'regional faculty' ) && false !== strpos( $en['who_body'], 'regional faculty' ),
 	'JA mind society environment' => ( false !== strpos( $ja['hero_title'], '精神' ) && false !== strpos( $ja['hero_title'], '社会' ) && false !== strpos( $ja['hero_title'], '環境' ) ),
 	'news is activities not diary' => false !== strpos( $ja['news_lead'], 'IDEAS' ) && false !== strpos( $ja['news_lead'], 'MHQ' ) && false !== strpos( $ja['news_lead'], '日記ブログではありません' ),
 	'services stay on one page' => false !== strpos( $ja['work_lead'], '下層ページは増やしません' ),
