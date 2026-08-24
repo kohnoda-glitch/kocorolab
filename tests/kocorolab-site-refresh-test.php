@@ -61,6 +61,7 @@ $checks = array(
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
 	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'mhqlp', 'ja' ),
 	'shows site wrap instead of loader' => false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), 'body.kl-refresh #site_wrap' ),
+	'overlay skips Avalon header' => false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/wp-view.php' ), 'Standalone overlay' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/wp-view.php' ), 'get_header();' ),
 	'strips qTranslate JA tags' => '本文です。' === trim( kocorolab_refresh_ml_text( '[:ja]本文です。[:en]Body text.[:]', 'ja' ) ),
 	'strips qTranslate EN tags' => 'Body text.' === trim( kocorolab_refresh_ml_text( '[:ja]本文です。[:en]Body text.[:]', 'en' ) ),
 	'strips MHQ1 ja-only tags' => ( false === strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), '[:' ) && false !== strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), 'MHQ1' ) ),
