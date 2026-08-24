@@ -29,9 +29,9 @@ $ja_service = kocorolab_refresh_page_html( 'service', 'ja' );
 $en_profile = kocorolab_refresh_page_html( 'member', 'en' );
 $ja_pubs    = kocorolab_refresh_page_html( 'hakkou', 'ja' );
 $en_pubs    = kocorolab_refresh_page_html( 'publications', 'en' );
-$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $ja_company, $ja_service, $en_profile ) );
+$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $ja['profile_note'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $en['profile_note'], $ja_company, $ja_service, $en_profile ) );
 
-$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'チェンジ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', 'Associate Professor', 'Regional Faculty' );
+$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'チェンジ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', 'Associate Professor', 'Regional Faculty', '触れません', '公開しません', 'does not discuss individual', 'does not describe individual' );
 
 $images = array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg' );
 $img_ok = true;
@@ -61,6 +61,10 @@ $checks = array(
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
 	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'mhqlp', 'ja' ),
 	'shows site wrap instead of loader' => false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), 'body.kl-refresh #site_wrap' ),
+	'strips qTranslate JA tags' => '本文です。' === trim( kocorolab_refresh_ml_text( '[:ja]本文です。[:en]Body text.[:]', 'ja' ) ),
+	'strips qTranslate EN tags' => 'Body text.' === trim( kocorolab_refresh_ml_text( '[:ja]本文です。[:en]Body text.[:]', 'en' ) ),
+	'strips MHQ1 ja-only tags' => ( false === strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), '[:' ) && false !== strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), 'MHQ1' ) ),
+	'EN news uses lang query' => false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'lang=en' ),
 );
 
 foreach ( $forbidden as $word ) {

@@ -7,6 +7,6 @@
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php the_content(); ?>
 		<?php endwhile; endif; ?>
-		<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/en/news/' ) ); ?>"><?php echo esc_html( kocorolab_refresh_t( 'news_link' ) ); ?></a></p>
+		<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php echo esc_html( kocorolab_refresh_t( 'news_link' ) ); ?></a></p>
 	</div>
 </main>

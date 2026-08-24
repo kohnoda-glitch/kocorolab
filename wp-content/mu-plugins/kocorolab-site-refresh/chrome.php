@@ -31,9 +31,8 @@ function kocorolab_refresh_lang_switch_url() {
 	if ( function_exists( 'kocorolab_preview_lang_href' ) ) {
 		return kocorolab_preview_lang_href();
 	}
-	return ( 'en' === kocorolab_refresh_lang() )
-		? kocorolab_refresh_url( '/', '/' )
-		: kocorolab_refresh_url( '/en/', '/en/' );
+	$root = kocorolab_refresh_root();
+	return ( 'en' === kocorolab_refresh_lang() ) ? $root . '/' : $root . '/en/';
 }
 
 function kocorolab_refresh_site_header() {
@@ -48,7 +47,7 @@ function kocorolab_refresh_site_header() {
 		? array(
 			array( 'home', 'Home', kocorolab_refresh_url( '/', '/en/' ) ),
 			array( 'service', 'Services', kocorolab_refresh_url( '/service/', '/en/service/' ) ),
-			array( 'news', 'Updates', kocorolab_refresh_url( '/news/', '/en/news/' ) ),
+			array( 'news', 'Updates', kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ),
 			array( 'hakkou', 'Publications', kocorolab_refresh_url( '/hakkou/', '/en/publications/' ) ),
 			array( 'company', 'Company', kocorolab_refresh_url( '/company/', '/en/company/' ) ),
 		)

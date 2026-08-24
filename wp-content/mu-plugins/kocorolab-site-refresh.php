@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.4.1
+ * Version: 1.4.2
  * Author: Kohei Noda
  */
 
@@ -37,10 +37,74 @@ function kocorolab_refresh_lang() {
 	return ( 0 === strpos( $locale, 'en' ) ) ? 'en' : 'ja';
 }
 
-function kocorolab_refresh_url( $ja_path, $en_path = null ) {
+function kocorolab_refresh_root() {
+	if ( function_exists( 'get_option' ) ) {
+		return untrailingslashit( get_option( 'home' ) );
+	}
+	return 'https://kocorolab.com';
+}
+
+function kocorolab_refresh_url( $ja_path, $en_path = null, $lang = null ) {
 	$en_path = null === $en_path ? $ja_path : $en_path;
-	$path    = ( 'en' === kocorolab_refresh_lang() ) ? $en_path : $ja_path;
-	return function_exists( 'home_url' ) ? home_url( $path ) : $path;
+	if ( null === $lang ) {
+		$lang = kocorolab_refresh_lang();
+	}
+	$path = ( 'en' === $lang ) ? $en_path : $ja_path;
+	if ( function_exists( 'kocorolab_preview_href' ) || ! function_exists( 'get_option' ) ) {
+		return function_exists( 'home_url' ) ? home_url( $path ) : $path;
+	}
+	return kocorolab_refresh_root() . $path;
+}
+
+function kocorolab_refresh_news_permalink( $post = null ) {
+	$url = function_exists( 'get_permalink' ) ? get_permalink( $post ) : '';
+	if ( ! $url ) {
+		return '#';
+	}
+	$url = preg_replace( '#/en/news/#', '/news/', $url );
+	if ( 'en' === kocorolab_refresh_lang() ) {
+		if ( function_exists( 'remove_query_arg' ) ) {
+			$url = remove_query_arg( 'lang', $url );
+		}
+		$url = function_exists( 'add_query_arg' ) ? add_query_arg( 'lang', 'en', $url ) : $url;
+	}
+	return $url;
+}
+
+function kocorolab_refresh_ml_text( $text, $lang = null ) {
+	if ( ! is_string( $text ) || ( false === strpos( $text, '[:' ) && false === strpos( $text, '<!--:' ) ) ) {
+		return $text;
+	}
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	$parts = array();
+	if ( preg_match_all( '/\[:([a-z]{2})\](.*?)(?=\[:[a-z]{2}\]|\[:\]|$)/s', $text, $matches, PREG_SET_ORDER ) ) {
+		foreach ( $matches as $row ) {
+			$parts[ $row[1] ] = $row[2];
+		}
+	}
+	if ( preg_match_all( '/<!--:([a-z]{2})-->(.*?)<!--:-->/s', $text, $matches, PREG_SET_ORDER ) ) {
+		foreach ( $matches as $row ) {
+			$parts[ $row[1] ] = $row[2];
+		}
+	}
+	$want = ( 'en' === $lang ) ? array( 'en' ) : array( 'ja', 'jp' );
+	foreach ( $want as $code ) {
+		if ( isset( $parts[ $code ] ) && '' !== trim( strip_tags( $parts[ $code ] ) ) ) {
+			return $parts[ $code ];
+		}
+	}
+	if ( isset( $parts['ja'] ) ) {
+		return $parts['ja'];
+	}
+	if ( isset( $parts['jp'] ) ) {
+		return $parts['jp'];
+	}
+	if ( isset( $parts['en'] ) ) {
+		return $parts['en'];
+	}
+	return preg_replace( '/\[:[a-z]{0,2}\]|<!--:[a-z]{0,2}-->|<!--:-->/', '', $text );
 }
 
 function kocorolab_refresh_image_files() {
@@ -149,7 +213,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.4.1' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.4.2' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
@@ -162,6 +226,63 @@ add_action(
 	},
 	20
 );
+
+add_filter(
+	'the_content',
+	function ( $content ) {
+		if ( is_admin() ) {
+			return $content;
+		}
+		$content = kocorolab_refresh_ml_text( $content );
+		if ( function_exists( 'make_clickable' ) ) {
+			$content = make_clickable( $content );
+		}
+		return $content;
+	},
+	1
+);
+
+add_filter(
+	'the_content',
+	function ( $content ) {
+		if ( is_admin() ) {
+			return $content;
+		}
+		$content = kocorolab_refresh_ml_text( $content );
+		if ( function_exists( 'make_clickable' ) ) {
+			$content = make_clickable( $content );
+		}
+		return $content;
+	},
+	101
+);
+
+add_filter(
+	'the_title',
+	function ( $title ) {
+		if ( is_admin() ) {
+			return $title;
+		}
+		return kocorolab_refresh_ml_text( $title );
+	},
+	1
+);
+
+add_filter(
+	'the_title',
+	function ( $title ) {
+		if ( is_admin() ) {
+			return $title;
+		}
+		return kocorolab_refresh_ml_text( $title );
+	},
+	101
+);
+
+add_filter( 'the_excerpt', 'kocorolab_refresh_ml_text', 1 );
+add_filter( 'the_excerpt', 'kocorolab_refresh_ml_text', 101 );
+add_filter( 'widget_text', 'kocorolab_refresh_ml_text', 1 );
+add_filter( 'term_description', 'kocorolab_refresh_ml_text', 1 );
 
 add_filter(
 	'the_content',

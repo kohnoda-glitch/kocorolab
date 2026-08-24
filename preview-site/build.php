@@ -65,6 +65,7 @@ function home_url( $path = '/' ) {
 		'/en/service/'       => 'service',
 		'/news/'             => 'news',
 		'/en/news/'          => 'news',
+		'/news/?lang=en'     => 'news',
 		'/hakkou/'           => 'hakkou',
 		'/en/publications/'  => 'hakkou',
 		'/company/'          => 'company',
@@ -77,7 +78,7 @@ function home_url( $path = '/' ) {
 	$path = (string) $path;
 	if ( isset( $map[ $path ] ) ) {
 		$key = $map[ $path ];
-		$want_en = ( 0 === strpos( $path, '/en/' ) ) || $path === '/en/';
+		$want_en = ( 0 === strpos( $path, '/en/' ) ) || $path === '/en/' || false !== strpos( $path, 'lang=en' );
 		$here_en = ! empty( $GLOBALS['KOCORO_PREVIEW_EN'] );
 		$file    = kocorolab_preview_page_file( $key, $want_en );
 		if ( $here_en && $want_en ) {
@@ -161,6 +162,11 @@ function get_the_date( $fmt = 'Y-m-d' ) {
 function the_permalink() {
 	$post = $GLOBALS['KOCORO_PREVIEW_POST'];
 	echo esc_url( $post ? $post->permalink : '#' );
+}
+
+function kocorolab_refresh_news_permalink( $post = null ) {
+	$post = $post ? $post : ( isset( $GLOBALS['KOCORO_PREVIEW_POST'] ) ? $GLOBALS['KOCORO_PREVIEW_POST'] : null );
+	return ( $post && isset( $post->permalink ) ) ? $post->permalink : '#';
 }
 
 function the_title() {

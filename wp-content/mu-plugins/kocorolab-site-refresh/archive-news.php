@@ -10,7 +10,7 @@ $lang = kocorolab_refresh_lang();
 				<?php while ( have_posts() ) : the_post(); ?>
 					<li>
 						<time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?></time>
-						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						<a href="<?php echo esc_url( kocorolab_refresh_news_permalink() ); ?>"><?php the_title(); ?></a>
 					</li>
 				<?php endwhile; ?>
 			</ul>

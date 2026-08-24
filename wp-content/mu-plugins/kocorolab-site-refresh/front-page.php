@@ -36,7 +36,7 @@ if ( function_exists( 'get_posts' ) ) {
 				<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
 				<p class="kl-actions">
 					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
-					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/en/news/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
+					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
 				</p>
 				<ul class="kl-creds">
 					<li><?php kocorolab_refresh_e( 'cred1' ); ?></li>
@@ -133,7 +133,7 @@ if ( function_exists( 'get_posts' ) ) {
 						<?php foreach ( $news_posts as $post ) : setup_postdata( $post ); ?>
 							<li>
 								<time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?></time>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<a href="<?php echo esc_url( kocorolab_refresh_news_permalink() ); ?>"><?php the_title(); ?></a>
 							</li>
 						<?php endforeach; wp_reset_postdata(); ?>
 					</ul>
@@ -141,7 +141,7 @@ if ( function_exists( 'get_posts' ) ) {
 					<p><?php kocorolab_refresh_e( 'news_empty' ); ?></p>
 				<?php endif; ?>
 				<p class="kl-actions">
-					<a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/en/news/' ) ); ?>"><?php kocorolab_refresh_e( 'news_link' ); ?></a>
+					<a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'news_link' ); ?></a>
 				</p>
 			</div>
 		</section>
