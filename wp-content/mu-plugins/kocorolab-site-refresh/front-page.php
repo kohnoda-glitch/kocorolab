@@ -1,10 +1,6 @@
 <?php
 get_header();
-$lang      = kocorolab_refresh_lang();
-$hero      = kocorolab_refresh_image_url( 'hero' );
-$spirit    = kocorolab_refresh_image_url( 'spirit' );
-$society   = kocorolab_refresh_image_url( 'society' );
-$environment = kocorolab_refresh_image_url( 'environment' );
+$lang = kocorolab_refresh_lang();
 
 $news_posts = array();
 if ( function_exists( 'get_posts' ) ) {
@@ -21,36 +17,31 @@ if ( function_exists( 'get_posts' ) ) {
 ?>
 <div id="edit-area" class="mt0 kl-home-wrap">
 	<main class="kl-home" lang="<?php echo esc_attr( $lang ); ?>">
-		<section class="kl-hero" style="--kl-hero-image: url('<?php echo esc_url( $hero ); ?>');">
-			<div class="kl-hero-inner">
-				<p class="kl-kicker"><?php kocorolab_refresh_e( 'hero_kicker' ); ?></p>
-				<h1><?php kocorolab_refresh_e( 'hero_title' ); ?></h1>
-				<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
-				<p class="kl-actions">
-					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
-					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/en/news/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
-				</p>
-			</div>
+		<section class="kl-hero">
+			<p class="kl-kicker"><?php kocorolab_refresh_e( 'hero_kicker' ); ?></p>
+			<h1><?php kocorolab_refresh_e( 'hero_title' ); ?></h1>
+			<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
+			<p class="kl-actions">
+				<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
+				<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/en/news/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
+			</p>
 		</section>
 
-		<section class="kl-section kl-world">
+		<section class="kl-section">
 			<h2><?php kocorolab_refresh_e( 'section_world' ); ?></h2>
 			<p class="kl-lead"><?php kocorolab_refresh_e( 'world_lead' ); ?></p>
-			<div class="kl-domains">
-				<article class="kl-domain">
-					<figure class="kl-domain-photo"><img src="<?php echo esc_url( $spirit ); ?>" alt=""></figure>
+			<div class="kl-cards">
+				<article class="kl-card">
 					<p class="kl-kicker"><?php kocorolab_refresh_e( 'domain1_kicker' ); ?></p>
 					<h3><?php kocorolab_refresh_e( 'domain1_title' ); ?></h3>
 					<p><?php kocorolab_refresh_e( 'domain1_body' ); ?></p>
 				</article>
-				<article class="kl-domain">
-					<figure class="kl-domain-photo"><img src="<?php echo esc_url( $society ); ?>" alt=""></figure>
+				<article class="kl-card">
 					<p class="kl-kicker"><?php kocorolab_refresh_e( 'domain2_kicker' ); ?></p>
 					<h3><?php kocorolab_refresh_e( 'domain2_title' ); ?></h3>
 					<p><?php kocorolab_refresh_e( 'domain2_body' ); ?></p>
 				</article>
-				<article class="kl-domain">
-					<figure class="kl-domain-photo"><img src="<?php echo esc_url( $environment ); ?>" alt=""></figure>
+				<article class="kl-card">
 					<p class="kl-kicker"><?php kocorolab_refresh_e( 'domain3_kicker' ); ?></p>
 					<h3><?php kocorolab_refresh_e( 'domain3_title' ); ?></h3>
 					<p><?php kocorolab_refresh_e( 'domain3_body' ); ?></p>

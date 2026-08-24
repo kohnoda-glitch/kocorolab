@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
- * Description: Photo-led JA/EN home. Replace images later via Customizer or by swapping files in uploads/kocorolab-refresh/.
- * Version: 1.1.0
+ * Description: Paper-and-ink JA/EN overlay. Photos can be added later via Customizer if wanted.
+ * Version: 1.2.0
  * Author: Kohei Noda
  */
 

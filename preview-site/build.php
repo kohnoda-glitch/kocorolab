@@ -224,17 +224,16 @@ require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php';
 
 function kocorolab_preview_extra_css() {
 	return <<<'CSS'
-body.kcl-preview{margin:0;background:#eef4f6;}
-.kcl-banner{margin:0;padding:8px 22px;background:#12324a;color:#fff;font-size:12px;letter-spacing:.04em;line-height:1.5}
-.kcl-banner a{color:#9ee6d2}
-.kcl-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.85rem 1.4rem;background:#0c262f;color:#fff;position:sticky;top:0;z-index:20}
-.kcl-bar a{color:#e8f4f2;text-decoration:none;font-size:.88rem}
+body.kcl-preview{margin:0;background:#f4f1ea;}
+.kcl-banner{margin:0;padding:8px 22px;background:#1b1713;color:#f7f3ec;font-size:12px;letter-spacing:.04em;line-height:1.5}
+.kcl-banner a{color:#e8c4b0}
+.kcl-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.85rem 1.4rem;background:#f4f1ea;color:#241f1a;position:sticky;top:0;z-index:20;border-bottom:1px solid #ddd4c6}
+.kcl-bar a{color:#3a332c;text-decoration:none;font-size:.88rem}
 .kcl-bar nav{display:flex;flex-wrap:wrap;gap:.55rem 1rem;align-items:center}
-.kcl-bar a.is-current{color:#fff;box-shadow:inset 0 -2px 0 #7ee0c6}
-.kcl-logo{font-weight:700;letter-spacing:.08em;color:#fff !important}
-.kcl-lang{padding:.2rem .7rem;border:1px solid rgba(255,255,255,.45);border-radius:999px}
-.kcl-foot{padding:2.5rem 1.4rem 3rem;color:#5b7a80;font-size:.88rem;text-align:center}
-.kl-page h1{margin:0 0 1.2rem;font-size:clamp(1.6rem,3vw,2.1rem);color:#12343c;font-weight:700;letter-spacing:.03em}
+.kcl-bar a.is-current{color:#1b1713;box-shadow:inset 0 -2px 0 #c45c2a}
+.kcl-logo{font-weight:700;letter-spacing:.08em;color:#1b1713 !important}
+.kcl-lang{padding:.2rem .7rem;border:1px solid #243f3c;border-radius:999px;color:#243f3c !important}
+.kcl-foot{padding:2.5rem 1.4rem 3rem;color:#6a5f52;font-size:.88rem;text-align:center}
 CSS;
 }
 
@@ -243,8 +242,8 @@ function kocorolab_preview_wrap( $lang, $title, $body, $is_home = false ) {
 	$css = file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' );
 	$cls = $is_home ? 'kl-refresh kl-refresh-home kcl-preview' : 'kl-refresh kl-refresh-page kcl-preview';
 	$banner = $en
-		? 'Static preview · English — the live site (kocorolab.com) has not changed yet. Switch language at top right.'
-		: '静的プレビュー · 日本語 — 本番サイト（kocorolab.com）はまだ変わっていません。右上から English に切り替えできます。';
+		? 'Paper-and-ink preview · English — the live site (kocorolab.com) has not changed yet. Switch language at top right.'
+		: '紙と墨のプレビュー · 日本語 — 本番サイト（kocorolab.com）はまだ変わっていません。右上から English に切り替えできます。';
 	$html  = '<!DOCTYPE html><html lang="' . ( $en ? 'en' : 'ja' ) . '"><head><meta charset="utf-8">';
 	$html .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	$html .= '<title>' . esc_html( $title ) . '</title>';
