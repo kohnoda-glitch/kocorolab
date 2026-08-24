@@ -60,6 +60,7 @@ $checks = array(
 	'placeholder images present' => $img_ok,
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
 	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'mhqlp', 'ja' ),
+	'shows site wrap instead of loader' => false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), 'body.kl-refresh #site_wrap' ),
 );
 
 foreach ( $forbidden as $word ) {

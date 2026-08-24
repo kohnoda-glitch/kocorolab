@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.4.0
+ * Version: 1.4.1
  * Author: Kohei Noda
  */
 
@@ -130,6 +130,14 @@ add_filter(
 );
 
 add_action(
+	'wp_head',
+	function () {
+		echo '<style id="kocorolab-refresh-critical">body.kl-refresh #site_wrap{display:block!important}body.kl-refresh #site_loader_overlay,body.kl-refresh #site_loader_spinner{display:none!important}</style>' . "\n";
+	},
+	0
+);
+
+add_action(
 	'wp_enqueue_scripts',
 	function () {
 		if ( is_front_page() ) {
@@ -141,10 +149,16 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.4.0' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.4.1' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
+
+		wp_add_inline_script(
+			'jquery-core',
+			'if(window.jQuery&&!jQuery.fn.fullpage){jQuery.fn.fullpage=function(){return this;};}',
+			'after'
+		);
 	},
 	20
 );

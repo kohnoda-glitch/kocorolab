@@ -1,5 +1,9 @@
 /* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
 
+body.kl-refresh #site_wrap {
+  display: block !important;
+}
+
 body.kl-refresh #fullpage,
 body.kl-refresh #fp-nav,
 body.kl-refresh #header,
@@ -8,6 +12,7 @@ body.kl-refresh #footer,
 body.kl-refresh #footer_widget,
 body.kl-refresh #side_col,
 body.kl-refresh #site_loader_overlay,
+body.kl-refresh #site_loader_spinner,
 body.kl-refresh .breadcrumb {
   display: none !important;
 }
