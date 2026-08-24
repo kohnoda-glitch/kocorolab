@@ -19,7 +19,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)',
 		),
 		'2020' => array(
-			'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>',
+			'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>（<a href="https://www.youtube.com/@hiramotoakio">チャンネル</a>）',
 		),
 		'2018' => array(
 			'吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館',
@@ -51,7 +51,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'野田浩平 (2011) 世代間の「価値観」の相違を互いに認め合う ～これからの企業の人材育成課題を探る～, Neue Fahne Journal No. 20.',
 			'野田浩平, 児玉義徳 (2011) 日本の起業家の特性及び背景要因の研究, 人材育成学会第9回大会予稿集',
 			'野田浩平 (2011) うつ病の増加を止め、絆を取り戻す社会への変化のきっかけ, 東京工業大学大学院社会理工学研究科価値システム専攻15周年記念論考 re-boot 0311→1130 VALDES OPINIONS.',
-			'野田浩平, 宮越大樹, 五十嵐久美子, 平本明武 (2011) 気付きを生み，動機付けを高めるシミュレーション方法の開発, 日本認知科学会第28回大会予稿集',
+			'野田浩平, 宮越大樹, 五十嵐久美子, 平本明武 (2011) 気付きを生み，動機付けを高めるシミュレーション方法の開発, 日本認知科学会第28回大会予稿集. <a href="https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf">PDF</a>',
 		),
 		'2010' => array(
 			'Noda K. and Agullo, B. (2010) Simulating Corporate Organizational Performance at the Cognitive Modeling/Architecture Level, Proceeding of the 32nd Annual Meeting of Cognitive Science Society.',
@@ -115,7 +115,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era',
 		),
 		'2020' => array(
-			'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a>',
+			'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)',
 		),
 		'2018' => array(
 			'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan',
@@ -144,7 +144,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2011' => array(
 			'Noda, K., and Kodama, Y. (2011) Research on the Special Characteristics and Background Elements of Japanese Entrepreneurs, Proceedings of the 9th annual meeting of Japanese Academy of Human Resource Development.',
-			'Noda, K., Miyakoshi, D., Igarashi, K., and Hiramoto (2011) The development of the mental simulation methodology which enhances mindfulness and motivation, Proceedings of the 28th annual meeting of Japanese Cognitive Science Society.',
+			'Noda, K., Miyakoshi, D., Igarashi, K., and Hiramoto (2011) The development of the mental simulation methodology which enhances mindfulness and motivation, Proceedings of the 28th annual meeting of Japanese Cognitive Science Society. <a href="https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf">PDF</a>',
 		),
 		'2010' => array(
 			'Noda K. and Agullo, B. (2010) Simulating Corporate Organizational Performance at the Cognitive Modeling/Architecture Level, Proceeding of the 32nd Annual Meeting of Cognitive Science Society.',

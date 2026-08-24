@@ -108,10 +108,10 @@ if ( function_exists( 'get_posts' ) ) {
 						<h3><?php kocorolab_refresh_e( 'card1_title' ); ?></h3>
 						<p><?php kocorolab_refresh_e( 'card1_body' ); ?></p>
 					</article>
-					<article class="kl-soft-card">
+					<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url() ); ?>">
 						<h3><?php kocorolab_refresh_e( 'card2_title' ); ?></h3>
 						<p><?php kocorolab_refresh_e( 'card2_body' ); ?></p>
-					</article>
+					</a>
 					<article class="kl-soft-card">
 						<h3><?php kocorolab_refresh_e( 'card3_title' ); ?></h3>
 						<p><?php kocorolab_refresh_e( 'card3_body' ); ?></p>

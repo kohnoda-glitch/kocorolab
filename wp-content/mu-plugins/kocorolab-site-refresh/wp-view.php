@@ -33,11 +33,18 @@ if ( is_front_page() ) {
 	include __DIR__ . '/single-news.php';
 } else {
 	echo '<main>';
+	$lp = function_exists( 'is_page' ) && is_page( array( 'mhqlp', 'mhq' ) );
+	if ( $lp ) {
+		echo '<div class="kl-page kl-mhq-lp">';
+	}
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
 			the_content();
 		}
+	}
+	if ( $lp ) {
+		echo '</div>';
 	}
 	echo '</main>';
 }

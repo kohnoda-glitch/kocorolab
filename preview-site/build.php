@@ -92,8 +92,8 @@ function home_url( $path = '/' ) {
 		}
 		return $file;
 	}
-	if ( $path === '/mhqlp/' ) {
-		return 'https://kocorolab.com/mhqlp/';
+	if ( 0 === strpos( $path, '/mhqlp/' ) ) {
+		return 'https://kocorolab.com/mhqlp/' . ( false !== strpos( $path, 'lang=en' ) ? '?lang=en' : '' );
 	}
 	return 'https://kocorolab.com' . $path;
 }
@@ -102,9 +102,12 @@ function kocorolab_refresh_lang() {
 	return ( $GLOBALS['KOCORO_PREVIEW_LANG'] === 'en' ) ? 'en' : 'ja';
 }
 
-function kocorolab_refresh_url( $ja_path, $en_path = null ) {
+function kocorolab_refresh_url( $ja_path, $en_path = null, $lang = null ) {
 	$en_path = ( null === $en_path ) ? $ja_path : $en_path;
-	$path    = ( 'en' === kocorolab_refresh_lang() ) ? $en_path : $ja_path;
+	if ( null === $lang ) {
+		$lang = kocorolab_refresh_lang();
+	}
+	$path = ( 'en' === $lang ) ? $en_path : $ja_path;
 	return home_url( $path );
 }
 
@@ -182,6 +185,7 @@ function get_footer() {
 
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/publications.php';
+require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/links.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/chrome.php';
 
 function kocorolab_preview_extra_css() {

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.4.3
+ * Version: 1.4.4
  * Author: Kohei Noda
  */
 
@@ -14,6 +14,7 @@ define( 'KOCOROLAB_REFRESH_DIR', __DIR__ . '/kocorolab-site-refresh' );
 
 require_once KOCOROLAB_REFRESH_DIR . '/copy.php';
 require_once KOCOROLAB_REFRESH_DIR . '/publications.php';
+require_once KOCOROLAB_REFRESH_DIR . '/links.php';
 require_once KOCOROLAB_REFRESH_DIR . '/chrome.php';
 
 function kocorolab_refresh_lang() {
@@ -211,7 +212,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.4.3' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.4.4' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
@@ -231,11 +232,7 @@ add_filter(
 		if ( is_admin() ) {
 			return $content;
 		}
-		$content = kocorolab_refresh_ml_text( $content );
-		if ( function_exists( 'make_clickable' ) ) {
-			$content = make_clickable( $content );
-		}
-		return $content;
+		return kocorolab_refresh_public_text( $content );
 	},
 	1
 );
@@ -246,11 +243,7 @@ add_filter(
 		if ( is_admin() ) {
 			return $content;
 		}
-		$content = kocorolab_refresh_ml_text( $content );
-		if ( function_exists( 'make_clickable' ) ) {
-			$content = make_clickable( $content );
-		}
-		return $content;
+		return kocorolab_refresh_public_text( $content );
 	},
 	101
 );
@@ -277,8 +270,8 @@ add_filter(
 	101
 );
 
-add_filter( 'the_excerpt', 'kocorolab_refresh_ml_text', 1 );
-add_filter( 'the_excerpt', 'kocorolab_refresh_ml_text', 101 );
+add_filter( 'the_excerpt', 'kocorolab_refresh_public_text', 1 );
+add_filter( 'the_excerpt', 'kocorolab_refresh_public_text', 101 );
 add_filter( 'widget_text', 'kocorolab_refresh_ml_text', 1 );
 add_filter( 'term_description', 'kocorolab_refresh_ml_text', 1 );
 

@@ -35,8 +35,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'work_lead'      => '細かい下層ページは増やしません。必要なものは、この一枚と新着にまとめます。',
 		'card1_title'    => 'リーダーシップ教育',
 		'card1_body'     => 'グロービス経営大学院と MIT Sloan IDEAS Asia Pacific での教育・研究。U理論などを用いた学び。',
-		'card2_title'    => 'メンタルヘルス（MHQ）',
-		'card2_body'     => 'MHQ と EQ 検査。採用や人材育成に使えます。詳しい案内や更新は新着へ載せます。',
+		'card2_title'    => 'メンタルヘルス（MHQ2）',
+		'card2_body'     => '現在の検査案内は MHQ2 です。採用や人材育成に使えます。詳細と申し込みは案内ページへ。',
 		'card3_title'    => '人事・組織支援',
 		'card3_body'     => '人事制度、研修、コーチング、調査研究。',
 		'work_link'      => 'サービスを見る',
@@ -62,11 +62,12 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'company_p_h'    => '代表',
 		'overview_h'     => '概要',
 		'service_h2'     => 'サービス',
-		'service_lead'   => 'サービスはこのページにまとめています。IDEAS のブローシャーや MHQ の案内など、そのときどきの資料は活動・新着へ。',
+		'service_lead'   => 'サービスはこのページにまとめています。MHQ2 の案内ページと、IDEAS などの資料はそこから辿れます。',
 		'svc1_h'         => 'リーダーシップ開発',
 		'svc1_b'         => 'U理論などを用いた次世代リーダーシップ開発、組織開発、学びの設計。',
-		'svc2_h'         => 'メンタルヘルス検査（MHQ）',
-		'svc2_b'         => 'うつリスクなどの傾向を把握するための MHQ、および EQ 検査。採用、社内確認、人材育成に使えます。診断の確定を目的としたものではありません。更新情報は新着に載せます。',
+		'svc2_h'         => 'メンタルヘルス検査（MHQ2）',
+		'svc2_b'         => 'うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。採用、社内確認、人材育成に使えます。診断の確定を目的としたものではありません。詳細と申し込みは既存の案内ページを使います。',
+		'svc2_link'      => 'MHQ2の案内ページへ',
 		'svc3_h'         => '人事コンサルティング・コーチング',
 		'svc3_b'         => '人事制度、研修、コーチング。事業会社の人事責任者としての実務を踏まえて支援します。',
 		'svc4_h'         => '学術研究・統計',
@@ -122,8 +123,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'work_lead'      => 'We keep this to one page. Updates and brochures go to News & activities.',
 		'card1_title'    => 'Leadership education',
 		'card1_body'     => 'Teaching and research at GLOBIS University and MIT Sloan IDEAS Asia Pacific, including Theory U.',
-		'card2_title'    => 'Mental health (MHQ)',
-		'card2_body'     => 'MHQ and EQ assessments for hiring and development. Notes and updates are posted as news.',
+		'card2_title'    => 'Mental health (MHQ2)',
+		'card2_body'     => 'The current questionnaire is MHQ2. Use it for hiring and development. Details and application are on the landing page.',
 		'card3_title'    => 'HR and organization support',
 		'card3_body'     => 'HR systems, training, coaching, and research.',
 		'work_link'      => 'View services',
@@ -149,11 +150,12 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'company_p_h'    => 'Founder',
 		'overview_h'     => 'Overview',
 		'service_h2'     => 'Services',
-		'service_lead'   => 'Everything sits on this one page. Brochures and updates — IDEAS, MHQ, and the like — go to News & activities.',
+		'service_lead'   => 'Everything sits on this one page. The MHQ2 landing page, and occasional materials such as IDEAS, are linked from here.',
 		'svc1_h'         => 'Leadership development',
 		'svc1_b'         => 'Next-generation leadership, organization development, and learning design, including Theory U.',
-		'svc2_h'         => 'Mental health questionnaire (MHQ)',
-		'svc2_b'         => 'MHQ and EQ assessments for hiring, internal review, and development. MHQ is for risk tendencies, not a clinical diagnosis. Updates are posted as news.',
+		'svc2_h'         => 'Mental health questionnaire (MHQ2)',
+		'svc2_b'         => 'MHQ2 and EQ assessments for hiring, internal review, and development. MHQ2 is for risk tendencies, not a clinical diagnosis. Details and application stay on the existing landing page.',
+		'svc2_link'      => 'Open the MHQ2 landing page',
 		'svc3_h'         => 'HR consulting and coaching',
 		'svc3_b'         => 'HR systems, training, and coaching, informed by work as head of HR in operating companies.',
 		'svc4_h'         => 'Research and statistics',
@@ -265,6 +267,7 @@ function kocorolab_refresh_service_html( $c, $lang ) {
 		<p><?php echo esc_html( $c['svc1_b'] ); ?></p>
 		<h2><?php echo esc_html( $c['svc2_h'] ); ?></h2>
 		<p><?php echo esc_html( $c['svc2_b'] ); ?></p>
+		<p><a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a></p>
 		<h2><?php echo esc_html( $c['svc3_h'] ); ?></h2>
 		<p><?php echo esc_html( $c['svc3_b'] ); ?></p>
 		<h2><?php echo esc_html( $c['svc4_h'] ); ?></h2>
@@ -300,8 +303,9 @@ function kocorolab_refresh_contact_intro_html( $c, $lang ) {
 	?>
 	<div class="kl-page">
 		<p class="kl-lead"><?php echo $en
-			? 'For MHQ, leadership education, HR support, talks, or research, use the form below or email info@kocorolab.com.'
-			: 'メンタルヘルス検査（MHQ）、リーダーシップ教育、人事支援、講演、研究に関するご相談は、下のフォームまたは info@kocorolab.com へ。'; ?></p>
+			? 'For MHQ2, leadership education, HR support, talks, or research, use the form below or email info@kocorolab.com.'
+			: 'メンタルヘルス検査（MHQ2）、リーダーシップ教育、人事支援、講演、研究に関するご相談は、下のフォームまたは info@kocorolab.com へ。'; ?></p>
+		<p><a href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo $en ? 'MHQ2 landing page' : 'MHQ2の案内ページ'; ?></a></p>
 	</div>
 	<?php
 	return ob_get_clean();
