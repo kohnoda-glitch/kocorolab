@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
- * Description: Paper-and-ink JA/EN overlay. Photos can be added later via Customizer if wanted.
- * Version: 1.2.0
+ * Description: Wide bilingual landing overlay with placeholder nature photos.
+ * Version: 1.3.0
  * Author: Kohei Noda
  */
 
@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) && php_sapi_name() !== 'cli' ) {
 define( 'KOCOROLAB_REFRESH_DIR', __DIR__ . '/kocorolab-site-refresh' );
 
 require_once KOCOROLAB_REFRESH_DIR . '/copy.php';
+require_once KOCOROLAB_REFRESH_DIR . '/chrome.php';
 
 function kocorolab_refresh_lang() {
 	if ( isset( $_GET['lang'] ) && 0 === strpos( sanitize_text_field( wp_unslash( $_GET['lang'] ) ), 'en' ) ) {

@@ -60,6 +60,7 @@ function kocorolab_preview_lang_href() {
 function home_url( $path = '/' ) {
 	$map = array(
 		'/'                  => 'home',
+		'/en/'               => 'home',
 		'/service/'          => 'service',
 		'/en/service/'       => 'service',
 		'/news/'             => 'news',
@@ -167,73 +168,21 @@ function the_title() {
 	echo esc_html( $post ? $post->post_title : '' );
 }
 
-function kocorolab_preview_nav() {
-	$en      = ( 'en' === kocorolab_refresh_lang() );
-	$current = $GLOBALS['KOCORO_PREVIEW_PAGE'];
-	$brand   = $en ? 'Kocoro Lab' : 'ココロラボ';
-	$switch  = $en ? '日本語' : 'English';
-	$items   = $en
-		? array(
-			array( 'home', 'Home' ),
-			array( 'service', 'Services' ),
-			array( 'news', 'Updates' ),
-			array( 'hakkou', 'Publications' ),
-			array( 'company', 'Company' ),
-			array( 'contact', 'Contact' ),
-		)
-		: array(
-			array( 'home', 'ホーム' ),
-			array( 'service', 'サービス' ),
-			array( 'news', '活動・新着' ),
-			array( 'hakkou', '発表文献' ),
-			array( 'company', '会社概要' ),
-			array( 'contact', 'お問い合わせ' ),
-		);
-
-	ob_start();
-	?>
-<header class="kcl-bar">
-  <a class="kcl-logo" href="<?php echo esc_attr( kocorolab_preview_href( 'home' ) ); ?>"><?php echo esc_html( $brand ); ?></a>
-  <nav>
-    <?php foreach ( $items as $item ) :
-		$cls = ( $current === $item[0] ) ? ' class="is-current"' : '';
-		?>
-    <a href="<?php echo esc_attr( kocorolab_preview_href( $item[0] ) ); ?>"<?php echo $cls; ?>><?php echo esc_html( $item[1] ); ?></a>
-    <?php endforeach; ?>
-    <a class="kcl-lang" href="<?php echo esc_attr( kocorolab_preview_lang_href() ); ?>"><?php echo esc_html( $switch ); ?></a>
-  </nav>
-</header>
-	<?php
-	return ob_get_clean();
-}
-
 function get_header() {
-	echo kocorolab_preview_nav();
 }
 
 function get_footer() {
-	$en = ( 'en' === kocorolab_refresh_lang() );
-	echo '<footer class="kcl-foot"><p>';
-	echo $en
-		? 'A laboratory for inner, social, and environmental transition.'
-		: '精神・社会・環境のトランジションを扱う小さな研究所。';
-	echo '</p><p>© 株式会社ココロラボ / Kocoro Laboratory, Inc.</p></footer>';
 }
 
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php';
+require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/chrome.php';
 
 function kocorolab_preview_extra_css() {
 	return <<<'CSS'
-body.kcl-preview{margin:0;background:#f4f1ea;}
-.kcl-banner{margin:0;padding:8px 22px;background:#1b1713;color:#f7f3ec;font-size:12px;letter-spacing:.04em;line-height:1.5}
-.kcl-banner a{color:#e8c4b0}
-.kcl-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.85rem 1.4rem;background:#f4f1ea;color:#241f1a;position:sticky;top:0;z-index:20;border-bottom:1px solid #ddd4c6}
-.kcl-bar a{color:#3a332c;text-decoration:none;font-size:.88rem}
-.kcl-bar nav{display:flex;flex-wrap:wrap;gap:.55rem 1rem;align-items:center}
-.kcl-bar a.is-current{color:#1b1713;box-shadow:inset 0 -2px 0 #c45c2a}
-.kcl-logo{font-weight:700;letter-spacing:.08em;color:#1b1713 !important}
-.kcl-lang{padding:.2rem .7rem;border:1px solid #243f3c;border-radius:999px;color:#243f3c !important}
-.kcl-foot{padding:2.5rem 1.4rem 3rem;color:#6a5f52;font-size:.88rem;text-align:center}
+body.kcl-preview{margin:0;background:#f5f8fa;}
+.kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
+.kcl-banner a{color:#7ee0d2}
+.kl-page{padding-top:2rem}
 CSS;
 }
 
@@ -242,8 +191,8 @@ function kocorolab_preview_wrap( $lang, $title, $body, $is_home = false ) {
 	$css = file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' );
 	$cls = $is_home ? 'kl-refresh kl-refresh-home kcl-preview' : 'kl-refresh kl-refresh-page kcl-preview';
 	$banner = $en
-		? 'Paper-and-ink preview · English — the live site (kocorolab.com) has not changed yet. Switch language at top right.'
-		: '紙と墨のプレビュー · 日本語 — 本番サイト（kocorolab.com）はまだ変わっていません。右上から English に切り替えできます。';
+		? 'Wide landing preview · English — placeholder nature photos. The live site has not changed yet.'
+		: 'ワイドなランディングのプレビュー · 日本語 — 自然の写真は仮です。本番サイトはまだ変わっていません。';
 	$html  = '<!DOCTYPE html><html lang="' . ( $en ? 'en' : 'ja' ) . '"><head><meta charset="utf-8">';
 	$html .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	$html .= '<title>' . esc_html( $title ) . '</title>';
@@ -299,9 +248,9 @@ function kocorolab_preview_render_inner( $lang, $title, $content_html ) {
 		$content_html = '<div class="kl-page"><h1>' . esc_html( $title ) . '</h1>' . $content_html . '</div>';
 	}
 	ob_start();
-	get_header();
+	kocorolab_refresh_site_header();
 	echo $content_html;
-	get_footer();
+	kocorolab_refresh_site_footer();
 	$body = ob_get_clean();
 	$full_title = $title . ( $lang === 'en' ? ' | Kocoro Lab' : ' | ココロラボ' );
 	return kocorolab_preview_wrap( $lang, $full_title, $body, false );
