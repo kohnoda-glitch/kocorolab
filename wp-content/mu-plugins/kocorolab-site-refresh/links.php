@@ -1,7 +1,7 @@
 <?php
 /**
  * Repair dead external URLs in news (Wayback / still-live mirrors)
- * and restore missing YouTube / report links.
+ * and restore missing YouTube / report links on the page itself.
  */
 
 function kocorolab_refresh_mhq_lp_url( $lang = null ) {
@@ -10,6 +10,81 @@ function kocorolab_refresh_mhq_lp_url( $lang = null ) {
 	}
 	$lang = $lang ? $lang : 'ja';
 	return kocorolab_refresh_url( '/mhqlp/', '/mhqlp/?lang=en', $lang );
+}
+
+function kocorolab_refresh_source_catalog() {
+	return array(
+		array(
+			'keys'  => array( 'フィリピンの貧困', '平本', 'poverty and happiness', 'Hiramoto', '5acopoZcYfw' ),
+			'links' => array(
+				array(
+					'url' => 'https://www.youtube.com/watch?v=5acopoZcYfw',
+					'ja'  => 'YouTube動画（平本あきおチャンネル）',
+					'en'  => 'YouTube video (Hiramoto Akio Channel)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'amd.tokyo', 'Learning Journey 2018', 'sdgs-learning-journey-2018', '2018報告' ),
+			'links' => array(
+				array(
+					'url' => 'https://web.archive.org/web/20240809025928/https://amd.tokyo/project/3228',
+					'ja'  => 'AMD報告ページ（保存版）',
+					'en'  => 'AMD report (archived copy)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'kenkoxkoufukutalk', '健康×幸福', '健康x幸福', 'health and happiness' ),
+			'links' => array(
+				array(
+					'url' => 'https://web.archive.org/web/20201128083739/https://peraichi.com/landing_pages/view/kenkoxkoufukutalk',
+					'ja'  => '健康×幸福トーク案内（保存版）',
+					'en'  => 'Health × happiness talk (archived copy)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'learningjourney2019', 'Learning Journey 2020', 'sdgs-learning-journey-2020' ),
+			'links' => array(
+				array(
+					'url' => 'https://web.archive.org/web/20210513000519/https://peraichi.com/landing_pages/view/learningjourney2019',
+					'ja'  => 'SDGs Learning Journey 2020案内（保存版）',
+					'en'  => 'SDGs Learning Journey 2020 (archived copy)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'hrm-service', 'article120', 'コロナ禍でのストレス', 'stress during COVID' ),
+			'links' => array(
+				array(
+					'url' => 'https://web.archive.org/web/20230325203317/https://www.hrm-service.net/column/article120/',
+					'ja'  => '寄稿本文（保存版）',
+					'en'  => 'COVID stress article (archived copy)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'jinjibu', 'MHQ1', 'バージョン１発売', 'version 1 press' ),
+			'links' => array(
+				array(
+					'url' => 'https://service.jinjibu.jp/news/detl/3238/',
+					'ja'  => 'MHQ1発売のプレスリリース',
+					'en'  => 'MHQ version 1 press release',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'atpress', 'GBX', 'Global Business eXperience' ),
+			'links' => array(
+				array(
+					'url' => 'https://www.atpress.ne.jp/news/37250',
+					'ja'  => 'GBXのレポート',
+					'en'  => 'GBX report',
+				),
+			),
+		),
+	);
 }
 
 function kocorolab_refresh_remap_url( $url ) {
@@ -50,6 +125,57 @@ function kocorolab_refresh_remap_url( $url ) {
 	return null;
 }
 
+function kocorolab_refresh_related_links_for( $haystack, $lang = 'ja' ) {
+	$en  = ( 'en' === $lang );
+	$hay = (string) $haystack;
+	$out = array();
+	foreach ( kocorolab_refresh_source_catalog() as $row ) {
+		$hit = false;
+		foreach ( $row['keys'] as $key ) {
+			$found = function_exists( 'mb_stripos' ) ? mb_stripos( $hay, $key ) : stripos( $hay, $key );
+			if ( false !== $found ) {
+				$hit = true;
+				break;
+			}
+		}
+		if ( ! $hit ) {
+			continue;
+		}
+		foreach ( $row['links'] as $link ) {
+			$out[] = array(
+				'url'   => $link['url'],
+				'label' => $en ? $link['en'] : $link['ja'],
+			);
+		}
+	}
+	return $out;
+}
+
+function kocorolab_refresh_related_links_html( $haystack, $lang = 'ja' ) {
+	$links = kocorolab_refresh_related_links_for( $haystack, $lang );
+	if ( ! $links ) {
+		return '';
+	}
+	$heading = ( 'en' === $lang ) ? 'Links' : '関連リンク';
+	$html    = '<div class="kl-related-links"><p class="kl-related-kicker">' . esc_html( $heading ) . '</p><ul>';
+	foreach ( $links as $link ) {
+		$html .= '<li><a href="' . esc_url( $link['url'] ) . '">' . esc_html( $link['label'] ) . '</a></li>';
+	}
+	$html .= '</ul></div>';
+	return $html;
+}
+
+function kocorolab_refresh_current_news_haystack( $content = '' ) {
+	$hay = (string) $content;
+	if ( function_exists( 'get_post' ) ) {
+		$post = get_post();
+		if ( $post ) {
+			$hay .= ' ' . $post->post_title . ' ' . $post->post_name . ' ' . $post->post_content;
+		}
+	}
+	return $hay;
+}
+
 function kocorolab_refresh_repair_external_links( $content, $lang = null ) {
 	if ( ! is_string( $content ) || '' === $content ) {
 		return $content;
@@ -59,21 +185,39 @@ function kocorolab_refresh_repair_external_links( $content, $lang = null ) {
 	}
 	$label = ( 'en' === $lang ) ? 'archived copy' : '保存版';
 
-	return preg_replace_callback(
+	$content = preg_replace_callback(
 		'#<a\s[^>]*href=(["\'])(https?://[^"\']+)\1[^>]*>.*?</a>#is',
 		function ( $m ) use ( $label ) {
 			$mapped = kocorolab_refresh_remap_url( $m[2] );
 			if ( ! $mapped ) {
 				return $m[0];
 			}
-			$target = $mapped[0];
-			$out    = preg_replace(
+			$out = preg_replace(
 				'#href=(["\'])(https?://[^"\']+)\1#i',
-				'href=$1' . $target . '$1',
+				'href=$1' . $mapped[0] . '$1',
 				$m[0],
 				1
 			);
 			if ( 'archive' === $mapped[1] && false === strpos( $out, $label ) && false === strpos( $out, '保存版' ) && false === strpos( $out, 'archived copy' ) ) {
+				$out .= '（' . $label . '）';
+			}
+			return $out;
+		},
+		$content
+	);
+
+	return preg_replace_callback(
+		'#(<a\s[^>]*>.*?</a>)|(https?://[^\s<]+)#is',
+		function ( $m ) use ( $label ) {
+			if ( ! empty( $m[1] ) ) {
+				return $m[1];
+			}
+			$mapped = kocorolab_refresh_remap_url( $m[2] );
+			if ( ! $mapped ) {
+				return $m[0];
+			}
+			$out = '<a href="' . esc_url( $mapped[0] ) . '">' . esc_html( $m[2] ) . '</a>';
+			if ( 'archive' === $mapped[1] ) {
 				$out .= '（' . $label . '）';
 			}
 			return $out;
@@ -89,64 +233,13 @@ function kocorolab_refresh_enrich_news_links( $content, $lang = null, $haystack 
 	if ( null === $lang ) {
 		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
 	}
-	$en  = ( 'en' === $lang );
-	$hay = null !== $haystack ? $haystack : $content;
-	if ( function_exists( 'get_post' ) ) {
-		$post = get_post();
-		if ( $post ) {
-			$hay .= ' ' . $post->post_title . ' ' . $post->post_name;
-		}
+	$hay = null !== $haystack ? $haystack : kocorolab_refresh_current_news_haystack( $content );
+	if ( false !== strpos( $content, 'kl-related-links' ) ) {
+		return $content;
 	}
-
-	$add = array();
-	$has = function ( $needle ) use ( $content ) {
-		return false !== strpos( $content, $needle );
-	};
-
-	if ( preg_match( '/フィリピンの貧困|平本あきお|poverty and happiness|Hiramoto Akio/iu', $hay ) && ! $has( '5acopoZcYfw' ) ) {
-		$add[] = $en
-			? '<p><a href="https://www.youtube.com/watch?v=5acopoZcYfw">YouTube video (Hiramoto Akio Channel)</a></p>'
-			: '<p><a href="https://www.youtube.com/watch?v=5acopoZcYfw">YouTube動画（平本あきおチャンネル）</a></p>';
-	}
-
-	if ( preg_match( '/amd\.tokyo|Learning Journey 2018|sdgs-learning-journey-2018/iu', $hay ) && ! $has( '20240809025928' ) && ! $has( 'amd.tokyo/project/3228' ) ) {
-		$add[] = $en
-			? '<p><a href="https://web.archive.org/web/20240809025928/https://amd.tokyo/project/3228">AMD report (archived copy)</a></p>'
-			: '<p><a href="https://web.archive.org/web/20240809025928/https://amd.tokyo/project/3228">AMDさんの報告ページ（保存版）</a></p>';
-	}
-
-	if ( preg_match( '/kenkoxkoufukutalk|健康.?幸福トーク/u', $hay ) && ! $has( 'kenkoxkoufukutalk' ) && ! $has( '20201128083739' ) ) {
-		$add[] = $en
-			? '<p><a href="https://web.archive.org/web/20201128083739/https://peraichi.com/landing_pages/view/kenkoxkoufukutalk">Health × happiness talk page (archived copy)</a></p>'
-			: '<p><a href="https://web.archive.org/web/20201128083739/https://peraichi.com/landing_pages/view/kenkoxkoufukutalk">健康×幸福トーク案内（保存版）</a></p>';
-	}
-
-	if ( preg_match( '/learningjourney2019|Learning Journey 2020|sdgs-learning-journey-2020/iu', $hay ) && ! $has( 'learningjourney2019' ) && ! $has( '20210513000519' ) ) {
-		$add[] = $en
-			? '<p><a href="https://web.archive.org/web/20210513000519/https://peraichi.com/landing_pages/view/learningjourney2019">SDGs Learning Journey 2020 page (archived copy)</a></p>'
-			: '<p><a href="https://web.archive.org/web/20210513000519/https://peraichi.com/landing_pages/view/learningjourney2019">SDGs Learning Journey 2020案内（保存版）</a></p>';
-	}
-
-	if ( preg_match( '/hrm-service|コロナ禍でのストレス|stress during COVID|article120/iu', $hay ) && ! $has( 'article120' ) && ! $has( '20230325203317' ) ) {
-		$add[] = $en
-			? '<p><a href="https://web.archive.org/web/20230325203317/https://www.hrm-service.net/column/article120/">COVID stress article (archived copy)</a></p>'
-			: '<p><a href="https://web.archive.org/web/20230325203317/https://www.hrm-service.net/column/article120/">寄稿本文（保存版）</a></p>';
-	}
-
-	if ( preg_match( '/MHQ1|バージョン１発売|version 1 press|jinjibu/iu', $hay ) && ! $has( 'jinjibu.jp/news/detl/3238' ) ) {
-		$add[] = $en
-			? '<p><a href="https://service.jinjibu.jp/news/detl/3238/">MHQ version 1 press release</a></p>'
-			: '<p><a href="https://service.jinjibu.jp/news/detl/3238/">MHQ1発売のプレスリリース</a></p>';
-	}
-
-	if ( preg_match( '/GBX|Global Business eXperience|atpress/iu', $hay ) && ! $has( 'atpress.ne.jp/news/37250' ) ) {
-		$add[] = $en
-			? '<p><a href="https://www.atpress.ne.jp/news/37250">GBX report</a></p>'
-			: '<p><a href="https://www.atpress.ne.jp/news/37250">GBXのレポート</a></p>';
-	}
-
-	if ( $add ) {
-		$content .= "\n" . implode( "\n", $add );
+	$box = kocorolab_refresh_related_links_html( $hay, $lang );
+	if ( $box ) {
+		$content .= "\n" . $box;
 	}
 	return $content;
 }

@@ -252,7 +252,10 @@ function kocorolab_refresh_news_html( $lang = 'ja' ) {
 			<?php foreach ( $items as $item ) : ?>
 				<li>
 					<time datetime="<?php echo esc_attr( $item[0] ); ?>"><?php echo esc_html( str_replace( '-', '.', substr( $item[0], 0, 10 ) ) ); ?></time>
-					<span><?php echo esc_html( $item[1] ); ?></span>
+					<div>
+						<span><?php echo esc_html( $item[1] ); ?></span>
+						<?php echo kocorolab_refresh_related_links_html( $item[1], $lang ); ?>
+					</div>
 				</li>
 			<?php endforeach; ?>
 		</ul>

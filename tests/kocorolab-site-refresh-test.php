@@ -12,6 +12,10 @@ function esc_html( $text ) {
 	return htmlspecialchars( (string) $text, ENT_QUOTES, 'UTF-8' );
 }
 
+function esc_attr( $text ) {
+	return htmlspecialchars( (string) $text, ENT_QUOTES, 'UTF-8' );
+}
+
 function esc_url( $url ) {
 	return $url;
 }
@@ -60,7 +64,10 @@ $checks = array(
 	'rewrites AMD link to Wayback' => ( false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://amd.tokyo/project/3228">https://amd.tokyo/project/3228</a>' ), 'web.archive.org/web/20240809025928' ) && false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://amd.tokyo/project/3228">https://amd.tokyo/project/3228</a>' ), '保存版' ) ),
 	'rewrites Peraichi and HR article to Wayback' => ( false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://peraichi.com/landing_pages/view/kenkoxkoufukutalk">x</a>' ), '20201128083739' ) && false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://www.hrm-service.net/column/article120/">x</a>' ), '20230325203317' ) ),
 	'rewrites jinjibu to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://www.jinjibu.jp/news/detl/3238/">x</a>' ), 'service.jinjibu.jp/news/detl/3238' ),
-	'adds Hiramoto YouTube when missing' => false !== strpos( kocorolab_refresh_enrich_news_links( '代表の野田がコーチの平本あきおさんとの対談です。' ), '5acopoZcYfw' ),
+	'adds Hiramoto YouTube when missing' => false !== strpos( kocorolab_refresh_enrich_news_links( '代表の野田がコーチの平本さんとの対談です。' ), '5acopoZcYfw' ),
+	'adds Hiramoto YouTube for 平本さん without あきお' => false !== strpos( kocorolab_refresh_related_links_html( '代表の野田がコーチの平本さんとの対談でフィリピンの幸福度と開発の現状をお話ししました。', 'ja' ), '5acopoZcYfw' ),
+	'wraps bare AMD URL with Wayback' => false !== strpos( kocorolab_refresh_repair_external_links( 'AMDさんの報告ページです。 https://amd.tokyo/project/3228' ), 'web.archive.org/web/20240809025928' ),
+	'news page shows Wayback and YouTube in the list' => ( false !== strpos( kocorolab_refresh_news_html( 'ja' ), '5acopoZcYfw' ) && false !== strpos( kocorolab_refresh_news_html( 'ja' ), '20240809025928' ) && false !== strpos( kocorolab_refresh_news_html( 'ja' ), '20230325203317' ) ),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
 	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) ),
 	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) ),
