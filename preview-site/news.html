@@ -1,12 +1,26 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>活動・新着 | ココロラボ</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
 
-body.kl-refresh-home #fullpage,
-body.kl-refresh-home #fp-nav,
-body.kl-refresh-home #header,
-body.kl-refresh-home #header_top,
-body.kl-refresh-home #footer,
-body.kl-refresh-home #footer_widget {
+body.kl-refresh #fullpage,
+body.kl-refresh #fp-nav,
+body.kl-refresh #header,
+body.kl-refresh #header_top,
+body.kl-refresh #footer,
+body.kl-refresh #footer_widget,
+body.kl-refresh #side_col,
+body.kl-refresh #site_loader_overlay,
+body.kl-refresh .breadcrumb {
   display: none !important;
+}
+
+body.kl-refresh #main_col {
+  width: 100% !important;
+  max-width: none !important;
+  float: none !important;
+  background: #f5f8fa;
+}
+
+body.kl-refresh #main_content {
+  display: block;
 }
 
 body.kl-refresh-home #main_col,
@@ -472,28 +486,41 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><p class="kcl-banner">ワイドなランディングのプレビュー · 日本語 — 自然の写真は仮です。本番サイトはまだ変わっていません。</p><header class="kl-topbar">
-	<a class="kl-brand" href="index.html">
-		<span class="kl-mark" aria-hidden="true">K</span>
-		<span class="kl-brand-text">
-			<strong>Kocoro Laboratory</strong>
-			<small>株式会社ココロラボ</small>
-		</span>
-	</a>
-	<nav class="kl-topnav" aria-label="メイン">
-					<a href="index.html">ホーム</a>
-					<a href="service.html">サービス</a>
-					<a href="news.html" class="is-current">活動・新着</a>
-					<a href="hakkou.html">発表文献</a>
-					<a href="company.html">会社概要</a>
-			</nav>
-	<div class="kl-top-actions">
-		<a class="kl-lang" href="en/news.html">English</a>
-		<a class="kl-cta" href="contact.html">問い合わせ</a>
+.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><p class="kcl-banner">ワイドなランディングのプレビュー · 日本語 — 自然の写真は仮です。本番サイトはまだ変わっていません。</p>	<div class="kl-page"><h1>活動・新着</h1>
+		<p class="kl-lead">IDEAS の案内、MHQ の更新、講演や公開資料など、ときどきのお知らせをここに載せます。日記ブログではありません。</p>
+		<ul class="kl-news-list">
+							<li>
+					<time datetime="2026-03-01">2026.03.01</time>
+					<span>MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。</span>
+				</li>
+							<li>
+					<time datetime="2020-12-06">2020.12.06</time>
+					<span>健康×幸福トーク登壇</span>
+				</li>
+							<li>
+					<time datetime="2020-01-01">2020.01.01</time>
+					<span>フィリピンの貧困と幸福度の現状</span>
+				</li>
+							<li>
+					<time datetime="2020-04-01">2020.04.01</time>
+					<span>コロナ禍でのストレスについての寄稿</span>
+				</li>
+							<li>
+					<time datetime="2020-01-02">2020.01.02</time>
+					<span>SDGs Learning Journey 2020の案内</span>
+				</li>
+							<li>
+					<time datetime="2018-01-01">2018.01.01</time>
+					<span>SDGs Learning Journey 2018報告</span>
+				</li>
+							<li>
+					<time datetime="2013-01-01">2013.01.01</time>
+					<span>GBX(Global Business eXperience)の記事</span>
+				</li>
+							<li>
+					<time datetime="2009-01-01">2009.01.01</time>
+					<span>MHQ(Mental Health 質問票）のバージョン１発売のプレスリリース</span>
+				</li>
+					</ul>
 	</div>
-</header>
-	<div class="kl-page"><h1>活動・新着</h1><p class="kl-lead">日記ブログではなく、仕事の節目だけを置く場所です。IDEAS のパンフレットや、メンタルヘルスケア資格の更新といった、たまにしか起きない動きをここに載せます。</p><ul class="kl-news-list"><li><time datetime="2026-03-01">2026.03.01</time><span>MIT Sloan IDEAS Asia Pacific のパンフレットを公開しました。詳細は本番サイトの活動・新着をご覧ください。</span></li><li><time datetime="2025-09-06">2025.09.06</time><span>日本認知科学会第42回大会で「U理論の認知感情モデル」を発表しました。</span></li><li><time>更新予定</time><span>メンタルヘルスケア資格（MHQ）関連の更新は、独立したサービス下層ではなく、この活動・新着にまとめます。</span></li></ul></div><footer class="kl-sitefoot">
-	<p>精神・社会・環境を扱う小さな研究所。</p>
-	<p>© 株式会社ココロラボ / Kocoro Laboratory, Inc.</p>
-</footer>
 	</body></html>

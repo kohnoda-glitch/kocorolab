@@ -37,6 +37,11 @@ function kocorolab_refresh_lang_switch_url() {
 }
 
 function kocorolab_refresh_site_header() {
+	static $done = false;
+	if ( $done ) {
+		return;
+	}
+	$done = true;
 	$en      = ( 'en' === kocorolab_refresh_lang() );
 	$current = kocorolab_refresh_nav_key();
 	$items   = $en
@@ -79,6 +84,11 @@ function kocorolab_refresh_site_header() {
 }
 
 function kocorolab_refresh_site_footer() {
+	static $done = false;
+	if ( $done ) {
+		return;
+	}
+	$done = true;
 	$en = ( 'en' === kocorolab_refresh_lang() );
 	?>
 <footer class="kl-sitefoot">

@@ -14,8 +14,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'hero_cta1'      => 'サービス',
 		'hero_cta2'      => '活動・新着',
 		'hero_photo_note'=> '写真は仮です。あとから差し替えできます。',
-		'cred1'          => 'MIT Sloan IDEAS Asia Pacific Regional Faculty',
-		'cred2'          => 'グロービス経営大学院 准教授',
+		'cred1'          => 'MIT Sloan IDEAS Asia Pacific research faculty',
+		'cred2'          => 'グロービス経営大学院 教員',
 		'cred3'          => '学術博士（東京工業大学）',
 		'mission_kicker' => 'MISSION',
 		'brand'          => 'Kocoro Laboratory',
@@ -45,11 +45,12 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'news_link'      => '新着一覧',
 		'news_empty'     => '新しい案内は、準備ができ次第ここに出します。',
 		'section_who'    => '代表',
-		'who_body'       => '野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院准教授、MIT Sloan IDEAS Asia Pacific リージョナルファカルティです。',
-		'who_hr'         => '人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。担当した会社はガリバー、イントループ、チェンジです。個別案件や当時の関係者には触れません。',
+		'who_body'       => '野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院教員、MIT Sloan IDEAS Asia Pacific research faculty です。',
+		'who_hr'         => '人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。個別案件や当時の関係者には触れません。',
 		'who_more'       => 'プロフィール',
 		'section_pub'    => '発表文献',
 		'pub_body'       => '日本認知科学会などでの発表を続けています。2025年は「U理論の認知感情モデル」を第42回大会予稿集（pp. 466-469）に掲載しました。',
+		'pub_intro'      => 'ココロラボでは認知科学を基礎に、人間の感情、メンタルヘルス、幸福観、開発教育などについて研究・実践しています。近年はU理論を実践方法論、システム思考を研究方法論に意識的に取り入れ、進めています。',
 		'pub_link'       => '文献一覧',
 		'contact_link'   => '問い合わせ',
 		'company_h2'     => 'ココロラボについて',
@@ -71,8 +72,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_b'         => '認知モデル、心理統計、調査研究。',
 		'profile_h2'     => '野田浩平',
 		'profile_role'   => '学術博士／産業カウンセラー',
-		'profile_now'    => '現在は、グロービス経営大学院准教授、MIT Sloan IDEAS Asia Pacific リージョナルファカルティ、株式会社ココロラボ代表取締役として、教育・研究と実務支援を並行しています。市民気候ロビー（CCL）Japan 代表も務めています。',
-		'profile_past'   => 'これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者としてガリバー（上場前）、イントループ、チェンジ（上場企業）の人事を担当しました。',
+		'profile_now'    => '現在は、グロービス経営大学院教員、MIT Sloan IDEAS Asia Pacific research faculty、株式会社ココロラボ代表取締役として、教育・研究と実務支援を並行しています。市民気候ロビー（CCL）Japan 代表も務めています。',
+		'profile_past'   => 'これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。',
 		'profile_note'   => '個別のプロジェクトや、当時ご一緒した方々の詳細は公開しません。研究実績は発表文献、ときどきの案内は活動・新着をご覧ください。',
 		'label_name'     => '研究所名',
 		'label_ceo'      => '代表取締役',
@@ -99,8 +100,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'hero_cta1'      => 'Services',
 		'hero_cta2'      => 'News & activities',
 		'hero_photo_note'=> 'Placeholder photos. Swap them later.',
-		'cred1'          => 'MIT Sloan IDEAS Asia Pacific Regional Faculty',
-		'cred2'          => 'Associate Professor, GLOBIS University',
+		'cred1'          => 'MIT Sloan IDEAS Asia Pacific research faculty',
+		'cred2'          => 'GLOBIS faculty',
 		'cred3'          => 'Ph.D., Tokyo Institute of Technology',
 		'mission_kicker' => 'MISSION',
 		'brand'          => 'Kocoro Laboratory',
@@ -130,11 +131,12 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'news_link'      => 'All news',
 		'news_empty'     => 'New notes will appear here when they are ready.',
 		'section_who'    => 'Founder',
-		'who_body'       => 'Kohei Noda, Ph.D., is President of Kocoro Laboratory, Associate Professor at GLOBIS University, and Regional Faculty for MIT Sloan IDEAS Asia Pacific.',
-		'who_hr'         => 'He served as head of human resources at both a pre-IPO growth company and listed operating companies: Gulliver, INTLOOP, and Change. This site does not discuss individual cases or people from those roles.',
+		'who_body'       => 'Kohei Noda, Ph.D., is President of Kocoro Laboratory, GLOBIS faculty, and research faculty for MIT Sloan IDEAS Asia Pacific.',
+		'who_hr'         => 'He served as head of human resources at both a pre-IPO growth company and listed operating companies. This site does not discuss individual cases or people from those roles.',
 		'who_more'       => 'Profile',
 		'section_pub'    => 'Publications',
 		'pub_body'       => 'Ongoing work includes the Japanese Cognitive Science Society. In 2025 he published “The cognitive affective model of theory U” in the 42nd Annual Meeting proceedings (pp. 466-469).',
+		'pub_intro'      => 'We study emotion, mental health, well-being, and related practice on a cognitive-science base. In recent years this work has drawn on Theory U as a method of practice and systems thinking as a method of inquiry.',
 		'pub_link'       => 'Publication list',
 		'contact_link'   => 'Contact',
 		'company_h2'     => 'About Kocoro Laboratory',
@@ -156,8 +158,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_b'         => 'Cognitive modeling, psychological statistics, and commissioned studies.',
 		'profile_h2'     => 'Kohei Noda',
 		'profile_role'   => 'Ph.D. / Certified industrial counselor',
-		'profile_now'    => 'He is Associate Professor at GLOBIS University, Regional Faculty for MIT Sloan IDEAS Asia Pacific, and President of Kocoro Laboratory. He also serves as Japan lead for Citizens’ Climate Lobby.',
-		'profile_past'   => 'He later served as head of human resources at Gulliver (pre-IPO), INTLOOP, and Change (a listed company).',
+		'profile_now'    => 'He is GLOBIS faculty, research faculty for MIT Sloan IDEAS Asia Pacific, and President of Kocoro Laboratory. He also serves as Japan lead for Citizens’ Climate Lobby.',
+		'profile_past'   => 'He later served as head of human resources in operating companies, including a pre-IPO growth company and a listed company.',
 		'profile_note'   => 'This page does not describe individual projects or colleagues from those roles. See Publications for research, and News & activities for occasional notes.',
 		'label_name'     => 'Name',
 		'label_ceo'      => 'President',
@@ -201,6 +203,12 @@ function kocorolab_refresh_page_html( $slug, $lang = 'ja' ) {
 	}
 	if ( 'member' === $slug || 'koheinoda' === $slug ) {
 		return kocorolab_refresh_profile_html( $c, $lang );
+	}
+	if ( 'hakkou' === $slug || 'publications' === $slug ) {
+		return kocorolab_refresh_publications_html( $lang );
+	}
+	if ( 'contact' === $slug ) {
+		return kocorolab_refresh_contact_intro_html( $c, $lang );
 	}
 	return '';
 }
@@ -281,6 +289,19 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 			·
 			<a href="<?php echo esc_url( function_exists( 'home_url' ) ? home_url( $news ) : $news ); ?>"><?php echo esc_html( $c['news_link'] ); ?></a>
 		</p>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
+function kocorolab_refresh_contact_intro_html( $c, $lang ) {
+	$en = ( 'en' === $lang );
+	ob_start();
+	?>
+	<div class="kl-page">
+		<p class="kl-lead"><?php echo $en
+			? 'For MHQ, leadership education, HR support, talks, or research, use the form below or email info@kocorolab.com.'
+			: 'メンタルヘルス検査（MHQ）、リーダーシップ教育、人事支援、講演、研究に関するご相談は、下のフォームまたは info@kocorolab.com へ。'; ?></p>
 	</div>
 	<?php
 	return ob_get_clean();

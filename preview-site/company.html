@@ -1,12 +1,26 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>会社概要 | ココロラボ</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
 
-body.kl-refresh-home #fullpage,
-body.kl-refresh-home #fp-nav,
-body.kl-refresh-home #header,
-body.kl-refresh-home #header_top,
-body.kl-refresh-home #footer,
-body.kl-refresh-home #footer_widget {
+body.kl-refresh #fullpage,
+body.kl-refresh #fp-nav,
+body.kl-refresh #header,
+body.kl-refresh #header_top,
+body.kl-refresh #footer,
+body.kl-refresh #footer_widget,
+body.kl-refresh #side_col,
+body.kl-refresh #site_loader_overlay,
+body.kl-refresh .breadcrumb {
   display: none !important;
+}
+
+body.kl-refresh #main_col {
+  width: 100% !important;
+  max-width: none !important;
+  float: none !important;
+  background: #f5f8fa;
+}
+
+body.kl-refresh #main_content {
+  display: block;
 }
 
 body.kl-refresh-home #main_col,
@@ -472,27 +486,7 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><p class="kcl-banner">ワイドなランディングのプレビュー · 日本語 — 自然の写真は仮です。本番サイトはまだ変わっていません。</p><header class="kl-topbar">
-	<a class="kl-brand" href="index.html">
-		<span class="kl-mark" aria-hidden="true">K</span>
-		<span class="kl-brand-text">
-			<strong>Kocoro Laboratory</strong>
-			<small>株式会社ココロラボ</small>
-		</span>
-	</a>
-	<nav class="kl-topnav" aria-label="メイン">
-					<a href="index.html">ホーム</a>
-					<a href="service.html">サービス</a>
-					<a href="news.html">活動・新着</a>
-					<a href="hakkou.html">発表文献</a>
-					<a href="company.html" class="is-current">会社概要</a>
-			</nav>
-	<div class="kl-top-actions">
-		<a class="kl-lang" href="en/company.html">English</a>
-		<a class="kl-cta" href="contact.html">問い合わせ</a>
-	</div>
-</header>
-		<div class="kl-page"><h1>会社概要</h1>
+.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><p class="kcl-banner">ワイドなランディングのプレビュー · 日本語 — 自然の写真は仮です。本番サイトはまだ変わっていません。</p>	<div class="kl-page"><h1>会社概要</h1>
 		<p class="kl-lead">株式会社ココロラボは、精神・社会・環境の分断をほどく研究所です。認知科学と人事実務を橋渡しします。</p>
 		<h2>ミッション</h2>
 		<p>社会と個人の変容をガイドする。個人の心、組織、地球環境を分けずに扱う。</p>
@@ -503,8 +497,8 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<li><strong>環境</strong> — MIT Sloan IDEAS Asia Pacific や気候変動に関する市民活動など、社会と地球のあいだでも実践します。</li>
 		</ul>
 		<h2>代表</h2>
-		<p>野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院准教授、MIT Sloan IDEAS Asia Pacific リージョナルファカルティです。</p>
-		<p>人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。担当した会社はガリバー、イントループ、チェンジです。個別案件や当時の関係者には触れません。</p>
+		<p>野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院教員、MIT Sloan IDEAS Asia Pacific research faculty です。</p>
+		<p>人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。個別案件や当時の関係者には触れません。</p>
 		<h2>概要</h2>
 		<table class="kl-table">
 							<tr>
@@ -539,9 +533,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 	</div>
 		<div class="kl-page">
 		<p class="kl-kicker">学術博士／産業カウンセラー</p>
-		<p class="kl-lead">野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院准教授、MIT Sloan IDEAS Asia Pacific リージョナルファカルティです。</p>
-		<p>現在は、グロービス経営大学院准教授、MIT Sloan IDEAS Asia Pacific リージョナルファカルティ、株式会社ココロラボ代表取締役として、教育・研究と実務支援を並行しています。市民気候ロビー（CCL）Japan 代表も務めています。</p>
-		<p>これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者としてガリバー（上場前）、イントループ、チェンジ（上場企業）の人事を担当しました。</p>
+		<p class="kl-lead">野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院教員、MIT Sloan IDEAS Asia Pacific research faculty です。</p>
+		<p>現在は、グロービス経営大学院教員、MIT Sloan IDEAS Asia Pacific research faculty、株式会社ココロラボ代表取締役として、教育・研究と実務支援を並行しています。市民気候ロビー（CCL）Japan 代表も務めています。</p>
+		<p>これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。</p>
 		<p>個別のプロジェクトや、当時ご一緒した方々の詳細は公開しません。研究実績は発表文献、ときどきの案内は活動・新着をご覧ください。</p>
 		<p>
 			<a href="hakkou.html">文献一覧</a>
@@ -549,8 +543,4 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<a href="news.html">新着一覧</a>
 		</p>
 	</div>
-	<footer class="kl-sitefoot">
-	<p>精神・社会・環境を扱う小さな研究所。</p>
-	<p>© 株式会社ココロラボ / Kocoro Laboratory, Inc.</p>
-</footer>
 	</body></html>

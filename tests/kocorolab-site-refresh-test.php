@@ -27,9 +27,11 @@ $en = kocorolab_refresh_copy( 'en' );
 $ja_company = kocorolab_refresh_page_html( 'company', 'ja' );
 $ja_service = kocorolab_refresh_page_html( 'service', 'ja' );
 $en_profile = kocorolab_refresh_page_html( 'member', 'en' );
+$ja_pubs    = kocorolab_refresh_page_html( 'hakkou', 'ja' );
+$en_pubs    = kocorolab_refresh_page_html( 'publications', 'en' );
+$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $ja_company, $ja_service, $en_profile ) );
 
-$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス' );
-$blob = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $en['who_hr'], $ja_company, $ja_service, $en_profile ) );
+$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'チェンジ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', 'Associate Professor', 'Regional Faculty' );
 
 $images = array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg' );
 $img_ok = true;
@@ -40,16 +42,20 @@ foreach ( $images as $file ) {
 }
 
 $checks = array(
-	'JA names Gulliver INTLOOP Change' => ( false !== strpos( $ja['who_hr'], 'ガリバー' ) && false !== strpos( $ja['who_hr'], 'イントループ' ) && false !== strpos( $ja['who_hr'], 'チェンジ' ) ),
-	'EN names Gulliver INTLOOP Change' => ( false !== strpos( $en['who_hr'], 'Gulliver' ) && false !== strpos( $en['who_hr'], 'INTLOOP' ) && false !== strpos( $en['who_hr'], 'Change' ) ),
+	'JA uses GLOBIS faculty' => ( false !== strpos( $ja['who_body'], '教員' ) && false !== strpos( $ja['cred2'], '教員' ) ),
+	'EN uses GLOBIS faculty' => false !== strpos( $en['who_body'], 'GLOBIS faculty' ),
+	'research faculty JA' => false !== strpos( $ja['cred1'], 'research faculty' ) && false !== strpos( $ja['who_body'], 'research faculty' ),
+	'research faculty EN' => false !== strpos( $en['cred1'], 'research faculty' ),
 	'JA mind society environment' => ( false !== strpos( $ja['hero_title'], '精神' ) && false !== strpos( $ja['hero_title'], '社会' ) && false !== strpos( $ja['hero_title'], '環境' ) ),
 	'news is activities not diary' => false !== strpos( $ja['news_lead'], 'IDEAS' ) && false !== strpos( $ja['news_lead'], 'MHQ' ) && false !== strpos( $ja['news_lead'], '日記ブログではありません' ),
 	'services stay on one page' => false !== strpos( $ja['work_lead'], '下層ページは増やしません' ),
 	'service page points to news' => false !== strpos( $ja_service, '/news/' ),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
+	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) ),
+	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) ),
 	'placeholder images present' => $img_ok,
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
-	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'contact', 'ja' ),
+	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'mhqlp', 'ja' ),
 );
 
 foreach ( $forbidden as $word ) {

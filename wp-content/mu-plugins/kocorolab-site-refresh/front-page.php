@@ -1,6 +1,8 @@
 <?php
-get_header();
-kocorolab_refresh_site_header();
+if ( empty( $GLOBALS['KOCORO_IN_VIEW'] ) ) {
+	get_header();
+	kocorolab_refresh_site_header();
+}
 
 $lang        = kocorolab_refresh_lang();
 $hero        = kocorolab_refresh_image_url( 'hero' );
@@ -171,5 +173,7 @@ if ( function_exists( 'get_posts' ) ) {
 	</main>
 </div>
 <?php
-kocorolab_refresh_site_footer();
-get_footer();
+if ( empty( $GLOBALS['KOCORO_IN_VIEW'] ) ) {
+	kocorolab_refresh_site_footer();
+	get_footer();
+}

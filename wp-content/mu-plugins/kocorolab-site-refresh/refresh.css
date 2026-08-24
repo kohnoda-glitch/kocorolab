@@ -1,12 +1,26 @@
 /* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
 
-body.kl-refresh-home #fullpage,
-body.kl-refresh-home #fp-nav,
-body.kl-refresh-home #header,
-body.kl-refresh-home #header_top,
-body.kl-refresh-home #footer,
-body.kl-refresh-home #footer_widget {
+body.kl-refresh #fullpage,
+body.kl-refresh #fp-nav,
+body.kl-refresh #header,
+body.kl-refresh #header_top,
+body.kl-refresh #footer,
+body.kl-refresh #footer_widget,
+body.kl-refresh #side_col,
+body.kl-refresh #site_loader_overlay,
+body.kl-refresh .breadcrumb {
   display: none !important;
+}
+
+body.kl-refresh #main_col {
+  width: 100% !important;
+  max-width: none !important;
+  float: none !important;
+  background: #f5f8fa;
+}
+
+body.kl-refresh #main_content {
+  display: block;
 }
 
 body.kl-refresh-home #main_col,

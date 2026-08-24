@@ -175,6 +175,7 @@ function get_footer() {
 }
 
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php';
+require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/publications.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/chrome.php';
 
 function kocorolab_preview_extra_css() {
@@ -267,10 +268,10 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'service';
 kocorolab_preview_write( "$out/service.html", kocorolab_preview_render_inner( 'ja', 'サービス', kocorolab_refresh_page_html( 'service', 'ja' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'news';
-kocorolab_preview_write( "$out/news.html", kocorolab_preview_render_inner( 'ja', '活動・新着', $news_ja ) );
+kocorolab_preview_write( "$out/news.html", kocorolab_preview_render_inner( 'ja', '活動・新着', kocorolab_refresh_news_html( 'ja' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'hakkou';
-kocorolab_preview_write( "$out/hakkou.html", kocorolab_preview_render_inner( 'ja', '発表文献', $pub_ja ) );
+kocorolab_preview_write( "$out/hakkou.html", kocorolab_preview_render_inner( 'ja', '発表文献', kocorolab_refresh_publications_html( 'ja' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'company';
 kocorolab_preview_write( "$out/company.html", kocorolab_preview_render_inner( 'ja', '会社概要', kocorolab_refresh_page_html( 'company', 'ja' ) . kocorolab_refresh_page_html( 'member', 'ja' ) ) );
@@ -279,7 +280,7 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'member';
 kocorolab_preview_write( "$out/member.html", kocorolab_preview_render_inner( 'ja', 'プロフィール', kocorolab_refresh_page_html( 'member', 'ja' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
-kocorolab_preview_write( "$out/contact.html", kocorolab_preview_render_inner( 'ja', 'お問い合わせ', $contact_ja ) );
+kocorolab_preview_write( "$out/contact.html", kocorolab_preview_render_inner( 'ja', 'お問い合わせ', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'ja' ), 'ja' ) . '<div class="kl-page"><p>本プレビューではフォームは動きません。本番ではこのページに既存の問い合わせフォームが残ります。メール：info@kocorolab.com</p></div>' ) );
 
 // English pages
 $GLOBALS['KOCORO_PREVIEW_LANG'] = 'en';
@@ -292,10 +293,10 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'service';
 kocorolab_preview_write( "$out/en/service.html", kocorolab_preview_render_inner( 'en', 'Services', kocorolab_refresh_page_html( 'service', 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'news';
-kocorolab_preview_write( "$out/en/news.html", kocorolab_preview_render_inner( 'en', 'News & activities', $news_en ) );
+kocorolab_preview_write( "$out/en/news.html", kocorolab_preview_render_inner( 'en', 'News & activities', kocorolab_refresh_news_html( 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'hakkou';
-kocorolab_preview_write( "$out/en/publications.html", kocorolab_preview_render_inner( 'en', 'Publications', $pub_en ) );
+kocorolab_preview_write( "$out/en/publications.html", kocorolab_preview_render_inner( 'en', 'Publications', kocorolab_refresh_publications_html( 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'company';
 kocorolab_preview_write( "$out/en/company.html", kocorolab_preview_render_inner( 'en', 'Company', kocorolab_refresh_page_html( 'company', 'en' ) . kocorolab_refresh_page_html( 'member', 'en' ) ) );
@@ -304,7 +305,7 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'member';
 kocorolab_preview_write( "$out/en/member.html", kocorolab_preview_render_inner( 'en', 'Profile', kocorolab_refresh_page_html( 'member', 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
-kocorolab_preview_write( "$out/en/contact.html", kocorolab_preview_render_inner( 'en', 'Contact', $contact_en ) );
+kocorolab_preview_write( "$out/en/contact.html", kocorolab_preview_render_inner( 'en', 'Contact', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'en' ), 'en' ) . '<div class="kl-page"><p>This preview does not send messages. On the live site the existing form remains. Email: info@kocorolab.com</p></div>' ) );
 
 file_put_contents( "$out/.nojekyll", "" );
 echo "Done.\n";
