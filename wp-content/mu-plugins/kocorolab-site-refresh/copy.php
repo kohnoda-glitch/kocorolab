@@ -56,7 +56,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'company_h2'     => 'ココロラボについて',
 		'company_lead'   => '株式会社ココロラボは、精神・社会・環境の分断をほどく研究所です。認知科学と人事実務を橋渡しします。',
 		'company_m_h'    => 'ミッション',
-		'company_m'      => '社会と個人の変容をガイドする。個人の心、組織、地球環境を分けずに扱う。',
+		'company_m'      => '社会と個人の変容をガイドする',
+		'company_m_other'=> 'Guiding Transformation for Societies and Individuals',
 		'company_w_h'    => '活動の柱',
 		'company_p_h'    => '代表',
 		'overview_h'     => '概要',
@@ -142,7 +143,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'company_h2'     => 'About Kocoro Laboratory',
 		'company_lead'   => 'Kocoro Laboratory works to mend the split between mind, society, and environment, bridging cognitive science and HR practice.',
 		'company_m_h'    => 'Mission',
-		'company_m'      => 'Guiding transformation for societies and individuals. Inner life, organizations, and the living planet are not treated as separate.',
+		'company_m'      => 'Guiding Transformation for Societies and Individuals',
+		'company_m_other'=> '社会と個人の変容をガイドする',
 		'company_w_h'    => 'Focus',
 		'company_p_h'    => 'Founder',
 		'overview_h'     => 'Overview',
@@ -229,7 +231,8 @@ function kocorolab_refresh_company_html( $c, $lang ) {
 	<div class="kl-page">
 		<p class="kl-lead"><?php echo esc_html( $c['company_lead'] ); ?></p>
 		<h2><?php echo esc_html( $c['company_m_h'] ); ?></h2>
-		<p><?php echo esc_html( $c['company_m'] ); ?></p>
+		<p class="kl-lead"><?php echo esc_html( $c['company_m'] ); ?></p>
+		<p class="kl-mission-pair"><?php echo esc_html( $c['company_m_other'] ); ?></p>
 		<h2><?php echo esc_html( $c['company_w_h'] ); ?></h2>
 		<ul class="kl-list">
 			<li><strong><?php echo esc_html( $c['domain1_kicker'] ); ?></strong> — <?php echo esc_html( $c['domain1_body'] ); ?></li>

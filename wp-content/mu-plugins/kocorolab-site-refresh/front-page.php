@@ -52,6 +52,7 @@ if ( function_exists( 'get_posts' ) ) {
 				<div class="kl-mission-copy">
 					<p class="kl-kicker"><?php kocorolab_refresh_e( 'mission_kicker' ); ?></p>
 					<h2><?php kocorolab_refresh_e( 'company_m' ); ?></h2>
+					<p class="kl-mission-pair"><?php kocorolab_refresh_e( 'company_m_other' ); ?></p>
 					<p><?php kocorolab_refresh_e( 'company_lead' ); ?></p>
 					<p><?php kocorolab_refresh_e( 'world_lead' ); ?></p>
 				</div>

@@ -42,6 +42,8 @@ foreach ( $images as $file ) {
 }
 
 $checks = array(
+	'JA mission slogan' => '社会と個人の変容をガイドする' === $ja['company_m'] && 'Guiding Transformation for Societies and Individuals' === $ja['company_m_other'],
+	'EN mission slogan' => 'Guiding Transformation for Societies and Individuals' === $en['company_m'] && '社会と個人の変容をガイドする' === $en['company_m_other'],
 	'JA uses GLOBIS faculty' => ( false !== strpos( $ja['who_body'], '教員' ) && false !== strpos( $ja['cred2'], '教員' ) ),
 	'EN uses Globis University, Research Faculty' => false !== strpos( $en['cred2'], 'Globis University, Research Faculty' ) && false !== strpos( $en['who_body'], 'Globis University, Research Faculty' ),
 	'MIT regional faculty JA' => false !== strpos( $ja['cred1'], 'regional faculty' ) && false !== strpos( $ja['who_body'], 'regional faculty' ),
