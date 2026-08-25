@@ -259,6 +259,20 @@ $checks = array(
 		kocorolab_refresh_is_en_profile_path( '/en/member' )
 		&& kocorolab_refresh_is_en_profile_path( '/en/koheinoda' )
 		&& ! kocorolab_refresh_is_en_profile_path( '/member' )
+		&& false === kocorolab_refresh_filter_canonical_redirect( 'https://kocorolab.com/member/', 'https://kocorolab.com/en/member/' )
+		&& false === kocorolab_refresh_filter_canonical_redirect( 'https://kocorolab.com/member/', 'https://kocorolab.com/en/koheinoda/' )
+		&& 'https://kocorolab.com/member/' === kocorolab_refresh_filter_canonical_redirect( 'https://kocorolab.com/member/', 'https://kocorolab.com/member/' )
+	),
+	'English overlay paths skip WordPress 404 guessing' => (
+		kocorolab_refresh_is_en_overlay_path( '/en/member' )
+		&& kocorolab_refresh_is_en_overlay_path( '/en/service' )
+		&& kocorolab_refresh_is_en_overlay_path( '/en/company' )
+		&& kocorolab_refresh_is_en_overlay_path( '/en/contact' )
+		&& kocorolab_refresh_is_en_overlay_path( '/en/publications' )
+		&& ! kocorolab_refresh_is_en_overlay_path( '/en' )
+		&& ! kocorolab_refresh_is_en_overlay_path( '/member' )
+		&& 'member' === kocorolab_refresh_en_overlay_pagename( '/en/koheinoda' )
+		&& 'hakkou' === kocorolab_refresh_en_overlay_pagename( '/en/publications' )
 	),
 	'news titles hyperlink to Amazon, YouTube, and PDFs' => (
 		false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">『VUCA時代のストレス防衛術』を刊行しました。</a>' )

@@ -35,8 +35,15 @@ function kocorolab_refresh_nav_key() {
 	}
 	$uri  = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
 	$path = function_exists( 'kocorolab_refresh_request_path_from' ) ? kocorolab_refresh_request_path_from( $uri ) : '';
-	if ( preg_match( '#/(member|koheinoda)$#', $path ) ) {
+	$slug = function_exists( 'kocorolab_refresh_slug_from_path' ) ? kocorolab_refresh_slug_from_path( $path ) : '';
+	if ( 'member' === $slug || 'koheinoda' === $slug ) {
 		return 'member';
+	}
+	if ( 'hakkou' === $slug || 'publications' === $slug ) {
+		return 'publications';
+	}
+	if ( $slug ) {
+		return $slug;
 	}
 	if ( function_exists( 'is_post_type_archive' ) && is_post_type_archive( 'news' ) ) {
 		return 'news';
@@ -69,6 +76,7 @@ function kocorolab_refresh_lang_switch_url() {
 		'/member'          => array( '/member/', '/en/member/' ),
 		'/en/member'       => array( '/member/', '/en/member/' ),
 		'/koheinoda'       => array( '/member/', '/en/member/' ),
+		'/en/koheinoda'    => array( '/member/', '/en/member/' ),
 		'/company'         => array( '/company/', '/en/company/' ),
 		'/en/company'      => array( '/company/', '/en/company/' ),
 		'/contact'         => array( '/contact/', '/en/contact/' ),

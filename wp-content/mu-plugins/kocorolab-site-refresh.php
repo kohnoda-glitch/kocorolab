@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.6.8
+ * Version: 1.6.9
  * Author: Kohei Noda
  */
 
@@ -72,7 +72,7 @@ function kocorolab_refresh_request_path_from( $uri ) {
 }
 
 function kocorolab_refresh_is_legacy_hakkou_path( $path ) {
-	return '/hakkou' === $path;
+	return '/hakkou' === $path || '/en/hakkou' === $path;
 }
 
 function kocorolab_refresh_is_ja_publications_path( $path ) {
@@ -96,6 +96,44 @@ function kocorolab_refresh_slug_from_path( $path ) {
 
 function kocorolab_refresh_is_en_profile_path( $path ) {
 	return (bool) preg_match( '#^/en/(member|koheinoda)$#', (string) $path );
+}
+
+function kocorolab_refresh_is_en_overlay_path( $path ) {
+	$path = (string) $path;
+	if ( 0 !== strpos( $path, '/en/' ) ) {
+		return false;
+	}
+	return '' !== kocorolab_refresh_slug_from_path( $path );
+}
+
+function kocorolab_refresh_en_overlay_pagename( $path ) {
+	$slug = kocorolab_refresh_slug_from_path( $path );
+	if ( 'member' === $slug || 'koheinoda' === $slug ) {
+		return 'member';
+	}
+	if ( 'publications' === $slug || 'hakkou' === $slug ) {
+		return 'hakkou';
+	}
+	return $slug;
+}
+
+function kocorolab_refresh_filter_canonical_redirect( $redirect_url, $requested_url ) {
+	$path = kocorolab_refresh_request_path_from( (string) $requested_url );
+	if ( kocorolab_refresh_is_en_overlay_path( $path ) ) {
+		return false;
+	}
+	return $redirect_url;
+}
+
+function kocorolab_refresh_mark_not_404() {
+	if ( function_exists( 'status_header' ) ) {
+		status_header( 200 );
+	}
+	if ( isset( $GLOBALS['wp_query'] ) && is_object( $GLOBALS['wp_query'] ) ) {
+		$GLOBALS['wp_query']->is_404       = false;
+		$GLOBALS['wp_query']->is_page      = true;
+		$GLOBALS['wp_query']->is_singular  = true;
+	}
 }
 
 function kocorolab_refresh_news_permalink( $post = null ) {
@@ -255,8 +293,11 @@ add_filter(
 			$query_vars['pagename'] = 'hakkou';
 			unset( $query_vars['name'], $query_vars['error'] );
 		}
-		if ( kocorolab_refresh_is_en_profile_path( $path ) ) {
-			$query_vars['pagename'] = 'member';
+		if ( kocorolab_refresh_is_en_overlay_path( $path ) ) {
+			$pagename = kocorolab_refresh_en_overlay_pagename( $path );
+			if ( $pagename ) {
+				$query_vars['pagename'] = $pagename;
+			}
 			$query_vars['bogo_suppress_locale_query'] = true;
 			unset( $query_vars['name'], $query_vars['error'], $query_vars['lang'] );
 		}
@@ -273,32 +314,76 @@ add_action(
 		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
 		$path = kocorolab_refresh_request_path_from( $uri );
 		if ( kocorolab_refresh_is_legacy_hakkou_path( $path ) ) {
-			wp_safe_redirect( kocorolab_refresh_publications_url( 'ja' ), 301 );
+			$lang = ( 0 === strpos( $path, '/en/' ) ) ? 'en' : 'ja';
+			wp_safe_redirect( kocorolab_refresh_publications_url( $lang ), 301 );
 			exit;
 		}
 		if ( kocorolab_refresh_is_retired_gbx_path( $path ) ) {
 			wp_redirect( kocorolab_refresh_gbx_report_url(), 301 );
 			exit;
 		}
-		if ( kocorolab_refresh_is_en_profile_path( $path ) && function_exists( 'status_header' ) ) {
-			status_header( 200 );
-			if ( isset( $GLOBALS['wp_query'] ) && is_object( $GLOBALS['wp_query'] ) ) {
-				$GLOBALS['wp_query']->is_404  = false;
-				$GLOBALS['wp_query']->is_page = true;
+		if ( kocorolab_refresh_is_en_overlay_path( $path ) ) {
+			if ( function_exists( 'remove_action' ) ) {
+				remove_action( 'template_redirect', 'redirect_canonical' );
 			}
+			kocorolab_refresh_mark_not_404();
 		}
 	},
 	0
 );
 
+add_action(
+	'template_redirect',
+	function () {
+		if ( is_admin() || ( function_exists( 'is_feed' ) && is_feed() ) ) {
+			return;
+		}
+		if ( function_exists( 'wp_doing_ajax' ) && wp_doing_ajax() ) {
+			return;
+		}
+		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+			return;
+		}
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path = kocorolab_refresh_request_path_from( $uri );
+		if ( ! kocorolab_refresh_is_en_overlay_path( $path ) ) {
+			return;
+		}
+		kocorolab_refresh_mark_not_404();
+		include KOCOROLAB_REFRESH_DIR . '/wp-view.php';
+		exit;
+	},
+	1
+);
+
+add_filter( 'redirect_canonical', 'kocorolab_refresh_filter_canonical_redirect', 0, 2 );
+
 add_filter(
-	'redirect_canonical',
-	function ( $redirect_url, $requested_url ) {
-		$path = kocorolab_refresh_request_path_from( (string) $requested_url );
-		if ( kocorolab_refresh_is_en_profile_path( $path ) ) {
+	'do_redirect_guess_404_permalink',
+	function ( $do ) {
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path = kocorolab_refresh_request_path_from( $uri );
+		if ( kocorolab_refresh_is_en_overlay_path( $path ) ) {
 			return false;
 		}
-		return $redirect_url;
+		return $do;
+	}
+);
+
+add_filter(
+	'pre_handle_404',
+	function ( $preempt, $wp_query ) {
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path = kocorolab_refresh_request_path_from( $uri );
+		if ( ! kocorolab_refresh_is_en_overlay_path( $path ) ) {
+			return $preempt;
+		}
+		if ( is_object( $wp_query ) ) {
+			$wp_query->is_404      = false;
+			$wp_query->is_page     = true;
+			$wp_query->is_singular = true;
+		}
+		return true;
 	},
 	10,
 	2
@@ -350,7 +435,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.8' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.9' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
