@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.5.6
+ * Version: 1.5.7
  * Author: Kohei Noda
  */
 
@@ -184,9 +184,48 @@ function kocorolab_refresh_page_slugs() {
 	return array( 'company', 'service', 'member', 'koheinoda', 'hakkou', 'publications', 'contact' );
 }
 
+/**
+ * Avalon’s custom head field starts with a leftover “HTML” label in front of
+ * JSON-LD. Browsers move that text node out of <head> to the top-left of the page.
+ */
+function kocorolab_refresh_strip_stray_head_html( $html ) {
+	if ( ! is_string( $html ) || false === strpos( $html, 'HTML' ) ) {
+		return $html;
+	}
+	return preg_replace( '/(?:^|\r?\n)[ \t]*HTML[ \t]*(?=\r?\n|$)/u', '', $html );
+}
+
 if ( ! function_exists( 'add_filter' ) ) {
 	return;
 }
+
+add_filter(
+	'option_dp_options',
+	function ( $opts ) {
+		if ( is_array( $opts ) && ! empty( $opts['custom_head'] ) ) {
+			$opts['custom_head'] = kocorolab_refresh_strip_stray_head_html( $opts['custom_head'] );
+		}
+		return $opts;
+	}
+);
+
+add_action(
+	'wp_head',
+	function () {
+		ob_start( 'kocorolab_refresh_strip_stray_head_html' );
+	},
+	PHP_INT_MIN
+);
+
+add_action(
+	'wp_head',
+	function () {
+		if ( ob_get_level() ) {
+			ob_end_flush();
+		}
+	},
+	PHP_INT_MAX
+);
 
 add_filter(
 	'request',
@@ -263,7 +302,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.5.6' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.5.7' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}

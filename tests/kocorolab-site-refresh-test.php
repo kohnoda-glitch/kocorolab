@@ -133,6 +133,11 @@ $checks = array(
 	'strips qTranslate EN tags' => 'Body text.' === trim( kocorolab_refresh_ml_text( '[:ja]本文です。[:en]Body text.[:]', 'en' ) ),
 	'strips MHQ1 ja-only tags' => ( false === strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), '[:' ) && false !== strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), 'MHQ1' ) ),
 	'EN news uses lang query' => false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'lang=en' ),
+	'strips stray HTML label from custom head' => (
+		! preg_match( '/^HTML$/m', kocorolab_refresh_strip_stray_head_html( "verify\" />\r\n\r\nHTML\r\n<script type=\"application/ld+json\">\r\n{}\r\n" ) )
+		&& false !== strpos( kocorolab_refresh_strip_stray_head_html( "HTML\r\n<script type=\"application/ld+json\">" ), 'application/ld+json' )
+		&& false !== strpos( kocorolab_refresh_strip_stray_head_html( '<script src="html5.js"></script>' ), 'html5.js' )
+	),
 );
 
 foreach ( $forbidden as $word ) {
