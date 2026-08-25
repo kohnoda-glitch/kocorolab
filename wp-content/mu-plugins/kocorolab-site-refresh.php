@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.5.7
+ * Version: 1.5.8
  * Author: Kohei Noda
  */
 
@@ -287,7 +287,7 @@ add_filter(
 add_action(
 	'wp_head',
 	function () {
-		echo '<style id="kocorolab-refresh-critical">html,body{margin:0;background:#f5f8fa}#site_wrap{display:block!important}#site_loader_overlay,#site_loader_spinner{display:none!important}</style>' . "\n";
+		echo '<style id="kocorolab-refresh-critical">html,body{margin:0;padding:0;background:#f5f8fa}#site_wrap{display:block!important}#site_loader_overlay,#site_loader_spinner{display:none!important}</style>' . "\n";
 	},
 	0
 );
@@ -302,7 +302,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.5.7' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.5.8' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
@@ -314,6 +314,14 @@ add_action(
 		);
 	},
 	20
+);
+
+add_action(
+	'wp_footer',
+	function () {
+		echo '<script id="kocorolab-refresh-topgap">document.addEventListener("DOMContentLoaded",function(){var b=document.body;if(!b||!b.classList.contains("kl-refresh"))return;while(b.firstChild&&b.firstChild.nodeType===3){if(!/^\\s*(HTML)?\\s*$/i.test(b.firstChild.nodeValue||""))break;b.removeChild(b.firstChild);}if(b.firstChild&&b.firstChild.nodeType===3){b.firstChild.nodeValue=(b.firstChild.nodeValue||"").replace(/^\\s*HTML\\s*/i,"");}});</script>' . "\n";
+	},
+	1
 );
 
 add_filter(

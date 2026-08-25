@@ -1,5 +1,15 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Publications | Kocoro Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
 
+html:has(body.kl-refresh),
+body.kl-refresh {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.kl-refresh > .kl-topbar {
+  margin-top: 0 !important;
+}
+
 body.kl-refresh #site_wrap {
   display: block !important;
 }
@@ -431,7 +441,47 @@ a.kl-soft-card:hover {
 .kl-page {
   max-width: 46rem;
   margin: 0 auto;
-  padding: 2.8rem 1.5rem 4.5rem;
+  padding: 1.35rem 1.5rem 4.5rem;
+}
+
+.kl-pub-row {
+  margin: 0 0 1rem;
+}
+
+.kl-pub-media {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.kl-pub-thumb {
+  flex: 0 0 auto;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: #d7e3e8;
+  box-shadow: 0 8px 18px rgba(16, 48, 56, 0.12);
+}
+
+.kl-pub-thumb img {
+  display: block;
+  height: auto;
+}
+
+.kl-pub-thumb--book img {
+  width: 4.4rem;
+}
+
+.kl-pub-thumb--video img {
+  width: 7.4rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.kl-pub-text {
+  min-width: 0;
+  flex: 1;
 }
 
 .kl-page a,
@@ -756,11 +806,19 @@ a.kl-soft-card:hover {
     width: 100%;
     justify-content: center;
   }
+
+  .kl-pub-thumb--book img {
+    width: 3.8rem;
+  }
+
+  .kl-pub-thumb--video img {
+    width: 6.2rem;
+  }
 }
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
+.kl-page{padding-top:1.35rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
 	<a class="kl-brand" href="index.html">
 		<span class="kl-mark" aria-hidden="true">K</span>
 		<span class="kl-brand-text">
@@ -785,14 +843,14 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 		<p class="kl-lead">We study emotion, mental health, well-being, and related practice on a cognitive-science base. In recent years this work has drawn on Theory U as a method of practice and systems thinking as a method of inquiry.</p>
 					<h2>2025</h2>
 							<p><a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">Kohei Noda (2025) The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.</a> (<a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">PDF</a>)</p>
-							<p>Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress</p>
+							<p class="kl-pub-row"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/B0DTS8XLPD"><img src="https://m.media-amazon.com/images/P/B0DTS8XLPD.01._SCLZZZZZZZ_.jpg" alt="Stress Defense Strategies in the VUCA Era" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress</a> (<a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">Amazon</a>)</span></span></p>
 								<h2>2024</h2>
-							<p>Kohei Noda (2024) The book you should read when you think you would be depression</p>
-							<p><a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era</a> (<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">YouTube series</a>)</p>
+							<p class="kl-pub-row"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/B0DGFRYHMX"><img src="https://m.media-amazon.com/images/P/B0DGFRYHMX.01._SCLZZZZZZZ_.jpg" alt="The book you should read when you think you would be depression" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/B0DGFRYHMX">Kohei Noda (2024) The book you should read when you think you would be depression</a> (<a href="https://www.amazon.co.jp/dp/B0DGFRYHMX">Amazon</a>)</span></span></p>
+							<p class="kl-pub-row"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--video" href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp"><img src="https://i.ytimg.com/vi/OrTwN4gGEp0/hqdefault.jpg" alt="Change Management under Well-being Era" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era</a> (<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">YouTube series</a>)</span></span></p>
 								<h2>2020</h2>
-							<p>Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)</p>
+							<p class="kl-pub-row"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--video" href="https://www.youtube.com/watch?v=5acopoZcYfw"><img src="https://img.youtube.com/vi/5acopoZcYfw/hqdefault.jpg" alt="Poverty and happiness in the Philippines" loading="lazy" decoding="async"></a><span class="kl-pub-text">Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)</span></span></p>
 								<h2>2018</h2>
-							<p>Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan</p>
+							<p class="kl-pub-row"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/4496053454"><img src="https://m.media-amazon.com/images/P/4496053454.01._SCLZZZZZZZ_.jpg" alt="Reverse Innovation of Japanese SMEs" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/4496053454">Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan</a> (<a href="https://www.amazon.co.jp/dp/4496053454">Amazon</a>)</span></span></p>
 								<h2>2017</h2>
 							<p>Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.</p>
 								<h2>2016</h2>
@@ -803,7 +861,7 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 							<p>Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2016, Tokyo, Japan</p>
 							<p>Kohei Noda and Etsuyo Nishigaki (2015) in Etsuyo Nishigaki et al. (eds.), Introduction to Coaching Psychology, Nakanishiya</p>
 								<h2>2014</h2>
-							<p>Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha</p>
+							<p class="kl-pub-row"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/4788513969"><img src="https://cover.openbd.jp/9784788513969.jpg" alt="Approaching quality from quantity" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/4788513969">Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha</a> (<a href="https://www.amazon.co.jp/dp/4788513969">Amazon</a>)</span></span></p>
 								<h2>2013</h2>
 							<p>Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013</p>
 							<p>Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association</p>

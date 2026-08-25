@@ -73,8 +73,7 @@ function kocorolab_refresh_site_header() {
 		);
 	$home = $en ? kocorolab_refresh_url( '/', '/en/' ) : kocorolab_refresh_url( '/', '/' );
 	$contact = kocorolab_refresh_url( '/contact/', '/en/contact/' );
-	?>
-<header class="kl-topbar">
+	?><header class="kl-topbar">
 	<a class="kl-brand" href="<?php echo esc_url( $home ); ?>">
 		<span class="kl-mark" aria-hidden="true">K</span>
 		<span class="kl-brand-text">

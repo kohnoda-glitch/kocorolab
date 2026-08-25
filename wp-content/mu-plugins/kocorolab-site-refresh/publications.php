@@ -31,22 +31,94 @@ function kocorolab_refresh_linked_paper( $citation, $url, $lang = 'ja' ) {
 	return kocorolab_refresh_linked_item( $citation, $url, $lang, 'PDF' );
 }
 
+function kocorolab_refresh_pub_media() {
+	return array(
+		'vuca'       => array(
+			'url'    => 'https://www.amazon.co.jp/dp/B0DTS8XLPD',
+			'img'    => 'https://m.media-amazon.com/images/P/B0DTS8XLPD.01._SCLZZZZZZZ_.jpg',
+			'kind'   => 'book',
+			'alt_ja' => 'VUCA時代のストレス防衛術',
+			'alt_en' => 'Stress Defense Strategies in the VUCA Era',
+		),
+		'depression' => array(
+			'url'    => 'https://www.amazon.co.jp/dp/B0DGFRYHMX',
+			'img'    => 'https://m.media-amazon.com/images/P/B0DGFRYHMX.01._SCLZZZZZZZ_.jpg',
+			'kind'   => 'book',
+			'alt_ja' => '「私、うつになりやすいかも？」と思った時に読む本',
+			'alt_en' => 'The book you should read when you think you would be depression',
+		),
+		'change'     => array(
+			'url'    => kocorolab_refresh_change_management_playlist(),
+			'img'    => 'https://i.ytimg.com/vi/OrTwN4gGEp0/hqdefault.jpg',
+			'kind'   => 'video',
+			'alt_ja' => 'ウェルビーイング時代のチェンジマネジメント',
+			'alt_en' => 'Change Management under Well-being Era',
+		),
+		'hiramoto'   => array(
+			'url'    => 'https://www.youtube.com/watch?v=5acopoZcYfw',
+			'img'    => 'https://img.youtube.com/vi/5acopoZcYfw/hqdefault.jpg',
+			'kind'   => 'video',
+			'alt_ja' => 'フィリピンの貧困と幸福度の現状',
+			'alt_en' => 'Poverty and happiness in the Philippines',
+		),
+		'reverse'    => array(
+			'url'    => 'https://www.amazon.co.jp/dp/4496053454',
+			'img'    => 'https://m.media-amazon.com/images/P/4496053454.01._SCLZZZZZZZ_.jpg',
+			'kind'   => 'book',
+			'alt_ja' => '中小企業のリバースイノベーション',
+			'alt_en' => 'Reverse Innovation of Japanese SMEs',
+		),
+		'quality'    => array(
+			'url'    => 'https://www.amazon.co.jp/dp/4788513969',
+			'img'    => 'https://cover.openbd.jp/9784788513969.jpg',
+			'kind'   => 'book',
+			'alt_ja' => '量から質に迫る',
+			'alt_en' => 'Approaching quality from quantity',
+		),
+	);
+}
+
+function kocorolab_refresh_with_thumb( $html, $img, $url, $alt, $kind = 'book' ) {
+	$href  = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
+	$src   = function_exists( 'esc_url' ) ? esc_url( $img ) : $img;
+	$alt   = function_exists( 'esc_attr' ) ? esc_attr( $alt ) : htmlspecialchars( (string) $alt, ENT_QUOTES, 'UTF-8' );
+	$class = ( 'video' === $kind ) ? 'kl-pub-thumb kl-pub-thumb--video' : 'kl-pub-thumb kl-pub-thumb--book';
+	return '<span class="kl-pub-media"><a class="' . $class . '" href="' . $href . '"><img src="' . $src . '" alt="' . $alt . '" loading="lazy" decoding="async"></a><span class="kl-pub-text">' . $html . '</span></span>';
+}
+
+function kocorolab_refresh_media_item( $citation, $key, $lang = 'ja', $label = 'Amazon' ) {
+	$media = kocorolab_refresh_pub_media();
+	if ( ! isset( $media[ $key ] ) ) {
+		return $citation;
+	}
+	$m    = $media[ $key ];
+	$html = kocorolab_refresh_linked_item( $citation, $m['url'], $lang, $label );
+	$alt  = ( 'en' === $lang ) ? $m['alt_en'] : $m['alt_ja'];
+	return kocorolab_refresh_with_thumb( $html, $m['img'], $m['url'], $alt, $m['kind'] );
+}
+
 function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 	$pdfs = kocorolab_refresh_jcss_pdfs();
 	$ja   = array(
 		'2025' => array(
 			kocorolab_refresh_linked_paper( '野田浩平 (2025) U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.', $pdfs['2025'], 'ja' ),
-			'野田浩平, まめ, 海下理恵 (2025) VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集. (Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress)',
+			kocorolab_refresh_media_item( '野田浩平, まめ, 海下理恵 (2025) VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集. (Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress)', 'vuca', 'ja', 'Amazon' ),
 		),
 		'2024' => array(
-			'野田浩平 (2024)「私、うつになりやすいかも？」と思った時に読む本',
-			kocorolab_refresh_linked_item( '野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)', kocorolab_refresh_change_management_playlist(), 'ja', 'YouTubeシリーズ' ),
+			kocorolab_refresh_media_item( '野田浩平 (2024)「私、うつになりやすいかも？」と思った時に読む本', 'depression', 'ja', 'Amazon' ),
+			kocorolab_refresh_media_item( '野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)', 'change', 'ja', 'YouTubeシリーズ' ),
 		),
 		'2020' => array(
-			'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>（<a href="https://www.youtube.com/@hiramotoakio">チャンネル</a>）',
+			kocorolab_refresh_with_thumb(
+				'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>（<a href="https://www.youtube.com/@hiramotoakio">チャンネル</a>）',
+				kocorolab_refresh_pub_media()['hiramoto']['img'],
+				kocorolab_refresh_pub_media()['hiramoto']['url'],
+				kocorolab_refresh_pub_media()['hiramoto']['alt_ja'],
+				'video'
+			),
 		),
 		'2018' => array(
-			'吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館',
+			kocorolab_refresh_media_item( '吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館', 'reverse', 'ja', 'Amazon' ),
 		),
 		'2017' => array(
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
@@ -62,7 +134,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'野田浩平, 西垣悦代 (2015) 国際コーチング心理学会, 西垣悦代, 原正, 原口佳典（編）, 『コーチング心理学概論』, ナカニシヤ出版',
 		),
 		'2014' => array(
-			'野田浩平 (2014) 感情機構のシミュレーション, 村井源（編）, 『量から質に迫る―人間の複雑な感性をいかに「計る」か』, 新曜社',
+			kocorolab_refresh_media_item( '野田浩平 (2014) 感情機構のシミュレーション, 村井源（編）, 『量から質に迫る―人間の複雑な感性をいかに「計る」か』, 新曜社', 'quality', 'ja', 'Amazon' ),
 		),
 		'2013' => array(
 			'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013',
@@ -132,17 +204,23 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 	$en = array(
 		'2025' => array(
 			kocorolab_refresh_linked_paper( 'Kohei Noda (2025) The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.', $pdfs['2025'], 'en' ),
-			'Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress',
+			kocorolab_refresh_media_item( 'Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress', 'vuca', 'en', 'Amazon' ),
 		),
 		'2024' => array(
-			'Kohei Noda (2024) The book you should read when you think you would be depression',
-			kocorolab_refresh_linked_item( 'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era', kocorolab_refresh_change_management_playlist(), 'en', 'YouTube series' ),
+			kocorolab_refresh_media_item( 'Kohei Noda (2024) The book you should read when you think you would be depression', 'depression', 'en', 'Amazon' ),
+			kocorolab_refresh_media_item( 'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era', 'change', 'en', 'YouTube series' ),
 		),
 		'2020' => array(
-			'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)',
+			kocorolab_refresh_with_thumb(
+				'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)',
+				kocorolab_refresh_pub_media()['hiramoto']['img'],
+				kocorolab_refresh_pub_media()['hiramoto']['url'],
+				kocorolab_refresh_pub_media()['hiramoto']['alt_en'],
+				'video'
+			),
 		),
 		'2018' => array(
-			'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan',
+			kocorolab_refresh_media_item( 'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan', 'reverse', 'en', 'Amazon' ),
 		),
 		'2017' => array(
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
@@ -157,7 +235,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Kohei Noda and Etsuyo Nishigaki (2015) in Etsuyo Nishigaki et al. (eds.), Introduction to Coaching Psychology, Nakanishiya',
 		),
 		'2014' => array(
-			'Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha',
+			kocorolab_refresh_media_item( 'Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha', 'quality', 'en', 'Amazon' ),
 		),
 		'2013' => array(
 			'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013',
@@ -233,7 +311,7 @@ function kocorolab_refresh_publications_html( $lang = 'ja' ) {
 		<?php foreach ( $years as $year => $items ) : ?>
 			<h2><?php echo esc_html( $year ); ?></h2>
 			<?php foreach ( $items as $item ) : ?>
-				<p><?php echo $item; ?></p>
+				<p<?php echo ( false !== strpos( $item, 'kl-pub-media' ) ) ? ' class="kl-pub-row"' : ''; ?>><?php echo $item; ?></p>
 			<?php endforeach; ?>
 		<?php endforeach; ?>
 	</div>

@@ -197,7 +197,7 @@ function kocorolab_preview_extra_css() {
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}
+.kl-page{padding-top:1.35rem}
 CSS;
 }
 

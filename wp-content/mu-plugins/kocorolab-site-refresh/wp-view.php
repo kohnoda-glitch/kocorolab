@@ -12,14 +12,13 @@ $lang                      = function_exists( 'kocorolab_refresh_lang' ) ? kocor
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php echo esc_html( wp_get_document_title() ); ?></title>
 <style id="kocorolab-refresh-critical">
-html,body{margin:0;background:#f5f8fa}
+html,body{margin:0;padding:0;background:#f5f8fa}
 #site_wrap{display:block!important}
 #site_loader_overlay,#site_loader_spinner,#fullpage,#fp-nav,#header,#header_top,#footer,#footer_widget,#side_col{display:none!important}
 </style>
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-<?php
+<body <?php body_class(); ?>><?php
 if ( function_exists( 'wp_body_open' ) ) {
 	wp_body_open();
 }

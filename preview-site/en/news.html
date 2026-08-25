@@ -1,5 +1,15 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>News &amp; activities | Kocoro Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
 
+html:has(body.kl-refresh),
+body.kl-refresh {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.kl-refresh > .kl-topbar {
+  margin-top: 0 !important;
+}
+
 body.kl-refresh #site_wrap {
   display: block !important;
 }
@@ -431,7 +441,47 @@ a.kl-soft-card:hover {
 .kl-page {
   max-width: 46rem;
   margin: 0 auto;
-  padding: 2.8rem 1.5rem 4.5rem;
+  padding: 1.35rem 1.5rem 4.5rem;
+}
+
+.kl-pub-row {
+  margin: 0 0 1rem;
+}
+
+.kl-pub-media {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.kl-pub-thumb {
+  flex: 0 0 auto;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: #d7e3e8;
+  box-shadow: 0 8px 18px rgba(16, 48, 56, 0.12);
+}
+
+.kl-pub-thumb img {
+  display: block;
+  height: auto;
+}
+
+.kl-pub-thumb--book img {
+  width: 4.4rem;
+}
+
+.kl-pub-thumb--video img {
+  width: 7.4rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.kl-pub-text {
+  min-width: 0;
+  flex: 1;
 }
 
 .kl-page a,
@@ -756,11 +806,19 @@ a.kl-soft-card:hover {
     width: 100%;
     justify-content: center;
   }
+
+  .kl-pub-thumb--book img {
+    width: 3.8rem;
+  }
+
+  .kl-pub-thumb--video img {
+    width: 6.2rem;
+  }
 }
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
+.kl-page{padding-top:1.35rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
 	<a class="kl-brand" href="index.html">
 		<span class="kl-mark" aria-hidden="true">K</span>
 		<span class="kl-brand-text">

@@ -95,6 +95,21 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, '<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">野田浩平, 松村憲, 小島美佳 (2024)' )
 		&& false !== strpos( $en_pubs, 'YouTube series' )
 	),
+	'YouTube and books show link thumbnails when available' => (
+		false !== strpos( $ja_pubs, 'kl-pub-thumb--video' )
+		&& false !== strpos( $ja_pubs, 'img.youtube.com/vi/5acopoZcYfw/hqdefault.jpg' )
+		&& false !== strpos( $ja_pubs, 'i.ytimg.com/vi/OrTwN4gGEp0/hqdefault.jpg' )
+		&& false !== strpos( $ja_pubs, 'B0DGFRYHMX' )
+		&& false !== strpos( $ja_pubs, 'B0DTS8XLPD' )
+		&& false !== strpos( $ja_pubs, '4496053454' )
+		&& false !== strpos( $ja_pubs, 'cover.openbd.jp/9784788513969.jpg' )
+		&& false !== strpos( $en_pubs, 'kl-pub-thumb--book' )
+	),
+	'overlay zeros body top gap' => (
+		false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), 'padding: 0 !important' )
+		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/wp-view.php' ), 'html,body{margin:0;padding:0' )
+		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh.php' ), 'kocorolab-refresh-topgap' )
+	),
 	'publications page has no leftover related-links box' => (
 		false === strpos( $ja_pubs, 'kl-related-links' )
 		&& false === strpos( kocorolab_refresh_public_text( $ja_pubs ), 'kl-related-links' )
