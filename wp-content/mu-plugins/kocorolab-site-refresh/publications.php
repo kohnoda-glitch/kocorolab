@@ -75,6 +75,13 @@ function kocorolab_refresh_pub_media() {
 			'alt_ja' => '量から質に迫る',
 			'alt_en' => 'Approaching quality from quantity',
 		),
+		'coaching'   => array(
+			'url'    => 'https://www.amazon.co.jp/dp/4779509827',
+			'img'    => 'https://www.hanmoto.com/bd/img/9784779509827.jpg',
+			'kind'   => 'book',
+			'alt_ja' => 'コーチング心理学概論',
+			'alt_en' => 'Introduction to Coaching Psychology',
+		),
 	);
 }
 
@@ -131,7 +138,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		'2015' => array(
 			'Kohei Noda, About Filipino Business for Japanese, 講演',
 			'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2016, Tokyo, Japan',
-			'野田浩平, 西垣悦代 (2015) 国際コーチング心理学会, 西垣悦代, 原正, 原口佳典（編）, 『コーチング心理学概論』, ナカニシヤ出版',
+			kocorolab_refresh_media_item( '野田浩平, 西垣悦代 (2015) 国際コーチング心理学会, 西垣悦代, 原正, 原口佳典（編）, 『コーチング心理学概論』, ナカニシヤ出版', 'coaching', 'ja', 'Amazon' ),
 		),
 		'2014' => array(
 			kocorolab_refresh_media_item( '野田浩平 (2014) 感情機構のシミュレーション, 村井源（編）, 『量から質に迫る―人間の複雑な感性をいかに「計る」か』, 新曜社', 'quality', 'ja', 'Amazon' ),
@@ -232,7 +239,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2015' => array(
 			'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2016, Tokyo, Japan',
-			'Kohei Noda and Etsuyo Nishigaki (2015) in Etsuyo Nishigaki et al. (eds.), Introduction to Coaching Psychology, Nakanishiya',
+			kocorolab_refresh_media_item( 'Kohei Noda and Etsuyo Nishigaki (2015) in Etsuyo Nishigaki et al. (eds.), Introduction to Coaching Psychology, Nakanishiya', 'coaching', 'en', 'Amazon' ),
 		),
 		'2014' => array(
 			kocorolab_refresh_media_item( 'Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha', 'quality', 'en', 'Amazon' ),

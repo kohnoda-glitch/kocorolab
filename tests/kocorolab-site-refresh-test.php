@@ -103,6 +103,7 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, 'B0DTS8XLPD' )
 		&& false !== strpos( $ja_pubs, '4496053454' )
 		&& false !== strpos( $ja_pubs, 'cover.openbd.jp/9784788513969.jpg' )
+		&& false !== strpos( $ja_pubs, 'hanmoto.com/bd/img/9784779509827.jpg' )
 		&& false !== strpos( $en_pubs, 'kl-pub-thumb--book' )
 	),
 	'overlay zeros body top gap' => (
