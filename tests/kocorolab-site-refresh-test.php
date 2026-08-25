@@ -107,6 +107,11 @@ $checks = array(
 		&& false !== strpos( $en_pubs, 'PhD employment' )
 		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/tokyo-tech-job-guidance-2011.pdf' )
 	),
+	'ICE 2013 plenary links to the conference page' => (
+		false !== strpos( $ja_pubs, 'share.google/OnGq4xL8mDEoGt7E1' )
+		&& false !== strpos( $ja_pubs, 'Heritage Hotel Manila' )
+		&& false !== strpos( $en_pubs, 'conference' )
+	),
 	'2024 change management links to YouTube series' => (
 		false !== strpos( $ja_pubs, 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
 		&& false !== strpos( $ja_pubs, '<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">野田浩平, 松村憲, 小島美佳 (2024)' )

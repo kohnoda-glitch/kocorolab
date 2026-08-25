@@ -41,6 +41,10 @@ function kocorolab_refresh_tokyotech_2011_guidance_pdf() {
 	return $root . '/wp-content/mu-plugins/kocorolab-site-refresh/files/' . $file;
 }
 
+function kocorolab_refresh_ice_2013_url() {
+	return 'https://share.google/OnGq4xL8mDEoGt7E1';
+}
+
 function kocorolab_refresh_linked_item( $citation, $url, $lang = 'ja', $label = 'PDF' ) {
 	$href   = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
 	$linked = '<a href="' . $href . '">' . $citation . '</a>';
@@ -166,7 +170,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2013' => array(
 			'野田浩平 (2013) 講師, 福岡市・福岡商工会議所主催「会社合同説明会」内「就活応援セミナー」, 2013年5月28日, 福岡.',
-			'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013',
+			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'ja', '会議' ),
 			'西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会',
 		),
 		'2012' => array(
@@ -269,7 +273,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2013' => array(
 			'Kohei Noda (2013) Lecturer, job-hunting support seminar at the company joint briefing hosted by Fukuoka City and the Fukuoka Chamber of Commerce, 28 May 2013, Fukuoka.',
-			'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013',
+			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'en', 'conference' ),
 			'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association',
 		),
 		'2012' => array(
