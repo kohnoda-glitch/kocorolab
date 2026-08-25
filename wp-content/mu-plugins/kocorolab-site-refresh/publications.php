@@ -76,8 +76,8 @@ function kocorolab_refresh_pub_media() {
 			'alt_en' => 'Approaching quality from quantity',
 		),
 		'coaching'   => array(
-			'url'    => 'https://www.amazon.co.jp/dp/4779509827',
-			'img'    => 'https://www.hanmoto.com/bd/img/9784779509827.jpg',
+			'url'    => 'https://amzn.asia/d/0boDUx9G',
+			'img'    => 'https://m.media-amazon.com/images/P/4779509823.01._SCLZZZZZZZ_.jpg',
 			'kind'   => 'book',
 			'alt_ja' => 'コーチング心理学概論',
 			'alt_en' => 'Introduction to Coaching Psychology',
