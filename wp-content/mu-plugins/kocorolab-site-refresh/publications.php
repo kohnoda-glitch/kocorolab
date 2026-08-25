@@ -32,6 +32,15 @@ function kocorolab_refresh_jps_1997_pdf() {
 	return 'https://www.jstage.jst.go.jp/article/jpsgaiyo/52.2.4/0/52.2.4_908_4/_pdf';
 }
 
+function kocorolab_refresh_tokyotech_2011_guidance_pdf() {
+	$file = 'tokyo-tech-job-guidance-2011.pdf';
+	if ( function_exists( 'content_url' ) ) {
+		return content_url( 'mu-plugins/kocorolab-site-refresh/files/' . $file );
+	}
+	$root = function_exists( 'kocorolab_refresh_root' ) ? kocorolab_refresh_root() : 'https://kocorolab.com';
+	return $root . '/wp-content/mu-plugins/kocorolab-site-refresh/files/' . $file;
+}
+
 function kocorolab_refresh_linked_item( $citation, $url, $lang = 'ja', $label = 'PDF' ) {
 	$href   = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
 	$linked = '<a href="' . $href . '">' . $citation . '</a>';
@@ -156,6 +165,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( '野田浩平 (2014) 感情機構のシミュレーション, 村井源（編）, 『量から質に迫る―人間の複雑な感性をいかに「計る」か』, 新曜社', 'quality', 'ja', 'Amazon' ),
 		),
 		'2013' => array(
+			'野田浩平 (2013) 講師, 福岡市・福岡商工会議所主催「会社合同説明会」内「就活応援セミナー」, 2013年5月28日, 福岡.',
 			'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013',
 			'西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会',
 		),
@@ -163,6 +173,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
 		),
 		'2011' => array(
+			kocorolab_refresh_linked_paper( '野田浩平 (2011) 講師, 東京工業大学学生支援センター主催 就職ガイダンス（大岡山）「博士課程学生の就職」, 2011年11月9日, 70周年記念講堂.', kocorolab_refresh_tokyotech_2011_guidance_pdf(), 'ja' ),
 			'野田浩平 (2011) 世代間の「価値観」の相違を互いに認め合う ～これからの企業の人材育成課題を探る～, Neue Fahne Journal No. 20.',
 			'野田浩平, 児玉義徳 (2011) 日本の起業家の特性及び背景要因の研究, 人材育成学会第9回大会予稿集',
 			'野田浩平 (2011) うつ病の増加を止め、絆を取り戻す社会への変化のきっかけ, 東京工業大学大学院社会理工学研究科価値システム専攻15周年記念論考 re-boot 0311→1130 VALDES OPINIONS.',
@@ -257,6 +268,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( 'Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha', 'quality', 'en', 'Amazon' ),
 		),
 		'2013' => array(
+			'Kohei Noda (2013) Lecturer, job-hunting support seminar at the company joint briefing hosted by Fukuoka City and the Fukuoka Chamber of Commerce, 28 May 2013, Fukuoka.',
 			'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013',
 			'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association',
 		),
@@ -264,6 +276,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
 		),
 		'2011' => array(
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2011) Lecture on PhD employment at the Tokyo Institute of Technology (Ookayama) career guidance, Student Support Center, 9 November 2011.', kocorolab_refresh_tokyotech_2011_guidance_pdf(), 'en' ),
 			'Noda, K., and Kodama, Y. (2011) Research on the Special Characteristics and Background Elements of Japanese Entrepreneurs, Proceedings of the 9th annual meeting of Japanese Academy of Human Resource Development.',
 			kocorolab_refresh_linked_paper( 'Noda, K., Miyakoshi, D., Igarashi, K., and Hiramoto (2011) The development of the mental simulation methodology which enhances mindfulness and motivation, Proceedings of the 28th annual meeting of Japanese Cognitive Science Society', $pdfs['2011'], 'en' ),
 		),

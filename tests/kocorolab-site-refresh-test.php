@@ -98,6 +98,15 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, '52.2.4_908_4/_pdf' )
 		&& false !== strpos( $en_pubs, 'jpsgaiyo/52.2.4' )
 	),
+	'2013 Fukuoka seminar and 2011 Tokyo Tech PhD guidance are listed' => (
+		false !== strpos( $ja_pubs, '福岡商工会議所' )
+		&& false !== strpos( $ja_pubs, '就活応援セミナー' )
+		&& false !== strpos( $ja_pubs, '博士課程学生の就職' )
+		&& false !== strpos( $ja_pubs, 'tokyo-tech-job-guidance-2011.pdf' )
+		&& false !== strpos( $en_pubs, 'Fukuoka Chamber of Commerce' )
+		&& false !== strpos( $en_pubs, 'PhD employment' )
+		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/tokyo-tech-job-guidance-2011.pdf' )
+	),
 	'2024 change management links to YouTube series' => (
 		false !== strpos( $ja_pubs, 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
 		&& false !== strpos( $ja_pubs, '<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">野田浩平, 松村憲, 小島美佳 (2024)' )
