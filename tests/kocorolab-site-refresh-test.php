@@ -101,14 +101,15 @@ $checks = array(
 			&& false !== strpos( $en_profile, 'Career' )
 			&& false !== strpos( $en_profile, 'Philippines' )
 			&& false === strpos( kocorolab_refresh_bio_tabs_html( 'home', 'ja' ), '学歴' )
-			&& false === strpos( $work_ja, '株式会社' )
 			&& false === strpos( $work_ja, 'アンダーセン' )
 			&& false === strpos( $work_ja, 'リクルート' )
 			&& false === strpos( $work_en, 'Kocorolab' )
 			&& false === strpos( $work_en, 'Andersen' )
 			&& false === strpos( $work_en, 'Recruit' )
-			&& false !== strpos( $work_ja, '2025年より専任教員' )
-			&& false === strpos( $work_ja, '2023年よりグロービス経営大学院 専任教員' )
+			&& false !== strpos( $work_ja, '2023年より株式会社グロービス' )
+			&& false !== strpos( $work_ja, '2025年よりグロービス経営大学院 専任教員' )
+			&& false === strpos( $work_ja, '2023年よりグロービス経営大学院' )
+			&& false !== strpos( $work_en, 'GLOBIS Corporation from 2023' )
 			&& false !== strpos( $work_en, 'from 2025' );
 	} )(),
 	'hero hides placeholder photo notes' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'hero_photo_note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-photo-note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php' ), '写真は仮です' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/preview-site/build.php' ), '写真は仮です' ) ),
