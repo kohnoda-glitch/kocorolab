@@ -359,13 +359,42 @@ function kocorolab_refresh_publications_html( $lang = 'ja' ) {
 	return ob_get_clean();
 }
 
+function kocorolab_refresh_news_overlay_entries() {
+	return array(
+		array(
+			'date' => '2025-09-12',
+			'ja'   => '日本認知科学会第42回大会で「U理論の認知感情モデル」を発表しました。',
+			'en'   => 'Presented “The cognitive affective model of theory U” at the 42nd Annual Meeting of the Japanese Cognitive Science Society.',
+			'keys' => array( 'U理論の認知感情モデル', 'cognitive affective model of theory U', 'JCSS2025', '日本認知科学会第42回', '42nd JCSS' ),
+		),
+		array(
+			'date' => '2025-01-22',
+			'ja'   => '『VUCA時代のストレス防衛術』を刊行しました。',
+			'en'   => 'Published Stress Defense Strategies in the VUCA Era.',
+			'keys' => array( 'VUCA時代のストレス', 'Stress Defense Strategies in the VUCA', 'B0DTS8XLPD' ),
+		),
+		array(
+			'date' => '2024-09-29',
+			'ja'   => '『「私、うつになりやすいかも？」と思った時に読む本』を刊行しました。',
+			'en'   => 'Published The book you should read when you think you would be depression.',
+			'keys' => array( 'うつになりやすいかも', 'would be depression', 'B0DGFRYHMX' ),
+		),
+		array(
+			'date' => '2024-06-01',
+			'ja'   => 'ウェルビーイング時代のチェンジマネジメントのYouTubeシリーズを公開しました。',
+			'en'   => 'Published the YouTube series Change Management under Well-being Era.',
+			'keys' => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
+		),
+	);
+}
+
 function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 	$ja = array(
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。' ),
 		array( '2020-12-06', '健康×幸福トーク登壇' ),
-		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2020-04-01', 'コロナ禍でのストレスについての寄稿' ),
 		array( '2020-01-02', 'SDGs Learning Journey 2020の案内' ),
+		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
 		array( '2013-01-01', 'GBX(Global Business eXperience)の記事' ),
 		array( '2009-01-01', 'MHQ(Mental Health 質問票）のバージョン１発売のプレスリリース' ),
@@ -373,9 +402,9 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 	$en = array(
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026 nominations open' ),
 		array( '2020-12-06', 'Talk on health and happiness' ),
-		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2020-04-01', 'Note on stress during COVID' ),
 		array( '2020-01-02', 'SDGs Learning Journey 2020' ),
+		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
 		array( '2013-01-01', 'GBX (Global Business eXperience)' ),
 		array( '2009-01-01', 'MHQ version 1 press release' ),
@@ -383,24 +412,128 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 	return ( 'en' === $lang ) ? $en : $ja;
 }
 
+function kocorolab_refresh_news_text_has( $hay, $keys ) {
+	foreach ( $keys as $key ) {
+		$found = function_exists( 'mb_stripos' ) ? mb_stripos( $hay, $key ) : stripos( $hay, $key );
+		if ( false !== $found ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function kocorolab_refresh_news_feed_items( $lang = 'ja', $wp_posts = array(), $limit = 0 ) {
+	$items = array();
+	$hay   = '';
+	foreach ( (array) $wp_posts as $post ) {
+		$title = isset( $post->post_title ) ? $post->post_title : '';
+		if ( function_exists( 'kocorolab_refresh_ml_text' ) ) {
+			$title = kocorolab_refresh_ml_text( $title, $lang );
+		}
+		$blob = $title;
+		if ( isset( $post->post_name ) ) {
+			$blob .= ' ' . $post->post_name;
+		}
+		if ( isset( $post->post_content ) ) {
+			$blob .= ' ' . $post->post_content;
+		}
+		$hay    .= ' ' . $blob;
+		$url     = '';
+		if ( ! empty( $post->permalink ) ) {
+			$url = $post->permalink;
+		} elseif ( function_exists( 'kocorolab_refresh_news_permalink' ) ) {
+			$url = kocorolab_refresh_news_permalink( $post );
+		}
+		$date = ! empty( $post->post_date ) ? substr( $post->post_date, 0, 10 ) : '';
+		$items[] = array(
+			'date'  => $date,
+			'title' => $title,
+			'url'   => $url,
+			'hay'   => $blob,
+		);
+	}
+	foreach ( kocorolab_refresh_news_overlay_entries() as $row ) {
+		if ( kocorolab_refresh_news_text_has( $hay, $row['keys'] ) ) {
+			continue;
+		}
+		$title   = ( 'en' === $lang ) ? $row['en'] : $row['ja'];
+		$items[] = array(
+			'date'  => $row['date'],
+			'title' => $title,
+			'url'   => '',
+			'hay'   => $title,
+		);
+	}
+	if ( ! $wp_posts ) {
+		foreach ( kocorolab_refresh_news_preview_items( $lang ) as $row ) {
+			$dup = false;
+			foreach ( $items as $have ) {
+				if ( $have['title'] === $row[1] ) {
+					$dup = true;
+					break;
+				}
+			}
+			if ( $dup ) {
+				continue;
+			}
+			$items[] = array(
+				'date'  => $row[0],
+				'title' => $row[1],
+				'url'   => '',
+				'hay'   => $row[1],
+			);
+		}
+	}
+	usort(
+		$items,
+		function ( $a, $b ) {
+			return strcmp( $b['date'], $a['date'] );
+		}
+	);
+	if ( $limit > 0 ) {
+		$items = array_slice( $items, 0, $limit );
+	}
+	return $items;
+}
+
+function kocorolab_refresh_news_list_html( $items, $lang = 'ja', $compact = false ) {
+	ob_start();
+	?>
+	<ul class="kl-news-list">
+		<?php foreach ( $items as $item ) : ?>
+			<li>
+				<time datetime="<?php echo esc_attr( $item['date'] ); ?>"><?php echo esc_html( str_replace( '-', '.', substr( $item['date'], 0, 10 ) ) ); ?></time>
+				<?php if ( $compact ) : ?>
+					<?php if ( ! empty( $item['url'] ) ) : ?>
+						<a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
+					<?php else : ?>
+						<span><?php echo esc_html( $item['title'] ); ?></span>
+					<?php endif; ?>
+				<?php else : ?>
+					<div>
+						<?php if ( ! empty( $item['url'] ) ) : ?>
+							<a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
+						<?php else : ?>
+							<span><?php echo esc_html( $item['title'] ); ?></span>
+						<?php endif; ?>
+						<?php echo kocorolab_refresh_related_links_html( $item['hay'], $lang ); ?>
+					</div>
+				<?php endif; ?>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+	return ob_get_clean();
+}
+
 function kocorolab_refresh_news_html( $lang = 'ja' ) {
-	$items = kocorolab_refresh_news_preview_items( $lang );
+	$items = kocorolab_refresh_news_feed_items( $lang );
 	$c     = kocorolab_refresh_copy( $lang );
 	ob_start();
 	?>
 	<div class="kl-page">
 		<p class="kl-lead"><?php echo esc_html( $c['news_lead'] ); ?></p>
-		<ul class="kl-news-list">
-			<?php foreach ( $items as $item ) : ?>
-				<li>
-					<time datetime="<?php echo esc_attr( $item[0] ); ?>"><?php echo esc_html( str_replace( '-', '.', substr( $item[0], 0, 10 ) ) ); ?></time>
-					<div>
-						<span><?php echo esc_html( $item[1] ); ?></span>
-						<?php echo kocorolab_refresh_related_links_html( $item[1], $lang ); ?>
-					</div>
-				</li>
-			<?php endforeach; ?>
-		</ul>
+		<?php echo kocorolab_refresh_news_list_html( $items, $lang ); ?>
 	</div>
 	<?php
 	return ob_get_clean();

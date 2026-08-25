@@ -178,6 +178,24 @@ $checks = array(
 	'adds Hiramoto YouTube for 平本さん without あきお' => false !== strpos( kocorolab_refresh_related_links_html( '代表の野田がコーチの平本さんとの対談でフィリピンの幸福度と開発の現状をお話ししました。', 'ja' ), '5acopoZcYfw' ),
 	'wraps bare AMD URL with Wayback' => false !== strpos( kocorolab_refresh_repair_external_links( 'AMDさんの報告ページです。 https://amd.tokyo/project/3228' ), 'web.archive.org/web/20240809025928' ),
 	'news page shows Wayback and YouTube in the list' => ( false !== strpos( kocorolab_refresh_news_html( 'ja' ), '5acopoZcYfw' ) && false !== strpos( kocorolab_refresh_news_html( 'ja' ), '20240809025928' ) && false !== strpos( kocorolab_refresh_news_html( 'ja' ), '20230325203317' ) ),
+	'news list includes recent books and YouTube' => (
+		false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'VUCA時代のストレス防衛術' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'B0DTS8XLPD' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'うつになりやすいかも' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'B0DGFRYHMX' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'JCSS2025_P2-37.pdf' )
+	),
+	'news overlay still appears when WordPress posts exist' => ( function () {
+		$post              = new stdClass();
+		$post->post_title  = 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。';
+		$post->post_date   = '2026-03-01 00:00:00';
+		$post->post_name   = 'ideas';
+		$post->post_content = '';
+		$post->permalink   = '/news/ideas/';
+		$html              = kocorolab_refresh_news_list_html( kocorolab_refresh_news_feed_items( 'ja', array( $post ) ), 'ja' );
+		return false !== strpos( $html, 'VUCA時代のストレス防衛術' ) && false !== strpos( $html, '/news/ideas/' );
+	} )(),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
 	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) ),
 	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) ),

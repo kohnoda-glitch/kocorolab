@@ -15,13 +15,14 @@ if ( function_exists( 'get_posts' ) ) {
 	$news_posts = get_posts(
 		array(
 			'post_type'        => 'news',
-			'posts_per_page'   => 4,
+			'posts_per_page'   => 20,
 			'orderby'          => 'date',
 			'order'            => 'DESC',
 			'suppress_filters' => false,
 		)
 	);
 }
+$news_items = kocorolab_refresh_news_feed_items( $lang, $news_posts, 4 );
 ?>
 <div id="edit-area" class="mt0 kl-home-wrap">
 	<main class="kl-home" lang="<?php echo esc_attr( $lang ); ?>">
@@ -123,15 +124,8 @@ if ( function_exists( 'get_posts' ) ) {
 				<p class="kl-kicker"><?php kocorolab_refresh_e( 'section_news' ); ?></p>
 				<h2><?php kocorolab_refresh_e( 'section_news' ); ?></h2>
 				<p class="kl-lead"><?php kocorolab_refresh_e( 'news_lead' ); ?></p>
-				<?php if ( $news_posts ) : ?>
-					<ul class="kl-news-list">
-						<?php foreach ( $news_posts as $post ) : setup_postdata( $post ); ?>
-							<li>
-								<time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?></time>
-								<a href="<?php echo esc_url( kocorolab_refresh_news_permalink() ); ?>"><?php the_title(); ?></a>
-							</li>
-						<?php endforeach; wp_reset_postdata(); ?>
-					</ul>
+				<?php if ( $news_items ) : ?>
+					<?php echo kocorolab_refresh_news_list_html( $news_items, $lang, true ); ?>
 				<?php else : ?>
 					<p><?php kocorolab_refresh_e( 'news_empty' ); ?></p>
 				<?php endif; ?>

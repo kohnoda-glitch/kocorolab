@@ -37,6 +37,36 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( 'U理論の認知感情モデル', 'cognitive affective model of theory U', 'JCSS2025', '日本認知科学会第42回' ),
+			'links' => array(
+				array(
+					'url' => 'https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf',
+					'ja'  => '大会予稿PDF',
+					'en'  => 'Conference paper (PDF)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'VUCA時代のストレス', 'Stress Defense Strategies in the VUCA', 'B0DTS8XLPD' ),
+			'links' => array(
+				array(
+					'url' => 'https://www.amazon.co.jp/dp/B0DTS8XLPD',
+					'ja'  => 'Amazon（VUCA時代のストレス防衛術）',
+					'en'  => 'Amazon (Stress Defense Strategies in the VUCA Era)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'うつになりやすいかも', 'would be depression', 'B0DGFRYHMX' ),
+			'links' => array(
+				array(
+					'url' => 'https://www.amazon.co.jp/dp/B0DGFRYHMX',
+					'ja'  => 'Amazon（「私、うつになりやすいかも？」と思った時に読む本）',
+					'en'  => 'Amazon (the book you should read when you think you would be depression)',
+				),
+			),
+		),
+		array(
 			'keys'  => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
 			'links' => array(
 				array(
