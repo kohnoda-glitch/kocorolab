@@ -246,10 +246,17 @@ function kocorolab_refresh_enrich_news_links( $content, $lang = null, $haystack 
 
 function kocorolab_refresh_public_text( $content ) {
 	$content = kocorolab_refresh_ml_text( $content );
+	$content = kocorolab_refresh_retire_xsrv_email( $content );
 	$content = kocorolab_refresh_enrich_news_links( $content );
 	if ( function_exists( 'make_clickable' ) ) {
 		$content = make_clickable( $content );
 	}
 	$content = kocorolab_refresh_repair_external_links( $content );
+	return $content;
+}
+
+function kocorolab_refresh_retire_xsrv_email( $content ) {
+	$next = kocorolab_refresh_contact_email();
+	$content = preg_replace( '/[A-Z0-9._%+-]+@knoda\.xsrv\.jp/i', $next, $content );
 	return $content;
 }
