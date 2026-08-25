@@ -250,27 +250,27 @@ function kocorolab_refresh_cv_items( $lang = 'ja' ) {
 	$ja = array(
 		'edu'  => array(
 			'東京工業大学大学院修了、博士（学術 / 認知科学）',
-			'MIT経営大学院グローバルプログラム IDEAS Asia Pacific 修了（2023）',
+			'MIT経営大学院グローバルプログラム IDEAS Asia Pacific 修了',
 		),
 		'work' => array(
 			'外資系コンサルティングで人事・チェンジマネジメントに従事',
-			'人材・採用・適性検査の事業開発を経て独立し、2009年にメンタルヘルス検査 MHQ を発売',
-			'2013–2020年、フィリピンでグローバル人材育成と人事統括、英語教育事業の役員',
+			'人材・採用・適性検査の事業開発を経て独立し、メンタルヘルス検査 MHQ を発売',
+			'フィリピンでグローバル人材育成と人事統括、英語教育事業の役員',
 			'上場前の成長企業と上場後の事業会社で人事責任者・執行役員',
-			'2023年より株式会社グロービス、2025年よりグロービス経営大学院 専任教員。2024年より MIT IDEAS Asia Pacific リージョナル・ファカルティ',
+			'株式会社グロービスを経て、グロービス経営大学院 専任教員。MIT IDEAS Asia Pacific リージョナル・ファカルティ',
 		),
 	);
 	$en = array(
 		'edu'  => array(
 			'Ph.D. in Cognitive Science, Tokyo Institute of Technology',
-			'MIT Sloan Global Program IDEAS Asia Pacific (completed 2023)',
+			'MIT Sloan Global Program IDEAS Asia Pacific',
 		),
 		'work' => array(
 			'HR and change-management consulting at a global firm',
-			'Business development in talent, hiring, and assessment, then independent work; launched the MHQ mental health questionnaire in 2009',
-			'2013–2020 in the Philippines: global talent development, HR leadership, and an officer role in English-language education',
+			'Business development in talent, hiring, and assessment, then independent work; launched the MHQ mental health questionnaire',
+			'In the Philippines: global talent development, HR leadership, and an officer role in English-language education',
 			'Head of HR / executive officer at both a pre-IPO growth company and listed operating companies',
-			'GLOBIS Corporation from 2023; Associate Professor and Research Faculty at Globis University Graduate School of Management from 2025. From 2024, Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific',
+			'GLOBIS Corporation, then Associate Professor and Research Faculty at Globis University Graduate School of Management. Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific',
 		),
 	);
 	return ( 'en' === $lang ) ? $en : $ja;
