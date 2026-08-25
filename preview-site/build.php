@@ -201,9 +201,6 @@ function kocorolab_preview_wrap( $lang, $title, $body, $is_home = false ) {
 	$en  = ( $lang === 'en' );
 	$css = file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' );
 	$cls = $is_home ? 'kl-refresh kl-refresh-home kcl-preview' : 'kl-refresh kl-refresh-page kcl-preview';
-	$banner = $en
-		? 'Wide landing preview · English — placeholder nature photos. The live site has not changed yet.'
-		: 'ワイドなランディングのプレビュー · 日本語 — 自然の写真は仮です。本番サイトはまだ変わっていません。';
 	$html  = '<!DOCTYPE html><html lang="' . ( $en ? 'en' : 'ja' ) . '"><head><meta charset="utf-8">';
 	$html .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	$html .= '<title>' . esc_html( $title ) . '</title>';
@@ -211,7 +208,6 @@ function kocorolab_preview_wrap( $lang, $title, $body, $is_home = false ) {
 	$html .= '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">';
 	$html .= '<style>' . $css . kocorolab_preview_extra_css() . '</style></head>';
 	$html .= '<body class="' . $cls . '">';
-	$html .= '<p class="kcl-banner">' . esc_html( $banner ) . '</p>';
 	$html .= $body;
 	$html .= '</body></html>';
 	return $html;

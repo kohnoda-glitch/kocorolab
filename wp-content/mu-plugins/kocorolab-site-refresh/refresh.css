@@ -239,39 +239,6 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   margin: 1.5rem 0 0;
 }
 
-.kl-creds {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem 1.4rem;
-  margin: 2rem 0 0;
-  padding: 0;
-  list-style: none;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 0.86rem;
-}
-
-.kl-creds li {
-  position: relative;
-  padding-left: 0.9rem;
-}
-
-.kl-creds li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.45em;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 50%;
-  background: #2ec4b6;
-}
-
-.kl-photo-note {
-  margin: 1.1rem 0 0;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 0.78rem;
-}
-
 .kl-band {
   padding: 4.2rem 0;
 }
@@ -767,11 +734,6 @@ a.kl-soft-card:hover {
 
   .kl-top-actions {
     margin-left: auto;
-  }
-
-  .kl-creds {
-    flex-direction: column;
-    gap: 0.45rem;
   }
 
   .kl-bio-tabs {

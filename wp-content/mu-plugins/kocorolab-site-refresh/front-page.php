@@ -38,12 +38,6 @@ if ( function_exists( 'get_posts' ) ) {
 					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
 					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
 				</p>
-				<ul class="kl-creds">
-					<?php foreach ( kocorolab_refresh_titles() as $cred_key ) : ?>
-						<li><?php kocorolab_refresh_e( $cred_key ); ?></li>
-					<?php endforeach; ?>
-				</ul>
-				<p class="kl-photo-note"><?php kocorolab_refresh_e( 'hero_photo_note' ); ?></p>
 			</div>
 		</section>
 
