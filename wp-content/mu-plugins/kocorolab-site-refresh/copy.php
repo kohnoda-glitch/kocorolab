@@ -430,7 +430,7 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 		<?php echo kocorolab_refresh_bio_tabs_html( 'profile', $lang, true ); ?>
 		<p><?php echo esc_html( $c['profile_note'] ); ?></p>
 		<p>
-			<a href="<?php echo esc_url( kocorolab_refresh_url( '/hakkou/', '/en/publications/', $lang ) ); ?>"><?php echo esc_html( $c['pub_link'] ); ?></a>
+			<a href="<?php echo esc_url( kocorolab_refresh_publications_url( $lang ) ); ?>"><?php echo esc_html( $c['pub_link'] ); ?></a>
 			·
 			<a href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en', $lang ) ); ?>"><?php echo esc_html( $c['news_link'] ); ?></a>
 		</p>

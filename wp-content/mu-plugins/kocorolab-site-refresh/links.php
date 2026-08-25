@@ -25,6 +25,16 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
+			'links' => array(
+				array(
+					'url' => 'https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp',
+					'ja'  => 'YouTubeシリーズ（ウェルビーイング時代のチェンジマネジメント）',
+					'en'  => 'YouTube series (Change Management under Well-being Era)',
+				),
+			),
+		),
+		array(
 			'keys'  => array( 'amd.tokyo', 'Learning Journey 2018', 'sdgs-learning-journey-2018', '2018報告' ),
 			'links' => array(
 				array(
@@ -226,8 +236,25 @@ function kocorolab_refresh_repair_external_links( $content, $lang = null ) {
 	);
 }
 
+function kocorolab_refresh_is_publications_markup( $content ) {
+	return is_string( $content ) && false !== strpos( $content, 'kl-pubs' );
+}
+
+function kocorolab_refresh_is_publications_page() {
+	if ( isset( $GLOBALS['KOCORO_PREVIEW_PAGE'] ) && in_array( $GLOBALS['KOCORO_PREVIEW_PAGE'], array( 'hakkou', 'publications' ), true ) ) {
+		return true;
+	}
+	if ( function_exists( 'is_page' ) && is_page( array( 'hakkou', 'publications' ) ) ) {
+		return true;
+	}
+	return false;
+}
+
 function kocorolab_refresh_enrich_news_links( $content, $lang = null, $haystack = null ) {
 	if ( ! is_string( $content ) ) {
+		return $content;
+	}
+	if ( kocorolab_refresh_is_publications_markup( $content ) || kocorolab_refresh_is_publications_page() ) {
 		return $content;
 	}
 	if ( null === $lang ) {

@@ -162,7 +162,7 @@ if ( function_exists( 'get_posts' ) ) {
 				<h2><?php kocorolab_refresh_e( 'section_pub' ); ?></h2>
 				<p><?php kocorolab_refresh_e( 'pub_body' ); ?></p>
 				<p class="kl-actions">
-					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/hakkou/', '/en/publications/' ) ); ?>"><?php kocorolab_refresh_e( 'pub_link' ); ?></a>
+					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_publications_url() ); ?>"><?php kocorolab_refresh_e( 'pub_link' ); ?></a>
 				</p>
 			</div>
 		</section>

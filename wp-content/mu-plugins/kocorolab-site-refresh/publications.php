@@ -3,20 +3,44 @@
  * Full publications list from the live site, with the 2025 JCSS sole-author paper first.
  */
 
+function kocorolab_refresh_jcss_pdfs() {
+	return array(
+		'2025' => 'https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf',
+		'2016' => 'https://www.jcss.gr.jp/meetings/jcss2016/proceedings/pdf/JCSS2016_P1-16.pdf',
+		'2011' => 'https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf',
+	);
+}
+
 function kocorolab_refresh_publications_pdf() {
-	return 'https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf';
+	$pdfs = kocorolab_refresh_jcss_pdfs();
+	return $pdfs['2025'];
+}
+
+function kocorolab_refresh_change_management_playlist() {
+	return 'https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp';
+}
+
+function kocorolab_refresh_linked_item( $citation, $url, $lang = 'ja', $label = 'PDF' ) {
+	$href   = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
+	$linked = '<a href="' . $href . '">' . $citation . '</a>';
+	$extra  = '<a href="' . $href . '">' . $label . '</a>';
+	return ( 'en' === $lang ) ? $linked . ' (' . $extra . ')' : $linked . ' （' . $extra . '）';
+}
+
+function kocorolab_refresh_linked_paper( $citation, $url, $lang = 'ja' ) {
+	return kocorolab_refresh_linked_item( $citation, $url, $lang, 'PDF' );
 }
 
 function kocorolab_refresh_publications_years( $lang = 'ja' ) {
-	$pdf = kocorolab_refresh_publications_pdf();
-	$ja  = array(
+	$pdfs = kocorolab_refresh_jcss_pdfs();
+	$ja   = array(
 		'2025' => array(
-			'<a href="' . $pdf . '">野田浩平 (2025) U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.</a> （<a href="' . $pdf . '">PDF</a>）',
+			kocorolab_refresh_linked_paper( '野田浩平 (2025) U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.', $pdfs['2025'], 'ja' ),
 			'野田浩平, まめ, 海下理恵 (2025) VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集. (Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress)',
 		),
 		'2024' => array(
 			'野田浩平 (2024)「私、うつになりやすいかも？」と思った時に読む本',
-			'野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)',
+			kocorolab_refresh_linked_item( '野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)', kocorolab_refresh_change_management_playlist(), 'ja', 'YouTubeシリーズ' ),
 		),
 		'2020' => array(
 			'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>（<a href="https://www.youtube.com/@hiramotoakio">チャンネル</a>）',
@@ -28,7 +52,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
 		),
 		'2016' => array(
-			'野田浩平, 松岡良彦 (2016) 第二言語としての英語学習におけるReal Life Experience法の提案. 第33回日本認知科学会年次大会',
+			kocorolab_refresh_linked_paper( '野田浩平, 松岡良彦 (2016) 第二言語としての英語学習におけるReal Life Experience法の提案. 第33回日本認知科学会年次大会', $pdfs['2016'], 'ja' ),
 			'Kohei Noda, Happiness Workshop: learning from Filipino — Why Filipino People are always smiling, Cebu Pot Seminar, 24 March 2016, Cebu, Philippines',
 			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, 30 July – 3 August, Nagoya, Japan. (Cancelled)',
 		),
@@ -51,7 +75,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'野田浩平 (2011) 世代間の「価値観」の相違を互いに認め合う ～これからの企業の人材育成課題を探る～, Neue Fahne Journal No. 20.',
 			'野田浩平, 児玉義徳 (2011) 日本の起業家の特性及び背景要因の研究, 人材育成学会第9回大会予稿集',
 			'野田浩平 (2011) うつ病の増加を止め、絆を取り戻す社会への変化のきっかけ, 東京工業大学大学院社会理工学研究科価値システム専攻15周年記念論考 re-boot 0311→1130 VALDES OPINIONS.',
-			'野田浩平, 宮越大樹, 五十嵐久美子, 平本明武 (2011) 気付きを生み，動機付けを高めるシミュレーション方法の開発, 日本認知科学会第28回大会予稿集. <a href="https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf">PDF</a>',
+			kocorolab_refresh_linked_paper( '野田浩平, 宮越大樹, 五十嵐久美子, 平本明武 (2011) 気付きを生み，動機付けを高めるシミュレーション方法の開発, 日本認知科学会第28回大会予稿集', $pdfs['2011'], 'ja' ),
 		),
 		'2010' => array(
 			'Noda K. and Agullo, B. (2010) Simulating Corporate Organizational Performance at the Cognitive Modeling/Architecture Level, Proceeding of the 32nd Annual Meeting of Cognitive Science Society.',
@@ -107,12 +131,12 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 
 	$en = array(
 		'2025' => array(
-			'<a href="' . $pdf . '">Kohei Noda (2025) The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.</a> (<a href="' . $pdf . '">PDF</a>)',
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2025) The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.', $pdfs['2025'], 'en' ),
 			'Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress',
 		),
 		'2024' => array(
 			'Kohei Noda (2024) The book you should read when you think you would be depression',
-			'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era',
+			kocorolab_refresh_linked_item( 'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era', kocorolab_refresh_change_management_playlist(), 'en', 'YouTube series' ),
 		),
 		'2020' => array(
 			'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)',
@@ -124,7 +148,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
 		),
 		'2016' => array(
-			'Kohei Noda, Yoshihiko Matsuoka (2016) Proposal of Real Life Experience Method in English Language as Second Language. 33rd Annual Meeting of the Japanese Cognitive Science Society',
+			kocorolab_refresh_linked_paper( 'Kohei Noda, Yoshihiko Matsuoka (2016) Proposal of Real Life Experience Method in English Language as Second Language. 33rd Annual Meeting of the Japanese Cognitive Science Society', $pdfs['2016'], 'en' ),
 			'Kohei Noda, Happiness Workshop: learning from Filipino — Why Filipino People are always smiling, Cebu Pot Seminar, 24 March 2016, Cebu, Philippines',
 			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, Nagoya, Japan. (Cancelled)',
 		),
@@ -144,7 +168,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2011' => array(
 			'Noda, K., and Kodama, Y. (2011) Research on the Special Characteristics and Background Elements of Japanese Entrepreneurs, Proceedings of the 9th annual meeting of Japanese Academy of Human Resource Development.',
-			'Noda, K., Miyakoshi, D., Igarashi, K., and Hiramoto (2011) The development of the mental simulation methodology which enhances mindfulness and motivation, Proceedings of the 28th annual meeting of Japanese Cognitive Science Society. <a href="https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf">PDF</a>',
+			kocorolab_refresh_linked_paper( 'Noda, K., Miyakoshi, D., Igarashi, K., and Hiramoto (2011) The development of the mental simulation methodology which enhances mindfulness and motivation, Proceedings of the 28th annual meeting of Japanese Cognitive Science Society', $pdfs['2011'], 'en' ),
 		),
 		'2010' => array(
 			'Noda K. and Agullo, B. (2010) Simulating Corporate Organizational Performance at the Cognitive Modeling/Architecture Level, Proceeding of the 32nd Annual Meeting of Cognitive Science Society.',

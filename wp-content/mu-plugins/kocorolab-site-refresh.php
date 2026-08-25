@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.5.5
+ * Version: 1.5.6
  * Author: Kohei Noda
  */
 
@@ -55,6 +55,28 @@ function kocorolab_refresh_url( $ja_path, $en_path = null, $lang = null ) {
 		return function_exists( 'home_url' ) ? home_url( $path ) : $path;
 	}
 	return kocorolab_refresh_root() . $path;
+}
+
+if ( ! function_exists( 'kocorolab_refresh_publications_url' ) ) {
+	function kocorolab_refresh_publications_url( $lang = null ) {
+		return kocorolab_refresh_url( '/publications/', '/en/publications/', $lang );
+	}
+}
+
+function kocorolab_refresh_request_path_from( $uri ) {
+	$path = parse_url( (string) $uri, PHP_URL_PATH );
+	if ( ! is_string( $path ) || '' === $path ) {
+		return '';
+	}
+	return '/' . trim( $path, '/' );
+}
+
+function kocorolab_refresh_is_legacy_hakkou_path( $path ) {
+	return '/hakkou' === $path;
+}
+
+function kocorolab_refresh_is_ja_publications_path( $path ) {
+	return '/publications' === $path;
 }
 
 function kocorolab_refresh_news_permalink( $post = null ) {
@@ -167,6 +189,35 @@ if ( ! function_exists( 'add_filter' ) ) {
 }
 
 add_filter(
+	'request',
+	function ( $query_vars ) {
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path = kocorolab_refresh_request_path_from( $uri );
+		if ( kocorolab_refresh_is_ja_publications_path( $path ) ) {
+			$query_vars['pagename'] = 'hakkou';
+			unset( $query_vars['name'], $query_vars['error'] );
+		}
+		return $query_vars;
+	}
+);
+
+add_action(
+	'template_redirect',
+	function () {
+		if ( is_admin() ) {
+			return;
+		}
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path = kocorolab_refresh_request_path_from( $uri );
+		if ( kocorolab_refresh_is_legacy_hakkou_path( $path ) ) {
+			wp_safe_redirect( kocorolab_refresh_publications_url( 'ja' ), 301 );
+			exit;
+		}
+	},
+	0
+);
+
+add_filter(
 	'body_class',
 	function ( $classes ) {
 		$classes[] = 'kl-refresh';
@@ -212,7 +263,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.5.5' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.5.6' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}

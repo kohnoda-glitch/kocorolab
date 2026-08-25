@@ -3,6 +3,12 @@
  * Shared header/footer chrome for the wide landing layout.
  */
 
+if ( ! function_exists( 'kocorolab_refresh_publications_url' ) ) {
+	function kocorolab_refresh_publications_url( $lang = null ) {
+		return kocorolab_refresh_url( '/publications/', '/en/publications/', $lang );
+	}
+}
+
 function kocorolab_refresh_nav_key() {
 	if ( isset( $GLOBALS['KOCORO_PREVIEW_PAGE'] ) ) {
 		return $GLOBALS['KOCORO_PREVIEW_PAGE'];
@@ -16,6 +22,9 @@ function kocorolab_refresh_nav_key() {
 		}
 		if ( is_page( array( 'member', 'koheinoda' ) ) ) {
 			return 'member';
+		}
+		if ( is_page( array( 'hakkou', 'publications' ) ) ) {
+			return 'publications';
 		}
 		if ( is_page( 'company' ) ) {
 			return 'company';
@@ -50,7 +59,7 @@ function kocorolab_refresh_site_header() {
 			array( 'home', 'Home', kocorolab_refresh_url( '/', '/en/' ) ),
 			array( 'service', 'Services', kocorolab_refresh_url( '/service/', '/en/service/' ) ),
 			array( 'news', 'Updates', kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ),
-			array( 'hakkou', 'Publications', kocorolab_refresh_url( '/hakkou/', '/en/publications/' ) ),
+			array( 'publications', 'Publications', kocorolab_refresh_publications_url() ),
 			array( 'member', 'Profile', kocorolab_refresh_url( '/member/', '/en/member/' ) ),
 			array( 'company', 'Company', kocorolab_refresh_url( '/company/', '/en/company/' ) ),
 		)
@@ -58,7 +67,7 @@ function kocorolab_refresh_site_header() {
 			array( 'home', 'ホーム', kocorolab_refresh_url( '/', '/' ) ),
 			array( 'service', 'サービス', kocorolab_refresh_url( '/service/', '/service/' ) ),
 			array( 'news', '活動・新着', kocorolab_refresh_url( '/news/', '/news/' ) ),
-			array( 'hakkou', '発表文献', kocorolab_refresh_url( '/hakkou/', '/hakkou/' ) ),
+			array( 'publications', '発表文献', kocorolab_refresh_publications_url() ),
 			array( 'member', 'プロフィール', kocorolab_refresh_url( '/member/', '/member/' ) ),
 			array( 'company', '会社概要', kocorolab_refresh_url( '/company/', '/company/' ) ),
 		);

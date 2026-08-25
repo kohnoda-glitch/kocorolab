@@ -84,6 +84,35 @@ $checks = array(
 	'service page links to MHQ2 LP' => false !== strpos( $ja_service, '/mhqlp/' ) && false !== strpos( $ja['svc2_h'], 'MHQ2' ),
 	'EN service links to MHQ2 LP' => false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/mhqlp/?lang=en' ),
 	'pubs link Hiramoto video and JCSS 2011 PDF' => ( false !== strpos( $ja_pubs, '5acopoZcYfw' ) && false !== strpos( $ja_pubs, 'JCSS2011_P2-26.pdf' ) ),
+	'2011 and 2016 JCSS citations are fully linked' => (
+		false !== strpos( $ja_pubs, '<a href="https://www.jcss.gr.jp/meetings/jcss2016/proceedings/pdf/JCSS2016_P1-16.pdf">野田浩平, 松岡良彦 (2016)' )
+		&& false !== strpos( $ja_pubs, '<a href="https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf">野田浩平, 宮越大樹' )
+		&& false !== strpos( $en_pubs, 'JCSS2016_P1-16.pdf' )
+		&& false !== strpos( $en_pubs, '<a href="https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf">Noda, K., Miyakoshi' )
+	),
+	'2024 change management links to YouTube series' => (
+		false !== strpos( $ja_pubs, 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
+		&& false !== strpos( $ja_pubs, '<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">野田浩平, 松村憲, 小島美佳 (2024)' )
+		&& false !== strpos( $en_pubs, 'YouTube series' )
+	),
+	'publications page has no leftover related-links box' => (
+		false === strpos( $ja_pubs, 'kl-related-links' )
+		&& false === strpos( kocorolab_refresh_public_text( $ja_pubs ), 'kl-related-links' )
+		&& false === strpos( kocorolab_refresh_public_text( $en_pubs ), 'kl-related-links' )
+	),
+	'JA publications URL is /publications/' => (
+		false !== strpos( $ja_profile, '/publications/' )
+		&& false === strpos( $ja_profile, '/hakkou/' )
+		&& 'https://kocorolab.com/publications/' === kocorolab_refresh_publications_url( 'ja' )
+		&& 'https://kocorolab.com/en/publications/' === kocorolab_refresh_publications_url( 'en' )
+	),
+	'legacy hakkou path maps to publications' => (
+		kocorolab_refresh_is_legacy_hakkou_path( kocorolab_refresh_request_path_from( '/hakkou/' ) )
+		&& kocorolab_refresh_is_ja_publications_path( kocorolab_refresh_request_path_from( '/publications/' ) )
+		&& ! kocorolab_refresh_is_ja_publications_path( kocorolab_refresh_request_path_from( '/en/publications/' ) )
+		&& false !== strpos( kocorolab_refresh_page_html( 'publications', 'ja' ), 'JCSS2025_P2-37' )
+	),
+	'news related links include change-management playlist' => false !== strpos( kocorolab_refresh_related_links_html( 'ウェルビーイング時代のチェンジマネジメントの対談です。', 'ja' ), 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
 	'rewrites AMD link to Wayback' => ( false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://amd.tokyo/project/3228">https://amd.tokyo/project/3228</a>' ), 'web.archive.org/web/20240809025928' ) && false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://amd.tokyo/project/3228">https://amd.tokyo/project/3228</a>' ), '保存版' ) ),
 	'rewrites Peraichi and HR article to Wayback' => ( false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://peraichi.com/landing_pages/view/kenkoxkoufukutalk">x</a>' ), '20201128083739' ) && false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://www.hrm-service.net/column/article120/">x</a>' ), '20230325203317' ) ),
 	'rewrites jinjibu to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://www.jinjibu.jp/news/detl/3238/">x</a>' ), 'service.jinjibu.jp/news/detl/3238' ),
