@@ -26,18 +26,19 @@ if ( function_exists( 'get_posts' ) ) {
 <div id="edit-area" class="mt0 kl-home-wrap">
 	<main class="kl-home" lang="<?php echo esc_attr( $lang ); ?>">
 		<section class="kl-hero" style="--kl-hero-image: url('<?php echo esc_url( $hero ); ?>');">
-			<div class="kl-hero-glow" aria-hidden="true"></div>
 			<div class="kl-hero-inner">
-				<p class="kl-badge"><?php kocorolab_refresh_e( 'hero_badge' ); ?></p>
-				<h1>
-					<span><?php kocorolab_refresh_e( 'hero_title' ); ?></span>
-					<em><?php kocorolab_refresh_e( 'hero_title_accent' ); ?></em>
-				</h1>
-				<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
-				<p class="kl-actions">
-					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
-					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
-				</p>
+				<div class="kl-hero-copy">
+					<p class="kl-badge"><?php kocorolab_refresh_e( 'hero_badge' ); ?></p>
+					<h1>
+						<span><?php kocorolab_refresh_e( 'hero_title' ); ?></span>
+						<em><?php kocorolab_refresh_e( 'hero_title_accent' ); ?></em>
+					</h1>
+					<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
+					<p class="kl-actions">
+						<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
+						<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
+					</p>
+				</div>
 			</div>
 		</section>
 

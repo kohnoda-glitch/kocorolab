@@ -144,9 +144,9 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 }
 
 .kl-btn-ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.14);
   color: #fff !important;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82);
 }
 
 .kl-btn-dark {
@@ -161,26 +161,23 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   align-items: flex-end;
   overflow: hidden;
   color: #fff;
-  background:
-    linear-gradient(90deg, rgba(6, 16, 28, 0.82) 0%, rgba(6, 16, 28, 0.42) 52%, rgba(6, 16, 28, 0.2) 100%),
-    var(--kl-hero-image) center/cover no-repeat;
-}
-
-.kl-hero-glow {
-  position: absolute;
-  width: 28rem;
-  height: 28rem;
-  right: 8%;
-  top: 12%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(46, 210, 186, 0.28), transparent 68%);
-  pointer-events: none;
+  background: var(--kl-hero-image) center/cover no-repeat;
 }
 
 .kl-hero-inner {
   position: relative;
   width: min(72rem, calc(100% - 8vw));
   margin: 0 auto 4.2rem;
+}
+
+.kl-hero-copy {
+  max-width: 38rem;
+  padding: 1.35rem 1.45rem 1.5rem;
+  border-radius: 1.2rem;
+  background: rgba(6, 18, 32, 0.28);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 0 10px 32px rgba(4, 16, 28, 0.14);
 }
 
 .kl-badge {
@@ -190,7 +187,7 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   margin: 0 0 1.1rem;
   padding: 0.28rem 0.8rem;
   border-radius: 999px;
-  background: rgba(8, 24, 34, 0.55);
+  background: rgba(8, 24, 34, 0.42);
   color: #7ee0d2;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -217,19 +214,22 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 .kl-hero h1 span {
   display: block;
   color: #fff;
+  text-shadow: 0 1px 18px rgba(4, 16, 28, 0.28);
 }
 
 .kl-hero h1 em {
   display: block;
-  color: #5eead4;
+  color: #9ff3e4;
   font-style: normal;
+  text-shadow: 0 1px 18px rgba(4, 16, 28, 0.24);
 }
 
 .kl-hero .kl-lead {
   max-width: 38rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.96);
   font-size: 1.05rem;
   line-height: 1.85;
+  text-shadow: 0 1px 14px rgba(4, 16, 28, 0.28);
 }
 
 .kl-actions {
@@ -718,6 +718,10 @@ a.kl-soft-card:hover {
     margin-bottom: 2.4rem;
   }
 
+  .kl-hero-copy {
+    padding: 1.15rem 1.2rem 1.3rem;
+  }
+
   .kl-news-list li {
     grid-template-columns: 1fr;
     gap: 0.2rem;
@@ -777,18 +781,19 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 	<div id="edit-area" class="mt0 kl-home-wrap">
 	<main class="kl-home" lang="en">
 		<section class="kl-hero" style="--kl-hero-image: url('../images/hero-horizon.jpg');">
-			<div class="kl-hero-glow" aria-hidden="true"></div>
 			<div class="kl-hero-inner">
-				<p class="kl-badge">Mind · Society · Environment</p>
-				<h1>
-					<span>Guiding Transformation for Societies and Individuals</span>
-					<em>社会と個人の変容をガイドする</em>
-				</h1>
-				<p class="kl-lead">Inner life, human systems, and the living planet. We reconnect what is too often treated as separate, through cognitive science and practical HR.</p>
-				<p class="kl-actions">
-					<a class="kl-btn" href="service.html">Services</a>
-					<a class="kl-btn kl-btn-ghost" href="news.html">News &amp; activities</a>
-				</p>
+				<div class="kl-hero-copy">
+					<p class="kl-badge">Mind · Society · Environment</p>
+					<h1>
+						<span>Guiding Transformation for Societies and Individuals</span>
+						<em>社会と個人の変容をガイドする</em>
+					</h1>
+					<p class="kl-lead">Inner life, human systems, and the living planet. We reconnect what is too often treated as separate, through cognitive science and practical HR.</p>
+					<p class="kl-actions">
+						<a class="kl-btn" href="service.html">Services</a>
+						<a class="kl-btn kl-btn-ghost" href="news.html">News &amp; activities</a>
+					</p>
+				</div>
 			</div>
 		</section>
 
