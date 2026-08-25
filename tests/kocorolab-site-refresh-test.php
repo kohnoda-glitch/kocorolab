@@ -105,6 +105,8 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, 'tokyo-tech-job-guidance-2011.pdf' )
 		&& false !== strpos( $en_pubs, 'Fukuoka Chamber of Commerce' )
 		&& false !== strpos( $en_pubs, 'PhD employment' )
+		&& false !== strpos( $ja_pubs, 'data-max.co.jp/2013/05/29/2000_13_dm1806_1.html' )
+		&& false !== strpos( $ja_pubs, '福岡国際会議場' )
 		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/tokyo-tech-job-guidance-2011.pdf' )
 	),
 	'ICE 2013 plenary links to the conference page' => (
