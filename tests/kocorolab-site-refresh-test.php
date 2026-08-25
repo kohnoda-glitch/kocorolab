@@ -255,6 +255,11 @@ $checks = array(
 		}
 		return 'en' === $lang;
 	} )(),
+	'English profile URL is not canonical-redirected to Japanese' => (
+		kocorolab_refresh_is_en_profile_path( '/en/member' )
+		&& kocorolab_refresh_is_en_profile_path( '/en/koheinoda' )
+		&& ! kocorolab_refresh_is_en_profile_path( '/member' )
+	),
 	'news titles hyperlink to Amazon, YouTube, and PDFs' => (
 		false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">『VUCA時代のストレス防衛術』を刊行しました。</a>' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.youtube.com/watch?v=5acopoZcYfw">フィリピンの貧困と幸福度の現状</a>' )
