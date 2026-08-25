@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Kocoro Laboratory, Inc.</title><style>body{margin:0;}/* Photo-led Kocoro Lab overlay: sky, green, ocean. */
+
+body.kl-refresh-home #fullpage,
+body.kl-refresh-home #fp-nav {
+  display: none !important;
+}
+
+body.kl-refresh-home #main_col,
+body.kl-refresh-page #main_col {
+  background: #eef4f6;
+}
+
+body.kl-refresh-home #edit-area.kl-home-wrap {
+  background: transparent;
+  padding: 0;
+}
+
+.kl-home,
+.kl-page {
+  color: #163038;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.kl-page {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.kl-kicker {
+  margin: 0 0 0.55rem;
+  color: #3d7a86;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.kl-home h1 {
+  margin: 0 0 1rem;
+  color: #fff;
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  text-shadow: 0 8px 28px rgba(8, 24, 32, 0.35);
+}
+
+.kl-hero .kl-lead {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.08rem;
+  max-width: 36rem;
+}
+
+.kl-hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  background:
+    linear-gradient(180deg, rgba(12, 38, 48, 0.15) 0%, rgba(12, 38, 48, 0.62) 100%),
+    var(--kl-hero-image) center/cover no-repeat;
+}
+
+.kl-hero-inner {
+  width: min(52rem, calc(100% - 2.4rem));
+  margin: 0 auto 3.2rem;
+}
+
+.kl-hero .kl-kicker {
+  color: #d7f0e8;
+}
+
+.kl-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 0.9rem;
+  margin: 1.5rem 0 0;
+}
+
+.kl-btn {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  background: #0f6b63;
+  color: #f4fffb !important;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(8, 40, 38, 0.18);
+}
+
+.kl-btn:hover {
+  background: #0b544e;
+}
+
+.kl-btn-ghost {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+.kl-section .kl-btn-ghost {
+  background: transparent;
+  color: #0f6b63 !important;
+  box-shadow: inset 0 0 0 1px #0f6b63;
+}
+
+.kl-section .kl-btn-ghost:hover {
+  background: #0f6b63;
+  color: #f4fffb !important;
+}
+
+.kl-section {
+  width: min(52rem, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 3.2rem 0 0.4rem;
+}
+
+.kl-section h2,
+.kl-page h2,
+.kl-refresh .entry-content h2 {
+  margin: 0 0 0.9rem;
+  color: #12343c;
+  font-size: 1.28rem;
+  font-weight: 700;
+  padding-left: 0.75rem;
+  border-left: 4px solid #1aa07a;
+}
+
+.kl-lead {
+  margin: 0 0 1.3rem;
+  color: #35555c;
+}
+
+.kl-domains {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.kl-domain {
+  overflow: hidden;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(16, 48, 56, 0.08);
+}
+
+.kl-domain-photo {
+  margin: 0;
+  height: 11.5rem;
+  overflow: hidden;
+}
+
+.kl-domain-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kl-domain .kl-kicker,
+.kl-domain h3,
+.kl-domain p {
+  padding-left: 1.1rem;
+  padding-right: 1.1rem;
+}
+
+.kl-domain .kl-kicker {
+  margin-top: 1rem;
+}
+
+.kl-domain h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.kl-domain p:last-child {
+  padding-bottom: 1.2rem;
+}
+
+.kl-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kl-card {
+  padding: 1.2rem 1.15rem 1.3rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(16, 48, 56, 0.06);
+}
+
+.kl-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.kl-news-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.kl-news-list li {
+  display: grid;
+  grid-template-columns: 7.2rem 1fr;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0.95rem 1.15rem;
+  border-bottom: 1px solid #e4eef0;
+}
+
+.kl-news-list time {
+  color: #5b7a80;
+  font-size: 0.88rem;
+}
+
+.kl-section-who {
+  margin-top: 3.2rem;
+  padding: 1.6rem 1.4rem 1.3rem;
+  background: #fff;
+  border-radius: 18px;
+}
+
+.kl-section-who h2 {
+  margin-top: 0;
+}
+
+.kl-list {
+  margin: 0 0 1.3rem;
+  padding-left: 1.1rem;
+}
+
+.kl-list li {
+  margin: 0 0 0.7rem;
+}
+
+.kl-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.kl-table th,
+.kl-table td {
+  padding: 0.7rem 0.8rem;
+  border-bottom: 1px solid #e4eef0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.kl-table th {
+  width: 8.5rem;
+  color: #5b7a80;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+body.kl-refresh .entry-content {
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+body.kl-refresh .entry-content a,
+.kl-page a,
+.kl-section-who a {
+  color: #0f6b63;
+}
+
+@media (max-width: 900px) {
+  .kl-domains,
+  .kl-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .kl-hero {
+    min-height: 70vh;
+  }
+
+  .kl-news-list li {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .kl-table th {
+    display: block;
+    width: auto;
+    padding-bottom: 0.15rem;
+    border-bottom: 0;
+  }
+
+  .kl-table td {
+    display: block;
+    padding-top: 0.15rem;
+  }
+}
+</style></head><body class="kl-refresh kl-refresh-home"><main class="kl-home"><section class="kl-hero" style="--kl-hero-image:url(images/hero-horizon.jpg)"><div class="kl-hero-inner"><p class="kl-kicker">Kocoro Laboratory, Inc.</p><h1>Mending the split between mind, society, and environment</h1><p class="kl-lead">Inner life, human systems, and the living planet. We reconnect what is too often treated as separate, through cognitive science and practical HR.</p><p class="kl-actions"><a class="kl-btn" href="#">Services</a><a class="kl-btn kl-btn-ghost" href="#">News &amp; activities</a></p></div></section><section class="kl-section kl-world"><h2>Mind, society, environment</h2><p class="kl-lead">Sky, green, and ocean: one landscape again. That is the work of Kocoro Laboratory.</p><div class="kl-domains"><article class="kl-domain"><figure class="kl-domain-photo"><img src="images/spirit-sky.jpg" alt=""></figure><p class="kl-kicker">Mind</p><h3>Treat inner life with science</h3><p>The cognitive science of emotion, and the MHQ mental health questionnaire. Inner states without leaving them as vague feeling alone.</p></article><article class="kl-domain"><figure class="kl-domain-photo"><img src="images/society-green.jpg" alt=""></figure><p class="kl-kicker">Society</p><h3>Work the space between people and organizations</h3><p>Leadership education, HR, and organization building, informed by work as head of HR in pre-IPO and listed companies.</p></article><article class="kl-domain"><figure class="kl-domain-photo"><img src="images/environment-ocean.jpg" alt=""></figure><p class="kl-kicker">Environment</p><h3>Connect to a livable future</h3><p>Practice also at the edge of society and planet, including MIT Sloan IDEAS Asia Pacific and climate citizenship.</p></article></div></section><section class="kl-section"><h2>Services</h2><p class="kl-lead">We keep this to one page. Updates and brochures go to News &amp; activities.</p><div class="kl-cards"><article class="kl-card"><h3>Leadership education</h3><p>Teaching and research at GLOBIS University and MIT Sloan IDEAS Asia Pacific, including Theory U.</p></article><article class="kl-card"><h3>Mental health (MHQ)</h3><p>MHQ and EQ assessments for hiring and development. Notes and updates are posted as news.</p></article><article class="kl-card"><h3>HR and organization support</h3><p>HR systems, training, coaching, and research.</p></article></div></section><section class="kl-section kl-news"><h2>News &amp; activities</h2><p class="kl-lead">Occasional notes: IDEAS brochures, MHQ updates, talks, and public materials. This is not a diary blog.</p><ul class="kl-news-list"><li><time>2026.08.21</time><a href="#">MIT Sloan/UID IDEAS Asia Pacific 3.0 2026</a></li><li><time>2026.01.07</time><a href="#">MHQ</a></li></ul></section><section class="kl-section kl-section-who"><h2>Founder</h2><p>Kohei Noda, Ph.D., is President of Kocoro Laboratory, Associate Professor at GLOBIS University, and Regional Faculty for MIT Sloan IDEAS Asia Pacific.</p><p>He served as head of human resources at both a pre-IPO growth company and listed operating companies: Gulliver, INTLOOP, and Change. This site does not discuss individual cases or people from those roles.</p></section></main></body></html>
