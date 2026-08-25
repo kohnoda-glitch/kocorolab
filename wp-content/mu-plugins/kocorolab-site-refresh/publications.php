@@ -20,6 +20,18 @@ function kocorolab_refresh_change_management_playlist() {
 	return 'https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp';
 }
 
+function kocorolab_refresh_iccm_2004_pdf() {
+	return 'https://iccm-conference.neocities.org/2004/proceedings/abstracts/noda.pdf';
+}
+
+function kocorolab_refresh_cogsci_2007_pdf() {
+	return 'https://escholarship.org/content/qt7xp559mc/qt7xp559mc.pdf';
+}
+
+function kocorolab_refresh_jps_1997_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/jpsgaiyo/52.2.4/0/52.2.4_908_4/_pdf';
+}
+
 function kocorolab_refresh_linked_item( $citation, $url, $lang = 'ja', $label = 'PDF' ) {
 	$href   = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
 	$linked = '<a href="' . $href . '">' . $citation . '</a>';
@@ -171,7 +183,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2007' => array(
 			'野田浩平 (2007) 脳に着想を得た感情機構エージェントとその企業人事管理システムへの応用, 東京工業大学博士学位論文.',
-			'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.',
+			kocorolab_refresh_linked_paper( 'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.', kocorolab_refresh_cogsci_2007_pdf(), 'ja' ),
 			'Noda, K. (2007) An application of human resource evaluation ontology, Proceedings of Symposium on Large-scale Knowledge Resources (LKR 2007), Tokyo Institute of Technology.',
 			'野田浩平, Klaus Voss, 久津豪 (2007) 人事評価情報の可視化, 知識共有への認知科学の応用 — エージェントモデリング及びオントロジーを用いて, 『認知科学』14(1) pp. 78-89.',
 		),
@@ -186,7 +198,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2004' => array(
 			'Noda, K. and Tokosumi, A. (2004) An Embodied Computational Model of Simulating Depression, Proceedings of IEEE 13th International Workshop on Robot and Human Interactive Communication.',
-			'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.',
+			kocorolab_refresh_linked_paper( 'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.', kocorolab_refresh_iccm_2004_pdf(), 'ja' ),
 		),
 		'2002' => array(
 			'Noda, K. and Tokosumi, A. (2002) A simulated embodied agent model of depression by Artificial Brain Methodology, Proceeding of the 19th Annual Meeting of the Japanese Cognitive Science Society, 8-9.',
@@ -204,7 +216,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Noda, K. and Tokosumi, A. (2000) Brain modeling of depressive feeling and thinking, Proceedings of the 1st Corpus informatics research meeting, pp. 8-11.',
 		),
 		'1997' => array(
-			'野田浩平, 根本真吾, 梅林正行, 狩野勝弘, Ezoubtchenko A.N., 鈴木正昭, 赤塚洋 (1997) マイクロ波加熱大気圧酸素プラズマの分光診断, 日本物理学会講演概要集 52(2-4), 908.',
+			kocorolab_refresh_linked_paper( '野田浩平, 根本真吾, 梅林正行, 狩野勝弘, Ezoubtchenko A.N., 鈴木正昭, 赤塚洋 (1997) マイクロ波加熱大気圧酸素プラズマの分光診断, 日本物理学会講演概要集 52(2-4), 908.', kocorolab_refresh_jps_1997_pdf(), 'ja' ),
 		),
 	);
 
@@ -270,7 +282,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2007' => array(
 			'Noda, K. (2007) Brain Inspired Cognitive Emotional Agent Architecture and its Application to Corporate Human Resource Management System. Doctoral Dissertation, Tokyo Institute of Technology.',
-			'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.',
+			kocorolab_refresh_linked_paper( 'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.', kocorolab_refresh_cogsci_2007_pdf(), 'en' ),
 			'Noda, K., Voss, K. and Hisatsu, G. (2007) An application of cognitive science research outcomes to the visualization and the knowledge sharing of human resource evaluation information, Cognitive Studies, 14(1) pp. 78-89.',
 		),
 		'2006' => array(
@@ -284,7 +296,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2004' => array(
 			'Noda, K. and Tokosumi, A. (2004) An Embodied Computational Model of Simulating Depression, Proceedings of IEEE 13th International Workshop on Robot and Human Interactive Communication.',
-			'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.',
+			kocorolab_refresh_linked_paper( 'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.', kocorolab_refresh_iccm_2004_pdf(), 'en' ),
 		),
 		'2002' => array(
 			'Noda, K. and Tokosumi, A. (2002) A simulated embodied agent model of depression by Artificial Brain Methodology, Proceeding of the 19th Annual Meeting of the Japanese Cognitive Science Society, 8-9.',
@@ -301,7 +313,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Tokosumi, A. and Noda, K. (2000) Design principle of an artificial brain for emotion and kansei. Proceedings of the 11th T.I.T. Brain Research Symposium, pp. 38-45.',
 		),
 		'1997' => array(
-			'Noda, K. et al. (1997) Spectroscopic diagnosis of microwave-heated atmospheric-pressure oxygen plasma, Meeting abstracts of the Physical Society of Japan 52(2-4), 908.',
+			kocorolab_refresh_linked_paper( 'Noda, K. et al. (1997) Spectroscopic diagnosis of microwave-heated atmospheric-pressure oxygen plasma, Meeting abstracts of the Physical Society of Japan 52(2-4), 908.', kocorolab_refresh_jps_1997_pdf(), 'en' ),
 		),
 	);
 

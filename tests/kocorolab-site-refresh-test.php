@@ -90,6 +90,14 @@ $checks = array(
 		&& false !== strpos( $en_pubs, 'JCSS2016_P1-16.pdf' )
 		&& false !== strpos( $en_pubs, '<a href="https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf">Noda, K., Miyakoshi' )
 	),
+	'2004 ICCM, 2007 CogSci, and 1997 JPS abstracts are fully linked' => (
+		false !== strpos( $ja_pubs, '<a href="https://iccm-conference.neocities.org/2004/proceedings/abstracts/noda.pdf">Noda, K. and Tokosumi, A. (2004)' )
+		&& false !== strpos( $en_pubs, 'iccm-conference.neocities.org/2004/proceedings/abstracts/noda.pdf' )
+		&& false !== strpos( $ja_pubs, 'escholarship.org/content/qt7xp559mc/qt7xp559mc.pdf' )
+		&& false !== strpos( $en_pubs, 'qt7xp559mc.pdf' )
+		&& false !== strpos( $ja_pubs, '52.2.4_908_4/_pdf' )
+		&& false !== strpos( $en_pubs, 'jpsgaiyo/52.2.4' )
+	),
 	'2024 change management links to YouTube series' => (
 		false !== strpos( $ja_pubs, 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
 		&& false !== strpos( $ja_pubs, '<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">野田浩平, 松村憲, 小島美佳 (2024)' )
