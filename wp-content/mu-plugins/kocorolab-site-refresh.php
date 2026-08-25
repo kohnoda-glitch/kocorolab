@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.6.2
+ * Version: 1.6.3
  * Author: Kohei Noda
  */
 
@@ -302,7 +302,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.2' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.3' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}

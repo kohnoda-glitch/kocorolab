@@ -106,7 +106,10 @@ $checks = array(
 			&& false === strpos( $work_ja, 'リクルート' )
 			&& false === strpos( $work_en, 'Kocorolab' )
 			&& false === strpos( $work_en, 'Andersen' )
-			&& false === strpos( $work_en, 'Recruit' );
+			&& false === strpos( $work_en, 'Recruit' )
+			&& false !== strpos( $work_ja, '2025年より専任教員' )
+			&& false === strpos( $work_ja, '2023年よりグロービス経営大学院 専任教員' )
+			&& false !== strpos( $work_en, 'from 2025' );
 	} )(),
 	'hero hides placeholder photo notes' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'hero_photo_note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-photo-note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php' ), '写真は仮です' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/preview-site/build.php' ), '写真は仮です' ) ),
 	'JA bio has wellbeing and systems' => ( false !== strpos( $ja['bio_p2_ja'], '認知科学' ) && false !== strpos( $ja['bio_p2_ja'], '万物のウェルビーイング' ) && false !== strpos( $ja['bio_p2_ja'], '地球システム' ) ),

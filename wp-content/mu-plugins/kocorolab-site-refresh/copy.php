@@ -257,7 +257,7 @@ function kocorolab_refresh_cv_items( $lang = 'ja' ) {
 			'人材・採用・適性検査の事業開発を経て独立し、2009年にメンタルヘルス検査 MHQ を発売',
 			'2013–2020年、フィリピンでグローバル人材育成と人事統括、英語教育事業の役員',
 			'上場前の成長企業と上場後の事業会社で人事責任者・執行役員',
-			'2023年よりグロービス経営大学院 専任教員、2024年より MIT IDEAS Asia Pacific リージョナル・ファカルティ',
+			'2023年よりグロービス経営大学院、2025年より専任教員。2024年より MIT IDEAS Asia Pacific リージョナル・ファカルティ',
 		),
 	);
 	$en = array(
@@ -270,7 +270,7 @@ function kocorolab_refresh_cv_items( $lang = 'ja' ) {
 			'Business development in talent, hiring, and assessment, then independent work; launched the MHQ mental health questionnaire in 2009',
 			'2013–2020 in the Philippines: global talent development, HR leadership, and an officer role in English-language education',
 			'Head of HR / executive officer at both a pre-IPO growth company and listed operating companies',
-			'From 2023, Associate Professor and Research Faculty at Globis University; from 2024, Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific',
+			'Globis University from 2023; Associate Professor and Research Faculty from 2025. From 2024, Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific',
 		),
 	);
 	return ( 'en' === $lang ) ? $en : $ja;
