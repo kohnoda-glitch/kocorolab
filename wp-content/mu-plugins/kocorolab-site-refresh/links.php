@@ -16,6 +16,14 @@ function kocorolab_refresh_note_url() {
 	return 'https://note.com/koheinoda';
 }
 
+function kocorolab_refresh_gbx_report_url() {
+	return 'https://www.atpress.ne.jp/news/37250';
+}
+
+function kocorolab_refresh_is_retired_gbx_path( $path ) {
+	return (bool) preg_match( '#(^|/)gbx#i', (string) $path );
+}
+
 function kocorolab_refresh_mhq_lp_url( $lang = null ) {
 	if ( null === $lang && function_exists( 'kocorolab_refresh_lang' ) ) {
 		$lang = kocorolab_refresh_lang();

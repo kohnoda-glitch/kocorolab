@@ -33,6 +33,11 @@ function kocorolab_refresh_nav_key() {
 			return 'contact';
 		}
 	}
+	$uri  = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+	$path = function_exists( 'kocorolab_refresh_request_path_from' ) ? kocorolab_refresh_request_path_from( $uri ) : '';
+	if ( preg_match( '#/(member|koheinoda)$#', $path ) ) {
+		return 'member';
+	}
 	if ( function_exists( 'is_post_type_archive' ) && is_post_type_archive( 'news' ) ) {
 		return 'news';
 	}

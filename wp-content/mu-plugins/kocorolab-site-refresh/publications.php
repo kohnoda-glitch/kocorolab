@@ -497,15 +497,17 @@ function kocorolab_refresh_news_feed_items( $lang = 'ja', $wp_posts = array(), $
 }
 
 function kocorolab_refresh_news_item_href( $item, $lang = 'ja' ) {
+	$hay = ! empty( $item['hay'] ) ? $item['hay'] : ( isset( $item['title'] ) ? $item['title'] : '' );
+	if ( function_exists( 'kocorolab_refresh_related_links_for' ) ) {
+		$links = kocorolab_refresh_related_links_for( $hay, $lang );
+		if ( $links ) {
+			return $links[0]['url'];
+		}
+	}
 	if ( ! empty( $item['url'] ) && '#' !== $item['url'] ) {
 		return $item['url'];
 	}
-	if ( ! function_exists( 'kocorolab_refresh_related_links_for' ) ) {
-		return '';
-	}
-	$hay   = ! empty( $item['hay'] ) ? $item['hay'] : ( isset( $item['title'] ) ? $item['title'] : '' );
-	$links = kocorolab_refresh_related_links_for( $hay, $lang );
-	return $links ? $links[0]['url'] : '';
+	return '';
 }
 
 function kocorolab_refresh_news_list_html( $items, $lang = 'ja', $compact = false ) {

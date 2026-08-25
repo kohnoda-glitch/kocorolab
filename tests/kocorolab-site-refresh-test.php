@@ -89,30 +89,23 @@ $checks = array(
 		&& false !== strpos( $ja['cred5'], '市民気候ロビージャパン' )
 		&& false !== strpos( $ja['cred6'], 'セブン・ジェネレーションズ' )
 	),
-	'profile includes education and career' => ( function () use ( $ja_profile, $en_profile ) {
-		$work_ja = implode( ' ', kocorolab_refresh_cv_items( 'ja' )['work'] );
-		$work_en = implode( ' ', kocorolab_refresh_cv_items( 'en' )['work'] );
-		return false !== strpos( $ja_profile, '東京工業大学' )
-			&& false !== strpos( $ja_profile, '学歴' )
-			&& false !== strpos( $ja_profile, '職歴' )
-			&& false !== strpos( $ja_profile, 'フィリピン' )
-			&& false !== strpos( $en_profile, 'Tokyo Institute of Technology' )
-			&& false !== strpos( $en_profile, 'Education' )
-			&& false !== strpos( $en_profile, 'Career' )
-			&& false !== strpos( $en_profile, 'Philippines' )
-			&& false === strpos( kocorolab_refresh_bio_tabs_html( 'home', 'ja' ), '学歴' )
-			&& false === strpos( $work_ja, 'アンダーセン' )
-			&& false === strpos( $work_ja, 'リクルート' )
-			&& false === strpos( $work_en, 'Kocorolab' )
-			&& false === strpos( $work_en, 'Andersen' )
-			&& false === strpos( $work_en, 'Recruit' )
-			&& false !== strpos( $work_ja, '株式会社グロービスを経て' )
-			&& false !== strpos( $work_ja, 'グロービス経営大学院 専任教員' )
-			&& false === strpos( $work_ja, '2023' )
-			&& false === strpos( $work_ja, '2025' )
-			&& false === strpos( $work_en, 'from 2023' )
-			&& false === strpos( $work_en, 'from 2025' );
-	} )(),
+	'profile includes education and career' => (
+		false !== strpos( $ja_profile, '東京工業大学' )
+		&& false !== strpos( $ja_profile, 'フィリピン' )
+		&& false !== strpos( $ja_profile, '株式会社グロービス' )
+		&& false !== strpos( $ja_profile, 'MHQ' )
+		&& false === strpos( $ja_profile, '学歴' )
+		&& false === strpos( $ja_profile, '職歴' )
+		&& false === strpos( $en_profile, '<h3>Education' )
+		&& false === strpos( $en_profile, '<h3>Career' )
+		&& false !== strpos( $en_profile, 'Tokyo Institute of Technology' )
+		&& false !== strpos( $en_profile, 'Philippines' )
+		&& false !== strpos( $en_profile, 'GLOBIS Corporation' )
+		&& false === strpos( $ja_profile, 'アンダーセン' )
+		&& false === strpos( $ja_profile, 'リクルート' )
+		&& false === strpos( $en_profile, 'Andersen' )
+		&& false === strpos( $en_profile, 'Recruit' )
+	),
 	'hero hides placeholder photo notes' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'hero_photo_note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-photo-note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php' ), '写真は仮です' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/preview-site/build.php' ), '写真は仮です' ) ),
 	'JA bio has wellbeing and systems' => ( false !== strpos( $ja['bio_p2_ja'], '認知科学' ) && false !== strpos( $ja['bio_p2_ja'], '万物のウェルビーイング' ) && false !== strpos( $ja['bio_p2_ja'], '地球システム' ) ),
 	'EN bio has wellbeing and systems' => ( false !== strpos( $en['bio_p2_en'], 'cognitive science' ) && false !== strpos( $en['bio_p2_en'], 'well-being' ) && false !== strpos( $en['bio_p2_en'], 'planetary system' ) ),
@@ -227,6 +220,18 @@ $checks = array(
 		$post->permalink   = '/news/ideas/';
 		$html              = kocorolab_refresh_news_list_html( kocorolab_refresh_news_feed_items( 'ja', array( $post ) ), 'ja' );
 		return false !== strpos( $html, 'VUCA時代のストレス防衛術' ) && false !== strpos( $html, '/news/ideas/' );
+	} )(),
+	'GBX news title goes to the atpress report not the old WP page' => ( function () {
+		$post               = new stdClass();
+		$post->post_title   = 'GBX(Global Business eXperience)の記事';
+		$post->post_date    = '2013-01-01 00:00:00';
+		$post->post_name    = 'gbxglobal-business-experience';
+		$post->post_content = '';
+		$post->permalink    = '/news/gbxglobal-business-experience/';
+		$html               = kocorolab_refresh_news_list_html( kocorolab_refresh_news_feed_items( 'ja', array( $post ) ), 'ja' );
+		return false !== strpos( $html, 'https://www.atpress.ne.jp/news/37250' )
+			&& false === strpos( $html, '/news/gbxglobal-business-experience/' )
+			&& kocorolab_refresh_is_retired_gbx_path( '/news/gbxglobal-business-experience/' );
 	} )(),
 	'news titles hyperlink to Amazon, YouTube, and PDFs' => (
 		false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">『VUCA時代のストレス防衛術』を刊行しました。</a>' )

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.6.5
+ * Version: 1.6.6
  * Author: Kohei Noda
  */
 
@@ -252,6 +252,10 @@ add_action(
 			wp_safe_redirect( kocorolab_refresh_publications_url( 'ja' ), 301 );
 			exit;
 		}
+		if ( kocorolab_refresh_is_retired_gbx_path( $path ) ) {
+			wp_redirect( kocorolab_refresh_gbx_report_url(), 301 );
+			exit;
+		}
 	},
 	0
 );
@@ -302,7 +306,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.5' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.6' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
@@ -385,7 +389,14 @@ add_filter(
 			return $content;
 		}
 
-		$html = kocorolab_refresh_page_html( $post->post_name, kocorolab_refresh_lang() );
+		$slug = $post->post_name;
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path = kocorolab_refresh_request_path_from( $uri );
+		if ( preg_match( '#/(member|koheinoda)$#', $path ) ) {
+			$slug = 'member';
+		}
+
+		$html = kocorolab_refresh_page_html( $slug, kocorolab_refresh_lang() );
 		if ( ! $html ) {
 			return $content;
 		}
