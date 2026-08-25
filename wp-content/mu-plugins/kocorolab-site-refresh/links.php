@@ -4,6 +4,18 @@
  * and restore missing YouTube / report links on the page itself.
  */
 
+function kocorolab_refresh_ccl_japan_url() {
+	return 'https://japan.citizensclimatelobby.org/';
+}
+
+function kocorolab_refresh_seven_generations_url() {
+	return 'https://sevengenerations.or.jp/';
+}
+
+function kocorolab_refresh_note_url() {
+	return 'https://note.com/koheinoda';
+}
+
 function kocorolab_refresh_mhq_lp_url( $lang = null ) {
 	if ( null === $lang && function_exists( 'kocorolab_refresh_lang' ) ) {
 		$lang = kocorolab_refresh_lang();

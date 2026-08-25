@@ -17,6 +17,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'cred2'          => '株式会社ココロラボ 代表取締役',
 		'cred3'          => 'グロービス経営大学院 専任教員',
 		'cred4'          => 'MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ',
+		'cred5'          => '市民気候ロビージャパン 代表',
+		'cred6'          => 'NPO法人セブン・ジェネレーションズ 監事',
 		'mission_kicker' => 'MISSION',
 		'brand'          => 'Kocoro Laboratory',
 		'brand_sub'      => '株式会社ココロラボ',
@@ -30,7 +32,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'domain2_body'   => 'リーダーシップ教育、人事、組織づくり。上場前と上場後の事業会社で人事責任者を務めた経験を、現場で使える形にします。',
 		'domain3_kicker' => '環境',
 		'domain3_title'  => '持続可能な未来とつなぐ',
-		'domain3_body'   => 'MIT Sloan IDEAS Asia Pacific や気候変動に関する市民活動など、社会と地球のあいだでも実践します。',
+		'domain3_body'   => 'MIT Sloan IDEAS Asia Pacific や市民気候ロビージャパンでの市民活動など、社会と地球のあいだでも実践します。',
 		'section_work'   => 'サービス',
 		'work_lead'      => '細かい下層ページは増やしません。必要なものは、この一枚と新着にまとめます。',
 		'card1_title'    => 'リーダーシップ教育',
@@ -45,17 +47,17 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'news_link'      => '新着一覧',
 		'news_empty'     => '新しい案内は、準備ができ次第ここに出します。',
 		'section_who'    => '代表',
-		'who_body'       => '野田浩平は、博士（学術 / 認知科学）。株式会社ココロラボ 代表取締役、グロービス経営大学院 専任教員、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティです。',
+		'who_body'       => '野田浩平は、博士（学術 / 認知科学）。株式会社ココロラボ 代表取締役、グロービス経営大学院 専任教員、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、市民気候ロビージャパン代表、NPO法人セブン・ジェネレーションズ監事です。',
 		'who_hr'         => '人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。',
 		'who_more'       => 'プロフィール詳細',
 		'bio_kicker'     => 'BIO',
 		'bio_tab_ja'     => '日本語',
 		'bio_tab_en'     => 'English Bio',
 		'bio_name_ja'    => '野田 浩平（のだ こうへい）',
-		'bio_p1_ja'      => '博士（学術 / 認知科学）。グロービス経営大学院 専任教員（研究者教員）、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、株式会社ココロラボ代表取締役。',
+		'bio_p1_ja'      => '博士（学術 / 認知科学）。グロービス経営大学院 専任教員（研究者教員）、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、株式会社ココロラボ代表取締役。市民気候ロビージャパン代表、NPO法人セブン・ジェネレーションズ監事。',
 		'bio_p2_ja'      => '専門は認知科学（感情研究）。人間の感情や意思決定のメカニズムを探求する学術的知見を基盤に、経営大学院でのリーダーシップ・倫理・価値観教育や、企業における組織行動・人財開発に従事。U理論やシステム思考をベースに、個人の内面から組織、地域、気候変動をはじめとする地球システム全体までを俯瞰し、万物のウェルビーイングを最大化するための実践・アクション研究を展開している。',
 		'bio_name_en'    => 'Kohei Noda, Ph.D.',
-		'bio_p1_en'      => 'Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc.',
+		'bio_p1_en'      => 'Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc. He is also Japan representative of Citizens’ Climate Lobby Japan and auditor of NPO Seven Generations.',
 		'bio_p2_en'      => 'Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.',
 		'contact_kicker' => 'CONTACT',
 		'contact_h2'     => '直接コンタクト',
@@ -93,7 +95,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_b'         => '認知モデル、心理統計、調査研究。',
 		'profile_h2'     => '野田浩平',
 		'profile_role'   => '博士（学術 / 認知科学）',
-		'profile_now'    => '市民気候ロビー（CCL）Japan 代表も務めています。',
+		'profile_now'    => '市民気候ロビージャパン代表、およびNPO法人セブン・ジェネレーションズ監事も務めています。文章は note でも公開しています。',
 		'profile_past'   => 'これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。',
 		'profile_note'   => '研究実績は発表文献、ときどきの案内は活動・新着をご覧ください。',
 		'label_name'     => '研究所名',
@@ -124,6 +126,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'cred2'          => 'Representative Director, Kocorolab Inc.',
 		'cred3'          => 'Associate Professor and Research Faculty, Globis University Graduate School of Management',
 		'cred4'          => 'Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific',
+		'cred5'          => 'Japan Representative, Citizens’ Climate Lobby Japan',
+		'cred6'          => 'Auditor, NPO Seven Generations',
 		'mission_kicker' => 'MISSION',
 		'brand'          => 'Kocoro Laboratory',
 		'brand_sub'      => 'Kocoro Laboratory, Inc.',
@@ -137,7 +141,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'domain2_body'   => 'Leadership education, HR, and organization building, informed by work as head of HR in pre-IPO and listed companies.',
 		'domain3_kicker' => 'Environment',
 		'domain3_title'  => 'Connect to a livable future',
-		'domain3_body'   => 'Practice also at the edge of society and planet, including MIT Sloan IDEAS Asia Pacific and climate citizenship.',
+		'domain3_body'   => 'Practice also at the edge of society and planet, including MIT Sloan IDEAS Asia Pacific and Citizens’ Climate Lobby Japan.',
 		'section_work'   => 'Services',
 		'work_lead'      => 'We keep this to one page. Updates and brochures go to News & activities.',
 		'card1_title'    => 'Leadership education',
@@ -152,7 +156,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'news_link'      => 'All news',
 		'news_empty'     => 'New notes will appear here when they are ready.',
 		'section_who'    => 'Founder',
-		'who_body'       => 'Kohei Noda, Ph.D. in Cognitive Science, is Representative Director at Kocorolab Inc., Associate Professor and Research Faculty at Globis University Graduate School of Management, and Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific.',
+		'who_body'       => 'Kohei Noda, Ph.D. in Cognitive Science, is Representative Director at Kocorolab Inc., Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, Japan representative of Citizens’ Climate Lobby Japan, and auditor of NPO Seven Generations.',
 		'who_hr'         => 'He served as head of human resources at both a pre-IPO growth company and listed operating companies.',
 		'who_more'       => 'Full profile',
 		'bio_kicker'     => 'BIO',
@@ -160,9 +164,9 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'bio_tab_en'     => 'English Bio',
 		'bio_name_ja'    => '野田 浩平（のだ こうへい）',
 		'bio_name_en'    => 'Kohei Noda, Ph.D.',
-		'bio_p1_ja'      => '博士（学術 / 認知科学）。グロービス経営大学院 専任教員（研究者教員）、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、株式会社ココロラボ代表取締役。',
+		'bio_p1_ja'      => '博士（学術 / 認知科学）。グロービス経営大学院 専任教員（研究者教員）、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、株式会社ココロラボ代表取締役。市民気候ロビージャパン代表、NPO法人セブン・ジェネレーションズ監事。',
 		'bio_p2_ja'      => '専門は認知科学（感情研究）。人間の感情や意思決定のメカニズムを探求する学術的知見を基盤に、経営大学院でのリーダーシップ・倫理・価値観教育や、企業における組織行動・人財開発に従事。U理論やシステム思考をベースに、個人の内面から組織、地域、気候変動をはじめとする地球システム全体までを俯瞰し、万物のウェルビーイングを最大化するための実践・アクション研究を展開している。',
-		'bio_p1_en'      => 'Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc.',
+		'bio_p1_en'      => 'Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc. He is also Japan representative of Citizens’ Climate Lobby Japan and auditor of NPO Seven Generations.',
 		'bio_p2_en'      => 'Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.',
 		'contact_kicker' => 'CONTACT',
 		'contact_h2'     => 'Direct contact',
@@ -200,7 +204,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_b'         => 'Cognitive modeling, psychological statistics, and commissioned studies.',
 		'profile_h2'     => 'Kohei Noda',
 		'profile_role'   => 'Ph.D. in Cognitive Science',
-		'profile_now'    => 'He also serves as Japan lead for Citizens’ Climate Lobby.',
+		'profile_now'    => 'He also serves as Japan representative of Citizens’ Climate Lobby Japan and as auditor of NPO Seven Generations. Writing is also on note.',
 		'profile_past'   => 'He later served as head of human resources in operating companies, including a pre-IPO growth company and a listed company.',
 		'profile_note'   => 'See Publications for research, and News & activities for occasional notes.',
 		'label_name'     => 'Name',
@@ -239,23 +243,47 @@ function kocorolab_refresh_contact_email() {
 }
 
 function kocorolab_refresh_titles() {
-	return array( 'cred1', 'cred2', 'cred3', 'cred4' );
+	return array( 'cred1', 'cred2', 'cred3', 'cred4', 'cred5', 'cred6' );
+}
+
+function kocorolab_refresh_title_urls() {
+	return array(
+		'cred5' => kocorolab_refresh_ccl_japan_url(),
+		'cred6' => kocorolab_refresh_seven_generations_url(),
+	);
 }
 
 function kocorolab_refresh_title_list_html( $lang = null ) {
 	if ( null === $lang ) {
 		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
 	}
-	$c = kocorolab_refresh_copy( $lang );
+	$c    = kocorolab_refresh_copy( $lang );
+	$urls = kocorolab_refresh_title_urls();
 	ob_start();
 	?>
 	<ul class="kl-title-chips">
 		<?php foreach ( kocorolab_refresh_titles() as $key ) : ?>
-			<li><?php echo esc_html( $c[ $key ] ); ?></li>
+			<li>
+				<?php if ( ! empty( $urls[ $key ] ) ) : ?>
+					<a href="<?php echo esc_url( $urls[ $key ] ); ?>"><?php echo esc_html( $c[ $key ] ); ?></a>
+				<?php else : ?>
+					<?php echo esc_html( $c[ $key ] ); ?>
+				<?php endif; ?>
+			</li>
 		<?php endforeach; ?>
 	</ul>
 	<?php
 	return ob_get_clean();
+}
+
+function kocorolab_refresh_civic_roles_html( $lang = 'ja' ) {
+	$ccl = '<a href="' . esc_url( kocorolab_refresh_ccl_japan_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'Citizens’ Climate Lobby Japan' : '市民気候ロビージャパン' ) . '</a>';
+	$sg  = '<a href="' . esc_url( kocorolab_refresh_seven_generations_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'NPO Seven Generations' : 'NPO法人セブン・ジェネレーションズ' ) . '</a>';
+	$note = '<a href="' . esc_url( kocorolab_refresh_note_url() ) . '">note</a>';
+	if ( 'en' === $lang ) {
+		return '<p class="kl-civic">' . $ccl . ' (Japan representative) and ' . $sg . ' (auditor). Writing is also on ' . $note . '.</p>';
+	}
+	return '<p class="kl-civic">' . $ccl . '代表、および' . $sg . '監事。文章は' . $note . 'でも公開しています。</p>';
 }
 
 /**
@@ -287,8 +315,8 @@ function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null, $with_extras = 
 			<h3 class="kl-bio-name"><?php echo esc_html( $c['bio_name_ja'] ); ?></h3>
 			<p><?php echo esc_html( $c['bio_p1_ja'] ); ?></p>
 			<p><?php echo esc_html( $c['bio_p2_ja'] ); ?></p>
+			<?php echo kocorolab_refresh_civic_roles_html( 'ja' ); ?>
 			<?php if ( $with_extras ) : ?>
-				<p><?php echo esc_html( $ja_copy['profile_now'] ); ?></p>
 				<p><?php echo esc_html( $ja_copy['profile_past'] ); ?></p>
 			<?php endif; ?>
 		</div>
@@ -296,8 +324,8 @@ function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null, $with_extras = 
 			<h3 class="kl-bio-name"><?php echo esc_html( $c['bio_name_en'] ); ?></h3>
 			<p><?php echo esc_html( $c['bio_p1_en'] ); ?></p>
 			<p><?php echo esc_html( $c['bio_p2_en'] ); ?></p>
+			<?php echo kocorolab_refresh_civic_roles_html( 'en' ); ?>
 			<?php if ( $with_extras ) : ?>
-				<p><?php echo esc_html( $en_copy['profile_now'] ); ?></p>
 				<p><?php echo esc_html( $en_copy['profile_past'] ); ?></p>
 			<?php endif; ?>
 		</div>
@@ -433,6 +461,8 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 			<a href="<?php echo esc_url( kocorolab_refresh_publications_url( $lang ) ); ?>"><?php echo esc_html( $c['pub_link'] ); ?></a>
 			·
 			<a href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en', $lang ) ); ?>"><?php echo esc_html( $c['news_link'] ); ?></a>
+			·
+			<a href="<?php echo esc_url( kocorolab_refresh_note_url() ); ?>">note</a>
 		</p>
 	</div>
 	<?php

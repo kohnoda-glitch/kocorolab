@@ -64,6 +64,23 @@ $checks = array(
 	'JA representative director' => false !== strpos( $ja['cred2'], '株式会社ココロラボ 代表取締役' ),
 	'hero is company not personal CV' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-creds' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kocorolab_refresh_titles' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'cred1' ) ),
 	'titles stay on named profile' => ( false !== strpos( $ja_profile, '野田' ) && false !== strpos( $ja_profile, '博士（学術 / 認知科学）' ) && false !== strpos( $ja_bio, '野田 浩平' ) ),
+	'profile links CCL Japan, Seven Generations, and note' => (
+		false !== strpos( $ja_profile, 'japan.citizensclimatelobby.org' )
+		&& false !== strpos( $ja_profile, 'sevengenerations.or.jp' )
+		&& false !== strpos( $ja_profile, 'note.com/koheinoda' )
+		&& false !== strpos( $ja_profile, '市民気候ロビージャパン' )
+		&& false !== strpos( $ja_profile, 'セブン・ジェネレーションズ' )
+		&& false !== strpos( $en_profile, 'Citizens’ Climate Lobby Japan' )
+		&& false !== strpos( $en_profile, 'NPO Seven Generations' )
+	),
+	'home and company bios also link civic roles' => (
+		false !== strpos( $ja_bio, 'japan.citizensclimatelobby.org' )
+		&& false !== strpos( $ja_bio, 'note.com/koheinoda' )
+		&& false !== strpos( $ja_company, 'japan.citizensclimatelobby.org' )
+		&& false !== strpos( $ja_company, 'sevengenerations.or.jp' )
+		&& false !== strpos( $ja['cred5'], '市民気候ロビージャパン' )
+		&& false !== strpos( $ja['cred6'], 'セブン・ジェネレーションズ' )
+	),
 	'hero hides placeholder photo notes' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'hero_photo_note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-photo-note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php' ), '写真は仮です' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/preview-site/build.php' ), '写真は仮です' ) ),
 	'JA bio has wellbeing and systems' => ( false !== strpos( $ja['bio_p2_ja'], '認知科学' ) && false !== strpos( $ja['bio_p2_ja'], '万物のウェルビーイング' ) && false !== strpos( $ja['bio_p2_ja'], '地球システム' ) ),
 	'EN bio has wellbeing and systems' => ( false !== strpos( $en['bio_p2_en'], 'cognitive science' ) && false !== strpos( $en['bio_p2_en'], 'well-being' ) && false !== strpos( $en['bio_p2_en'], 'planetary system' ) ),
