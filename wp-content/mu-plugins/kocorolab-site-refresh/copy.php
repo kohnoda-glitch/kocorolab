@@ -60,7 +60,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'contact_kicker' => 'CONTACT',
 		'contact_h2'     => '直接コンタクト',
 		'contact_lead'   => '企業人事、講演依頼、研究パートナーの皆さまは、こちらから直接ご連絡ください。',
-		'contact_email'  => 'info@kocorolab.com',
+		'contact_email'  => 'info@knoda.xsrv.jp',
 		'contact_topics_h' => '主なご相談内容',
 		'contact_topic1' => '講演・研修依頼',
 		'contact_topic2' => '組織開発・人財育成コンサルティング',
@@ -167,7 +167,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'contact_kicker' => 'CONTACT',
 		'contact_h2'     => 'Direct contact',
 		'contact_lead'   => 'For corporate HR, speaking requests, and research partners — reach us directly here.',
-		'contact_email'  => 'info@kocorolab.com',
+		'contact_email'  => 'info@knoda.xsrv.jp',
 		'contact_topics_h' => 'Typical inquiries',
 		'contact_topic1' => 'Talks and executive education',
 		'contact_topic2' => 'Organization development and talent consulting',
@@ -235,7 +235,7 @@ function kocorolab_refresh_e( $key ) {
 }
 
 function kocorolab_refresh_contact_email() {
-	return 'info@kocorolab.com';
+	return 'info@knoda.xsrv.jp';
 }
 
 function kocorolab_refresh_titles() {

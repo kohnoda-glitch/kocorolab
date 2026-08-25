@@ -239,8 +239,8 @@ $pub_ja = '<div class="kl-page"><p class="kl-lead">研究と現場のあいだ�
 
 $pub_en = '<div class="kl-page"><p class="kl-lead">Writing from between research and practice, listed by year. A 2025 sole-author paper for the Japanese Cognitive Science Society is added at the top of that year.</p><h2>2025</h2><p>Kohei Noda (2025). The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.<br><a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">PDF</a></p><p>The full list remains on the live <a href="https://kocorolab.com/en/publications/">Publications</a> page.</p></div>';
 
-$contact_ja = '<div class="kl-page"><p class="kl-lead">本プレビューではフォームは動きません。本番のお問い合わせは <a href="https://kocorolab.com/contact/">kocorolab.com/contact/</a> をご利用ください。</p><p>メール：info@kocorolab.com</p></div>';
-$contact_en = '<div class="kl-page"><p class="kl-lead">This preview does not send messages. Please use the live form at <a href="https://kocorolab.com/en/contact/">kocorolab.com/en/contact/</a>.</p><p>Email: info@kocorolab.com</p></div>';
+$contact_ja = '<div class="kl-page"><p class="kl-lead">本プレビューではフォームは動きません。本番のお問い合わせは <a href="https://kocorolab.com/contact/">kocorolab.com/contact/</a> をご利用ください。</p><p>メール：info@knoda.xsrv.jp</p></div>';
+$contact_en = '<div class="kl-page"><p class="kl-lead">This preview does not send messages. Please use the live form at <a href="https://kocorolab.com/en/contact/">kocorolab.com/en/contact/</a>.</p><p>Email: info@knoda.xsrv.jp</p></div>';
 
 function kocorolab_preview_render_home() {
 	$GLOBALS['KOCORO_HEADER_DONE'] = false;
@@ -290,7 +290,7 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'member';
 kocorolab_preview_write( "$out/member.html", kocorolab_preview_render_inner( 'ja', 'プロフィール', kocorolab_refresh_page_html( 'member', 'ja' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
-kocorolab_preview_write( "$out/contact.html", kocorolab_preview_render_inner( 'ja', 'お問い合わせ', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'ja' ), 'ja' ) . '<div class="kl-page"><p>本プレビューではフォームは動きません。本番ではこのページに既存の問い合わせフォームが残ります。メール：info@kocorolab.com</p></div>' ) );
+kocorolab_preview_write( "$out/contact.html", kocorolab_preview_render_inner( 'ja', 'お問い合わせ', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'ja' ), 'ja' ) . '<div class="kl-page"><p>本プレビューではフォームは動きません。本番ではこのページに既存の問い合わせフォームが残ります。メール：info@knoda.xsrv.jp</p></div>' ) );
 
 // English pages
 $GLOBALS['KOCORO_PREVIEW_LANG'] = 'en';
@@ -315,7 +315,7 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'member';
 kocorolab_preview_write( "$out/en/member.html", kocorolab_preview_render_inner( 'en', 'Profile', kocorolab_refresh_page_html( 'member', 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
-kocorolab_preview_write( "$out/en/contact.html", kocorolab_preview_render_inner( 'en', 'Contact', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'en' ), 'en' ) . '<div class="kl-page"><p>This preview does not send messages. On the live site the existing form remains. Email: info@kocorolab.com</p></div>' ) );
+kocorolab_preview_write( "$out/en/contact.html", kocorolab_preview_render_inner( 'en', 'Contact', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'en' ), 'en' ) . '<div class="kl-page"><p>This preview does not send messages. On the live site the existing form remains. Email: info@knoda.xsrv.jp</p></div>' ) );
 
 file_put_contents( "$out/.nojekyll", "" );
 echo "Done.\n";
