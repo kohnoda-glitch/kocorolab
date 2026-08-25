@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Placeholder nature photos.
- * Version: 1.6.6
+ * Version: 1.6.7
  * Author: Kohei Noda
  */
 
@@ -27,9 +27,9 @@ function kocorolab_refresh_lang() {
 		return 'en';
 	}
 
-	if ( function_exists( 'bogo_get_post_locale' ) && function_exists( 'get_the_ID' ) && get_the_ID() ) {
-		$loc = bogo_get_post_locale( get_the_ID() );
-		if ( $loc && 0 === strpos( $loc, 'en' ) ) {
+	if ( function_exists( 'get_query_var' ) ) {
+		$qv = get_query_var( 'lang' );
+		if ( is_string( $qv ) && ( 'en' === $qv || 0 === strpos( $qv, 'en' ) ) ) {
 			return 'en';
 		}
 	}
@@ -77,6 +77,21 @@ function kocorolab_refresh_is_legacy_hakkou_path( $path ) {
 
 function kocorolab_refresh_is_ja_publications_path( $path ) {
 	return '/publications' === $path;
+}
+
+function kocorolab_refresh_slug_from_path( $path ) {
+	$path = preg_replace( '#^/en/#', '/', (string) $path );
+	$key  = trim( $path, '/' );
+	$map  = array(
+		'member'       => 'member',
+		'koheinoda'    => 'member',
+		'service'      => 'service',
+		'company'      => 'company',
+		'contact'      => 'contact',
+		'publications' => 'publications',
+		'hakkou'       => 'hakkou',
+	);
+	return isset( $map[ $key ] ) ? $map[ $key ] : '';
 }
 
 function kocorolab_refresh_news_permalink( $post = null ) {
@@ -236,6 +251,11 @@ add_filter(
 			$query_vars['pagename'] = 'hakkou';
 			unset( $query_vars['name'], $query_vars['error'] );
 		}
+		if ( preg_match( '#^/en/(member|koheinoda)$#', $path ) ) {
+			$query_vars['pagename'] = 'member';
+			$query_vars['lang']     = 'en';
+			unset( $query_vars['name'], $query_vars['error'] );
+		}
 		return $query_vars;
 	}
 );
@@ -306,7 +326,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.6' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.7' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}

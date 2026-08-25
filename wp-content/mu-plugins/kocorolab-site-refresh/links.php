@@ -307,6 +307,12 @@ function kocorolab_refresh_enrich_news_links( $content, $lang = null, $haystack 
 	if ( kocorolab_refresh_is_publications_markup( $content ) || kocorolab_refresh_is_publications_page() ) {
 		return $content;
 	}
+	if ( false !== strpos( $content, 'kl-page' ) || false !== strpos( $content, 'kl-bio' ) || false !== strpos( $content, 'kl-home' ) ) {
+		return $content;
+	}
+	if ( function_exists( 'is_singular' ) && function_exists( 'is_page' ) && is_page() && ! is_singular( 'news' ) ) {
+		return $content;
+	}
 	if ( null === $lang ) {
 		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
 	}

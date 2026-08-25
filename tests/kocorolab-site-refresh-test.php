@@ -233,6 +233,28 @@ $checks = array(
 			&& false === strpos( $html, '/news/gbxglobal-business-experience/' )
 			&& kocorolab_refresh_is_retired_gbx_path( '/news/gbxglobal-business-experience/' );
 	} )(),
+	'profile overlay does not grow a GBX related-links box' => (
+		false === strpos( kocorolab_refresh_enrich_news_links( kocorolab_refresh_page_html( 'member', 'ja' ) . ' GBX Global Business eXperience' ), 'GBXのレポート' )
+		&& false !== strpos( kocorolab_refresh_enrich_news_links( 'GBX(Global Business eXperience)の記事' ), 'atpress.ne.jp' )
+	),
+	'EN member path maps to the overlay profile' => (
+		'member' === kocorolab_refresh_slug_from_path( '/en/member' )
+		&& 'member' === kocorolab_refresh_slug_from_path( '/member/' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'member', 'en' ), 'Ph.D. in Cognitive Science' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'member', 'en' ), 'kl-bio-profile-en' )
+	),
+	'/en/member/ is treated as English' => ( function () {
+		$prev = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : null;
+		$_SERVER['REQUEST_URI'] = '/en/member/';
+		unset( $_GET['lang'] );
+		$lang = kocorolab_refresh_lang();
+		if ( null === $prev ) {
+			unset( $_SERVER['REQUEST_URI'] );
+		} else {
+			$_SERVER['REQUEST_URI'] = $prev;
+		}
+		return 'en' === $lang;
+	} )(),
 	'news titles hyperlink to Amazon, YouTube, and PDFs' => (
 		false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">『VUCA時代のストレス防衛術』を刊行しました。</a>' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.youtube.com/watch?v=5acopoZcYfw">フィリピンの貧困と幸福度の現状</a>' )
