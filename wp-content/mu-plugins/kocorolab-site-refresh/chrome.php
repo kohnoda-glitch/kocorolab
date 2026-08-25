@@ -43,8 +43,50 @@ function kocorolab_refresh_lang_switch_url() {
 	if ( function_exists( 'kocorolab_preview_lang_href' ) ) {
 		return kocorolab_preview_lang_href();
 	}
-	$root = kocorolab_refresh_root();
-	return ( 'en' === kocorolab_refresh_lang() ) ? $root . '/' : $root . '/en/';
+	$to_en = ( 'en' !== kocorolab_refresh_lang() );
+	$uri   = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '/';
+	if ( function_exists( 'wp_unslash' ) ) {
+		$uri = wp_unslash( $uri );
+	}
+	$path  = kocorolab_refresh_request_path_from( $uri );
+	if ( '' === $path ) {
+		$path = '/';
+	}
+
+	$pages = array(
+		'/'                => array( '/', '/en/' ),
+		'/en'              => array( '/', '/en/' ),
+		'/service'         => array( '/service/', '/en/service/' ),
+		'/en/service'      => array( '/service/', '/en/service/' ),
+		'/publications'    => array( '/publications/', '/en/publications/' ),
+		'/en/publications' => array( '/publications/', '/en/publications/' ),
+		'/hakkou'          => array( '/publications/', '/en/publications/' ),
+		'/member'          => array( '/member/', '/en/member/' ),
+		'/en/member'       => array( '/member/', '/en/member/' ),
+		'/koheinoda'       => array( '/member/', '/en/member/' ),
+		'/company'         => array( '/company/', '/en/company/' ),
+		'/en/company'      => array( '/company/', '/en/company/' ),
+		'/contact'         => array( '/contact/', '/en/contact/' ),
+		'/en/contact'      => array( '/contact/', '/en/contact/' ),
+		'/mhqlp'           => array( '/mhqlp/', '/mhqlp/?lang=en' ),
+		'/mhq'             => array( '/mhqlp/', '/mhqlp/?lang=en' ),
+	);
+	if ( isset( $pages[ $path ] ) ) {
+		$pair = $pages[ $path ];
+		return kocorolab_refresh_url( $pair[0], $pair[1], $to_en ? 'en' : 'ja' );
+	}
+
+	$news = preg_replace( '#^/en/news#', '/news', $path );
+	if ( '/news' === $news || 0 === strpos( $news, '/news/' ) ) {
+		$ja = ( '/news' === $news ) ? '/news/' : ( rtrim( $news, '/' ) . '/' );
+		if ( $to_en ) {
+			$url = kocorolab_refresh_root() . $ja;
+			return function_exists( 'add_query_arg' ) ? add_query_arg( 'lang', 'en', $url ) : ( $url . '?lang=en' );
+		}
+		return kocorolab_refresh_root() . $ja;
+	}
+
+	return kocorolab_refresh_url( '/', '/en/', $to_en ? 'en' : 'ja' );
 }
 
 function kocorolab_refresh_site_header() {

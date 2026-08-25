@@ -496,23 +496,36 @@ function kocorolab_refresh_news_feed_items( $lang = 'ja', $wp_posts = array(), $
 	return $items;
 }
 
+function kocorolab_refresh_news_item_href( $item, $lang = 'ja' ) {
+	if ( ! empty( $item['url'] ) && '#' !== $item['url'] ) {
+		return $item['url'];
+	}
+	if ( ! function_exists( 'kocorolab_refresh_related_links_for' ) ) {
+		return '';
+	}
+	$hay   = ! empty( $item['hay'] ) ? $item['hay'] : ( isset( $item['title'] ) ? $item['title'] : '' );
+	$links = kocorolab_refresh_related_links_for( $hay, $lang );
+	return $links ? $links[0]['url'] : '';
+}
+
 function kocorolab_refresh_news_list_html( $items, $lang = 'ja', $compact = false ) {
 	ob_start();
 	?>
 	<ul class="kl-news-list">
 		<?php foreach ( $items as $item ) : ?>
+			<?php $href = kocorolab_refresh_news_item_href( $item, $lang ); ?>
 			<li>
 				<time datetime="<?php echo esc_attr( $item['date'] ); ?>"><?php echo esc_html( str_replace( '-', '.', substr( $item['date'], 0, 10 ) ) ); ?></time>
 				<?php if ( $compact ) : ?>
-					<?php if ( ! empty( $item['url'] ) ) : ?>
-						<a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
+					<?php if ( $href ) : ?>
+						<a href="<?php echo esc_url( $href ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
 					<?php else : ?>
 						<span><?php echo esc_html( $item['title'] ); ?></span>
 					<?php endif; ?>
 				<?php else : ?>
 					<div>
-						<?php if ( ! empty( $item['url'] ) ) : ?>
-							<a href="<?php echo esc_url( $item['url'] ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
+						<?php if ( $href ) : ?>
+							<a href="<?php echo esc_url( $href ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
 						<?php else : ?>
 							<span><?php echo esc_html( $item['title'] ); ?></span>
 						<?php endif; ?>

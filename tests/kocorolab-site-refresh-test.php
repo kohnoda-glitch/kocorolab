@@ -24,6 +24,14 @@ function home_url( $path = '' ) {
 	return 'https://kocorolab.com' . $path;
 }
 
+function wp_unslash( $value ) {
+	return $value;
+}
+
+function sanitize_text_field( $value ) {
+	return is_string( $value ) ? trim( $value ) : $value;
+}
+
 require dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh.php';
 
 $ja = kocorolab_refresh_copy( 'ja' );
@@ -195,6 +203,41 @@ $checks = array(
 		$post->permalink   = '/news/ideas/';
 		$html              = kocorolab_refresh_news_list_html( kocorolab_refresh_news_feed_items( 'ja', array( $post ) ), 'ja' );
 		return false !== strpos( $html, 'VUCA時代のストレス防衛術' ) && false !== strpos( $html, '/news/ideas/' );
+	} )(),
+	'news titles hyperlink to Amazon, YouTube, and PDFs' => (
+		false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">『VUCA時代のストレス防衛術』を刊行しました。</a>' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '<a href="https://www.youtube.com/watch?v=5acopoZcYfw">フィリピンの貧困と幸福度の現状</a>' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf"' )
+	),
+	'language switch stays on the current page' => ( function () {
+		$prev_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : null;
+		$prev_get = isset( $_GET['lang'] ) ? $_GET['lang'] : null;
+		$_SERVER['REQUEST_URI'] = '/member/';
+		unset( $_GET['lang'] );
+		$ja_to_en = kocorolab_refresh_lang_switch_url();
+		$_SERVER['REQUEST_URI'] = '/en/service/';
+		$en_to_ja = kocorolab_refresh_lang_switch_url();
+		$_SERVER['REQUEST_URI'] = '/news/';
+		$news_to_en = kocorolab_refresh_lang_switch_url();
+		$_GET['lang'] = 'en';
+		$_SERVER['REQUEST_URI'] = '/news/?lang=en';
+		$news_to_ja = kocorolab_refresh_lang_switch_url();
+		if ( null === $prev_uri ) {
+			unset( $_SERVER['REQUEST_URI'] );
+		} else {
+			$_SERVER['REQUEST_URI'] = $prev_uri;
+		}
+		if ( null === $prev_get ) {
+			unset( $_GET['lang'] );
+		} else {
+			$_GET['lang'] = $prev_get;
+		}
+		return false !== strpos( $ja_to_en, '/en/member/' )
+			&& false !== strpos( $en_to_ja, '/service/' )
+			&& false === strpos( $en_to_ja, '/en/service/' )
+			&& false !== strpos( $news_to_en, 'lang=en' )
+			&& false !== strpos( $news_to_ja, '/news/' )
+			&& false === strpos( $news_to_ja, 'lang=en' );
 	} )(),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
 	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) ),
