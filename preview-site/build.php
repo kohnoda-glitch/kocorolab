@@ -247,12 +247,16 @@ $contact_ja = '<div class="kl-page"><p class="kl-lead">本プレビューでは�
 $contact_en = '<div class="kl-page"><p class="kl-lead">This preview does not send messages. Please use the live form at <a href="https://kocorolab.com/en/contact/">kocorolab.com/en/contact/</a>.</p><p>Email: info@kocorolab.com</p></div>';
 
 function kocorolab_preview_render_home() {
+	$GLOBALS['KOCORO_HEADER_DONE'] = false;
+	$GLOBALS['KOCORO_FOOTER_DONE'] = false;
 	ob_start();
 	include dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php';
 	return ob_get_clean();
 }
 
 function kocorolab_preview_render_inner( $lang, $title, $content_html ) {
+	$GLOBALS['KOCORO_HEADER_DONE'] = false;
+	$GLOBALS['KOCORO_FOOTER_DONE'] = false;
 	if ( preg_match( '/<div class="kl-page">/', $content_html ) ) {
 		$content_html = preg_replace( '/<div class="kl-page">/', '<div class="kl-page"><h1>' . esc_html( $title ) . '</h1>', $content_html, 1 );
 	} else {

@@ -39,9 +39,9 @@ if ( function_exists( 'get_posts' ) ) {
 					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
 				</p>
 				<ul class="kl-creds">
-					<li><?php kocorolab_refresh_e( 'cred1' ); ?></li>
-					<li><?php kocorolab_refresh_e( 'cred2' ); ?></li>
-					<li><?php kocorolab_refresh_e( 'cred3' ); ?></li>
+					<?php foreach ( kocorolab_refresh_titles() as $cred_key ) : ?>
+						<li><?php kocorolab_refresh_e( $cred_key ); ?></li>
+					<?php endforeach; ?>
 				</ul>
 				<p class="kl-photo-note"><?php kocorolab_refresh_e( 'hero_photo_note' ); ?></p>
 			</div>
@@ -146,17 +146,18 @@ if ( function_exists( 'get_posts' ) ) {
 			</div>
 		</section>
 
-		<section class="kl-band">
+		<section class="kl-band" id="profile">
 			<div class="kl-wide kl-founder">
 				<figure class="kl-founder-photo">
-					<img src="<?php echo esc_url( $society ); ?>" alt="">
+					<img src="<?php echo esc_url( $society ); ?>" alt="<?php echo esc_attr( kocorolab_refresh_t( 'bio_name_ja' ) ); ?>">
 				</figure>
-				<div>
-					<p class="kl-kicker">FOUNDER</p>
+				<div class="kl-founder-copy">
+					<p class="kl-kicker"><?php kocorolab_refresh_e( 'bio_kicker' ); ?></p>
 					<h2><?php kocorolab_refresh_e( 'section_who' ); ?></h2>
-					<p><?php kocorolab_refresh_e( 'who_body' ); ?></p>
+					<?php echo kocorolab_refresh_title_list_html(); ?>
+					<?php echo kocorolab_refresh_bio_tabs_html( 'home' ); ?>
 					<p><?php kocorolab_refresh_e( 'who_hr' ); ?></p>
-					<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/member/', '/en/company/' ) ); ?>"><?php kocorolab_refresh_e( 'who_more' ); ?></a></p>
+					<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/member/', '/en/member/' ) ); ?>"><?php kocorolab_refresh_e( 'who_more' ); ?></a></p>
 				</div>
 			</div>
 		</section>
@@ -167,10 +168,11 @@ if ( function_exists( 'get_posts' ) ) {
 				<p><?php kocorolab_refresh_e( 'pub_body' ); ?></p>
 				<p class="kl-actions">
 					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/hakkou/', '/en/publications/' ) ); ?>"><?php kocorolab_refresh_e( 'pub_link' ); ?></a>
-					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/' ) ); ?>"><?php kocorolab_refresh_e( 'contact_link' ); ?></a>
 				</p>
 			</div>
 		</section>
+
+		<?php echo kocorolab_refresh_contact_section_html(); ?>
 	</main>
 </div>
 <?php

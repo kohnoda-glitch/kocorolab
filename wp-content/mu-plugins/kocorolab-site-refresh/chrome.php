@@ -14,7 +14,10 @@ function kocorolab_refresh_nav_key() {
 		if ( is_page( 'service' ) ) {
 			return 'service';
 		}
-		if ( is_page( array( 'company', 'member', 'koheinoda' ) ) ) {
+		if ( is_page( array( 'member', 'koheinoda' ) ) ) {
+			return 'member';
+		}
+		if ( is_page( 'company' ) ) {
 			return 'company';
 		}
 		if ( is_page( 'contact' ) ) {
@@ -36,11 +39,10 @@ function kocorolab_refresh_lang_switch_url() {
 }
 
 function kocorolab_refresh_site_header() {
-	static $done = false;
-	if ( $done ) {
+	if ( ! empty( $GLOBALS['KOCORO_HEADER_DONE'] ) ) {
 		return;
 	}
-	$done = true;
+	$GLOBALS['KOCORO_HEADER_DONE'] = true;
 	$en      = ( 'en' === kocorolab_refresh_lang() );
 	$current = kocorolab_refresh_nav_key();
 	$items   = $en
@@ -49,6 +51,7 @@ function kocorolab_refresh_site_header() {
 			array( 'service', 'Services', kocorolab_refresh_url( '/service/', '/en/service/' ) ),
 			array( 'news', 'Updates', kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ),
 			array( 'hakkou', 'Publications', kocorolab_refresh_url( '/hakkou/', '/en/publications/' ) ),
+			array( 'member', 'Profile', kocorolab_refresh_url( '/member/', '/en/member/' ) ),
 			array( 'company', 'Company', kocorolab_refresh_url( '/company/', '/en/company/' ) ),
 		)
 		: array(
@@ -56,6 +59,7 @@ function kocorolab_refresh_site_header() {
 			array( 'service', 'サービス', kocorolab_refresh_url( '/service/', '/service/' ) ),
 			array( 'news', '活動・新着', kocorolab_refresh_url( '/news/', '/news/' ) ),
 			array( 'hakkou', '発表文献', kocorolab_refresh_url( '/hakkou/', '/hakkou/' ) ),
+			array( 'member', 'プロフィール', kocorolab_refresh_url( '/member/', '/member/' ) ),
 			array( 'company', '会社概要', kocorolab_refresh_url( '/company/', '/company/' ) ),
 		);
 	$home = $en ? kocorolab_refresh_url( '/', '/en/' ) : kocorolab_refresh_url( '/', '/' );
@@ -83,11 +87,10 @@ function kocorolab_refresh_site_header() {
 }
 
 function kocorolab_refresh_site_footer() {
-	static $done = false;
-	if ( $done ) {
+	if ( ! empty( $GLOBALS['KOCORO_FOOTER_DONE'] ) ) {
 		return;
 	}
-	$done = true;
+	$GLOBALS['KOCORO_FOOTER_DONE'] = true;
 	$en = ( 'en' === kocorolab_refresh_lang() );
 	?>
 <footer class="kl-sitefoot">

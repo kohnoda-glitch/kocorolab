@@ -30,12 +30,17 @@ $ja = kocorolab_refresh_copy( 'ja' );
 $en = kocorolab_refresh_copy( 'en' );
 $ja_company = kocorolab_refresh_page_html( 'company', 'ja' );
 $ja_service = kocorolab_refresh_page_html( 'service', 'ja' );
+$ja_profile = kocorolab_refresh_page_html( 'member', 'ja' );
 $en_profile = kocorolab_refresh_page_html( 'member', 'en' );
+$ja_contact = kocorolab_refresh_page_html( 'contact', 'ja' );
 $ja_pubs    = kocorolab_refresh_page_html( 'hakkou', 'ja' );
 $en_pubs    = kocorolab_refresh_page_html( 'publications', 'en' );
-$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $ja['profile_note'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $en['profile_note'], $ja_company, $ja_service, $en_profile ) );
+$ja_bio     = kocorolab_refresh_bio_tabs_html( 'home', 'ja' );
+$en_bio     = kocorolab_refresh_bio_tabs_html( 'home', 'en' );
+$contact    = kocorolab_refresh_contact_section_html( 'ja' );
+$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $ja['profile_note'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $en['profile_note'], $ja_company, $ja_service, $ja_profile, $en_profile ) );
 
-$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'チェンジ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', 'Associate Professor', 'Regional Faculty', '触れません', '公開しません', 'does not discuss individual', 'does not describe individual' );
+$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', '触れません', '公開しません', 'does not discuss individual', 'does not describe individual' );
 
 $images = array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg' );
 $img_ok = true;
@@ -50,10 +55,23 @@ $checks = array(
 	'EN mission slogan' => 'Guiding Transformation for Societies and Individuals' === $en['company_m'] && '社会と個人の変容をガイドする' === $en['company_m_other'],
 	'JA hero uses live slogan pair' => '社会と個人の変容をガイドする' === $ja['hero_title'] && 'Guiding Transformation for Societies and Individuals' === $ja['hero_title_accent'],
 	'EN hero uses live slogan pair' => 'Guiding Transformation for Societies and Individuals' === $en['hero_title'] && '社会と個人の変容をガイドする' === $en['hero_title_accent'],
-	'JA uses GLOBIS faculty' => ( false !== strpos( $ja['who_body'], '教員' ) && false !== strpos( $ja['cred2'], '教員' ) ),
-	'EN uses Globis University, Research Faculty' => false !== strpos( $en['cred2'], 'Globis University, Research Faculty' ) && false !== strpos( $en['who_body'], 'Globis University, Research Faculty' ),
-	'MIT regional faculty JA' => false !== strpos( $ja['cred1'], 'regional faculty' ) && false !== strpos( $ja['who_body'], 'regional faculty' ),
-	'MIT regional faculty EN' => false !== strpos( $en['cred1'], 'regional faculty' ) && false !== strpos( $en['who_body'], 'regional faculty' ),
+	'JA uses official GLOBIS title' => ( false !== strpos( $ja['cred3'], 'グロービス経営大学院 専任教員' ) && false !== strpos( $ja['who_body'], 'グロービス経営大学院 専任教員' ) ),
+	'EN uses Associate Professor and Research Faculty' => false !== strpos( $en['cred3'], 'Associate Professor and Research Faculty' ) && false !== strpos( $en['who_body'], 'Globis University Graduate School of Management' ),
+	'JA uses official MIT title' => false !== strpos( $ja['cred4'], 'MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ' ) && false !== strpos( $ja['who_body'], 'リージョナル・ファカルティ' ),
+	'EN uses Regional Faculty MIT Sloan Global Program' => false !== strpos( $en['cred4'], 'Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific' ) && false !== strpos( $en['who_body'], 'Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific' ),
+	'JA doctorate title' => '博士（学術 / 認知科学）' === $ja['cred1'] && false !== strpos( $ja['who_body'], '博士（学術 / 認知科学）' ),
+	'EN doctorate title' => 'Ph.D. in Cognitive Science' === $en['cred1'],
+	'JA representative director' => false !== strpos( $ja['cred2'], '株式会社ココロラボ 代表取締役' ),
+	'JA bio has wellbeing and systems' => ( false !== strpos( $ja['bio_p2_ja'], '認知科学' ) && false !== strpos( $ja['bio_p2_ja'], '万物のウェルビーイング' ) && false !== strpos( $ja['bio_p2_ja'], '地球システム' ) ),
+	'EN bio has wellbeing and systems' => ( false !== strpos( $en['bio_p2_en'], 'cognitive science' ) && false !== strpos( $en['bio_p2_en'], 'well-being' ) && false !== strpos( $en['bio_p2_en'], 'planetary system' ) ),
+	'JA page includes English Bio tab' => ( false !== strpos( $ja_profile, 'English Bio' ) && false !== strpos( $ja_profile, 'Kohei Noda, Ph.D.' ) && false !== strpos( $ja_profile, 'kl-bio-tab' ) ),
+	'EN page includes Japanese bio tab' => ( false !== strpos( $en_profile, '野田 浩平' ) && false !== strpos( $en_profile, '万物のウェルビーイング' ) ),
+	'home bio defaults to Japanese' => ( false !== strpos( $ja_bio, 'kl-bio-home-ja' ) && false !== strpos( $ja_bio, 'checked' ) && false !== strpos( $ja_bio, 'English Bio' ) ),
+	'EN bio defaults to English' => ( false !== strpos( $en_bio, 'kl-bio-home-en' ) && preg_match( '/id="kl-bio-home-en"[^>]*checked/', $en_bio ) ),
+	'contact section has mailto' => ( false !== strpos( $contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $contact, 'id="direct-contact"' ) ),
+	'contact lists inquiry topics' => ( false !== strpos( $contact, '講演・研修依頼' ) && false !== strpos( $contact, '組織開発・人財育成コンサルティング' ) && false !== strpos( $contact, '共同研究' ) && false !== strpos( $contact, 'メンタルヘルス / EQアセスメント導入' ) ),
+	'contact page has mailto and topics' => ( false !== strpos( $ja_contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $ja_contact, '講演・研修依頼' ) ),
+	'CSS covers bio tabs and contact' => ( false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-bio-tabs' ) && false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-contact' ) && false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '@media (max-width: 900px)' ) ),
 	'JA mind society environment' => ( false !== strpos( $ja['hero_badge'], '精神' ) && false !== strpos( $ja['hero_badge'], '社会' ) && false !== strpos( $ja['hero_badge'], '環境' ) ),
 	'news is activities not diary' => false !== strpos( $ja['news_lead'], 'IDEAS' ) && false !== strpos( $ja['news_lead'], 'MHQ' ) && false !== strpos( $ja['news_lead'], '日記ブログではありません' ),
 	'services stay on one page' => false !== strpos( $ja['work_lead'], '下層ページは増やしません' ),

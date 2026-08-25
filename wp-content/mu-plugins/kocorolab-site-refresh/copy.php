@@ -14,9 +14,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'hero_cta1'      => 'サービス',
 		'hero_cta2'      => '活動・新着',
 		'hero_photo_note'=> '写真は仮です。あとから差し替えできます。',
-		'cred1'          => 'MIT Sloan IDEAS Asia Pacific regional faculty',
-		'cred2'          => 'グロービス経営大学院 教員',
-		'cred3'          => '学術博士（東京工業大学）',
+		'cred1'          => '博士（学術 / 認知科学）',
+		'cred2'          => '株式会社ココロラボ 代表取締役',
+		'cred3'          => 'グロービス経営大学院 専任教員',
+		'cred4'          => 'MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ',
 		'mission_kicker' => 'MISSION',
 		'brand'          => 'Kocoro Laboratory',
 		'brand_sub'      => '株式会社ココロラボ',
@@ -45,9 +46,28 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'news_link'      => '新着一覧',
 		'news_empty'     => '新しい案内は、準備ができ次第ここに出します。',
 		'section_who'    => '代表',
-		'who_body'       => '野田浩平（学術博士）は、株式会社ココロラボ代表取締役、グロービス経営大学院教員、MIT Sloan IDEAS Asia Pacific regional faculty です。',
+		'who_body'       => '野田浩平は、博士（学術 / 認知科学）。株式会社ココロラボ 代表取締役、グロービス経営大学院 専任教員、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティです。',
 		'who_hr'         => '人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。',
-		'who_more'       => 'プロフィール',
+		'who_more'       => 'プロフィール詳細',
+		'bio_kicker'     => 'BIO',
+		'bio_tab_ja'     => '日本語',
+		'bio_tab_en'     => 'English Bio',
+		'bio_name_ja'    => '野田 浩平（のだ こうへい）',
+		'bio_p1_ja'      => '博士（学術 / 認知科学）。グロービス経営大学院 専任教員（研究者教員）、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、株式会社ココロラボ代表取締役。',
+		'bio_p2_ja'      => '専門は認知科学（感情研究）。人間の感情や意思決定のメカニズムを探求する学術的知見を基盤に、経営大学院でのリーダーシップ・倫理・価値観教育や、企業における組織行動・人財開発に従事。U理論やシステム思考をベースに、個人の内面から組織、地域、気候変動をはじめとする地球システム全体までを俯瞰し、万物のウェルビーイングを最大化するための実践・アクション研究を展開している。',
+		'bio_name_en'    => 'Kohei Noda, Ph.D.',
+		'bio_p1_en'      => 'Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc.',
+		'bio_p2_en'      => 'Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.',
+		'contact_kicker' => 'CONTACT',
+		'contact_h2'     => '直接コンタクト',
+		'contact_lead'   => '企業人事、講演依頼、研究パートナーの皆さまは、こちらから直接ご連絡ください。',
+		'contact_email'  => 'info@kocorolab.com',
+		'contact_topics_h' => '主なご相談内容',
+		'contact_topic1' => '講演・研修依頼',
+		'contact_topic2' => '組織開発・人財育成コンサルティング',
+		'contact_topic3' => '共同研究',
+		'contact_topic4' => 'メンタルヘルス / EQアセスメント導入',
+		'contact_form'   => 'フォームでも問い合わせ',
 		'section_pub'    => '発表文献',
 		'pub_body'       => '日本認知科学会などでの発表を続けています。2025年は「U理論の認知感情モデル」を第42回大会予稿集（pp. 466-469）に掲載しました。',
 		'pub_intro'      => 'ココロラボでは認知科学を基礎に、人間の感情、メンタルヘルス、幸福観、開発教育などについて研究・実践しています。近年はU理論を実践方法論、システム思考を研究方法論に意識的に取り入れ、進めています。',
@@ -73,8 +93,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_h'         => '学術研究・統計',
 		'svc4_b'         => '認知モデル、心理統計、調査研究。',
 		'profile_h2'     => '野田浩平',
-		'profile_role'   => '学術博士／産業カウンセラー',
-		'profile_now'    => '現在は、グロービス経営大学院教員、MIT Sloan IDEAS Asia Pacific regional faculty、株式会社ココロラボ代表取締役として、教育・研究と実務支援を並行しています。市民気候ロビー（CCL）Japan 代表も務めています。',
+		'profile_role'   => '博士（学術 / 認知科学）',
+		'profile_now'    => '市民気候ロビー（CCL）Japan 代表も務めています。',
 		'profile_past'   => 'これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。',
 		'profile_note'   => '研究実績は発表文献、ときどきの案内は活動・新着をご覧ください。',
 		'label_name'     => '研究所名',
@@ -102,9 +122,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'hero_cta1'      => 'Services',
 		'hero_cta2'      => 'News & activities',
 		'hero_photo_note'=> 'Placeholder photos. Swap them later.',
-		'cred1'          => 'MIT Sloan IDEAS Asia Pacific regional faculty',
-		'cred2'          => 'Globis University, Research Faculty',
-		'cred3'          => 'Ph.D., Tokyo Institute of Technology',
+		'cred1'          => 'Ph.D. in Cognitive Science',
+		'cred2'          => 'Representative Director, Kocorolab Inc.',
+		'cred3'          => 'Associate Professor and Research Faculty, Globis University Graduate School of Management',
+		'cred4'          => 'Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific',
 		'mission_kicker' => 'MISSION',
 		'brand'          => 'Kocoro Laboratory',
 		'brand_sub'      => 'Kocoro Laboratory, Inc.',
@@ -133,9 +154,28 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'news_link'      => 'All news',
 		'news_empty'     => 'New notes will appear here when they are ready.',
 		'section_who'    => 'Founder',
-		'who_body'       => 'Kohei Noda, Ph.D., is President of Kocoro Laboratory, Globis University, Research Faculty, and regional faculty for MIT Sloan IDEAS Asia Pacific.',
+		'who_body'       => 'Kohei Noda, Ph.D. in Cognitive Science, is Representative Director at Kocorolab Inc., Associate Professor and Research Faculty at Globis University Graduate School of Management, and Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific.',
 		'who_hr'         => 'He served as head of human resources at both a pre-IPO growth company and listed operating companies.',
-		'who_more'       => 'Profile',
+		'who_more'       => 'Full profile',
+		'bio_kicker'     => 'BIO',
+		'bio_tab_ja'     => '日本語',
+		'bio_tab_en'     => 'English Bio',
+		'bio_name_ja'    => '野田 浩平（のだ こうへい）',
+		'bio_name_en'    => 'Kohei Noda, Ph.D.',
+		'bio_p1_ja'      => '博士（学術 / 認知科学）。グロービス経営大学院 専任教員（研究者教員）、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、株式会社ココロラボ代表取締役。',
+		'bio_p2_ja'      => '専門は認知科学（感情研究）。人間の感情や意思決定のメカニズムを探求する学術的知見を基盤に、経営大学院でのリーダーシップ・倫理・価値観教育や、企業における組織行動・人財開発に従事。U理論やシステム思考をベースに、個人の内面から組織、地域、気候変動をはじめとする地球システム全体までを俯瞰し、万物のウェルビーイングを最大化するための実践・アクション研究を展開している。',
+		'bio_p1_en'      => 'Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc.',
+		'bio_p2_en'      => 'Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.',
+		'contact_kicker' => 'CONTACT',
+		'contact_h2'     => 'Direct contact',
+		'contact_lead'   => 'For corporate HR, speaking requests, and research partners — reach us directly here.',
+		'contact_email'  => 'info@kocorolab.com',
+		'contact_topics_h' => 'Typical inquiries',
+		'contact_topic1' => 'Talks and executive education',
+		'contact_topic2' => 'Organization development and talent consulting',
+		'contact_topic3' => 'Collaborative research',
+		'contact_topic4' => 'Mental health / EQ assessment introduction',
+		'contact_form'   => 'Or use the contact form',
 		'section_pub'    => 'Publications',
 		'pub_body'       => 'Ongoing work includes the Japanese Cognitive Science Society. In 2025 he published “The cognitive affective model of theory U” in the 42nd Annual Meeting proceedings (pp. 466-469).',
 		'pub_intro'      => 'We study emotion, mental health, well-being, and related practice on a cognitive-science base. In recent years this work has drawn on Theory U as a method of practice and systems thinking as a method of inquiry.',
@@ -161,8 +201,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_h'         => 'Research and statistics',
 		'svc4_b'         => 'Cognitive modeling, psychological statistics, and commissioned studies.',
 		'profile_h2'     => 'Kohei Noda',
-		'profile_role'   => 'Ph.D. / Certified industrial counselor',
-		'profile_now'    => 'He is Globis University, Research Faculty, regional faculty for MIT Sloan IDEAS Asia Pacific, and President of Kocoro Laboratory. He also serves as Japan lead for Citizens’ Climate Lobby.',
+		'profile_role'   => 'Ph.D. in Cognitive Science',
+		'profile_now'    => 'He also serves as Japan lead for Citizens’ Climate Lobby.',
 		'profile_past'   => 'He later served as head of human resources in operating companies, including a pre-IPO growth company and a listed company.',
 		'profile_note'   => 'See Publications for research, and News & activities for occasional notes.',
 		'label_name'     => 'Name',
@@ -194,6 +234,100 @@ function kocorolab_refresh_t( $key, $lang = null ) {
 
 function kocorolab_refresh_e( $key ) {
 	echo esc_html( kocorolab_refresh_t( $key ) );
+}
+
+function kocorolab_refresh_contact_email() {
+	return 'info@kocorolab.com';
+}
+
+function kocorolab_refresh_titles() {
+	return array( 'cred1', 'cred2', 'cred3', 'cred4' );
+}
+
+function kocorolab_refresh_title_list_html( $lang = null ) {
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	$c = kocorolab_refresh_copy( $lang );
+	ob_start();
+	?>
+	<ul class="kl-title-chips">
+		<?php foreach ( kocorolab_refresh_titles() as $key ) : ?>
+			<li><?php echo esc_html( $c[ $key ] ); ?></li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+	return ob_get_clean();
+}
+
+/**
+ * JA/EN biography switcher. CSS-only tabs so the preview and production
+ * both work without waiting on a script.
+ */
+function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null ) {
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	$c        = kocorolab_refresh_copy( $lang );
+	$safe     = preg_replace( '/[^a-zA-Z0-9_-]/', '', (string) $prefix );
+	$safe     = $safe ? $safe : 'bio';
+	$ja_id    = 'kl-bio-' . $safe . '-ja';
+	$en_id    = 'kl-bio-' . $safe . '-en';
+	$ja_first = ( 'en' !== $lang );
+	ob_start();
+	?>
+	<div class="kl-bio" data-kl-bio-tabs>
+		<input class="kl-bio-switch kl-bio-switch-ja" type="radio" name="kl-bio-<?php echo esc_attr( $prefix ); ?>" id="<?php echo esc_attr( $ja_id ); ?>"<?php echo $ja_first ? ' checked' : ''; ?>>
+		<input class="kl-bio-switch kl-bio-switch-en" type="radio" name="kl-bio-<?php echo esc_attr( $prefix ); ?>" id="<?php echo esc_attr( $en_id ); ?>"<?php echo $ja_first ? '' : ' checked'; ?>>
+		<div class="kl-bio-tabs" role="tablist" aria-label="<?php echo ( 'en' === $lang ) ? 'Biography language' : 'プロフィールの言語'; ?>">
+			<label class="kl-bio-tab" data-lang="ja" for="<?php echo esc_attr( $ja_id ); ?>"><?php echo esc_html( $c['bio_tab_ja'] ); ?></label>
+			<label class="kl-bio-tab" data-lang="en" for="<?php echo esc_attr( $en_id ); ?>"><?php echo esc_html( $c['bio_tab_en'] ); ?></label>
+		</div>
+		<div class="kl-bio-panel kl-bio-panel-ja" lang="ja">
+			<h3 class="kl-bio-name"><?php echo esc_html( $c['bio_name_ja'] ); ?></h3>
+			<p><?php echo esc_html( $c['bio_p1_ja'] ); ?></p>
+			<p><?php echo esc_html( $c['bio_p2_ja'] ); ?></p>
+		</div>
+		<div class="kl-bio-panel kl-bio-panel-en" lang="en">
+			<h3 class="kl-bio-name"><?php echo esc_html( $c['bio_name_en'] ); ?></h3>
+			<p><?php echo esc_html( $c['bio_p1_en'] ); ?></p>
+			<p><?php echo esc_html( $c['bio_p2_en'] ); ?></p>
+		</div>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
+function kocorolab_refresh_contact_section_html( $lang = null ) {
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	$c     = kocorolab_refresh_copy( $lang );
+	$email = kocorolab_refresh_contact_email();
+	ob_start();
+	?>
+	<section class="kl-band kl-contact" id="direct-contact">
+		<div class="kl-wide">
+			<p class="kl-kicker"><?php echo esc_html( $c['contact_kicker'] ); ?></p>
+			<h2><?php echo esc_html( $c['contact_h2'] ); ?></h2>
+			<p class="kl-lead"><?php echo esc_html( $c['contact_lead'] ); ?></p>
+			<p class="kl-contact-mail-wrap">
+				<a class="kl-mail" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+			</p>
+			<h3 class="kl-contact-topics-h"><?php echo esc_html( $c['contact_topics_h'] ); ?></h3>
+			<ul class="kl-contact-topics">
+				<li><?php echo esc_html( $c['contact_topic1'] ); ?></li>
+				<li><?php echo esc_html( $c['contact_topic2'] ); ?></li>
+				<li><?php echo esc_html( $c['contact_topic3'] ); ?></li>
+				<li><?php echo esc_html( $c['contact_topic4'] ); ?></li>
+			</ul>
+			<p class="kl-actions">
+				<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['contact_form'] ); ?></a>
+			</p>
+		</div>
+	</section>
+	<?php
+	return ob_get_clean();
 }
 
 function kocorolab_refresh_page_html( $slug, $lang = 'ja' ) {
@@ -242,7 +376,8 @@ function kocorolab_refresh_company_html( $c, $lang ) {
 			<li><strong><?php echo esc_html( $c['domain3_kicker'] ); ?></strong> — <?php echo esc_html( $c['domain3_body'] ); ?></li>
 		</ul>
 		<h2><?php echo esc_html( $c['company_p_h'] ); ?></h2>
-		<p><?php echo esc_html( $c['who_body'] ); ?></p>
+		<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
+		<?php echo kocorolab_refresh_bio_tabs_html( 'company', $lang ); ?>
 		<p><?php echo esc_html( $c['who_hr'] ); ?></p>
 		<h2><?php echo esc_html( $c['overview_h'] ); ?></h2>
 		<table class="kl-table">
@@ -283,7 +418,8 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 	?>
 	<div class="kl-page">
 		<p class="kl-kicker"><?php echo esc_html( $c['profile_role'] ); ?></p>
-		<p class="kl-lead"><?php echo esc_html( $c['who_body'] ); ?></p>
+		<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
+		<?php echo kocorolab_refresh_bio_tabs_html( 'profile', $lang ); ?>
 		<p><?php echo esc_html( $c['profile_now'] ); ?></p>
 		<p><?php echo esc_html( $c['profile_past'] ); ?></p>
 		<p><?php echo esc_html( $c['profile_note'] ); ?></p>
@@ -298,14 +434,22 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 }
 
 function kocorolab_refresh_contact_intro_html( $c, $lang ) {
-	$en = ( 'en' === $lang );
+	$email = kocorolab_refresh_contact_email();
 	ob_start();
 	?>
 	<div class="kl-page">
-		<p class="kl-lead"><?php echo $en
-			? 'For MHQ2, leadership education, HR support, talks, or research, use the form below or email info@kocorolab.com.'
-			: 'メンタルヘルス検査（MHQ2）、リーダーシップ教育、人事支援、講演、研究に関するご相談は、下のフォームまたは info@kocorolab.com へ。'; ?></p>
-		<p><a href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo $en ? 'MHQ2 landing page' : 'MHQ2の案内ページ'; ?></a></p>
+		<p class="kl-lead"><?php echo esc_html( $c['contact_lead'] ); ?></p>
+		<p class="kl-contact-mail-wrap">
+			<a class="kl-mail kl-mail-on-light" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+		</p>
+		<h2><?php echo esc_html( $c['contact_topics_h'] ); ?></h2>
+		<ul class="kl-list kl-contact-topics">
+			<li><?php echo esc_html( $c['contact_topic1'] ); ?></li>
+			<li><?php echo esc_html( $c['contact_topic2'] ); ?></li>
+			<li><?php echo esc_html( $c['contact_topic3'] ); ?></li>
+			<li><?php echo esc_html( $c['contact_topic4'] ); ?></li>
+		</ul>
+		<p><a href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a></p>
 	</div>
 	<?php
 	return ob_get_clean();
