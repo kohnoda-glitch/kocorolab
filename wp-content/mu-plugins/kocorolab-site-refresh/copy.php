@@ -97,6 +97,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'profile_role'   => '博士（学術 / 認知科学）',
 		'profile_now'    => '市民気候ロビージャパン代表、およびNPO法人セブン・ジェネレーションズ監事も務めています。文章は note でも公開しています。',
 		'profile_past'   => 'これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。',
+		'cv_edu_h'       => '学歴',
+		'cv_work_h'      => '職歴',
 		'profile_note'   => '研究実績は発表文献、ときどきの案内は活動・新着をご覧ください。',
 		'label_name'     => '研究所名',
 		'label_ceo'      => '代表取締役',
@@ -206,6 +208,8 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'profile_role'   => 'Ph.D. in Cognitive Science',
 		'profile_now'    => 'He also serves as Japan representative of Citizens’ Climate Lobby Japan and as auditor of NPO Seven Generations. Writing is also on note.',
 		'profile_past'   => 'He later served as head of human resources in operating companies, including a pre-IPO growth company and a listed company.',
+		'cv_edu_h'       => 'Education',
+		'cv_work_h'      => 'Career',
 		'profile_note'   => 'See Publications for research, and News & activities for occasional notes.',
 		'label_name'     => 'Name',
 		'label_ceo'      => 'President',
@@ -240,6 +244,59 @@ function kocorolab_refresh_e( $key ) {
 
 function kocorolab_refresh_contact_email() {
 	return 'info@kocorolab.com';
+}
+
+function kocorolab_refresh_cv_items( $lang = 'ja' ) {
+	$ja = array(
+		'edu'  => array(
+			'東京工業大学大学院修了、博士（学術 / 認知科学）',
+			'MIT経営大学院グローバルプログラム IDEAS Asia Pacific 修了（2023）',
+		),
+		'work' => array(
+			'外資系コンサルティングで人事・チェンジマネジメントに従事',
+			'人材・採用・適性検査の事業開発を経て独立し、2009年にメンタルヘルス検査 MHQ を発売',
+			'2013–2020年、フィリピンでグローバル人材育成と人事統括、英語教育事業の役員',
+			'上場前の成長企業と上場後の事業会社で人事責任者・執行役員',
+			'2023年よりグロービス経営大学院 専任教員、2024年より MIT IDEAS Asia Pacific リージョナル・ファカルティ',
+		),
+	);
+	$en = array(
+		'edu'  => array(
+			'Ph.D. in Cognitive Science, Tokyo Institute of Technology',
+			'MIT Sloan Global Program IDEAS Asia Pacific (completed 2023)',
+		),
+		'work' => array(
+			'HR and change-management consulting at a global firm',
+			'Business development in talent, hiring, and assessment, then independent work; launched the MHQ mental health questionnaire in 2009',
+			'2013–2020 in the Philippines: global talent development, HR leadership, and an officer role in English-language education',
+			'Head of HR / executive officer at both a pre-IPO growth company and listed operating companies',
+			'From 2023, Associate Professor and Research Faculty at Globis University; from 2024, Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific',
+		),
+	);
+	return ( 'en' === $lang ) ? $en : $ja;
+}
+
+function kocorolab_refresh_cv_html( $lang = 'ja' ) {
+	$c     = kocorolab_refresh_copy( $lang );
+	$items = kocorolab_refresh_cv_items( $lang );
+	ob_start();
+	?>
+	<div class="kl-cv">
+		<h3><?php echo esc_html( $c['cv_edu_h'] ); ?></h3>
+		<ul>
+			<?php foreach ( $items['edu'] as $line ) : ?>
+				<li><?php echo esc_html( $line ); ?></li>
+			<?php endforeach; ?>
+		</ul>
+		<h3><?php echo esc_html( $c['cv_work_h'] ); ?></h3>
+		<ul>
+			<?php foreach ( $items['work'] as $line ) : ?>
+				<li><?php echo esc_html( $line ); ?></li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+	<?php
+	return ob_get_clean();
 }
 
 function kocorolab_refresh_titles() {
@@ -317,7 +374,7 @@ function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null, $with_extras = 
 			<p><?php echo esc_html( $c['bio_p2_ja'] ); ?></p>
 			<?php echo kocorolab_refresh_civic_roles_html( 'ja' ); ?>
 			<?php if ( $with_extras ) : ?>
-				<p><?php echo esc_html( $ja_copy['profile_past'] ); ?></p>
+				<?php echo kocorolab_refresh_cv_html( 'ja' ); ?>
 			<?php endif; ?>
 		</div>
 		<div class="kl-bio-panel kl-bio-panel-en" lang="en">
@@ -326,7 +383,7 @@ function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null, $with_extras = 
 			<p><?php echo esc_html( $c['bio_p2_en'] ); ?></p>
 			<?php echo kocorolab_refresh_civic_roles_html( 'en' ); ?>
 			<?php if ( $with_extras ) : ?>
-				<p><?php echo esc_html( $en_copy['profile_past'] ); ?></p>
+				<?php echo kocorolab_refresh_cv_html( 'en' ); ?>
 			<?php endif; ?>
 		</div>
 	</div>

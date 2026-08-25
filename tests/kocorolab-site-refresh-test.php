@@ -89,6 +89,25 @@ $checks = array(
 		&& false !== strpos( $ja['cred5'], '市民気候ロビージャパン' )
 		&& false !== strpos( $ja['cred6'], 'セブン・ジェネレーションズ' )
 	),
+	'profile includes education and career' => ( function () use ( $ja_profile, $en_profile ) {
+		$work_ja = implode( ' ', kocorolab_refresh_cv_items( 'ja' )['work'] );
+		$work_en = implode( ' ', kocorolab_refresh_cv_items( 'en' )['work'] );
+		return false !== strpos( $ja_profile, '東京工業大学' )
+			&& false !== strpos( $ja_profile, '学歴' )
+			&& false !== strpos( $ja_profile, '職歴' )
+			&& false !== strpos( $ja_profile, 'フィリピン' )
+			&& false !== strpos( $en_profile, 'Tokyo Institute of Technology' )
+			&& false !== strpos( $en_profile, 'Education' )
+			&& false !== strpos( $en_profile, 'Career' )
+			&& false !== strpos( $en_profile, 'Philippines' )
+			&& false === strpos( kocorolab_refresh_bio_tabs_html( 'home', 'ja' ), '学歴' )
+			&& false === strpos( $work_ja, '株式会社' )
+			&& false === strpos( $work_ja, 'アンダーセン' )
+			&& false === strpos( $work_ja, 'リクルート' )
+			&& false === strpos( $work_en, 'Kocorolab' )
+			&& false === strpos( $work_en, 'Andersen' )
+			&& false === strpos( $work_en, 'Recruit' );
+	} )(),
 	'hero hides placeholder photo notes' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'hero_photo_note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-photo-note' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php' ), '写真は仮です' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/preview-site/build.php' ), '写真は仮です' ) ),
 	'JA bio has wellbeing and systems' => ( false !== strpos( $ja['bio_p2_ja'], '認知科学' ) && false !== strpos( $ja['bio_p2_ja'], '万物のウェルビーイング' ) && false !== strpos( $ja['bio_p2_ja'], '地球システム' ) ),
 	'EN bio has wellbeing and systems' => ( false !== strpos( $en['bio_p2_en'], 'cognitive science' ) && false !== strpos( $en['bio_p2_en'], 'well-being' ) && false !== strpos( $en['bio_p2_en'], 'planetary system' ) ),
