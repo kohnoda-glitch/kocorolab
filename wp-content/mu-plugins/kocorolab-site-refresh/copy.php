@@ -264,11 +264,13 @@ function kocorolab_refresh_title_list_html( $lang = null ) {
  * JA/EN biography switcher. CSS-only tabs so the preview and production
  * both work without waiting on a script.
  */
-function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null ) {
+function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null, $with_extras = false ) {
 	if ( null === $lang ) {
 		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
 	}
 	$c        = kocorolab_refresh_copy( $lang );
+	$ja_copy  = kocorolab_refresh_copy( 'ja' );
+	$en_copy  = kocorolab_refresh_copy( 'en' );
 	$safe     = preg_replace( '/[^a-zA-Z0-9_-]/', '', (string) $prefix );
 	$safe     = $safe ? $safe : 'bio';
 	$ja_id    = 'kl-bio-' . $safe . '-ja';
@@ -287,11 +289,19 @@ function kocorolab_refresh_bio_tabs_html( $prefix, $lang = null ) {
 			<h3 class="kl-bio-name"><?php echo esc_html( $c['bio_name_ja'] ); ?></h3>
 			<p><?php echo esc_html( $c['bio_p1_ja'] ); ?></p>
 			<p><?php echo esc_html( $c['bio_p2_ja'] ); ?></p>
+			<?php if ( $with_extras ) : ?>
+				<p><?php echo esc_html( $ja_copy['profile_now'] ); ?></p>
+				<p><?php echo esc_html( $ja_copy['profile_past'] ); ?></p>
+			<?php endif; ?>
 		</div>
 		<div class="kl-bio-panel kl-bio-panel-en" lang="en">
 			<h3 class="kl-bio-name"><?php echo esc_html( $c['bio_name_en'] ); ?></h3>
 			<p><?php echo esc_html( $c['bio_p1_en'] ); ?></p>
 			<p><?php echo esc_html( $c['bio_p2_en'] ); ?></p>
+			<?php if ( $with_extras ) : ?>
+				<p><?php echo esc_html( $en_copy['profile_now'] ); ?></p>
+				<p><?php echo esc_html( $en_copy['profile_past'] ); ?></p>
+			<?php endif; ?>
 		</div>
 	</div>
 	<?php
@@ -419,9 +429,7 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 	<div class="kl-page">
 		<p class="kl-kicker"><?php echo esc_html( $c['profile_role'] ); ?></p>
 		<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
-		<?php echo kocorolab_refresh_bio_tabs_html( 'profile', $lang ); ?>
-		<p><?php echo esc_html( $c['profile_now'] ); ?></p>
-		<p><?php echo esc_html( $c['profile_past'] ); ?></p>
+		<?php echo kocorolab_refresh_bio_tabs_html( 'profile', $lang, true ); ?>
 		<p><?php echo esc_html( $c['profile_note'] ); ?></p>
 		<p>
 			<a href="<?php echo esc_url( kocorolab_refresh_url( '/hakkou/', '/en/publications/', $lang ) ); ?>"><?php echo esc_html( $c['pub_link'] ); ?></a>
