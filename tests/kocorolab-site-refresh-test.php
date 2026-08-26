@@ -96,7 +96,15 @@ $checks = array(
 	),
 	'profile includes education and career' => (
 		false !== strpos( $ja_profile, '東京工業大学' )
-		&& false !== strpos( $ja_profile, 'フィリピン' )
+		&& false !== strpos( $ja_profile, 'SPEA' )
+		&& false !== strpos( $ja_profile, 'ドゥマゲテ' )
+		&& false !== strpos( $ja_profile, 'pro-japan.jp/school/spea' )
+		&& false !== strpos( $ja_profile, 'youtube.com/watch?v=n_Wcw5cKZ6A' )
+		&& false !== strpos( $ja_profile, 'youtube.com/@Speastartingpoitenglishacademy' )
+		&& false !== strpos( $ja_profile, 'researchmap.jp/kohnoda' )
+		&& false === strpos( $ja_profile, '創業' )
+		&& false !== strpos( $en_profile, 'Starting Point English Academy' )
+		&& false !== strpos( $en_profile, 'Dumaguete' )
 		&& false !== strpos( $ja_profile, '株式会社グロービス' )
 		&& false !== strpos( $ja_profile, 'MHQ' )
 		&& false === strpos( $ja_profile, '学歴' )

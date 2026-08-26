@@ -20,6 +20,22 @@ function kocorolab_refresh_medium_url() {
 	return 'https://medium.com/@koheinoda_11596';
 }
 
+function kocorolab_refresh_researchmap_url() {
+	return 'https://researchmap.jp/kohnoda';
+}
+
+function kocorolab_refresh_spea_archive_url() {
+	return 'https://www.pro-japan.jp/school/spea/';
+}
+
+function kocorolab_refresh_spea_youtube_url() {
+	return 'https://www.youtube.com/@Speastartingpoitenglishacademy';
+}
+
+function kocorolab_refresh_spea_intro_video_url() {
+	return 'https://www.youtube.com/watch?v=n_Wcw5cKZ6A';
+}
+
 function kocorolab_refresh_gbx_report_url() {
 	return 'https://www.atpress.ne.jp/news/37250';
 }
