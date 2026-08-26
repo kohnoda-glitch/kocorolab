@@ -111,11 +111,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq_read_sample'=> '見本',
 		'mhq_read_title' => 'MHQ2結果の読み方',
 		'mhq_read_lead'  => '本番の結果画面ではありません。数字の見方と、次の選択肢の見本です。',
-		'mhq_read_zone'  => '今の心の状態は、注意しておくゾーン',
-		'mhq_read_zone_b'=> 'いくつかの項目に負担のサインが出ている、という読み方の例です。',
-		'mhq_read_mood'  => '気分の沈み',
-		'mhq_read_anxiety'=> '不安',
-		'mhq_read_care'  => '労わり',
+		'mhq_read_zone'  => '報告書の見本（長さは仮）',
+		'mhq_read_zone_b'=> '本番は3領域7カテゴリーを5段階で示します。下は公開している尺度名です。',
+		'mhq_read_env'   => 'ストレス環境',
+		'mhq_read_sit'   => 'ストレス状況',
+		'mhq_read_support'=> 'ソーシャルサポート',
+		'mhq_read_risk'  => 'うつリスク',
+		'mhq_read_dev'   => 'コミュニケーション領域では、発達障害の可能性にも触れます。診断ではありません。',
 		'mhq_read_hint'  => '心の状態は変わります。定期的に見る、という使い方もあります。',
 		'mhq_read_session'=> '読解セッションを問い合わせ',
 		'mhq_read_coach' => 'コーチングを問い合わせ',
@@ -252,11 +254,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq_read_sample'=> 'Sample',
 		'mhq_read_title' => 'How to read MHQ2 results',
 		'mhq_read_lead'  => 'This is not a live results screen. It is a sample of how to read the numbers and what to do next.',
-		'mhq_read_zone'  => 'A sample reading: a zone to watch',
-		'mhq_read_zone_b'=> 'An example of how a few items can show a load, not a label.',
-		'mhq_read_mood'  => 'Low mood',
-		'mhq_read_anxiety'=> 'Anxiety',
-		'mhq_read_care'  => 'Care',
+		'mhq_read_zone'  => 'Sample report (bar lengths are dummy)',
+		'mhq_read_zone_b'=> 'The live report uses 3 domains and 7 categories on a 5-point risk scale. The names below are the public scales.',
+		'mhq_read_env'   => 'Stress environment',
+		'mhq_read_sit'   => 'Stress situation',
+		'mhq_read_support'=> 'Social support',
+		'mhq_read_risk'  => 'Depression risk',
+		'mhq_read_dev'   => 'The communication domain also addresses the possibility of developmental disorders. This is not a diagnosis.',
 		'mhq_read_hint'  => 'States change. Checking again later is a valid use.',
 		'mhq_read_session'=> 'Ask about a reading session',
 		'mhq_read_coach' => 'Ask about coaching',
@@ -615,9 +619,11 @@ function kocorolab_refresh_mhq_read_html( $c, $lang ) {
 				<p class="kl-kicker"><?php echo esc_html( $c['mhq_read_sample'] ); ?></p>
 				<h2><?php echo esc_html( $c['mhq_read_zone'] ); ?></h2>
 				<p><?php echo esc_html( $c['mhq_read_zone_b'] ); ?></p>
-				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_mood'] ); ?></span><i style="width:58%"></i></div>
-				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_anxiety'] ); ?></span><i style="width:62%"></i></div>
-				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_care'] ); ?></span><i style="width:72%"></i></div>
+				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_env'] ); ?></span><i style="width:48%"></i></div>
+				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_sit'] ); ?></span><i style="width:58%"></i></div>
+				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_support'] ); ?></span><i style="width:62%"></i></div>
+				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_risk'] ); ?></span><i style="width:54%"></i></div>
+				<p><?php echo esc_html( $c['mhq_read_dev'] ); ?></p>
 				<p><?php echo esc_html( $c['mhq_read_hint'] ); ?></p>
 			</article>
 			<article class="kl-soft-card">
