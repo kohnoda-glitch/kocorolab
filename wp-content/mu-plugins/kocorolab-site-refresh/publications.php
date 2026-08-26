@@ -387,6 +387,18 @@ function kocorolab_refresh_news_overlay_entries() {
 			'en'   => 'Published the YouTube series Change Management under Well-being Era.',
 			'keys' => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
 		),
+		array(
+			'date' => '2010-06-22',
+			'ja'   => 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース',
+			'en'   => 'Press release: partnership with Shubiki on a workplace mental health service.',
+			'keys' => array( 'シュビキ', 'Shubiki', '3980', 'メンタルヘルス支援サービス開始' ),
+		),
+		array(
+			'date' => '2009-07-01',
+			'ja'   => 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース',
+			'en'   => 'MHQ version 1 press release',
+			'keys' => array( 'MHQ1', 'バージョン１発売', 'version 1 press', '3238' ),
+		),
 	);
 }
 
@@ -399,7 +411,8 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
 		array( '2013-01-01', 'GBX(Global Business eXperience)の記事' ),
-		array( '2009-01-01', 'MHQ(Mental Health 質問票）のバージョン１発売のプレスリリース' ),
+		array( '2010-06-22', 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース' ),
+		array( '2009-07-01', 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース' ),
 	);
 	$en = array(
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026 nominations open' ),
@@ -409,7 +422,8 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
 		array( '2013-01-01', 'GBX (Global Business eXperience)' ),
-		array( '2009-01-01', 'MHQ version 1 press release' ),
+		array( '2010-06-22', 'Press release: partnership with Shubiki on a workplace mental health service.' ),
+		array( '2009-07-01', 'MHQ version 1 press release' ),
 	);
 	return ( 'en' === $lang ) ? $en : $ja;
 }

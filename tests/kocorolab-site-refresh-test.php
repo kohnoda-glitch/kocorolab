@@ -349,6 +349,16 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'JCSS2025_P2-37.pdf' )
 	),
+	'news list includes MHQ1 and Shubiki jinjibu press' => (
+		false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'service.jinjibu.jp/news/detl/3238' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'service.jinjibu.jp/news/detl/3980' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'MHQ1' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'シュビキ' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Shubiki' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'シュビキ' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'detl/3238' )
+	),
+	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
 		$post              = new stdClass();
 		$post->post_title  = 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。';
@@ -357,7 +367,9 @@ $checks = array(
 		$post->post_content = '';
 		$post->permalink   = '/news/ideas/';
 		$html              = kocorolab_refresh_news_list_html( kocorolab_refresh_news_feed_items( 'ja', array( $post ) ), 'ja' );
-		return false !== strpos( $html, 'VUCA時代のストレス防衛術' ) && false !== strpos( $html, '/news/ideas/' );
+		return false !== strpos( $html, 'VUCA時代のストレス防衛術' ) && false !== strpos( $html, '/news/ideas/' )
+			&& false !== strpos( $html, 'service.jinjibu.jp/news/detl/3238' )
+			&& false !== strpos( $html, 'service.jinjibu.jp/news/detl/3980' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();

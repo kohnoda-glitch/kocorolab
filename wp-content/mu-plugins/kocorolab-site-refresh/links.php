@@ -155,12 +155,22 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( 'jinjibu', 'MHQ1', 'バージョン１発売', 'version 1 press' ),
+			'keys'  => array( 'MHQ1', 'バージョン１発売', 'version 1 press', '3238' ),
 			'links' => array(
 				array(
 					'url' => 'https://service.jinjibu.jp/news/detl/3238/',
 					'ja'  => 'MHQ1発売のプレスリリース',
 					'en'  => 'MHQ version 1 press release',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'シュビキ', 'Shubiki', '3980', 'メンタルヘルス支援サービス開始' ),
+			'links' => array(
+				array(
+					'url' => 'https://service.jinjibu.jp/news/detl/3980/',
+					'ja'  => 'シュビキ提携のプレスリリース',
+					'en'  => 'Shubiki partnership press release',
 				),
 			),
 		),
@@ -206,9 +216,9 @@ function kocorolab_refresh_remap_url( $url ) {
 			'archive',
 		);
 	}
-	if ( preg_match( '#(?:www\.)?jinjibu\.jp/news/detl/3238#i', $url ) && false === strpos( $url, 'service.jinjibu.jp' ) ) {
+	if ( preg_match( '#(?:www\.)?jinjibu\.jp/news/detl/(3238|3980)#i', $url, $m ) && false === strpos( $url, 'service.jinjibu.jp' ) ) {
 		return array(
-			'https://service.jinjibu.jp/news/detl/3238/',
+			'https://service.jinjibu.jp/news/detl/' . $m[1] . '/',
 			'live',
 		);
 	}
