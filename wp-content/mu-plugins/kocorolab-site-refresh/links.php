@@ -17,7 +17,7 @@ function kocorolab_refresh_note_url() {
 }
 
 function kocorolab_refresh_medium_url() {
-	return 'https://medium.com/@koheinoda';
+	return 'https://medium.com/@koheinoda_11596';
 }
 
 function kocorolab_refresh_gbx_report_url() {
