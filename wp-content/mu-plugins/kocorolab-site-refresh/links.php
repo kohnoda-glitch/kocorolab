@@ -38,6 +38,10 @@ function kocorolab_refresh_spea_rle_press_url() {
 	return 'https://www.value-press.com/pressrelease/165730';
 }
 
+function kocorolab_refresh_spea_ed_press_url() {
+	return 'https://www.value-press.com/pressrelease/183306';
+}
+
 function kocorolab_refresh_spea_youtube_url() {
 	return 'https://www.youtube.com/@Speastartingpoitenglishacademy';
 }
@@ -203,12 +207,22 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', 'value-press', '165730', 'RLE-Labo' ),
+			'keys'  => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', '165730', 'RLE-Labo' ),
 			'links' => array(
 				array(
 					'url' => kocorolab_refresh_spea_rle_press_url(),
 					'ja'  => 'RLE研究開始のプレスリリース',
 					'en'  => 'RLE research press release',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'フィリピン教育留学', 'Philippines education study', '183306' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_spea_ed_press_url(),
+					'ja'  => 'フィリピン教育留学のプレスリリース',
+					'en'  => 'Philippines education study press release',
 				),
 			),
 		),

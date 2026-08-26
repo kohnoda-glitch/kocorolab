@@ -372,7 +372,11 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'value-press.com/pressrelease/165730' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '体験型学習（RLE）' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Real Life Experience (RLE)' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'value-press.com/pressrelease/183306' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'フィリピン教育留学' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Philippines education study' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '165730' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '183306' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'SPEAnew22019' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'SPEAnew22019.pdf' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '学校案内PDF（2019' )
@@ -394,6 +398,7 @@ $checks = array(
 			&& false !== strpos( $html, 'atpress.ne.jp/news/37250' )
 			&& false !== strpos( $html, 'hitomedia.jp/news/2013-07-25-20130725_1' )
 			&& false !== strpos( $html, 'value-press.com/pressrelease/165730' )
+			&& false !== strpos( $html, 'value-press.com/pressrelease/183306' )
 			&& false !== strpos( $html, 'SPEAnew22019.pdf' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {

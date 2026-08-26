@@ -394,10 +394,16 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'SPEAnew22019', '学校案内PDF（2019', 'school brochure PDF (2019' ),
 		),
 		array(
+			'date' => '2017-05-22',
+			'ja'   => 'SPEAのフィリピン教育留学開始のプレスリリース',
+			'en'   => 'Press release: SPEA began a Philippines education study program.',
+			'keys' => array( 'フィリピン教育留学', 'Philippines education study', '183306' ),
+		),
+		array(
 			'date' => '2016-07-08',
 			'ja'   => 'SPEAの体験型学習（RLE）研究開始のプレスリリース',
 			'en'   => 'Press release: research began on SPEA’s Real Life Experience (RLE) method.',
-			'keys' => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', 'value-press', '165730', 'RLE-Labo' ),
+			'keys' => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', '165730', 'RLE-Labo' ),
 		),
 		array(
 			'date' => '2013-07-30',
@@ -441,6 +447,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
 		array( '2019-02-01', 'SPEAの学校案内PDF（2019、フィリピン留学プロ）' ),
+		array( '2017-05-22', 'SPEAのフィリピン教育留学開始のプレスリリース' ),
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
@@ -456,6 +463,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
 		array( '2019-02-01', 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).' ),
+		array( '2017-05-22', 'Press release: SPEA began a Philippines education study program.' ),
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
