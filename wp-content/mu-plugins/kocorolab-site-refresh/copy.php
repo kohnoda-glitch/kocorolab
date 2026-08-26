@@ -4,6 +4,8 @@
  * Services stay on one page. Occasional updates (IDEAS, MHQ) go to 活動・新着.
  */
 
+if ( defined( 'KOCOROLAB_REFRESH_DIR' ) && __DIR__ === KOCOROLAB_REFRESH_DIR ) {
+
 function kocorolab_refresh_copy( $lang = 'ja' ) {
 	$ja = array(
 		'hero_kicker'    => '株式会社ココロラボ',
@@ -500,4 +502,6 @@ function kocorolab_refresh_contact_intro_html( $c, $lang ) {
 	</div>
 	<?php
 	return ob_get_clean();
+}
+
 }

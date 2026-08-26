@@ -3,6 +3,9 @@
  * Standalone overlay. Avalon’s theme chrome is not used, so the old
  * loading screen cannot hide Japanese or English pages.
  */
+if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) || __DIR__ !== KOCOROLAB_REFRESH_DIR ) {
+	return;
+}
 $GLOBALS['KOCORO_IN_VIEW'] = true;
 $lang                      = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
 ?><!DOCTYPE html>

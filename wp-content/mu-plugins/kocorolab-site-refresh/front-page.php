@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) || __DIR__ !== KOCOROLAB_REFRESH_DIR ) {
+	return;
+}
 if ( empty( $GLOBALS['KOCORO_IN_VIEW'] ) ) {
 	get_header();
 	kocorolab_refresh_site_header();

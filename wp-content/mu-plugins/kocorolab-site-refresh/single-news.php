@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) || __DIR__ !== KOCOROLAB_REFRESH_DIR ) {
+	return;
+}
 ?>
 <main>
 	<div class="kl-page">

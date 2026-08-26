@@ -3,6 +3,8 @@
  * Shared header/footer chrome for the wide landing layout.
  */
 
+if ( defined( 'KOCOROLAB_REFRESH_DIR' ) && __DIR__ === KOCOROLAB_REFRESH_DIR ) {
+
 if ( ! function_exists( 'kocorolab_refresh_publications_url' ) ) {
 	function kocorolab_refresh_publications_url( $lang = null ) {
 		return kocorolab_refresh_url( '/publications/', '/en/publications/', $lang );
@@ -161,4 +163,6 @@ function kocorolab_refresh_site_footer() {
 	<p>© 株式会社ココロラボ / Kocoro Laboratory, Inc.</p>
 </footer>
 	<?php
+}
+
 }

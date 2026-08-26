@@ -3,6 +3,8 @@
  * Full publications list from the live site, with the 2025 JCSS sole-author paper first.
  */
 
+if ( defined( 'KOCOROLAB_REFRESH_DIR' ) && __DIR__ === KOCOROLAB_REFRESH_DIR ) {
+
 function kocorolab_refresh_jcss_pdfs() {
 	return array(
 		'2025' => 'https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf',
@@ -552,4 +554,6 @@ function kocorolab_refresh_news_html( $lang = 'ja' ) {
 	</div>
 	<?php
 	return ob_get_clean();
+}
+
 }

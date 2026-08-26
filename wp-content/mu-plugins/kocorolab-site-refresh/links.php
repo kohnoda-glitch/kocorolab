@@ -4,6 +4,8 @@
  * and restore missing YouTube / report links on the page itself.
  */
 
+if ( defined( 'KOCOROLAB_REFRESH_DIR' ) && __DIR__ === KOCOROLAB_REFRESH_DIR ) {
+
 function kocorolab_refresh_ccl_japan_url() {
 	return 'https://japan.citizensclimatelobby.org/';
 }
@@ -362,4 +364,6 @@ function kocorolab_refresh_retire_xsrv_email( $content ) {
 	$next = kocorolab_refresh_contact_email();
 	$content = preg_replace( '/[A-Z0-9._%+-]+@knoda\.xsrv\.jp/i', $next, $content );
 	return $content;
+}
+
 }

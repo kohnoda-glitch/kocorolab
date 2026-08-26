@@ -32,6 +32,18 @@ function sanitize_text_field( $value ) {
 	return is_string( $value ) ? trim( $value ) : $value;
 }
 
+$overlay_dir = dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh';
+$stray_tmp   = sys_get_temp_dir() . '/kl-stray-' . uniqid();
+mkdir( $stray_tmp );
+$stray_files = array( 'archive-news.php', 'single-news.php', 'front-page.php', 'copy.php', 'chrome.php', 'links.php', 'publications.php', 'wp-view.php' );
+foreach ( $stray_files as $stray ) {
+	copy( $overlay_dir . '/' . $stray, $stray_tmp . '/' . $stray );
+	ob_start();
+	include $stray_tmp . '/' . $stray;
+	ob_end_clean();
+}
+
+require dirname( __DIR__ ) . '/wp-content/mu-plugins/0-kocorolab-refresh-guard.php';
 require dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh.php';
 
 $ja = kocorolab_refresh_copy( 'ja' );
@@ -351,6 +363,25 @@ $checks = array(
 	'strips qTranslate EN tags' => 'Body text.' === trim( kocorolab_refresh_ml_text( '[:ja]本文です。[:en]Body text.[:]', 'en' ) ),
 	'strips MHQ1 ja-only tags' => ( false === strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), '[:' ) && false !== strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), 'MHQ1' ) ),
 	'EN news uses lang query' => false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'lang=en' ),
+	'flattened overlay templates abort before the loader defines helpers' => is_dir( $stray_tmp ),
+	'guard plugin sits before archive-news alphabetically' => ( '0-kocorolab-refresh-guard.php' < 'archive-news.php' ),
+	'guard plugin ships next to the overlay loader' => is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/0-kocorolab-refresh-guard.php' ),
+	'guard removes flattened overlay copies from mu-plugins root' => ( function () {
+		$tmp = sys_get_temp_dir() . '/kl-mu-' . uniqid();
+		mkdir( $tmp );
+		file_put_contents( $tmp . '/archive-news.php', "<?php\nkocorolab_refresh_lang();\n" );
+		file_put_contents( $tmp . '/hero-horizon.jpg', 'fake' );
+		file_put_contents( $tmp . '/keep-other.php', "<?php\n" );
+		$removed = kocorolab_refresh_remove_stray_mu_plugins( $tmp );
+		$ok      = in_array( 'archive-news.php', $removed, true )
+			&& in_array( 'hero-horizon.jpg', $removed, true )
+			&& ! is_file( $tmp . '/archive-news.php' )
+			&& ! is_file( $tmp . '/hero-horizon.jpg' )
+			&& is_file( $tmp . '/keep-other.php' );
+		@unlink( $tmp . '/keep-other.php' );
+		@rmdir( $tmp );
+		return $ok;
+	} )(),
 	'strips stray HTML label from custom head' => (
 		! preg_match( '/^HTML$/m', kocorolab_refresh_strip_stray_head_html( "verify\" />\r\n\r\nHTML\r\n<script type=\"application/ld+json\">\r\n{}\r\n" ) )
 		&& false !== strpos( kocorolab_refresh_strip_stray_head_html( "HTML\r\n<script type=\"application/ld+json\">" ), 'application/ld+json' )

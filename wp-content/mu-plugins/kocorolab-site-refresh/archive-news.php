@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) || __DIR__ !== KOCOROLAB_REFRESH_DIR ) {
+	return;
+}
 $lang = kocorolab_refresh_lang();
 $wp   = array();
 if ( function_exists( 'get_posts' ) ) {
