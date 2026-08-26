@@ -34,7 +34,8 @@ function kocorolab_preview_page_file( $key, $for_en ) {
 		'company'      => 'company.html',
 		'member'       => 'member.html',
 		'contact'      => 'contact.html',
-		'mhq2'         => 'mhq2.html',
+		'mhq2'         => 'mhqlp.html',
+		'mhqlp'        => 'mhqlp.html',
 		'mhq-read'     => 'mhq-read.html',
 	);
 	$en = array(
@@ -45,7 +46,8 @@ function kocorolab_preview_page_file( $key, $for_en ) {
 		'company'      => 'company.html',
 		'member'       => 'member.html',
 		'contact'      => 'contact.html',
-		'mhq2'         => 'mhq2.html',
+		'mhq2'         => 'mhqlp.html',
+		'mhqlp'        => 'mhqlp.html',
 		'mhq-read'     => 'mhq-read.html',
 	);
 	return $for_en ? $en[ $key ] : $ja[ $key ];
@@ -82,8 +84,10 @@ function home_url( $path = '/' ) {
 		'/en/member/'        => 'member',
 		'/contact/'          => 'contact',
 		'/en/contact/'       => 'contact',
-		'/mhq2/'             => 'mhq2',
-		'/en/mhq2/'          => 'mhq2',
+		'/mhqlp/'            => 'mhqlp',
+		'/mhqlp/?lang=en'    => 'mhqlp',
+		'/mhq2/'             => 'mhqlp',
+		'/en/mhq2/'          => 'mhqlp',
 		'/mhq-read/'         => 'mhq-read',
 		'/en/mhq-read/'      => 'mhq-read',
 	);
@@ -103,9 +107,6 @@ function home_url( $path = '/' ) {
 			return 'en/' . $file;
 		}
 		return $file;
-	}
-	if ( 0 === strpos( $path, '/mhqlp/' ) ) {
-		return 'https://kocorolab.com/mhqlp/' . ( false !== strpos( $path, 'lang=en' ) ? '?lang=en' : '' );
 	}
 	return 'https://kocorolab.com' . $path;
 }
@@ -313,7 +314,11 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
 kocorolab_preview_write( "$out/contact.html", kocorolab_preview_render_inner( 'ja', 'お問い合わせ', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'ja' ), 'ja' ) . '<div class="kl-page"><p>本プレビューではフォームは動きません。本番ではこのページに既存の問い合わせフォームが残ります。メール：info@kocorolab.com</p></div>' ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq2';
-kocorolab_preview_write( "$out/mhq2.html", kocorolab_preview_render_inner( 'ja', '個人向け MHQ2', kocorolab_refresh_page_html( 'mhq2', 'ja' ) ) );
+kocorolab_preview_write( "$out/mhqlp.html", kocorolab_preview_render_inner( 'ja', '個人向け MHQ2', kocorolab_refresh_page_html( 'mhqlp', 'ja' ) ) );
+kocorolab_preview_write(
+	"$out/mhq2.html",
+	'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=mhqlp.html"><link rel="canonical" href="mhqlp.html"><title>MHQ2</title></head><body><p><a href="mhqlp.html">個人向けランディング</a></p></body></html>'
+);
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq-read';
 kocorolab_preview_write( "$out/mhq-read.html", kocorolab_preview_render_inner( 'ja', '結果の読み方', kocorolab_refresh_page_html( 'mhq-read', 'ja' ) ) );
@@ -344,7 +349,11 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
 kocorolab_preview_write( "$out/en/contact.html", kocorolab_preview_render_inner( 'en', 'Contact', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'en' ), 'en' ) . '<div class="kl-page"><p>This preview does not send messages. On the live site the existing form remains. Email: info@kocorolab.com</p></div>' ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq2';
-kocorolab_preview_write( "$out/en/mhq2.html", kocorolab_preview_render_inner( 'en', 'MHQ2 for individuals', kocorolab_refresh_page_html( 'mhq2', 'en' ) ) );
+kocorolab_preview_write( "$out/en/mhqlp.html", kocorolab_preview_render_inner( 'en', 'MHQ2 for individuals', kocorolab_refresh_page_html( 'mhqlp', 'en' ) ) );
+kocorolab_preview_write(
+	"$out/en/mhq2.html",
+	'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=mhqlp.html"><link rel="canonical" href="mhqlp.html"><title>MHQ2</title></head><body><p><a href="mhqlp.html">Individual landing</a></p></body></html>'
+);
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq-read';
 kocorolab_preview_write( "$out/en/mhq-read.html", kocorolab_preview_render_inner( 'en', 'How to read results', kocorolab_refresh_page_html( 'mhq-read', 'en' ) ) );

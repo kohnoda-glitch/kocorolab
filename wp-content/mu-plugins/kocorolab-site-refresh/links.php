@@ -55,7 +55,7 @@ function kocorolab_refresh_mhq_lp_url( $lang = null ) {
 }
 
 function kocorolab_refresh_mhq2_url( $lang = null ) {
-	return kocorolab_refresh_url( '/mhq2/', '/en/mhq2/', $lang );
+	return kocorolab_refresh_mhq_lp_url( $lang );
 }
 
 function kocorolab_refresh_mhq_read_url( $lang = null ) {

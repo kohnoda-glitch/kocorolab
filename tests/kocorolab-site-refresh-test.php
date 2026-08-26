@@ -58,9 +58,12 @@ $en_pubs    = kocorolab_refresh_page_html( 'publications', 'en' );
 $ja_bio     = kocorolab_refresh_bio_tabs_html( 'home', 'ja' );
 $en_bio     = kocorolab_refresh_bio_tabs_html( 'home', 'en' );
 $contact    = kocorolab_refresh_contact_section_html( 'ja' );
-$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $ja['profile_note'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $en['profile_note'], $ja_company, $ja_service, $ja_profile, $en_profile ) );
+$ja_lp      = kocorolab_refresh_page_html( 'mhqlp', 'ja' );
+$en_lp      = kocorolab_refresh_page_html( 'mhqlp', 'en' );
+$en_contact = kocorolab_refresh_page_html( 'contact', 'en' );
+$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $ja['profile_note'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $en['profile_note'], $ja_company, $ja_service, $ja_profile, $en_profile, $ja_contact, $en_contact, $ja_lp, $en_lp ) );
 
-$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', '触れません', '公開しません', 'does not discuss individual', 'does not describe individual' );
+$forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', '特任教授', 'リードファカルティ', 'Lead Faculty', '触れません', '公開しません', 'does not discuss individual', 'does not describe individual' );
 
 $images = array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg' );
 $img_ok = true;
@@ -155,85 +158,102 @@ $checks = array(
 	'home bio defaults to Japanese' => ( false !== strpos( $ja_bio, 'kl-bio-home-ja' ) && false !== strpos( $ja_bio, 'checked' ) && false !== strpos( $ja_bio, 'English Bio' ) ),
 	'EN bio defaults to English' => ( false !== strpos( $en_bio, 'kl-bio-home-en' ) && preg_match( '/id="kl-bio-home-en"[^>]*checked/', $en_bio ) ),
 	'contact section has mailto' => ( false !== strpos( $contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $contact, 'id="direct-contact"' ) ),
-	'contact lists inquiry topics' => ( false !== strpos( $contact, '講演・研修依頼' ) && false !== strpos( $contact, '組織開発・人財育成コンサルティング' ) && false !== strpos( $contact, '共同研究' ) && false !== strpos( $contact, 'MHQ2（企業導入 / 個人受験）' ) ),
+	'contact lists inquiry topics' => ( false !== strpos( $contact, '講演・研修依頼' ) && false !== strpos( $contact, '組織開発・人財育成コンサルティング' ) && false !== strpos( $contact, '共同研究' ) && false !== strpos( $contact, 'MHQ2（企業導入 / 個人受験）' ) && false !== strpos( $contact, 'メディア取材・寄稿' ) ),
 	'MHQ2 is also for individuals' => (
 		false !== strpos( $ja['card2_body'], '個人でも受験' )
 		&& false !== strpos( $ja['card2_body'], '特性' )
 		&& false !== strpos( $ja['svc2_b'], '個人でも受験' )
 		&& false !== strpos( $ja['svc2_b'], '診断の確定を目的としたものではありません' )
-		&& false !== strpos( $ja_service, '個人向け案内' )
-		&& false !== strpos( $ja_service, '/mhq2/' )
+		&& false !== strpos( $ja_service, '個人向けランディング' )
+		&& false !== strpos( $ja_service, '/mhqlp/' )
+		&& false === strpos( $ja_service, '/mhq2/' )
 		&& false !== strpos( $ja_service, '/mhq-read/' )
 		&& false !== strpos( $ja_service, '数字は病名ではありません' )
-		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kocorolab_refresh_mhq2_url' )
+		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kocorolab_refresh_mhq_lp_url' )
 		&& false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), '<a class="kl-soft-card"' )
 		&& false !== strpos( $en['card2_body'], 'individuals' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/en/mhq2/' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/mhqlp/?lang=en' )
+		&& false === strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/en/mhq2/' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'not a diagnosis' )
 	),
-	'MHQ2 personal landing and sample results pages' => (
-		false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '自分の特性に、注意を向ける' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '120問' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'フィードバックセッション' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '簡易版' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'ストレス環境' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'B0DGFRYHMX' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'B0DTS8XLPD' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '近年の2冊' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '/mhq-read/' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '診断ではなく' )
-		&& false === strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '読解セッション' )
-		&& false === strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'この先数週' )
+	'one B2C landing on /mhqlp/ with current profile' => (
+		false !== strpos( $ja_lp, '自分の特性に、注意を向ける' )
+		&& false !== strpos( $ja_lp, '120問' )
+		&& false !== strpos( $ja_lp, 'フィードバックセッション' )
+		&& false !== strpos( $ja_lp, '簡易版' )
+		&& false !== strpos( $ja_lp, 'ストレス環境' )
+		&& false !== strpos( $ja_lp, 'B0DGFRYHMX' )
+		&& false !== strpos( $ja_lp, 'B0DTS8XLPD' )
+		&& false !== strpos( $ja_lp, '近年の2冊' )
+		&& false !== strpos( $ja_lp, '/mhq-read/' )
+		&& false !== strpos( $ja_lp, '診断ではなく' )
+		&& false !== strpos( $ja_lp, '専任教員' )
+		&& false !== strpos( $ja_lp, 'リージョナル・ファカルティ' )
+		&& false !== strpos( $ja_lp, '/member/' )
+		&& false !== strpos( $ja_lp, '企業導入' )
+		&& false === strpos( $ja_lp, '読解セッション' )
+		&& false === strpos( $ja_lp, 'この先数週' )
+		&& false === strpos( $ja_lp, 'リサーチファカルティ' )
+		&& false === strpos( $ja_lp, '特任教授' )
+		&& false === strpos( $ja_lp, 'リードファカルティ' )
+		&& $ja_lp === kocorolab_refresh_page_html( 'mhq2', 'ja' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '見本' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '本番の結果画面ではありません' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), 'ストレス環境' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), 'ストレス状況' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), 'ソーシャルサポート' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), 'うつリスク' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), 'kl-mhq-steps' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '/mhqlp/' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '気分の沈み' )
-		&& false === strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '労わり' )
-		&& false === strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '読解セッション' )
-		&& false === strpos( kocorolab_refresh_page_html( 'mhq-read', 'en' ), 'Low mood' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'en' ), 'Sample' )
-		&& 'mhq2' === kocorolab_refresh_slug_from_path( '/mhq2' )
+		&& 'mhqlp' === kocorolab_refresh_slug_from_path( '/mhqlp' )
+		&& 'mhqlp' === kocorolab_refresh_slug_from_path( '/mhq' )
 		&& 'mhq-read' === kocorolab_refresh_slug_from_path( '/en/mhq-read' )
-		&& kocorolab_refresh_is_virtual_page_path( '/mhq2' )
-		&& kocorolab_refresh_is_forced_overlay_path( '/mhq2' )
-		&& kocorolab_refresh_is_forced_overlay_path( '/en/mhq2' )
-		&& false === kocorolab_refresh_filter_canonical_redirect( 'https://kocorolab.com/', 'https://kocorolab.com/mhq2/' )
+		&& kocorolab_refresh_is_legacy_mhq2_path( '/mhq2' )
+		&& kocorolab_refresh_is_legacy_mhq2_path( '/en/mhq2' )
+		&& ! kocorolab_refresh_is_virtual_page_path( '/mhq2' )
+		&& ! kocorolab_refresh_is_forced_overlay_path( '/mhq2' )
+		&& kocorolab_refresh_is_virtual_page_path( '/mhq-read' )
+		&& kocorolab_refresh_is_mhq_lp_path( '/mhqlp' )
+		&& 'https://kocorolab.com/mhqlp/' === kocorolab_refresh_mhq2_url( 'ja' )
+		&& 'https://kocorolab.com/mhqlp/?lang=en' === kocorolab_refresh_mhq2_url( 'en' )
 	),
-	'virtual MHQ pages seed a post stub for body_class' => (function () {
+	'virtual MHQ sample does not fake a WordPress post' => (function () {
 		$prev_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : null;
 		$prev_q   = isset( $GLOBALS['wp_query'] ) ? $GLOBALS['wp_query'] : null;
 		$prev_p   = isset( $GLOBALS['post'] ) ? $GLOBALS['post'] : null;
 		$_SERVER['REQUEST_URI'] = '/mhq-read/';
-		$GLOBALS['wp_query']    = (object) array( 'is_404' => true );
+		$GLOBALS['wp_query']    = (object) array( 'is_404' => true, 'is_page' => true, 'is_singular' => true, 'queried_object' => (object) array( 'ID' => 1 ) );
+		$GLOBALS['post']        = (object) array( 'ID' => 2147483000 );
 		kocorolab_refresh_mark_not_404();
-		$post   = isset( $GLOBALS['wp_query']->queried_object ) ? $GLOBALS['wp_query']->queried_object : null;
-		$warned = false;
-		set_error_handler(
-			function () use ( &$warned ) {
-				$warned = true;
-				return true;
-			}
+		$ok = (
+			false === $GLOBALS['wp_query']->is_404
+			&& false === $GLOBALS['wp_query']->is_page
+			&& false === $GLOBALS['wp_query']->is_singular
+			&& empty( $GLOBALS['wp_query']->queried_object )
+			&& ! isset( $GLOBALS['post'] )
 		);
-		$id     = is_object( $post ) ? $post->ID : null;
-		$type   = is_object( $post ) ? $post->post_type : null;
-		$parent = is_object( $post ) ? $post->post_parent : null;
-		$title  = is_object( $post ) ? $post->post_title : '';
-		restore_error_handler();
-		$ok = ( ! $warned && is_object( $post ) && 'page' === $type && 0 === (int) $parent && false === $GLOBALS['wp_query']->is_404 && false !== strpos( $title, '読み方' ) && null !== $id );
 		if ( null === $prev_uri ) {
 			unset( $_SERVER['REQUEST_URI'] );
 		} else {
 			$_SERVER['REQUEST_URI'] = $prev_uri;
 		}
 		$GLOBALS['wp_query'] = $prev_q;
-		$GLOBALS['post']     = $prev_p;
+		if ( null === $prev_p ) {
+			unset( $GLOBALS['post'] );
+		} else {
+			$GLOBALS['post'] = $prev_p;
+		}
 		return $ok;
 	} )(),
-	'contact page has mailto and topics' => ( false !== strpos( $ja_contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $ja_contact, '講演・研修依頼' ) ),
+	'press kit uses official titles and English interviews' => (
+		false !== strpos( $ja_profile, 'id="media"' )
+		&& false !== strpos( $ja_profile, '日本語と英語の取材に応じます' )
+		&& false !== strpos( $ja_profile, '専任教員' )
+		&& false !== strpos( $ja_profile, 'リージョナル・ファカルティ' )
+		&& false === strpos( $ja_profile, '特任教授' )
+		&& false === strpos( $ja_profile, 'リードファカルティ' )
+		&& false !== strpos( $ja_contact, 'id="media"' )
+		&& false !== strpos( $en_contact, 'Interviews are available in Japanese and English' )
+		&& false !== strpos( $en_profile, 'Regional Faculty' )
+		&& false === strpos( $en_profile, 'Lead Faculty' )
+		&& false !== strpos( $contact, '#media' )
+	),
 	'contact uses kocorolab.com not retired xsrv' => ( false === strpos( $contact, 'knoda.xsrv.jp' ) && 'info@kocorolab.com' === kocorolab_refresh_contact_email() ),
 	'rewrites retired xsrv inbox' => ( false !== strpos( kocorolab_refresh_retire_xsrv_email( 'ご連絡は info@knoda.xsrv.jp または noda@knoda.xsrv.jp へ。' ), 'info@kocorolab.com' ) && false === strpos( kocorolab_refresh_retire_xsrv_email( 'ご連絡は info@knoda.xsrv.jp へ。' ), 'knoda.xsrv.jp' ) ),
 	'CSS covers bio tabs and contact' => ( false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-bio-tabs' ) && false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-contact' ) && false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '@media (max-width: 900px)' ) ),
@@ -432,7 +452,7 @@ $checks = array(
 	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) ),
 	'placeholder images present' => $img_ok,
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
-	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'mhqlp', 'ja' ),
+	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'foobar', 'ja' ),
 	'shows site wrap instead of loader' => false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), 'body.kl-refresh #site_wrap' ),
 	'hero keeps photo color without full wash' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), 'rgba(6, 16, 28, 0.82)' ) && false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-hero-copy' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-hero-glow' ) ),
 	'overlay skips Avalon header' => false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/wp-view.php' ), 'Standalone overlay' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/wp-view.php' ), 'get_header();' ),

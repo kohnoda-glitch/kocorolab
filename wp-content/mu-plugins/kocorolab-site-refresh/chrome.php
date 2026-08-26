@@ -34,6 +34,9 @@ function kocorolab_refresh_nav_key() {
 		if ( is_page( 'contact' ) ) {
 			return 'contact';
 		}
+		if ( is_page( array( 'mhqlp', 'mhq' ) ) ) {
+			return 'mhq2';
+		}
 	}
 	$uri  = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
 	$path = function_exists( 'kocorolab_refresh_request_path_from' ) ? kocorolab_refresh_request_path_from( $uri ) : '';
@@ -44,7 +47,7 @@ function kocorolab_refresh_nav_key() {
 	if ( 'hakkou' === $slug || 'publications' === $slug ) {
 		return 'publications';
 	}
-	if ( 'mhq-read' === $slug ) {
+	if ( in_array( $slug, array( 'mhqlp', 'mhq', 'mhq-read' ), true ) ) {
 		return 'mhq2';
 	}
 	if ( $slug ) {
@@ -86,11 +89,12 @@ function kocorolab_refresh_lang_switch_url() {
 		'/en/company'      => array( '/company/', '/en/company/' ),
 		'/contact'         => array( '/contact/', '/en/contact/' ),
 		'/en/contact'      => array( '/contact/', '/en/contact/' ),
-		'/mhq2'            => array( '/mhq2/', '/en/mhq2/' ),
-		'/en/mhq2'         => array( '/mhq2/', '/en/mhq2/' ),
+		'/mhq2'            => array( '/mhqlp/', '/mhqlp/?lang=en' ),
+		'/en/mhq2'         => array( '/mhqlp/', '/mhqlp/?lang=en' ),
 		'/mhq-read'        => array( '/mhq-read/', '/en/mhq-read/' ),
 		'/en/mhq-read'     => array( '/mhq-read/', '/en/mhq-read/' ),
 		'/mhqlp'           => array( '/mhqlp/', '/mhqlp/?lang=en' ),
+		'/en/mhqlp'        => array( '/mhqlp/', '/mhqlp/?lang=en' ),
 		'/mhq'             => array( '/mhqlp/', '/mhqlp/?lang=en' ),
 	);
 	if ( isset( $pages[ $path ] ) ) {

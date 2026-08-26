@@ -817,6 +817,32 @@ a.kl-soft-card:hover {
   font-size: 0.92rem;
 }
 
+.kl-mhq-profile {
+  margin: 2rem 0 1.2rem;
+  padding: 1.4rem 1.2rem;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.kl-mhq-profile h2 {
+  margin: 0 0 0.4rem;
+}
+
+.kl-press {
+  margin: 2.2rem 0 0;
+  padding: 1.4rem 1.2rem;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.kl-press h2 {
+  margin: 0 0 0.5rem;
+}
+
+.kl-press h3 {
+  margin: 1.1rem 0 0.4rem;
+}
+
 .kl-mhq-read-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);

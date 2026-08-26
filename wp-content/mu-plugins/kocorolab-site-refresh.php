@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Unzip into wp-content/mu-plugins/ so this file sits next to the kocorolab-site-refresh/ folder — do not dump the inner PHP files into mu-plugins/.
- * Version: 1.6.24
+ * Version: 1.6.25
  * Author: Kohei Noda
  */
 
@@ -90,15 +90,26 @@ function kocorolab_refresh_slug_from_path( $path ) {
 		'contact'      => 'contact',
 		'publications' => 'publications',
 		'hakkou'       => 'hakkou',
+		'mhqlp'        => 'mhqlp',
+		'mhq'          => 'mhqlp',
 		'mhq2'         => 'mhq2',
 		'mhq-read'     => 'mhq-read',
 	);
 	return isset( $map[ $key ] ) ? $map[ $key ] : '';
 }
 
+function kocorolab_refresh_is_legacy_mhq2_path( $path ) {
+	return '/mhq2' === $path || '/en/mhq2' === $path;
+}
+
+function kocorolab_refresh_is_mhq_lp_path( $path ) {
+	$slug = kocorolab_refresh_slug_from_path( $path );
+	return in_array( $slug, array( 'mhqlp', 'mhq' ), true );
+}
+
 function kocorolab_refresh_is_virtual_page_path( $path ) {
 	$slug = kocorolab_refresh_slug_from_path( $path );
-	return in_array( $slug, array( 'mhq2', 'mhq-read' ), true );
+	return 'mhq-read' === $slug;
 }
 
 function kocorolab_refresh_is_forced_overlay_path( $path ) {
@@ -139,7 +150,7 @@ function kocorolab_refresh_filter_canonical_redirect( $redirect_url, $requested_
 function kocorolab_refresh_virtual_page_title( $slug ) {
 	$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
 	$copy = function_exists( 'kocorolab_refresh_copy' ) ? kocorolab_refresh_copy( $lang ) : array();
-	if ( 'mhq2' === $slug && ! empty( $copy['mhq2_title'] ) ) {
+	if ( in_array( $slug, array( 'mhq2', 'mhqlp', 'mhq' ), true ) && ! empty( $copy['mhq2_title'] ) ) {
 		return $copy['mhq2_title'];
 	}
 	if ( 'mhq-read' === $slug && ! empty( $copy['mhq_read_title'] ) ) {
@@ -193,23 +204,25 @@ function kocorolab_refresh_mark_not_404() {
 	$q->is_404        = false;
 	$q->is_home       = false;
 	$q->is_front_page = false;
-	$q->is_page       = true;
-	$q->is_singular   = true;
 
 	$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
 	$path = kocorolab_refresh_request_path_from( $uri );
 	if ( ! kocorolab_refresh_is_virtual_page_path( $path ) ) {
+		$q->is_page     = true;
+		$q->is_singular = true;
 		return;
 	}
-	$slug = kocorolab_refresh_slug_from_path( $path );
-	$stub = kocorolab_refresh_virtual_page_stub( $slug );
-	$q->queried_object    = $stub;
-	$q->queried_object_id = isset( $stub->ID ) ? $stub->ID : 0;
-	$q->posts             = array( $stub );
-	$q->post              = $stub;
-	$q->post_count        = 1;
-	$q->found_posts       = 1;
-	$GLOBALS['post']      = $stub;
+
+	// No WordPress page exists. Do not pretend this is a singular post:
+	// get_post( fake_id ) returns null and Bogo / shortlink print warnings in <head>.
+	$q->is_page             = false;
+	$q->is_singular         = false;
+	$q->queried_object      = null;
+	$q->queried_object_id   = 0;
+	$q->posts               = array();
+	$q->post                = null;
+	$q->post_count          = 0;
+	unset( $GLOBALS['post'] );
 }
 
 function kocorolab_refresh_news_permalink( $post = null ) {
@@ -314,7 +327,7 @@ function kocorolab_refresh_image_url( $key ) {
 }
 
 function kocorolab_refresh_page_slugs() {
-	return array( 'company', 'service', 'member', 'koheinoda', 'hakkou', 'publications', 'contact', 'mhq2', 'mhq-read' );
+	return array( 'company', 'service', 'member', 'koheinoda', 'hakkou', 'publications', 'contact', 'mhqlp', 'mhq', 'mhq2', 'mhq-read' );
 }
 
 /**
@@ -322,10 +335,12 @@ function kocorolab_refresh_page_slugs() {
  * JSON-LD. Browsers move that text node out of <head> to the top-left of the page.
  */
 function kocorolab_refresh_strip_stray_head_html( $html ) {
-	if ( ! is_string( $html ) || false === strpos( $html, 'HTML' ) ) {
+	if ( ! is_string( $html ) ) {
 		return $html;
 	}
-	return preg_replace( '/(?:^|\r?\n)[ \t]*HTML[ \t]*(?=\r?\n|$)/u', '', $html );
+	$html = preg_replace( '/(?:^|\r?\n)[ \t]*HTML[ \t]*(?=\r?\n|$)/u', '', $html );
+	$html = preg_replace( '#(?:<br\s*/?>\s*)*<b>(?:Warning|Notice|Deprecated)</b>:.+?(?:<br\s*/?>\s*)+#si', '', $html );
+	return $html;
 }
 
 if ( ! function_exists( 'add_filter' ) ) {
@@ -398,6 +413,10 @@ add_action(
 		if ( kocorolab_refresh_is_legacy_hakkou_path( $path ) ) {
 			$lang = ( 0 === strpos( $path, '/en/' ) ) ? 'en' : 'ja';
 			wp_safe_redirect( kocorolab_refresh_publications_url( $lang ), 301 );
+			exit;
+		}
+		if ( kocorolab_refresh_is_legacy_mhq2_path( $path ) ) {
+			wp_safe_redirect( kocorolab_refresh_mhq_lp_url( kocorolab_refresh_lang() ), 301 );
 			exit;
 		}
 		if ( kocorolab_refresh_is_retired_gbx_path( $path ) ) {
@@ -475,7 +494,7 @@ add_filter(
 	function ( $parts ) {
 		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
 		$path = kocorolab_refresh_request_path_from( $uri );
-		if ( ! kocorolab_refresh_is_virtual_page_path( $path ) ) {
+		if ( ! kocorolab_refresh_is_virtual_page_path( $path ) && ! kocorolab_refresh_is_mhq_lp_path( $path ) ) {
 			return $parts;
 		}
 		$slug           = kocorolab_refresh_slug_from_path( $path );
@@ -530,7 +549,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.24' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.25' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
