@@ -175,6 +175,16 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( 'n-fahne', 'mental01', 'ノイエ・ファーネ', '廣済堂×ココロラボ' ),
+			'links' => array(
+				array(
+					'url' => 'http://www.n-fahne.jp/pdf/mental01.pdf',
+					'ja'  => 'MHQセミナー案内PDF（2011）',
+					'en'  => 'MHQ seminar flyer PDF (2011)',
+				),
+			),
+		),
+		array(
 			'keys'  => array( 'atpress', 'GBX', 'Global Business eXperience' ),
 			'links' => array(
 				array(

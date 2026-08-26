@@ -357,6 +357,9 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Shubiki' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'シュビキ' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'detl/3238' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'n-fahne.jp/pdf/mental01.pdf' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '廣済堂' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'n-fahne.jp' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -369,7 +372,8 @@ $checks = array(
 		$html              = kocorolab_refresh_news_list_html( kocorolab_refresh_news_feed_items( 'ja', array( $post ) ), 'ja' );
 		return false !== strpos( $html, 'VUCA時代のストレス防衛術' ) && false !== strpos( $html, '/news/ideas/' )
 			&& false !== strpos( $html, 'service.jinjibu.jp/news/detl/3238' )
-			&& false !== strpos( $html, 'service.jinjibu.jp/news/detl/3980' );
+			&& false !== strpos( $html, 'service.jinjibu.jp/news/detl/3980' )
+			&& false !== strpos( $html, 'n-fahne.jp/pdf/mental01.pdf' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();

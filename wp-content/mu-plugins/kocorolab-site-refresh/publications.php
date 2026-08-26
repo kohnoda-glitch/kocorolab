@@ -388,6 +388,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
 		),
 		array(
+			'date' => '2011-08-24',
+			'ja'   => '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）',
+			'en'   => 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).',
+			'keys' => array( 'n-fahne', 'mental01', 'ノイエ・ファーネ', '廣済堂×ココロラボ' ),
+		),
+		array(
 			'date' => '2010-06-22',
 			'ja'   => 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース',
 			'en'   => 'Press release: partnership with Shubiki on a workplace mental health service.',
@@ -411,6 +417,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
 		array( '2013-01-01', 'GBX(Global Business eXperience)の記事' ),
+		array( '2011-08-24', '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）' ),
 		array( '2010-06-22', 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース' ),
 		array( '2009-07-01', 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース' ),
 	);
@@ -422,6 +429,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
 		array( '2013-01-01', 'GBX (Global Business eXperience)' ),
+		array( '2011-08-24', 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).' ),
 		array( '2010-06-22', 'Press release: partnership with Shubiki on a workplace mental health service.' ),
 		array( '2009-07-01', 'MHQ version 1 press release' ),
 	);
