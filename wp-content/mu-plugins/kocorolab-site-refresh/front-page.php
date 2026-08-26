@@ -145,6 +145,7 @@ $news_items = kocorolab_refresh_news_feed_items( $lang, $news_posts, 4 );
 					<h2><?php kocorolab_refresh_e( 'section_who' ); ?></h2>
 					<?php echo kocorolab_refresh_title_list_html(); ?>
 					<?php echo kocorolab_refresh_bio_tabs_html( 'home' ); ?>
+					<p class="kl-essence"><?php kocorolab_refresh_e( 'education_essence' ); ?></p>
 					<p><?php kocorolab_refresh_e( 'who_hr' ); ?></p>
 					<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/member/', '/en/member/' ) ); ?>"><?php kocorolab_refresh_e( 'who_more' ); ?></a></p>
 				</div>
