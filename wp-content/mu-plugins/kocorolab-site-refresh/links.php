@@ -175,6 +175,16 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( 'ヒトメディア', 'hitomedia', '20130725', 'アジアビジネス成功の4ステップ' ),
+			'links' => array(
+				array(
+					'url' => 'https://hitomedia.jp/news/2013-07-25-20130725_1/',
+					'ja'  => 'ヒトメディアのセミナー案内',
+					'en'  => 'hitomedia seminar note',
+				),
+			),
+		),
+		array(
 			'keys'  => array( 'n-fahne', 'mental01', 'ノイエ・ファーネ', '廣済堂×ココロラボ' ),
 			'links' => array(
 				array(

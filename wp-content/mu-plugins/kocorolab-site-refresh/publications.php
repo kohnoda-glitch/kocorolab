@@ -388,6 +388,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
 		),
 		array(
+			'date' => '2013-07-30',
+			'ja'   => 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）',
+			'en'   => 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).',
+			'keys' => array( 'ヒトメディア', 'hitomedia', '20130725', 'アジアビジネス成功の4ステップ' ),
+		),
+		array(
 			'date' => '2013-07-26',
 			'ja'   => 'フィリピンでの Global Business eXperience（GBX）実施報告',
 			'en'   => 'Report on Global Business eXperience (GBX) in the Philippines.',
@@ -422,6 +428,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-02', 'SDGs Learning Journey 2020の案内' ),
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
+		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
 		array( '2011-08-24', '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）' ),
 		array( '2010-06-22', 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース' ),
@@ -434,6 +441,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-02', 'SDGs Learning Journey 2020' ),
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
+		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
 		array( '2011-08-24', 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).' ),
 		array( '2010-06-22', 'Press release: partnership with Shubiki on a workplace mental health service.' ),
