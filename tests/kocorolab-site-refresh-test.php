@@ -158,6 +158,7 @@ $checks = array(
 	'contact lists inquiry topics' => ( false !== strpos( $contact, '講演・研修依頼' ) && false !== strpos( $contact, '組織開発・人財育成コンサルティング' ) && false !== strpos( $contact, '共同研究' ) && false !== strpos( $contact, 'MHQ2（企業導入 / 個人受験）' ) ),
 	'MHQ2 is also for individuals' => (
 		false !== strpos( $ja['card2_body'], '個人でも受験' )
+		&& false !== strpos( $ja['card2_body'], '特性' )
 		&& false !== strpos( $ja['svc2_b'], '個人でも受験' )
 		&& false !== strpos( $ja['svc2_b'], '診断の確定を目的としたものではありません' )
 		&& false !== strpos( $ja_service, '個人向け案内' )
@@ -171,11 +172,14 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'not a diagnosis' )
 	),
 	'MHQ2 personal landing and sample results pages' => (
-		false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'メンタルヘルス総合検査（MHQ2）' )
+		false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '自分の特性に、注意を向ける' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '120問' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'フィードバックセッション' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '簡易版' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'ストレス環境' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'B0DGFRYHMX' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), 'B0DTS8XLPD' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '近年の2冊' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '/mhq-read/' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '診断ではなく' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '読解セッション' )
@@ -199,6 +203,36 @@ $checks = array(
 		&& kocorolab_refresh_is_forced_overlay_path( '/en/mhq2' )
 		&& false === kocorolab_refresh_filter_canonical_redirect( 'https://kocorolab.com/', 'https://kocorolab.com/mhq2/' )
 	),
+	'virtual MHQ pages seed a post stub for body_class' => (function () {
+		$prev_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : null;
+		$prev_q   = isset( $GLOBALS['wp_query'] ) ? $GLOBALS['wp_query'] : null;
+		$prev_p   = isset( $GLOBALS['post'] ) ? $GLOBALS['post'] : null;
+		$_SERVER['REQUEST_URI'] = '/mhq-read/';
+		$GLOBALS['wp_query']    = (object) array( 'is_404' => true );
+		kocorolab_refresh_mark_not_404();
+		$post   = isset( $GLOBALS['wp_query']->queried_object ) ? $GLOBALS['wp_query']->queried_object : null;
+		$warned = false;
+		set_error_handler(
+			function () use ( &$warned ) {
+				$warned = true;
+				return true;
+			}
+		);
+		$id     = is_object( $post ) ? $post->ID : null;
+		$type   = is_object( $post ) ? $post->post_type : null;
+		$parent = is_object( $post ) ? $post->post_parent : null;
+		$title  = is_object( $post ) ? $post->post_title : '';
+		restore_error_handler();
+		$ok = ( ! $warned && is_object( $post ) && 'page' === $type && 0 === (int) $parent && false === $GLOBALS['wp_query']->is_404 && false !== strpos( $title, '読み方' ) && null !== $id );
+		if ( null === $prev_uri ) {
+			unset( $_SERVER['REQUEST_URI'] );
+		} else {
+			$_SERVER['REQUEST_URI'] = $prev_uri;
+		}
+		$GLOBALS['wp_query'] = $prev_q;
+		$GLOBALS['post']     = $prev_p;
+		return $ok;
+	} )(),
 	'contact page has mailto and topics' => ( false !== strpos( $ja_contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $ja_contact, '講演・研修依頼' ) ),
 	'contact uses kocorolab.com not retired xsrv' => ( false === strpos( $contact, 'knoda.xsrv.jp' ) && 'info@kocorolab.com' === kocorolab_refresh_contact_email() ),
 	'rewrites retired xsrv inbox' => ( false !== strpos( kocorolab_refresh_retire_xsrv_email( 'ご連絡は info@knoda.xsrv.jp または noda@knoda.xsrv.jp へ。' ), 'info@kocorolab.com' ) && false === strpos( kocorolab_refresh_retire_xsrv_email( 'ご連絡は info@knoda.xsrv.jp へ。' ), 'knoda.xsrv.jp' ) ),

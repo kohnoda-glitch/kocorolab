@@ -28,7 +28,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'world_lead'     => '個人の心、人と組織のしくみ、地球環境。分かれがちな三つを、一つの仕事として扱います。',
 		'domain1_kicker' => '精神',
 		'domain1_title'  => '心の状態を、科学で扱う',
-		'domain1_body'   => '感情の認知科学とメンタルヘルス検査 MHQ。個人の内側を、感覚だけで終わらせない。',
+		'domain1_body'   => '感情の認知科学とメンタルヘルス検査 MHQ。自分の特性に気づき、改善に注意を向ける。',
 		'domain2_kicker' => '社会',
 		'domain2_title'  => '人と組織のあいだを整える',
 		'domain2_body'   => 'リーダーシップ教育、人事、組織づくり。上場前と上場後の事業会社で人事責任者を務めた経験を、現場で使える形にします。',
@@ -40,7 +40,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'card1_title'    => 'リーダーシップ教育',
 		'card1_body'     => 'グロービス経営大学院と MIT Sloan IDEAS Asia Pacific での教育・研究。U理論などを用いた学び。',
 		'card2_title'    => 'メンタルヘルス（MHQ2）',
-		'card2_body'     => '120問、12〜15分。企業の採用・育成に加え、個人でも受験できます。簡易版・詳細版とフィードバックセッションは問い合わせへ。',
+		'card2_body'     => 'メンタル不調、コミュニケーション、仕事の進め方の困難に、自分の特性から注意を向ける検査です。120問、12〜15分。個人でも受験できます。近年の2冊とあわせて読めます。',
 		'card3_title'    => '人事・組織支援',
 		'card3_body'     => '人事制度、研修、コーチング、調査研究。',
 		'work_link'      => 'サービスを見る',
@@ -90,13 +90,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc1_h'         => 'リーダーシップ開発',
 		'svc1_b'         => 'U理論などを用いた次世代リーダーシップ開発、組織開発、学びの設計。',
 		'svc2_h'         => 'メンタルヘルス検査（MHQ2）',
-		'svc2_b'         => 'うつリスク、ストレス環境・状況、ソーシャルサポート、発達障害の可能性などを測る MHQ2、および EQ 検査。120問、12〜15分。企業では採用・社内確認・人材育成に使えます。個人でも受験できます。診断の確定を目的としたものではありません。',
+		'svc2_b'         => 'うつリスク、ストレス環境・状況、ソーシャルサポート、発達障害の可能性などを測る MHQ2、および EQ 検査。120問、12〜15分。メンタル不調やコミュニケーション、仕事の進め方の困難に、自分の特性から注意を向けるためのものです。企業では採用・社内確認・人材育成に使えます。個人でも受験できます。診断の確定を目的としたものではありません。',
 		'svc2_link'      => 'MHQ2の案内ページへ',
 		'svc2_personal_link' => '個人向け案内',
 		'svc2_read_link' => '結果の読み方（見本）',
 		'mhq2_badge'     => '個人向け MHQ2',
-		'mhq2_title'     => 'メンタルヘルス総合検査（MHQ2）',
-		'mhq2_lead'      => '120問、12〜15分のWeb受験です。診断ではなく、うつリスクや発達障害の可能性などの傾向を見る検査です。',
+		'mhq2_title'     => '自分の特性に、注意を向ける',
+		'mhq2_lead'      => 'メンタル不調、コミュニケーション、仕事の進め方に困難を感じている人が、自分の特性に気づき、改善に注意を向けるための検査です。診断ではなく、社会と個人の変容をガイドする仕事の一部です。',
 		'mhq2_apply'     => '申し込む（問い合わせ）',
 		'mhq2_step1_h'   => '受験する',
 		'mhq2_step1_b'   => '120問に答えます。所要は12〜15分です。',
@@ -115,6 +115,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq2_price_fb60' => 'フィードバックセッション（1時間）',
 		'mhq2_price_fb60_v' => '8,000円',
 		'mhq2_price_note' => '簡易版は、うつリスクと発達障害の可能性の大まかな結果です。詳細版は16分類が付きます。詳細版はフィードバックセッションでの読み解きをおすすめします。',
+		'mhq2_books_h'   => '近年の2冊',
+		'mhq2_books_b'   => '検査で傾向を見、本で注意の向け方を読む、という使い方です。',
+		'mhq2_book_dep'  => '先に、自分の傾向に気づく本です。',
+		'mhq2_book_vuca' => '気づいたあとの、ストレスへの注意の向け方です。',
 		'mhq2_talk_h'    => 'フィードバックセッション',
 		'mhq2_talk_b'    => '30分 4,000円、1時間 8,000円。結果を一緒に読みます。治療ではありません。',
 		'mhq2_coach_h'   => 'コーチング',
@@ -182,7 +186,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'world_lead'     => 'Inner life, human systems, and the living planet. We treat the three as one piece of work, not as separate fields.',
 		'domain1_kicker' => 'Mind',
 		'domain1_title'  => 'Treat inner life with science',
-		'domain1_body'   => 'The cognitive science of emotion, and the MHQ mental health questionnaire. Inner states without leaving them as vague feeling alone.',
+		'domain1_body'   => 'The cognitive science of emotion, and the MHQ mental health questionnaire. Notice your own tendencies, and turn attention toward what to improve.',
 		'domain2_kicker' => 'Society',
 		'domain2_title'  => 'Work the space between people and organizations',
 		'domain2_body'   => 'Leadership education, HR, and organization building, informed by work as head of HR in pre-IPO and listed companies.',
@@ -194,7 +198,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'card1_title'    => 'Leadership education',
 		'card1_body'     => 'Teaching and research at GLOBIS University and MIT Sloan IDEAS Asia Pacific, including Theory U.',
 		'card2_title'    => 'Mental health (MHQ2)',
-		'card2_body'     => '120 questions, about 12–15 minutes. For hiring and development at companies, and also for individuals. Brief and detailed versions, and feedback sessions, go through contact.',
+		'card2_body'     => 'For mental load, communication, and how work gets done: a way to notice your own tendencies and turn attention toward them. 120 questions, about 12–15 minutes. For companies and for individuals. Read it with the two recent books.',
 		'card3_title'    => 'HR and organization support',
 		'card3_body'     => 'HR systems, training, coaching, and research.',
 		'work_link'      => 'View services',
@@ -244,13 +248,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc1_h'         => 'Leadership development',
 		'svc1_b'         => 'Next-generation leadership, organization development, and learning design, including Theory U.',
 		'svc2_h'         => 'Mental health questionnaire (MHQ2)',
-		'svc2_b'         => 'MHQ2 and EQ assessments. MHQ2 covers depression risk, stress environment and situation, social support, and the possibility of developmental disorders. 120 questions, about 12–15 minutes. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too. Not a clinical diagnosis.',
+		'svc2_b'         => 'MHQ2 and EQ assessments. MHQ2 covers depression risk, stress environment and situation, social support, and the possibility of developmental disorders. 120 questions, about 12–15 minutes. It is for noticing your own tendencies and turning attention toward what to improve. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too. Not a clinical diagnosis.',
 		'svc2_link'      => 'Open the MHQ2 landing page',
 		'svc2_personal_link' => 'For individuals',
 		'svc2_read_link' => 'How to read results (sample)',
 		'mhq2_badge'     => 'MHQ2 for individuals',
-		'mhq2_title'     => 'Mental health questionnaire (MHQ2)',
-		'mhq2_lead'      => '120 questions, about 12–15 minutes online. Not a diagnosis: it shows tendencies such as depression risk and the possibility of developmental disorders.',
+		'mhq2_title'     => 'Turn attention to your own tendencies',
+		'mhq2_lead'      => 'For people who struggle with mental load, communication, or how work gets done. Not a diagnosis. Part of guiding transformation for societies and individuals.',
 		'mhq2_apply'     => 'Apply (contact)',
 		'mhq2_step1_h'   => 'Take it',
 		'mhq2_step1_b'   => '120 questions. About 12–15 minutes.',
@@ -269,6 +273,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq2_price_fb60' => 'Feedback session (60 min)',
 		'mhq2_price_fb60_v' => '8,000 yen',
 		'mhq2_price_note' => 'The brief version gives a broad reading of depression risk and the possibility of developmental disorders. The detailed version adds 16 categories. A feedback session is recommended for the detailed version.',
+		'mhq2_books_h'   => 'Two recent books',
+		'mhq2_books_b'   => 'Use the questionnaire to see a tendency, then the books to see where to put attention.',
+		'mhq2_book_dep'  => 'A book for noticing a tendency first.',
+		'mhq2_book_vuca' => 'After noticing, tips for how to attend to stress.',
 		'mhq2_talk_h'    => 'Feedback session',
 		'mhq2_talk_b'    => '30 minutes 4,000 yen, or 60 minutes 8,000 yen. Read the results together. This is not treatment.',
 		'mhq2_coach_h'   => 'Coaching',
@@ -630,6 +638,11 @@ function kocorolab_refresh_mhq2_html( $c, $lang ) {
 					<h3><?php echo esc_html( $c['mhq2_step3_h'] ); ?></h3>
 					<p><?php echo esc_html( $c['mhq2_step3_b'] ); ?></p>
 				</a>
+			</div>
+			<h2><?php echo esc_html( $c['mhq2_books_h'] ); ?></h2>
+			<p><?php echo esc_html( $c['mhq2_books_b'] ); ?></p>
+			<div class="kl-photo-grid kl-text-grid">
+				<?php echo kocorolab_refresh_mhq_book_cards_html( $c, $lang ); ?>
 			</div>
 			<h2><?php echo esc_html( $c['mhq2_scales_h'] ); ?></h2>
 			<ul class="kl-read">

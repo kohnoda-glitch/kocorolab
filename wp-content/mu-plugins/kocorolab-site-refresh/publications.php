@@ -543,6 +543,26 @@ function kocorolab_refresh_news_list_html( $items, $lang = 'ja', $compact = fals
 	return ob_get_clean();
 }
 
+function kocorolab_refresh_mhq_book_cards_html( $c, $lang ) {
+	$media = kocorolab_refresh_pub_media();
+	$items = array(
+		array( 'depression', $c['mhq2_book_dep'] ),
+		array( 'vuca', $c['mhq2_book_vuca'] ),
+	);
+	$html = '';
+	foreach ( $items as $item ) {
+		$key = $item[0];
+		if ( ! isset( $media[ $key ] ) ) {
+			continue;
+		}
+		$m     = $media[ $key ];
+		$alt   = ( 'en' === $lang ) ? $m['alt_en'] : $m['alt_ja'];
+		$inner = '<a href="' . esc_url( $m['url'] ) . '">' . esc_html( $alt ) . '</a><p>' . esc_html( $item[1] ) . '</p>';
+		$html .= '<article class="kl-soft-card">' . kocorolab_refresh_with_thumb( $inner, $m['img'], $m['url'], $alt, 'book' ) . '</article>';
+	}
+	return $html;
+}
+
 function kocorolab_refresh_news_html( $lang = 'ja' ) {
 	$items = kocorolab_refresh_news_feed_items( $lang );
 	$c     = kocorolab_refresh_copy( $lang );
