@@ -410,14 +410,15 @@ function kocorolab_refresh_civic_roles_html( $lang = 'ja' ) {
 }
 
 function kocorolab_refresh_spea_records_html( $lang = 'ja' ) {
-	$archive = '<a href="' . esc_url( kocorolab_refresh_spea_archive_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'school profile (Philippine Ryugaku Pro)' : '学校概要（フィリピン留学プロ）' ) . '</a>';
-	$video   = '<a href="' . esc_url( kocorolab_refresh_spea_intro_video_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'intro film' : '紹介動画' ) . '</a>';
-	$yt      = '<a href="' . esc_url( kocorolab_refresh_spea_youtube_url() ) . '">YouTube</a>';
-	$rm      = '<a href="' . esc_url( kocorolab_refresh_researchmap_url() ) . '">researchmap</a>';
+	$archive  = '<a href="' . esc_url( kocorolab_refresh_spea_archive_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'school profile (Philippine Ryugaku Pro)' : '学校概要（フィリピン留学プロ）' ) . '</a>';
+	$brochure = '<a href="' . esc_url( kocorolab_refresh_spea_brochure_url() ) . '">' . esc_html( ( 'en' === $lang ) ? '2019 school brochure PDF' : '学校案内PDF（2019）' ) . '</a>';
+	$video    = '<a href="' . esc_url( kocorolab_refresh_spea_intro_video_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'intro film' : '紹介動画' ) . '</a>';
+	$yt       = '<a href="' . esc_url( kocorolab_refresh_spea_youtube_url() ) . '">YouTube</a>';
+	$rm       = '<a href="' . esc_url( kocorolab_refresh_researchmap_url() ) . '">researchmap</a>';
 	if ( 'en' === $lang ) {
-		return '<p class="kl-past">Records of SPEA in Dumaguete: ' . $archive . ' · ' . $video . ' · ' . $yt . ' · ' . $rm . '.</p>';
+		return '<p class="kl-past">Records of SPEA in Dumaguete: ' . $archive . ' · ' . $brochure . ' · ' . $video . ' · ' . $yt . ' · ' . $rm . '.</p>';
 	}
-	return '<p class="kl-past">ドゥマゲテの SPEA 時代の記録: ' . $archive . ' · ' . $video . ' · ' . $yt . ' · ' . $rm . '。</p>';
+	return '<p class="kl-past">ドゥマゲテの SPEA 時代の記録: ' . $archive . ' · ' . $brochure . ' · ' . $video . ' · ' . $yt . ' · ' . $rm . '。</p>';
 }
 
 /**

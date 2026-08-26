@@ -30,6 +30,14 @@ function kocorolab_refresh_spea_archive_url() {
 	return 'https://www.pro-japan.jp/school/spea/';
 }
 
+function kocorolab_refresh_spea_brochure_url() {
+	return 'https://m.pro-japan.jp/images/upload/sc_ref/116/SPEAnew22019.pdf';
+}
+
+function kocorolab_refresh_spea_rle_press_url() {
+	return 'https://www.value-press.com/pressrelease/165730';
+}
+
 function kocorolab_refresh_spea_youtube_url() {
 	return 'https://www.youtube.com/@Speastartingpoitenglishacademy';
 }
@@ -181,6 +189,26 @@ function kocorolab_refresh_source_catalog() {
 					'url' => 'https://hitomedia.jp/news/2013-07-25-20130725_1/',
 					'ja'  => 'ヒトメディアのセミナー案内',
 					'en'  => 'hitomedia seminar note',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'SPEAnew22019', '学校案内PDF（2019', 'school brochure PDF (2019' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_spea_brochure_url(),
+					'ja'  => 'SPEAの学校案内PDF（2019）',
+					'en'  => 'SPEA school brochure PDF (2019)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', 'value-press', '165730', 'RLE-Labo' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_spea_rle_press_url(),
+					'ja'  => 'RLE研究開始のプレスリリース',
+					'en'  => 'RLE research press release',
 				),
 			),
 		),

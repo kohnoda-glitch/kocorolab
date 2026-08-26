@@ -114,6 +114,9 @@ $checks = array(
 		&& false !== strpos( $ja_profile, 'SPEA' )
 		&& false !== strpos( $ja_profile, 'ドゥマゲテ' )
 		&& false !== strpos( $ja_profile, 'pro-japan.jp/school/spea' )
+		&& false !== strpos( $ja_profile, 'SPEAnew22019.pdf' )
+		&& false !== strpos( $ja_profile, '学校案内PDF（2019）' )
+		&& false !== strpos( $en_profile, '2019 school brochure PDF' )
 		&& false !== strpos( $ja_profile, 'youtube.com/watch?v=n_Wcw5cKZ6A' )
 		&& false !== strpos( $ja_profile, 'youtube.com/@Speastartingpoitenglishacademy' )
 		&& false !== strpos( $ja_profile, 'researchmap.jp/kohnoda' )
@@ -366,6 +369,14 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'hitomedia.jp/news/2013-07-25-20130725_1' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'ヒトメディア' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'hitomedia' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'value-press.com/pressrelease/165730' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '体験型学習（RLE）' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Real Life Experience (RLE)' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '165730' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'SPEAnew22019' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'SPEAnew22019.pdf' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '学校案内PDF（2019' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'school brochure PDF (2019' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -381,7 +392,9 @@ $checks = array(
 			&& false !== strpos( $html, 'service.jinjibu.jp/news/detl/3980' )
 			&& false !== strpos( $html, 'n-fahne.jp/pdf/mental01.pdf' )
 			&& false !== strpos( $html, 'atpress.ne.jp/news/37250' )
-			&& false !== strpos( $html, 'hitomedia.jp/news/2013-07-25-20130725_1' );
+			&& false !== strpos( $html, 'hitomedia.jp/news/2013-07-25-20130725_1' )
+			&& false !== strpos( $html, 'value-press.com/pressrelease/165730' )
+			&& false !== strpos( $html, 'SPEAnew22019.pdf' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();
