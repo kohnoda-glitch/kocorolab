@@ -227,7 +227,27 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( 'n-fahne', 'mental01', 'ノイエ・ファーネ', '廣済堂×ココロラボ' ),
+			'keys'  => array( '第15回ミニ・フォーラム', '15th mini-forum', 'mini-forum-2015-12-15' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_neue_fahne_2015_forum_pdf(),
+					'ja'  => 'ミニ・フォーラム案内PDF（2015）',
+					'en'  => 'Mini-forum flyer PDF (2015)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'グローバル人材400万人', 'Journal No.50', 'Journal No. 50', 'mid-level global talent' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_neue_fahne_journal_50_pdf(),
+					'ja'  => 'Neue Fahne Journal No.50（本文PDF）',
+					'en'  => 'Neue Fahne Journal No. 50 (PDF)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'n-fahne', 'mental01', '廣済堂×ココロラボ' ),
 			'links' => array(
 				array(
 					'url' => 'http://www.n-fahne.jp/pdf/mental01.pdf',

@@ -34,13 +34,24 @@ function kocorolab_refresh_jps_1997_pdf() {
 	return 'https://www.jstage.jst.go.jp/article/jpsgaiyo/52.2.4/0/52.2.4_908_4/_pdf';
 }
 
-function kocorolab_refresh_tokyotech_2011_guidance_pdf() {
-	$file = 'tokyo-tech-job-guidance-2011.pdf';
+function kocorolab_refresh_overlay_file_url( $file ) {
 	if ( function_exists( 'content_url' ) ) {
 		return content_url( 'mu-plugins/kocorolab-site-refresh/files/' . $file );
 	}
 	$root = function_exists( 'kocorolab_refresh_root' ) ? kocorolab_refresh_root() : 'https://kocorolab.com';
 	return $root . '/wp-content/mu-plugins/kocorolab-site-refresh/files/' . $file;
+}
+
+function kocorolab_refresh_tokyotech_2011_guidance_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'tokyo-tech-job-guidance-2011.pdf' );
+}
+
+function kocorolab_refresh_neue_fahne_2015_forum_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'neue-fahne-mini-forum-2015-12-15.pdf' );
+}
+
+function kocorolab_refresh_neue_fahne_journal_50_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'neue-fahne-journal-no50-2013-03-11.pdf' );
 }
 
 function kocorolab_refresh_ice_2013_url() {
@@ -168,13 +179,14 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2015' => array(
 			'Kohei Noda, About Filipino Business for Japanese, 講演',
-			'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2016, Tokyo, Japan',
+			kocorolab_refresh_linked_paper( 'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2015, Tokyo, Japan', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'ja' ),
 			kocorolab_refresh_media_item( '野田浩平, 西垣悦代 (2015) 国際コーチング心理学会, 西垣悦代, 原正, 原口佳典（編）, 『コーチング心理学概論』, ナカニシヤ出版', 'coaching', 'ja', 'Amazon' ),
 		),
 		'2014' => array(
 			kocorolab_refresh_media_item( '野田浩平 (2014) 感情機構のシミュレーション, 村井源（編）, 『量から質に迫る―人間の複雑な感性をいかに「計る」か』, 新曜社', 'quality', 'ja', 'Amazon' ),
 		),
 		'2013' => array(
+			kocorolab_refresh_linked_paper( '野田浩平 (2013) グローバル人材400万人時代を見据えた人材育成―一部のエリート人材育成ではなく、厚みのある中間層の形成―, Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'ja' ),
 			kocorolab_refresh_linked_item( '野田浩平 (2013) 講師, 福岡市・福岡商工会議所主催「会社合同説明会」内「就活応援セミナー」, 2013年5月28日, 福岡国際会議場.', kocorolab_refresh_fukuoka_2013_url(), 'ja', '報道' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'ja', '会議' ),
 			'西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会',
@@ -271,13 +283,14 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, Nagoya, Japan. (Cancelled)',
 		),
 		'2015' => array(
-			'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2016, Tokyo, Japan',
+			kocorolab_refresh_linked_paper( 'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2015, Tokyo, Japan', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'en' ),
 			kocorolab_refresh_media_item( 'Kohei Noda and Etsuyo Nishigaki (2015) in Etsuyo Nishigaki et al. (eds.), Introduction to Coaching Psychology, Nakanishiya', 'coaching', 'en', 'Amazon' ),
 		),
 		'2014' => array(
 			kocorolab_refresh_media_item( 'Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha', 'quality', 'en', 'Amazon' ),
 		),
 		'2013' => array(
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2013) Developing global talent for an era of four million: forming a thick middle layer, not only elites. Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'en' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda (2013) Lecturer, job-hunting support seminar at the company joint briefing hosted by Fukuoka City and the Fukuoka Chamber of Commerce, 28 May 2013, Fukuoka International Congress Center.', kocorolab_refresh_fukuoka_2013_url(), 'en', 'report' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'en', 'conference' ),
 			'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association',
@@ -406,6 +419,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', '165730', 'RLE-Labo' ),
 		),
 		array(
+			'date' => '2015-12-15',
+			'ja'   => '第15回ミニ・フォーラム（フィリピンでの労務管理、2015年12月15日）',
+			'en'   => '15th mini-forum on HR management in the Philippines (15 December 2015).',
+			'keys' => array( '第15回ミニ・フォーラム', '15th mini-forum', 'mini-forum-2015-12-15' ),
+		),
+		array(
 			'date' => '2013-07-30',
 			'ja'   => 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）',
 			'en'   => 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).',
@@ -416,6 +435,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'ja'   => 'フィリピンでの Global Business eXperience（GBX）実施報告',
 			'en'   => 'Report on Global Business eXperience (GBX) in the Philippines.',
 			'keys' => array( 'GBX', 'Global Business eXperience', '37250' ),
+		),
+		array(
+			'date' => '2013-03-11',
+			'ja'   => 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」',
+			'en'   => 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.',
+			'keys' => array( 'グローバル人材400万人', 'Journal No.50', 'Journal No. 50', 'mid-level global talent' ),
 		),
 		array(
 			'date' => '2011-08-24',
@@ -449,8 +474,10 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2019-02-01', 'SPEAの学校案内PDF（2019、フィリピン留学プロ）' ),
 		array( '2017-05-22', 'SPEAのフィリピン教育留学開始のプレスリリース' ),
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
+		array( '2015-12-15', '第15回ミニ・フォーラム（フィリピンでの労務管理、2015年12月15日）' ),
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
+		array( '2013-03-11', 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」' ),
 		array( '2011-08-24', '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）' ),
 		array( '2010-06-22', 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース' ),
 		array( '2009-07-01', 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース' ),
@@ -465,8 +492,10 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2019-02-01', 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).' ),
 		array( '2017-05-22', 'Press release: SPEA began a Philippines education study program.' ),
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
+		array( '2015-12-15', '15th mini-forum on HR management in the Philippines (15 December 2015).' ),
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
+		array( '2013-03-11', 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.' ),
 		array( '2011-08-24', 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).' ),
 		array( '2010-06-22', 'Press release: partnership with Shubiki on a workplace mental health service.' ),
 		array( '2009-07-01', 'MHQ version 1 press release' ),

@@ -120,7 +120,8 @@ $checks = array(
 		&& false !== strpos( $ja_profile, 'youtube.com/watch?v=n_Wcw5cKZ6A' )
 		&& false !== strpos( $ja_profile, 'youtube.com/@Speastartingpoitenglishacademy' )
 		&& false !== strpos( $ja_profile, 'researchmap.jp/kohnoda' )
-		&& false === strpos( $ja_profile, '創業' )
+		&& false === strpos( $ja_profile, 'フェリス' )
+		&& false === strpos( $ja_profile, '非常勤' )
 		&& false === strpos( $ja_profile, '大学を設立' )
 		&& false === strpos( $ja_profile, 'K-12' )
 		&& false === strpos( $ja_profile, 'ラーニングジャーニー' )
@@ -291,6 +292,14 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, 'data-max.co.jp/2013/05/29/2000_13_dm1806_1.html' )
 		&& false !== strpos( $ja_pubs, '福岡国際会議場' )
 		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/tokyo-tech-job-guidance-2011.pdf' )
+		&& false !== strpos( $ja_pubs, 'グローバル人材400万人時代を見据えた人材育成' )
+		&& false !== strpos( $ja_pubs, 'neue-fahne-journal-no50-2013-03-11.pdf' )
+		&& false !== strpos( $en_pubs, 'Neue Fahne Journal No. 50' )
+		&& false !== strpos( $ja_pubs, '15 December 2015' )
+		&& false === strpos( $ja_pubs, '15 December 2016' )
+		&& false !== strpos( $ja_pubs, 'neue-fahne-mini-forum-2015-12-15.pdf' )
+		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/neue-fahne-journal-no50-2013-03-11.pdf' )
+		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/neue-fahne-mini-forum-2015-12-15.pdf' )
 	),
 	'ICE 2013 plenary links to the conference page' => (
 		false !== strpos( $ja_pubs, 'share.google/OnGq4xL8mDEoGt7E1' )
@@ -381,6 +390,13 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'SPEAnew22019.pdf' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '学校案内PDF（2019' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'school brochure PDF (2019' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'グローバル人材400万人' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'neue-fahne-journal-no50-2013-03-11.pdf' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Journal No. 50' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '第15回ミニ・フォーラム' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'neue-fahne-mini-forum-2015-12-15.pdf' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'Journal No.50' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'ミニ・フォーラム' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -399,7 +415,9 @@ $checks = array(
 			&& false !== strpos( $html, 'hitomedia.jp/news/2013-07-25-20130725_1' )
 			&& false !== strpos( $html, 'value-press.com/pressrelease/165730' )
 			&& false !== strpos( $html, 'value-press.com/pressrelease/183306' )
-			&& false !== strpos( $html, 'SPEAnew22019.pdf' );
+			&& false !== strpos( $html, 'SPEAnew22019.pdf' )
+			&& false !== strpos( $html, 'neue-fahne-journal-no50-2013-03-11.pdf' )
+			&& false !== strpos( $html, 'neue-fahne-mini-forum-2015-12-15.pdf' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();
