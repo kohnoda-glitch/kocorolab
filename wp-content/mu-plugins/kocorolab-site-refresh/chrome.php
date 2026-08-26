@@ -44,6 +44,9 @@ function kocorolab_refresh_nav_key() {
 	if ( 'hakkou' === $slug || 'publications' === $slug ) {
 		return 'publications';
 	}
+	if ( 'mhq-read' === $slug ) {
+		return 'mhq2';
+	}
 	if ( $slug ) {
 		return $slug;
 	}
@@ -83,6 +86,10 @@ function kocorolab_refresh_lang_switch_url() {
 		'/en/company'      => array( '/company/', '/en/company/' ),
 		'/contact'         => array( '/contact/', '/en/contact/' ),
 		'/en/contact'      => array( '/contact/', '/en/contact/' ),
+		'/mhq2'            => array( '/mhq2/', '/en/mhq2/' ),
+		'/en/mhq2'         => array( '/mhq2/', '/en/mhq2/' ),
+		'/mhq-read'        => array( '/mhq-read/', '/en/mhq-read/' ),
+		'/en/mhq-read'     => array( '/mhq-read/', '/en/mhq-read/' ),
 		'/mhqlp'           => array( '/mhqlp/', '/mhqlp/?lang=en' ),
 		'/mhq'             => array( '/mhqlp/', '/mhqlp/?lang=en' ),
 	);
@@ -115,6 +122,7 @@ function kocorolab_refresh_site_header() {
 		? array(
 			array( 'home', 'Home', kocorolab_refresh_url( '/', '/en/' ) ),
 			array( 'service', 'Services', kocorolab_refresh_url( '/service/', '/en/service/' ) ),
+			array( 'mhq2', 'MHQ2', kocorolab_refresh_mhq2_url() ),
 			array( 'news', 'Updates', kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ),
 			array( 'publications', 'Publications', kocorolab_refresh_publications_url() ),
 			array( 'member', 'Profile', kocorolab_refresh_url( '/member/', '/en/member/' ) ),
@@ -123,6 +131,7 @@ function kocorolab_refresh_site_header() {
 		: array(
 			array( 'home', 'ホーム', kocorolab_refresh_url( '/', '/' ) ),
 			array( 'service', 'サービス', kocorolab_refresh_url( '/service/', '/service/' ) ),
+			array( 'mhq2', 'MHQ2', kocorolab_refresh_mhq2_url() ),
 			array( 'news', '活動・新着', kocorolab_refresh_url( '/news/', '/news/' ) ),
 			array( 'publications', '発表文献', kocorolab_refresh_publications_url() ),
 			array( 'member', 'プロフィール', kocorolab_refresh_url( '/member/', '/member/' ) ),

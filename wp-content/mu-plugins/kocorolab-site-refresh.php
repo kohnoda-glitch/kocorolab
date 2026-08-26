@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Unzip into wp-content/mu-plugins/ so this file sits next to the kocorolab-site-refresh/ folder — do not dump the inner PHP files into mu-plugins/.
- * Version: 1.6.20
+ * Version: 1.6.21
  * Author: Kohei Noda
  */
 
@@ -90,8 +90,19 @@ function kocorolab_refresh_slug_from_path( $path ) {
 		'contact'      => 'contact',
 		'publications' => 'publications',
 		'hakkou'       => 'hakkou',
+		'mhq2'         => 'mhq2',
+		'mhq-read'     => 'mhq-read',
 	);
 	return isset( $map[ $key ] ) ? $map[ $key ] : '';
+}
+
+function kocorolab_refresh_is_virtual_page_path( $path ) {
+	$slug = kocorolab_refresh_slug_from_path( $path );
+	return in_array( $slug, array( 'mhq2', 'mhq-read' ), true );
+}
+
+function kocorolab_refresh_is_forced_overlay_path( $path ) {
+	return kocorolab_refresh_is_en_overlay_path( $path ) || kocorolab_refresh_is_virtual_page_path( $path );
 }
 
 function kocorolab_refresh_is_en_profile_path( $path ) {
@@ -119,7 +130,7 @@ function kocorolab_refresh_en_overlay_pagename( $path ) {
 
 function kocorolab_refresh_filter_canonical_redirect( $redirect_url, $requested_url ) {
 	$path = kocorolab_refresh_request_path_from( (string) $requested_url );
-	if ( kocorolab_refresh_is_en_overlay_path( $path ) ) {
+	if ( kocorolab_refresh_is_forced_overlay_path( $path ) ) {
 		return false;
 	}
 	return $redirect_url;
@@ -238,7 +249,7 @@ function kocorolab_refresh_image_url( $key ) {
 }
 
 function kocorolab_refresh_page_slugs() {
-	return array( 'company', 'service', 'member', 'koheinoda', 'hakkou', 'publications', 'contact' );
+	return array( 'company', 'service', 'member', 'koheinoda', 'hakkou', 'publications', 'contact', 'mhq2', 'mhq-read' );
 }
 
 /**
@@ -300,6 +311,12 @@ add_filter(
 			}
 			$query_vars['bogo_suppress_locale_query'] = true;
 			unset( $query_vars['name'], $query_vars['error'], $query_vars['lang'] );
+		} elseif ( kocorolab_refresh_is_virtual_page_path( $path ) ) {
+			$pagename = kocorolab_refresh_slug_from_path( $path );
+			if ( $pagename ) {
+				$query_vars['pagename'] = $pagename;
+			}
+			unset( $query_vars['name'], $query_vars['error'] );
 		}
 		return $query_vars;
 	}
@@ -322,7 +339,7 @@ add_action(
 			wp_redirect( kocorolab_refresh_gbx_report_url(), 301 );
 			exit;
 		}
-		if ( kocorolab_refresh_is_en_overlay_path( $path ) ) {
+		if ( kocorolab_refresh_is_forced_overlay_path( $path ) ) {
 			if ( function_exists( 'remove_action' ) ) {
 				remove_action( 'template_redirect', 'redirect_canonical' );
 			}
@@ -346,7 +363,7 @@ add_action(
 		}
 		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
 		$path = kocorolab_refresh_request_path_from( $uri );
-		if ( ! kocorolab_refresh_is_en_overlay_path( $path ) ) {
+		if ( ! kocorolab_refresh_is_forced_overlay_path( $path ) ) {
 			return;
 		}
 		kocorolab_refresh_mark_not_404();
@@ -363,7 +380,7 @@ add_filter(
 	function ( $do ) {
 		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
 		$path = kocorolab_refresh_request_path_from( $uri );
-		if ( kocorolab_refresh_is_en_overlay_path( $path ) ) {
+		if ( kocorolab_refresh_is_forced_overlay_path( $path ) ) {
 			return false;
 		}
 		return $do;
@@ -375,7 +392,7 @@ add_filter(
 	function ( $preempt, $wp_query ) {
 		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
 		$path = kocorolab_refresh_request_path_from( $uri );
-		if ( ! kocorolab_refresh_is_en_overlay_path( $path ) ) {
+		if ( ! kocorolab_refresh_is_forced_overlay_path( $path ) ) {
 			return $preempt;
 		}
 		if ( is_object( $wp_query ) ) {
@@ -435,7 +452,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.20' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.21' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}

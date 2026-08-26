@@ -111,8 +111,8 @@ $news_items = kocorolab_refresh_news_feed_items( $lang, $news_posts, 4 );
 						<h3><?php kocorolab_refresh_e( 'card2_title' ); ?></h3>
 						<p><?php kocorolab_refresh_e( 'card2_body' ); ?></p>
 						<p class="kl-card-links">
+							<a href="<?php echo esc_url( kocorolab_refresh_mhq2_url() ); ?>"><?php kocorolab_refresh_e( 'svc2_personal_link' ); ?></a>
 							<a href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url() ); ?>"><?php kocorolab_refresh_e( 'svc2_link' ); ?></a>
-							<a href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/' ) ); ?>"><?php kocorolab_refresh_e( 'svc2_personal_link' ); ?></a>
 						</p>
 					</article>
 					<article class="kl-soft-card">

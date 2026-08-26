@@ -92,7 +92,33 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc2_h'         => 'メンタルヘルス検査（MHQ2）',
 		'svc2_b'         => 'うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。企業では採用・社内確認・人材育成に使えます。個人でも受験でき、結果の読み方案内や、必要ならカウンセリング・コーチングにつながります。診断の確定を目的としたものではありません。',
 		'svc2_link'      => 'MHQ2の案内ページへ',
-		'svc2_personal_link' => '個人の受験・読み方は問い合わせ',
+		'svc2_personal_link' => '個人向け案内',
+		'svc2_read_link' => '結果の読み方（見本）',
+		'mhq2_badge'     => '個人向け MHQ2',
+		'mhq2_title'     => '今の心の状態を、感覚だけで終わらせない',
+		'mhq2_lead'      => '認知科学に基づくメンタルヘルス質問票。診断ではなく、傾向を見て次の一歩を選べるための案内です。',
+		'mhq2_apply'     => '申し込む（問い合わせ）',
+		'mhq2_step1_h'   => '受験する',
+		'mhq2_step1_b'   => '質問に答えて、今の心の状態を客観的に見ます。',
+		'mhq2_step2_h'   => '結果を読む',
+		'mhq2_step2_b'   => '数字は病名ではありません。傾向と、この先数週のヒントです。',
+		'mhq2_step3_h'   => '必要なら話を聞く',
+		'mhq2_step3_b'   => '読解セッションやコーチングは、問い合わせから。一人で抱えなくてよい。',
+		'mhq2_talk_h'    => '読解セッション',
+		'mhq2_talk_b'    => '結果を一緒に読み、過ごし方を整えます。治療ではありません。',
+		'mhq2_coach_h'   => 'コーチング',
+		'mhq2_coach_b'   => '働き方や生活の一手に戻す並走です。申し込みは問い合わせへ。',
+		'mhq_read_sample'=> '見本',
+		'mhq_read_title' => 'MHQ2結果の読み方',
+		'mhq_read_lead'  => '本番の結果画面ではありません。数字の見方と、次の選択肢の見本です。',
+		'mhq_read_zone'  => '今の心の状態は、注意しておくゾーン',
+		'mhq_read_zone_b'=> 'いくつかの項目に負担のサインが出ている、という読み方の例です。',
+		'mhq_read_mood'  => '気分の沈み',
+		'mhq_read_anxiety'=> '不安',
+		'mhq_read_care'  => '労わり',
+		'mhq_read_hint'  => '心の状態は変わります。定期的に見る、という使い方もあります。',
+		'mhq_read_session'=> '読解セッションを問い合わせ',
+		'mhq_read_coach' => 'コーチングを問い合わせ',
 		'mhq_read_h'     => '結果の読み方',
 		'mhq_read_1'     => '数字は病名ではありません。今の傾向です。',
 		'mhq_read_2'     => '高い項目は、この先数週のリズムのヒントとして見てください。',
@@ -207,7 +233,33 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc2_h'         => 'Mental health questionnaire (MHQ2)',
 		'svc2_b'         => 'MHQ2 and EQ assessments. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too, with a reading guide and optional counseling or coaching. MHQ2 is for risk tendencies, not a clinical diagnosis.',
 		'svc2_link'      => 'Open the MHQ2 landing page',
-		'svc2_personal_link' => 'Individuals: apply and read results via contact',
+		'svc2_personal_link' => 'For individuals',
+		'svc2_read_link' => 'How to read results (sample)',
+		'mhq2_badge'     => 'MHQ2 for individuals',
+		'mhq2_title'     => 'Do not leave the state of the mind as feeling alone',
+		'mhq2_lead'      => 'A cognitive-science mental health questionnaire. Not a diagnosis: a way to see a tendency and choose a next step.',
+		'mhq2_apply'     => 'Apply (contact)',
+		'mhq2_step1_h'   => 'Take it',
+		'mhq2_step1_b'   => 'Answer the questions and look at the present state more objectively.',
+		'mhq2_step2_h'   => 'Read the results',
+		'mhq2_step2_b'   => 'The numbers are not a disease name. They are a tendency and a hint for the coming weeks.',
+		'mhq2_step3_h'   => 'Talk if needed',
+		'mhq2_step3_b'   => 'Reading sessions and coaching go through contact. You do not have to sit with it alone.',
+		'mhq2_talk_h'    => 'Reading session',
+		'mhq2_talk_b'    => 'Read the results together and settle how to spend the next weeks. This is not treatment.',
+		'mhq2_coach_h'   => 'Coaching',
+		'mhq2_coach_b'   => 'Turn the reading into one next move at work or in life. Apply through contact.',
+		'mhq_read_sample'=> 'Sample',
+		'mhq_read_title' => 'How to read MHQ2 results',
+		'mhq_read_lead'  => 'This is not a live results screen. It is a sample of how to read the numbers and what to do next.',
+		'mhq_read_zone'  => 'A sample reading: a zone to watch',
+		'mhq_read_zone_b'=> 'An example of how a few items can show a load, not a label.',
+		'mhq_read_mood'  => 'Low mood',
+		'mhq_read_anxiety'=> 'Anxiety',
+		'mhq_read_care'  => 'Care',
+		'mhq_read_hint'  => 'States change. Checking again later is a valid use.',
+		'mhq_read_session'=> 'Ask about a reading session',
+		'mhq_read_coach' => 'Ask about coaching',
 		'mhq_read_h'     => 'How to read the results',
 		'mhq_read_1'     => 'The numbers are not a diagnosis. They describe a current tendency.',
 		'mhq_read_2'     => 'A high score is a hint about the next few weeks of rhythm, not a label.',
@@ -404,6 +456,12 @@ function kocorolab_refresh_page_html( $slug, $lang = 'ja' ) {
 	if ( 'contact' === $slug ) {
 		return kocorolab_refresh_contact_intro_html( $c, $lang );
 	}
+	if ( 'mhq2' === $slug ) {
+		return kocorolab_refresh_mhq2_html( $c, $lang );
+	}
+	if ( 'mhq-read' === $slug ) {
+		return kocorolab_refresh_mhq_read_html( $c, $lang );
+	}
 	return '';
 }
 
@@ -460,7 +518,8 @@ function kocorolab_refresh_service_html( $c, $lang ) {
 		<p><?php echo esc_html( $c['svc2_b'] ); ?></p>
 		<p class="kl-actions">
 			<a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a>
-			<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['svc2_personal_link'] ); ?></a>
+			<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_mhq2_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_personal_link'] ); ?></a>
+			<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_mhq_read_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_read_link'] ); ?></a>
 		</p>
 		<h3><?php echo esc_html( $c['mhq_read_h'] ); ?></h3>
 		<ul class="kl-read">
@@ -496,6 +555,93 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 			·
 			<a href="<?php echo esc_url( kocorolab_refresh_medium_url() ); ?>">Medium</a>
 		</p>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
+function kocorolab_refresh_mhq2_html( $c, $lang ) {
+	$hero = kocorolab_refresh_image_url( 'hero' );
+	ob_start();
+	?>
+	<div class="kl-mhq2">
+		<section class="kl-mhq2-hero" style="--kl-hero-image: url('<?php echo esc_url( $hero ); ?>');">
+			<p class="kl-badge"><?php echo esc_html( $c['mhq2_badge'] ); ?></p>
+			<h1><?php echo esc_html( $c['mhq2_title'] ); ?></h1>
+			<p class="kl-lead"><?php echo esc_html( $c['mhq2_lead'] ); ?></p>
+			<p class="kl-actions">
+				<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['mhq2_apply'] ); ?></a>
+				<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_mhq_read_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_read_link'] ); ?></a>
+			</p>
+		</section>
+		<div class="kl-page">
+			<div class="kl-photo-grid kl-text-grid">
+				<article class="kl-soft-card">
+					<h3><?php echo esc_html( $c['mhq2_step1_h'] ); ?></h3>
+					<p><?php echo esc_html( $c['mhq2_step1_b'] ); ?></p>
+				</article>
+				<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mhq_read_url( $lang ) ); ?>">
+					<h3><?php echo esc_html( $c['mhq2_step2_h'] ); ?></h3>
+					<p><?php echo esc_html( $c['mhq2_step2_b'] ); ?></p>
+				</a>
+				<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>">
+					<h3><?php echo esc_html( $c['mhq2_step3_h'] ); ?></h3>
+					<p><?php echo esc_html( $c['mhq2_step3_b'] ); ?></p>
+				</a>
+			</div>
+			<p class="kl-mhq-note"><?php echo esc_html( $c['svc2_b'] ); ?></p>
+			<h2><?php echo esc_html( $c['mhq2_talk_h'] ); ?></h2>
+			<p><?php echo esc_html( $c['mhq2_talk_b'] ); ?></p>
+			<h2><?php echo esc_html( $c['mhq2_coach_h'] ); ?></h2>
+			<p><?php echo esc_html( $c['mhq2_coach_b'] ); ?></p>
+			<p class="kl-actions">
+				<a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['mhq2_apply'] ); ?></a>
+			</p>
+		</div>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
+function kocorolab_refresh_mhq_read_html( $c, $lang ) {
+	ob_start();
+	?>
+	<div class="kl-page kl-mhq-read">
+		<p class="kl-badge"><?php echo esc_html( $c['mhq_read_sample'] ); ?></p>
+		<h1><?php echo esc_html( $c['mhq_read_title'] ); ?></h1>
+		<p class="kl-lead"><?php echo esc_html( $c['mhq_read_lead'] ); ?></p>
+		<div class="kl-mhq-read-grid">
+			<article class="kl-soft-card">
+				<p class="kl-kicker"><?php echo esc_html( $c['mhq_read_sample'] ); ?></p>
+				<h2><?php echo esc_html( $c['mhq_read_zone'] ); ?></h2>
+				<p><?php echo esc_html( $c['mhq_read_zone_b'] ); ?></p>
+				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_mood'] ); ?></span><i style="width:58%"></i></div>
+				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_anxiety'] ); ?></span><i style="width:62%"></i></div>
+				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_care'] ); ?></span><i style="width:72%"></i></div>
+				<p><?php echo esc_html( $c['mhq_read_hint'] ); ?></p>
+			</article>
+			<article class="kl-soft-card">
+				<h2><?php echo esc_html( $c['mhq_read_h'] ); ?></h2>
+				<ul class="kl-read">
+					<li><?php echo esc_html( $c['mhq_read_1'] ); ?></li>
+					<li><?php echo esc_html( $c['mhq_read_2'] ); ?></li>
+					<li><?php echo esc_html( $c['mhq_read_3'] ); ?></li>
+				</ul>
+			</article>
+		</div>
+		<div class="kl-photo-grid kl-text-grid">
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>">
+				<h3><?php echo esc_html( $c['mhq2_apply'] ); ?></h3>
+			</a>
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>">
+				<h3><?php echo esc_html( $c['mhq_read_session'] ); ?></h3>
+				<p><?php echo esc_html( $c['mhq2_talk_b'] ); ?></p>
+			</a>
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>">
+				<h3><?php echo esc_html( $c['mhq_read_coach'] ); ?></h3>
+				<p><?php echo esc_html( $c['mhq2_coach_b'] ); ?></p>
+			</a>
+		</div>
 	</div>
 	<?php
 	return ob_get_clean();

@@ -160,14 +160,29 @@ $checks = array(
 		false !== strpos( $ja['card2_body'], '個人でも受験' )
 		&& false !== strpos( $ja['svc2_b'], '個人でも受験' )
 		&& false !== strpos( $ja['svc2_b'], '診断の確定を目的としたものではありません' )
-		&& false !== strpos( $ja_service, '個人の受験・読み方は問い合わせ' )
-		&& false !== strpos( $ja_service, '/contact/' )
+		&& false !== strpos( $ja_service, '個人向け案内' )
+		&& false !== strpos( $ja_service, '/mhq2/' )
+		&& false !== strpos( $ja_service, '/mhq-read/' )
 		&& false !== strpos( $ja_service, '数字は病名ではありません' )
-		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), "kocorolab_refresh_url( '/contact/', '/en/contact/' )" )
+		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kocorolab_refresh_mhq2_url' )
 		&& false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), '<a class="kl-soft-card"' )
 		&& false !== strpos( $en['card2_body'], 'individuals' )
-		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/en/contact/' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/en/mhq2/' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'not a diagnosis' )
+	),
+	'MHQ2 personal landing and sample results pages' => (
+		false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '今の心の状態を、感覚だけで終わらせない' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '/mhq-read/' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq2', 'ja' ), '診断ではなく' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '見本' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '本番の結果画面ではありません' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'en' ), 'Sample' )
+		&& 'mhq2' === kocorolab_refresh_slug_from_path( '/mhq2' )
+		&& 'mhq-read' === kocorolab_refresh_slug_from_path( '/en/mhq-read' )
+		&& kocorolab_refresh_is_virtual_page_path( '/mhq2' )
+		&& kocorolab_refresh_is_forced_overlay_path( '/mhq2' )
+		&& kocorolab_refresh_is_forced_overlay_path( '/en/mhq2' )
+		&& false === kocorolab_refresh_filter_canonical_redirect( 'https://kocorolab.com/', 'https://kocorolab.com/mhq2/' )
 	),
 	'contact page has mailto and topics' => ( false !== strpos( $ja_contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $ja_contact, '講演・研修依頼' ) ),
 	'contact uses kocorolab.com not retired xsrv' => ( false === strpos( $contact, 'knoda.xsrv.jp' ) && 'info@kocorolab.com' === kocorolab_refresh_contact_email() ),

@@ -54,6 +54,14 @@ function kocorolab_refresh_mhq_lp_url( $lang = null ) {
 	return kocorolab_refresh_url( '/mhqlp/', '/mhqlp/?lang=en', $lang );
 }
 
+function kocorolab_refresh_mhq2_url( $lang = null ) {
+	return kocorolab_refresh_url( '/mhq2/', '/en/mhq2/', $lang );
+}
+
+function kocorolab_refresh_mhq_read_url( $lang = null ) {
+	return kocorolab_refresh_url( '/mhq-read/', '/en/mhq-read/', $lang );
+}
+
 function kocorolab_refresh_source_catalog() {
 	return array(
 		array(

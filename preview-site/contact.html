@@ -791,12 +791,60 @@ a.kl-soft-card:hover {
   background: #128a82;
 }
 
+.kl-mhq2-hero {
+  padding: 4.4rem 4vw 3.2rem;
+  color: #f4fffb;
+  background:
+    linear-gradient(90deg, rgba(8, 22, 34, 0.55) 0%, rgba(8, 22, 34, 0.18) 55%, rgba(8, 22, 34, 0.08) 100%),
+    var(--kl-hero-image) center / cover no-repeat;
+}
+
+.kl-mhq2-hero h1 {
+  margin: 0.4rem 0 0.8rem;
+  max-width: 18ch;
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  line-height: 1.25;
+}
+
+.kl-mhq2-hero .kl-lead {
+  max-width: 38rem;
+  color: #e8f4f2;
+}
+
+.kl-mhq-note {
+  margin: 1.4rem 0 0;
+  color: #5b7380;
+  font-size: 0.92rem;
+}
+
+.kl-mhq-read-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.kl-mhq-bar {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-bar i {
+  display: block;
+  height: 0.45rem;
+  border-radius: 99px;
+  background: #128a82;
+}
+
 @media (max-width: 900px) {
   .kl-mission .kl-wide,
   .kl-founder,
   .kl-photo-grid,
   .kl-text-grid,
-  .kl-contact-topics {
+  .kl-contact-topics,
+  .kl-mhq-read-grid {
     grid-template-columns: 1fr;
   }
 
@@ -869,6 +917,7 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 	<nav class="kl-topnav" aria-label="メイン">
 					<a href="index.html">ホーム</a>
 					<a href="service.html">サービス</a>
+					<a href="mhq2.html">MHQ2</a>
 					<a href="news.html">活動・新着</a>
 					<a href="publications.html">発表文献</a>
 					<a href="member.html">プロフィール</a>
