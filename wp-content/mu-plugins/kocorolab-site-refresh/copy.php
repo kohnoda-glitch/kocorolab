@@ -40,7 +40,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'card1_title'    => 'リーダーシップ教育',
 		'card1_body'     => 'グロービス経営大学院と MIT Sloan IDEAS Asia Pacific での教育・研究。U理論などを用いた学び。',
 		'card2_title'    => 'メンタルヘルス（MHQ2）',
-		'card2_body'     => '現在の検査案内は MHQ2 です。採用や人材育成に使えます。詳細と申し込みは案内ページへ。',
+		'card2_body'     => '企業の採用・育成に加え、個人でも受験できます。案内ページのほか、個人の申し込みと結果の読み方は問い合わせへ。',
 		'card3_title'    => '人事・組織支援',
 		'card3_body'     => '人事制度、研修、コーチング、調査研究。',
 		'work_link'      => 'サービスを見る',
@@ -64,13 +64,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'bio_p2_en'      => 'Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.',
 		'contact_kicker' => 'CONTACT',
 		'contact_h2'     => '直接コンタクト',
-		'contact_lead'   => '企業人事、講演依頼、研究パートナーの皆さまは、こちらから直接ご連絡ください。',
+		'contact_lead'   => '企業人事、講演依頼、研究パートナー、MHQ2の個人受験の皆さまは、こちらから直接ご連絡ください。',
 		'contact_email'  => 'info@kocorolab.com',
 		'contact_topics_h' => '主なご相談内容',
 		'contact_topic1' => '講演・研修依頼',
 		'contact_topic2' => '組織開発・人財育成コンサルティング',
 		'contact_topic3' => '共同研究',
-		'contact_topic4' => 'メンタルヘルス / EQアセスメント導入',
+		'contact_topic4' => 'MHQ2（企業導入 / 個人受験）・結果の読み方',
 		'contact_form'   => 'フォームでも問い合わせ',
 		'section_pub'    => '発表文献',
 		'pub_body'       => '日本認知科学会などでの発表を続けています。2025年は「U理論の認知感情モデル」を第42回大会予稿集（pp. 466-469）に掲載しました。',
@@ -90,8 +90,9 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc1_h'         => 'リーダーシップ開発',
 		'svc1_b'         => 'U理論などを用いた次世代リーダーシップ開発、組織開発、学びの設計。',
 		'svc2_h'         => 'メンタルヘルス検査（MHQ2）',
-		'svc2_b'         => 'うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。採用、社内確認、人材育成に使えます。診断の確定を目的としたものではありません。詳細と申し込みは既存の案内ページを使います。',
+		'svc2_b'         => 'うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。企業では採用・社内確認・人材育成に使えます。個人でも受験でき、結果の読み方案内や、必要ならカウンセリング・コーチングにつながります。診断の確定を目的としたものではありません。',
 		'svc2_link'      => 'MHQ2の案内ページへ',
+		'svc2_personal_link' => '個人の受験・読み方は問い合わせ',
 		'svc3_h'         => '人事コンサルティング・コーチング',
 		'svc3_b'         => '人事制度、研修、コーチング。事業会社の人事責任者としての実務を踏まえて支援します。',
 		'svc4_h'         => '学術研究・統計',
@@ -150,7 +151,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'card1_title'    => 'Leadership education',
 		'card1_body'     => 'Teaching and research at GLOBIS University and MIT Sloan IDEAS Asia Pacific, including Theory U.',
 		'card2_title'    => 'Mental health (MHQ2)',
-		'card2_body'     => 'The current questionnaire is MHQ2. Use it for hiring and development. Details and application are on the landing page.',
+		'card2_body'     => 'For hiring and development at companies, and also for individuals. The landing page has details; personal applications and how to read results go through contact.',
 		'card3_title'    => 'HR and organization support',
 		'card3_body'     => 'HR systems, training, coaching, and research.',
 		'work_link'      => 'View services',
@@ -174,13 +175,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'bio_p2_en'      => 'Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.',
 		'contact_kicker' => 'CONTACT',
 		'contact_h2'     => 'Direct contact',
-		'contact_lead'   => 'For corporate HR, speaking requests, and research partners — reach us directly here.',
+		'contact_lead'   => 'For corporate HR, speaking requests, research partners, and individual MHQ2 applications — reach us directly here.',
 		'contact_email'  => 'info@kocorolab.com',
 		'contact_topics_h' => 'Typical inquiries',
 		'contact_topic1' => 'Talks and executive education',
 		'contact_topic2' => 'Organization development and talent consulting',
 		'contact_topic3' => 'Collaborative research',
-		'contact_topic4' => 'Mental health / EQ assessment introduction',
+		'contact_topic4' => 'MHQ2 (company or individual) and how to read results',
 		'contact_form'   => 'Or use the contact form',
 		'section_pub'    => 'Publications',
 		'pub_body'       => 'Ongoing work includes the Japanese Cognitive Science Society. In 2025 he published “The cognitive affective model of theory U” in the 42nd Annual Meeting proceedings (pp. 466-469).',
@@ -200,8 +201,9 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc1_h'         => 'Leadership development',
 		'svc1_b'         => 'Next-generation leadership, organization development, and learning design, including Theory U.',
 		'svc2_h'         => 'Mental health questionnaire (MHQ2)',
-		'svc2_b'         => 'MHQ2 and EQ assessments for hiring, internal review, and development. MHQ2 is for risk tendencies, not a clinical diagnosis. Details and application stay on the existing landing page.',
+		'svc2_b'         => 'MHQ2 and EQ assessments. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too, with a reading guide and optional counseling or coaching. MHQ2 is for risk tendencies, not a clinical diagnosis.',
 		'svc2_link'      => 'Open the MHQ2 landing page',
+		'svc2_personal_link' => 'Individuals: apply and read results via contact',
 		'svc3_h'         => 'HR consulting and coaching',
 		'svc3_b'         => 'HR systems, training, and coaching, informed by work as head of HR in operating companies.',
 		'svc4_h'         => 'Research and statistics',
@@ -448,7 +450,10 @@ function kocorolab_refresh_service_html( $c, $lang ) {
 		<p><?php echo esc_html( $c['svc1_b'] ); ?></p>
 		<h2><?php echo esc_html( $c['svc2_h'] ); ?></h2>
 		<p><?php echo esc_html( $c['svc2_b'] ); ?></p>
-		<p><a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a></p>
+		<p class="kl-actions">
+			<a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a>
+			<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['svc2_personal_link'] ); ?></a>
+		</p>
 		<h2><?php echo esc_html( $c['svc3_h'] ); ?></h2>
 		<p><?php echo esc_html( $c['svc3_b'] ); ?></p>
 		<h2><?php echo esc_html( $c['svc4_h'] ); ?></h2>

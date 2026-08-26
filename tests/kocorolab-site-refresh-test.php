@@ -155,7 +155,16 @@ $checks = array(
 	'home bio defaults to Japanese' => ( false !== strpos( $ja_bio, 'kl-bio-home-ja' ) && false !== strpos( $ja_bio, 'checked' ) && false !== strpos( $ja_bio, 'English Bio' ) ),
 	'EN bio defaults to English' => ( false !== strpos( $en_bio, 'kl-bio-home-en' ) && preg_match( '/id="kl-bio-home-en"[^>]*checked/', $en_bio ) ),
 	'contact section has mailto' => ( false !== strpos( $contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $contact, 'id="direct-contact"' ) ),
-	'contact lists inquiry topics' => ( false !== strpos( $contact, '講演・研修依頼' ) && false !== strpos( $contact, '組織開発・人財育成コンサルティング' ) && false !== strpos( $contact, '共同研究' ) && false !== strpos( $contact, 'メンタルヘルス / EQアセスメント導入' ) ),
+	'contact lists inquiry topics' => ( false !== strpos( $contact, '講演・研修依頼' ) && false !== strpos( $contact, '組織開発・人財育成コンサルティング' ) && false !== strpos( $contact, '共同研究' ) && false !== strpos( $contact, 'MHQ2（企業導入 / 個人受験）' ) ),
+	'MHQ2 is also for individuals' => (
+		false !== strpos( $ja['card2_body'], '個人でも受験' )
+		&& false !== strpos( $ja['svc2_b'], '個人でも受験' )
+		&& false !== strpos( $ja['svc2_b'], '診断の確定を目的としたものではありません' )
+		&& false !== strpos( $ja_service, '個人の受験・読み方は問い合わせ' )
+		&& false !== strpos( $ja_service, '/contact/' )
+		&& false !== strpos( $en['card2_body'], 'individuals' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/en/contact/' )
+	),
 	'contact page has mailto and topics' => ( false !== strpos( $ja_contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $ja_contact, '講演・研修依頼' ) ),
 	'contact uses kocorolab.com not retired xsrv' => ( false === strpos( $contact, 'knoda.xsrv.jp' ) && 'info@kocorolab.com' === kocorolab_refresh_contact_email() ),
 	'rewrites retired xsrv inbox' => ( false !== strpos( kocorolab_refresh_retire_xsrv_email( 'ご連絡は info@knoda.xsrv.jp または noda@knoda.xsrv.jp へ。' ), 'info@kocorolab.com' ) && false === strpos( kocorolab_refresh_retire_xsrv_email( 'ご連絡は info@knoda.xsrv.jp へ。' ), 'knoda.xsrv.jp' ) ),
@@ -364,7 +373,7 @@ $checks = array(
 	'strips MHQ1 ja-only tags' => ( false === strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), '[:' ) && false !== strpos( kocorolab_refresh_ml_text( '[:ja]2009年のMHQ1の発売のプレスリリースです。 https://example.com/[:]', 'ja' ), 'MHQ1' ) ),
 	'EN news uses lang query' => false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'lang=en' ),
 	'flattened overlay templates abort before the loader defines helpers' => is_dir( $stray_tmp ),
-	'guard plugin sits before archive-news alphabetically' => ( '0-kocorolab-refresh-guard.php' < 'archive-news.php' ),
+	'preview build defines overlay dir before requiring templates' => false !== strpos( file_get_contents( dirname( __DIR__ ) . '/preview-site/build.php' ), "define( 'KOCOROLAB_REFRESH_DIR'" ),
 	'guard plugin ships next to the overlay loader' => is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/0-kocorolab-refresh-guard.php' ),
 	'guard removes flattened overlay copies from mu-plugins root' => ( function () {
 		$tmp = sys_get_temp_dir() . '/kl-mu-' . uniqid();

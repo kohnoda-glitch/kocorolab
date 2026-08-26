@@ -187,6 +187,10 @@ function get_header() {
 function get_footer() {
 }
 
+if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) ) {
+	define( 'KOCOROLAB_REFRESH_DIR', $root . '/wp-content/mu-plugins/kocorolab-site-refresh' );
+}
+
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/publications.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/links.php';
