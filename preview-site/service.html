@@ -824,6 +824,34 @@ a.kl-soft-card:hover {
   margin: 1.2rem 0 1.6rem;
 }
 
+.kl-mhq-scale {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto;
+  gap: 0.35rem 0.85rem;
+  align-items: center;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-steps {
+  display: flex;
+  gap: 0.28rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kl-mhq-steps li {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 99px;
+  background: #d5e8e5;
+}
+
+.kl-mhq-steps li.is-on {
+  background: #128a82;
+}
+
 .kl-mhq-bar {
   display: grid;
   gap: 0.25rem;
@@ -933,7 +961,7 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 		<h2>リーダーシップ開発</h2>
 		<p>U理論などを用いた次世代リーダーシップ開発、組織開発、学びの設計。</p>
 		<h2>メンタルヘルス検査（MHQ2）</h2>
-		<p>うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。企業では採用・社内確認・人材育成に使えます。個人でも受験でき、結果の読み方案内や、必要ならカウンセリング・コーチングにつながります。診断の確定を目的としたものではありません。</p>
+		<p>うつリスク、ストレス環境・状況、ソーシャルサポート、発達障害の可能性などを測る MHQ2、および EQ 検査。120問、12〜15分。企業では採用・社内確認・人材育成に使えます。個人でも受験できます。診断の確定を目的としたものではありません。</p>
 		<p class="kl-actions">
 			<a class="kl-btn kl-btn-dark" href="https://kocorolab.com/mhqlp/">MHQ2の案内ページへ</a>
 			<a class="kl-btn kl-btn-ghost" href="mhq2.html">個人向け案内</a>
@@ -941,9 +969,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 		</p>
 		<h3>結果の読み方</h3>
 		<ul class="kl-read">
-			<li>数字は病名ではありません。今の傾向です。</li>
-			<li>高い項目は、この先数週のリズムのヒントとして見てください。</li>
-			<li>一人で抱えなくてよい、という選択もあります。読み解きは問い合わせへ。</li>
+			<li>数字は病名ではありません。うつリスクなどの傾向です。</li>
+			<li>5段階はリスクの目安です。病名ではありません。</li>
+			<li>詳細版はフィードバックセッションでの読み解きをおすすめします。申し込みは問い合わせへ。</li>
 		</ul>
 		<h2>人事コンサルティング・コーチング</h2>
 		<p>人事制度、研修、コーチング。事業会社の人事責任者としての実務を踏まえて支援します。</p>

@@ -40,7 +40,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'card1_title'    => 'リーダーシップ教育',
 		'card1_body'     => 'グロービス経営大学院と MIT Sloan IDEAS Asia Pacific での教育・研究。U理論などを用いた学び。',
 		'card2_title'    => 'メンタルヘルス（MHQ2）',
-		'card2_body'     => '企業の採用・育成に加え、個人でも受験できます。案内ページのほか、個人の申し込みと結果の読み方は問い合わせへ。',
+		'card2_body'     => '120問、12〜15分。企業の採用・育成に加え、個人でも受験できます。簡易版・詳細版とフィードバックセッションは問い合わせへ。',
 		'card3_title'    => '人事・組織支援',
 		'card3_body'     => '人事制度、研修、コーチング、調査研究。',
 		'work_link'      => 'サービスを見る',
@@ -90,41 +90,52 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc1_h'         => 'リーダーシップ開発',
 		'svc1_b'         => 'U理論などを用いた次世代リーダーシップ開発、組織開発、学びの設計。',
 		'svc2_h'         => 'メンタルヘルス検査（MHQ2）',
-		'svc2_b'         => 'うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。企業では採用・社内確認・人材育成に使えます。個人でも受験でき、結果の読み方案内や、必要ならカウンセリング・コーチングにつながります。診断の確定を目的としたものではありません。',
+		'svc2_b'         => 'うつリスク、ストレス環境・状況、ソーシャルサポート、発達障害の可能性などを測る MHQ2、および EQ 検査。120問、12〜15分。企業では採用・社内確認・人材育成に使えます。個人でも受験できます。診断の確定を目的としたものではありません。',
 		'svc2_link'      => 'MHQ2の案内ページへ',
 		'svc2_personal_link' => '個人向け案内',
 		'svc2_read_link' => '結果の読み方（見本）',
 		'mhq2_badge'     => '個人向け MHQ2',
-		'mhq2_title'     => '今の心の状態を、感覚だけで終わらせない',
-		'mhq2_lead'      => '認知科学に基づくメンタルヘルス質問票。診断ではなく、傾向を見て次の一歩を選べるための案内です。',
+		'mhq2_title'     => 'メンタルヘルス総合検査（MHQ2）',
+		'mhq2_lead'      => '120問、12〜15分のWeb受験です。診断ではなく、うつリスクや発達障害の可能性などの傾向を見る検査です。',
 		'mhq2_apply'     => '申し込む（問い合わせ）',
 		'mhq2_step1_h'   => '受験する',
-		'mhq2_step1_b'   => '質問に答えて、今の心の状態を客観的に見ます。',
+		'mhq2_step1_b'   => '120問に答えます。所要は12〜15分です。',
 		'mhq2_step2_h'   => '結果を読む',
-		'mhq2_step2_b'   => '数字は病名ではありません。傾向と、この先数週のヒントです。',
-		'mhq2_step3_h'   => '必要なら話を聞く',
-		'mhq2_step3_b'   => '読解セッションやコーチングは、問い合わせから。一人で抱えなくてよい。',
-		'mhq2_talk_h'    => '読解セッション',
-		'mhq2_talk_b'    => '結果を一緒に読み、過ごし方を整えます。治療ではありません。',
+		'mhq2_step2_b'   => '報告書は3領域7カテゴリーを5段階で示します。簡易版と詳細版があります。',
+		'mhq2_step3_h'   => '必要ならフィードバック',
+		'mhq2_step3_b'   => '詳細版は、専門家のフィードバックセッションでの読み解きをおすすめします。申し込みは問い合わせへ。',
+		'mhq2_scales_h'  => '測っていること（公開している範囲）',
+		'mhq2_price_h'   => '価格（個人）',
+		'mhq2_price_simple' => 'MHQ（簡易版）',
+		'mhq2_price_simple_v' => '3,000円',
+		'mhq2_price_detail' => 'MHQ（詳細版）',
+		'mhq2_price_detail_v' => '5,000円',
+		'mhq2_price_fb30' => 'フィードバックセッション（30分）',
+		'mhq2_price_fb30_v' => '4,000円',
+		'mhq2_price_fb60' => 'フィードバックセッション（1時間）',
+		'mhq2_price_fb60_v' => '8,000円',
+		'mhq2_price_note' => '簡易版は、うつリスクと発達障害の可能性の大まかな結果です。詳細版は16分類が付きます。詳細版はフィードバックセッションでの読み解きをおすすめします。',
+		'mhq2_talk_h'    => 'フィードバックセッション',
+		'mhq2_talk_b'    => '30分 4,000円、1時間 8,000円。結果を一緒に読みます。治療ではありません。',
 		'mhq2_coach_h'   => 'コーチング',
 		'mhq2_coach_b'   => '働き方や生活の一手に戻す並走です。申し込みは問い合わせへ。',
 		'mhq_read_sample'=> '見本',
 		'mhq_read_title' => 'MHQ2結果の読み方',
-		'mhq_read_lead'  => '本番の結果画面ではありません。数字の見方と、次の選択肢の見本です。',
-		'mhq_read_zone'  => '報告書の見本（長さは仮）',
-		'mhq_read_zone_b'=> '本番は3領域7カテゴリーを5段階で示します。下は公開している尺度名です。',
+		'mhq_read_lead'  => '本番の結果画面ではありません。公開している尺度名と、5段階の見え方の見本です。',
+		'mhq_read_zone'  => '5段階表示の見本',
+		'mhq_read_zone_b'=> '本番は3領域7カテゴリーです。下は公開している尺度名で、段階は仮です。',
 		'mhq_read_env'   => 'ストレス環境',
 		'mhq_read_sit'   => 'ストレス状況',
 		'mhq_read_support'=> 'ソーシャルサポート',
 		'mhq_read_risk'  => 'うつリスク',
 		'mhq_read_dev'   => 'コミュニケーション領域では、発達障害の可能性にも触れます。診断ではありません。',
-		'mhq_read_hint'  => '心の状態は変わります。定期的に見る、という使い方もあります。',
-		'mhq_read_session'=> '読解セッションを問い合わせ',
+		'mhq_read_hint'  => 'Web受験なので、場所を選ばず受けられます。',
+		'mhq_read_session'=> 'フィードバックセッションを問い合わせ',
 		'mhq_read_coach' => 'コーチングを問い合わせ',
 		'mhq_read_h'     => '結果の読み方',
-		'mhq_read_1'     => '数字は病名ではありません。今の傾向です。',
-		'mhq_read_2'     => '高い項目は、この先数週のリズムのヒントとして見てください。',
-		'mhq_read_3'     => '一人で抱えなくてよい、という選択もあります。読み解きは問い合わせへ。',
+		'mhq_read_1'     => '数字は病名ではありません。うつリスクなどの傾向です。',
+		'mhq_read_2'     => '5段階はリスクの目安です。病名ではありません。',
+		'mhq_read_3'     => '詳細版はフィードバックセッションでの読み解きをおすすめします。申し込みは問い合わせへ。',
 		'svc3_h'         => '人事コンサルティング・コーチング',
 		'svc3_b'         => '人事制度、研修、コーチング。事業会社の人事責任者としての実務を踏まえて支援します。',
 		'svc4_h'         => '学術研究・統計',
@@ -183,7 +194,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'card1_title'    => 'Leadership education',
 		'card1_body'     => 'Teaching and research at GLOBIS University and MIT Sloan IDEAS Asia Pacific, including Theory U.',
 		'card2_title'    => 'Mental health (MHQ2)',
-		'card2_body'     => 'For hiring and development at companies, and also for individuals. The landing page has details; personal applications and how to read results go through contact.',
+		'card2_body'     => '120 questions, about 12–15 minutes. For hiring and development at companies, and also for individuals. Brief and detailed versions, and feedback sessions, go through contact.',
 		'card3_title'    => 'HR and organization support',
 		'card3_body'     => 'HR systems, training, coaching, and research.',
 		'work_link'      => 'View services',
@@ -233,41 +244,52 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc1_h'         => 'Leadership development',
 		'svc1_b'         => 'Next-generation leadership, organization development, and learning design, including Theory U.',
 		'svc2_h'         => 'Mental health questionnaire (MHQ2)',
-		'svc2_b'         => 'MHQ2 and EQ assessments. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too, with a reading guide and optional counseling or coaching. MHQ2 is for risk tendencies, not a clinical diagnosis.',
+		'svc2_b'         => 'MHQ2 and EQ assessments. MHQ2 covers depression risk, stress environment and situation, social support, and the possibility of developmental disorders. 120 questions, about 12–15 minutes. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too. Not a clinical diagnosis.',
 		'svc2_link'      => 'Open the MHQ2 landing page',
 		'svc2_personal_link' => 'For individuals',
 		'svc2_read_link' => 'How to read results (sample)',
 		'mhq2_badge'     => 'MHQ2 for individuals',
-		'mhq2_title'     => 'Do not leave the state of the mind as feeling alone',
-		'mhq2_lead'      => 'A cognitive-science mental health questionnaire. Not a diagnosis: a way to see a tendency and choose a next step.',
+		'mhq2_title'     => 'Mental health questionnaire (MHQ2)',
+		'mhq2_lead'      => '120 questions, about 12–15 minutes online. Not a diagnosis: it shows tendencies such as depression risk and the possibility of developmental disorders.',
 		'mhq2_apply'     => 'Apply (contact)',
 		'mhq2_step1_h'   => 'Take it',
-		'mhq2_step1_b'   => 'Answer the questions and look at the present state more objectively.',
+		'mhq2_step1_b'   => '120 questions. About 12–15 minutes.',
 		'mhq2_step2_h'   => 'Read the results',
-		'mhq2_step2_b'   => 'The numbers are not a disease name. They are a tendency and a hint for the coming weeks.',
-		'mhq2_step3_h'   => 'Talk if needed',
-		'mhq2_step3_b'   => 'Reading sessions and coaching go through contact. You do not have to sit with it alone.',
-		'mhq2_talk_h'    => 'Reading session',
-		'mhq2_talk_b'    => 'Read the results together and settle how to spend the next weeks. This is not treatment.',
+		'mhq2_step2_b'   => 'The report uses 3 domains and 7 categories on a 5-point risk scale. There is a brief version and a detailed version.',
+		'mhq2_step3_h'   => 'Feedback if needed',
+		'mhq2_step3_b'   => 'For the detailed version, a specialist feedback session is recommended. Apply through contact.',
+		'mhq2_scales_h'  => 'What it measures (public names)',
+		'mhq2_price_h'   => 'Individual prices',
+		'mhq2_price_simple' => 'MHQ (brief)',
+		'mhq2_price_simple_v' => '3,000 yen',
+		'mhq2_price_detail' => 'MHQ (detailed)',
+		'mhq2_price_detail_v' => '5,000 yen',
+		'mhq2_price_fb30' => 'Feedback session (30 min)',
+		'mhq2_price_fb30_v' => '4,000 yen',
+		'mhq2_price_fb60' => 'Feedback session (60 min)',
+		'mhq2_price_fb60_v' => '8,000 yen',
+		'mhq2_price_note' => 'The brief version gives a broad reading of depression risk and the possibility of developmental disorders. The detailed version adds 16 categories. A feedback session is recommended for the detailed version.',
+		'mhq2_talk_h'    => 'Feedback session',
+		'mhq2_talk_b'    => '30 minutes 4,000 yen, or 60 minutes 8,000 yen. Read the results together. This is not treatment.',
 		'mhq2_coach_h'   => 'Coaching',
 		'mhq2_coach_b'   => 'Turn the reading into one next move at work or in life. Apply through contact.',
 		'mhq_read_sample'=> 'Sample',
 		'mhq_read_title' => 'How to read MHQ2 results',
-		'mhq_read_lead'  => 'This is not a live results screen. It is a sample of how to read the numbers and what to do next.',
-		'mhq_read_zone'  => 'Sample report (bar lengths are dummy)',
-		'mhq_read_zone_b'=> 'The live report uses 3 domains and 7 categories on a 5-point risk scale. The names below are the public scales.',
+		'mhq_read_lead'  => 'This is not a live results screen. It is a sample of the public scale names and the 5-point display.',
+		'mhq_read_zone'  => 'Sample 5-point display',
+		'mhq_read_zone_b'=> 'The live report uses 3 domains and 7 categories. The names below are public; the filled steps are dummy.',
 		'mhq_read_env'   => 'Stress environment',
 		'mhq_read_sit'   => 'Stress situation',
 		'mhq_read_support'=> 'Social support',
 		'mhq_read_risk'  => 'Depression risk',
 		'mhq_read_dev'   => 'The communication domain also addresses the possibility of developmental disorders. This is not a diagnosis.',
-		'mhq_read_hint'  => 'States change. Checking again later is a valid use.',
-		'mhq_read_session'=> 'Ask about a reading session',
+		'mhq_read_hint'  => 'It is a web test, so it can be taken from anywhere with internet access.',
+		'mhq_read_session'=> 'Ask about a feedback session',
 		'mhq_read_coach' => 'Ask about coaching',
 		'mhq_read_h'     => 'How to read the results',
-		'mhq_read_1'     => 'The numbers are not a diagnosis. They describe a current tendency.',
-		'mhq_read_2'     => 'A high score is a hint about the next few weeks of rhythm, not a label.',
-		'mhq_read_3'     => 'You do not have to sit with it alone. Reading support is through contact.',
+		'mhq_read_1'     => 'The numbers are not a diagnosis. They describe tendencies such as depression risk.',
+		'mhq_read_2'     => 'The 5-point scale is a risk guide, not a disease name.',
+		'mhq_read_3'     => 'A feedback session is recommended for the detailed version. Apply through contact.',
 		'svc3_h'         => 'HR consulting and coaching',
 		'svc3_b'         => 'HR systems, training, and coaching, informed by work as head of HR in operating companies.',
 		'svc4_h'         => 'Research and statistics',
@@ -564,6 +586,22 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 	return ob_get_clean();
 }
 
+function kocorolab_refresh_mhq_sample_scale_html( $label, $filled ) {
+	$filled = max( 0, min( 5, (int) $filled ) );
+	ob_start();
+	?>
+	<div class="kl-mhq-scale">
+		<span><?php echo esc_html( $label ); ?></span>
+		<ol class="kl-mhq-steps" aria-label="<?php echo esc_attr( $label . ' ' . $filled . '/5' ); ?>">
+			<?php for ( $i = 1; $i <= 5; $i++ ) : ?>
+				<li<?php echo $i <= $filled ? ' class="is-on"' : ''; ?>></li>
+			<?php endfor; ?>
+		</ol>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
 function kocorolab_refresh_mhq2_html( $c, $lang ) {
 	$hero = kocorolab_refresh_image_url( 'hero' );
 	ob_start();
@@ -593,7 +631,23 @@ function kocorolab_refresh_mhq2_html( $c, $lang ) {
 					<p><?php echo esc_html( $c['mhq2_step3_b'] ); ?></p>
 				</a>
 			</div>
+			<h2><?php echo esc_html( $c['mhq2_scales_h'] ); ?></h2>
+			<ul class="kl-read">
+				<li><?php echo esc_html( $c['mhq_read_env'] ); ?></li>
+				<li><?php echo esc_html( $c['mhq_read_sit'] ); ?></li>
+				<li><?php echo esc_html( $c['mhq_read_support'] ); ?></li>
+				<li><?php echo esc_html( $c['mhq_read_risk'] ); ?></li>
+				<li><?php echo esc_html( $c['mhq_read_dev'] ); ?></li>
+			</ul>
 			<p class="kl-mhq-note"><?php echo esc_html( $c['svc2_b'] ); ?></p>
+			<h2><?php echo esc_html( $c['mhq2_price_h'] ); ?></h2>
+			<table class="kl-table">
+				<tr><th><?php echo esc_html( $c['mhq2_price_simple'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_simple_v'] ); ?></td></tr>
+				<tr><th><?php echo esc_html( $c['mhq2_price_detail'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_detail_v'] ); ?></td></tr>
+				<tr><th><?php echo esc_html( $c['mhq2_price_fb30'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_fb30_v'] ); ?></td></tr>
+				<tr><th><?php echo esc_html( $c['mhq2_price_fb60'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_fb60_v'] ); ?></td></tr>
+			</table>
+			<p><?php echo esc_html( $c['mhq2_price_note'] ); ?></p>
 			<h2><?php echo esc_html( $c['mhq2_talk_h'] ); ?></h2>
 			<p><?php echo esc_html( $c['mhq2_talk_b'] ); ?></p>
 			<h2><?php echo esc_html( $c['mhq2_coach_h'] ); ?></h2>
@@ -619,10 +673,10 @@ function kocorolab_refresh_mhq_read_html( $c, $lang ) {
 				<p class="kl-kicker"><?php echo esc_html( $c['mhq_read_sample'] ); ?></p>
 				<h2><?php echo esc_html( $c['mhq_read_zone'] ); ?></h2>
 				<p><?php echo esc_html( $c['mhq_read_zone_b'] ); ?></p>
-				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_env'] ); ?></span><i style="width:48%"></i></div>
-				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_sit'] ); ?></span><i style="width:58%"></i></div>
-				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_support'] ); ?></span><i style="width:62%"></i></div>
-				<div class="kl-mhq-bar"><span><?php echo esc_html( $c['mhq_read_risk'] ); ?></span><i style="width:54%"></i></div>
+				<?php echo kocorolab_refresh_mhq_sample_scale_html( $c['mhq_read_env'], 3 ); ?>
+				<?php echo kocorolab_refresh_mhq_sample_scale_html( $c['mhq_read_sit'], 3 ); ?>
+				<?php echo kocorolab_refresh_mhq_sample_scale_html( $c['mhq_read_support'], 2 ); ?>
+				<?php echo kocorolab_refresh_mhq_sample_scale_html( $c['mhq_read_risk'], 3 ); ?>
 				<p><?php echo esc_html( $c['mhq_read_dev'] ); ?></p>
 				<p><?php echo esc_html( $c['mhq_read_hint'] ); ?></p>
 			</article>

@@ -824,6 +824,34 @@ a.kl-soft-card:hover {
   margin: 1.2rem 0 1.6rem;
 }
 
+.kl-mhq-scale {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto;
+  gap: 0.35rem 0.85rem;
+  align-items: center;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-steps {
+  display: flex;
+  gap: 0.28rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kl-mhq-steps li {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 99px;
+  background: #d5e8e5;
+}
+
+.kl-mhq-steps li.is-on {
+  background: #128a82;
+}
+
 .kl-mhq-bar {
   display: grid;
   gap: 0.25rem;
@@ -931,25 +959,61 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 	<div class="kl-page"><h1>How to read results</h1>	<div class="kl-page kl-mhq-read">
 		<p class="kl-badge">Sample</p>
 		<h1>How to read MHQ2 results</h1>
-		<p class="kl-lead">This is not a live results screen. It is a sample of how to read the numbers and what to do next.</p>
+		<p class="kl-lead">This is not a live results screen. It is a sample of the public scale names and the 5-point display.</p>
 		<div class="kl-mhq-read-grid">
 			<article class="kl-soft-card">
 				<p class="kl-kicker">Sample</p>
-				<h2>Sample report (bar lengths are dummy)</h2>
-				<p>The live report uses 3 domains and 7 categories on a 5-point risk scale. The names below are the public scales.</p>
-				<div class="kl-mhq-bar"><span>Stress environment</span><i style="width:48%"></i></div>
-				<div class="kl-mhq-bar"><span>Stress situation</span><i style="width:58%"></i></div>
-				<div class="kl-mhq-bar"><span>Social support</span><i style="width:62%"></i></div>
-				<div class="kl-mhq-bar"><span>Depression risk</span><i style="width:54%"></i></div>
-				<p>The communication domain also addresses the possibility of developmental disorders. This is not a diagnosis.</p>
-				<p>States change. Checking again later is a valid use.</p>
+				<h2>Sample 5-point display</h2>
+				<p>The live report uses 3 domains and 7 categories. The names below are public; the filled steps are dummy.</p>
+					<div class="kl-mhq-scale">
+		<span>Stress environment</span>
+		<ol class="kl-mhq-steps" aria-label="Stress environment 3/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+						<div class="kl-mhq-scale">
+		<span>Stress situation</span>
+		<ol class="kl-mhq-steps" aria-label="Stress situation 3/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+						<div class="kl-mhq-scale">
+		<span>Social support</span>
+		<ol class="kl-mhq-steps" aria-label="Social support 2/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+						<div class="kl-mhq-scale">
+		<span>Depression risk</span>
+		<ol class="kl-mhq-steps" aria-label="Depression risk 3/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+					<p>The communication domain also addresses the possibility of developmental disorders. This is not a diagnosis.</p>
+				<p>It is a web test, so it can be taken from anywhere with internet access.</p>
 			</article>
 			<article class="kl-soft-card">
 				<h2>How to read the results</h2>
 				<ul class="kl-read">
-					<li>The numbers are not a diagnosis. They describe a current tendency.</li>
-					<li>A high score is a hint about the next few weeks of rhythm, not a label.</li>
-					<li>You do not have to sit with it alone. Reading support is through contact.</li>
+					<li>The numbers are not a diagnosis. They describe tendencies such as depression risk.</li>
+					<li>The 5-point scale is a risk guide, not a disease name.</li>
+					<li>A feedback session is recommended for the detailed version. Apply through contact.</li>
 				</ul>
 			</article>
 		</div>
@@ -958,8 +1022,8 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 				<h3>Apply (contact)</h3>
 			</a>
 			<a class="kl-soft-card" href="contact.html">
-				<h3>Ask about a reading session</h3>
-				<p>Read the results together and settle how to spend the next weeks. This is not treatment.</p>
+				<h3>Ask about a feedback session</h3>
+				<p>30 minutes 4,000 yen, or 60 minutes 8,000 yen. Read the results together. This is not treatment.</p>
 			</a>
 			<a class="kl-soft-card" href="contact.html">
 				<h3>Ask about coaching</h3>

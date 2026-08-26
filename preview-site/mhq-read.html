@@ -824,6 +824,34 @@ a.kl-soft-card:hover {
   margin: 1.2rem 0 1.6rem;
 }
 
+.kl-mhq-scale {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto;
+  gap: 0.35rem 0.85rem;
+  align-items: center;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-steps {
+  display: flex;
+  gap: 0.28rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kl-mhq-steps li {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 99px;
+  background: #d5e8e5;
+}
+
+.kl-mhq-steps li.is-on {
+  background: #128a82;
+}
+
 .kl-mhq-bar {
   display: grid;
   gap: 0.25rem;
@@ -931,25 +959,61 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 	<div class="kl-page"><h1>結果の読み方</h1>	<div class="kl-page kl-mhq-read">
 		<p class="kl-badge">見本</p>
 		<h1>MHQ2結果の読み方</h1>
-		<p class="kl-lead">本番の結果画面ではありません。数字の見方と、次の選択肢の見本です。</p>
+		<p class="kl-lead">本番の結果画面ではありません。公開している尺度名と、5段階の見え方の見本です。</p>
 		<div class="kl-mhq-read-grid">
 			<article class="kl-soft-card">
 				<p class="kl-kicker">見本</p>
-				<h2>報告書の見本（長さは仮）</h2>
-				<p>本番は3領域7カテゴリーを5段階で示します。下は公開している尺度名です。</p>
-				<div class="kl-mhq-bar"><span>ストレス環境</span><i style="width:48%"></i></div>
-				<div class="kl-mhq-bar"><span>ストレス状況</span><i style="width:58%"></i></div>
-				<div class="kl-mhq-bar"><span>ソーシャルサポート</span><i style="width:62%"></i></div>
-				<div class="kl-mhq-bar"><span>うつリスク</span><i style="width:54%"></i></div>
-				<p>コミュニケーション領域では、発達障害の可能性にも触れます。診断ではありません。</p>
-				<p>心の状態は変わります。定期的に見る、という使い方もあります。</p>
+				<h2>5段階表示の見本</h2>
+				<p>本番は3領域7カテゴリーです。下は公開している尺度名で、段階は仮です。</p>
+					<div class="kl-mhq-scale">
+		<span>ストレス環境</span>
+		<ol class="kl-mhq-steps" aria-label="ストレス環境 3/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+						<div class="kl-mhq-scale">
+		<span>ストレス状況</span>
+		<ol class="kl-mhq-steps" aria-label="ストレス状況 3/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+						<div class="kl-mhq-scale">
+		<span>ソーシャルサポート</span>
+		<ol class="kl-mhq-steps" aria-label="ソーシャルサポート 2/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+						<div class="kl-mhq-scale">
+		<span>うつリスク</span>
+		<ol class="kl-mhq-steps" aria-label="うつリスク 3/5">
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li class="is-on"></li>
+							<li></li>
+							<li></li>
+					</ol>
+	</div>
+					<p>コミュニケーション領域では、発達障害の可能性にも触れます。診断ではありません。</p>
+				<p>Web受験なので、場所を選ばず受けられます。</p>
 			</article>
 			<article class="kl-soft-card">
 				<h2>結果の読み方</h2>
 				<ul class="kl-read">
-					<li>数字は病名ではありません。今の傾向です。</li>
-					<li>高い項目は、この先数週のリズムのヒントとして見てください。</li>
-					<li>一人で抱えなくてよい、という選択もあります。読み解きは問い合わせへ。</li>
+					<li>数字は病名ではありません。うつリスクなどの傾向です。</li>
+					<li>5段階はリスクの目安です。病名ではありません。</li>
+					<li>詳細版はフィードバックセッションでの読み解きをおすすめします。申し込みは問い合わせへ。</li>
 				</ul>
 			</article>
 		</div>
@@ -958,8 +1022,8 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 				<h3>申し込む（問い合わせ）</h3>
 			</a>
 			<a class="kl-soft-card" href="contact.html">
-				<h3>読解セッションを問い合わせ</h3>
-				<p>結果を一緒に読み、過ごし方を整えます。治療ではありません。</p>
+				<h3>フィードバックセッションを問い合わせ</h3>
+				<p>30分 4,000円、1時間 8,000円。結果を一緒に読みます。治療ではありません。</p>
 			</a>
 			<a class="kl-soft-card" href="contact.html">
 				<h3>コーチングを問い合わせ</h3>

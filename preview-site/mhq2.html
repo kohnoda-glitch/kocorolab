@@ -824,6 +824,34 @@ a.kl-soft-card:hover {
   margin: 1.2rem 0 1.6rem;
 }
 
+.kl-mhq-scale {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto;
+  gap: 0.35rem 0.85rem;
+  align-items: center;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-steps {
+  display: flex;
+  gap: 0.28rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kl-mhq-steps li {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 99px;
+  background: #d5e8e5;
+}
+
+.kl-mhq-steps li.is-on {
+  background: #128a82;
+}
+
 .kl-mhq-bar {
   display: grid;
   gap: 0.25rem;
@@ -931,8 +959,8 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 		<div class="kl-mhq2">
 		<section class="kl-mhq2-hero" style="--kl-hero-image: url('images/hero-horizon.jpg');">
 			<p class="kl-badge">個人向け MHQ2</p>
-			<h1>今の心の状態を、感覚だけで終わらせない</h1>
-			<p class="kl-lead">認知科学に基づくメンタルヘルス質問票。診断ではなく、傾向を見て次の一歩を選べるための案内です。</p>
+			<h1>メンタルヘルス総合検査（MHQ2）</h1>
+			<p class="kl-lead">120問、12〜15分のWeb受験です。診断ではなく、うつリスクや発達障害の可能性などの傾向を見る検査です。</p>
 			<p class="kl-actions">
 				<a class="kl-btn" href="contact.html">申し込む（問い合わせ）</a>
 				<a class="kl-btn kl-btn-ghost" href="mhq-read.html">結果の読み方（見本）</a>
@@ -942,20 +970,36 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<div class="kl-photo-grid kl-text-grid">
 				<article class="kl-soft-card">
 					<h3>受験する</h3>
-					<p>質問に答えて、今の心の状態を客観的に見ます。</p>
+					<p>120問に答えます。所要は12〜15分です。</p>
 				</article>
 				<a class="kl-soft-card" href="mhq-read.html">
 					<h3>結果を読む</h3>
-					<p>数字は病名ではありません。傾向と、この先数週のヒントです。</p>
+					<p>報告書は3領域7カテゴリーを5段階で示します。簡易版と詳細版があります。</p>
 				</a>
 				<a class="kl-soft-card" href="contact.html">
-					<h3>必要なら話を聞く</h3>
-					<p>読解セッションやコーチングは、問い合わせから。一人で抱えなくてよい。</p>
+					<h3>必要ならフィードバック</h3>
+					<p>詳細版は、専門家のフィードバックセッションでの読み解きをおすすめします。申し込みは問い合わせへ。</p>
 				</a>
 			</div>
-			<p class="kl-mhq-note">うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。企業では採用・社内確認・人材育成に使えます。個人でも受験でき、結果の読み方案内や、必要ならカウンセリング・コーチングにつながります。診断の確定を目的としたものではありません。</p>
-			<h2>読解セッション</h2>
-			<p>結果を一緒に読み、過ごし方を整えます。治療ではありません。</p>
+			<h2>測っていること（公開している範囲）</h2>
+			<ul class="kl-read">
+				<li>ストレス環境</li>
+				<li>ストレス状況</li>
+				<li>ソーシャルサポート</li>
+				<li>うつリスク</li>
+				<li>コミュニケーション領域では、発達障害の可能性にも触れます。診断ではありません。</li>
+			</ul>
+			<p class="kl-mhq-note">うつリスク、ストレス環境・状況、ソーシャルサポート、発達障害の可能性などを測る MHQ2、および EQ 検査。120問、12〜15分。企業では採用・社内確認・人材育成に使えます。個人でも受験できます。診断の確定を目的としたものではありません。</p>
+			<h2>価格（個人）</h2>
+			<table class="kl-table">
+				<tr><th>MHQ（簡易版）</th><td>3,000円</td></tr>
+				<tr><th>MHQ（詳細版）</th><td>5,000円</td></tr>
+				<tr><th>フィードバックセッション（30分）</th><td>4,000円</td></tr>
+				<tr><th>フィードバックセッション（1時間）</th><td>8,000円</td></tr>
+			</table>
+			<p>簡易版は、うつリスクと発達障害の可能性の大まかな結果です。詳細版は16分類が付きます。詳細版はフィードバックセッションでの読み解きをおすすめします。</p>
+			<h2>フィードバックセッション</h2>
+			<p>30分 4,000円、1時間 8,000円。結果を一緒に読みます。治療ではありません。</p>
 			<h2>コーチング</h2>
 			<p>働き方や生活の一手に戻す並走です。申し込みは問い合わせへ。</p>
 			<p class="kl-actions">
