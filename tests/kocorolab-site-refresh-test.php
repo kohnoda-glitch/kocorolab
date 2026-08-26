@@ -162,8 +162,12 @@ $checks = array(
 		&& false !== strpos( $ja['svc2_b'], '診断の確定を目的としたものではありません' )
 		&& false !== strpos( $ja_service, '個人の受験・読み方は問い合わせ' )
 		&& false !== strpos( $ja_service, '/contact/' )
+		&& false !== strpos( $ja_service, '数字は病名ではありません' )
+		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), "kocorolab_refresh_url( '/contact/', '/en/contact/' )" )
+		&& false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), '<a class="kl-soft-card"' )
 		&& false !== strpos( $en['card2_body'], 'individuals' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/en/contact/' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), 'not a diagnosis' )
 	),
 	'contact page has mailto and topics' => ( false !== strpos( $ja_contact, 'mailto:info@kocorolab.com' ) && false !== strpos( $ja_contact, '講演・研修依頼' ) ),
 	'contact uses kocorolab.com not retired xsrv' => ( false === strpos( $contact, 'knoda.xsrv.jp' ) && 'info@kocorolab.com' === kocorolab_refresh_contact_email() ),

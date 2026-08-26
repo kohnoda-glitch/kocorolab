@@ -93,6 +93,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc2_b'         => 'うつリスクなどの傾向を把握するための MHQ2、および EQ 検査。企業では採用・社内確認・人材育成に使えます。個人でも受験でき、結果の読み方案内や、必要ならカウンセリング・コーチングにつながります。診断の確定を目的としたものではありません。',
 		'svc2_link'      => 'MHQ2の案内ページへ',
 		'svc2_personal_link' => '個人の受験・読み方は問い合わせ',
+		'mhq_read_h'     => '結果の読み方',
+		'mhq_read_1'     => '数字は病名ではありません。今の傾向です。',
+		'mhq_read_2'     => '高い項目は、この先数週のリズムのヒントとして見てください。',
+		'mhq_read_3'     => '一人で抱えなくてよい、という選択もあります。読み解きは問い合わせへ。',
 		'svc3_h'         => '人事コンサルティング・コーチング',
 		'svc3_b'         => '人事制度、研修、コーチング。事業会社の人事責任者としての実務を踏まえて支援します。',
 		'svc4_h'         => '学術研究・統計',
@@ -204,6 +208,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc2_b'         => 'MHQ2 and EQ assessments. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too, with a reading guide and optional counseling or coaching. MHQ2 is for risk tendencies, not a clinical diagnosis.',
 		'svc2_link'      => 'Open the MHQ2 landing page',
 		'svc2_personal_link' => 'Individuals: apply and read results via contact',
+		'mhq_read_h'     => 'How to read the results',
+		'mhq_read_1'     => 'The numbers are not a diagnosis. They describe a current tendency.',
+		'mhq_read_2'     => 'A high score is a hint about the next few weeks of rhythm, not a label.',
+		'mhq_read_3'     => 'You do not have to sit with it alone. Reading support is through contact.',
 		'svc3_h'         => 'HR consulting and coaching',
 		'svc3_b'         => 'HR systems, training, and coaching, informed by work as head of HR in operating companies.',
 		'svc4_h'         => 'Research and statistics',
@@ -454,6 +462,12 @@ function kocorolab_refresh_service_html( $c, $lang ) {
 			<a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a>
 			<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['svc2_personal_link'] ); ?></a>
 		</p>
+		<h3><?php echo esc_html( $c['mhq_read_h'] ); ?></h3>
+		<ul class="kl-read">
+			<li><?php echo esc_html( $c['mhq_read_1'] ); ?></li>
+			<li><?php echo esc_html( $c['mhq_read_2'] ); ?></li>
+			<li><?php echo esc_html( $c['mhq_read_3'] ); ?></li>
+		</ul>
 		<h2><?php echo esc_html( $c['svc3_h'] ); ?></h2>
 		<p><?php echo esc_html( $c['svc3_b'] ); ?></p>
 		<h2><?php echo esc_html( $c['svc4_h'] ); ?></h2>

@@ -159,6 +159,12 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82);
 }
 
+.kl-page .kl-btn-ghost {
+  background: transparent;
+  color: #0e2a36 !important;
+  box-shadow: inset 0 0 0 1px #0e2a36;
+}
+
 .kl-btn-dark {
   background: #0e2a36;
   color: #f4fffb !important;
@@ -347,6 +353,31 @@ a.kl-soft-card {
 
 a.kl-soft-card:hover {
   box-shadow: 0 18px 40px rgba(18, 138, 130, 0.16);
+}
+
+.kl-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+}
+
+.kl-card-links a,
+.kl-read a {
+  color: #128a82;
+}
+
+.kl-page h3 {
+  margin: 1.1rem 0 0.4rem;
+  font-size: 1.02rem;
+}
+
+.kl-read {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+  color: #3c5661;
+  line-height: 1.7;
 }
 
 .kl-photo-card figure {
@@ -858,6 +889,12 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<a class="kl-btn kl-btn-dark" href="https://kocorolab.com/mhqlp/?lang=en">Open the MHQ2 landing page</a>
 			<a class="kl-btn kl-btn-ghost" href="contact.html">Individuals: apply and read results via contact</a>
 		</p>
+		<h3>How to read the results</h3>
+		<ul class="kl-read">
+			<li>The numbers are not a diagnosis. They describe a current tendency.</li>
+			<li>A high score is a hint about the next few weeks of rhythm, not a label.</li>
+			<li>You do not have to sit with it alone. Reading support is through contact.</li>
+		</ul>
 		<h2>HR consulting and coaching</h2>
 		<p>HR systems, training, and coaching, informed by work as head of HR in operating companies.</p>
 		<h2>Research and statistics</h2>
