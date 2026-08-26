@@ -16,6 +16,10 @@ function kocorolab_refresh_note_url() {
 	return 'https://note.com/koheinoda';
 }
 
+function kocorolab_refresh_medium_url() {
+	return 'https://medium.com/@koheinoda';
+}
+
 function kocorolab_refresh_gbx_report_url() {
 	return 'https://www.atpress.ne.jp/news/37250';
 }

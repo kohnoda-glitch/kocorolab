@@ -72,18 +72,23 @@ $checks = array(
 	'JA representative director' => false !== strpos( $ja['cred2'], '株式会社ココロラボ 代表取締役' ),
 	'hero is company not personal CV' => ( false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kl-creds' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'kocorolab_refresh_titles' ) && false === strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), 'cred1' ) ),
 	'titles stay on named profile' => ( false !== strpos( $ja_profile, '野田' ) && false !== strpos( $ja_profile, '博士（学術 / 認知科学）' ) && false !== strpos( $ja_bio, '野田 浩平' ) ),
-	'profile links CCL Japan, Seven Generations, and note' => (
+	'profile links CCL Japan, Seven Generations, note, and Medium' => (
 		false !== strpos( $ja_profile, 'japan.citizensclimatelobby.org' )
 		&& false !== strpos( $ja_profile, 'sevengenerations.or.jp' )
 		&& false !== strpos( $ja_profile, 'note.com/koheinoda' )
+		&& false !== strpos( $ja_profile, 'medium.com/@koheinoda' )
 		&& false !== strpos( $ja_profile, '市民気候ロビージャパン' )
+		&& false !== strpos( $ja_profile, '超党派の対話' )
 		&& false !== strpos( $ja_profile, 'セブン・ジェネレーションズ' )
 		&& false !== strpos( $en_profile, 'Citizens’ Climate Lobby Japan' )
+		&& false !== strpos( $en_profile, 'nonpartisan citizen dialogue' )
 		&& false !== strpos( $en_profile, 'NPO Seven Generations' )
+		&& false !== strpos( $en_profile, 'medium.com/@koheinoda' )
 	),
 	'home and company bios also link civic roles' => (
 		false !== strpos( $ja_bio, 'japan.citizensclimatelobby.org' )
 		&& false !== strpos( $ja_bio, 'note.com/koheinoda' )
+		&& false !== strpos( $ja_bio, 'medium.com/@koheinoda' )
 		&& false !== strpos( $ja_company, 'japan.citizensclimatelobby.org' )
 		&& false !== strpos( $ja_company, 'sevengenerations.or.jp' )
 		&& false !== strpos( $ja['cred5'], '市民気候ロビージャパン' )

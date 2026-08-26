@@ -32,7 +32,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'domain2_body'   => 'リーダーシップ教育、人事、組織づくり。上場前と上場後の事業会社で人事責任者を務めた経験を、現場で使える形にします。',
 		'domain3_kicker' => '環境',
 		'domain3_title'  => '持続可能な未来とつなぐ',
-		'domain3_body'   => 'MIT Sloan IDEAS Asia Pacific や市民気候ロビージャパンでの市民活動など、社会と地球のあいだでも実践します。',
+		'domain3_body'   => 'MIT Sloan IDEAS Asia Pacific や、市民気候ロビージャパンでの超党派の対話など、気候変動を社会のしくみの問題としても扱います。',
 		'section_work'   => 'サービス',
 		'work_lead'      => '細かい下層ページは増やしません。必要なものは、この一枚と新着にまとめます。',
 		'card1_title'    => 'リーダーシップ教育',
@@ -95,7 +95,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_b'         => '認知モデル、心理統計、調査研究。',
 		'profile_h2'     => '野田浩平',
 		'profile_role'   => '博士（学術 / 認知科学）',
-		'profile_now'    => '市民気候ロビージャパン代表、およびNPO法人セブン・ジェネレーションズ監事も務めています。文章は note でも公開しています。',
+		'profile_now'    => '市民気候ロビージャパン代表（気候変動についての超党派の対話）、およびNPO法人セブン・ジェネレーションズ監事も務めています。文章は note と Medium でも公開しています。',
 		'profile_past'   => 'これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。',
 		'profile_note'   => '研究実績は発表文献、ときどきの案内は活動・新着をご覧ください。',
 		'label_name'     => '研究所名',
@@ -141,7 +141,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'domain2_body'   => 'Leadership education, HR, and organization building, informed by work as head of HR in pre-IPO and listed companies.',
 		'domain3_kicker' => 'Environment',
 		'domain3_title'  => 'Connect to a livable future',
-		'domain3_body'   => 'Practice also at the edge of society and planet, including MIT Sloan IDEAS Asia Pacific and Citizens’ Climate Lobby Japan.',
+		'domain3_body'   => 'Practice also between society and planet, including MIT Sloan IDEAS Asia Pacific and Citizens’ Climate Lobby Japan’s nonpartisan citizen dialogue on climate.',
 		'section_work'   => 'Services',
 		'work_lead'      => 'We keep this to one page. Updates and brochures go to News & activities.',
 		'card1_title'    => 'Leadership education',
@@ -204,7 +204,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'svc4_b'         => 'Cognitive modeling, psychological statistics, and commissioned studies.',
 		'profile_h2'     => 'Kohei Noda',
 		'profile_role'   => 'Ph.D. in Cognitive Science',
-		'profile_now'    => 'He also serves as Japan representative of Citizens’ Climate Lobby Japan and as auditor of NPO Seven Generations. Writing is also on note.',
+		'profile_now'    => 'He also serves as Japan representative of Citizens’ Climate Lobby Japan (nonpartisan citizen dialogue on climate) and as auditor of NPO Seven Generations. Writing is also on note and Medium.',
 		'profile_past'   => 'He later served as head of human resources in operating companies, including a pre-IPO growth company and a listed company.',
 		'profile_note'   => 'See Publications for research, and News & activities for occasional notes.',
 		'label_name'     => 'Name',
@@ -277,13 +277,14 @@ function kocorolab_refresh_title_list_html( $lang = null ) {
 }
 
 function kocorolab_refresh_civic_roles_html( $lang = 'ja' ) {
-	$ccl = '<a href="' . esc_url( kocorolab_refresh_ccl_japan_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'Citizens’ Climate Lobby Japan' : '市民気候ロビージャパン' ) . '</a>';
-	$sg  = '<a href="' . esc_url( kocorolab_refresh_seven_generations_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'NPO Seven Generations' : 'NPO法人セブン・ジェネレーションズ' ) . '</a>';
-	$note = '<a href="' . esc_url( kocorolab_refresh_note_url() ) . '">note</a>';
+	$ccl    = '<a href="' . esc_url( kocorolab_refresh_ccl_japan_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'Citizens’ Climate Lobby Japan' : '市民気候ロビージャパン' ) . '</a>';
+	$sg     = '<a href="' . esc_url( kocorolab_refresh_seven_generations_url() ) . '">' . esc_html( ( 'en' === $lang ) ? 'NPO Seven Generations' : 'NPO法人セブン・ジェネレーションズ' ) . '</a>';
+	$note   = '<a href="' . esc_url( kocorolab_refresh_note_url() ) . '">note</a>';
+	$medium = '<a href="' . esc_url( kocorolab_refresh_medium_url() ) . '">Medium</a>';
 	if ( 'en' === $lang ) {
-		return '<p class="kl-civic">' . $ccl . ' (Japan representative) and ' . $sg . ' (auditor). Writing is also on ' . $note . '.</p>';
+		return '<p class="kl-civic">' . $ccl . ' (Japan representative; nonpartisan citizen dialogue on climate) and ' . $sg . ' (auditor). Writing is also on ' . $note . ' and ' . $medium . '.</p>';
 	}
-	return '<p class="kl-civic">' . $ccl . '代表、および' . $sg . '監事。文章は' . $note . 'でも公開しています。</p>';
+	return '<p class="kl-civic">' . $ccl . '代表（気候変動についての超党派の対話）、および' . $sg . '監事。文章は' . $note . 'と' . $medium . 'でも公開しています。</p>';
 }
 
 /**
@@ -457,6 +458,8 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 			<a href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en', $lang ) ); ?>"><?php echo esc_html( $c['news_link'] ); ?></a>
 			·
 			<a href="<?php echo esc_url( kocorolab_refresh_note_url() ); ?>">note</a>
+			·
+			<a href="<?php echo esc_url( kocorolab_refresh_medium_url() ); ?>">Medium</a>
 		</p>
 	</div>
 	<?php
