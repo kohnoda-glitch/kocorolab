@@ -227,7 +227,7 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( '第15回ミニ・フォーラム', '15th mini-forum', 'mini-forum-2015-12-15' ),
+			'keys'  => array( '第15回ミニ・フォーラム', '15th mini-forum', 'About Filipino Business', 'mini-forum-2015-12-15' ),
 			'links' => array(
 				array(
 					'url' => kocorolab_refresh_neue_fahne_2015_forum_pdf(),

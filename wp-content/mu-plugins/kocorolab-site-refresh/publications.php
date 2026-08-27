@@ -182,8 +182,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, 30 July – 3 August, Nagoya, Japan. (Cancelled)',
 		),
 		'2015' => array(
-			'Kohei Noda, About Filipino Business for Japanese, 講演',
-			kocorolab_refresh_linked_paper( 'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2015, Tokyo, Japan', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'ja' ),
+			kocorolab_refresh_linked_paper( '野田浩平 (2015) About Filipino Business for Japanese, 第15回ミニ・フォーラム（フィリピンでの労務管理）, Neue Fahne, 2015年12月15日, 東京.', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'ja' ),
 			kocorolab_refresh_media_item( '野田浩平, 西垣悦代 (2015) 国際コーチング心理学会, 西垣悦代, 原正, 原口佳典（編）, 『コーチング心理学概論』, ナカニシヤ出版', 'coaching', 'ja', 'Amazon' ),
 		),
 		'2014' => array(
@@ -288,7 +287,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, Nagoya, Japan. (Cancelled)',
 		),
 		'2015' => array(
-			kocorolab_refresh_linked_paper( 'Kohei Noda, Narratives on HRM experience in the Philippines, Neue Fahne Seminar, 15 December 2015, Tokyo, Japan', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'en' ),
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2015) About Filipino Business for Japanese, 15th Neue Fahne mini-forum on HR management in the Philippines, 15 December 2015, Tokyo.', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'en' ),
 			kocorolab_refresh_media_item( 'Kohei Noda and Etsuyo Nishigaki (2015) in Etsuyo Nishigaki et al. (eds.), Introduction to Coaching Psychology, Nakanishiya', 'coaching', 'en', 'Amazon' ),
 		),
 		'2014' => array(
@@ -426,9 +425,9 @@ function kocorolab_refresh_news_overlay_entries() {
 		),
 		array(
 			'date' => '2015-12-15',
-			'ja'   => '第15回ミニ・フォーラム（フィリピンでの労務管理、2015年12月15日）',
-			'en'   => '15th mini-forum on HR management in the Philippines (15 December 2015).',
-			'keys' => array( '第15回ミニ・フォーラム', '15th mini-forum', 'mini-forum-2015-12-15' ),
+			'ja'   => '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）',
+			'en'   => '15th mini-forum: About Filipino Business for Japanese (15 December 2015).',
+			'keys' => array( '第15回ミニ・フォーラム', '15th mini-forum', 'About Filipino Business', 'mini-forum-2015-12-15' ),
 		),
 		array(
 			'date' => '2013-07-30',
@@ -486,7 +485,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2019-02-01', 'SPEAの学校案内PDF（2019、フィリピン留学プロ）' ),
 		array( '2017-05-22', 'SPEAのフィリピン教育留学開始のプレスリリース' ),
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
-		array( '2015-12-15', '第15回ミニ・フォーラム（フィリピンでの労務管理、2015年12月15日）' ),
+		array( '2015-12-15', '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）' ),
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
 		array( '2013-03-11', 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」' ),
@@ -505,7 +504,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2019-02-01', 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).' ),
 		array( '2017-05-22', 'Press release: SPEA began a Philippines education study program.' ),
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
-		array( '2015-12-15', '15th mini-forum on HR management in the Philippines (15 December 2015).' ),
+		array( '2015-12-15', '15th mini-forum: About Filipino Business for Japanese (15 December 2015).' ),
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
 		array( '2013-03-11', 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.' ),
