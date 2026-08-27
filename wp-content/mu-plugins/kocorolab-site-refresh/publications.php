@@ -229,6 +229,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_linked_paper( '西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会', kocorolab_refresh_jpa_2013_ss055_pdf(), 'ja' ),
 		),
 		'2012' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2012) 講師, 東京工業大学プロダクティブリーダー養成機構（PLIP）IDEAリーグ来日プログラム「日本の起業状況」, 2012年11月13日.', kocorolab_refresh_plip_url(), 'ja', '講演記録' ),
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
 		),
 		'2011' => array(
@@ -341,6 +342,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_linked_paper( 'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association', kocorolab_refresh_jpa_2013_ss055_pdf(), 'en' ),
 		),
 		'2012' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2012) English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit, Tokyo Tech Productive Leader Incubation Platform (PLIP), 13 November 2012.', kocorolab_refresh_plip_url(), 'en', 'talk record' ),
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
 		),
 		'2011' => array(
@@ -527,6 +529,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'グローバル人材400万人', 'Journal No.50', 'Journal No. 50', 'mid-level global talent' ),
 		),
 		array(
+			'date' => '2012-11-13',
+			'ja'   => '東京工業大学PLIPで、IDEAリーグ来日団に「日本の起業状況」を英語で講演（2012年11月13日）',
+			'en'   => 'English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit at Tokyo Tech PLIP (13 November 2012).',
+			'keys' => array( 'IDEAリーグ', 'IDEA League doctoral-school', '日本の起業状況', 'entrepreneurship in Japan', 'productiveleader' ),
+		),
+		array(
 			'date' => '2011-12-26',
 			'ja'   => 'Neue Fahne Journal No.20「世代間の「価値観」の相違を互いに認め合う」（2011年12月26日）',
 			'en'   => 'Neue Fahne Journal No. 20: recognizing generational differences in values (26 December 2011).',
@@ -580,6 +588,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
 		array( '2013-03-11', 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」' ),
+		array( '2012-11-13', '東京工業大学PLIPで、IDEAリーグ来日団に「日本の起業状況」を英語で講演（2012年11月13日）' ),
 		array( '2011-12-26', 'Neue Fahne Journal No.20「世代間の「価値観」の相違を互いに認め合う」（2011年12月26日）' ),
 		array( '2011-08-24', '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）' ),
 		array( '2011-02-01', '販売戦略検討会で「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」を講演（2011年2月）' ),
@@ -606,6 +615,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
 		array( '2013-03-11', 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.' ),
+		array( '2012-11-13', 'English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit at Tokyo Tech PLIP (13 November 2012).' ),
 		array( '2011-12-26', 'Neue Fahne Journal No. 20: recognizing generational differences in values (26 December 2011).' ),
 		array( '2011-08-24', 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).' ),
 		array( '2011-02-01', 'Talk at the Sales Strategy Study Group: “What is Motivation 3.0? New currents in organizations and motivation” (February 2011).' ),

@@ -94,6 +94,14 @@ function kocorolab_refresh_bps_139_url() {
 	return 'https://web.archive.org/web/20190826043307/http://llp-bps.net/2017/12/14/%E7%AC%AC139%E5%9B%9E%EF%BD%82%EF%BD%90%EF%BD%93%EF%BC%8820171207%EF%BC%89%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A/';
 }
 
+function kocorolab_refresh_plip_url() {
+	return 'https://web.archive.org/web/20130128092802/http://www.productiveleader.jim.titech.ac.jp/news/index.html';
+}
+
+function kocorolab_refresh_idea_league_url() {
+	return 'https://idealeague.org/';
+}
+
 function kocorolab_refresh_source_catalog() {
 	return array(
 		array(
@@ -258,6 +266,21 @@ function kocorolab_refresh_source_catalog() {
 					'url' => kocorolab_refresh_spea_rle_press_url(),
 					'ja'  => 'RLE研究開始のプレスリリース',
 					'en'  => 'RLE research press release',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'IDEAリーグ', 'IDEA League doctoral-school', '日本の起業状況', 'entrepreneurship in Japan', 'productiveleader' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_plip_url(),
+					'ja'  => '東工大PLIP（保存版）',
+					'en'  => 'Tokyo Tech PLIP (archived)',
+				),
+				array(
+					'url' => kocorolab_refresh_idea_league_url(),
+					'ja'  => 'IDEA League',
+					'en'  => 'IDEA League',
 				),
 			),
 		),

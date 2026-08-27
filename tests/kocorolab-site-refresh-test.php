@@ -529,6 +529,15 @@ $checks = array(
 		&& false !== strpos( $en_pubs, 'Philippines (Cebu) study abroad' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'llp-bps' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '創業者／松岡' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'productiveleader.jim.titech.ac.jp' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '日本の起業状況' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'IDEAリーグ' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'entrepreneurship in Japan' )
+		&& false !== strpos( $ja_pubs, 'productiveleader.jim.titech.ac.jp' )
+		&& false !== strpos( $en_pubs, 'IDEA League doctoral-school' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'productiveleader' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '立ち上げた' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '特任教授' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
