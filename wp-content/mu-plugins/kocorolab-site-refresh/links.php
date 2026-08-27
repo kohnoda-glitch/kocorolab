@@ -86,6 +86,10 @@ function kocorolab_refresh_mbcc_podcast_notes_url() {
 	return 'https://mbcc-c.com/media/podcast-20260408.html';
 }
 
+function kocorolab_refresh_hansenken_url() {
+	return 'https://www.sohten.co.jp/hansenken.html';
+}
+
 function kocorolab_refresh_source_catalog() {
 	return array(
 		array(
@@ -325,6 +329,16 @@ function kocorolab_refresh_source_catalog() {
 					'url' => kocorolab_refresh_neue_fahne_journal_20_pdf(),
 					'ja'  => 'Neue Fahne Journal No.20（本文PDF）',
 					'en'  => 'Neue Fahne Journal No. 20 (PDF)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'モチベーション3.0とは何か', 'What is Motivation 3.0', 'hansenken', '販売戦略検討会' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_hansenken_url(),
+					'ja'  => '販売戦略検討会（講演記録）',
+					'en'  => 'Sales Strategy Study Group (talk record)',
 				),
 			),
 		),

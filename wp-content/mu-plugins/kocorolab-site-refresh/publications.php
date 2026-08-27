@@ -233,6 +233,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		'2011' => array(
 			kocorolab_refresh_linked_paper( '野田浩平 (2011) 講師, 東京工業大学学生支援センター主催 就職ガイダンス（大岡山）「博士課程学生の就職」, 2011年11月9日, 70周年記念講堂.', kocorolab_refresh_tokyotech_2011_guidance_pdf(), 'ja' ),
 			kocorolab_refresh_linked_paper( '野田浩平 (2011) 世代間の「価値観」の相違を互いに認め合う ～これからの企業の人材育成課題を探る～, Neue Fahne Journal No. 20.', kocorolab_refresh_neue_fahne_journal_20_pdf(), 'ja' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2011) 講師, 販売戦略検討会「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」, 2011年2月.', kocorolab_refresh_hansenken_url(), 'ja', '講演記録' ),
 			'野田浩平, 児玉義徳 (2011) 日本の起業家の特性及び背景要因の研究, 人材育成学会第9回大会予稿集',
 			'野田浩平 (2011) うつ病の増加を止め、絆を取り戻す社会への変化のきっかけ, 東京工業大学大学院社会理工学研究科価値システム専攻15周年記念論考 re-boot 0311→1130 VALDES OPINIONS.',
 			kocorolab_refresh_linked_paper( '野田浩平, 宮越大樹, 五十嵐久美子, 平本明武 (2011) 気付きを生み，動機付けを高めるシミュレーション方法の開発, 日本認知科学会第28回大会予稿集', $pdfs['2011'], 'ja' ),
@@ -343,6 +344,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		'2011' => array(
 			kocorolab_refresh_linked_paper( 'Kohei Noda (2011) Lecture on PhD employment at the Tokyo Institute of Technology (Ookayama) career guidance, Student Support Center, 9 November 2011.', kocorolab_refresh_tokyotech_2011_guidance_pdf(), 'en' ),
 			kocorolab_refresh_linked_paper( 'Kohei Noda (2011) Recognizing generational differences in values: challenges for corporate talent development. Neue Fahne Journal No. 20.', kocorolab_refresh_neue_fahne_journal_20_pdf(), 'en' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2011) Talk at the Sales Strategy Study Group: “What is Motivation 3.0? New currents in organizations and motivation,” February 2011.', kocorolab_refresh_hansenken_url(), 'en', 'talk record' ),
 			'Noda, K., and Kodama, Y. (2011) Research on the Special Characteristics and Background Elements of Japanese Entrepreneurs, Proceedings of the 9th annual meeting of Japanese Academy of Human Resource Development.',
 			kocorolab_refresh_linked_paper( 'Noda, K., Miyakoshi, D., Igarashi, K., and Hiramoto (2011) The development of the mental simulation methodology which enhances mindfulness and motivation, Proceedings of the 28th annual meeting of Japanese Cognitive Science Society', $pdfs['2011'], 'en' ),
 		),
@@ -529,6 +531,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'n-fahne', 'mental01', 'ノイエ・ファーネ', '廣済堂×ココロラボ' ),
 		),
 		array(
+			'date' => '2011-02-01',
+			'ja'   => '販売戦略検討会で「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」を講演（2011年2月）',
+			'en'   => 'Talk at the Sales Strategy Study Group: “What is Motivation 3.0? New currents in organizations and motivation” (February 2011).',
+			'keys' => array( 'モチベーション3.0とは何か', 'What is Motivation 3.0', 'hansenken', '販売戦略検討会' ),
+		),
+		array(
 			'date' => '2010-06-22',
 			'ja'   => 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース',
 			'en'   => 'Press release: partnership with Shubiki on a workplace mental health service.',
@@ -565,6 +573,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2013-03-11', 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」' ),
 		array( '2011-12-26', 'Neue Fahne Journal No.20「世代間の「価値観」の相違を互いに認め合う」（2011年12月26日）' ),
 		array( '2011-08-24', '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）' ),
+		array( '2011-02-01', '販売戦略検討会で「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」を講演（2011年2月）' ),
 		array( '2010-06-22', 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース' ),
 		array( '2009-07-01', 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース' ),
 	);
@@ -589,6 +598,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2013-03-11', 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.' ),
 		array( '2011-12-26', 'Neue Fahne Journal No. 20: recognizing generational differences in values (26 December 2011).' ),
 		array( '2011-08-24', 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).' ),
+		array( '2011-02-01', 'Talk at the Sales Strategy Study Group: “What is Motivation 3.0? New currents in organizations and motivation” (February 2011).' ),
 		array( '2010-06-22', 'Press release: partnership with Shubiki on a workplace mental health service.' ),
 		array( '2009-07-01', 'MHQ version 1 press release' ),
 	);
