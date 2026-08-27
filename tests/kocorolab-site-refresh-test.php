@@ -426,9 +426,11 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'neue-fahne-mini-forum-2015-12-15.pdf' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'Journal No.50' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'ミニ・フォーラム' )
-		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '役割アイデンティティのない状況下' )
-		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'niigata-tit-leadership-2000-resume.jpg' )
-		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'without role identity' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'Journal No.20' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '役割アイデンティティ' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '交流ディスカッション' )
+		&& false === strpos( kocorolab_refresh_news_html( 'en' ), 'without role identity' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'niigata-tit-leadership-2000-resume.jpg' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '役割アイデンティティ' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'セブポットセミナー' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'しあわせワークショップ' )
@@ -480,12 +482,13 @@ $checks = array(
 			&& false !== strpos( $html, 'SPEAnew22019.pdf' )
 			&& false !== strpos( $html, 'neue-fahne-journal-no50-2013-03-11.pdf' )
 			&& false !== strpos( $html, 'neue-fahne-mini-forum-2015-12-15.pdf' )
-			&& false !== strpos( $html, 'niigata-tit-leadership-2000-resume.jpg' )
 			&& false !== strpos( $html, 'cebupot-happiness-workshop-2016-03-24.pdf' )
 			&& false !== strpos( $html, '77_SS-055/_pdf' )
 			&& false !== strpos( $html, 'facebook.com/events/1908002519517088' )
 			&& false !== strpos( $html, 'happiness1122.peatix.com' )
-			&& false !== strpos( $html, 'neue-fahne-journal-no20-2011-12-26.pdf' );
+			&& false !== strpos( $html, 'neue-fahne-journal-no20-2011-12-26.pdf' )
+			&& false === strpos( $html, 'niigata-tit-leadership-2000-resume.jpg' )
+			&& false === strpos( $html, '交流ディスカッション' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();
@@ -576,8 +579,8 @@ $checks = array(
 			&& false === strpos( $news_to_ja, 'lang=en' );
 	} )(),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
-	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) && false !== strpos( $ja_pubs, '役割アイデンティティのない状況下' ) && false !== strpos( $ja_pubs, 'niigata-tit-leadership-2000-resume.jpg' ) ),
-	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) && false !== strpos( $en_pubs, 'without role identity' ) ),
+	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) && false !== strpos( $ja_pubs, '役割アイデンティティのない状況下' ) && false !== strpos( $ja_pubs, 'niigata-tit-leadership-2000-resume.jpg' ) && false !== strpos( $ja_pubs, 'VALDES Technical paper' ) && false !== strpos( $ja_pubs, 'テクニカルペーパーの1ページ' ) ),
+	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) && false !== strpos( $en_pubs, 'without role identity' ) && false !== strpos( $en_pubs, 'page 1 of the same technical paper' ) ),
 	'placeholder images present' => $img_ok,
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
 	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'foobar', 'ja' ),

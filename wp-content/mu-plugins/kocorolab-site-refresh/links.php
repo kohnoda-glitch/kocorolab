@@ -312,12 +312,12 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( '役割アイデンティティのない状況下', 'without role identity', 'niigata-tit-leadership-2000' ),
+			'keys'  => array( '役割アイデンティティのない状況下', 'without role identity', 'niigata-tit-leadership-2000', 'VALDES Technical paper', '感情から見たリーダーシップ発生モデル' ),
 			'links' => array(
 				array(
-					'url' => kocorolab_refresh_niigata_tit_2000_resume_url(),
-					'ja'  => '会議概要（レジュメ）',
-					'en'  => 'Session resume',
+					'url' => kocorolab_refresh_valdes_leadership_2000_url(),
+					'ja'  => 'VALDESテクニカルペーパー（会議概要は1ページ）',
+					'en'  => 'VALDES technical paper (session overview is p. 1)',
 				),
 			),
 		),
