@@ -30,6 +30,14 @@ function kocorolab_refresh_cogsci_2007_pdf() {
 	return 'https://escholarship.org/content/qt7xp559mc/qt7xp559mc.pdf';
 }
 
+function kocorolab_refresh_cognitive_studies_2007_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/jcss/14/1/14_1_74/_pdf/-char/ja';
+}
+
+function kocorolab_refresh_dissertation_2007_pdf() {
+	return 'https://t2r2.star.titech.ac.jp/rrws/file/CTT100602726/ATD100000413/';
+}
+
 function kocorolab_refresh_jps_1997_pdf() {
 	return 'https://www.jstage.jst.go.jp/article/jpsgaiyo/52.2.4/0/52.2.4_908_4/_pdf';
 }
@@ -254,10 +262,10 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Noda, K., Takeda, Y. and Yokoi, M. (2008) Cognitive Knowledge, Skills and Abilities (KSAs) to enhance emotional intelligence, Proceeding of the 30th Annual Meeting of Cognitive Science Society.',
 		),
 		'2007' => array(
-			'野田浩平 (2007) 脳に着想を得た感情機構エージェントとその企業人事管理システムへの応用, 東京工業大学博士学位論文.',
+			kocorolab_refresh_linked_paper( '野田浩平 (2007) 脳に着想を得た感情機構エージェントとその企業人事管理システムへの応用, 東京工業大学博士学位論文.', kocorolab_refresh_dissertation_2007_pdf(), 'ja' ),
 			kocorolab_refresh_linked_paper( 'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.', kocorolab_refresh_cogsci_2007_pdf(), 'ja' ),
 			'Noda, K. (2007) An application of human resource evaluation ontology, Proceedings of Symposium on Large-scale Knowledge Resources (LKR 2007), Tokyo Institute of Technology.',
-			'野田浩平, Klaus Voss, 久津豪 (2007) 人事評価情報の可視化, 知識共有への認知科学の応用 — エージェントモデリング及びオントロジーを用いて, 『認知科学』14(1) pp. 78-89.',
+			kocorolab_refresh_linked_paper( '野田浩平, Klaus Voss, 久津豪 (2007) 人事評価情報の可視化，知識共有への認知科学の応用 — エージェントモデリング及びオントロジーを用いて, 『認知科学』14(1) pp. 74-89.', kocorolab_refresh_cognitive_studies_2007_pdf(), 'ja' ),
 		),
 		'2006' => array(
 			'Noda, K., Voss, K. and Tokosumi, A. (2006) Emotion agent architecture simulating emotional reactions in a recruitment interview, Proceedings of international One-Day conference on “Emotion and Work: Ideas and Progress”, pp. 12-13.',
@@ -366,9 +374,10 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Noda, K., Takeda, Y. and Yokoi, M. (2008) Cognitive Knowledge, Skills and Abilities (KSAs) to enhance emotional intelligence, Proceeding of the 30th Annual Meeting of Cognitive Science Society.',
 		),
 		'2007' => array(
-			'Noda, K. (2007) Brain Inspired Cognitive Emotional Agent Architecture and its Application to Corporate Human Resource Management System. Doctoral Dissertation, Tokyo Institute of Technology.',
+			kocorolab_refresh_linked_paper( 'Noda, K. (2007) Brain Inspired Cognitive Emotional Agent Architecture and its Application to Corporate Human Resource Management System. Doctoral Dissertation, Tokyo Institute of Technology.', kocorolab_refresh_dissertation_2007_pdf(), 'en' ),
 			kocorolab_refresh_linked_paper( 'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.', kocorolab_refresh_cogsci_2007_pdf(), 'en' ),
-			'Noda, K., Voss, K. and Hisatsu, G. (2007) An application of cognitive science research outcomes to the visualization and the knowledge sharing of human resource evaluation information, Cognitive Studies, 14(1) pp. 78-89.',
+			'Noda, K. (2007) An application of human resource evaluation ontology, Proceedings of Symposium on Large-scale Knowledge Resources (LKR 2007), Tokyo Institute of Technology.',
+			kocorolab_refresh_linked_paper( 'Noda, K., Voss, K. and Hisatsu, G. (2007) An application of cognitive science research outcomes to the visualization and the knowledge sharing of human resource evaluation information, Cognitive Studies, 14(1) pp. 74-89.', kocorolab_refresh_cognitive_studies_2007_pdf(), 'en' ),
 		),
 		'2006' => array(
 			'Noda, K., Voss, K. and Tokosumi, A. (2006) Emotion agent architecture simulating emotional reactions in a recruitment interview, Proceedings of international One-Day conference on “Emotion and Work”.',

@@ -324,6 +324,17 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, '52.2.4_908_4/_pdf' )
 		&& false !== strpos( $en_pubs, 'jpsgaiyo/52.2.4' )
 	),
+	'2007 Cognitive Studies journal and doctoral dissertation link to open PDFs' => (
+		false !== strpos( $ja_pubs, '<a href="https://www.jstage.jst.go.jp/article/jcss/14/1/14_1_74/_pdf/-char/ja">野田浩平, Klaus Voss, 久津豪 (2007)' )
+		&& false !== strpos( $ja_pubs, '『認知科学』14(1) pp. 74-89' )
+		&& false !== strpos( $en_pubs, '14_1_74/_pdf' )
+		&& false !== strpos( $en_pubs, 'Cognitive Studies, 14(1) pp. 74-89' )
+		&& false !== strpos( $ja_pubs, '<a href="https://t2r2.star.titech.ac.jp/rrws/file/CTT100602726/ATD100000413/">野田浩平 (2007)' )
+		&& false !== strpos( $en_pubs, 'CTT100602726' )
+		&& false === strpos( $ja_pubs, 'pp. 78-89' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '14_1_74' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'CTT100602726' )
+	),
 	'2013 Fukuoka seminar and 2011 Tokyo Tech PhD guidance are listed' => (
 		false !== strpos( $ja_pubs, '福岡商工会議所' )
 		&& false !== strpos( $ja_pubs, '就活応援セミナー' )
