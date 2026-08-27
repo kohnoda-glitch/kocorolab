@@ -213,7 +213,7 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( 'TIME-IMAGE-CREATIVITY', 'Pinto Art Gallery', 'Antipolo', 'Keisuke Taketani' ),
+			'keys'  => array( 'TIME-IMAGE-CREATIVITY', 'Pinto Art Gallery', 'Antipolo', '武谷圭祐', 'Keisuke Takeya' ),
 			'links' => array(
 				array(
 					'url' => kocorolab_refresh_antipolo_2013_flyer_url(),
@@ -227,8 +227,8 @@ function kocorolab_refresh_source_catalog() {
 				),
 				array(
 					'url' => kocorolab_refresh_antipolo_2013_keisuke_photo_url(),
-					'ja'  => 'けいすけとの写真',
-					'en'  => 'Photo with Keisuke',
+					'ja'  => '武谷圭祐との写真',
+					'en'  => 'Photo with Keisuke Takeya',
 				),
 				array(
 					'url' => kocorolab_refresh_antipolo_2013_poster_url(),

@@ -287,7 +287,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 				'photo'
 			),
 			kocorolab_refresh_with_thumb(
-				kocorolab_refresh_linked_item( '野田浩平, Keisuke Taketani (2013) ファシリテーター, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 2013年12月7日.', kocorolab_refresh_antipolo_2013_flyer_url(), 'ja', '案内' ),
+				kocorolab_refresh_linked_item( '野田浩平, 武谷圭祐 (2013) ファシリテーター, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 2013年12月7日.', kocorolab_refresh_antipolo_2013_flyer_url(), 'ja', '案内' ),
 				kocorolab_refresh_antipolo_2013_workshop_photo_url(),
 				kocorolab_refresh_antipolo_2013_flyer_url(),
 				'TIME-IMAGE-CREATIVITY WORKSHOP, Antipolo',
@@ -435,7 +435,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 				'photo'
 			),
 			kocorolab_refresh_with_thumb(
-				kocorolab_refresh_linked_item( 'Kohei Noda and Keisuke Taketani (2013) Facilitators, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 7 December 2013.', kocorolab_refresh_antipolo_2013_flyer_url(), 'en', 'notice' ),
+				kocorolab_refresh_linked_item( 'Kohei Noda and Keisuke Takeya (2013) Facilitators, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 7 December 2013.', kocorolab_refresh_antipolo_2013_flyer_url(), 'en', 'notice' ),
 				kocorolab_refresh_antipolo_2013_workshop_photo_url(),
 				kocorolab_refresh_antipolo_2013_flyer_url(),
 				'TIME-IMAGE-CREATIVITY WORKSHOP, Antipolo',
@@ -658,9 +658,9 @@ function kocorolab_refresh_news_overlay_entries() {
 		),
 		array(
 			'date' => '2013-12-07',
-			'ja'   => 'けいすけ（Keisuke Taketani）とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）',
-			'en'   => 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Taketani at Pinto Art Gallery, Antipolo (7 December 2013).',
-			'keys' => array( 'TIME-IMAGE-CREATIVITY', 'Pinto Art Gallery', 'Antipolo', 'Keisuke Taketani' ),
+			'ja'   => '武谷圭祐とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）',
+			'en'   => 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Takeya at Pinto Art Gallery, Antipolo (7 December 2013).',
+			'keys' => array( 'TIME-IMAGE-CREATIVITY', 'Pinto Art Gallery', 'Antipolo', '武谷圭祐', 'Keisuke Takeya' ),
 			'img'  => kocorolab_refresh_antipolo_2013_workshop_photo_url(),
 		),
 		array(
@@ -754,7 +754,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
 		array( '2016-03-24', 'セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）' ),
 		array( '2015-12-15', '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）' ),
-		array( '2013-12-07', 'けいすけ（Keisuke Taketani）とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）' ),
+		array( '2013-12-07', '武谷圭祐とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）' ),
 		array( '2013-12-06', 'ICE 2013（PELS International Congress on eLearning）プレナリー、Heritage Hotel Manila（2013年12月6–7日）' ),
 		array( '2013-09-21', '日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）' ),
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
@@ -785,7 +785,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
 		array( '2016-03-24', 'Cebu Pot seminar: Happiness Workshop — Why Filipino people are always smiling (magazine notice, 24 March 2016).' ),
 		array( '2015-12-15', '15th mini-forum: About Filipino Business for Japanese (15 December 2015).' ),
-		array( '2013-12-07', 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Taketani at Pinto Art Gallery, Antipolo (7 December 2013).' ),
+		array( '2013-12-07', 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Takeya at Pinto Art Gallery, Antipolo (7 December 2013).' ),
 		array( '2013-12-06', 'ICE 2013 plenary at Heritage Hotel Manila (6–7 December 2013).' ),
 		array( '2013-09-21', 'SS-055 Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association (21 September 2013).' ),
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
