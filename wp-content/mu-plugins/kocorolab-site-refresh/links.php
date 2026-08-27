@@ -257,6 +257,16 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( '役割アイデンティティのない状況下', 'without role identity', 'niigata-tit-leadership-2000' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_niigata_tit_2000_resume_url(),
+					'ja'  => '会議概要（レジュメ）',
+					'en'  => 'Session resume',
+				),
+			),
+		),
+		array(
 			'keys'  => array( 'atpress', 'GBX', 'Global Business eXperience' ),
 			'links' => array(
 				array(

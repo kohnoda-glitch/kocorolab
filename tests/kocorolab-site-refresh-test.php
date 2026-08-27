@@ -397,6 +397,10 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'neue-fahne-mini-forum-2015-12-15.pdf' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'Journal No.50' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'ミニ・フォーラム' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '役割アイデンティティのない状況下' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'niigata-tit-leadership-2000-resume.jpg' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'without role identity' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '役割アイデンティティ' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -417,7 +421,8 @@ $checks = array(
 			&& false !== strpos( $html, 'value-press.com/pressrelease/183306' )
 			&& false !== strpos( $html, 'SPEAnew22019.pdf' )
 			&& false !== strpos( $html, 'neue-fahne-journal-no50-2013-03-11.pdf' )
-			&& false !== strpos( $html, 'neue-fahne-mini-forum-2015-12-15.pdf' );
+			&& false !== strpos( $html, 'neue-fahne-mini-forum-2015-12-15.pdf' )
+			&& false !== strpos( $html, 'niigata-tit-leadership-2000-resume.jpg' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();
@@ -508,8 +513,8 @@ $checks = array(
 			&& false === strpos( $news_to_ja, 'lang=en' );
 	} )(),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
-	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) ),
-	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) ),
+	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) && false !== strpos( $ja_pubs, '役割アイデンティティのない状況下' ) && false !== strpos( $ja_pubs, 'niigata-tit-leadership-2000-resume.jpg' ) ),
+	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) && false !== strpos( $en_pubs, 'without role identity' ) ),
 	'placeholder images present' => $img_ok,
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
 	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'foobar', 'ja' ),
