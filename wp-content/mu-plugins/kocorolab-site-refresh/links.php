@@ -227,6 +227,21 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( 'セブポットセミナー', 'しあわせワークショップ', 'Cebu Pot seminar', 'Happiness Workshop', 'cebupot-happiness-workshop-2016' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_cebupot_2016_magazine_pdf(),
+					'ja'  => 'セブポット紙面原稿（2016）',
+					'en'  => 'Cebu Pot magazine notice (2016)',
+				),
+				array(
+					'url' => kocorolab_refresh_cebupot_facebook_url(),
+					'ja'  => 'セブポットのFacebook（当時のイベント告知）',
+					'en'  => 'Cebu Pot Facebook (event announcements)',
+				),
+			),
+		),
+		array(
 			'keys'  => array( '第15回ミニ・フォーラム', '15th mini-forum', 'About Filipino Business', 'mini-forum-2015-12-15' ),
 			'links' => array(
 				array(

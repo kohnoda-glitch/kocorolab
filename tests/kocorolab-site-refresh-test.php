@@ -306,6 +306,10 @@ $checks = array(
 		&& false === strpos( $en_pubs, 'Narratives on HRM experience' )
 		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/neue-fahne-journal-no50-2013-03-11.pdf' )
 		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/neue-fahne-mini-forum-2015-12-15.pdf' )
+		&& false !== strpos( $ja_pubs, 'フィリピン人から学ぶしあわせワークショップ' )
+		&& false !== strpos( $ja_pubs, 'cebupot-happiness-workshop-2016-03-24.pdf' )
+		&& false !== strpos( $en_pubs, 'Cebu Pot Seminar' )
+		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/cebupot-happiness-workshop-2016-03-24.pdf' )
 	),
 	'ICE 2013 plenary links to the conference page' => (
 		false !== strpos( $ja_pubs, 'share.google/OnGq4xL8mDEoGt7E1' )
@@ -408,6 +412,12 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'niigata-tit-leadership-2000-resume.jpg' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'without role identity' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '役割アイデンティティ' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'セブポットセミナー' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'しあわせワークショップ' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'cebupot-happiness-workshop-2016-03-24.pdf' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'facebook.com/cebupot.jp' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'ikeda@cebupot.com' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'cebupot-happiness-workshop' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -429,7 +439,8 @@ $checks = array(
 			&& false !== strpos( $html, 'SPEAnew22019.pdf' )
 			&& false !== strpos( $html, 'neue-fahne-journal-no50-2013-03-11.pdf' )
 			&& false !== strpos( $html, 'neue-fahne-mini-forum-2015-12-15.pdf' )
-			&& false !== strpos( $html, 'niigata-tit-leadership-2000-resume.jpg' );
+			&& false !== strpos( $html, 'niigata-tit-leadership-2000-resume.jpg' )
+			&& false !== strpos( $html, 'cebupot-happiness-workshop-2016-03-24.pdf' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();

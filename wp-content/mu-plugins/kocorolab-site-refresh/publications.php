@@ -58,6 +58,14 @@ function kocorolab_refresh_niigata_tit_2000_resume_url() {
 	return kocorolab_refresh_overlay_file_url( 'niigata-tit-leadership-2000-resume.jpg' );
 }
 
+function kocorolab_refresh_cebupot_2016_magazine_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'cebupot-happiness-workshop-2016-03-24.pdf' );
+}
+
+function kocorolab_refresh_cebupot_facebook_url() {
+	return 'https://www.facebook.com/cebupot.jp';
+}
+
 function kocorolab_refresh_ice_2013_url() {
 	return 'https://share.google/OnGq4xL8mDEoGt7E1';
 }
@@ -178,7 +186,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2016' => array(
 			kocorolab_refresh_linked_paper( '野田浩平, 松岡良彦 (2016) 第二言語としての英語学習におけるReal Life Experience法の提案. 第33回日本認知科学会年次大会', $pdfs['2016'], 'ja' ),
-			'Kohei Noda, Happiness Workshop: learning from Filipino — Why Filipino People are always smiling, Cebu Pot Seminar, 24 March 2016, Cebu, Philippines',
+			kocorolab_refresh_linked_paper( '野田浩平 (2016) なんでフィリピン人はいつも笑顔なの？「フィリピン人から学ぶしあわせワークショップ」, セブポットセミナー, 2016年3月24日, ヘンリーホテル2階セブポットラウンジ, セブ.', kocorolab_refresh_cebupot_2016_magazine_pdf(), 'ja' ),
 			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, 30 July – 3 August, Nagoya, Japan. (Cancelled)',
 		),
 		'2015' => array(
@@ -283,7 +291,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2016' => array(
 			kocorolab_refresh_linked_paper( 'Kohei Noda, Yoshihiko Matsuoka (2016) Proposal of Real Life Experience Method in English Language as Second Language. 33rd Annual Meeting of the Japanese Cognitive Science Society', $pdfs['2016'], 'en' ),
-			'Kohei Noda, Happiness Workshop: learning from Filipino — Why Filipino People are always smiling, Cebu Pot Seminar, 24 March 2016, Cebu, Philippines',
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2016) Happiness Workshop: learning from Filipino — Why Filipino People are always smiling, Cebu Pot Seminar, 24 March 2016, Henry Hotel, Cebu.', kocorolab_refresh_cebupot_2016_magazine_pdf(), 'en' ),
 			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, Nagoya, Japan. (Cancelled)',
 		),
 		'2015' => array(
@@ -424,6 +432,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', '165730', 'RLE-Labo' ),
 		),
 		array(
+			'date' => '2016-03-24',
+			'ja'   => 'セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）',
+			'en'   => 'Cebu Pot seminar: Happiness Workshop — Why Filipino people are always smiling (magazine notice, 24 March 2016).',
+			'keys' => array( 'セブポットセミナー', 'しあわせワークショップ', 'Cebu Pot seminar', 'Happiness Workshop', 'cebupot-happiness-workshop-2016' ),
+		),
+		array(
 			'date' => '2015-12-15',
 			'ja'   => '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）',
 			'en'   => '15th mini-forum: About Filipino Business for Japanese (15 December 2015).',
@@ -485,6 +499,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2019-02-01', 'SPEAの学校案内PDF（2019、フィリピン留学プロ）' ),
 		array( '2017-05-22', 'SPEAのフィリピン教育留学開始のプレスリリース' ),
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
+		array( '2016-03-24', 'セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）' ),
 		array( '2015-12-15', '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）' ),
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
@@ -504,6 +519,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2019-02-01', 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).' ),
 		array( '2017-05-22', 'Press release: SPEA began a Philippines education study program.' ),
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
+		array( '2016-03-24', 'Cebu Pot seminar: Happiness Workshop — Why Filipino people are always smiling (magazine notice, 24 March 2016).' ),
 		array( '2015-12-15', '15th mini-forum: About Filipino Business for Japanese (15 December 2015).' ),
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
