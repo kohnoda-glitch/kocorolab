@@ -74,6 +74,10 @@ function kocorolab_refresh_spea_nagasaki_2017_event_url() {
 	return 'https://www.facebook.com/events/1908002519517088/';
 }
 
+function kocorolab_refresh_nagasaki_2020_peatix_url() {
+	return 'https://happiness1122.peatix.com/';
+}
+
 function kocorolab_refresh_ice_2013_url() {
 	return 'https://share.google/OnGq4xL8mDEoGt7E1';
 }
@@ -185,6 +189,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 				kocorolab_refresh_pub_media()['hiramoto']['alt_ja'],
 				'video'
 			),
+			kocorolab_refresh_linked_item( '野田浩平 (2020) 対話イベント「フィジー人に学ぶ『幸福の習慣』」, ゲスト永崎裕麻, 2020年11月22日.', kocorolab_refresh_nagasaki_2020_peatix_url(), 'ja', 'Peatix' ),
 		),
 		'2018' => array(
 			kocorolab_refresh_media_item( '吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館', 'reverse', 'ja', 'Amazon' ),
@@ -291,6 +296,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 				kocorolab_refresh_pub_media()['hiramoto']['alt_en'],
 				'video'
 			),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2020) Dialogue event: learning happiness habits from Fijians, with Yuma Nagasaki, 22 November 2020.', kocorolab_refresh_nagasaki_2020_peatix_url(), 'en', 'Peatix' ),
 		),
 		'2018' => array(
 			kocorolab_refresh_media_item( 'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan', 'reverse', 'en', 'Amazon' ),
@@ -430,10 +436,16 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'SPEAnew22019', '学校案内PDF（2019', 'school brochure PDF (2019' ),
 		),
 		array(
+			'date' => '2020-11-22',
+			'ja'   => '対話イベント「フィジー人に学ぶ幸福の習慣」（ゲスト永崎裕麻、2020年11月22日）',
+			'en'   => 'Dialogue event: learning happiness habits from Fijians, with Yuma Nagasaki (22 November 2020).',
+			'keys' => array( 'happiness1122', 'フィジー人に学ぶ幸福の習慣', 'learning happiness habits from Fijians', '1716882' ),
+		),
+		array(
 			'date' => '2017-10-26',
 			'ja'   => 'SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）',
 			'en'   => 'SPEA talk on happiness with Yuma Nagasaki visiting Dumaguete (26 October 2017).',
-			'keys' => array( '永崎裕麻', '幸福論トークセッション', '1908002519517088', 'Yuma Nagasaki' ),
+			'keys' => array( '幸福論トークセッション', '1908002519517088', 'visiting Dumaguete', '来訪記念' ),
 		),
 		array(
 			'date' => '2017-05-22',
@@ -514,6 +526,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 	$ja = array(
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。' ),
 		array( '2020-12-06', '健康×幸福トーク登壇' ),
+		array( '2020-11-22', '対話イベント「フィジー人に学ぶ幸福の習慣」（ゲスト永崎裕麻、2020年11月22日）' ),
 		array( '2020-04-01', 'コロナ禍でのストレスについての寄稿' ),
 		array( '2020-01-02', 'SDGs Learning Journey 2020の案内' ),
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
@@ -536,6 +549,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 	$en = array(
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026 nominations open' ),
 		array( '2020-12-06', 'Talk on health and happiness' ),
+		array( '2020-11-22', 'Dialogue event: learning happiness habits from Fijians, with Yuma Nagasaki (22 November 2020).' ),
 		array( '2020-04-01', 'Note on stress during COVID' ),
 		array( '2020-01-02', 'SDGs Learning Journey 2020' ),
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),

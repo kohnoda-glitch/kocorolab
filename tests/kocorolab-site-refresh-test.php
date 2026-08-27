@@ -326,6 +326,9 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, '永崎裕麻氏来訪記念幸福論トークセッション' )
 		&& false !== strpos( $en_pubs, 'Yuma Nagasaki' )
 		&& false !== strpos( $ja_pubs, 'Free Bird Institute' )
+		&& false !== strpos( $ja_pubs, 'happiness1122.peatix.com' )
+		&& false !== strpos( $ja_pubs, 'フィジー人に学ぶ' )
+		&& false !== strpos( $en_pubs, 'learning happiness habits from Fijians' )
 	),
 	'2024 change management links to YouTube series' => (
 		false !== strpos( $ja_pubs, 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
@@ -441,6 +444,11 @@ $checks = array(
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '1908002519517088' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '創業' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '設立者' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'フィジー人に学ぶ幸福の習慣' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'happiness1122.peatix.com' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'learning happiness habits from Fijians' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'happiness1122' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '創業者' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -465,7 +473,8 @@ $checks = array(
 			&& false !== strpos( $html, 'niigata-tit-leadership-2000-resume.jpg' )
 			&& false !== strpos( $html, 'cebupot-happiness-workshop-2016-03-24.pdf' )
 			&& false !== strpos( $html, '77_SS-055/_pdf' )
-			&& false !== strpos( $html, 'facebook.com/events/1908002519517088' );
+			&& false !== strpos( $html, 'facebook.com/events/1908002519517088' )
+			&& false !== strpos( $html, 'happiness1122.peatix.com' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();

@@ -227,12 +227,22 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( '永崎裕麻', '幸福論トークセッション', '1908002519517088', 'Yuma Nagasaki' ),
+			'keys'  => array( '幸福論トークセッション', '1908002519517088', 'visiting Dumaguete', '来訪記念' ),
 			'links' => array(
 				array(
 					'url' => kocorolab_refresh_spea_nagasaki_2017_event_url(),
 					'ja'  => 'Facebookイベント（2017）',
 					'en'  => 'Facebook event (2017)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'happiness1122', 'フィジー人に学ぶ幸福の習慣', 'learning happiness habits from Fijians', '1716882' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_nagasaki_2020_peatix_url(),
+					'ja'  => 'Peatix（2020）',
+					'en'  => 'Peatix (2020)',
 				),
 			),
 		),
