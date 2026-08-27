@@ -102,8 +102,106 @@ function kocorolab_refresh_idea_league_url() {
 	return 'https://idealeague.org/';
 }
 
+function kocorolab_refresh_globis_u_curve_url() {
+	return 'https://globis.jp/article/hu8z0vv3bb_i/';
+}
+
+function kocorolab_refresh_yokohama_connect_198_url() {
+	return 'https://community.venturecafe-yokohamaconnect.org/sessions/198';
+}
+
+function kocorolab_refresh_globis_chiyozaki_url() {
+	return 'https://mba.globis.ac.jp/knowledge/detail-25752.html';
+}
+
+function kocorolab_refresh_globis_fukudome_url() {
+	return 'https://globis.jp/article/xll9i38vmmjf/';
+}
+
+function kocorolab_refresh_mbcc_idgs_2022_url() {
+	return 'https://mbcc-c.com/event/20220917.html';
+}
+
+function kocorolab_refresh_can_japan_3263_url() {
+	return 'https://www.can-japan.org/events-ja/3263';
+}
+
+function kocorolab_refresh_kenko_happiness_talk_url() {
+	return 'https://web.archive.org/web/20201128083739/https://peraichi.com/landing_pages/view/kenkoxkoufukutalk';
+}
+
 function kocorolab_refresh_source_catalog() {
 	return array(
+		array(
+			'keys'  => array( 'U字カーブ', 'hu8z0vv3bb_i', '現場が動かない', 'U-curve', 'workplace will not move' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_globis_u_curve_url(),
+					'ja'  => 'グロービス知見録（U字カーブの歩き方）',
+					'en'  => 'GLOBIS article (how to walk the U-curve)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'YOKOHAMA CONNÉCT', 'venturecafe-yokohamaconnect', 'Tri-sector innovation', 'sessions/198' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_yokohama_connect_198_url(),
+					'ja'  => 'YOKOHAMA CONNÉCT #36 セッション',
+					'en'  => 'YOKOHAMA CONNÉCT #36 session',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'detail-25752', '千代崎', 'すべての人が能力を発揮', 'Toga Chiyozaki', 'everyone can use their abilities' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_globis_chiyozaki_url(),
+					'ja'  => 'グロービス卒業生インタビュー（千代崎透我さん）',
+					'en'  => 'GLOBIS alumni interview (Toga Chiyozaki)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'xll9i38vmmjf', '志の力', '福留大士', 'Daishi Fukudome', 'power of kokorozashi' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_globis_fukudome_url(),
+					'ja'  => 'グロービス知見録（志の力）',
+					'en'  => 'GLOBIS article (the power of kokorozashi)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'IDGｓと人間性', 'Inner Development Goals', '20220917', 'マンスリーMiLI' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_mbcc_idgs_2022_url(),
+					'ja'  => 'マンスリーMiLI（IDGs）案内',
+					'en'  => 'Monthly MiLI (IDGs) event page',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'events-ja/3263', 'カーボンプライシング', 'IPCC第6次', 'carbon pricing', 'IPCC AR6' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_can_japan_3263_url(),
+					'ja'  => 'CAN-Japanウェビナー案内',
+					'en'  => 'CAN-Japan webinar page',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'ICCS 2001', '9_1_178', '参加報告', 'Conference report on ICCS' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_iccs_2001_report_pdf(),
+					'ja'  => 'ICCS 2001参加報告PDF（J-STAGE）',
+					'en'  => 'ICCS 2001 conference report (J-STAGE PDF)',
+				),
+			),
+		),
 		array(
 			'keys'  => array( '共助なき社会', 'society without mutual aid', '03qbS6FrSXI0Bmg9bZWaLQ', 'podcast-20260408' ),
 			'links' => array(

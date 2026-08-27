@@ -46,6 +46,10 @@ function kocorolab_refresh_jpa_2013_ss055_pdf() {
 	return 'https://www.jstage.jst.go.jp/article/pacjpa/77/0/77_SS-055/_pdf/-char/ja';
 }
 
+function kocorolab_refresh_iccs_2001_report_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/jcss/9/1/9_1_178/_pdf/-char/ja';
+}
+
 function kocorolab_refresh_overlay_file_url( $file ) {
 	if ( function_exists( 'content_url' ) ) {
 		return content_url( 'mu-plugins/kocorolab-site-refresh/files/' . $file );
@@ -190,9 +194,13 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 	$pdfs = kocorolab_refresh_jcss_pdfs();
 	$ja   = array(
 		'2026' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2026) 「現場が動かない…を解決！自己と組織を変えるU字カーブの歩き方」, グロービス知見録, 2026年5月20日.', kocorolab_refresh_globis_u_curve_url(), 'ja', '記事' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2026) 登壇, YOKOHAMA CONNÉCT #36 MIT Sloan IDEAS Asia Pacific session “Tri-sector innovation for sustainability in a VUCA/BANI world”, 2026年4月22日.', kocorolab_refresh_yokohama_connect_198_url(), 'ja', 'セッション' ),
 			kocorolab_refresh_linked_item( '野田浩平 (2026) ゲスト「共助なき社会で、若者の未来はどうなるのか」, MBCC 未来をひらくラジオ, 2026年4月13日.', kocorolab_refresh_mbcc_spotify_episode_url(), 'ja', 'Spotify' ),
+			kocorolab_refresh_linked_item( '野田浩平, 竹内秀太郎 (2026) 聞き手, グロービス卒業生インタビュー 千代崎透我さん「すべての人が能力を発揮し、活躍できる社会へ」, 2026年3月25日.', kocorolab_refresh_globis_chiyozaki_url(), 'ja', '対談' ),
 		),
 		'2025' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2025) 聞き手, 福留大士氏「志の力」, グロービス知見録, 2025年12月10日.', kocorolab_refresh_globis_fukudome_url(), 'ja', '対談' ),
 			kocorolab_refresh_linked_paper( '野田浩平 (2025) U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.', $pdfs['2025'], 'ja' ),
 			kocorolab_refresh_media_item( '野田浩平, まめ, 海下理恵 (2025) VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集. (Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress)', 'vuca', 'ja', 'Amazon' ),
 		),
@@ -200,7 +208,12 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( '野田浩平 (2024)「私、うつになりやすいかも？」と思った時に読む本', 'depression', 'ja', 'Amazon' ),
 			kocorolab_refresh_media_item( '野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)', 'change', 'ja', 'YouTubeシリーズ' ),
 		),
+		'2022' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2022) 登壇, マンスリーMiLI「IDGｓと人間性の開発をめぐる対話」, 2022年10月25日.', kocorolab_refresh_mbcc_idgs_2022_url(), 'ja', '講演記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2022) 報告, CAN-Japanウェビナー「IPCC第6次評価報告書から気候危機を回避する道筋を考える」カーボンプライシング, 2022年5月19日.', kocorolab_refresh_can_japan_3263_url(), 'ja', 'ウェビナー' ),
+		),
 		'2020' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2020) 登壇, 健康×幸福トーク, 2020年12月6日.', kocorolab_refresh_kenko_happiness_talk_url(), 'ja', '案内' ),
 			kocorolab_refresh_with_thumb(
 				'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>（<a href="https://www.youtube.com/@hiramotoakio">チャンネル</a>）',
 				kocorolab_refresh_pub_media()['hiramoto']['img'],
@@ -281,6 +294,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_linked_paper( 'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.', kocorolab_refresh_iccm_2004_pdf(), 'ja' ),
 		),
 		'2002' => array(
+			kocorolab_refresh_linked_paper( '橋田浩一, 内野八潮, 金井明人, 栗山直子, 小林由紀, Misa Grace Kwok, 小松孝徳, 野田浩平, 野村潤 (2002) 第3回認知科学国際会議 (ICCS 2001) 参加報告, 『認知科学』9(1) pp. 178-181.', kocorolab_refresh_iccs_2001_report_pdf(), 'ja' ),
 			'Noda, K. and Tokosumi, A. (2002) A simulated embodied agent model of depression by Artificial Brain Methodology, Proceeding of the 19th Annual Meeting of the Japanese Cognitive Science Society, 8-9.',
 			'Noda, K. (2002) A Computational Model of Depression by Design Approach, Master Thesis, Department of Value and Decision Science, Tokyo Institute of Technology.',
 		),
@@ -303,9 +317,13 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 
 	$en = array(
 		'2026' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2026) GLOBIS article: how to walk the U-curve when the workplace will not move, 20 May 2026.', kocorolab_refresh_globis_u_curve_url(), 'en', 'article' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2026) Featured at YOKOHAMA CONNÉCT #36: MIT Sloan IDEAS Asia Pacific session “Tri-sector innovation for sustainability in a VUCA/BANI world,” 22 April 2026.', kocorolab_refresh_yokohama_connect_198_url(), 'en', 'session' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda (2026) Guest: “What happens to young people’s future in a society without mutual aid”, MBCC radio, 13 April 2026.', kocorolab_refresh_mbcc_spotify_episode_url(), 'en', 'Spotify' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda and Shutaro Takeuchi (2026) Interviewers, GLOBIS alumni interview with Toga Chiyozaki: toward a society where everyone can use their abilities, 25 March 2026.', kocorolab_refresh_globis_chiyozaki_url(), 'en', 'interview' ),
 		),
 		'2025' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2025) Interviewer, Daishi Fukudome on the power of kokorozashi, GLOBIS, 10 December 2025.', kocorolab_refresh_globis_fukudome_url(), 'en', 'interview' ),
 			kocorolab_refresh_linked_paper( 'Kohei Noda (2025) The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.', $pdfs['2025'], 'en' ),
 			kocorolab_refresh_media_item( 'Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress', 'vuca', 'en', 'Amazon' ),
 		),
@@ -313,7 +331,12 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( 'Kohei Noda (2024) The book you should read when you think you would be depression', 'depression', 'en', 'Amazon' ),
 			kocorolab_refresh_media_item( 'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era', 'change', 'en', 'YouTube series' ),
 		),
+		'2022' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2022) Talk at Monthly MiLI: Inner Development Goals and developing humanity, 25 October 2022.', kocorolab_refresh_mbcc_idgs_2022_url(), 'en', 'talk record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2022) Spoke on carbon pricing at the CAN-Japan webinar on IPCC AR6, 19 May 2022.', kocorolab_refresh_can_japan_3263_url(), 'en', 'webinar' ),
+		),
 		'2020' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2020) Talk on health and happiness, 6 December 2020.', kocorolab_refresh_kenko_happiness_talk_url(), 'en', 'event page' ),
 			kocorolab_refresh_with_thumb(
 				'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)',
 				kocorolab_refresh_pub_media()['hiramoto']['img'],
@@ -393,6 +416,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_linked_paper( 'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.', kocorolab_refresh_iccm_2004_pdf(), 'en' ),
 		),
 		'2002' => array(
+			kocorolab_refresh_linked_paper( 'Hashida, K. et al., including Kohei Noda (2002) Conference report on ICCS 2001, Cognitive Studies, 9(1) pp. 178-181.', kocorolab_refresh_iccs_2001_report_pdf(), 'en' ),
 			'Noda, K. and Tokosumi, A. (2002) A simulated embodied agent model of depression by Artificial Brain Methodology, Proceeding of the 19th Annual Meeting of the Japanese Cognitive Science Society, 8-9.',
 			'Noda, K. (2002) A Computational Model of Depression by Design Approach, Master Thesis, Tokyo Institute of Technology.',
 		),
@@ -436,10 +460,34 @@ function kocorolab_refresh_publications_html( $lang = 'ja' ) {
 function kocorolab_refresh_news_overlay_entries() {
 	return array(
 		array(
+			'date' => '2026-05-20',
+			'ja'   => 'グロービス知見録に「現場が動かない…を解決！自己と組織を変えるU字カーブの歩き方」を寄稿しました（2026年5月20日）',
+			'en'   => 'GLOBIS article: how to walk the U-curve when the workplace will not move (20 May 2026).',
+			'keys' => array( 'U字カーブ', 'hu8z0vv3bb_i', '現場が動かない', 'U-curve', 'workplace will not move' ),
+		),
+		array(
+			'date' => '2026-04-22',
+			'ja'   => 'YOKOHAMA CONNÉCT #36で Tri-sector innovation セッションに登壇しました（2026年4月22日）',
+			'en'   => 'Featured at YOKOHAMA CONNÉCT #36: Tri-sector innovation for sustainability (22 April 2026).',
+			'keys' => array( 'YOKOHAMA CONNÉCT', 'venturecafe-yokohamaconnect', 'Tri-sector innovation', 'sessions/198' ),
+		),
+		array(
 			'date' => '2026-04-13',
 			'ja'   => 'MBCC 未来をひらくラジオにゲスト出演しました。「共助なき社会で、若者の未来はどうなるのか」（2026年4月13日）',
 			'en'   => 'Guest on MBCC radio: “What happens to young people’s future in a society without mutual aid” (13 April 2026).',
 			'keys' => array( '共助なき社会', 'society without mutual aid', '03qbS6FrSXI0Bmg9bZWaLQ' ),
+		),
+		array(
+			'date' => '2026-03-25',
+			'ja'   => 'グロービス卒業生インタビューで千代崎透我さんに聞きました「すべての人が能力を発揮し、活躍できる社会へ」（2026年3月25日）',
+			'en'   => 'GLOBIS alumni interview with Toga Chiyozaki: toward a society where everyone can use their abilities (25 March 2026).',
+			'keys' => array( 'detail-25752', '千代崎', 'すべての人が能力を発揮', 'Toga Chiyozaki', 'everyone can use their abilities' ),
+		),
+		array(
+			'date' => '2025-12-10',
+			'ja'   => 'グロービス知見録で福留大士氏に「志の力」を聞きました（2025年12月10日）',
+			'en'   => 'Interviewed Daishi Fukudome on the power of kokorozashi for GLOBIS (10 December 2025).',
+			'keys' => array( 'xll9i38vmmjf', '志の力', '福留大士', 'Daishi Fukudome', 'power of kokorozashi' ),
 		),
 		array(
 			'date' => '2025-09-12',
@@ -464,6 +512,18 @@ function kocorolab_refresh_news_overlay_entries() {
 			'ja'   => 'ウェルビーイング時代のチェンジマネジメントのYouTubeシリーズを公開しました。',
 			'en'   => 'Published the YouTube series Change Management under Well-being Era.',
 			'keys' => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
+		),
+		array(
+			'date' => '2022-10-25',
+			'ja'   => 'マンスリーMiLI「IDGｓと人間性の開発をめぐる対話」に登壇しました（2022年10月25日）',
+			'en'   => 'Talked at Monthly MiLI: Inner Development Goals and developing humanity (25 October 2022).',
+			'keys' => array( 'IDGｓと人間性', 'Inner Development Goals', '20220917', 'マンスリーMiLI' ),
+		),
+		array(
+			'date' => '2022-05-19',
+			'ja'   => 'CAN-Japanウェビナー「IPCC第6次評価報告書から気候危機を回避する道筋を考える」でカーボンプライシングについて報告しました（2022年5月19日）',
+			'en'   => 'Spoke on carbon pricing at the CAN-Japan webinar on IPCC AR6 (19 May 2022).',
+			'keys' => array( 'events-ja/3263', 'カーボンプライシング', 'IPCC第6次', 'carbon pricing', 'IPCC AR6' ),
 		),
 		array(
 			'date' => '2019-02-01',
@@ -573,11 +633,19 @@ function kocorolab_refresh_news_overlay_entries() {
 			'en'   => 'MHQ version 1 press release',
 			'keys' => array( 'MHQ1', 'バージョン１発売', 'version 1 press', '3238' ),
 		),
+		array(
+			'date' => '2002-03-01',
+			'ja'   => '『認知科学』に第3回認知科学国際会議（ICCS 2001）参加報告が掲載されました。',
+			'en'   => 'Conference report on ICCS 2001 published in Cognitive Studies 9(1).',
+			'keys' => array( 'ICCS 2001', '9_1_178', '参加報告', 'Conference report on ICCS' ),
+		),
 	);
 }
 
 function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 	$ja = array(
+		array( '2026-05-20', 'グロービス知見録に「現場が動かない…を解決！自己と組織を変えるU字カーブの歩き方」を寄稿しました（2026年5月20日）' ),
+		array( '2026-04-22', 'YOKOHAMA CONNÉCT #36で Tri-sector innovation セッションに登壇しました（2026年4月22日）' ),
 		array( '2026-04-13', 'MBCC 未来をひらくラジオにゲスト出演しました。「共助なき社会で、若者の未来はどうなるのか」（2026年4月13日）' ),
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。' ),
 		array( '2020-12-06', '健康×幸福トーク登壇' ),
@@ -605,6 +673,8 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2009-07-01', 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース' ),
 	);
 	$en = array(
+		array( '2026-05-20', 'GLOBIS article: how to walk the U-curve when the workplace will not move (20 May 2026).' ),
+		array( '2026-04-22', 'Featured at YOKOHAMA CONNÉCT #36: Tri-sector innovation for sustainability (22 April 2026).' ),
 		array( '2026-04-13', 'Guest on MBCC radio: “What happens to young people’s future in a society without mutual aid” (13 April 2026).' ),
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026 nominations open' ),
 		array( '2020-12-06', 'Talk on health and happiness' ),
