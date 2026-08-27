@@ -396,6 +396,7 @@ a.kl-soft-card:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .kl-photo-card .kl-kicker,
@@ -830,6 +831,10 @@ a.kl-soft-card:hover {
 }
 
 .kl-mhq-profile {
+  display: grid;
+  grid-template-columns: 8.4rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
   margin: 2rem 0 1.2rem;
   padding: 1.4rem 1.2rem;
   background: #fff;
@@ -838,6 +843,25 @@ a.kl-soft-card:hover {
 
 .kl-mhq-profile h2 {
   margin: 0 0 0.4rem;
+}
+
+.kl-mhq-profile .kl-founder-photo {
+  height: 11rem;
+  margin: 0;
+  box-shadow: none;
+}
+
+.kl-profile-head {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+
+.kl-profile-head .kl-founder-photo {
+  height: 13.5rem;
+  margin: 0;
 }
 
 .kl-press {
@@ -910,7 +934,9 @@ a.kl-soft-card:hover {
   .kl-photo-grid,
   .kl-text-grid,
   .kl-contact-topics,
-  .kl-mhq-read-grid {
+  .kl-mhq-read-grid,
+  .kl-mhq-profile,
+  .kl-profile-head {
     grid-template-columns: 1fr;
   }
 
@@ -936,6 +962,12 @@ a.kl-soft-card:hover {
 
   .kl-founder-photo {
     height: 14rem;
+  }
+
+  .kl-profile-head .kl-founder-photo,
+  .kl-mhq-profile .kl-founder-photo {
+    height: 16rem;
+    max-width: 14rem;
   }
 
   .kl-topnav {
@@ -1006,7 +1038,12 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<li><strong>Environment</strong> — Practice also between society and planet, including MIT Sloan IDEAS Asia Pacific and Citizens’ Climate Lobby Japan’s nonpartisan citizen dialogue on climate.</li>
 		</ul>
 		<h2>Founder</h2>
-			<ul class="kl-title-chips">
+		<div class="kl-profile-head">
+				<figure class="kl-founder-photo">
+		<img src="../images/kohei-noda.jpg" alt="Kohei Noda" width="1200" height="1600">
+	</figure>
+				<div>
+					<ul class="kl-title-chips">
 					<li>
 									Ph.D. in Cognitive Science							</li>
 					<li>
@@ -1022,7 +1059,7 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 									<a href="https://sevengenerations.or.jp/">Auditor, NPO Seven Generations</a>
 							</li>
 			</ul>
-				<div class="kl-bio" data-kl-bio-tabs>
+						<div class="kl-bio" data-kl-bio-tabs>
 		<input class="kl-bio-switch kl-bio-switch-ja" type="radio" name="kl-bio-company" id="kl-bio-company-ja">
 		<input class="kl-bio-switch kl-bio-switch-en" type="radio" name="kl-bio-company" id="kl-bio-company-en" checked>
 		<div class="kl-bio-tabs" role="tablist" aria-label="Biography language">
@@ -1040,7 +1077,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<p>Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.</p>
 			<p class="kl-civic"><a href="https://japan.citizensclimatelobby.org/">Citizens’ Climate Lobby Japan</a> (Japan representative; nonpartisan citizen dialogue on climate) and <a href="https://sevengenerations.or.jp/">NPO Seven Generations</a> (auditor). Writing is also on <a href="https://note.com/koheinoda">note</a> and <a href="https://medium.com/@koheinoda_11596">Medium</a>.</p>		</div>
 	</div>
-			<p>He served as head of human resources at both a pre-IPO growth company and listed operating companies.</p>
+					<p>He served as head of human resources at both a pre-IPO growth company and listed operating companies.</p>
+			</div>
+		</div>
 		<h2>Overview</h2>
 		<table class="kl-table">
 							<tr>
@@ -1074,8 +1113,13 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 					</table>
 	</div>
 		<div class="kl-page">
-		<p class="kl-kicker">Ph.D. in Cognitive Science</p>
-			<ul class="kl-title-chips">
+		<div class="kl-profile-head">
+				<figure class="kl-founder-photo">
+		<img src="../images/kohei-noda.jpg" alt="Kohei Noda" width="1200" height="1600">
+	</figure>
+				<div>
+				<p class="kl-kicker">Ph.D. in Cognitive Science</p>
+					<ul class="kl-title-chips">
 					<li>
 									Ph.D. in Cognitive Science							</li>
 					<li>
@@ -1091,7 +1135,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 									<a href="https://sevengenerations.or.jp/">Auditor, NPO Seven Generations</a>
 							</li>
 			</ul>
-				<div class="kl-bio" data-kl-bio-tabs>
+				</div>
+		</div>
+			<div class="kl-bio" data-kl-bio-tabs>
 		<input class="kl-bio-switch kl-bio-switch-ja" type="radio" name="kl-bio-profile" id="kl-bio-profile-ja">
 		<input class="kl-bio-switch kl-bio-switch-en" type="radio" name="kl-bio-profile" id="kl-bio-profile-en" checked>
 		<div class="kl-bio-tabs" role="tablist" aria-label="Biography language">

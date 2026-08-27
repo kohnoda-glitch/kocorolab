@@ -65,7 +65,7 @@ $blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_
 
 $forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', '特任教授', 'リードファカルティ', 'Lead Faculty', '触れません', '公開しません', 'does not discuss individual', 'does not describe individual' );
 
-$images = array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg', 'kocoro-mark-light.png' );
+$images = array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg', 'kocoro-mark-light.png', 'kohei-noda.jpg' );
 $img_ok = true;
 foreach ( $images as $file ) {
 	$img_ok = $img_ok
@@ -163,6 +163,15 @@ $checks = array(
 			&& false === strpos( $html, '>K</span>' )
 			&& 'images/kocoro-mark-light.png' === kocorolab_refresh_image_url( 'mark' );
 	} )(),
+	'portrait photo on profile, company, and MHQ LP' => (
+		false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/front-page.php' ), "kocorolab_refresh_image_url( 'portrait' )" )
+		&& false !== strpos( $ja_profile, 'kohei-noda.jpg' )
+		&& false !== strpos( $ja_company, 'kohei-noda.jpg' )
+		&& false !== strpos( $ja_lp, 'kohei-noda.jpg' )
+		&& false !== strpos( $en_lp, 'Kohei Noda' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'kohei-noda.jpg' )
+		&& 'images/kohei-noda.jpg' === kocorolab_refresh_image_url( 'portrait' )
+	),
 	'JA bio has wellbeing and systems' => ( false !== strpos( $ja['bio_p2_ja'], '認知科学' ) && false !== strpos( $ja['bio_p2_ja'], '万物のウェルビーイング' ) && false !== strpos( $ja['bio_p2_ja'], '地球システム' ) ),
 	'EN bio has wellbeing and systems' => ( false !== strpos( $en['bio_p2_en'], 'cognitive science' ) && false !== strpos( $en['bio_p2_en'], 'well-being' ) && false !== strpos( $en['bio_p2_en'], 'planetary system' ) ),
 	'JA page includes English Bio tab' => ( false !== strpos( $ja_profile, 'English Bio' ) && false !== strpos( $ja_profile, 'Kohei Noda, Ph.D.' ) && false !== strpos( $ja_profile, 'kl-bio-tab' ) ),

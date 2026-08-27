@@ -145,7 +145,7 @@ $news_items = kocorolab_refresh_news_feed_items( $lang, $news_posts, 4 );
 		<section class="kl-band" id="profile">
 			<div class="kl-wide kl-founder">
 				<figure class="kl-founder-photo">
-					<img src="<?php echo esc_url( $society ); ?>" alt="<?php echo esc_attr( kocorolab_refresh_t( 'bio_name_ja' ) ); ?>">
+					<img src="<?php echo esc_url( kocorolab_refresh_image_url( 'portrait' ) ); ?>" alt="<?php echo esc_attr( kocorolab_refresh_t( 'bio_name_ja' ) ); ?>" width="1200" height="1600">
 				</figure>
 				<div class="kl-founder-copy">
 					<p class="kl-kicker"><?php kocorolab_refresh_e( 'bio_kicker' ); ?></p>

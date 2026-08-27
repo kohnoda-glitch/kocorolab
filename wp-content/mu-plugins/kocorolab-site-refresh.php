@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Unzip into wp-content/mu-plugins/ so this file sits next to the kocorolab-site-refresh/ folder — do not dump the inner PHP files into mu-plugins/.
- * Version: 1.6.42
+ * Version: 1.6.43
  * Author: Kohei Noda
  */
 
@@ -283,6 +283,7 @@ function kocorolab_refresh_image_files() {
 		'society'     => 'society-green.jpg',
 		'environment' => 'environment-ocean.jpg',
 		'mark'        => 'kocoro-mark-light.png',
+		'portrait'    => 'kohei-noda.jpg',
 	);
 }
 
@@ -554,7 +555,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.42' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.43' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
@@ -663,7 +664,7 @@ add_action(
 			'kocorolab_refresh_images',
 			array(
 				'title'       => 'ココロラボの写真',
-				'description' => 'トップの空・緑・海は、あとから自分で撮った写真に差し替えできます。メディアから選ぶか、wp-content/uploads/kocorolab-refresh/ に同じファイル名で置いてください（hero-horizon.jpg / spirit-sky.jpg / society-green.jpg / environment-ocean.jpg）。',
+				'description' => 'トップの空・緑・海と、プロフィール写真はあとから差し替えできます。メディアから選ぶか、wp-content/uploads/kocorolab-refresh/ に同じファイル名で置いてください（hero-horizon.jpg / spirit-sky.jpg / society-green.jpg / environment-ocean.jpg / kohei-noda.jpg）。',
 				'priority'    => 40,
 			)
 		);
@@ -673,6 +674,7 @@ add_action(
 			'spirit'      => '精神（空）',
 			'society'     => '社会（緑）',
 			'environment' => '環境（海）',
+			'portrait'    => 'プロフィール写真',
 		);
 
 		foreach ( $labels as $key => $label ) {

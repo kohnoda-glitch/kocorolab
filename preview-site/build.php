@@ -131,6 +131,7 @@ function kocorolab_refresh_image_url( $key ) {
 		'society'     => 'society-green.jpg',
 		'environment' => 'environment-ocean.jpg',
 		'mark'        => 'kocoro-mark-light.png',
+		'portrait'    => 'kohei-noda.jpg',
 	);
 	$file   = isset( $files[ $key ] ) ? $files[ $key ] : 'hero-horizon.jpg';
 	$prefix = ! empty( $GLOBALS['KOCORO_PREVIEW_EN'] ) ? '../images/' : 'images/';

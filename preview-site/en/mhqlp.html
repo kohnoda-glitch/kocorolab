@@ -396,6 +396,7 @@ a.kl-soft-card:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .kl-photo-card .kl-kicker,
@@ -830,6 +831,10 @@ a.kl-soft-card:hover {
 }
 
 .kl-mhq-profile {
+  display: grid;
+  grid-template-columns: 8.4rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
   margin: 2rem 0 1.2rem;
   padding: 1.4rem 1.2rem;
   background: #fff;
@@ -838,6 +843,25 @@ a.kl-soft-card:hover {
 
 .kl-mhq-profile h2 {
   margin: 0 0 0.4rem;
+}
+
+.kl-mhq-profile .kl-founder-photo {
+  height: 11rem;
+  margin: 0;
+  box-shadow: none;
+}
+
+.kl-profile-head {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+
+.kl-profile-head .kl-founder-photo {
+  height: 13.5rem;
+  margin: 0;
 }
 
 .kl-press {
@@ -910,7 +934,9 @@ a.kl-soft-card:hover {
   .kl-photo-grid,
   .kl-text-grid,
   .kl-contact-topics,
-  .kl-mhq-read-grid {
+  .kl-mhq-read-grid,
+  .kl-mhq-profile,
+  .kl-profile-head {
     grid-template-columns: 1fr;
   }
 
@@ -936,6 +962,12 @@ a.kl-soft-card:hover {
 
   .kl-founder-photo {
     height: 14rem;
+  }
+
+  .kl-profile-head .kl-founder-photo,
+  .kl-mhq-profile .kl-founder-photo {
+    height: 16rem;
+    max-width: 14rem;
   }
 
   .kl-topnav {
@@ -1024,9 +1056,13 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<div class="kl-photo-grid kl-text-grid">
 				<article class="kl-soft-card"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/B0DGFRYHMX"><img src="https://m.media-amazon.com/images/P/B0DGFRYHMX.01._SCLZZZZZZZ_.jpg" alt="The book you should read when you think you would be depression" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/B0DGFRYHMX">The book you should read when you think you would be depression</a><p>A book for noticing a tendency first.</p></span></span></article><article class="kl-soft-card"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/B0DTS8XLPD"><img src="https://m.media-amazon.com/images/P/B0DTS8XLPD.01._SCLZZZZZZZ_.jpg" alt="Stress Defense Strategies in the VUCA Era" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">Stress Defense Strategies in the VUCA Era</a><p>After noticing, tips for how to attend to stress.</p></span></span></article>			</div>
 			<section class="kl-mhq-profile">
-				<h2>Developer</h2>
-				<p class="kl-kicker">Kohei Noda · Ph.D. in Cognitive Science</p>
-					<ul class="kl-title-chips">
+					<figure class="kl-founder-photo">
+		<img src="../images/kohei-noda.jpg" alt="Kohei Noda" width="1200" height="1600">
+	</figure>
+					<div>
+					<h2>Developer</h2>
+					<p class="kl-kicker">Kohei Noda · Ph.D. in Cognitive Science</p>
+						<ul class="kl-title-chips">
 					<li>
 									Ph.D. in Cognitive Science							</li>
 					<li>
@@ -1042,8 +1078,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 									<a href="https://sevengenerations.or.jp/">Auditor, NPO Seven Generations</a>
 							</li>
 			</ul>
-					<p>Kohei Noda, Ph.D. in Cognitive Science, is Representative Director at Kocorolab Inc., Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, Japan representative of Citizens’ Climate Lobby Japan, and auditor of NPO Seven Generations.</p>
-				<p><a href="member.html">Full profile</a></p>
+						<p>Kohei Noda, Ph.D. in Cognitive Science, is Representative Director at Kocorolab Inc., Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, Japan representative of Citizens’ Climate Lobby Japan, and auditor of NPO Seven Generations.</p>
+					<p><a href="member.html">Full profile</a></p>
+				</div>
 			</section>
 			<h2>What it measures (public names)</h2>
 			<ul class="kl-read">

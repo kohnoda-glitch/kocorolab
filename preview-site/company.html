@@ -396,6 +396,7 @@ a.kl-soft-card:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .kl-photo-card .kl-kicker,
@@ -830,6 +831,10 @@ a.kl-soft-card:hover {
 }
 
 .kl-mhq-profile {
+  display: grid;
+  grid-template-columns: 8.4rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
   margin: 2rem 0 1.2rem;
   padding: 1.4rem 1.2rem;
   background: #fff;
@@ -838,6 +843,25 @@ a.kl-soft-card:hover {
 
 .kl-mhq-profile h2 {
   margin: 0 0 0.4rem;
+}
+
+.kl-mhq-profile .kl-founder-photo {
+  height: 11rem;
+  margin: 0;
+  box-shadow: none;
+}
+
+.kl-profile-head {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+
+.kl-profile-head .kl-founder-photo {
+  height: 13.5rem;
+  margin: 0;
 }
 
 .kl-press {
@@ -910,7 +934,9 @@ a.kl-soft-card:hover {
   .kl-photo-grid,
   .kl-text-grid,
   .kl-contact-topics,
-  .kl-mhq-read-grid {
+  .kl-mhq-read-grid,
+  .kl-mhq-profile,
+  .kl-profile-head {
     grid-template-columns: 1fr;
   }
 
@@ -936,6 +962,12 @@ a.kl-soft-card:hover {
 
   .kl-founder-photo {
     height: 14rem;
+  }
+
+  .kl-profile-head .kl-founder-photo,
+  .kl-mhq-profile .kl-founder-photo {
+    height: 16rem;
+    max-width: 14rem;
   }
 
   .kl-topnav {
@@ -1006,7 +1038,12 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<li><strong>環境</strong> — MIT Sloan IDEAS Asia Pacific や、市民気候ロビージャパンでの超党派の対話など、気候変動を社会のしくみの問題としても扱います。</li>
 		</ul>
 		<h2>代表</h2>
-			<ul class="kl-title-chips">
+		<div class="kl-profile-head">
+				<figure class="kl-founder-photo">
+		<img src="images/kohei-noda.jpg" alt="野田浩平" width="1200" height="1600">
+	</figure>
+				<div>
+					<ul class="kl-title-chips">
 					<li>
 									博士（学術 / 認知科学）							</li>
 					<li>
@@ -1022,7 +1059,7 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 									<a href="https://sevengenerations.or.jp/">NPO法人セブン・ジェネレーションズ 監事</a>
 							</li>
 			</ul>
-				<div class="kl-bio" data-kl-bio-tabs>
+						<div class="kl-bio" data-kl-bio-tabs>
 		<input class="kl-bio-switch kl-bio-switch-ja" type="radio" name="kl-bio-company" id="kl-bio-company-ja" checked>
 		<input class="kl-bio-switch kl-bio-switch-en" type="radio" name="kl-bio-company" id="kl-bio-company-en">
 		<div class="kl-bio-tabs" role="tablist" aria-label="プロフィールの言語">
@@ -1040,7 +1077,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<p>Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.</p>
 			<p class="kl-civic"><a href="https://japan.citizensclimatelobby.org/">Citizens’ Climate Lobby Japan</a> (Japan representative; nonpartisan citizen dialogue on climate) and <a href="https://sevengenerations.or.jp/">NPO Seven Generations</a> (auditor). Writing is also on <a href="https://note.com/koheinoda">note</a> and <a href="https://medium.com/@koheinoda_11596">Medium</a>.</p>		</div>
 	</div>
-			<p>人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。</p>
+					<p>人事の実務では、上場前の成長企業と上場後の事業会社の双方で人事責任者を務めてきました。</p>
+			</div>
+		</div>
 		<h2>概要</h2>
 		<table class="kl-table">
 							<tr>
@@ -1074,8 +1113,13 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 					</table>
 	</div>
 		<div class="kl-page">
-		<p class="kl-kicker">博士（学術 / 認知科学）</p>
-			<ul class="kl-title-chips">
+		<div class="kl-profile-head">
+				<figure class="kl-founder-photo">
+		<img src="images/kohei-noda.jpg" alt="野田浩平" width="1200" height="1600">
+	</figure>
+				<div>
+				<p class="kl-kicker">博士（学術 / 認知科学）</p>
+					<ul class="kl-title-chips">
 					<li>
 									博士（学術 / 認知科学）							</li>
 					<li>
@@ -1091,7 +1135,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 									<a href="https://sevengenerations.or.jp/">NPO法人セブン・ジェネレーションズ 監事</a>
 							</li>
 			</ul>
-				<div class="kl-bio" data-kl-bio-tabs>
+				</div>
+		</div>
+			<div class="kl-bio" data-kl-bio-tabs>
 		<input class="kl-bio-switch kl-bio-switch-ja" type="radio" name="kl-bio-profile" id="kl-bio-profile-ja" checked>
 		<input class="kl-bio-switch kl-bio-switch-en" type="radio" name="kl-bio-profile" id="kl-bio-profile-en">
 		<div class="kl-bio-tabs" role="tablist" aria-label="プロフィールの言語">

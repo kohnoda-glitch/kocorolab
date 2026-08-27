@@ -523,6 +523,21 @@ function kocorolab_refresh_press_kit_html( $c, $lang ) {
 	return ob_get_clean();
 }
 
+function kocorolab_refresh_portrait_figure_html( $lang = 'ja' ) {
+	$url = kocorolab_refresh_image_url( 'portrait' );
+	if ( ! $url ) {
+		return '';
+	}
+	$c = kocorolab_refresh_copy( $lang );
+	ob_start();
+	?>
+	<figure class="kl-founder-photo">
+		<img src="<?php echo esc_url( $url ); ?>" alt="<?php echo esc_attr( $c['profile_h2'] ); ?>" width="1200" height="1600">
+	</figure>
+	<?php
+	return ob_get_clean();
+}
+
 function kocorolab_refresh_page_html( $slug, $lang = 'ja' ) {
 	$c = kocorolab_refresh_copy( $lang );
 
@@ -575,9 +590,14 @@ function kocorolab_refresh_company_html( $c, $lang ) {
 			<li><strong><?php echo esc_html( $c['domain3_kicker'] ); ?></strong> — <?php echo esc_html( $c['domain3_body'] ); ?></li>
 		</ul>
 		<h2><?php echo esc_html( $c['company_p_h'] ); ?></h2>
-		<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
-		<?php echo kocorolab_refresh_bio_tabs_html( 'company', $lang ); ?>
-		<p><?php echo esc_html( $c['who_hr'] ); ?></p>
+		<div class="kl-profile-head">
+			<?php echo kocorolab_refresh_portrait_figure_html( $lang ); ?>
+			<div>
+				<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
+				<?php echo kocorolab_refresh_bio_tabs_html( 'company', $lang ); ?>
+				<p><?php echo esc_html( $c['who_hr'] ); ?></p>
+			</div>
+		</div>
 		<h2><?php echo esc_html( $c['overview_h'] ); ?></h2>
 		<table class="kl-table">
 			<?php foreach ( $rows as $row ) : ?>
@@ -626,8 +646,13 @@ function kocorolab_refresh_profile_html( $c, $lang ) {
 	ob_start();
 	?>
 	<div class="kl-page">
-		<p class="kl-kicker"><?php echo esc_html( $c['profile_role'] ); ?></p>
-		<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
+		<div class="kl-profile-head">
+			<?php echo kocorolab_refresh_portrait_figure_html( $lang ); ?>
+			<div>
+				<p class="kl-kicker"><?php echo esc_html( $c['profile_role'] ); ?></p>
+				<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
+			</div>
+		</div>
 		<?php echo kocorolab_refresh_bio_tabs_html( 'profile', $lang ); ?>
 		<?php echo kocorolab_refresh_spea_records_html( $lang ); ?>
 		<p><?php echo esc_html( $c['profile_note'] ); ?></p>
@@ -741,11 +766,14 @@ function kocorolab_refresh_mhq2_html( $c, $lang ) {
 				<?php echo kocorolab_refresh_mhq_book_cards_html( $c, $lang ); ?>
 			</div>
 			<section class="kl-mhq-profile">
-				<h2><?php echo esc_html( $c['mhq2_profile_h'] ); ?></h2>
-				<p class="kl-kicker"><?php echo esc_html( $c['profile_h2'] ); ?> · <?php echo esc_html( $c['profile_role'] ); ?></p>
-				<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
-				<p><?php echo esc_html( $c['who_body'] ); ?></p>
-				<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/member/', '/en/member/', $lang ) ); ?>"><?php echo esc_html( $c['who_more'] ); ?></a></p>
+				<?php echo kocorolab_refresh_portrait_figure_html( $lang ); ?>
+				<div>
+					<h2><?php echo esc_html( $c['mhq2_profile_h'] ); ?></h2>
+					<p class="kl-kicker"><?php echo esc_html( $c['profile_h2'] ); ?> · <?php echo esc_html( $c['profile_role'] ); ?></p>
+					<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
+					<p><?php echo esc_html( $c['who_body'] ); ?></p>
+					<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/member/', '/en/member/', $lang ) ); ?>"><?php echo esc_html( $c['who_more'] ); ?></a></p>
+				</div>
 			</section>
 			<h2><?php echo esc_html( $c['mhq2_scales_h'] ); ?></h2>
 			<ul class="kl-read">

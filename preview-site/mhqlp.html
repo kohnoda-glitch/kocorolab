@@ -396,6 +396,7 @@ a.kl-soft-card:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .kl-photo-card .kl-kicker,
@@ -830,6 +831,10 @@ a.kl-soft-card:hover {
 }
 
 .kl-mhq-profile {
+  display: grid;
+  grid-template-columns: 8.4rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
   margin: 2rem 0 1.2rem;
   padding: 1.4rem 1.2rem;
   background: #fff;
@@ -838,6 +843,25 @@ a.kl-soft-card:hover {
 
 .kl-mhq-profile h2 {
   margin: 0 0 0.4rem;
+}
+
+.kl-mhq-profile .kl-founder-photo {
+  height: 11rem;
+  margin: 0;
+  box-shadow: none;
+}
+
+.kl-profile-head {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+
+.kl-profile-head .kl-founder-photo {
+  height: 13.5rem;
+  margin: 0;
 }
 
 .kl-press {
@@ -910,7 +934,9 @@ a.kl-soft-card:hover {
   .kl-photo-grid,
   .kl-text-grid,
   .kl-contact-topics,
-  .kl-mhq-read-grid {
+  .kl-mhq-read-grid,
+  .kl-mhq-profile,
+  .kl-profile-head {
     grid-template-columns: 1fr;
   }
 
@@ -936,6 +962,12 @@ a.kl-soft-card:hover {
 
   .kl-founder-photo {
     height: 14rem;
+  }
+
+  .kl-profile-head .kl-founder-photo,
+  .kl-mhq-profile .kl-founder-photo {
+    height: 16rem;
+    max-width: 14rem;
   }
 
   .kl-topnav {
@@ -1024,9 +1056,13 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<div class="kl-photo-grid kl-text-grid">
 				<article class="kl-soft-card"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/B0DGFRYHMX"><img src="https://m.media-amazon.com/images/P/B0DGFRYHMX.01._SCLZZZZZZZ_.jpg" alt="「私、うつになりやすいかも？」と思った時に読む本" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/B0DGFRYHMX">「私、うつになりやすいかも？」と思った時に読む本</a><p>先に、自分の傾向に気づく本です。</p></span></span></article><article class="kl-soft-card"><span class="kl-pub-media"><a class="kl-pub-thumb kl-pub-thumb--book" href="https://www.amazon.co.jp/dp/B0DTS8XLPD"><img src="https://m.media-amazon.com/images/P/B0DTS8XLPD.01._SCLZZZZZZZ_.jpg" alt="VUCA時代のストレス防衛術" loading="lazy" decoding="async"></a><span class="kl-pub-text"><a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">VUCA時代のストレス防衛術</a><p>気づいたあとの、ストレスへの注意の向け方です。</p></span></span></article>			</div>
 			<section class="kl-mhq-profile">
-				<h2>開発者</h2>
-				<p class="kl-kicker">野田浩平 · 博士（学術 / 認知科学）</p>
-					<ul class="kl-title-chips">
+					<figure class="kl-founder-photo">
+		<img src="images/kohei-noda.jpg" alt="野田浩平" width="1200" height="1600">
+	</figure>
+					<div>
+					<h2>開発者</h2>
+					<p class="kl-kicker">野田浩平 · 博士（学術 / 認知科学）</p>
+						<ul class="kl-title-chips">
 					<li>
 									博士（学術 / 認知科学）							</li>
 					<li>
@@ -1042,8 +1078,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 									<a href="https://sevengenerations.or.jp/">NPO法人セブン・ジェネレーションズ 監事</a>
 							</li>
 			</ul>
-					<p>野田浩平は、博士（学術 / 認知科学）。株式会社ココロラボ 代表取締役、グロービス経営大学院 専任教員、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、市民気候ロビージャパン代表、NPO法人セブン・ジェネレーションズ監事です。</p>
-				<p><a href="member.html">プロフィール詳細</a></p>
+						<p>野田浩平は、博士（学術 / 認知科学）。株式会社ココロラボ 代表取締役、グロービス経営大学院 専任教員、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、市民気候ロビージャパン代表、NPO法人セブン・ジェネレーションズ監事です。</p>
+					<p><a href="member.html">プロフィール詳細</a></p>
+				</div>
 			</section>
 			<h2>測っていること（公開している範囲）</h2>
 			<ul class="kl-read">
