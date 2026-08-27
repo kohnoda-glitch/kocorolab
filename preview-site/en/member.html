@@ -1,4 +1,14 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Profile | Kocoro Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Profile | Kocoro Lab</title><link rel="icon" type="image/png" href="../images/kocoro-mark-light.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
+
+html:has(body.kl-refresh),
+body.kl-refresh {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.kl-refresh > .kl-topbar {
+  margin-top: 0 !important;
+}
 
 body.kl-refresh #site_wrap {
   display: block !important;
@@ -73,13 +83,18 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 .kl-mark {
   display: grid;
   place-items: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 0.55rem;
-  background: #128a82;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.4rem;
+  background: transparent;
+  overflow: hidden;
+}
+
+.kl-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .kl-brand-text {
@@ -147,6 +162,12 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   background: rgba(255, 255, 255, 0.14);
   color: #fff !important;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82);
+}
+
+.kl-page .kl-btn-ghost {
+  background: transparent;
+  color: #0e2a36 !important;
+  box-shadow: inset 0 0 0 1px #0e2a36;
 }
 
 .kl-btn-dark {
@@ -339,6 +360,31 @@ a.kl-soft-card:hover {
   box-shadow: 0 18px 40px rgba(18, 138, 130, 0.16);
 }
 
+.kl-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+}
+
+.kl-card-links a,
+.kl-read a {
+  color: #128a82;
+}
+
+.kl-page h3 {
+  margin: 1.1rem 0 0.4rem;
+  font-size: 1.02rem;
+}
+
+.kl-read {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+  color: #3c5661;
+  line-height: 1.7;
+}
+
 .kl-photo-card figure {
   margin: 0;
   height: 11.5rem;
@@ -350,6 +396,7 @@ a.kl-soft-card:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .kl-photo-card .kl-kicker,
@@ -394,6 +441,7 @@ a.kl-soft-card:hover {
   display: grid;
   grid-template-columns: 7.2rem 1fr;
   gap: 0.8rem;
+  align-items: start;
   margin: 0;
   padding: 0.95rem 1.15rem;
   border-bottom: 1px solid #e4eef0;
@@ -402,6 +450,26 @@ a.kl-soft-card:hover {
 .kl-news-list time {
   color: #5b7380;
   font-size: 0.88rem;
+}
+
+.kl-news-list li.kl-news-has-photo {
+  grid-template-columns: 7.2rem 6.2rem 1fr;
+}
+
+.kl-news-thumb {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: #d7e3e8;
+  line-height: 0;
+  align-self: start;
+}
+
+.kl-news-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .kl-related-links {
@@ -431,7 +499,53 @@ a.kl-soft-card:hover {
 .kl-page {
   max-width: 46rem;
   margin: 0 auto;
-  padding: 2.8rem 1.5rem 4.5rem;
+  padding: 1.35rem 1.5rem 4.5rem;
+}
+
+.kl-pub-row {
+  margin: 0 0 1rem;
+}
+
+.kl-pub-media {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.kl-pub-thumb {
+  flex: 0 0 auto;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: #d7e3e8;
+  box-shadow: 0 8px 18px rgba(16, 48, 56, 0.12);
+}
+
+.kl-pub-thumb img {
+  display: block;
+  height: auto;
+}
+
+.kl-pub-thumb--book img {
+  width: 4.4rem;
+}
+
+.kl-pub-thumb--video img {
+  width: 7.4rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.kl-pub-thumb--photo img {
+  width: 7.4rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.kl-pub-text {
+  min-width: 0;
+  flex: 1;
 }
 
 .kl-page a,
@@ -483,14 +597,21 @@ a.kl-soft-card:hover {
   vertical-align: middle;
 }
 
-.kl-mhq-lp form {
+.kl-mhq-lp form,
+.kl-paypal {
   display: inline-block;
   margin: 0 0.35rem 0.35rem 0;
   vertical-align: middle;
 }
 
-.kl-mhq-lp input[type="image"] {
+.kl-mhq-lp input[type="image"],
+.kl-paypal input[type="image"] {
   vertical-align: middle;
+}
+
+.kl-paypal-cell {
+  width: 8.5rem;
+  white-space: nowrap;
 }
 
 .kl-sitefoot {
@@ -519,6 +640,15 @@ a.kl-soft-card:hover {
   font-size: 0.78rem;
   font-weight: 700;
   line-height: 1.45;
+}
+
+.kl-title-chips a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.kl-title-chips a:hover {
+  text-decoration: underline;
 }
 
 .kl-bio {
@@ -701,12 +831,139 @@ a.kl-soft-card:hover {
   background: #128a82;
 }
 
+.kl-mhq2-hero {
+  padding: 4.4rem 4vw 3.2rem;
+  color: #f4fffb;
+  background:
+    linear-gradient(90deg, rgba(8, 22, 34, 0.55) 0%, rgba(8, 22, 34, 0.18) 55%, rgba(8, 22, 34, 0.08) 100%),
+    var(--kl-hero-image) center / cover no-repeat;
+}
+
+.kl-mhq2-hero h1 {
+  margin: 0.4rem 0 0.8rem;
+  max-width: 18ch;
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  line-height: 1.25;
+}
+
+.kl-mhq2-hero .kl-lead {
+  max-width: 38rem;
+  color: #e8f4f2;
+}
+
+.kl-mhq-note {
+  margin: 1.4rem 0 0;
+  color: #5b7380;
+  font-size: 0.92rem;
+}
+
+.kl-mhq-profile {
+  display: grid;
+  grid-template-columns: 8.4rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
+  margin: 2rem 0 1.2rem;
+  padding: 1.4rem 1.2rem;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.kl-mhq-profile h2 {
+  margin: 0 0 0.4rem;
+}
+
+.kl-mhq-profile .kl-founder-photo {
+  height: 11rem;
+  margin: 0;
+  box-shadow: none;
+}
+
+.kl-profile-head {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+
+.kl-profile-head .kl-founder-photo {
+  height: 13.5rem;
+  margin: 0;
+}
+
+.kl-press {
+  margin: 2.2rem 0 0;
+  padding: 1.4rem 1.2rem;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.kl-press h2 {
+  margin: 0 0 0.5rem;
+}
+
+.kl-press h3 {
+  margin: 1.1rem 0 0.4rem;
+}
+
+.kl-mhq-read-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.kl-mhq-scale {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto;
+  gap: 0.35rem 0.85rem;
+  align-items: center;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-steps {
+  display: flex;
+  gap: 0.28rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kl-mhq-steps li {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 99px;
+  background: #d5e8e5;
+}
+
+.kl-mhq-steps li.is-on {
+  background: #128a82;
+}
+
+.kl-mhq-bar {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-bar i {
+  display: block;
+  height: 0.45rem;
+  border-radius: 99px;
+  background: #128a82;
+}
+
 @media (max-width: 900px) {
   .kl-mission .kl-wide,
   .kl-founder,
   .kl-photo-grid,
   .kl-text-grid,
-  .kl-contact-topics {
+  .kl-contact-topics,
+  .kl-mhq-read-grid,
+  .kl-mhq-profile,
+  .kl-profile-head {
     grid-template-columns: 1fr;
   }
 
@@ -730,8 +987,22 @@ a.kl-soft-card:hover {
     gap: 0.2rem;
   }
 
+  .kl-news-list li.kl-news-has-photo {
+    grid-template-columns: 1fr;
+  }
+
+  .kl-news-thumb {
+    max-width: 12rem;
+  }
+
   .kl-founder-photo {
     height: 14rem;
+  }
+
+  .kl-profile-head .kl-founder-photo,
+  .kl-mhq-profile .kl-founder-photo {
+    height: 16rem;
+    max-width: 14rem;
   }
 
   .kl-topnav {
@@ -756,13 +1027,25 @@ a.kl-soft-card:hover {
     width: 100%;
     justify-content: center;
   }
+
+  .kl-pub-thumb--book img {
+    width: 3.8rem;
+  }
+
+  .kl-pub-thumb--video img {
+    width: 6.2rem;
+  }
+
+  .kl-pub-thumb--photo img {
+    width: 6.2rem;
+  }
 }
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
+.kl-page{padding-top:1.35rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
 	<a class="kl-brand" href="index.html">
-		<span class="kl-mark" aria-hidden="true">K</span>
+		<span class="kl-mark" aria-hidden="true"><img src="../images/kocoro-mark-light.png" alt=""></span>
 		<span class="kl-brand-text">
 			<strong>Kocoro Laboratory</strong>
 			<small>Kocoro Laboratory, Inc.</small>
@@ -771,6 +1054,7 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 	<nav class="kl-topnav" aria-label="Primary">
 					<a href="index.html">Home</a>
 					<a href="service.html">Services</a>
+					<a href="mhqlp.html">MHQ2</a>
 					<a href="news.html">Updates</a>
 					<a href="publications.html">Publications</a>
 					<a href="member.html" class="is-current">Profile</a>
@@ -782,14 +1066,31 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 	</div>
 </header>
 		<div class="kl-page"><h1>Profile</h1>
-		<p class="kl-kicker">Ph.D. in Cognitive Science</p>
-			<ul class="kl-title-chips">
-					<li>Ph.D. in Cognitive Science</li>
-					<li>Representative Director, Kocorolab Inc.</li>
-					<li>Associate Professor and Research Faculty, Globis University Graduate School of Management</li>
-					<li>Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific</li>
+		<div class="kl-profile-head">
+				<figure class="kl-founder-photo">
+		<img src="../images/kohei-noda.jpg" alt="Kohei Noda" width="1200" height="1600">
+	</figure>
+				<div>
+				<p class="kl-kicker">Ph.D. in Cognitive Science</p>
+					<ul class="kl-title-chips">
+					<li>
+									Ph.D. in Cognitive Science							</li>
+					<li>
+									Representative Director, Kocorolab Inc.							</li>
+					<li>
+									Associate Professor and Research Faculty, Globis University Graduate School of Management							</li>
+					<li>
+									Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific							</li>
+					<li>
+									<a href="https://japan.citizensclimatelobby.org/">Japan Representative, Citizens’ Climate Lobby Japan</a>
+							</li>
+					<li>
+									<a href="https://sevengenerations.or.jp/">Auditor, NPO Seven Generations</a>
+							</li>
 			</ul>
-				<div class="kl-bio" data-kl-bio-tabs>
+				</div>
+		</div>
+			<div class="kl-bio" data-kl-bio-tabs>
 		<input class="kl-bio-switch kl-bio-switch-ja" type="radio" name="kl-bio-profile" id="kl-bio-profile-ja">
 		<input class="kl-bio-switch kl-bio-switch-en" type="radio" name="kl-bio-profile" id="kl-bio-profile-en" checked>
 		<div class="kl-bio-tabs" role="tablist" aria-label="Biography language">
@@ -798,26 +1099,59 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 		</div>
 		<div class="kl-bio-panel kl-bio-panel-ja" lang="ja">
 			<h3 class="kl-bio-name">野田 浩平（のだ こうへい）</h3>
-			<p>博士（学術 / 認知科学）。グロービス経営大学院 専任教員（研究者教員）、MIT経営大学院グローバルプログラム IDEAS Asia Pacific リージョナル・ファカルティ、株式会社ココロラボ代表取締役。</p>
+			<p>東京工業大学大学院修了、博士（学術 / 認知科学）。人事・チェンジマネジメントと適性検査の事業開発を経て独立し、メンタルヘルス検査 MHQ を発売。フィリピン・ドゥマゲテでは Starting Point English Academy（SPEA）校長として、街での実践型の学びと現地の組織運営に携わり、グローバル人材育成と人事統括にも従事。バリのグリーン・スクールを参考に、現地の人も通える学びの場を目指していました。事業会社の人事責任者を経て、株式会社グロービス、グロービス経営大学院 専任教員。MIT経営大学院グローバルプログラム IDEAS Asia Pacific 修了、同リージョナル・ファカルティ、株式会社ココロラボ代表取締役。</p>
 			<p>専門は認知科学（感情研究）。人間の感情や意思決定のメカニズムを探求する学術的知見を基盤に、経営大学院でのリーダーシップ・倫理・価値観教育や、企業における組織行動・人財開発に従事。U理論やシステム思考をベースに、個人の内面から組織、地域、気候変動をはじめとする地球システム全体までを俯瞰し、万物のウェルビーイングを最大化するための実践・アクション研究を展開している。</p>
-							<p>市民気候ロビー（CCL）Japan 代表も務めています。</p>
-				<p>これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。</p>
-					</div>
+			<p class="kl-civic"><a href="https://japan.citizensclimatelobby.org/">市民気候ロビージャパン</a>代表（気候変動についての超党派の対話）、および<a href="https://sevengenerations.or.jp/">NPO法人セブン・ジェネレーションズ</a>監事。文章は<a href="https://note.com/koheinoda">note</a>と<a href="https://medium.com/@koheinoda_11596">Medium</a>でも公開しています。</p>		</div>
 		<div class="kl-bio-panel kl-bio-panel-en" lang="en">
 			<h3 class="kl-bio-name">Kohei Noda, Ph.D.</h3>
-			<p>Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc.</p>
+			<p>Ph.D. in Cognitive Science, Tokyo Institute of Technology. After HR and change-management consulting and work in talent and assessment, he launched the MHQ mental health questionnaire. In Dumaguete, Philippines, he served as principal of Starting Point English Academy (SPEA), working on experiential learning in the city and local operations, and also led global talent development and HR. Drawing on Bali’s Green School, SPEA aimed at a place local families could also attend. He later served as head of HR in operating companies, then joined GLOBIS Corporation. He is Associate Professor and Research Faculty at Globis University Graduate School of Management, Regional Faculty for MIT Sloan Global Program IDEAS Asia Pacific, and Representative Director at Kocorolab Inc.</p>
 			<p>Holding a Ph.D. in Cognitive Science with a research focus on human emotion, his work integrates cognitive science with systemic leadership, ethics, and action research. Guided by systems thinking and Theory U, he leads interdisciplinary initiatives bridging academic research, executive education, and global sustainability movements to optimize overall well-being across individuals, organizations, and the planetary system.</p>
-							<p>He also serves as Japan lead for Citizens’ Climate Lobby.</p>
-				<p>He later served as head of human resources in operating companies, including a pre-IPO growth company and a listed company.</p>
-					</div>
+			<p class="kl-civic"><a href="https://japan.citizensclimatelobby.org/">Citizens’ Climate Lobby Japan</a> (Japan representative; nonpartisan citizen dialogue on climate) and <a href="https://sevengenerations.or.jp/">NPO Seven Generations</a> (auditor). Writing is also on <a href="https://note.com/koheinoda">note</a> and <a href="https://medium.com/@koheinoda_11596">Medium</a>.</p>		</div>
 	</div>
-			<p>See Publications for research, and News &amp; activities for occasional notes.</p>
+			<p class="kl-past">Records of SPEA in Dumaguete: <a href="https://www.pro-japan.jp/school/spea/">school profile (Philippine Ryugaku Pro)</a> · <a href="https://m.pro-japan.jp/images/upload/sc_ref/116/SPEAnew22019.pdf">2019 school brochure PDF</a> · <a href="https://www.youtube.com/watch?v=n_Wcw5cKZ6A">intro film</a> · <a href="https://www.youtube.com/@Speastartingpoitenglishacademy">YouTube</a> · <a href="https://researchmap.jp/kohnoda">researchmap</a>.</p>		<p>See Publications for research, and News &amp; activities for occasional notes.</p>
 		<p>
 			<a href="publications.html">Publication list</a>
 			·
 			<a href="news.html">All news</a>
+			·
+			<a href="https://note.com/koheinoda">note</a>
+			·
+			<a href="https://medium.com/@koheinoda_11596">Medium</a>
+			·
+			<a href="#media">Media and speaking</a>
 		</p>
-	</div>
+			<section class="kl-press" id="media">
+		<h2>Media and speaking</h2>
+		<p>For interviews, essays, and talks. This is expert work, not celebrity exposure. Interviews are available in Japanese and English.</p>
+			<ul class="kl-title-chips">
+					<li>
+									Ph.D. in Cognitive Science							</li>
+					<li>
+									Representative Director, Kocorolab Inc.							</li>
+					<li>
+									Associate Professor and Research Faculty, Globis University Graduate School of Management							</li>
+					<li>
+									Regional Faculty, MIT Sloan Global Program IDEAS Asia Pacific							</li>
+					<li>
+									<a href="https://japan.citizensclimatelobby.org/">Japan Representative, Citizens’ Climate Lobby Japan</a>
+							</li>
+					<li>
+									<a href="https://sevengenerations.or.jp/">Auditor, NPO Seven Generations</a>
+							</li>
+			</ul>
+			<h3>Topics</h3>
+		<ul class="kl-list">
+			<li>Cognitive science of emotion, and leadership education</li>
+			<li>The MHQ mental health questionnaire: noticing your own tendencies and turning attention toward them</li>
+			<li>Practice that connects mind, society, and environment</li>
+			<li>Nonpartisan citizen dialogue on climate</li>
+		</ul>
+		<p>Write to info@kocorolab.com. Titles and records are on the profile and publications pages.</p>
+		<p class="kl-contact-mail-wrap">
+			<a class="kl-mail kl-mail-on-light" href="mailto:info@kocorolab.com">info@kocorolab.com</a>
+		</p>
+	</section>
+		</div>
 	<footer class="kl-sitefoot">
 	<p>A laboratory for mind, society, and environment.</p>
 	<p>© 株式会社ココロラボ / Kocoro Laboratory, Inc.</p>

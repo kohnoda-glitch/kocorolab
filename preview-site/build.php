@@ -23,23 +23,32 @@ function esc_url( $url ) {
 }
 
 function kocorolab_preview_page_file( $key, $for_en ) {
+	if ( 'hakkou' === $key ) {
+		$key = 'publications';
+	}
 	$ja = array(
-		'home'    => 'index.html',
-		'service' => 'service.html',
-		'news'    => 'news.html',
-		'hakkou'  => 'hakkou.html',
-		'company' => 'company.html',
-		'member'  => 'member.html',
-		'contact' => 'contact.html',
+		'home'         => 'index.html',
+		'service'      => 'service.html',
+		'news'         => 'news.html',
+		'publications' => 'publications.html',
+		'company'      => 'company.html',
+		'member'       => 'member.html',
+		'contact'      => 'contact.html',
+		'mhq2'         => 'mhqlp.html',
+		'mhqlp'        => 'mhqlp.html',
+		'mhq-read'     => 'mhq-read.html',
 	);
 	$en = array(
-		'home'    => 'index.html',
-		'service' => 'service.html',
-		'news'    => 'news.html',
-		'hakkou'  => 'publications.html',
-		'company' => 'company.html',
-		'member'  => 'member.html',
-		'contact' => 'contact.html',
+		'home'         => 'index.html',
+		'service'      => 'service.html',
+		'news'         => 'news.html',
+		'publications' => 'publications.html',
+		'company'      => 'company.html',
+		'member'       => 'member.html',
+		'contact'      => 'contact.html',
+		'mhq2'         => 'mhqlp.html',
+		'mhqlp'        => 'mhqlp.html',
+		'mhq-read'     => 'mhq-read.html',
 	);
 	return $for_en ? $en[ $key ] : $ja[ $key ];
 }
@@ -66,14 +75,21 @@ function home_url( $path = '/' ) {
 		'/news/'             => 'news',
 		'/en/news/'          => 'news',
 		'/news/?lang=en'     => 'news',
-		'/hakkou/'           => 'hakkou',
-		'/en/publications/'  => 'hakkou',
+		'/hakkou/'           => 'publications',
+		'/publications/'     => 'publications',
+		'/en/publications/'  => 'publications',
 		'/company/'          => 'company',
 		'/en/company/'       => 'company',
 		'/member/'           => 'member',
 		'/en/member/'        => 'member',
 		'/contact/'          => 'contact',
 		'/en/contact/'       => 'contact',
+		'/mhqlp/'            => 'mhqlp',
+		'/mhqlp/?lang=en'    => 'mhqlp',
+		'/mhq2/'             => 'mhqlp',
+		'/en/mhq2/'          => 'mhqlp',
+		'/mhq-read/'         => 'mhq-read',
+		'/en/mhq-read/'      => 'mhq-read',
 	);
 	$path = (string) $path;
 	if ( isset( $map[ $path ] ) ) {
@@ -91,9 +107,6 @@ function home_url( $path = '/' ) {
 			return 'en/' . $file;
 		}
 		return $file;
-	}
-	if ( 0 === strpos( $path, '/mhqlp/' ) ) {
-		return 'https://kocorolab.com/mhqlp/' . ( false !== strpos( $path, 'lang=en' ) ? '?lang=en' : '' );
 	}
 	return 'https://kocorolab.com' . $path;
 }
@@ -117,6 +130,8 @@ function kocorolab_refresh_image_url( $key ) {
 		'spirit'      => 'spirit-sky.jpg',
 		'society'     => 'society-green.jpg',
 		'environment' => 'environment-ocean.jpg',
+		'mark'        => 'kocoro-mark-light.png',
+		'portrait'    => 'kohei-noda.jpg',
 	);
 	$file   = isset( $files[ $key ] ) ? $files[ $key ] : 'hero-horizon.jpg';
 	$prefix = ! empty( $GLOBALS['KOCORO_PREVIEW_EN'] ) ? '../images/' : 'images/';
@@ -132,7 +147,7 @@ function get_posts( $args = array() ) {
 		)
 		: array(
 			array( '2026-03-01', 'MIT Sloan IDEAS Asia Pacific のパンフレット', 'news.html' ),
-			array( '2025-09-06', '日本認知科学会第42回大会で発表', 'hakkou.html' ),
+			array( '2025-09-06', '日本認知科学会第42回大会で発表', 'publications.html' ),
 		);
 	$out = array();
 	foreach ( $items as $item ) {
@@ -183,6 +198,10 @@ function get_header() {
 function get_footer() {
 }
 
+if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) ) {
+	define( 'KOCOROLAB_REFRESH_DIR', $root . '/wp-content/mu-plugins/kocorolab-site-refresh' );
+}
+
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/publications.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/links.php';
@@ -193,7 +212,7 @@ function kocorolab_preview_extra_css() {
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}
+.kl-page{padding-top:1.35rem}
 CSS;
 }
 
@@ -204,6 +223,7 @@ function kocorolab_preview_wrap( $lang, $title, $body, $is_home = false ) {
 	$html  = '<!DOCTYPE html><html lang="' . ( $en ? 'en' : 'ja' ) . '"><head><meta charset="utf-8">';
 	$html .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	$html .= '<title>' . esc_html( $title ) . '</title>';
+	$html .= '<link rel="icon" type="image/png" href="' . ( $en ? '../images/kocoro-mark-light.png' : 'images/kocoro-mark-light.png' ) . '">';
 	$html .= '<link rel="preconnect" href="https://fonts.googleapis.com">';
 	$html .= '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">';
 	$html .= '<style>' . $css . kocorolab_preview_extra_css() . '</style></head>';
@@ -227,7 +247,7 @@ $img_dst = $out . '/images';
 if ( ! is_dir( $img_dst ) ) {
 	mkdir( $img_dst, 0755, true );
 }
-foreach ( array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg' ) as $img ) {
+foreach ( array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg', 'kocoro-mark-light.png' ) as $img ) {
 	copy( "$img_src/$img", "$img_dst/$img" );
 }
 
@@ -235,7 +255,7 @@ $news_ja = '<div class="kl-page"><p class="kl-lead">日記ブログではなく�
 
 $news_en = '<div class="kl-page"><p class="kl-lead">This is not a diary. It is a quiet log of occasional work notes — an IDEAS brochure, an MHQ credential update — rather than extra service pages.</p><ul class="kl-news-list"><li><time datetime="2026-03-01">2026.03.01</time><span>MIT Sloan IDEAS Asia Pacific brochure. See the live Updates page for the original post.</span></li><li><time datetime="2025-09-06">2025.09.06</time><span>Presented “The cognitive affective model of theory U” at the 42nd Annual Meeting of the Japanese Cognitive Science Society.</span></li><li><time>Upcoming</time><span>Mental healthcare qualification (MHQ) notes will also live here, not as a separate service page.</span></li></ul></div>';
 
-$pub_ja = '<div class="kl-page"><p class="kl-lead">研究と現場のあいだで書いてきたものを、年ごとに置いています。2025年の先頭に、日本認知科学会第42回大会の単著発表を追加します。</p><h2>2025</h2><p>野田浩平 (2025). U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.<br><a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">PDF</a></p><p>そのほかの文献は、本番サイトの <a href="https://kocorolab.com/hakkou/">発表文献</a> をご覧ください。</p></div>';
+$pub_ja = '<div class="kl-page"><p class="kl-lead">研究と現場のあいだで書いてきたものを、年ごとに置いています。2025年の先頭に、日本認知科学会第42回大会の単著発表を追加します。</p><h2>2025</h2><p>野田浩平 (2025). U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.<br><a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">PDF</a></p><p>そのほかの文献は、本番サイトの <a href="https://kocorolab.com/publications/">発表文献</a> をご覧ください。</p></div>';
 
 $pub_en = '<div class="kl-page"><p class="kl-lead">Writing from between research and practice, listed by year. A 2025 sole-author paper for the Japanese Cognitive Science Society is added at the top of that year.</p><h2>2025</h2><p>Kohei Noda (2025). The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.<br><a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">PDF</a></p><p>The full list remains on the live <a href="https://kocorolab.com/en/publications/">Publications</a> page.</p></div>';
 
@@ -280,8 +300,12 @@ kocorolab_preview_write( "$out/service.html", kocorolab_preview_render_inner( 'j
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'news';
 kocorolab_preview_write( "$out/news.html", kocorolab_preview_render_inner( 'ja', '活動・新着', kocorolab_refresh_news_html( 'ja' ) ) );
 
-$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'hakkou';
-kocorolab_preview_write( "$out/hakkou.html", kocorolab_preview_render_inner( 'ja', '発表文献', kocorolab_refresh_publications_html( 'ja' ) ) );
+$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'publications';
+kocorolab_preview_write( "$out/publications.html", kocorolab_preview_render_inner( 'ja', '発表文献', kocorolab_refresh_publications_html( 'ja' ) ) );
+kocorolab_preview_write(
+	"$out/hakkou.html",
+	'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=publications.html"><link rel="canonical" href="publications.html"><title>発表文献</title></head><body><p><a href="publications.html">発表文献</a></p></body></html>'
+);
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'company';
 kocorolab_preview_write( "$out/company.html", kocorolab_preview_render_inner( 'ja', '会社概要', kocorolab_refresh_page_html( 'company', 'ja' ) . kocorolab_refresh_page_html( 'member', 'ja' ) ) );
@@ -291,6 +315,16 @@ kocorolab_preview_write( "$out/member.html", kocorolab_preview_render_inner( 'ja
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
 kocorolab_preview_write( "$out/contact.html", kocorolab_preview_render_inner( 'ja', 'お問い合わせ', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'ja' ), 'ja' ) . '<div class="kl-page"><p>本プレビューではフォームは動きません。本番ではこのページに既存の問い合わせフォームが残ります。メール：info@kocorolab.com</p></div>' ) );
+
+$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq2';
+kocorolab_preview_write( "$out/mhqlp.html", kocorolab_preview_render_inner( 'ja', '個人向け MHQ2', kocorolab_refresh_page_html( 'mhqlp', 'ja' ) ) );
+kocorolab_preview_write(
+	"$out/mhq2.html",
+	'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=mhqlp.html"><link rel="canonical" href="mhqlp.html"><title>MHQ2</title></head><body><p><a href="mhqlp.html">個人向けランディング</a></p></body></html>'
+);
+
+$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq-read';
+kocorolab_preview_write( "$out/mhq-read.html", kocorolab_preview_render_inner( 'ja', '結果の読み方', kocorolab_refresh_page_html( 'mhq-read', 'ja' ) ) );
 
 // English pages
 $GLOBALS['KOCORO_PREVIEW_LANG'] = 'en';
@@ -305,7 +339,7 @@ kocorolab_preview_write( "$out/en/service.html", kocorolab_preview_render_inner(
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'news';
 kocorolab_preview_write( "$out/en/news.html", kocorolab_preview_render_inner( 'en', 'News & activities', kocorolab_refresh_news_html( 'en' ) ) );
 
-$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'hakkou';
+$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'publications';
 kocorolab_preview_write( "$out/en/publications.html", kocorolab_preview_render_inner( 'en', 'Publications', kocorolab_refresh_publications_html( 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'company';
@@ -316,6 +350,16 @@ kocorolab_preview_write( "$out/en/member.html", kocorolab_preview_render_inner( 
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
 kocorolab_preview_write( "$out/en/contact.html", kocorolab_preview_render_inner( 'en', 'Contact', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'en' ), 'en' ) . '<div class="kl-page"><p>This preview does not send messages. On the live site the existing form remains. Email: info@kocorolab.com</p></div>' ) );
+
+$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq2';
+kocorolab_preview_write( "$out/en/mhqlp.html", kocorolab_preview_render_inner( 'en', 'MHQ2 for individuals', kocorolab_refresh_page_html( 'mhqlp', 'en' ) ) );
+kocorolab_preview_write(
+	"$out/en/mhq2.html",
+	'<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=mhqlp.html"><link rel="canonical" href="mhqlp.html"><title>MHQ2</title></head><body><p><a href="mhqlp.html">Individual landing</a></p></body></html>'
+);
+
+$GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq-read';
+kocorolab_preview_write( "$out/en/mhq-read.html", kocorolab_preview_render_inner( 'en', 'How to read results', kocorolab_refresh_page_html( 'mhq-read', 'en' ) ) );
 
 file_put_contents( "$out/.nojekyll", "" );
 echo "Done.\n";
