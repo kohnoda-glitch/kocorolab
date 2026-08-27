@@ -63,11 +63,11 @@ function kocorolab_refresh_neue_fahne_journal_20_pdf() {
 }
 
 function kocorolab_refresh_niigata_tit_2000_resume_url() {
-	return kocorolab_refresh_valdes_leadership_2000_url();
+	return kocorolab_refresh_overlay_file_url( 'niigata-tit-leadership-2000-resume.jpg' );
 }
 
 function kocorolab_refresh_valdes_leadership_2000_url() {
-	return kocorolab_refresh_overlay_file_url( 'niigata-tit-leadership-2000-resume.jpg' );
+	return kocorolab_refresh_overlay_file_url( 'valdes-leadership-generation-2000.pdf' );
 }
 
 function kocorolab_refresh_cebupot_2016_magazine_pdf() {
@@ -276,8 +276,8 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Noda, K. and Tokosumi, A. (2001) The emergence of depression – A proposal for a methodology of emotion research, Proceedings of the Third International Conference on Cognitive Science, 164. Beijing.',
 		),
 		'2000' => array(
-			kocorolab_refresh_linked_item( 'Noda, K. (2000) Leadership generation model from the perspective of emotion（感情から見たリーダーシップ発生モデル）, VALDES Technical paper, Tokyo Institute of Technology.', kocorolab_refresh_valdes_leadership_2000_url(), 'ja', 'テクニカルペーパー' ),
-			kocorolab_refresh_linked_item( '野田浩平ほか (2000) 役割アイデンティティのない状況下でのリーダーシップ, 新潟大・東工大交流ディスカッションプログラム 東工大側発表レジュメ. 野田「対人認知・対人感情の視点から見たリーダーシップ」. 会議概要は同テクニカルペーパーの1ページ.', kocorolab_refresh_valdes_leadership_2000_url(), 'ja', 'p.1' ),
+			kocorolab_refresh_linked_paper( 'Noda, K. (2000) Leadership generation model from the perspective of emotion（感情から見たリーダーシップ発生モデル）, VALDES Technical paper, Tokyo Institute of Technology.', kocorolab_refresh_valdes_leadership_2000_url(), 'ja' ),
+			kocorolab_refresh_linked_item( '野田浩平ほか (2000) 役割アイデンティティのない状況下でのリーダーシップ, 新潟大・東工大交流ディスカッションプログラム 東工大側発表レジュメ. 野田「対人認知・対人感情の視点から見たリーダーシップ」.', kocorolab_refresh_niigata_tit_2000_resume_url(), 'ja', 'レジュメ' ),
 			'Noda, K. and Tokosumi, A. (2000) The cognitive model of thinking process under the depression（抑うつ気分における思考過程の認知モデル）, 認知療法ニュース, 15.',
 			'Tokosumi, A. and Noda, K. (2000) Design principle of an artificial brain for emotion and kansei. Proceedings of the 11th T.I.T. Brain Research Symposium, pp. 38-45.',
 			'Noda, K. and Tokosumi, A. (2000) Brain modeling of depressive feeling and thinking, Proceedings of the 1st Corpus informatics research meeting, pp. 8-11.',
@@ -381,8 +381,8 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			'Noda, K. and Tokosumi, A. (2001) The emergence of depression – A proposal for a methodology of emotion research, Proceedings of the Third International Conference on Cognitive Science, 164.',
 		),
 		'2000' => array(
-			kocorolab_refresh_linked_item( 'Noda, K. (2000) Leadership generation model from the perspective of emotion, VALDES Technical paper, Tokyo Institute of Technology.', kocorolab_refresh_valdes_leadership_2000_url(), 'en', 'technical paper' ),
-			kocorolab_refresh_linked_item( 'Kohei Noda et al. (2000) Leadership in situations without role identity, Niigata University–Tokyo Tech Exchange Discussion Program. The session overview is page 1 of the same technical paper.', kocorolab_refresh_valdes_leadership_2000_url(), 'en', 'p.1' ),
+			kocorolab_refresh_linked_paper( 'Noda, K. (2000) Leadership generation model from the perspective of emotion, VALDES Technical paper, Tokyo Institute of Technology.', kocorolab_refresh_valdes_leadership_2000_url(), 'en' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda et al. (2000) Leadership in situations without role identity, Niigata University–Tokyo Tech Exchange Discussion Program resume. Noda: leadership from interpersonal cognition and emotion.', kocorolab_refresh_niigata_tit_2000_resume_url(), 'en', 'resume' ),
 			'Noda, K. and Tokosumi, A. (2000) The cognitive model of thinking process under the depression, cognitive therapy news, 15.',
 			'Tokosumi, A. and Noda, K. (2000) Design principle of an artificial brain for emotion and kansei. Proceedings of the 11th T.I.T. Brain Research Symposium, pp. 38-45.',
 		),

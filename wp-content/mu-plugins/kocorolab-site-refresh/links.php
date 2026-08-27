@@ -312,12 +312,22 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( '役割アイデンティティのない状況下', 'without role identity', 'niigata-tit-leadership-2000', 'VALDES Technical paper', '感情から見たリーダーシップ発生モデル' ),
+			'keys'  => array( '感情から見たリーダーシップ発生モデル', 'Leadership generation model from the perspective of emotion', 'VALDES Technical paper', 'valdes-leadership-generation-2000' ),
 			'links' => array(
 				array(
 					'url' => kocorolab_refresh_valdes_leadership_2000_url(),
-					'ja'  => 'VALDESテクニカルペーパー（会議概要は1ページ）',
-					'en'  => 'VALDES technical paper (session overview is p. 1)',
+					'ja'  => 'VALDESテクニカルペーパー（本文PDF）',
+					'en'  => 'VALDES technical paper (PDF)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '役割アイデンティティのない状況下', 'without role identity', 'niigata-tit-leadership-2000', '交流ディスカッション' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_niigata_tit_2000_resume_url(),
+					'ja'  => '新潟大・東工大交流の発表レジュメ',
+					'en'  => 'Niigata–Tokyo Tech discussion resume',
 				),
 			),
 		),

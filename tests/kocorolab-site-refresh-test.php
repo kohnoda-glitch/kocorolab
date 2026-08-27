@@ -431,6 +431,7 @@ $checks = array(
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '交流ディスカッション' )
 		&& false === strpos( kocorolab_refresh_news_html( 'en' ), 'without role identity' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'niigata-tit-leadership-2000-resume.jpg' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'valdes-leadership-generation-2000.pdf' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '役割アイデンティティ' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'セブポットセミナー' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'しあわせワークショップ' )
@@ -579,8 +580,8 @@ $checks = array(
 			&& false === strpos( $news_to_ja, 'lang=en' );
 	} )(),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
-	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) && false !== strpos( $ja_pubs, '役割アイデンティティのない状況下' ) && false !== strpos( $ja_pubs, 'niigata-tit-leadership-2000-resume.jpg' ) && false !== strpos( $ja_pubs, 'VALDES Technical paper' ) && false !== strpos( $ja_pubs, 'テクニカルペーパーの1ページ' ) ),
-	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) && false !== strpos( $en_pubs, 'without role identity' ) && false !== strpos( $en_pubs, 'page 1 of the same technical paper' ) ),
+	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) && false !== strpos( $ja_pubs, '役割アイデンティティのない状況下' ) && false !== strpos( $ja_pubs, 'niigata-tit-leadership-2000-resume.jpg' ) && false !== strpos( $ja_pubs, 'VALDES Technical paper' ) && false !== strpos( $ja_pubs, 'valdes-leadership-generation-2000.pdf' ) && false !== strpos( $ja_pubs, '感情から見たリーダーシップ発生モデル' ) && false === strpos( $ja_pubs, 'テクニカルペーパーの1ページ' ) ),
+	'EN pubs include JCSS 2025 and 1997' => ( false !== strpos( $en_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $en_pubs, '1997' ) && false !== strpos( $en_pubs, 'without role identity' ) && false !== strpos( $en_pubs, 'valdes-leadership-generation-2000.pdf' ) && false === strpos( $en_pubs, 'page 1 of the same technical paper' ) ),
 	'placeholder images present' => $img_ok,
 	'image helper falls back' => 'images/hero-horizon.jpg' === kocorolab_refresh_image_url( 'hero' ),
 	'other slugs untouched' => '' === kocorolab_refresh_page_html( 'foobar', 'ja' ),
