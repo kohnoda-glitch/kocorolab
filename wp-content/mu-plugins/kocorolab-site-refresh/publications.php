@@ -181,6 +181,9 @@ function kocorolab_refresh_media_item( $citation, $key, $lang = 'ja', $label = '
 function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 	$pdfs = kocorolab_refresh_jcss_pdfs();
 	$ja   = array(
+		'2026' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2026) ゲスト「共助なき社会で、若者の未来はどうなるのか」, MBCC 未来をひらくラジオ, 2026年4月13日.', kocorolab_refresh_mbcc_spotify_episode_url(), 'ja', 'Spotify' ),
+		),
 		'2025' => array(
 			kocorolab_refresh_linked_paper( '野田浩平 (2025) U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.', $pdfs['2025'], 'ja' ),
 			kocorolab_refresh_media_item( '野田浩平, まめ, 海下理恵 (2025) VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集. (Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress)', 'vuca', 'ja', 'Amazon' ),
@@ -288,6 +291,9 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 	);
 
 	$en = array(
+		'2026' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2026) Guest: “What happens to young people’s future in a society without mutual aid”, MBCC radio, 13 April 2026.', kocorolab_refresh_mbcc_spotify_episode_url(), 'en', 'Spotify' ),
+		),
 		'2025' => array(
 			kocorolab_refresh_linked_paper( 'Kohei Noda (2025) The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.', $pdfs['2025'], 'en' ),
 			kocorolab_refresh_media_item( 'Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress', 'vuca', 'en', 'Amazon' ),
@@ -415,6 +421,12 @@ function kocorolab_refresh_publications_html( $lang = 'ja' ) {
 function kocorolab_refresh_news_overlay_entries() {
 	return array(
 		array(
+			'date' => '2026-04-13',
+			'ja'   => 'MBCC 未来をひらくラジオにゲスト出演しました。「共助なき社会で、若者の未来はどうなるのか」（2026年4月13日）',
+			'en'   => 'Guest on MBCC radio: “What happens to young people’s future in a society without mutual aid” (13 April 2026).',
+			'keys' => array( '共助なき社会', 'society without mutual aid', '03qbS6FrSXI0Bmg9bZWaLQ' ),
+		),
+		array(
 			'date' => '2025-09-12',
 			'ja'   => '日本認知科学会第42回大会で「U理論の認知感情モデル」を発表しました。',
 			'en'   => 'Presented “The cognitive affective model of theory U” at the 42nd Annual Meeting of the Japanese Cognitive Science Society.',
@@ -533,6 +545,7 @@ function kocorolab_refresh_news_overlay_entries() {
 
 function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 	$ja = array(
+		array( '2026-04-13', 'MBCC 未来をひらくラジオにゲスト出演しました。「共助なき社会で、若者の未来はどうなるのか」（2026年4月13日）' ),
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。' ),
 		array( '2020-12-06', '健康×幸福トーク登壇' ),
 		array( '2020-11-22', '対話イベント「フィジー人に学ぶ幸福の習慣」（ゲスト永崎裕麻、2020年11月22日）' ),
@@ -556,6 +569,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2009-07-01', 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース' ),
 	);
 	$en = array(
+		array( '2026-04-13', 'Guest on MBCC radio: “What happens to young people’s future in a society without mutual aid” (13 April 2026).' ),
 		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026 nominations open' ),
 		array( '2020-12-06', 'Talk on health and happiness' ),
 		array( '2020-11-22', 'Dialogue event: learning happiness habits from Fijians, with Yuma Nagasaki (22 November 2020).' ),

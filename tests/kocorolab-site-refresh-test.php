@@ -504,6 +504,15 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Journal No. 20' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'Journal No.20' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'journal-no20' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '共助なき社会' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'open.spotify.com/episode/03qbS6FrSXI0Bmg9bZWaLQ' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'mbcc-c.com/media/podcast-20260408.html' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'society without mutual aid' )
+		&& false !== strpos( $ja_pubs, '03qbS6FrSXI0Bmg9bZWaLQ' )
+		&& false !== strpos( $en_pubs, 'society without mutual aid' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '03qbS6FrSXI0Bmg9bZWaLQ' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'リサーチファカルティ' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'ローカルファカルティ' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {

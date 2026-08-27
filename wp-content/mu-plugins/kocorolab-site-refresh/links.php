@@ -78,8 +78,31 @@ function kocorolab_refresh_mhq_read_url( $lang = null ) {
 	return kocorolab_refresh_url( '/mhq-read/', '/en/mhq-read/', $lang );
 }
 
+function kocorolab_refresh_mbcc_spotify_episode_url() {
+	return 'https://open.spotify.com/episode/03qbS6FrSXI0Bmg9bZWaLQ';
+}
+
+function kocorolab_refresh_mbcc_podcast_notes_url() {
+	return 'https://mbcc-c.com/media/podcast-20260408.html';
+}
+
 function kocorolab_refresh_source_catalog() {
 	return array(
+		array(
+			'keys'  => array( '共助なき社会', 'society without mutual aid', '03qbS6FrSXI0Bmg9bZWaLQ', 'podcast-20260408' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_mbcc_spotify_episode_url(),
+					'ja'  => 'Spotify（MBCC 未来をひらくラジオ）',
+					'en'  => 'Spotify (MBCC radio)',
+				),
+				array(
+					'url' => kocorolab_refresh_mbcc_podcast_notes_url(),
+					'ja'  => '番組案内（MBCC）',
+					'en'  => 'Episode notes (MBCC)',
+				),
+			),
+		),
 		array(
 			'keys'  => array( 'フィリピンの貧困', '平本', 'poverty and happiness', 'Hiramoto', '5acopoZcYfw' ),
 			'links' => array(
