@@ -66,6 +66,10 @@ function kocorolab_refresh_mhq_lp_url( $lang = null ) {
 	return kocorolab_refresh_url( '/mhqlp/', '/mhqlp/?lang=en', $lang );
 }
 
+function kocorolab_refresh_mhq_lp_prices_url( $lang = null ) {
+	return kocorolab_refresh_mhq_lp_url( $lang ) . '#mhq-prices';
+}
+
 function kocorolab_refresh_mhq2_url( $lang = null ) {
 	return kocorolab_refresh_mhq_lp_url( $lang );
 }

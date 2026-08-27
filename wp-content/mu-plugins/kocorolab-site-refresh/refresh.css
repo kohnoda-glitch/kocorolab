@@ -569,14 +569,21 @@ a.kl-soft-card:hover {
   vertical-align: middle;
 }
 
-.kl-mhq-lp form {
+.kl-mhq-lp form,
+.kl-paypal {
   display: inline-block;
   margin: 0 0.35rem 0.35rem 0;
   vertical-align: middle;
 }
 
-.kl-mhq-lp input[type="image"] {
+.kl-mhq-lp input[type="image"],
+.kl-paypal input[type="image"] {
   vertical-align: middle;
+}
+
+.kl-paypal-cell {
+  width: 8.5rem;
+  white-space: nowrap;
 }
 
 .kl-sitefoot {

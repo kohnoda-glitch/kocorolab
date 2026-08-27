@@ -225,6 +225,31 @@ $checks = array(
 		&& 'https://kocorolab.com/mhqlp/' === kocorolab_refresh_mhq2_url( 'ja' )
 		&& 'https://kocorolab.com/mhqlp/?lang=en' === kocorolab_refresh_mhq2_url( 'en' )
 	),
+	'mhqlp restores original PayPal hosted cart buttons' => (
+		false !== strpos( $ja_lp, 'https://www.paypal.com/cgi-bin/webscr' )
+		&& false !== strpos( $ja_lp, 'name="cmd" value="_s-xclick"' )
+		&& false !== strpos( $ja_lp, '7N935QSG5GFG6' )
+		&& false !== strpos( $ja_lp, '8ACH6ZXUBXHKA' )
+		&& false !== strpos( $ja_lp, 'MZ438WEWZG8AG' )
+		&& false !== strpos( $ja_lp, 'B2WMFPB3EGKPL' )
+		&& false !== strpos( $ja_lp, 'btn_cart_SM.gif' )
+		&& false !== strpos( $ja_lp, 'currency_code' )
+		&& false !== strpos( $ja_lp, 'id="mhq-prices"' )
+		&& false !== strpos( $ja_lp, 'カートに入れる' )
+		&& 4 === substr_count( $ja_lp, 'hosted_button_id' )
+		&& 4 === substr_count( $en_lp, 'hosted_button_id' )
+		&& false !== strpos( $en_lp, 'Add to Cart' )
+		&& false !== strpos( $ja_lp, 'href="#mhq-prices"' )
+		&& false !== strpos( $ja_lp, '企業導入（資料・問い合わせ）' )
+		&& false !== strpos( $ja_lp, '/contact/' )
+		&& false === strpos( $ja_profile, 'hosted_button_id' )
+		&& false === strpos( $ja_contact, 'hosted_button_id' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'hosted_button_id' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), 'hosted_button_id' )
+		&& false !== strpos( kocorolab_refresh_page_html( 'mhq-read', 'ja' ), '#mhq-prices' )
+		&& 'https://kocorolab.com/mhqlp/#mhq-prices' === kocorolab_refresh_mhq_lp_prices_url( 'ja' )
+		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-paypal' )
+	),
 	'virtual MHQ sample does not fake a WordPress post' => (function () {
 		$prev_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : null;
 		$prev_q   = isset( $GLOBALS['wp_query'] ) ? $GLOBALS['wp_query'] : null;

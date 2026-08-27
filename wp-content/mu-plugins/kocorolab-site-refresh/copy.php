@@ -106,13 +106,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq2_badge'     => '個人向け MHQ2',
 		'mhq2_title'     => '自分の特性に、注意を向ける',
 		'mhq2_lead'      => 'メンタル不調、コミュニケーション、仕事の進め方に困難を感じている人が、自分の特性に気づき、改善に注意を向けるための検査です。診断ではなく、社会と個人の変容をガイドする仕事の一部です。',
-		'mhq2_apply'     => '申し込む（問い合わせ）',
+		'mhq2_apply'     => 'PayPalで申し込む',
 		'mhq2_step1_h'   => '受験する',
 		'mhq2_step1_b'   => '120問に答えます。所要は12〜15分です。',
 		'mhq2_step2_h'   => '結果を読む',
 		'mhq2_step2_b'   => '報告書は3領域7カテゴリーを5段階で示します。簡易版と詳細版があります。',
 		'mhq2_step3_h'   => '必要ならフィードバック',
-		'mhq2_step3_b'   => '詳細版は、専門家のフィードバックセッションでの読み解きをおすすめします。申し込みは問い合わせへ。',
+		'mhq2_step3_b'   => '詳細版は、専門家のフィードバックセッションでの読み解きをおすすめします。セッションは下の PayPal から申し込めます。',
 		'mhq2_scales_h'  => '測っていること（公開している範囲）',
 		'mhq2_price_h'   => '価格（個人）',
 		'mhq2_price_simple' => 'MHQ（簡易版）',
@@ -124,6 +124,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq2_price_fb60' => 'フィードバックセッション（1時間）',
 		'mhq2_price_fb60_v' => '8,000円',
 		'mhq2_price_note' => '簡易版は、うつリスクと発達障害の可能性の大まかな結果です。詳細版は16分類が付きます。詳細版はフィードバックセッションでの読み解きをおすすめします。',
+		'mhq2_paypal_note' => '個人の申し込みは、各価格の横の PayPal「カートに入れる」からどうぞ。企業導入は問い合わせへ。',
 		'mhq2_books_h'   => '近年の2冊',
 		'mhq2_books_b'   => '検査で傾向を見、本で注意の向け方を読む、という使い方です。',
 		'mhq2_book_dep'  => '先に、自分の傾向に気づく本です。',
@@ -150,7 +151,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq_read_h'     => '結果の読み方',
 		'mhq_read_1'     => '数字は病名ではありません。うつリスクなどの傾向です。',
 		'mhq_read_2'     => '5段階はリスクの目安です。病名ではありません。',
-		'mhq_read_3'     => '詳細版はフィードバックセッションでの読み解きをおすすめします。申し込みは問い合わせへ。',
+		'mhq_read_3'     => '詳細版はフィードバックセッションでの読み解きをおすすめします。申し込みは案内ページの PayPal から。',
 		'svc3_h'         => '人事コンサルティング・コーチング',
 		'svc3_b'         => '人事制度、研修、コーチング。事業会社の人事責任者としての実務を踏まえて支援します。',
 		'svc4_h'         => '学術研究・統計',
@@ -275,13 +276,13 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq2_badge'     => 'MHQ2 for individuals',
 		'mhq2_title'     => 'Turn attention to your own tendencies',
 		'mhq2_lead'      => 'For people who struggle with mental load, communication, or how work gets done. Not a diagnosis. Part of guiding transformation for societies and individuals.',
-		'mhq2_apply'     => 'Apply (contact)',
+		'mhq2_apply'     => 'Pay with PayPal',
 		'mhq2_step1_h'   => 'Take it',
 		'mhq2_step1_b'   => '120 questions. About 12–15 minutes.',
 		'mhq2_step2_h'   => 'Read the results',
 		'mhq2_step2_b'   => 'The report uses 3 domains and 7 categories on a 5-point risk scale. There is a brief version and a detailed version.',
 		'mhq2_step3_h'   => 'Feedback if needed',
-		'mhq2_step3_b'   => 'For the detailed version, a specialist feedback session is recommended. Apply through contact.',
+		'mhq2_step3_b'   => 'For the detailed version, a specialist feedback session is recommended. Book it with the PayPal buttons below.',
 		'mhq2_scales_h'  => 'What it measures (public names)',
 		'mhq2_price_h'   => 'Individual prices',
 		'mhq2_price_simple' => 'MHQ (brief)',
@@ -293,6 +294,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq2_price_fb60' => 'Feedback session (60 min)',
 		'mhq2_price_fb60_v' => '8,000 yen',
 		'mhq2_price_note' => 'The brief version gives a broad reading of depression risk and the possibility of developmental disorders. The detailed version adds 16 categories. A feedback session is recommended for the detailed version.',
+		'mhq2_paypal_note' => 'Individuals: add an item to the PayPal cart next to the price. Companies: use contact.',
 		'mhq2_books_h'   => 'Two recent books',
 		'mhq2_books_b'   => 'Use the questionnaire to see a tendency, then the books to see where to put attention.',
 		'mhq2_book_dep'  => 'A book for noticing a tendency first.',
@@ -319,7 +321,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'mhq_read_h'     => 'How to read the results',
 		'mhq_read_1'     => 'The numbers are not a diagnosis. They describe tendencies such as depression risk.',
 		'mhq_read_2'     => 'The 5-point scale is a risk guide, not a disease name.',
-		'mhq_read_3'     => 'A feedback session is recommended for the detailed version. Apply through contact.',
+		'mhq_read_3'     => 'A feedback session is recommended for the detailed version. Apply with PayPal on the landing page.',
 		'svc3_h'         => 'HR consulting and coaching',
 		'svc3_b'         => 'HR systems, training, and coaching, informed by work as head of HR in operating companies.',
 		'svc4_h'         => 'Research and statistics',
@@ -662,17 +664,59 @@ function kocorolab_refresh_mhq_sample_scale_html( $label, $filled ) {
 	return ob_get_clean();
 }
 
+/**
+ * Hosted PayPal cart buttons from the original /mhqlp/ page
+ * (Wayback 2025-11-08 id_ snapshot). Same four products, JPY.
+ */
+function kocorolab_refresh_paypal_hosted_button_ids() {
+	return array(
+		'simple' => '7N935QSG5GFG6',
+		'detail' => '8ACH6ZXUBXHKA',
+		'fb30'   => 'MZ438WEWZG8AG',
+		'fb60'   => 'B2WMFPB3EGKPL',
+	);
+}
+
+function kocorolab_refresh_paypal_cart_button_html( $key, $lang, $label ) {
+	$ids = kocorolab_refresh_paypal_hosted_button_ids();
+	if ( ! isset( $ids[ $key ] ) ) {
+		return '';
+	}
+	$button_id = $ids[ $key ];
+	$ja        = ( 'en' !== $lang );
+	$src       = $ja
+		? 'https://www.paypalobjects.com/ja_JP/JP/i/btn/btn_cart_SM.gif'
+		: 'https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif';
+	$title     = $ja
+		? 'PayPalなら、オンラインで安全・簡単にお支払いが可能です。'
+		: 'PayPal — The safer, easier way to pay online.';
+	$alt       = $ja ? 'カートに入れる' : 'Add to Cart';
+	$aria      = $ja
+		? ( $label . 'をカートに入れる' )
+		: ( 'Add ' . $label . ' to cart' );
+	ob_start();
+	?>
+	<form class="kl-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" aria-label="<?php echo esc_attr( $aria ); ?>">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="<?php echo esc_attr( $button_id ); ?>">
+		<input type="hidden" name="currency_code" value="JPY">
+		<input type="image" src="<?php echo esc_url( $src ); ?>" name="submit" title="<?php echo esc_attr( $title ); ?>" alt="<?php echo esc_attr( $alt ); ?>">
+	</form>
+	<?php
+	return ob_get_clean();
+}
+
 function kocorolab_refresh_mhq2_html( $c, $lang ) {
 	$hero = kocorolab_refresh_image_url( 'hero' );
 	ob_start();
 	?>
-	<div class="kl-mhq2">
+	<div class="kl-mhq2 kl-mhq-lp">
 		<section class="kl-mhq2-hero" style="--kl-hero-image: url('<?php echo esc_url( $hero ); ?>');">
 			<p class="kl-badge"><?php echo esc_html( $c['mhq2_badge'] ); ?></p>
 			<h1><?php echo esc_html( $c['mhq2_title'] ); ?></h1>
 			<p class="kl-lead"><?php echo esc_html( $c['mhq2_lead'] ); ?></p>
 			<p class="kl-actions">
-				<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['mhq2_apply'] ); ?></a>
+				<a class="kl-btn" href="#mhq-prices"><?php echo esc_html( $c['mhq2_apply'] ); ?></a>
 				<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_mhq_read_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_read_link'] ); ?></a>
 			</p>
 		</section>
@@ -686,7 +730,7 @@ function kocorolab_refresh_mhq2_html( $c, $lang ) {
 					<h3><?php echo esc_html( $c['mhq2_step2_h'] ); ?></h3>
 					<p><?php echo esc_html( $c['mhq2_step2_b'] ); ?></p>
 				</a>
-				<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>">
+				<a class="kl-soft-card" href="#mhq-prices">
 					<h3><?php echo esc_html( $c['mhq2_step3_h'] ); ?></h3>
 					<p><?php echo esc_html( $c['mhq2_step3_b'] ); ?></p>
 				</a>
@@ -712,21 +756,40 @@ function kocorolab_refresh_mhq2_html( $c, $lang ) {
 				<li><?php echo esc_html( $c['mhq_read_dev'] ); ?></li>
 			</ul>
 			<p class="kl-mhq-note"><?php echo esc_html( $c['svc2_b'] ); ?></p>
+			<section id="mhq-prices">
 			<h2><?php echo esc_html( $c['mhq2_price_h'] ); ?></h2>
 			<table class="kl-table">
-				<tr><th><?php echo esc_html( $c['mhq2_price_simple'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_simple_v'] ); ?></td></tr>
-				<tr><th><?php echo esc_html( $c['mhq2_price_detail'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_detail_v'] ); ?></td></tr>
-				<tr><th><?php echo esc_html( $c['mhq2_price_fb30'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_fb30_v'] ); ?></td></tr>
-				<tr><th><?php echo esc_html( $c['mhq2_price_fb60'] ); ?></th><td><?php echo esc_html( $c['mhq2_price_fb60_v'] ); ?></td></tr>
+				<tr>
+					<th><?php echo esc_html( $c['mhq2_price_simple'] ); ?></th>
+					<td><?php echo esc_html( $c['mhq2_price_simple_v'] ); ?></td>
+					<td class="kl-paypal-cell"><?php echo kocorolab_refresh_paypal_cart_button_html( 'simple', $lang, $c['mhq2_price_simple'] ); ?></td>
+				</tr>
+				<tr>
+					<th><?php echo esc_html( $c['mhq2_price_detail'] ); ?></th>
+					<td><?php echo esc_html( $c['mhq2_price_detail_v'] ); ?></td>
+					<td class="kl-paypal-cell"><?php echo kocorolab_refresh_paypal_cart_button_html( 'detail', $lang, $c['mhq2_price_detail'] ); ?></td>
+				</tr>
+				<tr>
+					<th><?php echo esc_html( $c['mhq2_price_fb30'] ); ?></th>
+					<td><?php echo esc_html( $c['mhq2_price_fb30_v'] ); ?></td>
+					<td class="kl-paypal-cell"><?php echo kocorolab_refresh_paypal_cart_button_html( 'fb30', $lang, $c['mhq2_price_fb30'] ); ?></td>
+				</tr>
+				<tr>
+					<th><?php echo esc_html( $c['mhq2_price_fb60'] ); ?></th>
+					<td><?php echo esc_html( $c['mhq2_price_fb60_v'] ); ?></td>
+					<td class="kl-paypal-cell"><?php echo kocorolab_refresh_paypal_cart_button_html( 'fb60', $lang, $c['mhq2_price_fb60'] ); ?></td>
+				</tr>
 			</table>
 			<p><?php echo esc_html( $c['mhq2_price_note'] ); ?></p>
+			<p><?php echo esc_html( $c['mhq2_paypal_note'] ); ?></p>
+			</section>
 			<h2><?php echo esc_html( $c['mhq2_talk_h'] ); ?></h2>
 			<p><?php echo esc_html( $c['mhq2_talk_b'] ); ?></p>
 			<h2><?php echo esc_html( $c['mhq2_coach_h'] ); ?></h2>
 			<p><?php echo esc_html( $c['mhq2_coach_b'] ); ?></p>
 			<p><?php echo esc_html( $c['mhq2_corp_note'] ); ?></p>
 			<p class="kl-actions">
-				<a class="kl-btn kl-btn-dark" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['mhq2_apply'] ); ?></a>
+				<a class="kl-btn kl-btn-dark" href="#mhq-prices"><?php echo esc_html( $c['mhq2_apply'] ); ?></a>
 				<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a>
 			</p>
 		</div>
@@ -767,10 +830,10 @@ function kocorolab_refresh_mhq_read_html( $c, $lang ) {
 			</article>
 		</div>
 		<div class="kl-photo-grid kl-text-grid">
-			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>">
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_prices_url( $lang ) ); ?>">
 				<h3><?php echo esc_html( $c['mhq2_apply'] ); ?></h3>
 			</a>
-			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>">
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_prices_url( $lang ) ); ?>">
 				<h3><?php echo esc_html( $c['mhq_read_session'] ); ?></h3>
 				<p><?php echo esc_html( $c['mhq2_talk_b'] ); ?></p>
 			</a>
@@ -801,7 +864,7 @@ function kocorolab_refresh_contact_intro_html( $c, $lang ) {
 			<li><?php echo esc_html( $c['contact_topic4'] ); ?></li>
 			<li><?php echo esc_html( $c['contact_topic5'] ); ?></li>
 		</ul>
-		<p><a href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_personal_link'] ); ?></a></p>
+		<p><a href="<?php echo esc_url( kocorolab_refresh_mhq_lp_prices_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_personal_link'] ); ?></a></p>
 		<?php echo kocorolab_refresh_press_kit_html( $c, $lang ); ?>
 	</div>
 	<?php

@@ -569,14 +569,21 @@ a.kl-soft-card:hover {
   vertical-align: middle;
 }
 
-.kl-mhq-lp form {
+.kl-mhq-lp form,
+.kl-paypal {
   display: inline-block;
   margin: 0 0.35rem 0.35rem 0;
   vertical-align: middle;
 }
 
-.kl-mhq-lp input[type="image"] {
+.kl-mhq-lp input[type="image"],
+.kl-paypal input[type="image"] {
   vertical-align: middle;
+}
+
+.kl-paypal-cell {
+  width: 8.5rem;
+  white-space: nowrap;
 }
 
 .kl-sitefoot {
@@ -987,13 +994,13 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 		<a class="kl-cta" href="contact.html">Contact</a>
 	</div>
 </header>
-		<div class="kl-mhq2">
+		<div class="kl-mhq2 kl-mhq-lp">
 		<section class="kl-mhq2-hero" style="--kl-hero-image: url('../images/hero-horizon.jpg');">
 			<p class="kl-badge">MHQ2 for individuals</p>
 			<h1>Turn attention to your own tendencies</h1>
 			<p class="kl-lead">For people who struggle with mental load, communication, or how work gets done. Not a diagnosis. Part of guiding transformation for societies and individuals.</p>
 			<p class="kl-actions">
-				<a class="kl-btn" href="contact.html">Apply (contact)</a>
+				<a class="kl-btn" href="#mhq-prices">Pay with PayPal</a>
 				<a class="kl-btn kl-btn-ghost" href="mhq-read.html">How to read results (sample)</a>
 			</p>
 		</section>
@@ -1007,9 +1014,9 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 					<h3>Read the results</h3>
 					<p>The report uses 3 domains and 7 categories on a 5-point risk scale. There is a brief version and a detailed version.</p>
 				</a>
-				<a class="kl-soft-card" href="contact.html">
+				<a class="kl-soft-card" href="#mhq-prices">
 					<h3>Feedback if needed</h3>
-					<p>For the detailed version, a specialist feedback session is recommended. Apply through contact.</p>
+					<p>For the detailed version, a specialist feedback session is recommended. Book it with the PayPal buttons below.</p>
 				</a>
 			</div>
 			<h2>Two recent books</h2>
@@ -1047,21 +1054,64 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 				<li>The communication domain also addresses the possibility of developmental disorders. This is not a diagnosis.</li>
 			</ul>
 			<p class="kl-mhq-note">MHQ2 and EQ assessments. MHQ2 covers depression risk, stress environment and situation, social support, and the possibility of developmental disorders. 120 questions, about 12–15 minutes. It is for noticing your own tendencies and turning attention toward what to improve. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too. Not a clinical diagnosis.</p>
+			<section id="mhq-prices">
 			<h2>Individual prices</h2>
 			<table class="kl-table">
-				<tr><th>MHQ (brief)</th><td>3,000 yen</td></tr>
-				<tr><th>MHQ (detailed)</th><td>5,000 yen</td></tr>
-				<tr><th>Feedback session (30 min)</th><td>4,000 yen</td></tr>
-				<tr><th>Feedback session (60 min)</th><td>8,000 yen</td></tr>
+				<tr>
+					<th>MHQ (brief)</th>
+					<td>3,000 yen</td>
+					<td class="kl-paypal-cell">	<form class="kl-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" aria-label="Add MHQ (brief) to cart">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="7N935QSG5GFG6">
+		<input type="hidden" name="currency_code" value="JPY">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" name="submit" title="PayPal — The safer, easier way to pay online." alt="Add to Cart">
+	</form>
+	</td>
+				</tr>
+				<tr>
+					<th>MHQ (detailed)</th>
+					<td>5,000 yen</td>
+					<td class="kl-paypal-cell">	<form class="kl-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" aria-label="Add MHQ (detailed) to cart">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="8ACH6ZXUBXHKA">
+		<input type="hidden" name="currency_code" value="JPY">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" name="submit" title="PayPal — The safer, easier way to pay online." alt="Add to Cart">
+	</form>
+	</td>
+				</tr>
+				<tr>
+					<th>Feedback session (30 min)</th>
+					<td>4,000 yen</td>
+					<td class="kl-paypal-cell">	<form class="kl-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" aria-label="Add Feedback session (30 min) to cart">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="MZ438WEWZG8AG">
+		<input type="hidden" name="currency_code" value="JPY">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" name="submit" title="PayPal — The safer, easier way to pay online." alt="Add to Cart">
+	</form>
+	</td>
+				</tr>
+				<tr>
+					<th>Feedback session (60 min)</th>
+					<td>8,000 yen</td>
+					<td class="kl-paypal-cell">	<form class="kl-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" aria-label="Add Feedback session (60 min) to cart">
+		<input type="hidden" name="cmd" value="_s-xclick">
+		<input type="hidden" name="hosted_button_id" value="B2WMFPB3EGKPL">
+		<input type="hidden" name="currency_code" value="JPY">
+		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_SM.gif" name="submit" title="PayPal — The safer, easier way to pay online." alt="Add to Cart">
+	</form>
+	</td>
+				</tr>
 			</table>
 			<p>The brief version gives a broad reading of depression risk and the possibility of developmental disorders. The detailed version adds 16 categories. A feedback session is recommended for the detailed version.</p>
+			<p>Individuals: add an item to the PayPal cart next to the price. Companies: use contact.</p>
+			</section>
 			<h2>Feedback session</h2>
 			<p>30 minutes 4,000 yen, or 60 minutes 8,000 yen. Read the results together. This is not treatment.</p>
 			<h2>Coaching</h2>
 			<p>Turn the reading into one next move at work or in life. Apply through contact.</p>
 			<p>Companies: ask for a brochure or a sales conversation. There is no public self-serve corporate landing.</p>
 			<p class="kl-actions">
-				<a class="kl-btn kl-btn-dark" href="contact.html">Apply (contact)</a>
+				<a class="kl-btn kl-btn-dark" href="#mhq-prices">Pay with PayPal</a>
 				<a class="kl-btn kl-btn-ghost" href="contact.html">Corporate inquiry (brochure)</a>
 			</p>
 		</div>

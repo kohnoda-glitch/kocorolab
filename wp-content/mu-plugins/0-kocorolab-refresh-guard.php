@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — keep overlay templates out of mu-plugins root
  * Description: If the refresh ZIP is flattened into mu-plugins/, WordPress loads archive-news.php before the overlay and the whole site 500s. Remove those stray copies.
- * Version: 1.6.41
+ * Version: 1.6.42
  * Author: Kohei Noda
  */
 
