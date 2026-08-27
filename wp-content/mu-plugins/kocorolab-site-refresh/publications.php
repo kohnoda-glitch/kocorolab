@@ -206,6 +206,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( '吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館', 'reverse', 'ja', 'Amazon' ),
 		),
 		'2017' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2017) 講師, 有限責任事業組合ビジネス推進機構 第139回月例「フィリピン（セブ）留学、そして異文化体験のおすすめ」, 2017年12月7日.', kocorolab_refresh_bps_139_url(), 'ja', '講演記録' ),
 			kocorolab_refresh_linked_item( '野田浩平 (2017) 永崎裕麻氏来訪記念幸福論トークセッション, SPEA Dumaguete, 2017年10月26日.', kocorolab_refresh_spea_nagasaki_2017_event_url(), 'ja', 'Facebook' ),
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
 		),
@@ -317,6 +318,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( 'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan', 'reverse', 'en', 'Amazon' ),
 		),
 		'2017' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2017) Talk at the 139th monthly meeting of the Business Promotion LLP: “Philippines (Cebu) study abroad and intercultural experience,” 7 December 2017.', kocorolab_refresh_bps_139_url(), 'en', 'talk record' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda (2017) Talk on happiness with Yuma Nagasaki visiting SPEA Dumaguete, 26 October 2017.', kocorolab_refresh_spea_nagasaki_2017_event_url(), 'en', 'Facebook' ),
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
 		),
@@ -465,6 +467,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'happiness1122', 'フィジー人に学ぶ幸福の習慣', 'learning happiness habits from Fijians', '1716882' ),
 		),
 		array(
+			'date' => '2017-12-07',
+			'ja'   => '有限責任事業組合ビジネス推進機構の第139回月例で「フィリピン（セブ）留学、そして異文化体験のおすすめ」を講演（2017年12月7日）',
+			'en'   => 'Talk at the 139th monthly meeting of the Business Promotion LLP: “Philippines (Cebu) study abroad and intercultural experience” (7 December 2017).',
+			'keys' => array( 'フィリピン（セブ）留学、そして異文化体験', 'Philippines (Cebu) study abroad', '第139回ＢＰＳ', 'llp-bps' ),
+		),
+		array(
 			'date' => '2017-10-26',
 			'ja'   => 'SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）',
 			'en'   => 'SPEA talk on happiness with Yuma Nagasaki visiting Dumaguete (26 October 2017).',
@@ -562,6 +570,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
 		array( '2019-02-01', 'SPEAの学校案内PDF（2019、フィリピン留学プロ）' ),
+		array( '2017-12-07', '有限責任事業組合ビジネス推進機構の第139回月例で「フィリピン（セブ）留学、そして異文化体験のおすすめ」を講演（2017年12月7日）' ),
 		array( '2017-10-26', 'SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）' ),
 		array( '2017-05-22', 'SPEAのフィリピン教育留学開始のプレスリリース' ),
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
@@ -587,6 +596,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
 		array( '2019-02-01', 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).' ),
+		array( '2017-12-07', 'Talk at the 139th monthly meeting of the Business Promotion LLP: “Philippines (Cebu) study abroad and intercultural experience” (7 December 2017).' ),
 		array( '2017-10-26', 'SPEA talk on happiness with Yuma Nagasaki visiting Dumaguete (26 October 2017).' ),
 		array( '2017-05-22', 'Press release: SPEA began a Philippines education study program.' ),
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),

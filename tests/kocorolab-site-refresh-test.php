@@ -521,6 +521,14 @@ $checks = array(
 		&& false !== strpos( $en_pubs, 'What is Motivation 3.0' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'hansenken' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '蒼天設立' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'llp-bps.net' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'フィリピン（セブ）留学、そして異文化体験' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '第139回' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Philippines (Cebu) study abroad' )
+		&& false !== strpos( $ja_pubs, 'llp-bps.net' )
+		&& false !== strpos( $en_pubs, 'Philippines (Cebu) study abroad' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'llp-bps' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '創業者／松岡' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {

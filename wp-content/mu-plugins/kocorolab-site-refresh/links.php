@@ -90,6 +90,10 @@ function kocorolab_refresh_hansenken_url() {
 	return 'https://www.sohten.co.jp/hansenken.html';
 }
 
+function kocorolab_refresh_bps_139_url() {
+	return 'https://web.archive.org/web/20190826043307/http://llp-bps.net/2017/12/14/%E7%AC%AC139%E5%9B%9E%EF%BD%82%EF%BD%90%EF%BD%93%EF%BC%8820171207%EF%BC%89%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A/';
+}
+
 function kocorolab_refresh_source_catalog() {
 	return array(
 		array(
@@ -254,6 +258,16 @@ function kocorolab_refresh_source_catalog() {
 					'url' => kocorolab_refresh_spea_rle_press_url(),
 					'ja'  => 'RLE研究開始のプレスリリース',
 					'en'  => 'RLE research press release',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'フィリピン（セブ）留学、そして異文化体験', 'Philippines (Cebu) study abroad', '第139回ＢＰＳ', 'llp-bps' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_bps_139_url(),
+					'ja'  => 'BPS第139回活動報告（保存版）',
+					'en'  => 'BPS 139th meeting report (archived)',
 				),
 			),
 		),
