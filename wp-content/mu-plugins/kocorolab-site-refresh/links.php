@@ -97,6 +97,16 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( 'SS-055', 'コーチング心理学の確立', '77th Annual Meeting of the Japanese Psychological Association' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_jpa_2013_ss055_pdf(),
+					'ja'  => '大会発表PDF（J-STAGE）',
+					'en'  => 'Conference abstract (J-STAGE PDF)',
+				),
+			),
+		),
+		array(
 			'keys'  => array( 'VUCA時代のストレス', 'Stress Defense Strategies in the VUCA', 'B0DTS8XLPD' ),
 			'links' => array(
 				array(
@@ -213,6 +223,16 @@ function kocorolab_refresh_source_catalog() {
 					'url' => kocorolab_refresh_spea_rle_press_url(),
 					'ja'  => 'RLE研究開始のプレスリリース',
 					'en'  => 'RLE research press release',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '永崎裕麻', '幸福論トークセッション', '1908002519517088', 'Yuma Nagasaki' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_spea_nagasaki_2017_event_url(),
+					'ja'  => 'Facebookイベント（2017）',
+					'en'  => 'Facebook event (2017)',
 				),
 			),
 		),

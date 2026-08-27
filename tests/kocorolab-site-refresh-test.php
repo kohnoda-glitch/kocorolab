@@ -316,6 +316,17 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, 'Heritage Hotel Manila' )
 		&& false !== strpos( $en_pubs, 'conference' )
 	),
+	'2013 JPA SS-055 symposium links to the J-STAGE PDF' => (
+		false !== strpos( $ja_pubs, '77_SS-055/_pdf' )
+		&& false !== strpos( $ja_pubs, 'コーチング心理学の確立に向けて' )
+		&& false !== strpos( $ja_pubs, '<a href="https://www.jstage.jst.go.jp/article/pacjpa/77/0/77_SS-055/_pdf/-char/ja">西垣悦代, 堀正, 本間正人, 野田浩平 (2013)' )
+		&& false !== strpos( $en_pubs, '77th Annual Meeting of the Japanese Psychological Association' )
+		&& false !== strpos( $en_pubs, 'pacjpa/77/0/77_SS-055' )
+		&& false !== strpos( $ja_pubs, '1908002519517088' )
+		&& false !== strpos( $ja_pubs, '永崎裕麻氏来訪記念幸福論トークセッション' )
+		&& false !== strpos( $en_pubs, 'Yuma Nagasaki' )
+		&& false !== strpos( $ja_pubs, 'Free Bird Institute' )
+	),
 	'2024 change management links to YouTube series' => (
 		false !== strpos( $ja_pubs, 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' )
 		&& false !== strpos( $ja_pubs, '<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">野田浩平, 松村憲, 小島美佳 (2024)' )
@@ -418,6 +429,18 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'facebook.com/cebupot.jp' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'ikeda@cebupot.com' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'cebupot-happiness-workshop' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'SS-055' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'コーチング心理学の確立' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '77_SS-055/_pdf' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), '77th Annual Meeting of the Japanese Psychological Association' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'SS-055' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'pacjpa' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '永崎裕麻' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'facebook.com/events/1908002519517088' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Yuma Nagasaki' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), '1908002519517088' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '創業' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '設立者' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -440,7 +463,9 @@ $checks = array(
 			&& false !== strpos( $html, 'neue-fahne-journal-no50-2013-03-11.pdf' )
 			&& false !== strpos( $html, 'neue-fahne-mini-forum-2015-12-15.pdf' )
 			&& false !== strpos( $html, 'niigata-tit-leadership-2000-resume.jpg' )
-			&& false !== strpos( $html, 'cebupot-happiness-workshop-2016-03-24.pdf' );
+			&& false !== strpos( $html, 'cebupot-happiness-workshop-2016-03-24.pdf' )
+			&& false !== strpos( $html, '77_SS-055/_pdf' )
+			&& false !== strpos( $html, 'facebook.com/events/1908002519517088' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();

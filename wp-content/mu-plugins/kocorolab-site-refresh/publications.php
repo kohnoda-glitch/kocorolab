@@ -34,6 +34,10 @@ function kocorolab_refresh_jps_1997_pdf() {
 	return 'https://www.jstage.jst.go.jp/article/jpsgaiyo/52.2.4/0/52.2.4_908_4/_pdf';
 }
 
+function kocorolab_refresh_jpa_2013_ss055_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/pacjpa/77/0/77_SS-055/_pdf/-char/ja';
+}
+
 function kocorolab_refresh_overlay_file_url( $file ) {
 	if ( function_exists( 'content_url' ) ) {
 		return content_url( 'mu-plugins/kocorolab-site-refresh/files/' . $file );
@@ -64,6 +68,10 @@ function kocorolab_refresh_cebupot_2016_magazine_pdf() {
 
 function kocorolab_refresh_cebupot_facebook_url() {
 	return 'https://www.facebook.com/cebupot.jp';
+}
+
+function kocorolab_refresh_spea_nagasaki_2017_event_url() {
+	return 'https://www.facebook.com/events/1908002519517088/';
 }
 
 function kocorolab_refresh_ice_2013_url() {
@@ -182,6 +190,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( '吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館', 'reverse', 'ja', 'Amazon' ),
 		),
 		'2017' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2017) 永崎裕麻氏来訪記念幸福論トークセッション, SPEA Dumaguete, 2017年10月26日.', kocorolab_refresh_spea_nagasaki_2017_event_url(), 'ja', 'Facebook' ),
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
 		),
 		'2016' => array(
@@ -200,7 +209,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_linked_paper( '野田浩平 (2013) グローバル人材400万人時代を見据えた人材育成―一部のエリート人材育成ではなく、厚みのある中間層の形成―, Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'ja' ),
 			kocorolab_refresh_linked_item( '野田浩平 (2013) 講師, 福岡市・福岡商工会議所主催「会社合同説明会」内「就活応援セミナー」, 2013年5月28日, 福岡国際会議場.', kocorolab_refresh_fukuoka_2013_url(), 'ja', '報道' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'ja', '会議' ),
-			'西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会',
+			kocorolab_refresh_linked_paper( '西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会', kocorolab_refresh_jpa_2013_ss055_pdf(), 'ja' ),
 		),
 		'2012' => array(
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
@@ -287,6 +296,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_media_item( 'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan', 'reverse', 'en', 'Amazon' ),
 		),
 		'2017' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2017) Talk on happiness with Yuma Nagasaki visiting SPEA Dumaguete, 26 October 2017.', kocorolab_refresh_spea_nagasaki_2017_event_url(), 'en', 'Facebook' ),
 			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
 		),
 		'2016' => array(
@@ -305,7 +315,7 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 			kocorolab_refresh_linked_paper( 'Kohei Noda (2013) Developing global talent for an era of four million: forming a thick middle layer, not only elites. Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'en' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda (2013) Lecturer, job-hunting support seminar at the company joint briefing hosted by Fukuoka City and the Fukuoka Chamber of Commerce, 28 May 2013, Fukuoka International Congress Center.', kocorolab_refresh_fukuoka_2013_url(), 'en', 'report' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'en', 'conference' ),
-			'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association',
+			kocorolab_refresh_linked_paper( 'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association', kocorolab_refresh_jpa_2013_ss055_pdf(), 'en' ),
 		),
 		'2012' => array(
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
@@ -420,6 +430,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'SPEAnew22019', '学校案内PDF（2019', 'school brochure PDF (2019' ),
 		),
 		array(
+			'date' => '2017-10-26',
+			'ja'   => 'SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）',
+			'en'   => 'SPEA talk on happiness with Yuma Nagasaki visiting Dumaguete (26 October 2017).',
+			'keys' => array( '永崎裕麻', '幸福論トークセッション', '1908002519517088', 'Yuma Nagasaki' ),
+		),
+		array(
 			'date' => '2017-05-22',
 			'ja'   => 'SPEAのフィリピン教育留学開始のプレスリリース',
 			'en'   => 'Press release: SPEA began a Philippines education study program.',
@@ -442,6 +458,12 @@ function kocorolab_refresh_news_overlay_entries() {
 			'ja'   => '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）',
 			'en'   => '15th mini-forum: About Filipino Business for Japanese (15 December 2015).',
 			'keys' => array( '第15回ミニ・フォーラム', '15th mini-forum', 'About Filipino Business', 'mini-forum-2015-12-15' ),
+		),
+		array(
+			'date' => '2013-09-21',
+			'ja'   => '日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）',
+			'en'   => 'SS-055 Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association (21 September 2013).',
+			'keys' => array( 'SS-055', 'コーチング心理学の確立', '77th Annual Meeting of the Japanese Psychological Association' ),
 		),
 		array(
 			'date' => '2013-07-30',
@@ -497,10 +519,12 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
 		array( '2019-02-01', 'SPEAの学校案内PDF（2019、フィリピン留学プロ）' ),
+		array( '2017-10-26', 'SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）' ),
 		array( '2017-05-22', 'SPEAのフィリピン教育留学開始のプレスリリース' ),
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
 		array( '2016-03-24', 'セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）' ),
 		array( '2015-12-15', '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）' ),
+		array( '2013-09-21', '日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）' ),
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
 		array( '2013-03-11', 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」' ),
@@ -517,10 +541,12 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
 		array( '2019-02-01', 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).' ),
+		array( '2017-10-26', 'SPEA talk on happiness with Yuma Nagasaki visiting Dumaguete (26 October 2017).' ),
 		array( '2017-05-22', 'Press release: SPEA began a Philippines education study program.' ),
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
 		array( '2016-03-24', 'Cebu Pot seminar: Happiness Workshop — Why Filipino people are always smiling (magazine notice, 24 March 2016).' ),
 		array( '2015-12-15', '15th mini-forum: About Filipino Business for Japanese (15 December 2015).' ),
+		array( '2013-09-21', 'SS-055 Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association (21 September 2013).' ),
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
 		array( '2013-03-11', 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.' ),
