@@ -130,6 +130,7 @@ function kocorolab_refresh_image_url( $key ) {
 		'spirit'      => 'spirit-sky.jpg',
 		'society'     => 'society-green.jpg',
 		'environment' => 'environment-ocean.jpg',
+		'mark'        => 'kocoro-mark-light.png',
 	);
 	$file   = isset( $files[ $key ] ) ? $files[ $key ] : 'hero-horizon.jpg';
 	$prefix = ! empty( $GLOBALS['KOCORO_PREVIEW_EN'] ) ? '../images/' : 'images/';
@@ -221,6 +222,7 @@ function kocorolab_preview_wrap( $lang, $title, $body, $is_home = false ) {
 	$html  = '<!DOCTYPE html><html lang="' . ( $en ? 'en' : 'ja' ) . '"><head><meta charset="utf-8">';
 	$html .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	$html .= '<title>' . esc_html( $title ) . '</title>';
+	$html .= '<link rel="icon" type="image/png" href="' . ( $en ? '../images/kocoro-mark-light.png' : 'images/kocoro-mark-light.png' ) . '">';
 	$html .= '<link rel="preconnect" href="https://fonts.googleapis.com">';
 	$html .= '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">';
 	$html .= '<style>' . $css . kocorolab_preview_extra_css() . '</style></head>';
@@ -244,7 +246,7 @@ $img_dst = $out . '/images';
 if ( ! is_dir( $img_dst ) ) {
 	mkdir( $img_dst, 0755, true );
 }
-foreach ( array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg' ) as $img ) {
+foreach ( array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg', 'kocoro-mark-light.png' ) as $img ) {
 	copy( "$img_src/$img", "$img_dst/$img" );
 }
 

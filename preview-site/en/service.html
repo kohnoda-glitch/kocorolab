@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Services | Kocoro Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Services | Kocoro Lab</title><link rel="icon" type="image/png" href="../images/kocoro-mark-light.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
 
 html:has(body.kl-refresh),
 body.kl-refresh {
@@ -83,13 +83,18 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 .kl-mark {
   display: grid;
   place-items: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 0.55rem;
-  background: #128a82;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.4rem;
+  background: transparent;
+  overflow: hidden;
+}
+
+.kl-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .kl-brand-text {
@@ -962,7 +967,7 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner a{color:#7ee0d2}
 .kl-page{padding-top:1.35rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
 	<a class="kl-brand" href="index.html">
-		<span class="kl-mark" aria-hidden="true">K</span>
+		<span class="kl-mark" aria-hidden="true"><img src="../images/kocoro-mark-light.png" alt=""></span>
 		<span class="kl-brand-text">
 			<strong>Kocoro Laboratory</strong>
 			<small>Kocoro Laboratory, Inc.</small>

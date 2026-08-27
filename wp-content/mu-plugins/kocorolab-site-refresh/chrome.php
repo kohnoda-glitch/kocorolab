@@ -145,7 +145,7 @@ function kocorolab_refresh_site_header() {
 	$contact = kocorolab_refresh_url( '/contact/', '/en/contact/' );
 	?><header class="kl-topbar">
 	<a class="kl-brand" href="<?php echo esc_url( $home ); ?>">
-		<span class="kl-mark" aria-hidden="true">K</span>
+		<span class="kl-mark" aria-hidden="true"><img src="<?php echo esc_url( kocorolab_refresh_image_url( 'mark' ) ); ?>" alt=""></span>
 		<span class="kl-brand-text">
 			<strong><?php echo esc_html( kocorolab_refresh_t( 'brand' ) ); ?></strong>
 			<small><?php echo esc_html( kocorolab_refresh_t( 'brand_sub' ) ); ?></small>

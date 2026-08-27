@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Unzip into wp-content/mu-plugins/ so this file sits next to the kocorolab-site-refresh/ folder — do not dump the inner PHP files into mu-plugins/.
- * Version: 1.6.40
+ * Version: 1.6.41
  * Author: Kohei Noda
  */
 
@@ -282,6 +282,7 @@ function kocorolab_refresh_image_files() {
 		'spirit'      => 'spirit-sky.jpg',
 		'society'     => 'society-green.jpg',
 		'environment' => 'environment-ocean.jpg',
+		'mark'        => 'kocoro-mark-light.png',
 	);
 }
 
@@ -535,6 +536,10 @@ add_action(
 	'wp_head',
 	function () {
 		echo '<style id="kocorolab-refresh-critical">html,body{margin:0;padding:0;background:#f5f8fa}#site_wrap{display:block!important}#site_loader_overlay,#site_loader_spinner{display:none!important}</style>' . "\n";
+		$mark = kocorolab_refresh_image_url( 'mark' );
+		if ( $mark ) {
+			echo '<link rel="icon" type="image/png" href="' . esc_url( $mark ) . '">' . "\n";
+		}
 	},
 	0
 );
@@ -549,7 +554,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.40' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.41' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}
