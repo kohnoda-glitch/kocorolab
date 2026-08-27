@@ -292,6 +292,16 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
+			'keys'  => array( 'Journal No.20', 'Journal No. 20', '世代間の「価値観」', 'journal20' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_neue_fahne_journal_20_pdf(),
+					'ja'  => 'Neue Fahne Journal No.20（本文PDF）',
+					'en'  => 'Neue Fahne Journal No. 20 (PDF)',
+				),
+			),
+		),
+		array(
 			'keys'  => array( 'n-fahne', 'mental01', '廣済堂×ココロラボ' ),
 			'links' => array(
 				array(

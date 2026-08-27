@@ -310,6 +310,10 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, 'cebupot-happiness-workshop-2016-03-24.pdf' )
 		&& false !== strpos( $en_pubs, 'Cebu Pot Seminar' )
 		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/cebupot-happiness-workshop-2016-03-24.pdf' )
+		&& false !== strpos( $ja_pubs, '世代間の「価値観」の相違を互いに認め合う' )
+		&& false !== strpos( $ja_pubs, 'neue-fahne-journal-no20-2011-12-26.pdf' )
+		&& false !== strpos( $en_pubs, 'Neue Fahne Journal No. 20' )
+		&& is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/neue-fahne-journal-no20-2011-12-26.pdf' )
 	),
 	'ICE 2013 plenary links to the conference page' => (
 		false !== strpos( $ja_pubs, 'share.google/OnGq4xL8mDEoGt7E1' )
@@ -449,6 +453,12 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'learning happiness habits from Fijians' )
 		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'happiness1122' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '創業者' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'Journal No.20' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '世代間の「価値観」' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'neue-fahne-journal-no20-2011-12-26.pdf' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Journal No. 20' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'Journal No.20' )
+		&& false === strpos( kocorolab_refresh_page_html( 'mhqlp', 'ja' ), 'journal-no20' )
 	),
 	'rewrites jinjibu 3980 to live service URL' => false !== strpos( kocorolab_refresh_repair_external_links( '<a href="https://jinjibu.jp/news/detl/3980/">x</a>' ), 'service.jinjibu.jp/news/detl/3980' ),
 	'news overlay still appears when WordPress posts exist' => ( function () {
@@ -474,7 +484,8 @@ $checks = array(
 			&& false !== strpos( $html, 'cebupot-happiness-workshop-2016-03-24.pdf' )
 			&& false !== strpos( $html, '77_SS-055/_pdf' )
 			&& false !== strpos( $html, 'facebook.com/events/1908002519517088' )
-			&& false !== strpos( $html, 'happiness1122.peatix.com' );
+			&& false !== strpos( $html, 'happiness1122.peatix.com' )
+			&& false !== strpos( $html, 'neue-fahne-journal-no20-2011-12-26.pdf' );
 	} )(),
 	'GBX news title goes to the atpress report not the old WP page' => ( function () {
 		$post               = new stdClass();
