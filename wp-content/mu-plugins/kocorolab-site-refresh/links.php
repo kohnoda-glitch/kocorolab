@@ -10,6 +10,26 @@ function kocorolab_refresh_ccl_japan_url() {
 	return 'https://japan.citizensclimatelobby.org/';
 }
 
+function kocorolab_refresh_ccl_furukawa_2024_url() {
+	return 'https://japan.citizensclimatelobby.org/2024/05/23/%e8%b6%85%e5%85%9a%e6%b4%be%e8%ad%b0%e9%80%a3%e5%8f%a4%e5%b7%9d%e8%ad%b0%e5%93%a1%e8%a8%aa%e5%95%8f/';
+}
+
+function kocorolab_refresh_ccl_gcpc_2024_url() {
+	return 'https://japan.citizensclimatelobby.org/2024/05/04/carbonpricingchallenge/';
+}
+
+function kocorolab_refresh_ccl_saito_2024_url() {
+	return 'https://japan.citizensclimatelobby.org/2024/02/29/%e7%b5%8c%e6%b8%88%e7%94%a3%e6%a5%ad%e5%a4%a7%e8%87%a3%e8%a8%aa%e5%95%8f/';
+}
+
+function kocorolab_refresh_ccl_kono_2024_url() {
+	return 'https://japan.citizensclimatelobby.org/2024/01/25/%e6%b2%b3%e9%87%8e%e5%a4%a7%e8%87%a3%e3%81%a8%e6%84%8f%e8%a6%8b%e4%ba%a4%e6%8f%9b/';
+}
+
+function kocorolab_refresh_ccl_sonoura_2022_url() {
+	return 'https://japan.citizensclimatelobby.org/2022/10/28/%e8%a1%86%e9%99%a2%e8%b2%a1%e5%8b%99%e9%87%91%e8%9e%8d%e5%a7%94%e5%93%a1%e9%95%b7%ef%bc%88%e5%89%8d%ef%bc%89%e8%96%97%e6%b5%a6%e5%81%a5%e5%a4%aa%e9%83%8e%e8%ad%b0%e5%93%a1%e8%a8%aa%e5%95%8f/';
+}
+
 function kocorolab_refresh_seven_generations_url() {
 	return 'https://sevengenerations.or.jp/';
 }
@@ -183,12 +203,62 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( 'events-ja/3263', 'カーボンプライシング', 'IPCC第6次', 'carbon pricing', 'IPCC AR6' ),
+			'keys'  => array( 'events-ja/3263', 'CAN-Japanウェビナー', 'IPCC第6次', 'CAN-Japan webinar', 'IPCC AR6' ),
 			'links' => array(
 				array(
 					'url' => kocorolab_refresh_can_japan_3263_url(),
 					'ja'  => 'CAN-Japanウェビナー案内',
 					'en'  => 'CAN-Japan webinar page',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '古川元久議員訪問', 'Motohisa Furukawa', '超党派議連古川' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_ccl_furukawa_2024_url(),
+					'ja'  => 'CCL Japan（古川元久議員訪問）',
+					'en'  => 'CCL Japan (visit with Motohisa Furukawa)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'GCPC', 'carbonpricingchallenge', 'グローバル・カーボンプライシング・チャレンジ', 'Global Carbon Pricing Challenge' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_ccl_gcpc_2024_url(),
+					'ja'  => 'CCL Japan（GCPC参加要請）',
+					'en'  => 'CCL Japan (GCPC statement)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '斎藤健・経済産業大臣', 'Ken Saito', '経済産業大臣訪問' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_ccl_saito_2024_url(),
+					'ja'  => 'CCL Japan（斎藤健・経済産業大臣）',
+					'en'  => 'CCL Japan (dialogue with Ken Saito)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '河野太郎・行政改革担当大臣', 'Taro Kono', '河野大臣と意見交換' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_ccl_kono_2024_url(),
+					'ja'  => 'CCL Japan（河野太郎大臣）',
+					'en'  => 'CCL Japan (dialogue with Taro Kono)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '薗浦健太郎議員訪問', 'Kentaro Sonoura', '衆院財務金融委員長' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_ccl_sonoura_2022_url(),
+					'ja'  => 'CCL Japan（薗浦健太郎議員訪問）',
+					'en'  => 'CCL Japan (visit with Kentaro Sonoura)',
 				),
 			),
 		),
@@ -454,6 +524,36 @@ function kocorolab_refresh_source_catalog() {
 					'url' => kocorolab_refresh_nagasaki_2020_peatix_url(),
 					'ja'  => 'Peatix（2020）',
 					'en'  => 'Peatix (2020)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( '1848747', 'FR004', '#myfuture 幸せな未来を描く', 'meeting my future self' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_shiawase_fr004_peatix_url(),
+					'ja'  => 'Peatix（しあわせの学問2021 FR004）',
+					'en'  => 'Peatix (shiawase2021 FR004)',
+				),
+				array(
+					'url' => kocorolab_refresh_shiawase_fr004_program_url(),
+					'ja'  => 'しあわせの学問2021プログラム（FR004）',
+					'en'  => 'shiawase2021 program (FR004)',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'WS050', 'フューチャーダイヤログ', '2831301047187478', 'Future Dialogue' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_shiawase_ws050_program_url(),
+					'ja'  => 'しあわせの学問2021プログラム（WS050）',
+					'en'  => 'shiawase2021 program (WS050)',
+				),
+				array(
+					'url' => kocorolab_refresh_shiawase_ws050_facebook_url(),
+					'ja'  => 'Facebookイベント（WS050）',
+					'en'  => 'Facebook event (WS050)',
 				),
 			),
 		),

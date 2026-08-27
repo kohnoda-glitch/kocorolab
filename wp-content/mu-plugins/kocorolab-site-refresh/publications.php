@@ -98,6 +98,22 @@ function kocorolab_refresh_nagasaki_2020_peatix_url() {
 	return 'https://happiness1122.peatix.com/';
 }
 
+function kocorolab_refresh_shiawase_fr004_peatix_url() {
+	return 'https://peatix.com/event/1848747';
+}
+
+function kocorolab_refresh_shiawase_fr004_program_url() {
+	return 'https://shiawasesymposium.com/2021/wp/free/fr004/';
+}
+
+function kocorolab_refresh_shiawase_ws050_program_url() {
+	return 'https://shiawasesymposium.com/2021/wp/ws2/ws050/';
+}
+
+function kocorolab_refresh_shiawase_ws050_facebook_url() {
+	return 'https://www.facebook.com/events/2831301047187478';
+}
+
 function kocorolab_refresh_ice_2013_url() {
 	return 'https://share.google/OnGq4xL8mDEoGt7E1';
 }
@@ -240,10 +256,19 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		'2024' => array(
 			kocorolab_refresh_media_item( '野田浩平 (2024)「私、うつになりやすいかも？」と思った時に読む本', 'depression', 'ja', 'Amazon' ),
 			kocorolab_refresh_media_item( '野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)', 'change', 'ja', 'YouTubeシリーズ' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパン代表として超党派議連古川元久議員訪問, 2024年5月23日.', kocorolab_refresh_ccl_furukawa_2024_url(), 'ja', '訪問記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパン代表として、日本政府にグローバル・カーボンプライシング・チャレンジ（GCPC）への参加を要請, 2024年5月4日.', kocorolab_refresh_ccl_gcpc_2024_url(), 'ja', '要請' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパン代表として斎藤健・経済産業大臣と再エネ・エネルギー政策を議論, 2024年2月29日.', kocorolab_refresh_ccl_saito_2024_url(), 'ja', '訪問記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパンから河野太郎・行政改革担当大臣と意見交換, 2024年1月24日.', kocorolab_refresh_ccl_kono_2024_url(), 'ja', '訪問記録' ),
 		),
 		'2022' => array(
 			kocorolab_refresh_linked_item( '野田浩平 (2022) 登壇, マンスリーMiLI「IDGｓと人間性の開発をめぐる対話」, 2022年10月25日.', kocorolab_refresh_mbcc_idgs_2022_url(), 'ja', '講演記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2022) 市民気候ロビージャパン代表として薗浦健太郎議員訪問, 2022年9月16日.', kocorolab_refresh_ccl_sonoura_2022_url(), 'ja', '訪問記録' ),
 			kocorolab_refresh_linked_item( '野田浩平 (2022) 報告, CAN-Japanウェビナー「IPCC第6次評価報告書から気候危機を回避する道筋を考える」カーボンプライシング, 2022年5月19日.', kocorolab_refresh_can_japan_3263_url(), 'ja', 'ウェビナー' ),
+		),
+		'2021' => array(
+			kocorolab_refresh_linked_item( '野田浩平, 小島美佳 (2021) しあわせの学問2021 FR004「#myfuture 幸せな未来を描く ～未来の自分に会う」, 2021年3月21日.', kocorolab_refresh_shiawase_fr004_peatix_url(), 'ja', 'Peatix' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2021) しあわせの学問2021 WS050「日本の未来、より多くの人たち幸せに暮らせるように」フューチャーダイヤログ, 2021年3月20日.', kocorolab_refresh_shiawase_ws050_program_url(), 'ja', 'プログラム' ),
 		),
 		'2020' => array(
 			kocorolab_refresh_linked_item( '野田浩平 (2020) 登壇, 健康×幸福トーク, 2020年12月6日.', kocorolab_refresh_kenko_happiness_talk_url(), 'ja', '案内' ),
@@ -388,10 +413,19 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		'2024' => array(
 			kocorolab_refresh_media_item( 'Kohei Noda (2024) The book you should read when you think you would be depression', 'depression', 'en', 'Amazon' ),
 			kocorolab_refresh_media_item( 'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era', 'change', 'en', 'YouTube series' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) CCL Japan visit with Motohisa Furukawa of the cross-party caucus, 23 May 2024.', kocorolab_refresh_ccl_furukawa_2024_url(), 'en', 'visit record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) Asked the Government of Japan to join the Global Carbon Pricing Challenge (GCPC), 4 May 2024.', kocorolab_refresh_ccl_gcpc_2024_url(), 'en', 'statement' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) CCL Japan dialogue with METI Minister Ken Saito, 29 February 2024.', kocorolab_refresh_ccl_saito_2024_url(), 'en', 'visit record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) CCL Japan dialogue with Minister Taro Kono for Administrative Reform, 24 January 2024.', kocorolab_refresh_ccl_kono_2024_url(), 'en', 'visit record' ),
 		),
 		'2022' => array(
 			kocorolab_refresh_linked_item( 'Kohei Noda (2022) Talk at Monthly MiLI: Inner Development Goals and developing humanity, 25 October 2022.', kocorolab_refresh_mbcc_idgs_2022_url(), 'en', 'talk record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2022) CCL Japan visit with Kentaro Sonoura, 16 September 2022.', kocorolab_refresh_ccl_sonoura_2022_url(), 'en', 'visit record' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda (2022) Spoke on carbon pricing at the CAN-Japan webinar on IPCC AR6, 19 May 2022.', kocorolab_refresh_can_japan_3263_url(), 'en', 'webinar' ),
+		),
+		'2021' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda and Mika Kojima (2021) shiawase2021 FR004: #myfuture — meeting my future self, 21 March 2021.', kocorolab_refresh_shiawase_fr004_peatix_url(), 'en', 'Peatix' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2021) shiawase2021 WS050 Future Dialogue, 20 March 2021.', kocorolab_refresh_shiawase_ws050_program_url(), 'en', 'program' ),
 		),
 		'2020' => array(
 			kocorolab_refresh_linked_item( 'Kohei Noda (2020) Talk on health and happiness, 6 December 2020.', kocorolab_refresh_kenko_happiness_talk_url(), 'en', 'event page' ),
@@ -597,16 +631,58 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
 		),
 		array(
+			'date' => '2024-05-23',
+			'ja'   => '市民気候ロビージャパン代表として、超党派議連古川元久議員訪問を行いました（2024年5月23日）',
+			'en'   => 'CCL Japan visit with Motohisa Furukawa of the cross-party caucus (23 May 2024).',
+			'keys' => array( '古川元久議員訪問', 'Motohisa Furukawa', '超党派議連古川' ),
+		),
+		array(
+			'date' => '2024-05-04',
+			'ja'   => '市民気候ロビージャパン代表として、日本政府にグローバル・カーボンプライシング・チャレンジ（GCPC）への参加を求めました（2024年5月4日）',
+			'en'   => 'Asked the Government of Japan to join the Global Carbon Pricing Challenge (GCPC) (4 May 2024).',
+			'keys' => array( 'GCPC', 'carbonpricingchallenge', 'グローバル・カーボンプライシング・チャレンジ', 'Global Carbon Pricing Challenge' ),
+		),
+		array(
+			'date' => '2024-02-29',
+			'ja'   => '市民気候ロビージャパン代表として、斎藤健・経済産業大臣と再エネ・エネルギー政策を議論しました（2024年2月29日）',
+			'en'   => 'CCL Japan dialogue with METI Minister Ken Saito on renewable energy policy (29 February 2024).',
+			'keys' => array( '斎藤健・経済産業大臣', 'Ken Saito', '経済産業大臣訪問' ),
+		),
+		array(
+			'date' => '2024-01-24',
+			'ja'   => '市民気候ロビージャパンから、河野太郎・行政改革担当大臣と意見交換しました（2024年1月24日）',
+			'en'   => 'CCL Japan dialogue with Minister Taro Kono for Administrative Reform (24 January 2024).',
+			'keys' => array( '河野太郎・行政改革担当大臣', 'Taro Kono', '河野大臣と意見交換' ),
+		),
+		array(
 			'date' => '2022-10-25',
 			'ja'   => 'マンスリーMiLI「IDGｓと人間性の開発をめぐる対話」に登壇しました（2022年10月25日）',
 			'en'   => 'Talked at Monthly MiLI: Inner Development Goals and developing humanity (25 October 2022).',
 			'keys' => array( 'IDGｓと人間性', 'Inner Development Goals', '20220917', 'マンスリーMiLI' ),
 		),
 		array(
+			'date' => '2022-09-16',
+			'ja'   => '市民気候ロビージャパン代表として、薗浦健太郎議員訪問を行いました（2022年9月16日）',
+			'en'   => 'CCL Japan visit with Kentaro Sonoura (16 September 2022).',
+			'keys' => array( '薗浦健太郎議員訪問', 'Kentaro Sonoura', '衆院財務金融委員長' ),
+		),
+		array(
 			'date' => '2022-05-19',
 			'ja'   => 'CAN-Japanウェビナー「IPCC第6次評価報告書から気候危機を回避する道筋を考える」でカーボンプライシングについて報告しました（2022年5月19日）',
 			'en'   => 'Spoke on carbon pricing at the CAN-Japan webinar on IPCC AR6 (19 May 2022).',
 			'keys' => array( 'events-ja/3263', 'カーボンプライシング', 'IPCC第6次', 'carbon pricing', 'IPCC AR6' ),
+		),
+		array(
+			'date' => '2021-03-21',
+			'ja'   => 'しあわせの学問2021 FR004「#myfuture 幸せな未来を描く ～未来の自分に会う」（小島美佳とともに、2021年3月21日）',
+			'en'   => 'shiawase2021 FR004: #myfuture — meeting my future self, with Mika Kojima (21 March 2021).',
+			'keys' => array( '1848747', 'FR004', '#myfuture 幸せな未来を描く', 'meeting my future self' ),
+		),
+		array(
+			'date' => '2021-03-20',
+			'ja'   => 'しあわせの学問2021 WS050「日本の未来、より多くの人たち幸せに暮らせるように」フューチャーダイヤログ（2021年3月20日）',
+			'en'   => 'shiawase2021 WS050 Future Dialogue: expanding dialogue for Japan’s future (20 March 2021).',
+			'keys' => array( 'WS050', 'フューチャーダイヤログ', '2831301047187478', 'Future Dialogue' ),
 		),
 		array(
 			'date' => '2019-02-01',
