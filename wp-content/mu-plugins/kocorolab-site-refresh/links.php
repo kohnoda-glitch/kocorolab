@@ -193,12 +193,47 @@ function kocorolab_refresh_source_catalog() {
 			),
 		),
 		array(
-			'keys'  => array( 'ICCS 2001', '9_1_178', '参加報告', 'Conference report on ICCS' ),
+			'keys'  => array( 'ICE 2013', 'Heritage Hotel Manila', 'PELS International Congress', 'OnGq4xL8mDEoGt7E1' ),
 			'links' => array(
 				array(
-					'url' => kocorolab_refresh_iccs_2001_report_pdf(),
-					'ja'  => 'ICCS 2001参加報告PDF（J-STAGE）',
-					'en'  => 'ICCS 2001 conference report (J-STAGE PDF)',
+					'url' => kocorolab_refresh_ice_2013_url(),
+					'ja'  => '会議案内',
+					'en'  => 'Conference page',
+				),
+				array(
+					'url' => kocorolab_refresh_ice_2013_plenary_photo_url(),
+					'ja'  => 'プレナリー写真',
+					'en'  => 'Plenary photo',
+				),
+				array(
+					'url' => kocorolab_refresh_ice_2013_hotel_photo_url(),
+					'ja'  => '会場写真',
+					'en'  => 'Venue photo',
+				),
+			),
+		),
+		array(
+			'keys'  => array( 'TIME-IMAGE-CREATIVITY', 'Pinto Art Gallery', 'Antipolo', 'Keisuke Taketani' ),
+			'links' => array(
+				array(
+					'url' => kocorolab_refresh_antipolo_2013_flyer_url(),
+					'ja'  => 'ワークショップ案内',
+					'en'  => 'Workshop notice',
+				),
+				array(
+					'url' => kocorolab_refresh_antipolo_2013_workshop_photo_url(),
+					'ja'  => 'ワークショップ写真',
+					'en'  => 'Workshop photo',
+				),
+				array(
+					'url' => kocorolab_refresh_antipolo_2013_keisuke_photo_url(),
+					'ja'  => 'けいすけとの写真',
+					'en'  => 'Photo with Keisuke',
+				),
+				array(
+					'url' => kocorolab_refresh_antipolo_2013_poster_url(),
+					'ja'  => 'ポスター',
+					'en'  => 'Poster',
 				),
 			),
 		),
@@ -244,6 +279,11 @@ function kocorolab_refresh_source_catalog() {
 					'url' => kocorolab_refresh_jpa_2013_ss055_pdf(),
 					'ja'  => '大会発表PDF（J-STAGE）',
 					'en'  => 'Conference abstract (J-STAGE PDF)',
+				),
+				array(
+					'url' => kocorolab_refresh_jpa_2013_photo_url(),
+					'ja'  => '登壇写真',
+					'en'  => 'Panel photo',
 				),
 			),
 		),
@@ -374,6 +414,11 @@ function kocorolab_refresh_source_catalog() {
 					'url' => kocorolab_refresh_plip_url(),
 					'ja'  => '東工大PLIP（保存版）',
 					'en'  => 'Tokyo Tech PLIP (archived)',
+				),
+				array(
+					'url' => kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url(),
+					'ja'  => '講演写真',
+					'en'  => 'Talk photo',
 				),
 				array(
 					'url' => kocorolab_refresh_idea_league_url(),

@@ -102,6 +102,38 @@ function kocorolab_refresh_ice_2013_url() {
 	return 'https://share.google/OnGq4xL8mDEoGt7E1';
 }
 
+function kocorolab_refresh_ice_2013_plenary_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'ice-2013-plenary.jpg' );
+}
+
+function kocorolab_refresh_ice_2013_hotel_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'ice-2013-heritage-hotel.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_workshop_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-workshop.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_keisuke_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-keisuke.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_flyer_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-time-image-creativity-flyer.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_poster_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-time-image-creativity-poster.jpg' );
+}
+
+function kocorolab_refresh_jpa_2013_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'jpa-2013-ss055.jpg' );
+}
+
+function kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'tokyo-tech-idea-league-2012.jpg' );
+}
+
 function kocorolab_refresh_fukuoka_2013_url() {
 	return 'https://www.data-max.co.jp/2013/05/29/2000_13_dm1806_1.html';
 }
@@ -175,7 +207,8 @@ function kocorolab_refresh_with_thumb( $html, $img, $url, $alt, $kind = 'book' )
 	$href  = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
 	$src   = function_exists( 'esc_url' ) ? esc_url( $img ) : $img;
 	$alt   = function_exists( 'esc_attr' ) ? esc_attr( $alt ) : htmlspecialchars( (string) $alt, ENT_QUOTES, 'UTF-8' );
-	$class = ( 'video' === $kind ) ? 'kl-pub-thumb kl-pub-thumb--video' : 'kl-pub-thumb kl-pub-thumb--book';
+	$mod   = in_array( $kind, array( 'video', 'photo' ), true ) ? $kind : 'book';
+	$class = 'kl-pub-thumb kl-pub-thumb--' . $mod;
 	return '<span class="kl-pub-media"><a class="' . $class . '" href="' . $href . '"><img src="' . $src . '" alt="' . $alt . '" loading="lazy" decoding="async"></a><span class="kl-pub-text">' . $html . '</span></span>';
 }
 
@@ -246,11 +279,36 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		'2013' => array(
 			kocorolab_refresh_linked_paper( '野田浩平 (2013) グローバル人材400万人時代を見据えた人材育成―一部のエリート人材育成ではなく、厚みのある中間層の形成―, Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'ja' ),
 			kocorolab_refresh_linked_item( '野田浩平 (2013) 講師, 福岡市・福岡商工会議所主催「会社合同説明会」内「就活応援セミナー」, 2013年5月28日, 福岡国際会議場.', kocorolab_refresh_fukuoka_2013_url(), 'ja', '報道' ),
-			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'ja', '会議' ),
-			kocorolab_refresh_linked_paper( '西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会', kocorolab_refresh_jpa_2013_ss055_pdf(), 'ja' ),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'ja', '会議' ),
+				kocorolab_refresh_ice_2013_plenary_photo_url(),
+				kocorolab_refresh_ice_2013_url(),
+				'ICE 2013 plenary, Heritage Hotel Manila',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( '野田浩平, Keisuke Taketani (2013) ファシリテーター, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 2013年12月7日.', kocorolab_refresh_antipolo_2013_flyer_url(), 'ja', '案内' ),
+				kocorolab_refresh_antipolo_2013_workshop_photo_url(),
+				kocorolab_refresh_antipolo_2013_flyer_url(),
+				'TIME-IMAGE-CREATIVITY WORKSHOP, Antipolo',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_paper( '西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会', kocorolab_refresh_jpa_2013_ss055_pdf(), 'ja' ),
+				kocorolab_refresh_jpa_2013_photo_url(),
+				kocorolab_refresh_jpa_2013_ss055_pdf(),
+				'日本心理学会第77回大会 公募シンポジウム',
+				'photo'
+			),
 		),
 		'2012' => array(
-			kocorolab_refresh_linked_item( '野田浩平 (2012) 講師, 東京工業大学プロダクティブリーダー養成機構（PLIP）IDEAリーグ来日プログラム「日本の起業状況」, 2012年11月13日.', kocorolab_refresh_plip_url(), 'ja', '講演記録' ),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( '野田浩平 (2012) 講師, 東京工業大学プロダクティブリーダー養成機構（PLIP）IDEAリーグ来日プログラム「日本の起業状況」, 2012年11月13日.', kocorolab_refresh_plip_url(), 'ja', '講演記録' ),
+				kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url(),
+				kocorolab_refresh_plip_url(),
+				'東工大PLIP IDEAリーグ講演',
+				'photo'
+			),
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
 		),
 		'2011' => array(
@@ -369,11 +427,36 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		'2013' => array(
 			kocorolab_refresh_linked_paper( 'Kohei Noda (2013) Developing global talent for an era of four million: forming a thick middle layer, not only elites. Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'en' ),
 			kocorolab_refresh_linked_item( 'Kohei Noda (2013) Lecturer, job-hunting support seminar at the company joint briefing hosted by Fukuoka City and the Fukuoka Chamber of Commerce, 28 May 2013, Fukuoka International Congress Center.', kocorolab_refresh_fukuoka_2013_url(), 'en', 'report' ),
-			kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'en', 'conference' ),
-			kocorolab_refresh_linked_paper( 'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association', kocorolab_refresh_jpa_2013_ss055_pdf(), 'en' ),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'en', 'conference' ),
+				kocorolab_refresh_ice_2013_plenary_photo_url(),
+				kocorolab_refresh_ice_2013_url(),
+				'ICE 2013 plenary, Heritage Hotel Manila',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda and Keisuke Taketani (2013) Facilitators, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 7 December 2013.', kocorolab_refresh_antipolo_2013_flyer_url(), 'en', 'notice' ),
+				kocorolab_refresh_antipolo_2013_workshop_photo_url(),
+				kocorolab_refresh_antipolo_2013_flyer_url(),
+				'TIME-IMAGE-CREATIVITY WORKSHOP, Antipolo',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_paper( 'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association', kocorolab_refresh_jpa_2013_ss055_pdf(), 'en' ),
+				kocorolab_refresh_jpa_2013_photo_url(),
+				kocorolab_refresh_jpa_2013_ss055_pdf(),
+				'Japanese Psychological Association symposium',
+				'photo'
+			),
 		),
 		'2012' => array(
-			kocorolab_refresh_linked_item( 'Kohei Noda (2012) English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit, Tokyo Tech Productive Leader Incubation Platform (PLIP), 13 November 2012.', kocorolab_refresh_plip_url(), 'en', 'talk record' ),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda (2012) English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit, Tokyo Tech Productive Leader Incubation Platform (PLIP), 13 November 2012.', kocorolab_refresh_plip_url(), 'en', 'talk record' ),
+				kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url(),
+				kocorolab_refresh_plip_url(),
+				'Tokyo Tech PLIP IDEA League talk',
+				'photo'
+			),
 			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
 		),
 		'2011' => array(
@@ -574,10 +657,25 @@ function kocorolab_refresh_news_overlay_entries() {
 			'keys' => array( '第15回ミニ・フォーラム', '15th mini-forum', 'About Filipino Business', 'mini-forum-2015-12-15' ),
 		),
 		array(
+			'date' => '2013-12-07',
+			'ja'   => 'けいすけ（Keisuke Taketani）とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）',
+			'en'   => 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Taketani at Pinto Art Gallery, Antipolo (7 December 2013).',
+			'keys' => array( 'TIME-IMAGE-CREATIVITY', 'Pinto Art Gallery', 'Antipolo', 'Keisuke Taketani' ),
+			'img'  => kocorolab_refresh_antipolo_2013_workshop_photo_url(),
+		),
+		array(
+			'date' => '2013-12-06',
+			'ja'   => 'ICE 2013（PELS International Congress on eLearning）プレナリー、Heritage Hotel Manila（2013年12月6–7日）',
+			'en'   => 'ICE 2013 plenary at Heritage Hotel Manila (6–7 December 2013).',
+			'keys' => array( 'ICE 2013', 'Heritage Hotel Manila', 'PELS International Congress', 'OnGq4xL8mDEoGt7E1' ),
+			'img'  => kocorolab_refresh_ice_2013_plenary_photo_url(),
+		),
+		array(
 			'date' => '2013-09-21',
 			'ja'   => '日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）',
 			'en'   => 'SS-055 Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association (21 September 2013).',
 			'keys' => array( 'SS-055', 'コーチング心理学の確立', '77th Annual Meeting of the Japanese Psychological Association' ),
+			'img'  => kocorolab_refresh_jpa_2013_photo_url(),
 		),
 		array(
 			'date' => '2013-07-30',
@@ -602,6 +700,7 @@ function kocorolab_refresh_news_overlay_entries() {
 			'ja'   => '東京工業大学PLIPで、IDEAリーグ来日団に「日本の起業状況」を英語で講演（2012年11月13日）',
 			'en'   => 'English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit at Tokyo Tech PLIP (13 November 2012).',
 			'keys' => array( 'IDEAリーグ', 'IDEA League doctoral-school', '日本の起業状況', 'entrepreneurship in Japan', 'productiveleader' ),
+			'img'  => kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url(),
 		),
 		array(
 			'date' => '2011-12-26',
@@ -633,12 +732,6 @@ function kocorolab_refresh_news_overlay_entries() {
 			'en'   => 'MHQ version 1 press release',
 			'keys' => array( 'MHQ1', 'バージョン１発売', 'version 1 press', '3238' ),
 		),
-		array(
-			'date' => '2002-03-01',
-			'ja'   => '『認知科学』に第3回認知科学国際会議（ICCS 2001）参加報告が掲載されました。',
-			'en'   => 'Conference report on ICCS 2001 published in Cognitive Studies 9(1).',
-			'keys' => array( 'ICCS 2001', '9_1_178', '参加報告', 'Conference report on ICCS' ),
-		),
 	);
 }
 
@@ -661,6 +754,8 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
 		array( '2016-03-24', 'セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）' ),
 		array( '2015-12-15', '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）' ),
+		array( '2013-12-07', 'けいすけ（Keisuke Taketani）とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）' ),
+		array( '2013-12-06', 'ICE 2013（PELS International Congress on eLearning）プレナリー、Heritage Hotel Manila（2013年12月6–7日）' ),
 		array( '2013-09-21', '日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）' ),
 		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
 		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
@@ -690,6 +785,8 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
 		array( '2016-03-24', 'Cebu Pot seminar: Happiness Workshop — Why Filipino people are always smiling (magazine notice, 24 March 2016).' ),
 		array( '2015-12-15', '15th mini-forum: About Filipino Business for Japanese (15 December 2015).' ),
+		array( '2013-12-07', 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Taketani at Pinto Art Gallery, Antipolo (7 December 2013).' ),
+		array( '2013-12-06', 'ICE 2013 plenary at Heritage Hotel Manila (6–7 December 2013).' ),
 		array( '2013-09-21', 'SS-055 Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association (21 September 2013).' ),
 		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
 		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
@@ -754,6 +851,7 @@ function kocorolab_refresh_news_feed_items( $lang = 'ja', $wp_posts = array(), $
 			'title' => $title,
 			'url'   => '',
 			'hay'   => $title,
+			'img'   => isset( $row['img'] ) ? $row['img'] : '',
 		);
 	}
 	if ( ! $wp_posts ) {
@@ -807,9 +905,20 @@ function kocorolab_refresh_news_list_html( $items, $lang = 'ja', $compact = fals
 	?>
 	<ul class="kl-news-list">
 		<?php foreach ( $items as $item ) : ?>
-			<?php $href = kocorolab_refresh_news_item_href( $item, $lang ); ?>
-			<li>
+			<?php
+			$href = kocorolab_refresh_news_item_href( $item, $lang );
+			$img  = ( ! $compact && ! empty( $item['img'] ) ) ? $item['img'] : '';
+			$alt  = isset( $item['title'] ) ? $item['title'] : '';
+			?>
+			<li<?php echo $img ? ' class="kl-news-has-photo"' : ''; ?>>
 				<time datetime="<?php echo esc_attr( $item['date'] ); ?>"><?php echo esc_html( str_replace( '-', '.', substr( $item['date'], 0, 10 ) ) ); ?></time>
+				<?php if ( $img ) : ?>
+					<?php if ( $href ) : ?>
+						<a class="kl-news-thumb" href="<?php echo esc_url( $href ); ?>"><img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" decoding="async"></a>
+					<?php else : ?>
+						<span class="kl-news-thumb"><img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" decoding="async"></span>
+					<?php endif; ?>
+				<?php endif; ?>
 				<?php if ( $compact ) : ?>
 					<?php if ( $href ) : ?>
 						<a href="<?php echo esc_url( $href ); ?>"><?php echo esc_html( $item['title'] ); ?></a>

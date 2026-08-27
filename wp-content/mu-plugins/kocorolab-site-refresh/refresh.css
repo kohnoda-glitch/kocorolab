@@ -451,6 +451,25 @@ a.kl-soft-card:hover {
   font-size: 0.88rem;
 }
 
+.kl-news-list li.kl-news-has-photo {
+  grid-template-columns: 7.2rem 6.2rem 1fr;
+}
+
+.kl-news-thumb {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: #d7e3e8;
+  line-height: 0;
+}
+
+.kl-news-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
 .kl-related-links {
   margin: 0.45rem 0 0;
   font-size: 0.9rem;
@@ -513,6 +532,12 @@ a.kl-soft-card:hover {
 .kl-pub-thumb--video img {
   width: 7.4rem;
   aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.kl-pub-thumb--photo img {
+  width: 7.4rem;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
@@ -960,6 +985,14 @@ a.kl-soft-card:hover {
     gap: 0.2rem;
   }
 
+  .kl-news-list li.kl-news-has-photo {
+    grid-template-columns: 1fr;
+  }
+
+  .kl-news-thumb {
+    max-width: 12rem;
+  }
+
   .kl-founder-photo {
     height: 14rem;
   }
@@ -998,6 +1031,10 @@ a.kl-soft-card:hover {
   }
 
   .kl-pub-thumb--video img {
+    width: 6.2rem;
+  }
+
+  .kl-pub-thumb--photo img {
     width: 6.2rem;
   }
 }
