@@ -416,6 +416,7 @@ $checks = array(
 		&& false !== strpos( $ja_pubs, 'jpa-2013-ss055.jpg' )
 		&& false !== strpos( $ja_pubs, 'tokyo-tech-idea-league-2012.jpg' )
 		&& false !== strpos( $ja_pubs, 'kl-pub-thumb--photo' )
+		&& false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), 'align-items: start' )
 		&& false !== strpos( $en_pubs, 'kl-pub-thumb--book' )
 	),
 	'overlay zeros body top gap' => (
@@ -526,6 +527,9 @@ $checks = array(
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'Taketani' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'antipolo-2013-workshop.jpg' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'antipolo-2013-keisuke.jpg' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), '参加者との写真' )
+		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), '武谷圭祐との写真' )
+		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'Photo with participants' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'ja' ), 'antipolo-2013-time-image-creativity-flyer.jpg' )
 		&& false !== strpos( kocorolab_refresh_news_html( 'en' ), 'with Keisuke Takeya' )
 		&& false === strpos( kocorolab_refresh_news_html( 'ja' ), 'Nida' )

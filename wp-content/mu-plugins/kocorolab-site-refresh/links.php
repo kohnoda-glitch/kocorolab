@@ -227,8 +227,8 @@ function kocorolab_refresh_source_catalog() {
 				),
 				array(
 					'url' => kocorolab_refresh_antipolo_2013_keisuke_photo_url(),
-					'ja'  => '武谷圭祐との写真',
-					'en'  => 'Photo with Keisuke Takeya',
+					'ja'  => '参加者との写真',
+					'en'  => 'Photo with participants',
 				),
 				array(
 					'url' => kocorolab_refresh_antipolo_2013_poster_url(),
