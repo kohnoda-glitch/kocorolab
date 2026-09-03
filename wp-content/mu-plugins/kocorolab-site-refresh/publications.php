@@ -3,6 +3,18 @@
  * Full publications list from the live site, with the 2025 JCSS sole-author paper first.
  */
 
+function kocorolab_refresh_plugin_image_url( $file ) {
+	$file = ltrim( (string) $file, '/' );
+	if ( isset( $GLOBALS['KOCORO_PREVIEW_LANG'] ) ) {
+		$prefix = ! empty( $GLOBALS['KOCORO_PREVIEW_EN'] ) ? '../images/' : 'images/';
+		return $prefix . $file;
+	}
+	if ( function_exists( 'content_url' ) ) {
+		return content_url( 'mu-plugins/kocorolab-site-refresh/images/' . $file );
+	}
+	return 'images/' . $file;
+}
+
 function kocorolab_refresh_publications_pdf() {
 	return 'https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf';
 }
@@ -20,6 +32,9 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2020' => array(
 			'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>（<a href="https://www.youtube.com/@hiramotoakio">チャンネル</a>）',
+		),
+		'2019' => array(
+			'Maria Belinda Villavicencio, Joan Bondoc-Antonio, Eric Cruz, Connie Germono, 野田浩平, Kookie Consing-Gagui (2019) Big Idea: Embedding Systems Thinking in Philippine Education. Education that Matters / Benedictine International School. 2019年1–5月のプロジェクト。2019年5月、マニラのワークショップで発表. <a href="' . esc_url( kocorolab_refresh_plugin_image_url( 'etm-2019-poster.jpg' ) ) . '">ポスター</a>',
 		),
 		'2018' => array(
 			'吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館',
@@ -116,6 +131,9 @@ function kocorolab_refresh_publications_years( $lang = 'ja' ) {
 		),
 		'2020' => array(
 			'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)',
+		),
+		'2019' => array(
+			'Maria Belinda Villavicencio, Joan Bondoc-Antonio, Eric Cruz, Connie Germono, Kohei Noda, and Kookie Consing-Gagui (2019) Big Idea: Embedding Systems Thinking in Philippine Education. Education that Matters / Benedictine International School. Project, January–May 2019; presented at a Manila workshop in May 2019. <a href="' . esc_url( kocorolab_refresh_plugin_image_url( 'etm-2019-poster.jpg' ) ) . '">Poster</a>',
 		),
 		'2018' => array(
 			'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan',
@@ -224,6 +242,7 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
 		array( '2020-04-01', 'コロナ禍でのストレスについての寄稿' ),
 		array( '2020-01-02', 'SDGs Learning Journey 2020の案内' ),
+		array( '2019-05-24', 'マニラでフィリピン教育プロジェクトを発表' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
 		array( '2013-01-01', 'GBX(Global Business eXperience)の記事' ),
 		array( '2009-01-01', 'MHQ(Mental Health 質問票）のバージョン１発売のプレスリリース' ),
@@ -234,11 +253,51 @@ function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
 		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
 		array( '2020-04-01', 'Note on stress during COVID' ),
 		array( '2020-01-02', 'SDGs Learning Journey 2020' ),
+		array( '2019-05-24', 'Philippine education project presented in Manila' ),
 		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
 		array( '2013-01-01', 'GBX (Global Business eXperience)' ),
 		array( '2009-01-01', 'MHQ version 1 press release' ),
 	);
 	return ( 'en' === $lang ) ? $en : $ja;
+}
+
+function kocorolab_refresh_etm_2019_photos_html() {
+	$photos = array(
+		array( 'etm-2019-workshop.jpg', 'Workshop, Manila, May 2019' ),
+		array( 'etm-2019-poster.jpg', 'Big Idea: Embedding Systems Thinking in Philippine Education' ),
+		array( 'etm-2019-graphic.jpg', 'Graphic recording, Manila, May 2019' ),
+		array( 'etm-2019-flyer.jpg', 'Thriving in the Age of Disruption flyer' ),
+		array( 'etm-2019-aim-sign.jpg', 'AIM Conference Center Manila' ),
+	);
+	$html = '<div class="kl-news-photos">';
+	foreach ( $photos as $i => $photo ) {
+		$class = ( 0 === $i ) ? ' class="is-wide"' : '';
+		$html .= '<figure' . $class . '><img src="' . esc_url( kocorolab_refresh_plugin_image_url( $photo[0] ) ) . '" alt="' . esc_attr( $photo[1] ) . '"></figure>';
+	}
+	$html .= '</div>';
+	return $html;
+}
+
+function kocorolab_refresh_etm_2019_news_li( $lang = 'ja' ) {
+	$en   = ( 'en' === $lang );
+	$title = $en
+		? 'Philippine education project presented in Manila'
+		: 'マニラでフィリピン教育プロジェクトを発表';
+	$body  = $en
+		? 'From January to May 2019 a project team at Education that Matters and Benedictine International School developed “Big Idea: Embedding Systems Thinking in Philippine Education.” Kohei Noda was a project member. The poster was presented at the May 2019 Manila workshop Thriving in the Age of Disruption (AIM Conference Center Manila).'
+		: '2019年1月から5月にかけて、Education that Matters / Benedictine International School のプロジェクトチームで組成した「Big Idea: Embedding Systems Thinking in Philippine Education」を、5月のマニラのワークショップ（Thriving in the Age of Disruption, AIM Conference Center Manila）で発表しました。野田はプロジェクトメンバーとして共著しています。';
+	ob_start();
+	?>
+	<li class="kl-news-with-photos">
+		<time datetime="2019-05-24">2019.05.24</time>
+		<div>
+			<strong><?php echo esc_html( $title ); ?></strong>
+			<p><?php echo esc_html( $body ); ?></p>
+			<?php echo kocorolab_refresh_etm_2019_photos_html(); ?>
+		</div>
+	</li>
+	<?php
+	return ob_get_clean();
 }
 
 function kocorolab_refresh_news_html( $lang = 'ja' ) {
@@ -250,6 +309,9 @@ function kocorolab_refresh_news_html( $lang = 'ja' ) {
 		<p class="kl-lead"><?php echo esc_html( $c['news_lead'] ); ?></p>
 		<ul class="kl-news-list">
 			<?php foreach ( $items as $item ) : ?>
+				<?php if ( '2019-05-24' === $item[0] ) : ?>
+					<?php echo kocorolab_refresh_etm_2019_news_li( $lang ); ?>
+				<?php else : ?>
 				<li>
 					<time datetime="<?php echo esc_attr( $item[0] ); ?>"><?php echo esc_html( str_replace( '-', '.', substr( $item[0], 0, 10 ) ) ); ?></time>
 					<div>
@@ -257,6 +319,7 @@ function kocorolab_refresh_news_html( $lang = 'ja' ) {
 						<?php echo kocorolab_refresh_related_links_html( $item[1], $lang ); ?>
 					</div>
 				</li>
+				<?php endif; ?>
 			<?php endforeach; ?>
 		</ul>
 	</div>

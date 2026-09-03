@@ -231,7 +231,7 @@ $img_dst = $out . '/images';
 if ( ! is_dir( $img_dst ) ) {
 	mkdir( $img_dst, 0755, true );
 }
-foreach ( array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg' ) as $img ) {
+foreach ( array( 'hero-horizon.jpg', 'spirit-sky.jpg', 'society-green.jpg', 'environment-ocean.jpg', 'etm-2019-poster.jpg', 'etm-2019-workshop.jpg', 'etm-2019-graphic.jpg', 'etm-2019-flyer.jpg', 'etm-2019-aim-sign.jpg' ) as $img ) {
 	copy( "$img_src/$img", "$img_dst/$img" );
 }
 
