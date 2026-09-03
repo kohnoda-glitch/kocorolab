@@ -1,4 +1,7 @@
 <?php
+if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) || __DIR__ !== KOCOROLAB_REFRESH_DIR ) {
+	return;
+}
 if ( empty( $GLOBALS['KOCORO_IN_VIEW'] ) ) {
 	get_header();
 	kocorolab_refresh_site_header();
@@ -15,35 +18,31 @@ if ( function_exists( 'get_posts' ) ) {
 	$news_posts = get_posts(
 		array(
 			'post_type'        => 'news',
-			'posts_per_page'   => 4,
+			'posts_per_page'   => 20,
 			'orderby'          => 'date',
 			'order'            => 'DESC',
 			'suppress_filters' => false,
 		)
 	);
 }
+$news_items = kocorolab_refresh_news_feed_items( $lang, $news_posts, 4 );
 ?>
 <div id="edit-area" class="mt0 kl-home-wrap">
 	<main class="kl-home" lang="<?php echo esc_attr( $lang ); ?>">
 		<section class="kl-hero" style="--kl-hero-image: url('<?php echo esc_url( $hero ); ?>');">
-			<div class="kl-hero-glow" aria-hidden="true"></div>
 			<div class="kl-hero-inner">
-				<p class="kl-badge"><?php kocorolab_refresh_e( 'hero_badge' ); ?></p>
-				<h1>
-					<span><?php kocorolab_refresh_e( 'hero_title' ); ?></span>
-					<em><?php kocorolab_refresh_e( 'hero_title_accent' ); ?></em>
-				</h1>
-				<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
-				<p class="kl-actions">
-					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
-					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
-				</p>
-				<ul class="kl-creds">
-					<li><?php kocorolab_refresh_e( 'cred1' ); ?></li>
-					<li><?php kocorolab_refresh_e( 'cred2' ); ?></li>
-					<li><?php kocorolab_refresh_e( 'cred3' ); ?></li>
-				</ul>
-				<p class="kl-photo-note"><?php kocorolab_refresh_e( 'hero_photo_note' ); ?></p>
+				<div class="kl-hero-copy">
+					<p class="kl-badge"><?php kocorolab_refresh_e( 'hero_badge' ); ?></p>
+					<h1>
+						<span><?php kocorolab_refresh_e( 'hero_title' ); ?></span>
+						<em><?php kocorolab_refresh_e( 'hero_title_accent' ); ?></em>
+					</h1>
+					<p class="kl-lead"><?php kocorolab_refresh_e( 'hero_lead' ); ?></p>
+					<p class="kl-actions">
+						<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/service/', '/en/service/' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta1' ); ?></a>
+						<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/news/', '/news/?lang=en' ) ); ?>"><?php kocorolab_refresh_e( 'hero_cta2' ); ?></a>
+					</p>
+				</div>
 			</div>
 		</section>
 
@@ -108,10 +107,14 @@ if ( function_exists( 'get_posts' ) ) {
 						<h3><?php kocorolab_refresh_e( 'card1_title' ); ?></h3>
 						<p><?php kocorolab_refresh_e( 'card1_body' ); ?></p>
 					</article>
-					<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url() ); ?>">
+					<article class="kl-soft-card">
 						<h3><?php kocorolab_refresh_e( 'card2_title' ); ?></h3>
 						<p><?php kocorolab_refresh_e( 'card2_body' ); ?></p>
-					</a>
+						<p class="kl-card-links">
+							<a href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url() ); ?>"><?php kocorolab_refresh_e( 'svc2_personal_link' ); ?></a>
+							<a href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/' ) ); ?>"><?php kocorolab_refresh_e( 'svc2_link' ); ?></a>
+						</p>
+					</article>
 					<article class="kl-soft-card">
 						<h3><?php kocorolab_refresh_e( 'card3_title' ); ?></h3>
 						<p><?php kocorolab_refresh_e( 'card3_body' ); ?></p>
@@ -128,15 +131,8 @@ if ( function_exists( 'get_posts' ) ) {
 				<p class="kl-kicker"><?php kocorolab_refresh_e( 'section_news' ); ?></p>
 				<h2><?php kocorolab_refresh_e( 'section_news' ); ?></h2>
 				<p class="kl-lead"><?php kocorolab_refresh_e( 'news_lead' ); ?></p>
-				<?php if ( $news_posts ) : ?>
-					<ul class="kl-news-list">
-						<?php foreach ( $news_posts as $post ) : setup_postdata( $post ); ?>
-							<li>
-								<time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_html( get_the_date( 'Y.m.d' ) ); ?></time>
-								<a href="<?php echo esc_url( kocorolab_refresh_news_permalink() ); ?>"><?php the_title(); ?></a>
-							</li>
-						<?php endforeach; wp_reset_postdata(); ?>
-					</ul>
+				<?php if ( $news_items ) : ?>
+					<?php echo kocorolab_refresh_news_list_html( $news_items, $lang, true ); ?>
 				<?php else : ?>
 					<p><?php kocorolab_refresh_e( 'news_empty' ); ?></p>
 				<?php endif; ?>
@@ -146,17 +142,19 @@ if ( function_exists( 'get_posts' ) ) {
 			</div>
 		</section>
 
-		<section class="kl-band">
+		<section class="kl-band" id="profile">
 			<div class="kl-wide kl-founder">
 				<figure class="kl-founder-photo">
-					<img src="<?php echo esc_url( $society ); ?>" alt="">
+					<img src="<?php echo esc_url( kocorolab_refresh_image_url( 'portrait' ) ); ?>" alt="<?php echo esc_attr( kocorolab_refresh_t( 'bio_name_ja' ) ); ?>" width="1200" height="1600">
 				</figure>
-				<div>
-					<p class="kl-kicker">FOUNDER</p>
+				<div class="kl-founder-copy">
+					<p class="kl-kicker"><?php kocorolab_refresh_e( 'bio_kicker' ); ?></p>
 					<h2><?php kocorolab_refresh_e( 'section_who' ); ?></h2>
-					<p><?php kocorolab_refresh_e( 'who_body' ); ?></p>
+					<?php echo kocorolab_refresh_title_list_html(); ?>
+					<?php echo kocorolab_refresh_bio_tabs_html( 'home' ); ?>
+					<p class="kl-essence"><?php kocorolab_refresh_e( 'education_essence' ); ?></p>
 					<p><?php kocorolab_refresh_e( 'who_hr' ); ?></p>
-					<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/member/', '/en/company/' ) ); ?>"><?php kocorolab_refresh_e( 'who_more' ); ?></a></p>
+					<p><a href="<?php echo esc_url( kocorolab_refresh_url( '/member/', '/en/member/' ) ); ?>"><?php kocorolab_refresh_e( 'who_more' ); ?></a></p>
 				</div>
 			</div>
 		</section>
@@ -166,11 +164,12 @@ if ( function_exists( 'get_posts' ) ) {
 				<h2><?php kocorolab_refresh_e( 'section_pub' ); ?></h2>
 				<p><?php kocorolab_refresh_e( 'pub_body' ); ?></p>
 				<p class="kl-actions">
-					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/hakkou/', '/en/publications/' ) ); ?>"><?php kocorolab_refresh_e( 'pub_link' ); ?></a>
-					<a class="kl-btn" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/' ) ); ?>"><?php kocorolab_refresh_e( 'contact_link' ); ?></a>
+					<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_publications_url() ); ?>"><?php kocorolab_refresh_e( 'pub_link' ); ?></a>
 				</p>
 			</div>
 		</section>
+
+		<?php echo kocorolab_refresh_contact_section_html(); ?>
 	</main>
 </div>
 <?php

@@ -1,4 +1,14 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>活動・新着 | ココロラボ</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>活動・新着 | ココロラボ</title><link rel="icon" type="image/png" href="images/kocoro-mark-light.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"><style>/* Wide SaaS-style overlay: dark hero, teal, nature photos as placeholders. */
+
+html:has(body.kl-refresh),
+body.kl-refresh {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.kl-refresh > .kl-topbar {
+  margin-top: 0 !important;
+}
 
 body.kl-refresh #site_wrap {
   display: block !important;
@@ -73,13 +83,18 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 .kl-mark {
   display: grid;
   place-items: center;
-  width: 2.1rem;
-  height: 2.1rem;
-  border-radius: 0.55rem;
-  background: #128a82;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.4rem;
+  background: transparent;
+  overflow: hidden;
+}
+
+.kl-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .kl-brand-text {
@@ -144,9 +159,15 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 }
 
 .kl-btn-ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.14);
   color: #fff !important;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82);
+}
+
+.kl-page .kl-btn-ghost {
+  background: transparent;
+  color: #0e2a36 !important;
+  box-shadow: inset 0 0 0 1px #0e2a36;
 }
 
 .kl-btn-dark {
@@ -161,26 +182,23 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   align-items: flex-end;
   overflow: hidden;
   color: #fff;
-  background:
-    linear-gradient(90deg, rgba(6, 16, 28, 0.82) 0%, rgba(6, 16, 28, 0.42) 52%, rgba(6, 16, 28, 0.2) 100%),
-    var(--kl-hero-image) center/cover no-repeat;
-}
-
-.kl-hero-glow {
-  position: absolute;
-  width: 28rem;
-  height: 28rem;
-  right: 8%;
-  top: 12%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(46, 210, 186, 0.28), transparent 68%);
-  pointer-events: none;
+  background: var(--kl-hero-image) center/cover no-repeat;
 }
 
 .kl-hero-inner {
   position: relative;
   width: min(72rem, calc(100% - 8vw));
   margin: 0 auto 4.2rem;
+}
+
+.kl-hero-copy {
+  max-width: 38rem;
+  padding: 1.35rem 1.45rem 1.5rem;
+  border-radius: 1.2rem;
+  background: rgba(6, 18, 32, 0.16);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  box-shadow: 0 8px 28px rgba(4, 16, 28, 0.1);
 }
 
 .kl-badge {
@@ -190,7 +208,7 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   margin: 0 0 1.1rem;
   padding: 0.28rem 0.8rem;
   border-radius: 999px;
-  background: rgba(8, 24, 34, 0.55);
+  background: rgba(8, 24, 34, 0.42);
   color: #7ee0d2;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -217,19 +235,22 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
 .kl-hero h1 span {
   display: block;
   color: #fff;
+  text-shadow: 0 1px 18px rgba(4, 16, 28, 0.28);
 }
 
 .kl-hero h1 em {
   display: block;
-  color: #5eead4;
+  color: #9ff3e4;
   font-style: normal;
+  text-shadow: 0 1px 18px rgba(4, 16, 28, 0.24);
 }
 
 .kl-hero .kl-lead {
   max-width: 38rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.96);
   font-size: 1.05rem;
   line-height: 1.85;
+  text-shadow: 0 1px 14px rgba(4, 16, 28, 0.28);
 }
 
 .kl-actions {
@@ -237,39 +258,6 @@ body.kl-refresh-home #edit-area.kl-home-wrap {
   flex-wrap: wrap;
   gap: 0.7rem 0.9rem;
   margin: 1.5rem 0 0;
-}
-
-.kl-creds {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem 1.4rem;
-  margin: 2rem 0 0;
-  padding: 0;
-  list-style: none;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 0.86rem;
-}
-
-.kl-creds li {
-  position: relative;
-  padding-left: 0.9rem;
-}
-
-.kl-creds li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.45em;
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 50%;
-  background: #2ec4b6;
-}
-
-.kl-photo-note {
-  margin: 1.1rem 0 0;
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 0.78rem;
 }
 
 .kl-band {
@@ -372,6 +360,31 @@ a.kl-soft-card:hover {
   box-shadow: 0 18px 40px rgba(18, 138, 130, 0.16);
 }
 
+.kl-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+}
+
+.kl-card-links a,
+.kl-read a {
+  color: #128a82;
+}
+
+.kl-page h3 {
+  margin: 1.1rem 0 0.4rem;
+  font-size: 1.02rem;
+}
+
+.kl-read {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+  color: #3c5661;
+  line-height: 1.7;
+}
+
 .kl-photo-card figure {
   margin: 0;
   height: 11.5rem;
@@ -383,6 +396,7 @@ a.kl-soft-card:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 18%;
 }
 
 .kl-photo-card .kl-kicker,
@@ -427,6 +441,7 @@ a.kl-soft-card:hover {
   display: grid;
   grid-template-columns: 7.2rem 1fr;
   gap: 0.8rem;
+  align-items: start;
   margin: 0;
   padding: 0.95rem 1.15rem;
   border-bottom: 1px solid #e4eef0;
@@ -435,6 +450,63 @@ a.kl-soft-card:hover {
 .kl-news-list time {
   color: #5b7380;
   font-size: 0.88rem;
+}
+
+.kl-news-list li.kl-news-has-photo {
+  grid-template-columns: 7.2rem 6.2rem 1fr;
+}
+
+.kl-news-thumb {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: #d7e3e8;
+  line-height: 0;
+  align-self: start;
+}
+
+.kl-news-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.kl-news-list li.kl-news-with-photos {
+  align-items: start;
+}
+
+.kl-news-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin: 0.7rem 0 0;
+}
+
+.kl-news-photos figure {
+  margin: 0;
+}
+
+.kl-news-photos a {
+  display: block;
+}
+
+.kl-news-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 16rem;
+  object-fit: contain;
+  background: #eef4f6;
+  border-radius: 0.55rem;
+}
+
+.kl-news-photos .is-wide {
+  grid-column: 1 / -1;
+}
+
+.kl-news-photos .is-wide img {
+  max-height: 20rem;
 }
 
 .kl-related-links {
@@ -461,47 +533,56 @@ a.kl-soft-card:hover {
   grid-template-columns: none;
 }
 
-.kl-news-with-photos {
-  align-items: start;
-}
-
-.kl-news-photos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.55rem;
-  margin: 0.7rem 0 0;
-}
-
-.kl-news-photos figure {
-  margin: 0;
-}
-
-.kl-news-photos img {
-  display: block;
-  width: 100%;
-  height: 9.5rem;
-  object-fit: cover;
-  border-radius: 0.55rem;
-}
-
-.kl-news-photos .is-wide {
-  grid-column: 1 / -1;
-}
-
-.kl-news-photos .is-wide img {
-  height: 14rem;
-}
-
-.kl-news-with-photos p {
-  margin: 0.45rem 0 0;
-  color: #3b5360;
-  font-size: 0.92rem;
-}
-
 .kl-page {
   max-width: 46rem;
   margin: 0 auto;
-  padding: 2.8rem 1.5rem 4.5rem;
+  padding: 1.35rem 1.5rem 4.5rem;
+}
+
+.kl-pub-row {
+  margin: 0 0 1rem;
+}
+
+.kl-pub-media {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+.kl-pub-thumb {
+  flex: 0 0 auto;
+  display: block;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  background: #d7e3e8;
+  box-shadow: 0 8px 18px rgba(16, 48, 56, 0.12);
+}
+
+.kl-pub-thumb img {
+  display: block;
+  height: auto;
+}
+
+.kl-pub-thumb--book img {
+  width: 4.4rem;
+}
+
+.kl-pub-thumb--video img {
+  width: 7.4rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.kl-pub-thumb--photo img {
+  width: 7.4rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.kl-pub-text {
+  min-width: 0;
+  flex: 1;
 }
 
 .kl-page a,
@@ -553,14 +634,21 @@ a.kl-soft-card:hover {
   vertical-align: middle;
 }
 
-.kl-mhq-lp form {
+.kl-mhq-lp form,
+.kl-paypal {
   display: inline-block;
   margin: 0 0.35rem 0.35rem 0;
   vertical-align: middle;
 }
 
-.kl-mhq-lp input[type="image"] {
+.kl-mhq-lp input[type="image"],
+.kl-paypal input[type="image"] {
   vertical-align: middle;
+}
+
+.kl-paypal-cell {
+  width: 8.5rem;
+  white-space: nowrap;
 }
 
 .kl-sitefoot {
@@ -571,11 +659,348 @@ a.kl-soft-card:hover {
   font-size: 0.88rem;
 }
 
+.kl-title-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.15rem;
+  padding: 0;
+  list-style: none;
+}
+
+.kl-title-chips li {
+  max-width: 100%;
+  padding: 0.38rem 0.75rem;
+  border-radius: 999px;
+  background: #e8f4f2;
+  color: #0e2a36;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.kl-title-chips a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.kl-title-chips a:hover {
+  text-decoration: underline;
+}
+
+.kl-bio {
+  margin: 0 0 1.2rem;
+}
+
+.kl-bio-switch {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.kl-bio-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  margin: 0 0 1.1rem;
+  padding: 0.22rem;
+  border-radius: 999px;
+  background: #e4eef0;
+}
+
+.kl-bio-tab {
+  display: inline-block;
+  padding: 0.48rem 1.05rem;
+  border-radius: 999px;
+  color: #3c5661;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+
+.kl-bio:has(.kl-bio-switch-ja:checked) .kl-bio-tab[data-lang="ja"],
+.kl-bio:has(.kl-bio-switch-en:checked) .kl-bio-tab[data-lang="en"] {
+  background: #0e2a36;
+  color: #fff;
+}
+
+.kl-bio-panel-ja {
+  display: block;
+}
+
+.kl-bio-panel-en {
+  display: none;
+}
+
+.kl-bio:has(.kl-bio-switch-en:checked) .kl-bio-panel-ja {
+  display: none;
+}
+
+.kl-bio:has(.kl-bio-switch-en:checked) .kl-bio-panel-en {
+  display: block;
+}
+
+.kl-bio:has(.kl-bio-switch-ja:checked) .kl-bio-panel-ja {
+  display: block;
+}
+
+.kl-bio:has(.kl-bio-switch-ja:checked) .kl-bio-panel-en {
+  display: none;
+}
+
+.kl-bio-name {
+  margin: 0 0 0.7rem;
+  color: #10222b;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.kl-bio-panel p {
+  margin: 0 0 0.85rem;
+  color: #3c5661;
+  line-height: 1.9;
+}
+
+.kl-bio-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.kl-founder-copy {
+  min-width: 0;
+}
+
+.kl-contact {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(46, 210, 186, 0.18), transparent 42%),
+    #0b3d42;
+  color: #e8f4f2;
+}
+
+.kl-contact .kl-kicker {
+  color: #7ee0d2;
+}
+
+.kl-contact h2,
+.kl-contact .kl-lead,
+.kl-contact .kl-contact-topics-h {
+  color: #f4fffb;
+}
+
+.kl-contact .kl-lead {
+  max-width: 38rem;
+}
+
+.kl-contact-topics-h {
+  margin: 1.4rem 0 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.kl-contact-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 0 0 1.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.kl-contact-topics li {
+  padding: 0.85rem 0.95rem;
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: #e8f4f2;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.kl-page .kl-contact-topics {
+  display: block;
+  background: transparent;
+}
+
+.kl-page .kl-contact-topics li {
+  padding: 0.2rem 0;
+  background: transparent;
+  box-shadow: none;
+  color: #3c5661;
+  font-weight: 500;
+}
+
+.kl-contact-mail-wrap {
+  margin: 0 0 0.4rem;
+}
+
+.kl-mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  background: #f4fffb;
+  color: #0b3d42 !important;
+  text-decoration: none !important;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  word-break: break-all;
+}
+
+.kl-mail:hover {
+  background: #7ee0d2;
+}
+
+.kl-mail-on-light {
+  background: #0e2a36;
+  color: #f4fffb !important;
+}
+
+.kl-mail-on-light:hover {
+  background: #128a82;
+}
+
+.kl-mhq2-hero {
+  padding: 4.4rem 4vw 3.2rem;
+  color: #f4fffb;
+  background:
+    linear-gradient(90deg, rgba(8, 22, 34, 0.55) 0%, rgba(8, 22, 34, 0.18) 55%, rgba(8, 22, 34, 0.08) 100%),
+    var(--kl-hero-image) center / cover no-repeat;
+}
+
+.kl-mhq2-hero h1 {
+  margin: 0.4rem 0 0.8rem;
+  max-width: 18ch;
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  line-height: 1.25;
+}
+
+.kl-mhq2-hero .kl-lead {
+  max-width: 38rem;
+  color: #e8f4f2;
+}
+
+.kl-mhq-note {
+  margin: 1.4rem 0 0;
+  color: #5b7380;
+  font-size: 0.92rem;
+}
+
+.kl-mhq-profile {
+  display: grid;
+  grid-template-columns: 8.4rem minmax(0, 1fr);
+  gap: 1.15rem;
+  align-items: start;
+  margin: 2rem 0 1.2rem;
+  padding: 1.4rem 1.2rem;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.kl-mhq-profile h2 {
+  margin: 0 0 0.4rem;
+}
+
+.kl-mhq-profile .kl-founder-photo {
+  height: 11rem;
+  margin: 0;
+  box-shadow: none;
+}
+
+.kl-profile-head {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: start;
+  margin: 0 0 1.4rem;
+}
+
+.kl-profile-head .kl-founder-photo {
+  height: 13.5rem;
+  margin: 0;
+}
+
+.kl-press {
+  margin: 2.2rem 0 0;
+  padding: 1.4rem 1.2rem;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.kl-press h2 {
+  margin: 0 0 0.5rem;
+}
+
+.kl-press h3 {
+  margin: 1.1rem 0 0.4rem;
+}
+
+.kl-mhq-read-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.kl-mhq-scale {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) auto;
+  gap: 0.35rem 0.85rem;
+  align-items: center;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-steps {
+  display: flex;
+  gap: 0.28rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kl-mhq-steps li {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 99px;
+  background: #d5e8e5;
+}
+
+.kl-mhq-steps li.is-on {
+  background: #128a82;
+}
+
+.kl-mhq-bar {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.7rem 0;
+  font-size: 0.88rem;
+}
+
+.kl-mhq-bar i {
+  display: block;
+  height: 0.45rem;
+  border-radius: 99px;
+  background: #128a82;
+}
+
 @media (max-width: 900px) {
   .kl-mission .kl-wide,
   .kl-founder,
   .kl-photo-grid,
-  .kl-text-grid {
+  .kl-text-grid,
+  .kl-contact-topics,
+  .kl-mhq-read-grid,
+  .kl-mhq-profile,
+  .kl-profile-head {
     grid-template-columns: 1fr;
   }
 
@@ -587,76 +1012,384 @@ a.kl-soft-card:hover {
     margin-bottom: 2.4rem;
   }
 
+  .kl-hero-copy {
+    padding: 1.15rem 1.2rem 1.3rem;
+    background: rgba(6, 18, 32, 0.12);
+    backdrop-filter: blur(8px) saturate(170%);
+    -webkit-backdrop-filter: blur(8px) saturate(170%);
+  }
+
   .kl-news-list li {
     grid-template-columns: 1fr;
     gap: 0.2rem;
   }
 
+  .kl-news-list li.kl-news-has-photo {
+    grid-template-columns: 1fr;
+  }
+
+  .kl-news-thumb {
+    max-width: 12rem;
+  }
+
   .kl-founder-photo {
     height: 14rem;
+  }
+
+  .kl-profile-head .kl-founder-photo,
+  .kl-mhq-profile .kl-founder-photo {
+    height: 16rem;
+    max-width: 14rem;
+  }
+
+  .kl-topnav {
+    width: 100%;
+    order: 3;
+  }
+
+  .kl-top-actions {
+    margin-left: auto;
+  }
+
+  .kl-bio-tabs {
+    width: 100%;
+  }
+
+  .kl-bio-tab {
+    flex: 1;
+    text-align: center;
+  }
+
+  .kl-mail {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .kl-pub-thumb--book img {
+    width: 3.8rem;
+  }
+
+  .kl-pub-thumb--video img {
+    width: 6.2rem;
+  }
+
+  .kl-pub-thumb--photo img {
+    width: 6.2rem;
   }
 }
 body.kcl-preview{margin:0;background:#f5f8fa;}
 .kcl-banner{margin:0;padding:8px 22px;background:#0e2a36;color:#d7f0ea;font-size:12px;letter-spacing:.04em;line-height:1.5}
 .kcl-banner a{color:#7ee0d2}
-.kl-page{padding-top:2rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><p class="kcl-banner">ワイドなランディングのプレビュー · 日本語 — 自然の写真は仮です。本番サイトはまだ変わっていません。</p>	<div class="kl-page"><h1>活動・新着</h1>
-		<p class="kl-lead">IDEAS の案内、MHQ の更新、講演や公開資料など、ときどきのお知らせをここに載せます。日記ブログではありません。</p>
-		<ul class="kl-news-list">
-											<li>
-					<time datetime="2026-03-01">2026.03.01</time>
-					<div>
-						<span>MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。</span>
-											</div>
-				</li>
-															<li>
-					<time datetime="2020-12-06">2020.12.06</time>
-					<div>
-						<span>健康×幸福トーク登壇</span>
-						<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20201128083739/https://peraichi.com/landing_pages/view/kenkoxkoufukutalk">健康×幸福トーク案内（保存版）</a></li></ul></div>					</div>
-				</li>
-															<li>
-					<time datetime="2020-01-01">2020.01.01</time>
-					<div>
-						<span>フィリピンの貧困と幸福度の現状</span>
-						<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.youtube.com/watch?v=5acopoZcYfw">YouTube動画（平本あきおチャンネル）</a></li></ul></div>					</div>
-				</li>
-															<li>
-					<time datetime="2020-04-01">2020.04.01</time>
-					<div>
-						<span>コロナ禍でのストレスについての寄稿</span>
-						<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20230325203317/https://www.hrm-service.net/column/article120/">寄稿本文（保存版）</a></li></ul></div>					</div>
-				</li>
-															<li>
-					<time datetime="2020-01-02">2020.01.02</time>
-					<div>
-						<span>SDGs Learning Journey 2020の案内</span>
-						<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20210513000519/https://peraichi.com/landing_pages/view/learningjourney2019">SDGs Learning Journey 2020案内（保存版）</a></li></ul></div>					</div>
-				</li>
-																	<li class="kl-news-with-photos">
-		<time datetime="2019-05-24">2019.05.24</time>
-		<div>
-			<strong>マニラでフィリピン教育プロジェクトを発表</strong>
-			<p>2019年1月から5月にかけて、Education that Matters / Benedictine International School のプロジェクトチームで組成した「Big Idea: Embedding Systems Thinking in Philippine Education」を、5月のマニラのワークショップ（Thriving in the Age of Disruption, AIM Conference Center Manila）で発表しました。野田はプロジェクトメンバーとして共著しています。</p>
-			<div class="kl-news-photos"><figure class="is-wide"><img src="images/etm-2019-workshop.jpg" alt="Workshop, Manila, May 2019"></figure><figure><img src="images/etm-2019-poster.jpg" alt="Big Idea: Embedding Systems Thinking in Philippine Education"></figure><figure><img src="images/etm-2019-graphic.jpg" alt="Graphic recording, Manila, May 2019"></figure><figure><img src="images/etm-2019-flyer.jpg" alt="Thriving in the Age of Disruption flyer"></figure><figure><img src="images/etm-2019-aim-sign.jpg" alt="AIM Conference Center Manila"></figure></div>		</div>
-	</li>
-																<li>
-					<time datetime="2018-01-01">2018.01.01</time>
-					<div>
-						<span>SDGs Learning Journey 2018報告</span>
-						<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20240809025928/https://amd.tokyo/project/3228">AMD報告ページ（保存版）</a></li></ul></div>					</div>
-				</li>
-															<li>
-					<time datetime="2013-01-01">2013.01.01</time>
-					<div>
-						<span>GBX(Global Business eXperience)の記事</span>
-						<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.atpress.ne.jp/news/37250">GBXのレポート</a></li></ul></div>					</div>
-				</li>
-															<li>
-					<time datetime="2009-01-01">2009.01.01</time>
-					<div>
-						<span>MHQ(Mental Health 質問票）のバージョン１発売のプレスリリース</span>
-						<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://service.jinjibu.jp/news/detl/3238/">MHQ1発売のプレスリリース</a></li></ul></div>					</div>
-				</li>
-									</ul>
+.kl-page{padding-top:1.35rem}</style></head><body class="kl-refresh kl-refresh-page kcl-preview"><header class="kl-topbar">
+	<a class="kl-brand" href="index.html">
+		<span class="kl-mark" aria-hidden="true"><img src="images/kocoro-mark-light.png" alt=""></span>
+		<span class="kl-brand-text">
+			<strong>Kocoro Laboratory</strong>
+			<small>株式会社ココロラボ</small>
+		</span>
+	</a>
+	<nav class="kl-topnav" aria-label="メイン">
+					<a href="index.html">ホーム</a>
+					<a href="service.html">サービス</a>
+					<a href="mhqlp.html">MHQ2</a>
+					<a href="news.html" class="is-current">活動・新着</a>
+					<a href="publications.html">発表文献</a>
+					<a href="member.html">プロフィール</a>
+					<a href="company.html">会社概要</a>
+			</nav>
+	<div class="kl-top-actions">
+		<a class="kl-lang" href="en/news.html">English</a>
+		<a class="kl-cta" href="contact.html">問い合わせ</a>
 	</div>
+</header>
+		<div class="kl-page"><h1>活動・新着</h1>
+		<p class="kl-lead">IDEAS の案内、MHQ の更新、講演や公開資料など、ときどきのお知らせをここに載せます。日記ブログではありません。</p>
+			<ul class="kl-news-list">
+								<li>
+				<time datetime="2026-05-20">2026.05.20</time>
+													<div>
+													<a href="https://globis.jp/article/hu8z0vv3bb_i/">グロービス知見録に「現場が動かない…を解決！自己と組織を変えるU字カーブの歩き方」を寄稿しました（2026年5月20日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://globis.jp/article/hu8z0vv3bb_i/">グロービス知見録（U字カーブの歩き方）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2026-04-22">2026.04.22</time>
+													<div>
+													<a href="https://community.venturecafe-yokohamaconnect.org/sessions/198">YOKOHAMA CONNÉCT #36で Tri-sector innovation セッションに登壇しました（2026年4月22日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://community.venturecafe-yokohamaconnect.org/sessions/198">YOKOHAMA CONNÉCT #36 セッション</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2026-04-13">2026.04.13</time>
+													<div>
+													<a href="https://open.spotify.com/episode/03qbS6FrSXI0Bmg9bZWaLQ">MBCC 未来をひらくラジオにゲスト出演しました。「共助なき社会で、若者の未来はどうなるのか」（2026年4月13日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://open.spotify.com/episode/03qbS6FrSXI0Bmg9bZWaLQ">Spotify（MBCC 未来をひらくラジオ）</a></li><li><a href="https://mbcc-c.com/media/podcast-20260408.html">番組案内（MBCC）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2026-03-25">2026.03.25</time>
+													<div>
+													<a href="https://mba.globis.ac.jp/knowledge/detail-25752.html">グロービス卒業生インタビューで千代崎透我さんに聞きました「すべての人が能力を発揮し、活躍できる社会へ」（2026年3月25日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://mba.globis.ac.jp/knowledge/detail-25752.html">グロービス卒業生インタビュー（千代崎透我さん）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2026-03-01">2026.03.01</time>
+													<div>
+													<span>MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。</span>
+																							</div>
+							</li>
+								<li>
+				<time datetime="2025-12-10">2025.12.10</time>
+													<div>
+													<a href="https://globis.jp/article/xll9i38vmmjf/">グロービス知見録で福留大士氏に「志の力」を聞きました（2025年12月10日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://globis.jp/article/xll9i38vmmjf/">グロービス知見録（志の力）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2025-09-12">2025.09.12</time>
+													<div>
+													<a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">日本認知科学会第42回大会で「U理論の認知感情モデル」を発表しました。</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf">大会予稿PDF</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2025-01-22">2025.01.22</time>
+													<div>
+													<a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">『VUCA時代のストレス防衛術』を刊行しました。</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.amazon.co.jp/dp/B0DTS8XLPD">Amazon（VUCA時代のストレス防衛術）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2024-09-29">2024.09.29</time>
+													<div>
+													<a href="https://www.amazon.co.jp/dp/B0DGFRYHMX">『「私、うつになりやすいかも？」と思った時に読む本』を刊行しました。</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.amazon.co.jp/dp/B0DGFRYHMX">Amazon（「私、うつになりやすいかも？」と思った時に読む本）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2024-06-01">2024.06.01</time>
+													<div>
+													<a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">ウェルビーイング時代のチェンジマネジメントのYouTubeシリーズを公開しました。</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp">YouTubeシリーズ（ウェルビーイング時代のチェンジマネジメント）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2024-05-23">2024.05.23</time>
+													<div>
+													<a href="https://japan.citizensclimatelobby.org/2024/05/23/%e8%b6%85%e5%85%9a%e6%b4%be%e8%ad%b0%e9%80%a3%e5%8f%a4%e5%b7%9d%e8%ad%b0%e5%93%a1%e8%a8%aa%e5%95%8f/">市民気候ロビージャパン代表として、超党派議連古川元久議員訪問を行いました（2024年5月23日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://japan.citizensclimatelobby.org/2024/05/23/%e8%b6%85%e5%85%9a%e6%b4%be%e8%ad%b0%e9%80%a3%e5%8f%a4%e5%b7%9d%e8%ad%b0%e5%93%a1%e8%a8%aa%e5%95%8f/">CCL Japan（古川元久議員訪問）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2024-05-04">2024.05.04</time>
+													<div>
+													<a href="https://japan.citizensclimatelobby.org/2024/05/04/carbonpricingchallenge/">市民気候ロビージャパン代表として、日本政府にグローバル・カーボンプライシング・チャレンジ（GCPC）への参加を求めました（2024年5月4日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://japan.citizensclimatelobby.org/2024/05/04/carbonpricingchallenge/">CCL Japan（GCPC参加要請）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2024-02-29">2024.02.29</time>
+													<div>
+													<a href="https://japan.citizensclimatelobby.org/2024/02/29/%e7%b5%8c%e6%b8%88%e7%94%a3%e6%a5%ad%e5%a4%a7%e8%87%a3%e8%a8%aa%e5%95%8f/">市民気候ロビージャパン代表として、斎藤健・経済産業大臣と再エネ・エネルギー政策を議論しました（2024年2月29日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://japan.citizensclimatelobby.org/2024/02/29/%e7%b5%8c%e6%b8%88%e7%94%a3%e6%a5%ad%e5%a4%a7%e8%87%a3%e8%a8%aa%e5%95%8f/">CCL Japan（斎藤健・経済産業大臣）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2024-01-24">2024.01.24</time>
+													<div>
+													<a href="https://japan.citizensclimatelobby.org/2024/01/25/%e6%b2%b3%e9%87%8e%e5%a4%a7%e8%87%a3%e3%81%a8%e6%84%8f%e8%a6%8b%e4%ba%a4%e6%8f%9b/">市民気候ロビージャパンから、河野太郎・行政改革担当大臣と意見交換しました（2024年1月24日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://japan.citizensclimatelobby.org/2024/01/25/%e6%b2%b3%e9%87%8e%e5%a4%a7%e8%87%a3%e3%81%a8%e6%84%8f%e8%a6%8b%e4%ba%a4%e6%8f%9b/">CCL Japan（河野太郎大臣）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2022-10-25">2022.10.25</time>
+													<div>
+													<a href="https://mbcc-c.com/event/20220917.html">マンスリーMiLI「IDGｓと人間性の開発をめぐる対話」に登壇しました（2022年10月25日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://mbcc-c.com/event/20220917.html">マンスリーMiLI（IDGs）案内</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2022-09-16">2022.09.16</time>
+													<div>
+													<a href="https://japan.citizensclimatelobby.org/2022/10/28/%e8%a1%86%e9%99%a2%e8%b2%a1%e5%8b%99%e9%87%91%e8%9e%8d%e5%a7%94%e5%93%a1%e9%95%b7%ef%bc%88%e5%89%8d%ef%bc%89%e8%96%97%e6%b5%a6%e5%81%a5%e5%a4%aa%e9%83%8e%e8%ad%b0%e5%93%a1%e8%a8%aa%e5%95%8f/">市民気候ロビージャパン代表として、薗浦健太郎議員訪問を行いました（2022年9月16日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://japan.citizensclimatelobby.org/2022/10/28/%e8%a1%86%e9%99%a2%e8%b2%a1%e5%8b%99%e9%87%91%e8%9e%8d%e5%a7%94%e5%93%a1%e9%95%b7%ef%bc%88%e5%89%8d%ef%bc%89%e8%96%97%e6%b5%a6%e5%81%a5%e5%a4%aa%e9%83%8e%e8%ad%b0%e5%93%a1%e8%a8%aa%e5%95%8f/">CCL Japan（薗浦健太郎議員訪問）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2022-05-19">2022.05.19</time>
+													<div>
+													<a href="https://www.can-japan.org/events-ja/3263">CAN-Japanウェビナー「IPCC第6次評価報告書から気候危機を回避する道筋を考える」でカーボンプライシングについて報告しました（2022年5月19日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.can-japan.org/events-ja/3263">CAN-Japanウェビナー案内</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2021-03-21">2021.03.21</time>
+													<div>
+													<a href="https://peatix.com/event/1848747">しあわせの学問2021 FR004「#myfuture 幸せな未来を描く ～未来の自分に会う」（小島美佳とともに、2021年3月21日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://peatix.com/event/1848747">Peatix（しあわせの学問2021 FR004）</a></li><li><a href="https://shiawasesymposium.com/2021/wp/free/fr004/">しあわせの学問2021プログラム（FR004）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2021-03-20">2021.03.20</time>
+													<div>
+													<a href="https://shiawasesymposium.com/2021/wp/ws2/ws050/">しあわせの学問2021 WS050「日本の未来、より多くの人たち幸せに暮らせるように」フューチャーダイヤログ（2021年3月20日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://shiawasesymposium.com/2021/wp/ws2/ws050/">しあわせの学問2021プログラム（WS050）</a></li><li><a href="https://www.facebook.com/events/2831301047187478">Facebookイベント（WS050）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2020-12-06">2020.12.06</time>
+													<div>
+													<a href="https://web.archive.org/web/20201128083739/https://peraichi.com/landing_pages/view/kenkoxkoufukutalk">健康×幸福トーク登壇</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20201128083739/https://peraichi.com/landing_pages/view/kenkoxkoufukutalk">健康×幸福トーク案内（保存版）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2020-11-22">2020.11.22</time>
+													<div>
+													<a href="https://happiness1122.peatix.com/">対話イベント「フィジー人に学ぶ幸福の習慣」（ゲスト永崎裕麻、2020年11月22日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://happiness1122.peatix.com/">Peatix（2020）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2020-04-01">2020.04.01</time>
+													<div>
+													<a href="https://web.archive.org/web/20230325203317/https://www.hrm-service.net/column/article120/">コロナ禍でのストレスについての寄稿</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20230325203317/https://www.hrm-service.net/column/article120/">寄稿本文（保存版）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2020-01-02">2020.01.02</time>
+													<div>
+													<a href="https://web.archive.org/web/20210513000519/https://peraichi.com/landing_pages/view/learningjourney2019">SDGs Learning Journey 2020の案内</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20210513000519/https://peraichi.com/landing_pages/view/learningjourney2019">SDGs Learning Journey 2020案内（保存版）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2020-01-01">2020.01.01</time>
+													<div>
+													<a href="https://www.youtube.com/watch?v=5acopoZcYfw">フィリピンの貧困と幸福度の現状</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.youtube.com/watch?v=5acopoZcYfw">YouTube動画（平本あきおチャンネル）</a></li></ul></div>											</div>
+							</li>
+								<li class="kl-news-with-photos">
+				<time datetime="2019-05-24">2019.05.24</time>
+													<div>
+													<a href="files/etm-2019-poster.jpg">マニラでフィリピン教育プロジェクトを発表</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="files/etm-2019-poster.jpg">ポスター（原寸）</a></li></ul></div>													<div class="kl-news-photos">
+																										<figure class="is-wide"><a href="files/etm-2019-workshop.jpg" target="_blank" rel="noopener"><img src="files/etm-2019-workshop.jpg" alt="Workshop, Manila, May 2019" loading="lazy" decoding="async"></a></figure>
+																										<figure><a href="files/etm-2019-poster.jpg" target="_blank" rel="noopener"><img src="files/etm-2019-poster.jpg" alt="Big Idea: Embedding Systems Thinking in Philippine Education" loading="lazy" decoding="async"></a></figure>
+																										<figure><a href="files/etm-2019-graphic.jpg" target="_blank" rel="noopener"><img src="files/etm-2019-graphic.jpg" alt="Graphic recording, Manila, May 2019" loading="lazy" decoding="async"></a></figure>
+																										<figure><a href="files/etm-2019-flyer.jpg" target="_blank" rel="noopener"><img src="files/etm-2019-flyer.jpg" alt="Thriving in the Age of Disruption flyer" loading="lazy" decoding="async"></a></figure>
+																										<figure><a href="files/etm-2019-aim-sign.jpg" target="_blank" rel="noopener"><img src="files/etm-2019-aim-sign.jpg" alt="AIM Conference Center Manila" loading="lazy" decoding="async"></a></figure>
+															</div>
+											</div>
+							</li>
+								<li>
+				<time datetime="2019-02-01">2019.02.01</time>
+													<div>
+													<a href="https://m.pro-japan.jp/images/upload/sc_ref/116/SPEAnew22019.pdf">SPEAの学校案内PDF（2019、フィリピン留学プロ）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://m.pro-japan.jp/images/upload/sc_ref/116/SPEAnew22019.pdf">SPEAの学校案内PDF（2019）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2018-01-01">2018.01.01</time>
+													<div>
+													<a href="https://web.archive.org/web/20240809025928/https://amd.tokyo/project/3228">SDGs Learning Journey 2018報告</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20240809025928/https://amd.tokyo/project/3228">AMD報告ページ（保存版）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2017-12-07">2017.12.07</time>
+													<div>
+													<a href="https://web.archive.org/web/20190826043307/http://llp-bps.net/2017/12/14/%E7%AC%AC139%E5%9B%9E%EF%BD%82%EF%BD%90%EF%BD%93%EF%BC%8820171207%EF%BC%89%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A/">有限責任事業組合ビジネス推進機構の第139回月例で「フィリピン（セブ）留学、そして異文化体験のおすすめ」を講演（2017年12月7日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20190826043307/http://llp-bps.net/2017/12/14/%E7%AC%AC139%E5%9B%9E%EF%BD%82%EF%BD%90%EF%BD%93%EF%BC%8820171207%EF%BC%89%E6%B4%BB%E5%8B%95%E5%A0%B1%E5%91%8A/">BPS第139回活動報告（保存版）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2017-10-26">2017.10.26</time>
+													<div>
+													<a href="https://www.facebook.com/events/1908002519517088/">SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.facebook.com/events/1908002519517088/">Facebookイベント（2017）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2017-05-22">2017.05.22</time>
+													<div>
+													<a href="https://www.value-press.com/pressrelease/183306">SPEAのフィリピン教育留学開始のプレスリリース</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.value-press.com/pressrelease/183306">フィリピン教育留学のプレスリリース</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2016-07-08">2016.07.08</time>
+													<div>
+													<a href="https://www.value-press.com/pressrelease/165730">SPEAの体験型学習（RLE）研究開始のプレスリリース</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.value-press.com/pressrelease/165730">RLE研究開始のプレスリリース</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2016-03-24">2016.03.24</time>
+													<div>
+													<a href="files/cebupot-happiness-workshop-2016-03-24.pdf">セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="files/cebupot-happiness-workshop-2016-03-24.pdf">セブポット紙面原稿（2016）</a></li><li><a href="https://www.facebook.com/cebupot.jp">セブポットのFacebook（当時のイベント告知）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2015-12-15">2015.12.15</time>
+													<div>
+													<a href="files/neue-fahne-mini-forum-2015-12-15.pdf">第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="files/neue-fahne-mini-forum-2015-12-15.pdf">ミニ・フォーラム案内PDF（2015）</a></li></ul></div>											</div>
+							</li>
+								<li class="kl-news-has-photo">
+				<time datetime="2013-12-07">2013.12.07</time>
+															<a class="kl-news-thumb" href="files/antipolo-2013-time-image-creativity-flyer.jpg"><img src="files/antipolo-2013-workshop.jpg" alt="武谷圭祐とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）" loading="lazy" decoding="async"></a>
+																		<div>
+													<a href="files/antipolo-2013-time-image-creativity-flyer.jpg">武谷圭祐とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="files/antipolo-2013-time-image-creativity-flyer.jpg">ワークショップ案内</a></li><li><a href="files/antipolo-2013-workshop.jpg">ワークショップ写真</a></li><li><a href="files/antipolo-2013-keisuke.jpg">参加者との写真</a></li><li><a href="files/antipolo-2013-time-image-creativity-poster.jpg">ポスター</a></li></ul></div>											</div>
+							</li>
+								<li class="kl-news-has-photo">
+				<time datetime="2013-12-06">2013.12.06</time>
+															<a class="kl-news-thumb" href="https://share.google/OnGq4xL8mDEoGt7E1"><img src="files/ice-2013-plenary.jpg" alt="ICE 2013（PELS International Congress on eLearning）プレナリー、Heritage Hotel Manila（2013年12月6–7日）" loading="lazy" decoding="async"></a>
+																		<div>
+													<a href="https://share.google/OnGq4xL8mDEoGt7E1">ICE 2013（PELS International Congress on eLearning）プレナリー、Heritage Hotel Manila（2013年12月6–7日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://share.google/OnGq4xL8mDEoGt7E1">会議案内</a></li><li><a href="files/ice-2013-plenary.jpg">プレナリー写真</a></li><li><a href="files/ice-2013-heritage-hotel.jpg">会場写真</a></li></ul></div>											</div>
+							</li>
+								<li class="kl-news-has-photo">
+				<time datetime="2013-09-21">2013.09.21</time>
+															<a class="kl-news-thumb" href="https://www.jstage.jst.go.jp/article/pacjpa/77/0/77_SS-055/_pdf/-char/ja"><img src="files/jpa-2013-ss055.jpg" alt="日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）" loading="lazy" decoding="async"></a>
+																		<div>
+													<a href="https://www.jstage.jst.go.jp/article/pacjpa/77/0/77_SS-055/_pdf/-char/ja">日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.jstage.jst.go.jp/article/pacjpa/77/0/77_SS-055/_pdf/-char/ja">大会発表PDF（J-STAGE）</a></li><li><a href="files/jpa-2013-ss055.jpg">登壇写真</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2013-07-30">2013.07.30</time>
+													<div>
+													<a href="https://hitomedia.jp/news/2013-07-25-20130725_1/">ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://hitomedia.jp/news/2013-07-25-20130725_1/">ヒトメディアのセミナー案内</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2013-07-26">2013.07.26</time>
+													<div>
+													<a href="https://www.atpress.ne.jp/news/37250">フィリピンでの Global Business eXperience（GBX）実施報告</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.atpress.ne.jp/news/37250">GBXのレポート</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2013-03-11">2013.03.11</time>
+													<div>
+													<a href="files/neue-fahne-journal-no50-2013-03-11.pdf">Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="files/neue-fahne-journal-no50-2013-03-11.pdf">Neue Fahne Journal No.50（本文PDF）</a></li></ul></div>											</div>
+							</li>
+								<li class="kl-news-has-photo">
+				<time datetime="2012-11-13">2012.11.13</time>
+															<a class="kl-news-thumb" href="https://web.archive.org/web/20130128092802/http://www.productiveleader.jim.titech.ac.jp/news/index.html"><img src="files/tokyo-tech-idea-league-2012.jpg" alt="東京工業大学PLIPで、IDEAリーグ来日団に「日本の起業状況」を英語で講演（2012年11月13日）" loading="lazy" decoding="async"></a>
+																		<div>
+													<a href="https://web.archive.org/web/20130128092802/http://www.productiveleader.jim.titech.ac.jp/news/index.html">東京工業大学PLIPで、IDEAリーグ来日団に「日本の起業状況」を英語で講演（2012年11月13日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://web.archive.org/web/20130128092802/http://www.productiveleader.jim.titech.ac.jp/news/index.html">東工大PLIP（保存版）</a></li><li><a href="files/tokyo-tech-idea-league-2012.jpg">講演写真</a></li><li><a href="https://idealeague.org/">IDEA League</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2011-12-26">2011.12.26</time>
+													<div>
+													<a href="files/neue-fahne-journal-no20-2011-12-26.pdf">Neue Fahne Journal No.20「世代間の「価値観」の相違を互いに認め合う」（2011年12月26日）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="files/neue-fahne-journal-no20-2011-12-26.pdf">Neue Fahne Journal No.20（本文PDF）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2011-08-24">2011.08.24</time>
+													<div>
+													<a href="http://www.n-fahne.jp/pdf/mental01.pdf">廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="http://www.n-fahne.jp/pdf/mental01.pdf">MHQセミナー案内PDF（2011）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2011-02-01">2011.02.01</time>
+													<div>
+													<a href="https://www.sohten.co.jp/hansenken.html">販売戦略検討会で「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」を講演（2011年2月）</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://www.sohten.co.jp/hansenken.html">販売戦略検討会（講演記録）</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2010-06-22">2010.06.22</time>
+													<div>
+													<a href="https://service.jinjibu.jp/news/detl/3980/">シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://service.jinjibu.jp/news/detl/3980/">シュビキ提携のプレスリリース</a></li></ul></div>											</div>
+							</li>
+								<li>
+				<time datetime="2009-07-01">2009.07.01</time>
+													<div>
+													<a href="https://service.jinjibu.jp/news/detl/3238/">MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース</a>
+												<div class="kl-related-links"><p class="kl-related-kicker">関連リンク</p><ul><li><a href="https://service.jinjibu.jp/news/detl/3238/">MHQ1発売のプレスリリース</a></li></ul></div>											</div>
+							</li>
+			</ul>
+		</div>
+	<footer class="kl-sitefoot">
+	<p>精神・社会・環境を扱う小さな研究所。</p>
+	<p>© 株式会社ココロラボ / Kocoro Laboratory, Inc.</p>
+</footer>
 	</body></html>

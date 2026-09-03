@@ -1,0 +1,10 @@
+wp-content/mu-plugins/ に、フォルダ構造を保ったまま解凍してください。
+
+解凍後に mu-plugins 直下へ残るのは次の3つです。
+- 0-kocorolab-refresh-guard.php
+- kocorolab-site-refresh.php
+- kocorolab-site-refresh/   ← このフォルダ
+
+archive-news.php や copy.php を mu-plugins 直下に置かないでください。WordPress が先に読んでサイト全体が 500 になります。
+
+残してよい既存ファイルは index.php と kocorolab-jcss-2025.php だけです。
