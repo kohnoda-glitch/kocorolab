@@ -806,6 +806,16 @@ $checks = array(
 			&& false === strpos( $news_to_ja, 'lang=en' );
 	} )(),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
+	'home and company titles use the legal Japanese name' => (
+		'株式会社ココロラボ' === kocorolab_refresh_brand_document_title( '/', 'ja' )
+		&& '株式会社ココロラボ' === kocorolab_refresh_brand_document_title( '/company/', 'ja' )
+		&& 'Kocorolab | Kocoro Laboratory' === kocorolab_refresh_brand_document_title( '/en/', 'en' )
+		&& 'Kocorolab | Kocoro Laboratory' === kocorolab_refresh_brand_document_title( '/en/company/', 'en' )
+		&& '' === kocorolab_refresh_brand_document_title( '/member/', 'ja' )
+		&& kocorolab_refresh_is_home_path( '/' )
+		&& kocorolab_refresh_is_home_path( '/en/' )
+		&& ! kocorolab_refresh_is_home_path( '/company/' )
+	),
 	'company table pins Yokohama number and English names' => (
 		false !== strpos( $ja_company, '9011001058869' )
 		&& false !== strpos( $ja_company, 'Kocorolab' )
@@ -814,6 +824,8 @@ $checks = array(
 		&& false !== strpos( $en_company, '9011001058869' )
 		&& false !== strpos( $en_company, 'Kocoro Laboratory' )
 		&& false !== strpos( $en_company, 'Yokodai' )
+		&& false !== strpos( $ja_company, 'kocorolab.com' )
+		&& false !== strpos( $en_company, 'Cocorolab' )
 		&& false === strpos( $ja_company, '4010801019028' )
 		&& false === strpos( $en_company, '4010801019028' )
 	),
@@ -883,8 +895,11 @@ $checks = array(
 			&& false !== strpos( $blob, 'Kocoro Laboratory' )
 			&& false !== strpos( $blob, 'kocorolab' )
 			&& false !== strpos( $blob, 'info.gbiz.go.jp/hojin/ichiran?hojinBango=9011001058869' )
+			&& false !== strpos( $blob, 'cocoro laboratory' )
+			&& false !== strpos( $blob, 'kocorolab.com' )
 			&& false === strpos( $json, '4010801019028' )
-			&& false === strpos( $json, 'cocorolab.net' )
+			&& false === strpos( implode( ' ', (array) ( $data['@graph'][1]['sameAs'] ?? array() ) ), 'cocorolab.net' )
+			&& false === strpos( implode( ' ', (array) ( $data['@graph'][1]['sameAs'] ?? array() ) ), 'cocorolab.co.jp' )
 			&& false === strpos( $blob, 'orcid.org/my-orcid' )
 			&& false === strpos( $blob, 'linkedin.com/in/koheinoda' )
 			&& false === strpos( $blob, 'researchmap.jp/noda_kohei' )

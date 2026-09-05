@@ -198,6 +198,10 @@ function kocorolab_refresh_identity_graph() {
 					'kocoro laboratory',
 					'Kocoro Laboratory Inc.',
 					'Kocoro Laboratory, Inc.',
+					'Cocorolab',
+					'cocorolab',
+					'Cocoro Laboratory',
+					'cocoro laboratory',
 				),
 				'url'           => rtrim( $root, '/' ) . '/',
 				'logo'          => $logo,
@@ -223,11 +227,11 @@ function kocorolab_refresh_identity_graph() {
 				'employee'      => array( '@id' => $person ),
 				'description'   => array(
 					array(
-						'@value'    => '横浜市磯子区洋光台の認知科学研究所。英語名は Kocorolab / Kocoro Laboratory。法人番号 9011001058869。精神・社会・環境の分断をほどき、認知科学と人事実務を橋渡しする。東京都の同名の保育園運営法人とは別会社。',
+						'@value'    => '横浜市磯子区洋光台の認知科学研究所。公式の英語名は Kocorolab / Kocoro Laboratory。公式サイトは kocorolab.com。よく Cocorolab / Cocoro Laboratory と打たれる。法人番号 9011001058869。東京都の保育園 cocorolab.net、港区の株式会社COCORO Lab（cocorolab.co.jp）とは別会社。',
 						'@language' => 'ja',
 					),
 					array(
-						'@value'    => 'Yokohama cognitive science laboratory (Kocorolab / Kocoro Laboratory). Corporate number 9011001058869. Reconnects mind, society, and environment. Not the Tokyo nursery company that shares the same Japanese legal name.',
+						'@value'    => 'Yokohama cognitive science laboratory. Official Latin name: Kocorolab / Kocoro Laboratory. Official site: kocorolab.com. Also typed as Cocorolab / Cocoro Laboratory. Corporate number 9011001058869. Not the Tokyo nursery at cocorolab.net, and not COCORO Lab at cocorolab.co.jp.',
 						'@language' => 'en',
 					),
 				),
@@ -301,7 +305,9 @@ function kocorolab_refresh_llms_txt() {
 
 ## Organization / 組織
 - Legal name: 株式会社ココロラボ
-- Search names: ココロラボ, Kocorolab, kocorolab, Kocoro Laboratory, kocoro laboratory
+- Search names: ココロラボ, Kocorolab, kocorolab, Kocoro Laboratory, kocoro laboratory, Cocorolab, cocorolab, Cocoro Laboratory, cocoro laboratory
+- Official Latin spelling: Kocorolab / Kocoro Laboratory at https://kocorolab.com
+- Also typed: Cocorolab / Cocoro Laboratory. Those queries are this Yokohama lab, not cocorolab.net and not cocorolab.co.jp
 - English names: Kocorolab Inc., Kocoro Laboratory, Kocoro Laboratory Inc.
 - Corporate number / 法人番号: {$number}
 - Address: 〒235-0045 神奈川県横浜市磯子区洋光台1-12-41 / 1-12-41 Yokodai, Isogo, Yokohama, Kanagawa 235-0045 Japan

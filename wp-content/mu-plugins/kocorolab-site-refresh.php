@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kocoro Lab — clearer bilingual site refresh
  * Description: Full bilingual site overlay for production swap. Unzip into wp-content/mu-plugins/ so this file sits next to the kocorolab-site-refresh/ folder — do not dump the inner PHP files into mu-plugins/.
- * Version: 1.6.58
+ * Version: 1.6.59
  * Author: Kohei Noda
  */
 
@@ -78,6 +78,32 @@ function kocorolab_refresh_is_legacy_hakkou_path( $path ) {
 
 function kocorolab_refresh_is_ja_publications_path( $path ) {
 	return '/publications' === $path;
+}
+
+function kocorolab_refresh_is_home_path( $path ) {
+	$path = rtrim( (string) $path, '/' );
+	return '' === $path || '/' === $path || '/en' === $path;
+}
+
+function kocorolab_refresh_brand_document_title( $path, $lang = null ) {
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	$slug = kocorolab_refresh_slug_from_path( $path );
+	if ( ! kocorolab_refresh_is_home_path( $path ) && 'company' !== $slug ) {
+		return '';
+	}
+	return ( 'en' === $lang ) ? 'Kocorolab | Kocoro Laboratory' : '株式会社ココロラボ';
+}
+
+function kocorolab_refresh_brand_meta_description( $lang = null ) {
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	if ( 'en' === $lang ) {
+		return 'Kocorolab (Kocoro Laboratory) is a Yokohama cognitive science laboratory. Official site kocorolab.com. Also typed as Cocorolab / Cocoro Laboratory. Corporate number 9011001058869.';
+	}
+	return '株式会社ココロラボ（Kocorolab / Kocoro Laboratory）。横浜市磯子区洋光台の認知科学研究所。公式サイト kocorolab.com。Cocorolab / Cocoro Laboratory とも検索されます。法人番号 9011001058869。';
 }
 
 function kocorolab_refresh_slug_from_path( $path ) {
@@ -499,16 +525,36 @@ add_filter(
 );
 
 add_filter(
+	'pre_get_document_title',
+	function ( $title ) {
+		if ( function_exists( 'is_admin' ) && is_admin() ) {
+			return $title;
+		}
+		$uri   = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path  = kocorolab_refresh_request_path_from( $uri );
+		$brand = kocorolab_refresh_brand_document_title( $path, kocorolab_refresh_lang() );
+		return ( '' !== $brand ) ? $brand : $title;
+	},
+	20
+);
+
+add_filter(
 	'document_title_parts',
 	function ( $parts ) {
 		if ( function_exists( 'is_admin' ) && is_admin() ) {
 			return $parts;
 		}
-		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
-		$path = kocorolab_refresh_request_path_from( $uri );
-		$slug = kocorolab_refresh_slug_from_path( $path );
-		$lang = kocorolab_refresh_lang();
-		if ( kocorolab_refresh_is_virtual_page_path( $path ) || kocorolab_refresh_is_mhq_lp_path( $path ) || 'company' === $slug ) {
+		$uri   = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path  = kocorolab_refresh_request_path_from( $uri );
+		$slug  = kocorolab_refresh_slug_from_path( $path );
+		$lang  = kocorolab_refresh_lang();
+		$brand = kocorolab_refresh_brand_document_title( $path, $lang );
+		if ( '' !== $brand ) {
+			$parts['title'] = $brand;
+			$parts['site']  = '';
+			return $parts;
+		}
+		if ( kocorolab_refresh_is_virtual_page_path( $path ) || kocorolab_refresh_is_mhq_lp_path( $path ) ) {
 			$parts['title'] = kocorolab_refresh_virtual_page_title( $slug );
 		}
 		$parts['site'] = ( 'en' === $lang ) ? 'Kocoro Laboratory' : 'ココロラボ';
@@ -555,6 +601,21 @@ add_action(
 		if ( function_exists( 'kocorolab_refresh_echo_jsonld' ) ) {
 			kocorolab_refresh_echo_jsonld();
 		}
+		$uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+		$path = kocorolab_refresh_request_path_from( $uri );
+		$lang = kocorolab_refresh_lang();
+		$meta = kocorolab_refresh_brand_meta_description( $lang );
+		echo '<meta name="description" content="' . esc_attr( $meta ) . '">' . "\n";
+		$og_title = kocorolab_refresh_brand_document_title( $path, $lang );
+		if ( '' === $og_title ) {
+			$og_title = function_exists( 'wp_get_document_title' ) ? wp_get_document_title() : '';
+		}
+		if ( $og_title ) {
+			echo '<meta property="og:title" content="' . esc_attr( $og_title ) . '">' . "\n";
+		}
+		echo '<meta property="og:description" content="' . esc_attr( $meta ) . '">' . "\n";
+		echo '<meta property="og:url" content="' . esc_url( kocorolab_refresh_root() . ( '/' === rtrim( $path, '/' ) || '' === $path ? '/' : $path . '/' ) ) . '">' . "\n";
+		echo '<meta property="og:site_name" content="' . esc_attr( ( 'en' === $lang ) ? 'Kocorolab / Kocoro Laboratory' : '株式会社ココロラボ' ) . '">' . "\n";
 	},
 	0
 );
@@ -578,7 +639,7 @@ add_action(
 
 		$css_file = KOCOROLAB_REFRESH_DIR . '/refresh.css';
 		if ( is_readable( $css_file ) ) {
-			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.58' );
+			wp_register_style( 'kocorolab-refresh', false, array(), '1.6.59' );
 			wp_enqueue_style( 'kocorolab-refresh' );
 			wp_add_inline_style( 'kocorolab-refresh', file_get_contents( $css_file ) );
 		}

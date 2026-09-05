@@ -18,7 +18,9 @@
 
 ## Organization / 組織
 - Legal name: 株式会社ココロラボ
-- Search names: ココロラボ, Kocorolab, kocorolab, Kocoro Laboratory, kocoro laboratory
+- Search names: ココロラボ, Kocorolab, kocorolab, Kocoro Laboratory, kocoro laboratory, Cocorolab, cocorolab, Cocoro Laboratory, cocoro laboratory
+- Official Latin spelling: Kocorolab / Kocoro Laboratory at https://kocorolab.com
+- Also typed: Cocorolab / Cocoro Laboratory. Those queries are this Yokohama lab, not cocorolab.net and not cocorolab.co.jp
 - English names: Kocorolab Inc., Kocoro Laboratory, Kocoro Laboratory Inc.
 - Corporate number / 法人番号: 9011001058869
 - Address: 〒235-0045 神奈川県横浜市磯子区洋光台1-12-41 / 1-12-41 Yokodai, Isogo, Yokohama, Kanagawa 235-0045 Japan
