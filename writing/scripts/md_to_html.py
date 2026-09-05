@@ -86,54 +86,27 @@ def md_to_blocks(text: str) -> tuple[str, str]:
 def wrap_page(title: str, body: str) -> str:
     esc = html.escape(title)
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc}</title>
 <style>
   body {{ font-family: Georgia, serif; max-width: 720px; margin: 24px auto; padding: 0 16px; line-height: 1.6; }}
-  .bar {{ font-family: system-ui, sans-serif; background: #111; color: #fff; padding: 12px 16px; border-radius: 8px; margin-bottom: 24px; }}
-  button {{ font-size: 16px; padding: 8px 14px; cursor: pointer; }}
-  #status {{ margin-left: 12px; }}
+  .note {{ font-family: sans-serif; background: #fff6d8; border: 1px solid #e6d48a; padding: 12px 16px; margin-bottom: 24px; }}
   img {{ max-width: 100%; height: auto; }}
-  h1 {{ font-size: 2em; }}
 </style>
 </head>
 <body>
-<div class="bar">
-  <div>1. Click Copy for Medium. 2. On Medium, click the empty body under the title. 3. Paste. Put this title in Medium's title box:</div>
-  <p><strong>{esc}</strong></p>
-  <button type="button" id="copy">Copy for Medium</button>
-  <span id="status"></span>
+<div class="note">
+  下の写真と英文を、普通のホームページと同じようにマウスでなぞって選び、<b>⌘C</b> でコピーしてください。
+  ボタンは使いません。Medium に戻って、タイトルの下の白いところをクリックし、<b>⌘V</b> で貼ってください。
+  タイトル欄には次の1行だけ入れてください。<br><br>
+  <b>{esc}</b>
 </div>
 <article id="article">
 {body}
 </article>
-<script>
-document.getElementById("copy").onclick = async function () {{
-  const el = document.getElementById("article");
-  const html = el.innerHTML;
-  const text = el.innerText;
-  try {{
-    await navigator.clipboard.write([
-      new ClipboardItem({{
-        "text/html": new Blob([html], {{ type: "text/html" }}),
-        "text/plain": new Blob([text], {{ type: "text/plain" }})
-      }})
-    ]);
-    document.getElementById("status").textContent = "Copied. Paste into the Medium body.";
-  }} catch (err) {{
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-    document.execCommand("copy");
-    document.getElementById("status").textContent = "Selected. Copy with Cmd+C, then paste into Medium.";
-  }}
-}};
-</script>
 </body>
 </html>
 """
