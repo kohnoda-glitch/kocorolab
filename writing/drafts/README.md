@@ -8,4 +8,6 @@ Do not publish until you have read them.
 
 In Cursor the editing tab shows `![](...)` as text. Open **Markdown Preview** to see photos: Mac `Cmd+Shift+V`, or the preview icon at the top right of the editor. If the preview is still blank, pull the latest files so `images/` sits next to the draft.
 
-To put a story on Medium, do not paste the Cursor working file. Open `PASTE-TO-MEDIUM-*.md`, select all, copy, and paste into https://medium.com/new. That file has public image URLs. The working file uses local paths, YAML, and comments that Medium cannot show.
+Medium does not render Markdown. If you paste a `.md` file you will see `#`, `**`, and `![]()`.
+
+Use `OPEN-IN-BROWSER-*.html` instead: open it in Chrome or Safari, click **Copy for Medium**, click the empty Medium body under the title, and paste. Type the title into Medium's title box separately. Do not press Publish until photos and headings look normal.
