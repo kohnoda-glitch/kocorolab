@@ -15,31 +15,27 @@ from md_to_html import md_to_blocks  # noqa: E402
 
 RAW = (
     "https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/"
-    "cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs"
+    "cursor/note-medium-writing-4caf/writing/drafts/ja-to-note/images"
 )
-
-# Japanese-text figures must keep the original Medium images.
-KEEP_MEDIUM = {
-    "https://cdn-images-1.medium.com/max/946/0*N8Cr8cMJfFyihwz-",
-    "https://cdn-images-1.medium.com/max/624/0*SDwVm37HxcV5wLK7",
-    "https://cdn-images-1.medium.com/max/1024/0*qmM8twjuyfmUlxBW",
-    "https://cdn-images-1.medium.com/max/715/1*pPglNMoMn09XC_kJaq1MdA.png",
-}
 
 CDN_TO_FILE = {
     "https://cdn-images-1.medium.com/max/1024/1*8o4K2CXJnjTycs4ejvj9ug.jpeg": "01.jpg",
     "https://cdn-images-1.medium.com/max/553/0*nZhRz6cKDMa6t5b6": "02.jpg",
     "https://cdn-images-1.medium.com/max/588/0*ceU2jj9bVU-yU3AL": "03.jpg",
+    "https://cdn-images-1.medium.com/max/946/0*N8Cr8cMJfFyihwz-": "04.jpg",
     "https://cdn-images-1.medium.com/max/1024/1*c5HOG-RGXyGRo8P8tSnCOg.png": "05.jpg",
+    "https://cdn-images-1.medium.com/max/624/0*SDwVm37HxcV5wLK7": "06.jpg",
     "https://cdn-images-1.medium.com/max/1024/1*hftrAQ4asnX4wz-WL4y3tA.png": "07.jpg",
     "https://cdn-images-1.medium.com/max/1024/1*Gp0FlruoFUrFPkguX9B3IQ.png": "08.jpg",
     "https://cdn-images-1.medium.com/max/859/0*sHFon2RbB8BnPNHB": "09.jpg",
     "https://cdn-images-1.medium.com/max/1024/1*LJWm1_Jzzcop3artiCjCoQ.png": "10.jpg",
+    "https://cdn-images-1.medium.com/max/1024/0*qmM8twjuyfmUlxBW": "11.jpg",
     "https://cdn-images-1.medium.com/max/1024/1*2TG7vytZd_Ahf2OkmxiY9A.jpeg": "12.jpg",
     "https://cdn-images-1.medium.com/max/1024/1*MFTM4pj7jfMvPGVieo5eeA.jpeg": "13.jpg",
     "https://cdn-images-1.medium.com/max/1024/1*6V_rH2jvnkIBtPTMnDw4ww.jpeg": "14.jpg",
     "https://cdn-images-1.medium.com/max/552/0*LcWD9PxNiby-OKUk": "15.jpg",
     "https://cdn-images-1.medium.com/max/467/0*k8E4kgDCtNZnxiWY": "16.jpg",
+    "https://cdn-images-1.medium.com/max/715/1*pPglNMoMn09XC_kJaq1MdA.png": "17.jpg",
     "https://cdn-images-1.medium.com/max/1024/0*zEZDlAlAZ1hqjQxs": "18.jpg",
     "https://cdn-images-1.medium.com/max/263/0*gR0xokYGTT489Pyz": "19.jpg",
     "https://cdn-images-1.medium.com/max/1024/0*gt8iklBtIu0g2j-0": "20.jpg",
@@ -59,11 +55,9 @@ def strip_source(text: str) -> str:
 
 
 def rewrite_img(url: str) -> tuple[str, str]:
-    if url in KEEP_MEDIUM:
-        return url, 'style="max-width:100%;height:auto"'
     name = CDN_TO_FILE.get(url)
     if not name:
-        return url, 'style="max-width:100%;height:auto"'
+        raise ValueError("unmapped image (would break when Medium Japanese is replaced): " + url)
     style = "max-width:320px;height:auto" if name in PROFILES else "max-width:100%;height:auto"
     return f"{RAW}/{name}", f'style="{style}"'
 

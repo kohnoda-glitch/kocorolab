@@ -12,4 +12,7 @@ assert root.find(".//wp:post_date", ns).text.startswith("2020-10-08")
 html = root.find(".//{http://purl.org/rss/1.0/modules/content/}encoded").text
 assert "max-width:320px" in html
 assert html.count("<img") == 21
+assert "cdn-images-1.medium.com" not in html
+assert "medium.com/_/stat" not in html
+assert "ja-to-note/images" in html
 print("ok")

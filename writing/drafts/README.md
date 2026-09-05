@@ -17,6 +17,6 @@ https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/
 
 Select the photos and English text with the mouse, copy with ⌘C, then paste into the Medium body with ⌘V. There is no special button. Type the title into Medium's title box separately.
 
-Japanese text inside figures was redrawn in English. Profile photos are 320×320. Other photos are capped at 720px wide.
+Japanese text inside figures was redrawn in English. Profile photos are 320×320. Other photos are capped at 720px wide. Screenshot charts were redrawn.
 
-To put the Japanese SDGs essay on note with the 2020-10-08 date, import `ja-to-note/2020-10-08-sdgs-goal-1-note-import.xml` (see that folder’s README). Do not use note’s normal editor if you want the old date.
+To put the Japanese SDGs essay on note with the 2020-10-08 date, import `ja-to-note/2020-10-08-sdgs-goal-1-note-import.xml`. All images live under `ja-to-note/images/` on GitHub, not on Medium, so replacing the Medium Japanese post with English will not break note.
