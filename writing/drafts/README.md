@@ -2,7 +2,8 @@
 
 - `en-from-note/` — English drafts of Japanese note essays, for Medium
 - `en-from-medium/` — English drafts of Japanese Medium posts, still for Medium
-- `ja-to-note/` — Japanese Medium posts packaged as WordPress XML so note can keep the original date
+- `ja-to-note/` — Japanese Medium posts packaged as WordPress XML so note can keep the original date; also new Japanese note drafts as Markdown (paste into the note editor — do not use the SDGs import zip for those)
+- 2026-09-05 sequel to the youth / objective-function note: JA `ja-to-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new note), EN `en-from-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new Medium story)
 - `ja-from-medium/` — Japanese drafts of English Medium posts, for note
 
 Do not publish until you have read them.
