@@ -738,6 +738,10 @@ $checks = array(
 		&& 'member' === kocorolab_refresh_slug_from_path( '/member/' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'member', 'en' ), 'Ph.D. in Cognitive Science' )
 		&& false !== strpos( kocorolab_refresh_page_html( 'member', 'en' ), 'kl-bio-profile-en' )
+		&& false !== strpos( $ja_profile, '<h1>野田浩平</h1>' )
+		&& false !== strpos( $en_profile, '<h1>Kohei Noda</h1>' )
+		&& false !== strpos( $ja_profile, 'Kohei Noda' )
+		&& false !== strpos( $en_profile, '野田浩平' )
 	),
 	'/en/member/ is treated as English' => ( function () {
 		$prev = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : null;
@@ -811,7 +815,9 @@ $checks = array(
 		&& '株式会社ココロラボ' === kocorolab_refresh_brand_document_title( '/company/', 'ja' )
 		&& 'Kocorolab | Kocoro Laboratory' === kocorolab_refresh_brand_document_title( '/en/', 'en' )
 		&& 'Kocorolab | Kocoro Laboratory' === kocorolab_refresh_brand_document_title( '/en/company/', 'en' )
-		&& '' === kocorolab_refresh_brand_document_title( '/member/', 'ja' )
+		&& '野田浩平' === kocorolab_refresh_brand_document_title( '/member/', 'ja' )
+		&& 'Kohei Noda' === kocorolab_refresh_brand_document_title( '/en/member/', 'en' )
+		&& '' === kocorolab_refresh_brand_document_title( '/service/', 'ja' )
 		&& kocorolab_refresh_is_home_path( '/' )
 		&& kocorolab_refresh_is_home_path( '/en/' )
 		&& ! kocorolab_refresh_is_home_path( '/company/' )

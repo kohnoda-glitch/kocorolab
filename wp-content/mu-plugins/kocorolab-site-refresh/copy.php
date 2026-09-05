@@ -655,13 +655,15 @@ function kocorolab_refresh_service_html( $c, $lang ) {
 }
 
 function kocorolab_refresh_profile_html( $c, $lang ) {
+	$other = kocorolab_refresh_copy( ( 'en' === $lang ) ? 'ja' : 'en' );
 	ob_start();
 	?>
 	<div class="kl-page">
 		<div class="kl-profile-head">
 			<?php echo kocorolab_refresh_portrait_figure_html( $lang ); ?>
 			<div>
-				<p class="kl-kicker"><?php echo esc_html( $c['profile_role'] ); ?></p>
+				<h1><?php echo esc_html( $c['profile_h2'] ); ?></h1>
+				<p class="kl-kicker"><?php echo esc_html( $other['profile_h2'] ); ?> · <?php echo esc_html( $c['profile_role'] ); ?></p>
 				<?php echo kocorolab_refresh_title_list_html( $lang ); ?>
 			</div>
 		</div>

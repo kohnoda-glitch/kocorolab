@@ -292,25 +292,30 @@ function kocorolab_preview_render_home() {
 function kocorolab_preview_render_inner( $lang, $title, $content_html ) {
 	$GLOBALS['KOCORO_HEADER_DONE'] = false;
 	$GLOBALS['KOCORO_FOOTER_DONE'] = false;
-	if ( preg_match( '/<div class="kl-page">/', $content_html ) ) {
-		$content_html = preg_replace( '/<div class="kl-page">/', '<div class="kl-page"><h1>' . esc_html( $title ) . '</h1>', $content_html, 1 );
-	} else {
-		$content_html = '<div class="kl-page"><h1>' . esc_html( $title ) . '</h1>' . $content_html . '</div>';
+	$already_has_title_h1 = false !== strpos( $content_html, '<h1>' . esc_html( $title ) . '</h1>' );
+	if ( ! $already_has_title_h1 ) {
+		if ( preg_match( '/<div class="kl-page">/', $content_html ) ) {
+			$content_html = preg_replace( '/<div class="kl-page">/', '<div class="kl-page"><h1>' . esc_html( $title ) . '</h1>', $content_html, 1 );
+		} else {
+			$content_html = '<div class="kl-page"><h1>' . esc_html( $title ) . '</h1>' . $content_html . '</div>';
+		}
 	}
 	ob_start();
 	kocorolab_refresh_site_header();
 	echo $content_html;
 	kocorolab_refresh_site_footer();
 	$body = ob_get_clean();
+	$exact = in_array( $title, array( '株式会社ココロラボ', '野田浩平', 'Kohei Noda' ), true )
+		|| ( false !== strpos( $title, 'Kocorolab' ) && false !== strpos( $title, '|' ) );
 	if ( 'en' === $lang ) {
-		$full_title = ( false !== strpos( $title, 'Kocorolab' ) || 'Kocoro Laboratory' === $title )
-			? ( ( false !== strpos( $title, '|' ) ) ? $title : ( $title . ' | Kocoro Laboratory' ) )
+		$full_title = $exact
+			? $title
 			: ( $title . ' | Kocoro Laboratory' );
 		if ( 'Kocoro Laboratory | Kocoro Laboratory' === $full_title ) {
 			$full_title = 'Kocorolab | Kocoro Laboratory';
 		}
 	} else {
-		$full_title = ( '株式会社ココロラボ' === $title ) ? $title : ( $title . ' | ココロラボ' );
+		$full_title = $exact ? $title : ( $title . ' | ココロラボ' );
 	}
 	return kocorolab_preview_wrap( $lang, $full_title, $body, false );
 }
@@ -339,7 +344,7 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'company';
 kocorolab_preview_write( "$out/company.html", kocorolab_preview_render_inner( 'ja', '株式会社ココロラボ', kocorolab_refresh_page_html( 'company', 'ja' ) . kocorolab_refresh_page_html( 'member', 'ja' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'member';
-kocorolab_preview_write( "$out/member.html", kocorolab_preview_render_inner( 'ja', 'プロフィール', kocorolab_refresh_page_html( 'member', 'ja' ) ) );
+kocorolab_preview_write( "$out/member.html", kocorolab_preview_render_inner( 'ja', '野田浩平', kocorolab_refresh_page_html( 'member', 'ja' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
 kocorolab_preview_write( "$out/contact.html", kocorolab_preview_render_inner( 'ja', 'お問い合わせ', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'ja' ), 'ja' ) . '<div class="kl-page"><p>本プレビューではフォームは動きません。本番ではこのページに既存の問い合わせフォームが残ります。メール：info@kocorolab.com</p></div>' ) );
@@ -374,7 +379,7 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'company';
 kocorolab_preview_write( "$out/en/company.html", kocorolab_preview_render_inner( 'en', 'Kocorolab', kocorolab_refresh_page_html( 'company', 'en' ) . kocorolab_refresh_page_html( 'member', 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'member';
-kocorolab_preview_write( "$out/en/member.html", kocorolab_preview_render_inner( 'en', 'Profile', kocorolab_refresh_page_html( 'member', 'en' ) ) );
+kocorolab_preview_write( "$out/en/member.html", kocorolab_preview_render_inner( 'en', 'Kohei Noda', kocorolab_refresh_page_html( 'member', 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'contact';
 kocorolab_preview_write( "$out/en/contact.html", kocorolab_preview_render_inner( 'en', 'Contact', kocorolab_refresh_contact_intro_html( kocorolab_refresh_copy( 'en' ), 'en' ) . '<div class="kl-page"><p>This preview does not send messages. On the live site the existing form remains. Email: info@kocorolab.com</p></div>' ) );
