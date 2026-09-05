@@ -30,6 +30,7 @@
 
 ## Canonical identifiers / 正規ID
 - https://orcid.org/0009-0007-5596-1668
+- https://scholar.google.com/citations?user=CkYIgCwAAAAJ
 - https://www.wikidata.org/wiki/Q141170552
 - https://researchmap.jp/kohnoda
 - https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200901001251787926

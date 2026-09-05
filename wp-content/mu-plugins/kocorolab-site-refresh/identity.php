@@ -42,6 +42,14 @@ function kocorolab_refresh_orcid_url() {
 	return 'https://orcid.org/' . kocorolab_refresh_orcid_id();
 }
 
+function kocorolab_refresh_scholar_id() {
+	return 'CkYIgCwAAAAJ';
+}
+
+function kocorolab_refresh_scholar_url() {
+	return 'https://scholar.google.com/citations?user=' . kocorolab_refresh_scholar_id();
+}
+
 function kocorolab_refresh_person_id() {
 	return 'https://kocorolab.com/#kohei-noda';
 }
@@ -58,6 +66,7 @@ function kocorolab_refresh_is_llms_path( $path ) {
 function kocorolab_refresh_person_same_as() {
 	$urls = array(
 		kocorolab_refresh_orcid_url(),
+		kocorolab_refresh_scholar_url(),
 		kocorolab_refresh_wikidata_url(),
 		kocorolab_refresh_researchmap_url(),
 		kocorolab_refresh_jglobal_url(),
@@ -107,10 +116,18 @@ function kocorolab_refresh_identity_graph() {
 				),
 				'url'              => $root . '/member/',
 				'identifier'       => array(
-					'@type'      => 'PropertyValue',
-					'propertyID' => 'ORCID',
-					'value'      => kocorolab_refresh_orcid_id(),
-					'url'        => kocorolab_refresh_orcid_url(),
+					array(
+						'@type'      => 'PropertyValue',
+						'propertyID' => 'ORCID',
+						'value'      => kocorolab_refresh_orcid_id(),
+						'url'        => kocorolab_refresh_orcid_url(),
+					),
+					array(
+						'@type'      => 'PropertyValue',
+						'propertyID' => 'Google Scholar',
+						'value'      => kocorolab_refresh_scholar_id(),
+						'url'        => kocorolab_refresh_scholar_url(),
+					),
 				),
 				'image'            => $portrait,
 				'worksFor'         => array( '@id' => $org ),
