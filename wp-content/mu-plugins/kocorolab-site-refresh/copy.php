@@ -81,6 +81,20 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'press_t4'       => '気候変動についての超党派の対話',
 		'press_note'     => '窓口は info@kocorolab.com です。肩書きと実績はプロフィールと発表文献にあります。',
 		'contact_form'   => 'フォームでも問い合わせ',
+		'ask_h'          => '用件を選ぶ',
+		'ask_lead'       => '取材やコメント、個人の受験、研修や企業導入。先に用件を選んでください。',
+		'ask_media_h'    => '取材・コメント',
+		'ask_media_b'    => '番組、記事、専門家コメント。日本語と英語。治療の診断コメントではありません。',
+		'ask_media_cta'  => 'メールする',
+		'ask_mhq_h'      => '個人でMHQを受ける',
+		'ask_mhq_b'      => '検査、結果の読み方、フィードバックセッション。PayPalから申し込めます。',
+		'ask_mhq_cta'    => '申し込みページへ',
+		'ask_train_h'    => '研修・企業導入',
+		'ask_train_b'    => '講演、研修、組織へのMHQ導入。資料はメールで送ります。',
+		'ask_train_cta'  => 'メールする',
+		'mail_subject_media' => '取材・コメント',
+		'mail_subject_train' => '研修・講演・MHQ導入',
+		'press_t5'       => '近刊：『「私、うつになりやすいかも？」と思った時に読む本』（2024）、『VUCA時代のストレス防衛術』（2025）',
 		'section_pub'    => '発表文献',
 		'pub_body'       => '日本認知科学会などでの発表を続けています。2025年は「U理論の認知感情モデル」を第42回大会予稿集（pp. 466-469）に掲載しました。',
 		'pub_intro'      => 'ココロラボでは認知科学を基礎に、人間の感情、メンタルヘルス、幸福観、開発教育などについて研究・実践しています。近年はU理論を実践方法論、システム思考を研究方法論に意識的に取り入れ、進めています。',
@@ -255,6 +269,20 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'press_t4'       => 'Nonpartisan citizen dialogue on climate',
 		'press_note'     => 'Write to info@kocorolab.com. Titles and records are on the profile and publications pages.',
 		'contact_form'   => 'Or use the contact form',
+		'ask_h'          => 'Choose what you need',
+		'ask_lead'       => 'Interviews and comments, individual MHQ2, or training and company use. Pick the door first.',
+		'ask_media_h'    => 'Interviews and comments',
+		'ask_media_b'    => 'Broadcast, articles, and expert comment in Japanese or English. Not a clinical diagnosis.',
+		'ask_media_cta'  => 'Write by email',
+		'ask_mhq_h'      => 'Take MHQ2',
+		'ask_mhq_b'      => 'The questionnaire, how to read results, and a feedback session. Pay with PayPal.',
+		'ask_mhq_cta'    => 'Go to the landing',
+		'ask_train_h'    => 'Training and company MHQ',
+		'ask_train_b'    => 'Talks, training, and bringing MHQ into an organization. Brochures by email.',
+		'ask_train_cta'  => 'Write by email',
+		'mail_subject_media' => 'Interview or comment',
+		'mail_subject_train' => 'Training, talk, or corporate MHQ',
+		'press_t5'       => 'Recent books: The book you should read when you think you would be depression (2024); Stress Defense Strategies in the VUCA Era (2025)',
 		'section_pub'    => 'Publications',
 		'pub_body'       => 'Ongoing work includes the Japanese Cognitive Science Society. In 2025 he published “The cognitive affective model of theory U” in the 42nd Annual Meeting proceedings (pp. 466-469).',
 		'pub_intro'      => 'We study emotion, mental health, well-being, and related practice on a cognitive-science base. In recent years this work has drawn on Theory U as a method of practice and systems thinking as a method of inquiry.',
@@ -374,6 +402,42 @@ function kocorolab_refresh_contact_email() {
 	return 'info@kocorolab.com';
 }
 
+function kocorolab_refresh_mailto_url( $subject ) {
+	return 'mailto:' . kocorolab_refresh_contact_email() . '?subject=' . rawurlencode( (string) $subject );
+}
+
+function kocorolab_refresh_ask_doors_html( $lang = null ) {
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	$c = kocorolab_refresh_copy( $lang );
+	ob_start();
+	?>
+	<div class="kl-ask" id="ask">
+		<h2><?php echo esc_html( $c['ask_h'] ); ?></h2>
+		<p class="kl-lead"><?php echo esc_html( $c['ask_lead'] ); ?></p>
+		<div class="kl-photo-grid kl-text-grid">
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mailto_url( $c['mail_subject_media'] ) ); ?>">
+				<h3><?php echo esc_html( $c['ask_media_h'] ); ?></h3>
+				<p><?php echo esc_html( $c['ask_media_b'] ); ?></p>
+				<span><?php echo esc_html( $c['ask_media_cta'] ); ?></span>
+			</a>
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mhq_lp_url( $lang ) ); ?>">
+				<h3><?php echo esc_html( $c['ask_mhq_h'] ); ?></h3>
+				<p><?php echo esc_html( $c['ask_mhq_b'] ); ?></p>
+				<span><?php echo esc_html( $c['ask_mhq_cta'] ); ?></span>
+			</a>
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mailto_url( $c['mail_subject_train'] ) ); ?>">
+				<h3><?php echo esc_html( $c['ask_train_h'] ); ?></h3>
+				<p><?php echo esc_html( $c['ask_train_b'] ); ?></p>
+				<span><?php echo esc_html( $c['ask_train_cta'] ); ?></span>
+			</a>
+		</div>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
 function kocorolab_refresh_titles() {
 	return array( 'cred1', 'cred2', 'cred3', 'cred4', 'cred5', 'cred6' );
 }
@@ -486,6 +550,7 @@ function kocorolab_refresh_contact_section_html( $lang = null ) {
 			<p class="kl-kicker"><?php echo esc_html( $c['contact_kicker'] ); ?></p>
 			<h2><?php echo esc_html( $c['contact_h2'] ); ?></h2>
 			<p class="kl-lead"><?php echo esc_html( $c['contact_lead'] ); ?></p>
+			<?php echo kocorolab_refresh_ask_doors_html( $lang ); ?>
 			<p class="kl-contact-mail-wrap">
 				<a class="kl-mail" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
 			</p>
@@ -521,10 +586,11 @@ function kocorolab_refresh_press_kit_html( $c, $lang ) {
 			<li><?php echo esc_html( $c['press_t2'] ); ?></li>
 			<li><?php echo esc_html( $c['press_t3'] ); ?></li>
 			<li><?php echo esc_html( $c['press_t4'] ); ?></li>
+			<li><?php echo esc_html( $c['press_t5'] ); ?></li>
 		</ul>
 		<p><?php echo esc_html( $c['press_note'] ); ?></p>
 		<p class="kl-contact-mail-wrap">
-			<a class="kl-mail kl-mail-on-light" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+			<a class="kl-mail kl-mail-on-light" href="<?php echo esc_url( kocorolab_refresh_mailto_url( $c['mail_subject_media'] ) ); ?>"><?php echo esc_html( $email ); ?></a>
 		</p>
 	</section>
 	<?php
@@ -638,6 +704,7 @@ function kocorolab_refresh_service_html( $c, $lang ) {
 			<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_url( '/contact/', '/en/contact/', $lang ) ); ?>"><?php echo esc_html( $c['svc2_link'] ); ?></a>
 			<a class="kl-btn kl-btn-ghost" href="<?php echo esc_url( kocorolab_refresh_mhq_read_url( $lang ) ); ?>"><?php echo esc_html( $c['svc2_read_link'] ); ?></a>
 		</p>
+		<?php echo kocorolab_refresh_ask_doors_html( $lang ); ?>
 		<h3><?php echo esc_html( $c['mhq_read_h'] ); ?></h3>
 		<ul class="kl-read">
 			<li><?php echo esc_html( $c['mhq_read_1'] ); ?></li>
@@ -895,6 +962,7 @@ function kocorolab_refresh_contact_intro_html( $c, $lang ) {
 	?>
 	<div class="kl-page">
 		<p class="kl-lead"><?php echo esc_html( $c['contact_lead'] ); ?></p>
+		<?php echo kocorolab_refresh_ask_doors_html( $lang ); ?>
 		<p class="kl-contact-mail-wrap">
 			<a class="kl-mail kl-mail-on-light" href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
 		</p>

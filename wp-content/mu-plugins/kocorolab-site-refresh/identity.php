@@ -259,6 +259,38 @@ function kocorolab_refresh_identity_graph() {
 				'url'           => $root . '/mhqlp/',
 				'provider'      => array( '@id' => $org ),
 				'creator'       => array( '@id' => $person ),
+				'description'   => array(
+					array(
+						'@value'    => 'うつリスク、ストレス、ソーシャルサポート、発達障害の可能性などの傾向を見るメンタルヘルス検査。診断ではない。個人受験と企業導入。',
+						'@language' => 'ja',
+					),
+					array(
+						'@value'    => 'Mental health questionnaire for tendencies such as depression risk, stress, social support, and the possibility of developmental disorders. Not a diagnosis. Individuals and companies.',
+						'@language' => 'en',
+					),
+				),
+			),
+			array(
+				'@type'         => 'Book',
+				'@id'           => $root . '/#book-depression',
+				'name'          => '「私、うつになりやすいかも？」と思った時に読む本',
+				'alternateName' => 'The book you should read when you think you would be depression',
+				'author'        => array( '@id' => $person ),
+				'datePublished' => '2024',
+				'inLanguage'    => 'ja',
+				'url'           => 'https://www.amazon.co.jp/dp/B0DGFRYHMX',
+				'isbn'          => 'B0DGFRYHMX',
+			),
+			array(
+				'@type'         => 'Book',
+				'@id'           => $root . '/#book-vuca',
+				'name'          => 'VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集',
+				'alternateName' => 'Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress',
+				'author'        => array( '@id' => $person ),
+				'datePublished' => '2025',
+				'inLanguage'    => 'ja',
+				'url'           => 'https://www.amazon.co.jp/dp/B0DTS8XLPD',
+				'isbn'          => 'B0DTS8XLPD',
 			),
 			array(
 				'@type'       => 'WebSite',
@@ -333,7 +365,10 @@ function kocorolab_refresh_llms_txt() {
 
 ## Key product / 主要プロダクト
 - MHQ / MHQ2 (Mental Health Questionnaire / メンタルヘルス検査)
-- Landing: https://kocorolab.com/mhqlp/
+- Landing JA: https://kocorolab.com/mhqlp/
+- Landing EN: https://kocorolab.com/mhqlp/?lang=en
+- Book 2024: 「私、うつになりやすいかも？」と思った時に読む本 https://www.amazon.co.jp/dp/B0DGFRYHMX
+- Book 2025: VUCA時代のストレス防衛術 https://www.amazon.co.jp/dp/B0DTS8XLPD
 
 ## Canonical identifiers / 正規ID
 - {$person}
@@ -346,6 +381,9 @@ function kocorolab_refresh_llms_txt() {
 
 ## Contact
 - info@kocorolab.com
+- Media / comments JA: 取材・コメント / EN: Interview or comment
+- Individual MHQ2: https://kocorolab.com/mhqlp/ · https://kocorolab.com/mhqlp/?lang=en
+- Training / corporate MHQ JA: 研修・講演・MHQ導入 / EN: Training, talk, or corporate MHQ
 TXT;
 }
 

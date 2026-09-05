@@ -920,6 +920,25 @@ $checks = array(
 			&& kocorolab_refresh_is_llms_path( '/.well-known/llms.txt' )
 			&& ! kocorolab_refresh_is_llms_path( '/member/' );
 	} )(),
+	'JA and EN inbound doors split media, MHQ, and training' => (
+		false !== strpos( kocorolab_refresh_ask_doors_html( 'ja' ), '取材・コメント' )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'ja' ), '個人でMHQを受ける' )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'ja' ), '研修・企業導入' )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'ja' ), 'subject=' . rawurlencode( '取材・コメント' ) )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'en' ), 'Interviews and comments' )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'en' ), 'Take MHQ2' )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'en' ), 'Training and company MHQ' )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'en' ), 'subject=' . rawurlencode( 'Interview or comment' ) )
+		&& false !== strpos( kocorolab_refresh_ask_doors_html( 'en' ), '/mhqlp/?lang=en' )
+		&& false !== strpos( $ja_contact, 'id="ask"' )
+		&& false !== strpos( $en_contact, 'id="ask"' )
+		&& false !== strpos( $ja_service, 'id="ask"' )
+		&& false !== strpos( $contact, 'id="ask"' )
+		&& false !== strpos( $en_contact, 'The book you should read when you think you would be depression' )
+		&& false !== strpos( kocorolab_refresh_jsonld(), 'B0DGFRYHMX' )
+		&& false !== strpos( kocorolab_refresh_jsonld(), 'B0DTS8XLPD' )
+		&& false !== strpos( kocorolab_refresh_llms_txt(), 'mhqlp/?lang=en' )
+	),
 	'llms.txt file matches generator' => (
 		is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/llms.txt' )
 		&& file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/llms.txt' ) === kocorolab_refresh_llms_txt()

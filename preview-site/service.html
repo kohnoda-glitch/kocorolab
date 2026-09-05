@@ -204,7 +204,43 @@
             },
             "creator": {
                 "@id": "https://kocorolab.com/#kohei-noda"
-            }
+            },
+            "description": [
+                {
+                    "@value": "うつリスク、ストレス、ソーシャルサポート、発達障害の可能性などの傾向を見るメンタルヘルス検査。診断ではない。個人受験と企業導入。",
+                    "@language": "ja"
+                },
+                {
+                    "@value": "Mental health questionnaire for tendencies such as depression risk, stress, social support, and the possibility of developmental disorders. Not a diagnosis. Individuals and companies.",
+                    "@language": "en"
+                }
+            ]
+        },
+        {
+            "@type": "Book",
+            "@id": "https://kocorolab.com/#book-depression",
+            "name": "「私、うつになりやすいかも？」と思った時に読む本",
+            "alternateName": "The book you should read when you think you would be depression",
+            "author": {
+                "@id": "https://kocorolab.com/#kohei-noda"
+            },
+            "datePublished": "2024",
+            "inLanguage": "ja",
+            "url": "https://www.amazon.co.jp/dp/B0DGFRYHMX",
+            "isbn": "B0DGFRYHMX"
+        },
+        {
+            "@type": "Book",
+            "@id": "https://kocorolab.com/#book-vuca",
+            "name": "VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集",
+            "alternateName": "Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress",
+            "author": {
+                "@id": "https://kocorolab.com/#kohei-noda"
+            },
+            "datePublished": "2025",
+            "inLanguage": "ja",
+            "url": "https://www.amazon.co.jp/dp/B0DTS8XLPD",
+            "isbn": "B0DTS8XLPD"
         },
         {
             "@type": "WebSite",
@@ -1037,6 +1073,35 @@ a.kl-soft-card:hover {
   max-width: 38rem;
 }
 
+.kl-ask {
+  margin: 0 0 1.6rem;
+}
+
+.kl-ask h2 {
+  margin: 0 0 0.7rem;
+}
+
+.kl-ask .kl-soft-card span {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: #0e5a55;
+  font-weight: 700;
+}
+
+.kl-contact .kl-ask h2,
+.kl-contact .kl-ask .kl-lead {
+  color: #f4fffb;
+}
+
+.kl-contact .kl-ask .kl-soft-card {
+  background: #f7fbfa;
+}
+
+.kl-contact .kl-ask .kl-soft-card h3,
+.kl-contact .kl-ask .kl-soft-card p {
+  color: #10222b;
+}
+
 .kl-contact-topics-h {
   margin: 1.4rem 0 0.7rem;
   font-size: 0.95rem;
@@ -1352,7 +1417,28 @@ body.kcl-preview{margin:0;background:#f5f8fa;}
 			<a class="kl-btn kl-btn-ghost" href="contact.html">企業導入（資料・問い合わせ）</a>
 			<a class="kl-btn kl-btn-ghost" href="mhq-read.html">結果の読み方（見本）</a>
 		</p>
-		<h3>結果の読み方</h3>
+			<div class="kl-ask" id="ask">
+		<h2>用件を選ぶ</h2>
+		<p class="kl-lead">取材やコメント、個人の受験、研修や企業導入。先に用件を選んでください。</p>
+		<div class="kl-photo-grid kl-text-grid">
+			<a class="kl-soft-card" href="mailto:info@kocorolab.com?subject=%E5%8F%96%E6%9D%90%E3%83%BB%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88">
+				<h3>取材・コメント</h3>
+				<p>番組、記事、専門家コメント。日本語と英語。治療の診断コメントではありません。</p>
+				<span>メールする</span>
+			</a>
+			<a class="kl-soft-card" href="mhqlp.html">
+				<h3>個人でMHQを受ける</h3>
+				<p>検査、結果の読み方、フィードバックセッション。PayPalから申し込めます。</p>
+				<span>申し込みページへ</span>
+			</a>
+			<a class="kl-soft-card" href="mailto:info@kocorolab.com?subject=%E7%A0%94%E4%BF%AE%E3%83%BB%E8%AC%9B%E6%BC%94%E3%83%BBMHQ%E5%B0%8E%E5%85%A5">
+				<h3>研修・企業導入</h3>
+				<p>講演、研修、組織へのMHQ導入。資料はメールで送ります。</p>
+				<span>メールする</span>
+			</a>
+		</div>
+	</div>
+			<h3>結果の読み方</h3>
 		<ul class="kl-read">
 			<li>数字は病名ではありません。うつリスクなどの傾向です。</li>
 			<li>5段階はリスクの目安です。病名ではありません。</li>

@@ -805,6 +805,35 @@ a.kl-soft-card:hover {
   max-width: 38rem;
 }
 
+.kl-ask {
+  margin: 0 0 1.6rem;
+}
+
+.kl-ask h2 {
+  margin: 0 0 0.7rem;
+}
+
+.kl-ask .kl-soft-card span {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: #0e5a55;
+  font-weight: 700;
+}
+
+.kl-contact .kl-ask h2,
+.kl-contact .kl-ask .kl-lead {
+  color: #f4fffb;
+}
+
+.kl-contact .kl-ask .kl-soft-card {
+  background: #f7fbfa;
+}
+
+.kl-contact .kl-ask .kl-soft-card h3,
+.kl-contact .kl-ask .kl-soft-card p {
+  color: #10222b;
+}
+
 .kl-contact-topics-h {
   margin: 1.4rem 0 0.7rem;
   font-size: 0.95rem;
