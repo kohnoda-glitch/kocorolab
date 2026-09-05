@@ -616,6 +616,13 @@ a.kl-soft-card:hover {
   font-weight: 700;
 }
 
+.kl-company-note {
+  margin: 0.85rem 0 0;
+  color: #5b7380;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .kl-mhq-lp {
   max-width: 52rem;
 }

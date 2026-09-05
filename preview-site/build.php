@@ -298,7 +298,11 @@ function kocorolab_preview_render_inner( $lang, $title, $content_html ) {
 	echo $content_html;
 	kocorolab_refresh_site_footer();
 	$body = ob_get_clean();
-	$full_title = $title . ( $lang === 'en' ? ' | Kocoro Lab' : ' | ココロラボ' );
+	if ( 'en' === $lang ) {
+		$full_title = ( 'Kocoro Laboratory' === $title ) ? $title : ( $title . ' | Kocoro Laboratory' );
+	} else {
+		$full_title = $title . ' | ココロラボ';
+	}
 	return kocorolab_preview_wrap( $lang, $full_title, $body, false );
 }
 
@@ -358,7 +362,7 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'publications';
 kocorolab_preview_write( "$out/en/publications.html", kocorolab_preview_render_inner( 'en', 'Publications', kocorolab_refresh_publications_html( 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'company';
-kocorolab_preview_write( "$out/en/company.html", kocorolab_preview_render_inner( 'en', 'Company', kocorolab_refresh_page_html( 'company', 'en' ) . kocorolab_refresh_page_html( 'member', 'en' ) ) );
+kocorolab_preview_write( "$out/en/company.html", kocorolab_preview_render_inner( 'en', 'Kocoro Laboratory', kocorolab_refresh_page_html( 'company', 'en' ) . kocorolab_refresh_page_html( 'member', 'en' ) ) );
 
 $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'member';
 kocorolab_preview_write( "$out/en/member.html", kocorolab_preview_render_inner( 'en', 'Profile', kocorolab_refresh_page_html( 'member', 'en' ) ) );

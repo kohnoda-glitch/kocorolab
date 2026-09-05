@@ -1,6 +1,6 @@
 # Kohei Noda / 野田浩平
 > Cognitive scientist. Representative Director of Kocorolab Inc. / 認知科学者。株式会社ココロラボ代表取締役。
-> Official pair: Kohei Noda (野田浩平) ↔ Kocorolab (株式会社ココロラボ).
+> Official pair: Kohei Noda (野田浩平) ↔ Kocorolab / Kocoro Laboratory (株式会社ココロラボ).
 
 ## Overview / 概要
 - Name: Kohei Noda (野田浩平 / 野田 浩平 / Noda Kohei)
@@ -18,11 +18,16 @@
 
 ## Organization / 組織
 - Legal name: 株式会社ココロラボ
+- Search names: ココロラボ, Kocorolab, kocorolab, Kocoro Laboratory, kocoro laboratory
 - English names: Kocorolab Inc., Kocoro Laboratory, Kocoro Laboratory Inc.
+- Corporate number / 法人番号: 9011001058869
+- Address: 〒235-0045 神奈川県横浜市磯子区洋光台1-12-41 / 1-12-41 Yokodai, Isogo, Yokohama, Kanagawa 235-0045 Japan
 - Founded: 2008-12-01
 - Mission: Guiding Transformation for Societies and Individuals / 社会と個人の変容をガイドする
 - Focus: mind · society · environment / 精神・社会・環境
+- Official site: https://kocorolab.com
 - Company: https://kocorolab.com/company/ · https://kocorolab.com/en/company/
+- Not the Tokyo nursery operator at cocorolab.net. This item is the Yokohama cognitive science laboratory.
 
 ## Key product / 主要プロダクト
 - MHQ / MHQ2 (Mental Health Questionnaire / メンタルヘルス検査)
@@ -38,7 +43,9 @@
 - https://note.com/koheinoda
 - https://medium.com/@koheinoda_11596
 - https://japan.citizensclimatelobby.org/
-- Company LinkedIn: https://www.linkedin.com/company/kocoro-laboratory-inc.
+- https://www.linkedin.com/company/kocoro-laboratory-inc.
+- https://info.gbiz.go.jp/hojin/ichiran?hojinBango=9011001058869
+- https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=9011001058869
 
 ## Writing / 文章
 - Japanese: https://note.com/koheinoda

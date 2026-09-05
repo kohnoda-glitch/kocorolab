@@ -26,6 +26,27 @@ function kocorolab_refresh_company_linkedin_url() {
 	return 'https://www.linkedin.com/company/kocoro-laboratory-inc.';
 }
 
+function kocorolab_refresh_corporate_number() {
+	return '9011001058869';
+}
+
+function kocorolab_refresh_gbizinfo_url() {
+	return 'https://info.gbiz.go.jp/hojin/ichiran?hojinBango=' . kocorolab_refresh_corporate_number();
+}
+
+function kocorolab_refresh_nta_corporate_url() {
+	return 'https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=' . kocorolab_refresh_corporate_number();
+}
+
+function kocorolab_refresh_company_same_as() {
+	$urls = array(
+		kocorolab_refresh_company_linkedin_url(),
+		kocorolab_refresh_gbizinfo_url(),
+		kocorolab_refresh_nta_corporate_url(),
+	);
+	return array_values( array_filter( $urls ) );
+}
+
 function kocorolab_refresh_wikidata_url() {
 	return 'https://www.wikidata.org/wiki/Q141170552';
 }
@@ -164,23 +185,32 @@ function kocorolab_refresh_identity_graph() {
 				'knowsLanguage'    => array( 'ja', 'en' ),
 			),
 			array(
-				'@type'         => 'Organization',
+				'@type'         => array( 'Organization', 'ResearchOrganization' ),
 				'@id'           => $org,
 				'name'          => '株式会社ココロラボ',
 				'legalName'     => '株式会社ココロラボ',
 				'alternateName' => array(
+					'ココロラボ',
 					'Kocorolab',
+					'kocorolab',
 					'Kocorolab Inc.',
 					'Kocoro Laboratory',
+					'kocoro laboratory',
 					'Kocoro Laboratory Inc.',
 					'Kocoro Laboratory, Inc.',
-					'ココロラボ',
 				),
 				'url'           => rtrim( $root, '/' ) . '/',
 				'logo'          => $logo,
 				'image'         => $logo,
 				'email'         => 'info@kocorolab.com',
 				'foundingDate'  => '2008-12-01',
+				'identifier'    => array(
+					'@type'      => 'PropertyValue',
+					'propertyID' => '法人番号',
+					'value'      => kocorolab_refresh_corporate_number(),
+					'url'        => kocorolab_refresh_nta_corporate_url(),
+				),
+				'iso6523Code'   => '0188:' . kocorolab_refresh_corporate_number(),
 				'address'       => array(
 					'@type'           => 'PostalAddress',
 					'postalCode'      => '235-0045',
@@ -193,17 +223,15 @@ function kocorolab_refresh_identity_graph() {
 				'employee'      => array( '@id' => $person ),
 				'description'   => array(
 					array(
-						'@value'    => '精神・社会・環境の分断をほどく研究所。認知科学と人事実務を橋渡しする。ミッションは「社会と個人の変容をガイドする」。',
+						'@value'    => '横浜市磯子区洋光台の認知科学研究所。英語名は Kocorolab / Kocoro Laboratory。法人番号 9011001058869。精神・社会・環境の分断をほどき、認知科学と人事実務を橋渡しする。東京都の同名の保育園運営法人とは別会社。',
 						'@language' => 'ja',
 					),
 					array(
-						'@value'    => 'A laboratory that reconnects mind, society, and environment. Bridges cognitive science and HR practice. Mission: Guiding Transformation for Societies and Individuals.',
+						'@value'    => 'Yokohama cognitive science laboratory (Kocorolab / Kocoro Laboratory). Corporate number 9011001058869. Reconnects mind, society, and environment. Not the Tokyo nursery company that shares the same Japanese legal name.',
 						'@language' => 'en',
 					),
 				),
-				'sameAs'        => array(
-					kocorolab_refresh_company_linkedin_url(),
-				),
+				'sameAs'        => kocorolab_refresh_company_same_as(),
 				'makesOffer'    => array( '@id' => $root . '/#mhq2' ),
 			),
 			array(
@@ -249,11 +277,13 @@ function kocorolab_refresh_jsonld_script() {
 }
 
 function kocorolab_refresh_llms_txt() {
-	$person = implode( "\n- ", kocorolab_refresh_person_same_as() );
+	$person  = implode( "\n- ", kocorolab_refresh_person_same_as() );
+	$company = implode( "\n- ", kocorolab_refresh_company_same_as() );
+	$number  = kocorolab_refresh_corporate_number();
 	return <<<TXT
 # Kohei Noda / 野田浩平
 > Cognitive scientist. Representative Director of Kocorolab Inc. / 認知科学者。株式会社ココロラボ代表取締役。
-> Official pair: Kohei Noda (野田浩平) ↔ Kocorolab (株式会社ココロラボ).
+> Official pair: Kohei Noda (野田浩平) ↔ Kocorolab / Kocoro Laboratory (株式会社ココロラボ).
 
 ## Overview / 概要
 - Name: Kohei Noda (野田浩平 / 野田 浩平 / Noda Kohei)
@@ -271,11 +301,16 @@ function kocorolab_refresh_llms_txt() {
 
 ## Organization / 組織
 - Legal name: 株式会社ココロラボ
+- Search names: ココロラボ, Kocorolab, kocorolab, Kocoro Laboratory, kocoro laboratory
 - English names: Kocorolab Inc., Kocoro Laboratory, Kocoro Laboratory Inc.
+- Corporate number / 法人番号: {$number}
+- Address: 〒235-0045 神奈川県横浜市磯子区洋光台1-12-41 / 1-12-41 Yokodai, Isogo, Yokohama, Kanagawa 235-0045 Japan
 - Founded: 2008-12-01
 - Mission: Guiding Transformation for Societies and Individuals / 社会と個人の変容をガイドする
 - Focus: mind · society · environment / 精神・社会・環境
+- Official site: https://kocorolab.com
 - Company: https://kocorolab.com/company/ · https://kocorolab.com/en/company/
+- Not the Tokyo nursery operator at cocorolab.net. This item is the Yokohama cognitive science laboratory.
 
 ## Key product / 主要プロダクト
 - MHQ / MHQ2 (Mental Health Questionnaire / メンタルヘルス検査)
@@ -283,7 +318,7 @@ function kocorolab_refresh_llms_txt() {
 
 ## Canonical identifiers / 正規ID
 - {$person}
-- Company LinkedIn: https://www.linkedin.com/company/kocoro-laboratory-inc.
+- {$company}
 
 ## Writing / 文章
 - Japanese: https://note.com/koheinoda

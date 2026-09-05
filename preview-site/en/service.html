@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Services | Kocoro Lab</title><script type="application/ld+json" id="kocorolab-identity">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Services | Kocoro Laboratory</title><script type="application/ld+json" id="kocorolab-identity">
 {
     "@context": "https://schema.org",
     "@graph": [
@@ -113,23 +113,35 @@
             ]
         },
         {
-            "@type": "Organization",
+            "@type": [
+                "Organization",
+                "ResearchOrganization"
+            ],
             "@id": "https://kocorolab.com/#organization",
             "name": "株式会社ココロラボ",
             "legalName": "株式会社ココロラボ",
             "alternateName": [
+                "ココロラボ",
                 "Kocorolab",
+                "kocorolab",
                 "Kocorolab Inc.",
                 "Kocoro Laboratory",
+                "kocoro laboratory",
                 "Kocoro Laboratory Inc.",
-                "Kocoro Laboratory, Inc.",
-                "ココロラボ"
+                "Kocoro Laboratory, Inc."
             ],
             "url": "https://kocorolab.com/",
             "logo": "https://kocorolab.com/../images/kocoro-mark-light.png",
             "image": "https://kocorolab.com/../images/kocoro-mark-light.png",
             "email": "info@kocorolab.com",
             "foundingDate": "2008-12-01",
+            "identifier": {
+                "@type": "PropertyValue",
+                "propertyID": "法人番号",
+                "value": "9011001058869",
+                "url": "https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=9011001058869"
+            },
+            "iso6523Code": "0188:9011001058869",
             "address": {
                 "@type": "PostalAddress",
                 "postalCode": "235-0045",
@@ -146,16 +158,18 @@
             },
             "description": [
                 {
-                    "@value": "精神・社会・環境の分断をほどく研究所。認知科学と人事実務を橋渡しする。ミッションは「社会と個人の変容をガイドする」。",
+                    "@value": "横浜市磯子区洋光台の認知科学研究所。英語名は Kocorolab / Kocoro Laboratory。法人番号 9011001058869。精神・社会・環境の分断をほどき、認知科学と人事実務を橋渡しする。東京都の同名の保育園運営法人とは別会社。",
                     "@language": "ja"
                 },
                 {
-                    "@value": "A laboratory that reconnects mind, society, and environment. Bridges cognitive science and HR practice. Mission: Guiding Transformation for Societies and Individuals.",
+                    "@value": "Yokohama cognitive science laboratory (Kocorolab / Kocoro Laboratory). Corporate number 9011001058869. Reconnects mind, society, and environment. Not the Tokyo nursery company that shares the same Japanese legal name.",
                     "@language": "en"
                 }
             ],
             "sameAs": [
-                "https://www.linkedin.com/company/kocoro-laboratory-inc."
+                "https://www.linkedin.com/company/kocoro-laboratory-inc.",
+                "https://info.gbiz.go.jp/hojin/ichiran?hojinBango=9011001058869",
+                "https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=9011001058869"
             ],
             "makesOffer": {
                 "@id": "https://kocorolab.com/#mhq2"
@@ -819,6 +833,13 @@ a.kl-soft-card:hover {
   width: 8.5rem;
   color: #5b7380;
   font-weight: 700;
+}
+
+.kl-company-note {
+  margin: 0.85rem 0 0;
+  color: #5b7380;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 .kl-mhq-lp {

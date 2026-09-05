@@ -86,8 +86,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'pub_intro'      => 'ココロラボでは認知科学を基礎に、人間の感情、メンタルヘルス、幸福観、開発教育などについて研究・実践しています。近年はU理論を実践方法論、システム思考を研究方法論に意識的に取り入れ、進めています。',
 		'pub_link'       => '文献一覧',
 		'contact_link'   => '問い合わせ',
+		'company_title'  => '会社概要',
 		'company_h2'     => 'ココロラボについて',
-		'company_lead'   => '株式会社ココロラボは、精神・社会・環境の分断をほどく研究所です。認知科学と人事実務を橋渡しします。',
+		'company_lead'   => '株式会社ココロラボ（Kocorolab / Kocoro Laboratory）は、横浜市磯子区洋光台の研究所です。精神・社会・環境の分断をほどき、認知科学と人事実務を橋渡しします。',
+		'company_note'   => '法人番号 9011001058869。横浜市磯子区の認知科学研究所です。東京都の同名の保育園運営法人とは別会社です。',
 		'company_m_h'    => 'ミッション',
 		'company_m'      => '社会と個人の変容をガイドする',
 		'company_m_other'=> 'Guiding Transformation for Societies and Individuals',
@@ -162,13 +164,15 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'profile_past'   => 'これまでに人事・組織領域の仕事に携わり、事業会社の人事責任者を務めてきました。',
 		'profile_note'   => '研究実績は発表文献、ときどきの案内は活動・新着をご覧ください。',
 		'label_name'     => '研究所名',
+		'label_number'   => '法人番号',
 		'label_ceo'      => '代表取締役',
 		'label_addr'     => '所在地',
 		'label_founded'  => '設立',
 		'label_fy'       => '決算期',
 		'label_biz'      => '事業内容',
 		'label_bank'     => '取引先銀行',
-		'val_name'       => '株式会社ココロラボ　Kocoro Laboratory, Inc.',
+		'val_name'       => '株式会社ココロラボ / Kocorolab Inc. / Kocoro Laboratory, Inc.',
+		'val_number'     => '9011001058869',
 		'val_ceo'        => '野田 浩平',
 		'val_addr'       => '〒235-0045 神奈川県横浜市磯子区洋光台1-12-41',
 		'val_founded'    => '2008年12月1日',
@@ -256,8 +260,10 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'pub_intro'      => 'We study emotion, mental health, well-being, and related practice on a cognitive-science base. In recent years this work has drawn on Theory U as a method of practice and systems thinking as a method of inquiry.',
 		'pub_link'       => 'Publication list',
 		'contact_link'   => 'Contact',
+		'company_title'  => 'Kocoro Laboratory',
 		'company_h2'     => 'About Kocoro Laboratory',
-		'company_lead'   => 'Kocoro Laboratory works to mend the split between mind, society, and environment, bridging cognitive science and HR practice.',
+		'company_lead'   => 'Kocorolab (Kocoro Laboratory) is a Yokohama laboratory that reconnects mind, society, and environment, bridging cognitive science and HR practice.',
+		'company_note'   => 'Corporate number 9011001058869. A cognitive science laboratory in Isogo, Yokohama. Not the Tokyo nursery company with the same Japanese legal name.',
 		'company_m_h'    => 'Mission',
 		'company_m'      => 'Guiding Transformation for Societies and Individuals',
 		'company_m_other'=> '社会と個人の変容をガイドする',
@@ -332,13 +338,15 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'profile_past'   => 'He later served as head of human resources in operating companies, including a pre-IPO growth company and a listed company.',
 		'profile_note'   => 'See Publications for research, and News & activities for occasional notes.',
 		'label_name'     => 'Name',
+		'label_number'   => 'Corporate number',
 		'label_ceo'      => 'President',
 		'label_addr'     => 'Address',
 		'label_founded'  => 'Established',
 		'label_fy'       => 'Fiscal year-end',
 		'label_biz'      => 'Activities',
 		'label_bank'     => 'Main bank',
-		'val_name'       => 'Kocoro Laboratory, Inc.',
+		'val_name'       => 'Kocorolab Inc. / Kocoro Laboratory, Inc. / 株式会社ココロラボ',
+		'val_number'     => '9011001058869',
 		'val_ceo'        => 'Kohei Noda',
 		'val_addr'       => '1-12-41 Yokodai, Isogo, Yokohama, Kanagawa 235-0045 Japan',
 		'val_founded'    => '1 December 2008',
@@ -568,6 +576,7 @@ function kocorolab_refresh_page_html( $slug, $lang = 'ja' ) {
 function kocorolab_refresh_company_html( $c, $lang ) {
 	$rows = array(
 		array( $c['label_name'], $c['val_name'] ),
+		array( $c['label_number'], $c['val_number'] ),
 		array( $c['label_ceo'], $c['val_ceo'] ),
 		array( $c['label_addr'], $c['val_addr'] ),
 		array( $c['label_founded'], $c['val_founded'] ),
@@ -607,6 +616,9 @@ function kocorolab_refresh_company_html( $c, $lang ) {
 				</tr>
 			<?php endforeach; ?>
 		</table>
+		<?php if ( ! empty( $c['company_note'] ) ) : ?>
+			<p class="kl-company-note"><?php echo esc_html( $c['company_note'] ); ?></p>
+		<?php endif; ?>
 	</div>
 	<?php
 	return ob_get_clean();

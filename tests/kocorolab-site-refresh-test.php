@@ -49,6 +49,7 @@ require dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh.php'
 $ja = kocorolab_refresh_copy( 'ja' );
 $en = kocorolab_refresh_copy( 'en' );
 $ja_company = kocorolab_refresh_page_html( 'company', 'ja' );
+$en_company = kocorolab_refresh_page_html( 'company', 'en' );
 $ja_service = kocorolab_refresh_page_html( 'service', 'ja' );
 $ja_profile = kocorolab_refresh_page_html( 'member', 'ja' );
 $en_profile = kocorolab_refresh_page_html( 'member', 'en' );
@@ -61,7 +62,7 @@ $contact    = kocorolab_refresh_contact_section_html( 'ja' );
 $ja_lp      = kocorolab_refresh_page_html( 'mhqlp', 'ja' );
 $en_lp      = kocorolab_refresh_page_html( 'mhqlp', 'en' );
 $en_contact = kocorolab_refresh_page_html( 'contact', 'en' );
-$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $ja['profile_note'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $en['profile_note'], $ja_company, $ja_service, $ja_profile, $en_profile, $ja_contact, $en_contact, $ja_lp, $en_lp ) );
+$blob       = implode( ' ', array( $ja['who_hr'], $ja['who_body'], $ja['profile_now'], $ja['profile_past'], $ja['profile_note'], $en['who_hr'], $en['who_body'], $en['profile_now'], $en['profile_past'], $en['profile_note'], $ja_company, $en_company, $ja_service, $ja_profile, $en_profile, $ja_contact, $en_contact, $ja_lp, $en_lp ) );
 
 $forbidden = array( '自死', 'グリーフ', '崩壊', '父の病気', '兄の下', 'Inner Transition', 'のタルヘルス', 'ガリバー', 'イントループ', 'Gulliver', 'INTLOOP', '准教授', 'リージョナルファカルティ', '特任教授', 'リードファカルティ', 'Lead Faculty', '触れません', '公開しません', 'does not discuss individual', 'does not describe individual' );
 
@@ -805,6 +806,17 @@ $checks = array(
 			&& false === strpos( $news_to_ja, 'lang=en' );
 	} )(),
 	'company table present' => false !== strpos( $ja_company, 'kl-table' ),
+	'company table pins Yokohama number and English names' => (
+		false !== strpos( $ja_company, '9011001058869' )
+		&& false !== strpos( $ja_company, 'Kocorolab' )
+		&& false !== strpos( $ja_company, 'Kocoro Laboratory' )
+		&& false !== strpos( $ja_company, '横浜市磯子区洋光台' )
+		&& false !== strpos( $en_company, '9011001058869' )
+		&& false !== strpos( $en_company, 'Kocoro Laboratory' )
+		&& false !== strpos( $en_company, 'Yokodai' )
+		&& false === strpos( $ja_company, '4010801019028' )
+		&& false === strpos( $en_company, '4010801019028' )
+	),
 	'JA pubs include JCSS 2025 and 1997' => ( false !== strpos( $ja_pubs, 'JCSS2025_P2-37' ) && false !== strpos( $ja_pubs, '1997' ) && false !== strpos( $ja_pubs, 'VUCA' ) && false !== strpos( $ja_pubs, '役割アイデンティティのない状況下' ) && false !== strpos( $ja_pubs, 'niigata-tit-leadership-2000-resume.jpg' ) && false !== strpos( $ja_pubs, 'VALDES Technical paper' ) && false !== strpos( $ja_pubs, 'valdes-leadership-generation-2000.pdf' ) && false !== strpos( $ja_pubs, '感情から見たリーダーシップ発生モデル' ) && false === strpos( $ja_pubs, 'テクニカルペーパーの1ページ' ) ),
 	'JA pubs include 2019 ETM poster' => ( false !== strpos( $ja_pubs, 'Embedding Systems Thinking in Philippine Education' ) && false !== strpos( $ja_pubs, '野田浩平' ) && false !== strpos( $ja_pubs, 'etm-2019-poster.jpg' ) && is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/etm-2019-poster.jpg' ) && is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/files/etm-2019-workshop.jpg' ) ),
 	'EN pubs include 2019 ETM poster' => ( false !== strpos( $en_pubs, 'Kohei Noda' ) && false !== strpos( $en_pubs, 'Embedding Systems Thinking in Philippine Education' ) && false !== strpos( $en_pubs, 'etm-2019-poster.jpg' ) ),
@@ -867,6 +879,12 @@ $checks = array(
 			&& false !== strpos( $blob, 'Q141170552' )
 			&& false !== strpos( $blob, 'orcid.org/0009-0007-5596-1668' )
 			&& false !== strpos( $blob, 'scholar.google.com/citations?user=CkYIgCwAAAAJ' )
+			&& false !== strpos( $blob, '9011001058869' )
+			&& false !== strpos( $blob, 'Kocoro Laboratory' )
+			&& false !== strpos( $blob, 'kocorolab' )
+			&& false !== strpos( $blob, 'info.gbiz.go.jp/hojin/ichiran?hojinBango=9011001058869' )
+			&& false === strpos( $json, '4010801019028' )
+			&& false === strpos( $json, 'cocorolab.net' )
 			&& false === strpos( $blob, 'orcid.org/my-orcid' )
 			&& false === strpos( $blob, 'linkedin.com/in/koheinoda' )
 			&& false === strpos( $blob, 'researchmap.jp/noda_kohei' )
