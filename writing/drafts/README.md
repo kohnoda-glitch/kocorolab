@@ -12,6 +12,6 @@ Medium does not render Markdown. If you paste a `.md` file you will see `#`, `**
 
 Open this page in Chrome or Safari (no download):
 
-https://cdn.jsdelivr.net/gh/kohnoda-glitch/kocorolab@b7e4389/writing/drafts/en-from-medium/OPEN-IN-BROWSER-sdgs-goal-1.html
+https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/OPEN-IN-BROWSER-sdgs-goal-1.html
 
-Click **Copy for Medium**, click the empty Medium body under the title, and paste. Type the title into Medium's title box separately. Do not press Publish until photos and headings look normal.
+Select the photos and English text with the mouse, copy with ⌘C, then paste into the Medium body with ⌘V. There is no special button. Type the title into Medium's title box separately.
