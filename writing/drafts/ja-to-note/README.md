@@ -1,3 +1,15 @@
+# 取り込みファイルを Mac に入れる
+
+XML のリンクは、Safari だと画面に文字が出るだけで保存されません。**zip** を使ってください。
+
+1. このリンクを開く  
+   https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf/writing/drafts/ja-to-note/note-import.zip
+2. `note-import.zip` がダウンロードフォルダに入る
+3. その zip をダブルクリックする
+4. 出てきた `note-import.xml` を、note の「自分の記事 → インポート → WordPress」に入れる
+
+---
+
 # 図が出ないとき
 
 文字だけ貼ると、図1・図2は見出しだけ残って絵が出ません。
