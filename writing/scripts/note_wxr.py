@@ -124,6 +124,47 @@ def wxr(title: str, body: str, url: str) -> str:
 """
 
 
+CDN = (
+    "https://cdn.jsdelivr.net/gh/kohnoda-glitch/kocorolab@424f60e/"
+    "writing/drafts/ja-to-note/images"
+)
+
+
+def write_browser_page(title: str, body: str) -> None:
+    """HTML the user can open in a browser and copy into note."""
+    local = body
+    for name in CDN_TO_FILE.values():
+        local = local.replace(f"{RAW}/{name}", f"{CDN}/{name}")
+    esc = escape(title)
+    html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc}</title>
+<style>
+  body {{ font-family: sans-serif; max-width: 720px; margin: 24px auto; padding: 0 16px; line-height: 1.7; }}
+  .note {{ background: #fff6d8; border: 1px solid #e6d48a; padding: 12px 16px; margin-bottom: 24px; }}
+  img {{ max-width: 100%; height: auto; }}
+</style>
+</head>
+<body>
+<div class="note">
+  黄色い枠の下にある写真と図を、マウスでなぞって選んでください。
+  選んだら <b>⌘C</b>。note の本文をクリックして <b>⌘V</b>。
+  タイトルは自分で入れてください。
+</div>
+<article id="article">
+{local}
+</article>
+</body>
+</html>
+"""
+    dest = ROOT / "writing" / "drafts" / "ja-to-note" / "OPEN-IN-BROWSER.html"
+    dest.write_text(html, encoding="utf-8")
+    print("wrote", dest)
+
+
 def main() -> int:
     src = ROOT / "writing" / "source" / "medium-ja"
     matches = list(src.glob("SDGs*.md"))
@@ -139,6 +180,7 @@ def main() -> int:
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(wxr(title, body, url), encoding="utf-8")
     ET.parse(dest)
+    write_browser_page(title, body)
     print("wrote", dest)
     return 0
 
