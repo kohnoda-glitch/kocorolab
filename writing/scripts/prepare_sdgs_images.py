@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 IMG = ROOT / "writing" / "drafts" / "en-from-medium" / "images" / "2020-10-08-sdgs"
 PROFILE = {"18.jpg", "19.jpg", "20.jpg", "21.jpg"}
 MAX_W = 720
-PORTRAIT = 400
+PORTRAIT = 320
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
