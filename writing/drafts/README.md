@@ -15,3 +15,5 @@ Open this page in Chrome or Safari (no download):
 https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/OPEN-IN-BROWSER-sdgs-goal-1.html
 
 Select the photos and English text with the mouse, copy with ⌘C, then paste into the Medium body with ⌘V. There is no special button. Type the title into Medium's title box separately.
+
+Japanese text inside figures was redrawn in English. Profile photos are 400×400. Other photos are capped at 720px wide. After a change, use the HTML preview link again so Medium gets the new files.

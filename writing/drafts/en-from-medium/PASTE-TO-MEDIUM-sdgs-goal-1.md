@@ -1,6 +1,6 @@
 # SDGs Goal 1: A challenge to reach zero extreme poverty in Africa
 
-![](https://cdn-images-1.medium.com/max/1024/1*8o4K2CXJnjTycs4ejvj9ug.jpeg)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/01.jpg)
 
 **1. Introduction**
 
@@ -22,7 +22,7 @@ In 2015 the United Nations set the Sustainable Development Goals. Goal 1 include
 
 2.2. The problem: the present and the history of extreme poverty
 
-![](https://cdn-images-1.medium.com/max/553/0*nZhRz6cKDMa6t5b6)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/02.jpg)
 
 Figure 1. Pre-COVID forecast for extreme poverty in 2030
 
@@ -32,13 +32,13 @@ Figure 1 forecasts that 6 percent of the world’s people will still live in ext
 
 Figure 2 forecasts that by the end of this year, after COVID, 71 million people will have fallen back into extreme poverty. At the end of last year the figure was about 630 million, so we are heading back toward 700 million.
 
-![](https://cdn-images-1.medium.com/max/588/0*ceU2jj9bVU-yU3AL)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/03.jpg)
 
 Figure 2. Forecast of the number of people in poverty at the end of 2020
 
 The IPCC *Special Report on Global Warming of 1.5°C*, published at the end of 2018, also warned that a warming climate would work against the eradication of poverty. That should not surprise anyone. When weather disasters strike, money and labour that would have gone into ending poverty are pulled away.
 
-![](https://cdn-images-1.medium.com/max/946/0*N8Cr8cMJfFyihwz-)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/04.jpg)
 
 Figure 3. Japanese translation of the poverty-related passages in the IPCC 1.5°C report
 
@@ -58,7 +58,7 @@ Then work took me to the Philippines, to start global career development, and I 
 
 Beside Gallup’s psychological surveys there is the UN World Happiness Report, which folds in social development. There is an American finding that once annual income passes about 60,000 dollars, more income no longer raises happiness. I asked the reverse: what happens when income falls? I divided Gallup’s scores by the UN scores (a kind of standardisation) and looked at a ranking of psychological well-being that did not simply follow income. Two contiguous West African countries, Ghana and Côte d’Ivoire — one a former British colony, one a former French colony — both sat in the top ten. That meant I had to go and see. As preparatory research, in 2018 I first wanted to look at one of the lowest-income countries. I stayed away from active conflict zones, for the obvious reason of safety, and of Burundi and Malawi the itinerary came together first for Burundi. I spent about a week there. In Rwanda, which I used as a base on the way, and in Burundi, I made friends and colleagues. After I returned to the Philippines we wanted to do a project together. That is how this began.
 
-![](https://cdn-images-1.medium.com/max/1024/1*c5HOG-RGXyGRo8P8tSnCOg.png)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/05.jpg)
 
 *A photograph in front of a house in the home village of François, one of the members*
 
@@ -78,7 +78,7 @@ I was born in 1973. I remember the 1980s, Live Aid, “We Are the World,” and 
 
 After the Second World War, many African countries became independent from colonial rule around 1960. People expected development from scratch under communism or under capital-and-democracy. It did not go that way. In the 1990s the Western donor countries (the DAC members), which had kept aid flowing since the war and since independence, took stock and tightened the tap.
 
-![](https://cdn-images-1.medium.com/max/624/0*SDwVm37HxcV5wLK7)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/06.jpg)
 
 Figure 4. DAC: the countries on the OECD Development Assistance Committee
 
@@ -88,11 +88,11 @@ Japan kept raising aid for ten years after the bubble burst, and held the floor.
 
 At the millennium, under Secretary-General Kofi Annan, the UN made the Millennium Development Goals with Professor Jeffrey Sachs of Columbia University as an adviser. Poverty reduction was a goal there too. In Japan some people may remember projects in that stream such as *Hottokenai Sekai no Mazushisa* (“Don’t look away from world poverty”) and the White Band. Against 1990, the number of people in extreme poverty fell from 1.9 billion (of 5.3 billion) to 830 million in 2015 (of 7.3 billion). China and Southeast Asia had grown richer.
 
-![](https://cdn-images-1.medium.com/max/1024/1*hftrAQ4asnX4wz-WL4y3tA.png)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/07.jpg)
 
 *A brick house*
 
-![](https://cdn-images-1.medium.com/max/1024/1*Gp0FlruoFUrFPkguX9B3IQ.png)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/08.jpg)
 
 *Bricks drying. This hillside was also a site of the 1994 genocide*
 
@@ -106,7 +106,7 @@ Sachs, still an adviser from the MDGs into the SDGs, has said from the beginning
 
 DAC members should keep the international pledge to give 0.7 percent of GNI (in everyday terms, GDP). That figure is in a 1970 UN resolution. The United States, Japan, and several Commonwealth countries (Canada, Australia, New Zealand and others) have not come close. They are not even halfway there. The Nordic countries, the United Kingdom, and Germany have kept it. France is under strain now.
 
-![](https://cdn-images-1.medium.com/max/859/0*sHFon2RbB8BnPNHB)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/09.jpg)
 
 Figure 4. OECD statistics on each country’s ODA (you can change the view and graph any country from 1960). The DAC average is 0.3 percent — not even half of 0.7 percent. [https://data.oecd.org/oda/net-oda.htm](https://data.oecd.org/oda/net-oda.htm)
 
@@ -116,7 +116,7 @@ In the early postwar years the United States spent about 1.5 percent of GDP on t
 
 If the large donors — the United States and Japan — had kept the pledge, development might have been finished long ago. For decades they have not. Even in the 1990s, when Japan was holding the line, the GNI ratio was about half the international pledge. That is how little money actually moved. If 1960 to 1990 was a failed thirty years after African independence, the thirty years after that were a lost thirty years as well.
 
-![](https://cdn-images-1.medium.com/max/1024/1*LJWm1_Jzzcop3artiCjCoQ.png)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/10.jpg)
 
 *This household had almost no cash, and still served cassava and bottled Fanta*
 
@@ -126,7 +126,7 @@ The pledge has never been met. Researchers and campaigners say that if donors pa
 
 The United States spends 3.5 percent of GDP on the military and plays world policeman. Social security is about half of its budget — 50 percent, against 33 percent in Japan. Even without universal health insurance, medical costs run high.
 
-![](https://cdn-images-1.medium.com/max/1024/0*qmM8twjuyfmUlxBW)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/11.jpg)
 
 Figure 5. Comparing the national budgets of Japan, the United States, China, and India
 
@@ -164,7 +164,7 @@ The number of care workers is rising. Why does the construction slump become an 
 
 There is a survey that correlates with the countries that regularly give not 0.7 percent of GNI but more than 1 percent (Sweden, Norway, and others). That is the UN World Happiness Report, the large annual study that combines social development and psychology. (Gallup also runs a psychological well-being survey; from this year Gallup is an adviser to the UN report as well.) The Nordic countries, taken to be among the most developed and the happiest, tax income very heavily, and they guarantee support and education if you lose your job. They also spend domestic budgets on social security and education. They sit near a large power, Russia, and have to spend on security with NATO. And they still spend on international cooperation.
 
-![](https://cdn-images-1.medium.com/max/1024/1*2TG7vytZd_Ahf2OkmxiY9A.jpeg)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/12.jpg)
 
 *Children at the house that served cassava*
 
@@ -222,7 +222,7 @@ Sachs’s Millennium Villages, by contrast, have stayed closer to experimental s
 
 In aid debates you also hear that ODA no longer matters, because for decades the global economy and foreign direct investment have grown to several times ODA. Even if Africa is “the last continent” and business money is arriving, that money lifts the profits of multinationals, local wealthy families, and the elite who can take formal jobs. It does not go into the foundations of the state — infrastructure, education, social protection including health. It is the same as remittances from former colonial powers or from countries that host refugees: the money does not enter the public budget, and the poor are not saved.
 
-![](https://cdn-images-1.medium.com/max/1024/1*MFTM4pj7jfMvPGVieo5eeA.jpeg)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/13.jpg)
 
 *Back in Kigali, the capital of Rwanda*
 
@@ -248,7 +248,7 @@ With a school of 40 people we thought about local poverty. Take one million yen 
 
 *Craft for Two: a project that, when school salaries stopped under COVID, linked English-school teachers, people in need in the area, and students through online English: https://peraichi.com/landing_pages/view/charityenglish*
 
-![](https://cdn-images-1.medium.com/max/1024/1*6V_rH2jvnkIBtPTMnDw4ww.jpeg)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/14.jpg)
 
 *The market in Bujumbura, the capital of Burundi*
 
@@ -266,11 +266,11 @@ The last section was micro method. In a poorly developed country, you have to st
 
 The scale is in the two figures below.
 
-![](https://cdn-images-1.medium.com/max/552/0*LcWD9PxNiby-OKUk)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/15.jpg)
 
 Figure 6. The 46 least developed countries where ending extreme poverty is hardest
 
-![](https://cdn-images-1.medium.com/max/467/0*k8E4kgDCtNZnxiWY)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/16.jpg)
 
 Figure 7. A graph showing how far short ODA is in the United States and Japan
 
@@ -320,7 +320,7 @@ Using this method, from August I have been in Ubuntu Lab, a programme meant only
 
 - In both countries, even a small project that helps people who need aid. These places were already poor. The aim is not to let COVID push them back below the poverty line.
 
-![](https://cdn-images-1.medium.com/max/715/1*pPglNMoMn09XC_kJaq1MdA.png)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/17.jpg)
 
 *Where the small states of Rwanda and Burundi sit*
 
@@ -332,25 +332,25 @@ Using this method, from August I have been in Ubuntu Lab, a programme meant only
 
 Kohei Noda:
 
-![](https://cdn-images-1.medium.com/max/1024/0*zEZDlAlAZ1hqjQxs)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/18.jpg)
 
 President of Kocoro Laboratory (HR consulting and mental-health services) and a director of Ducks and Drakes (the English-school company in the Philippines). Ph.D. (academic; cognitive science, especially emotion). The work is to see how cognition, emotion, and awareness operate in the interaction of body and environment, in the same spirit as Theory U. A returnee from Germany. I have worked at a foreign consulting firm, imported and built foreign HR and psychology services, and created new businesses from academic seeds — mainly science and technology that touch people and society. Since 2013 in the Philippines the main work has been businesses that link Japan and the Philippines, and help on social problems. In this COVID year (2020) I helped start the Japanese edition of GAIA Journey, a Theory U spin-out from the COVID period, and the Japan chapter of Citizens’ Climate Lobby. From the age of 40, after moving to the Philippines, I have tried to give back some of what society gave me, and to be useful.
 
 François Ingabire
 
-![](https://cdn-images-1.medium.com/max/263/0*gR0xokYGTT489Pyz)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/19.jpg)
 
 A genocide survivor. In his early teens, in a hillside village near Kigali, he and his family and relatives lived through the genocide. He has worked with JICA volunteers, Save the Children, CARE International, and other foreign NGO and government aid projects. Founder of Rwanda’s first art festa, the Kigali Art Festival, and founder-owner of an art shop. Under COVID every business stopped.
 
 Elijah Ndindi
 
-![](https://cdn-images-1.medium.com/max/1024/0*gt8iklBtIu0g2j-0)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/20.jpg)
 
 From Bujumbura, the capital of Burundi. He and his wife; he has a strong presence. He speaks French and, in Burundi, English. Until the sanctions of 2015 he was local staff at the UN on the ground. In an agricultural country where 80 percent are poor and almost no one goes to university, an office job already marks an elite. After sanctions the international agencies left, and there has been no work that uses that capacity. The household is in hardship.
 
 Iradukunda Benigne
 
-![](https://cdn-images-1.medium.com/max/607/0*1EplPsppTJryTa1D)
+![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/21.jpg)
 
 From Bujumbura. A development professional who has worked with several international NGOs.
 

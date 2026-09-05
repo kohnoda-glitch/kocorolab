@@ -77,7 +77,7 @@ Then work took me to the Philippines, to start global career development, and I 
 
 Beside Gallup’s psychological surveys there is the UN World Happiness Report, which folds in social development. There is an American finding that once annual income passes about 60,000 dollars, more income no longer raises happiness. I asked the reverse: what happens when income falls? I divided Gallup’s scores by the UN scores (a kind of standardisation) and looked at a ranking of psychological well-being that did not simply follow income. Two contiguous West African countries, Ghana and Côte d’Ivoire — one a former British colony, one a former French colony — both sat in the top ten. That meant I had to go and see. As preparatory research, in 2018 I first wanted to look at one of the lowest-income countries. I stayed away from active conflict zones, for the obvious reason of safety, and of Burundi and Malawi the itinerary came together first for Burundi. I spent about a week there. In Rwanda, which I used as a base on the way, and in Burundi, I made friends and colleagues. After I returned to the Philippines we wanted to do a project together. That is how this began.
 
-![](images/2020-10-08-sdgs/05.png)
+![](images/2020-10-08-sdgs/05.jpg)
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/1024/1*c5HOG-RGXyGRo8P8tSnCOg.png -->
 
@@ -111,13 +111,13 @@ Japan kept raising aid for ten years after the bubble burst, and held the floor.
 
 At the millennium, under Secretary-General Kofi Annan, the UN made the Millennium Development Goals with Professor Jeffrey Sachs of Columbia University as an adviser. Poverty reduction was a goal there too. In Japan some people may remember projects in that stream such as *Hottokenai Sekai no Mazushisa* (“Don’t look away from world poverty”) and the White Band. Against 1990, the number of people in extreme poverty fell from 1.9 billion (of 5.3 billion) to 830 million in 2015 (of 7.3 billion). China and Southeast Asia had grown richer.
 
-![](images/2020-10-08-sdgs/07.png)
+![](images/2020-10-08-sdgs/07.jpg)
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/1024/1*hftrAQ4asnX4wz-WL4y3tA.png -->
 
 *A brick house*
 
-![](images/2020-10-08-sdgs/08.png)
+![](images/2020-10-08-sdgs/08.jpg)
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/1024/1*Gp0FlruoFUrFPkguX9B3IQ.png -->
 
@@ -145,7 +145,7 @@ In the early postwar years the United States spent about 1.5 percent of GDP on t
 
 If the large donors — the United States and Japan — had kept the pledge, development might have been finished long ago. For decades they have not. Even in the 1990s, when Japan was holding the line, the GNI ratio was about half the international pledge. That is how little money actually moved. If 1960 to 1990 was a failed thirty years after African independence, the thirty years after that were a lost thirty years as well.
 
-![](images/2020-10-08-sdgs/10.png)
+![](images/2020-10-08-sdgs/10.jpg)
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/1024/1*LJWm1_Jzzcop3artiCjCoQ.png -->
 
@@ -363,7 +363,7 @@ Using this method, from August I have been in Ubuntu Lab, a programme meant only
 
 - In both countries, even a small project that helps people who need aid. These places were already poor. The aim is not to let COVID push them back below the poverty line.
 
-![](images/2020-10-08-sdgs/17.png)
+![](images/2020-10-08-sdgs/17.jpg)
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/715/1*pPglNMoMn09XC_kJaq1MdA.png -->
 
