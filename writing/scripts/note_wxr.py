@@ -124,17 +124,9 @@ def wxr(title: str, body: str, url: str) -> str:
 """
 
 
-CDN = (
-    "https://cdn.jsdelivr.net/gh/kohnoda-glitch/kocorolab@424f60e/"
-    "writing/drafts/ja-to-note/images"
-)
-
-
 def write_browser_page(title: str, body: str) -> None:
     """HTML the user can open in a browser and copy into note."""
     local = body
-    for name in CDN_TO_FILE.values():
-        local = local.replace(f"{RAW}/{name}", f"{CDN}/{name}")
     esc = escape(title)
     html = f"""<!DOCTYPE html>
 <html lang="ja">
