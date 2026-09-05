@@ -205,6 +205,7 @@ if ( ! defined( 'KOCOROLAB_REFRESH_DIR' ) ) {
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/copy.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/publications.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/links.php';
+require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/identity.php';
 require $root . '/wp-content/mu-plugins/kocorolab-site-refresh/chrome.php';
 
 function kocorolab_preview_extra_css() {
@@ -223,6 +224,9 @@ function kocorolab_preview_wrap( $lang, $title, $body, $is_home = false ) {
 	$html  = '<!DOCTYPE html><html lang="' . ( $en ? 'en' : 'ja' ) . '"><head><meta charset="utf-8">';
 	$html .= '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	$html .= '<title>' . esc_html( $title ) . '</title>';
+	if ( function_exists( 'kocorolab_refresh_jsonld_script' ) ) {
+		$html .= kocorolab_refresh_jsonld_script();
+	}
 	$html .= '<link rel="icon" type="image/png" href="' . ( $en ? '../images/kocoro-mark-light.png' : 'images/kocoro-mark-light.png' ) . '">';
 	$html .= '<link rel="preconnect" href="https://fonts.googleapis.com">';
 	$html .= '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">';
@@ -373,4 +377,8 @@ $GLOBALS['KOCORO_PREVIEW_PAGE'] = 'mhq-read';
 kocorolab_preview_write( "$out/en/mhq-read.html", kocorolab_preview_render_inner( 'en', 'How to read results', kocorolab_refresh_page_html( 'mhq-read', 'en' ) ) );
 
 file_put_contents( "$out/.nojekyll", "" );
+if ( function_exists( 'kocorolab_refresh_llms_txt' ) ) {
+	file_put_contents( "$out/llms.txt", kocorolab_refresh_llms_txt() );
+	echo "Wrote $out/llms.txt\n";
+}
 echo "Done.\n";

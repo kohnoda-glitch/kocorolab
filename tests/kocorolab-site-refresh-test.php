@@ -843,6 +843,40 @@ $checks = array(
 		&& false !== strpos( kocorolab_refresh_strip_stray_head_html( "HTML\r\n<script type=\"application/ld+json\">" ), 'application/ld+json' )
 		&& false !== strpos( kocorolab_refresh_strip_stray_head_html( '<script src="html5.js"></script>' ), 'html5.js' )
 	),
+	'JSON-LD pairs Kohei Noda with Kocorolab in both languages' => ( function () {
+		$json = kocorolab_refresh_jsonld();
+		$data = json_decode( $json, true );
+		if ( ! is_array( $data ) || empty( $data['@graph'] ) ) {
+			return false;
+		}
+		$blob = $json . "\n" . kocorolab_refresh_llms_txt();
+		$ids  = array();
+		foreach ( $data['@graph'] as $node ) {
+			if ( isset( $node['@id'] ) ) {
+				$ids[ $node['@id'] ] = $node['@type'];
+			}
+		}
+		return isset( $ids['https://kocorolab.com/#kohei-noda'] )
+			&& isset( $ids['https://kocorolab.com/#organization'] )
+			&& false !== strpos( $blob, '野田浩平' )
+			&& false !== strpos( $blob, 'Kohei Noda' )
+			&& false !== strpos( $blob, '株式会社ココロラボ' )
+			&& false !== strpos( $blob, 'Kocorolab' )
+			&& false !== strpos( $blob, 'researchmap.jp/kohnoda' )
+			&& false !== strpos( $blob, 'linkedin.com/in/kohnoda' )
+			&& false !== strpos( $blob, 'Q141170552' )
+			&& false === strpos( $blob, 'linkedin.com/in/koheinoda' )
+			&& false === strpos( $blob, 'researchmap.jp/noda_kohei' )
+			&& false === strpos( $blob, 'Founder & CEO' )
+			&& false === strpos( $blob, '准教授' )
+			&& kocorolab_refresh_is_llms_path( '/llms.txt' )
+			&& kocorolab_refresh_is_llms_path( '/.well-known/llms.txt' )
+			&& ! kocorolab_refresh_is_llms_path( '/member/' );
+	} )(),
+	'llms.txt file matches generator' => (
+		is_readable( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/llms.txt' )
+		&& file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/llms.txt' ) === kocorolab_refresh_llms_txt()
+	),
 );
 
 foreach ( $forbidden as $word ) {
