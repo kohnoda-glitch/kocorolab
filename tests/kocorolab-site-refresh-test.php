@@ -865,6 +865,8 @@ $checks = array(
 			&& false !== strpos( $blob, 'researchmap.jp/kohnoda' )
 			&& false !== strpos( $blob, 'linkedin.com/in/kohnoda' )
 			&& false !== strpos( $blob, 'Q141170552' )
+			&& false !== strpos( $blob, 'orcid.org/0009-0007-5596-1668' )
+			&& false === strpos( $blob, 'orcid.org/my-orcid' )
 			&& false === strpos( $blob, 'linkedin.com/in/koheinoda' )
 			&& false === strpos( $blob, 'researchmap.jp/noda_kohei' )
 			&& false === strpos( $blob, 'Founder & CEO' )

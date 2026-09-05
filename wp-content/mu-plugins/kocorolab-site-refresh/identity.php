@@ -34,6 +34,14 @@ function kocorolab_refresh_jglobal_url() {
 	return 'https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200901001251787926';
 }
 
+function kocorolab_refresh_orcid_id() {
+	return '0009-0007-5596-1668';
+}
+
+function kocorolab_refresh_orcid_url() {
+	return 'https://orcid.org/' . kocorolab_refresh_orcid_id();
+}
+
 function kocorolab_refresh_person_id() {
 	return 'https://kocorolab.com/#kohei-noda';
 }
@@ -49,6 +57,7 @@ function kocorolab_refresh_is_llms_path( $path ) {
 
 function kocorolab_refresh_person_same_as() {
 	$urls = array(
+		kocorolab_refresh_orcid_url(),
 		kocorolab_refresh_wikidata_url(),
 		kocorolab_refresh_researchmap_url(),
 		kocorolab_refresh_jglobal_url(),
@@ -97,6 +106,12 @@ function kocorolab_refresh_identity_graph() {
 					),
 				),
 				'url'              => $root . '/member/',
+				'identifier'       => array(
+					'@type'      => 'PropertyValue',
+					'propertyID' => 'ORCID',
+					'value'      => kocorolab_refresh_orcid_id(),
+					'url'        => kocorolab_refresh_orcid_url(),
+				),
 				'image'            => $portrait,
 				'worksFor'         => array( '@id' => $org ),
 				'affiliation'      => array(
