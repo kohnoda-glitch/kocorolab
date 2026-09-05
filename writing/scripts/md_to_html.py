@@ -38,8 +38,17 @@ def inline(text: str) -> str:
     return "".join(out)
 
 
+def strip_front_matter(text: str) -> str:
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            return parts[2].lstrip("\n")
+    return text
+
+
 def md_to_blocks(text: str) -> tuple[str, str]:
-    lines = text.replace("\r\n", "\n").strip().split("\n")
+    text = strip_front_matter(text.replace("\r\n", "\n"))
+    lines = text.strip().split("\n")
     title = ""
     if lines and lines[0].startswith("# "):
         title = lines[0][2:].strip()
@@ -68,6 +77,18 @@ def md_to_blocks(text: str) -> tuple[str, str]:
             url = line[4:-1]
             html_parts.append(f'<p><img src="{html.escape(url, quote=True)}" alt=""></p>')
             continue
+        if line.strip() == "---":
+            flush_list()
+            flush_p()
+            html_parts.append("<hr>")
+            continue
+        heading = re.match(r"^(#{2,3}) (.+)$", line)
+        if heading:
+            flush_list()
+            flush_p()
+            tag = "h2" if heading.group(1) == "##" else "h3"
+            html_parts.append(f"<{tag}>{inline(heading.group(2).strip())}</{tag}>")
+            continue
         if re.match(r"^[-*] ", line):
             flush_p()
             list_items.append(line[2:].strip())
@@ -83,26 +104,43 @@ def md_to_blocks(text: str) -> tuple[str, str]:
     return title, "\n".join(html_parts)
 
 
-def wrap_page(title: str, body: str) -> str:
+def wrap_page(
+    title: str,
+    body: str,
+    *,
+    lang: str = "ja",
+    note_html: str | None = None,
+) -> str:
     esc = html.escape(title)
+    if note_html is None:
+        note_html = (
+            "下の写真と英文を、普通のホームページと同じようにマウスでなぞって選び、<b>⌘C</b> でコピーしてください。"
+            " ボタンは使いません。"
+            " Medium は <b>既存の2020-10-08の記事を開いて上書き</b>してください。"
+            " <code>https://medium.com/new</code> は開かないでください。"
+            " タイトル欄には次の1行だけ入れてください。<br><br>"
+            f"<b>{esc}</b>"
+        )
     return f"""<!DOCTYPE html>
-<html lang="ja">
+<html lang="{html.escape(lang, quote=True)}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc}</title>
 <style>
-  body {{ font-family: Georgia, serif; max-width: 720px; margin: 24px auto; padding: 0 16px; line-height: 1.6; }}
+  body {{ font-family: Georgia, "Hiragino Mincho ProN", "Yu Mincho", serif; max-width: 720px; margin: 24px auto; padding: 0 16px; line-height: 1.7; }}
   .note {{ font-family: sans-serif; background: #fff6d8; border: 1px solid #e6d48a; padding: 12px 16px; margin-bottom: 24px; }}
+  .meta {{ font-family: sans-serif; font-size: 0.95rem; color: #333; }}
+  h2 {{ margin-top: 2em; font-size: 1.25rem; }}
+  h3 {{ margin-top: 1.4em; font-size: 1.05rem; }}
   img {{ max-width: 100%; height: auto; }}
+  hr {{ border: 0; border-top: 1px solid #ccc; margin: 2em 0; }}
+  @media print {{ .note {{ display: none; }} body {{ max-width: none; }} }}
 </style>
 </head>
 <body>
 <div class="note">
-  下の写真と英文を、普通のホームページと同じようにマウスでなぞって選び、<b>⌘C</b> でコピーしてください。
-  ボタンは使いません。Medium に戻って、タイトルの下の白いところをクリックし、<b>⌘V</b> で貼ってください。
-  タイトル欄には次の1行だけ入れてください。<br><br>
-  <b>{esc}</b>
+  {note_html}
 </div>
 <article id="article">
 {body}

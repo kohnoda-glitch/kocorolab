@@ -1,11 +1,38 @@
-<!-- Paste into the EXISTING Medium story (2020-10-08 URL). Do not open medium.com/new. Title box: SDGs Goal 1: A challenge to reach zero extreme poverty in Africa. Copy figures from OPEN-IN-BROWSER-sdgs-goal-1.html if photos do not come across. -->
+---
+type: working-paper
+lang: en
+date: 2020-10-08
+formatted: 2026-09-05
+title: "SDG 1 and the African blind spot: extreme poverty, climate, and attention (2020 working paper)"
+original_title: "SDGs Goal 1: A challenge to reach zero extreme poverty in Africa"
+---
 
-# SDGs Goal 1: A challenge to reach zero extreme poverty in Africa
+# SDG 1 and the African blind spot: extreme poverty, climate, and attention (2020 working paper)
+
+**Working paper**  
+**Author** Kohei Noda  
+**Position as of 2020** Researcher in the cognitive science of emotion. HR consultant. School leadership and social-issue practice in the Philippines.  
+**Correspondence** info@kocorolab.com / ORCID https://orcid.org/0009-0007-5596-1668  
+**First published** 8 October 2020, Medium (Japanese). Japanese archive: note.  
+**English text** A working translation of that manuscript, for overwriting the same Medium URL.
+
+**Archival note (5 September 2026)**  
+First public text: 8 October 2020, Medium (Japanese). Japanese archive: note. English is a working translation of that manuscript, for the same Medium URL. Later World Bank and UN estimates are not brought in. Affiliation is as of 2020.
+
+---
+
+## Abstract
+
+This working paper reformats an essay first published on 8 October 2020. It discusses SDG 1 (ending extreme poverty) using forecasts as of 2019–2020, the intersection with the climate crisis, the unmet DAC pledge of 0.7 percent of GNI, micro practices of development (jobs, community work, TABLE FOR TWO and similar), and the macro financing gap. The path of inquiry runs through cognitive science, HR practice, and fieldwork in the Philippines and in Burundi/Rwanda. Figures, statistics, and the $1.25-a-day line are left as they stood in 2020. Campaign dates, rewards, and the transfer account are moved to an appendix.
+
+**Keywords** SDG 1, extreme poverty, ODA, DAC, sub-Saharan Africa, Burundi, Rwanda, climate crisis, attention, Theory U
+
+**Suggested citation** Noda, K. (2020/2026). SDG 1 and the African blind spot: extreme poverty, climate, and attention (2020 working paper). Working paper. First published 8 October 2020 on Medium (Japanese). ORCID: https://orcid.org/0009-0007-5596-1668
 
 ![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/01.jpg)
 
 
-**1. Introduction**
+## 1. Introduction
 
 — Background
 
@@ -17,13 +44,13 @@ The coronavirus year gave me a chance to look again at myself, and at what is ac
 
 **We — donors, the project members, and anyone who joins — will turn attention to the regions least likely to meet SDG 1, above all sub-Saharan Africa, the weakest point in the effort to end extreme poverty. We will start projects, speak to public opinion, and put money toward ending poverty.**
 
-**2. The social problem we want to solve**
+## 2. The social problem we want to solve
 
-2.1. SDG 1: End poverty in all its forms everywhere
+### 2.1. SDG 1: End poverty in all its forms everywhere
 
 In 2015 the United Nations set the Sustainable Development Goals. Goal 1 includes ending extreme poverty — living on less than 1.25 US dollars a day — by 2030. By early 2019 the forecast was already that 2030 would be too soon. Is that acceptable?
 
-2.2. The problem: the present and the history of extreme poverty
+### 2.2. The problem: the present and the history of extreme poverty
 
 ![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/images/2020-10-08-sdgs/02.jpg)
 
@@ -54,7 +81,7 @@ Figure 3. Japanese translation of the poverty-related passages in the IPCC 1.5°
 
 If we can already see this coming, should we not act so that it does not happen?
 
-2.3. How I came to face this problem
+### 2.3. How I came to face this problem
 
 I used to work with two hats on: as a human-resources consultant and as a researcher in cognitive science. As a science student I studied theoretical nuclear physics and nuclear engineering. Then my father collapsed from overwork, could not return to his job, developed depression, and was ill for a long time. I changed course suddenly. I entered HR consulting, a field that would take a science graduate, and learned how companies treat employees — and how employees are treated. Because I had always been research-minded, I studied the depression my father had lived through.
 
@@ -73,11 +100,11 @@ I then became too busy, and I still have not made it to Ghana or Côte d’Ivoir
 
 I moved to the Philippines in 2013, but from around 2010 colleagues had already been doing social enterprise and field-based training on social problems there. From about 2015 I was doing social-issue education and social enterprise myself, beyond global career development. The idea was simply to do the same in Burundi and Rwanda.
 
-2.4. Poverty as a planetary problem: a short history
+### 2.4. Poverty as a planetary problem: a short history
 
 This next part is long. Without it I cannot explain, as someone who thinks like a researcher, why this project exists.
 
-2.4.1. The postwar start of the fight against poverty
+### 2.4.1. The postwar start of the fight against poverty
 
 The history of ending poverty is long, and it is intellectually and practically hard in every direction. Humanity has never finished it.
 
@@ -132,7 +159,7 @@ If the large donors — the United States and Japan — had kept the pledge, dev
 
 *This household had almost no cash, and still served cassava and bottled Fanta*
 
-2.4.2. Comparing what countries pay
+### 2.4.2. Comparing what countries pay
 
 The pledge has never been met. Researchers and campaigners say that if donors paid what they promised, and if half of that went to the least developed countries, extreme poverty could still reach zero by 2030. Can the United States and Japan do that?
 
@@ -151,7 +178,7 @@ In June last year, then Foreign Minister Taro Kono said at the tenth-anniversary
 
 [https://www.youtube.com/watch?v=xUaWTI9bNdM](https://www.youtube.com/watch?v=xUaWTI9bNdM)
 
-2.4.3. What countries that do not pay the pledge say
+### 2.4.3. What countries that do not pay the pledge say
 
 The same argument has been around for a long time. Professor William Easterly of New York University, who worked at the World Bank, says 0.7 percent is meaningless. African states are corrupt; money poured in is only siphoned off. The original plan was wrong: a poorly developed continent with many landlocked countries was never going to grow like countries on other continents.
 
@@ -173,7 +200,7 @@ And if, as Taro Kono said, Japan can no longer build hardware, should it not sen
 
 The number of care workers is rising. Why does the construction slump become an argument for simply leaving the money lower? The adult thing, it seems to me, would be a budget that can keep paying the 4.5 trillion yen the international responsibility implied — and a pipeline of people who are trained and actually want to go.
 
-2.4.4. Look at the countries that do it. What is different? How far does attention reach?
+### 2.4.4. Look at the countries that do it. What is different? How far does attention reach?
 
 There is a survey that correlates with the countries that regularly give not 0.7 percent of GNI but more than 1 percent (Sweden, Norway, and others). That is the UN World Happiness Report, the large annual study that combines social development and psychology. (Gallup also runs a psychological well-being survey; from this year Gallup is an adviser to the UN report as well.) The Nordic countries, taken to be among the most developed and the happiest, tax income very heavily, and they guarantee support and education if you lose your job. They also spend domestic budgets on social security and education. They sit near a large power, Russia, and have to spend on security with NATO. And they still spend on international cooperation.
 
@@ -198,9 +225,9 @@ About 1 percent of Japan’s people, a little over a million, live abroad. The U
 
 How far a country can keep the outside world in view also tracks its politics: more social-democratic, or more neoliberal.
 
-2.5. How poverty is ended
+### 2.5. How poverty is ended
 
-2.5.1. Micro methods of development
+### 2.5.1. Micro methods of development
 
 So we know this much. The age of hardware is over. In the past, large hardware projects were built, and money was also siphoned into corrupt, entrenched elites. Humanity has learned that “ending poverty” does not happen easily.
 
@@ -241,7 +268,7 @@ In aid debates you also hear that ODA no longer matters, because for decades the
 
 *Back in Kigali, the capital of Rwanda*
 
-2.5.2. What development aid feels like on the ground
+### 2.5.2. What development aid feels like on the ground
 
 I want to say something about the operating sense of NPO and NGO work in developing countries — neither ordinary business nor government.
 
@@ -276,7 +303,7 @@ The accounts are on the website. From those you can guess perhaps 15 Japanese re
 
 That is an effect of about 10,000 people per regular staff member. It is a clean, bright kind of impact. Even if food is 30 percent of living costs, it is still thousands of people. That is an order of magnitude away from the 100-person scale of the for-profit example. It is a Japanese success worth being proud of.
 
-2.5.3. The macro picture
+### 2.5.3. The macro picture
 
 The last section was micro method. In a poorly developed country, you have to start with community development before anyone can put a foot on the development ladder.
 
@@ -312,7 +339,7 @@ Japan’s charity market is only 0.1 percent of GDP. That route is closed.
 
 (The more you think, the more your head hurts. Neither the state nor the public is meeting its contribution to Japanese society or to the international one.) TABLE FOR TWO, in the last section, is a 200 million yen operation — 0.4 percent of Japan’s 500 billion yen NPO market. Japan’s remaining responsibility to the world is about 3 trillion yen. That is 25,000 yen from each of 120 million people, used without waste.
 
-**3. Method**
+## 3. Method
 
 What is missing, then?
 
@@ -332,7 +359,7 @@ Using this method, from August I have been in Ubuntu Lab, a programme meant only
 
 *Ubuntu Lab, third cohort: https://www.presencing.org/programs/ubuntu-lab-third-cohort*
 
-**What this project wants to do**
+## 4. Field setting and members
 
 - Where: Rwanda and Burundi
 
@@ -376,6 +403,29 @@ Iradukunda Benigne
 
 
 From Bujumbura. A development professional who has worked with several international NGOs.
+
+
+## References (links in the 2020 text)
+
+1. United Nations, SDG 1. https://sdgs.un.org/goals/goal1
+2. IPCC, *Special Report on Global Warming of 1.5°C* (Japanese briefing: Masako Konishi, WWF Japan, 2019). https://www.wwf.or.jp/activities/data/20190204_climate_Konishi.pdf
+3. OECD, Net ODA. https://data.oecd.org/oda/net-oda.htm
+4. OECD DAC. https://en.wikipedia.org/wiki/Development_Assistance_Committee
+5. Sachs, J. *The End of Poverty*. https://www.amazon.co.jp/dp/4150504040
+6. Easterly, W. (Japanese edition linked in the source). https://www.amazon.co.jp/dp/4492443606
+7. Clemens, M. A. & Moss, T. J., “The Ghost of 0.7 Per Cent,” CGD Working Paper 68. https://www.cgdev.org/sites/default/files/3822_file_WP68.pdf
+8. Shah, A., “Foreign Aid for Development Assistance.” https://www.globalissues.org/article/35/foreign-aid-development-assistance
+9. Taro Kono, Keio SDM lecture. https://www.youtube.com/watch?v=xUaWTI9bNdM
+10. 2019 budgets of Japan, the US, China, and India. https://www.rifj.jp/blog/日米中印各国の2019年予算を見る/
+11. Millennium Promise. http://millenniumpromise.jp/ / https://www.millenniumpromise.org/
+12. Gawad Kalinga. https://en.wikipedia.org/wiki/Gawad_Kalinga
+13. Manuel, M. et al., ODI, “How to finance the end of extreme poverty.” https://www.odi.org/opinion/10514-how-finance-end-extreme-poverty
+14. Yoshida, K. & Noda, K., *Reverse Innovation of Japanese SMEs*, ch. 10. https://www.amazon.co.jp/dp/4496053454
+15. Izumi Nakamitsu (book linked in the source). https://www.amazon.co.jp/dp/B073TXCVHY
+
+## Appendix. 2020 campaign note
+
+What follows is the crowdfunding plan, the transfer account, and the rewards as published in 2020. It is not the argument of the paper. It is not a 2026 donation appeal.
 
 **4. What we want this project to do**
 

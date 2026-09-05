@@ -105,7 +105,7 @@ After the Second World War, many African countries became independent from colon
 
 Figure 4. DAC: the countries on the OECD Development Assistance Committee
 
-[https://ja.wikipedia.org/wiki/開発援助委員会](https://ja.wikipedia.org/wiki/%E9%96%8B%E7%99%BA%E6%8F%B4%E5%8A%A9%E5%A7%94%E5%93%A1%E4%BC%9A)
+[https://en.wikipedia.org/wiki/Development_Assistance_Committee](https://en.wikipedia.org/wiki/Development_Assistance_Committee)
 
 Japan kept raising aid for ten years after the bubble burst, and held the floor. Nothing much changed.
 
@@ -137,7 +137,7 @@ DAC members should keep the international pledge to give 0.7 percent of GNI (in 
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/859/0*sHFon2RbB8BnPNHB -->
 
-Figure 4. OECD statistics on each country’s ODA (you can change the view and graph any country from 1960). The DAC average is 0.3 percent — not even half of 0.7 percent. [https://data.oecd.org/oda/net-oda.htm](https://data.oecd.org/oda/net-oda.htm)
+Figure 5. OECD statistics on each country’s ODA (you can change the view and graph any country from 1960). The DAC average is 0.3 percent — not even half of 0.7 percent. [https://data.oecd.org/oda/net-oda.htm](https://data.oecd.org/oda/net-oda.htm)
 
 The original push came from President Kennedy in the 1960s, and before that from the United States, which had rebuilt Europe with the Marshall Plan. Why did it grow so cold? Japan was on the receiving side of postwar reconstruction. The United States rebuilt the country with trillions of yen in grants, and that became a foundation for Japan’s return.
 
@@ -161,7 +161,7 @@ The United States spends 3.5 percent of GDP on the military and plays world poli
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/1024/0*qmM8twjuyfmUlxBW -->
 
-Figure 5. Comparing the national budgets of Japan, the United States, China, and India
+Figure 6. Comparing the national budgets of Japan, the United States, China, and India
 
 [https://www.rifj.jp/blog/日米中印各国の2019年予算を見る/](https://www.rifj.jp/blog/%E6%97%A5%E7%B1%B3%E4%B8%AD%E5%8D%B0%E5%90%84%E5%9B%BD%E3%81%AE2019%E5%B9%B4%E4%BA%88%E7%AE%97%E3%82%92%E8%A6%8B%E3%82%8B/)
 
@@ -309,13 +309,13 @@ The scale is in the two figures below.
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/552/0*LcWD9PxNiby-OKUk -->
 
-Figure 6. The 46 least developed countries where ending extreme poverty is hardest
+Figure 7. The 46 least developed countries where ending extreme poverty is hardest
 
 ![](images/2020-10-08-sdgs/16.jpg)
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/467/0*k8E4kgDCtNZnxiWY -->
 
-Figure 7. A graph showing how far short ODA is in the United States and Japan
+Figure 8. A graph showing how far short ODA is in the United States and Japan
 
 Marcus Manuel and colleagues at ODI, an independent UK think tank, have a current proposal for reducing extreme poverty. There is a video. It is worth watching.
 
@@ -381,7 +381,7 @@ Kohei Noda:
 
 <!-- medium-cdn: https://cdn-images-1.medium.com/max/1024/0*zEZDlAlAZ1hqjQxs -->
 
-President of Kocoro Laboratory (HR consulting and mental-health services) and a director of Ducks and Drakes (the English-school company in the Philippines). Ph.D. (academic; cognitive science, especially emotion). The work is to see how cognition, emotion, and awareness operate in the interaction of body and environment, in the same spirit as Theory U. A returnee from Germany. I have worked at a foreign consulting firm, imported and built foreign HR and psychology services, and created new businesses from academic seeds — mainly science and technology that touch people and society. Since 2013 in the Philippines the main work has been businesses that link Japan and the Philippines, and help on social problems. In this COVID year (2020) I helped start the Japanese edition of GAIA Journey, a Theory U spin-out from the COVID period, and the Japan chapter of Citizens’ Climate Lobby. From the age of 40, after moving to the Philippines, I have tried to give back some of what society gave me, and to be useful.
+Representative Director of Kocorolab / Kocoro Laboratory (HR consulting and mental-health services) and a director of Ducks and Drakes (the English-school company in the Philippines). Ph.D. (academic; cognitive science, especially emotion). The work is to see how cognition, emotion, and awareness operate in the interaction of body and environment, in the same spirit as Theory U. A returnee from Germany. I have worked at a foreign consulting firm, imported and built foreign HR and psychology services, and created new businesses from academic seeds — mainly science and technology that touch people and society. Since 2013 in the Philippines the main work has been businesses that link Japan and the Philippines, and help on social problems. In this COVID year (2020) I helped start the Japanese edition of GAIA Journey, a Theory U spin-out from the COVID period, and the Japan chapter of Citizens’ Climate Lobby. From the age of 40, after moving to the Philippines, I have tried to give back some of what society gave me, and to be useful.
 
 François Ingabire
 

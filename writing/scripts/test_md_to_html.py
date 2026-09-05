@@ -11,4 +11,8 @@ title, body = md_to_blocks("# Title\n\n![](https://cdn.example/a.jpg)\n\n**Hi**\
 assert title == "Title"
 assert "cdn.example/a.jpg" in body
 assert "<strong>Hi</strong>" in body
+title2, body2 = md_to_blocks("---\ntitle: x\n---\n# Paper\n\n## Abstract\n\nHello\n\n### 2.1. Sub\n")
+assert title2 == "Paper"
+assert "<h2>Abstract</h2>" in body2
+assert "<h3>2.1. Sub</h3>" in body2
 print("ok")

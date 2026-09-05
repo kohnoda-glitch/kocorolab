@@ -13,35 +13,12 @@ from xml.etree import ElementTree as ET
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from md_to_html import md_to_blocks  # noqa: E402
+from sdgs_text import CDN_TO_FILE, apply_ja_editorial  # noqa: E402
 
 RAW = (
     "https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/"
     "cursor/note-medium-writing-4caf/writing/drafts/ja-to-note/images"
 )
-
-CDN_TO_FILE = {
-    "https://cdn-images-1.medium.com/max/1024/1*8o4K2CXJnjTycs4ejvj9ug.jpeg": "01.jpg",
-    "https://cdn-images-1.medium.com/max/553/0*nZhRz6cKDMa6t5b6": "02.jpg",
-    "https://cdn-images-1.medium.com/max/588/0*ceU2jj9bVU-yU3AL": "03.jpg",
-    "https://cdn-images-1.medium.com/max/946/0*N8Cr8cMJfFyihwz-": "04.jpg",
-    "https://cdn-images-1.medium.com/max/1024/1*c5HOG-RGXyGRo8P8tSnCOg.png": "05.jpg",
-    "https://cdn-images-1.medium.com/max/624/0*SDwVm37HxcV5wLK7": "06.jpg",
-    "https://cdn-images-1.medium.com/max/1024/1*hftrAQ4asnX4wz-WL4y3tA.png": "07.jpg",
-    "https://cdn-images-1.medium.com/max/1024/1*Gp0FlruoFUrFPkguX9B3IQ.png": "08.jpg",
-    "https://cdn-images-1.medium.com/max/859/0*sHFon2RbB8BnPNHB": "09.jpg",
-    "https://cdn-images-1.medium.com/max/1024/1*LJWm1_Jzzcop3artiCjCoQ.png": "10.jpg",
-    "https://cdn-images-1.medium.com/max/1024/0*qmM8twjuyfmUlxBW": "11.jpg",
-    "https://cdn-images-1.medium.com/max/1024/1*2TG7vytZd_Ahf2OkmxiY9A.jpeg": "12.jpg",
-    "https://cdn-images-1.medium.com/max/1024/1*MFTM4pj7jfMvPGVieo5eeA.jpeg": "13.jpg",
-    "https://cdn-images-1.medium.com/max/1024/1*6V_rH2jvnkIBtPTMnDw4ww.jpeg": "14.jpg",
-    "https://cdn-images-1.medium.com/max/552/0*LcWD9PxNiby-OKUk": "15.jpg",
-    "https://cdn-images-1.medium.com/max/467/0*k8E4kgDCtNZnxiWY": "16.jpg",
-    "https://cdn-images-1.medium.com/max/715/1*pPglNMoMn09XC_kJaq1MdA.png": "17.jpg",
-    "https://cdn-images-1.medium.com/max/1024/0*zEZDlAlAZ1hqjQxs": "18.jpg",
-    "https://cdn-images-1.medium.com/max/263/0*gR0xokYGTT489Pyz": "19.jpg",
-    "https://cdn-images-1.medium.com/max/1024/0*gt8iklBtIu0g2j-0": "20.jpg",
-    "https://cdn-images-1.medium.com/max/607/0*1EplPsppTJryTa1D": "21.jpg",
-}
 
 PROFILES = {"18.jpg", "19.jpg", "20.jpg", "21.jpg"}
 
@@ -183,7 +160,7 @@ def main() -> int:
     matches = list(src.glob("SDGs*.md"))
     if not matches:
         raise SystemExit("Japanese SDGs source not found")
-    text = matches[0].read_text(encoding="utf-8")
+    text = apply_ja_editorial(matches[0].read_text(encoding="utf-8"))
     url = "https://medium.com/koheinoda-11596/sdgs-goal-1-africa"
     m = re.search(r'^url: "([^"]+)"', text, re.M)
     if m:

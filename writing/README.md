@@ -53,7 +53,7 @@ note も公式の投稿 API が無いので、同じく編集画面へ貼りま�
 
 - 誕生日にあたり（経済・金融の枠組みとか…）
 - unauthorized translation（非公式翻訳）8つの新たな教訓
-- SDGs 目標１絶対的貧困０達成チャレンジ in Africa → 英訳ドラフト: `writing/drafts/en-from-medium/2020-10-08-sdgs-goal-1-ending-extreme-poverty-in-africa.md`
+- SDGs 目標１絶対的貧困０達成チャレンジ in Africa → 英訳: `writing/drafts/en-from-medium/`（既存 Medium URL を上書き）。作業論文: `writing/drafts/articles/2020-sdgs-goal-1/`
 
 **note にあって、英語 Medium が無い（例）**
 

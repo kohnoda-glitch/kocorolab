@@ -50,6 +50,15 @@ def test_generated_import_files() -> None:
     assert "cdn-images-1.medium.com" not in html
     assert "medium.com/_/stat" not in html
     assert "ja-to-note/images" in html
+    assert "Sustainable Development Goals" in html
+    assert "約6億3000万人" in html
+    assert "図５. OECD" in html
+    assert "図６. 日米中印" in html
+    assert "図８. ODA" in html
+    assert "climate_Konishi.pdf)" in html or "climate_Konishi.pdf\"" in html
+    assert "%E3%80%80" not in html
+    assert "Sustainable Developmental Goals" not in html
+    assert "訳6億3000万人" not in html
 
     easy = dest.with_name("note-import.xml")
     assert easy.read_bytes() == dest.read_bytes()
