@@ -1,0 +1,1127 @@
+<?php
+/**
+ * Full publications list from the live site, with the 2025 JCSS sole-author paper first.
+ */
+
+if ( defined( 'KOCOROLAB_REFRESH_DIR' ) && __DIR__ === KOCOROLAB_REFRESH_DIR ) {
+
+function kocorolab_refresh_jcss_pdfs() {
+	return array(
+		'2025' => 'https://www.jcss.gr.jp/meetings/jcss2025/proceedings/pdf/JCSS2025_P2-37.pdf',
+		'2016' => 'https://www.jcss.gr.jp/meetings/jcss2016/proceedings/pdf/JCSS2016_P1-16.pdf',
+		'2011' => 'https://www.jcss.gr.jp/meetings/JCSS2011/proceedings/pdf/JCSS2011_P2-26.pdf',
+	);
+}
+
+function kocorolab_refresh_publications_pdf() {
+	$pdfs = kocorolab_refresh_jcss_pdfs();
+	return $pdfs['2025'];
+}
+
+function kocorolab_refresh_change_management_playlist() {
+	return 'https://www.youtube.com/playlist?list=PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp';
+}
+
+function kocorolab_refresh_iccm_2004_pdf() {
+	return 'https://iccm-conference.neocities.org/2004/proceedings/abstracts/noda.pdf';
+}
+
+function kocorolab_refresh_cogsci_2007_pdf() {
+	return 'https://escholarship.org/content/qt7xp559mc/qt7xp559mc.pdf';
+}
+
+function kocorolab_refresh_cognitive_studies_2007_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/jcss/14/1/14_1_74/_pdf/-char/ja';
+}
+
+function kocorolab_refresh_dissertation_2007_pdf() {
+	return 'https://t2r2.star.titech.ac.jp/rrws/file/CTT100602726/ATD100000413/';
+}
+
+function kocorolab_refresh_jps_1997_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/jpsgaiyo/52.2.4/0/52.2.4_908_4/_pdf';
+}
+
+function kocorolab_refresh_jpa_2013_ss055_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/pacjpa/77/0/77_SS-055/_pdf/-char/ja';
+}
+
+function kocorolab_refresh_iccs_2001_report_pdf() {
+	return 'https://www.jstage.jst.go.jp/article/jcss/9/1/9_1_178/_pdf/-char/ja';
+}
+
+function kocorolab_refresh_overlay_file_url( $file ) {
+	$file = ltrim( (string) $file, '/' );
+	if ( isset( $GLOBALS['KOCORO_PREVIEW_LANG'] ) ) {
+		$prefix = ! empty( $GLOBALS['KOCORO_PREVIEW_EN'] ) ? '../files/' : 'files/';
+		return $prefix . $file;
+	}
+	if ( function_exists( 'content_url' ) ) {
+		return content_url( 'mu-plugins/kocorolab-site-refresh/files/' . $file );
+	}
+	$root = function_exists( 'kocorolab_refresh_root' ) ? kocorolab_refresh_root() : 'https://kocorolab.com';
+	return $root . '/wp-content/mu-plugins/kocorolab-site-refresh/files/' . $file;
+}
+
+function kocorolab_refresh_tokyotech_2011_guidance_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'tokyo-tech-job-guidance-2011.pdf' );
+}
+
+function kocorolab_refresh_neue_fahne_2015_forum_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'neue-fahne-mini-forum-2015-12-15.pdf' );
+}
+
+function kocorolab_refresh_neue_fahne_journal_50_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'neue-fahne-journal-no50-2013-03-11.pdf' );
+}
+
+function kocorolab_refresh_neue_fahne_journal_20_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'neue-fahne-journal-no20-2011-12-26.pdf' );
+}
+
+function kocorolab_refresh_niigata_tit_2000_resume_url() {
+	return kocorolab_refresh_overlay_file_url( 'niigata-tit-leadership-2000-resume.jpg' );
+}
+
+function kocorolab_refresh_valdes_leadership_2000_url() {
+	return kocorolab_refresh_overlay_file_url( 'valdes-leadership-generation-2000.pdf' );
+}
+
+function kocorolab_refresh_cebupot_2016_magazine_pdf() {
+	return kocorolab_refresh_overlay_file_url( 'cebupot-happiness-workshop-2016-03-24.pdf' );
+}
+
+function kocorolab_refresh_cebupot_facebook_url() {
+	return 'https://www.facebook.com/cebupot.jp';
+}
+
+function kocorolab_refresh_spea_nagasaki_2017_event_url() {
+	return 'https://www.facebook.com/events/1908002519517088/';
+}
+
+function kocorolab_refresh_nagasaki_2020_peatix_url() {
+	return 'https://happiness1122.peatix.com/';
+}
+
+function kocorolab_refresh_shiawase_fr004_peatix_url() {
+	return 'https://peatix.com/event/1848747';
+}
+
+function kocorolab_refresh_shiawase_fr004_program_url() {
+	return 'https://shiawasesymposium.com/2021/wp/free/fr004/';
+}
+
+function kocorolab_refresh_shiawase_ws050_program_url() {
+	return 'https://shiawasesymposium.com/2021/wp/ws2/ws050/';
+}
+
+function kocorolab_refresh_shiawase_ws050_facebook_url() {
+	return 'https://www.facebook.com/events/2831301047187478';
+}
+
+function kocorolab_refresh_ice_2013_url() {
+	return 'https://share.google/OnGq4xL8mDEoGt7E1';
+}
+
+function kocorolab_refresh_ice_2013_plenary_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'ice-2013-plenary.jpg' );
+}
+
+function kocorolab_refresh_ice_2013_hotel_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'ice-2013-heritage-hotel.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_workshop_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-workshop.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_keisuke_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-keisuke.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_flyer_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-time-image-creativity-flyer.jpg' );
+}
+
+function kocorolab_refresh_antipolo_2013_poster_url() {
+	return kocorolab_refresh_overlay_file_url( 'antipolo-2013-time-image-creativity-poster.jpg' );
+}
+
+function kocorolab_refresh_jpa_2013_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'jpa-2013-ss055.jpg' );
+}
+
+function kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url() {
+	return kocorolab_refresh_overlay_file_url( 'tokyo-tech-idea-league-2012.jpg' );
+}
+
+function kocorolab_refresh_etm_2019_photos() {
+	return array(
+		array( 'etm-2019-workshop.jpg', 'Workshop, Manila, May 2019' ),
+		array( 'etm-2019-poster.jpg', 'Big Idea: Embedding Systems Thinking in Philippine Education' ),
+		array( 'etm-2019-graphic.jpg', 'Graphic recording, Manila, May 2019' ),
+		array( 'etm-2019-flyer.jpg', 'Thriving in the Age of Disruption flyer' ),
+		array( 'etm-2019-aim-sign.jpg', 'AIM Conference Center Manila' ),
+	);
+}
+
+function kocorolab_refresh_etm_2019_photo_url( $file ) {
+	return kocorolab_refresh_overlay_file_url( $file );
+}
+
+function kocorolab_refresh_etm_2019_poster_url() {
+	return kocorolab_refresh_etm_2019_photo_url( 'etm-2019-poster.jpg' );
+}
+
+function kocorolab_refresh_etm_2019_gallery() {
+	$out = array();
+	foreach ( kocorolab_refresh_etm_2019_photos() as $photo ) {
+		$out[] = array(
+			'url' => kocorolab_refresh_etm_2019_photo_url( $photo[0] ),
+			'alt' => $photo[1],
+		);
+	}
+	return $out;
+}
+
+function kocorolab_refresh_fukuoka_2013_url() {
+	return 'https://www.data-max.co.jp/2013/05/29/2000_13_dm1806_1.html';
+}
+
+function kocorolab_refresh_linked_item( $citation, $url, $lang = 'ja', $label = 'PDF' ) {
+	$href   = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
+	$linked = '<a href="' . $href . '">' . $citation . '</a>';
+	$extra  = '<a href="' . $href . '">' . $label . '</a>';
+	return ( 'en' === $lang ) ? $linked . ' (' . $extra . ')' : $linked . ' （' . $extra . '）';
+}
+
+function kocorolab_refresh_linked_paper( $citation, $url, $lang = 'ja' ) {
+	return kocorolab_refresh_linked_item( $citation, $url, $lang, 'PDF' );
+}
+
+function kocorolab_refresh_pub_media() {
+	return array(
+		'vuca'       => array(
+			'url'    => 'https://www.amazon.co.jp/dp/B0DTS8XLPD',
+			'img'    => 'https://m.media-amazon.com/images/P/B0DTS8XLPD.01._SCLZZZZZZZ_.jpg',
+			'kind'   => 'book',
+			'alt_ja' => 'VUCA時代のストレス防衛術',
+			'alt_en' => 'Stress Defense Strategies in the VUCA Era',
+		),
+		'depression' => array(
+			'url'    => 'https://www.amazon.co.jp/dp/B0DGFRYHMX',
+			'img'    => 'https://m.media-amazon.com/images/P/B0DGFRYHMX.01._SCLZZZZZZZ_.jpg',
+			'kind'   => 'book',
+			'alt_ja' => '「私、うつになりやすいかも？」と思った時に読む本',
+			'alt_en' => 'The book you should read when you think you would be depression',
+		),
+		'change'     => array(
+			'url'    => kocorolab_refresh_change_management_playlist(),
+			'img'    => 'https://i.ytimg.com/vi/OrTwN4gGEp0/hqdefault.jpg',
+			'kind'   => 'video',
+			'alt_ja' => 'ウェルビーイング時代のチェンジマネジメント',
+			'alt_en' => 'Change Management under Well-being Era',
+		),
+		'hiramoto'   => array(
+			'url'    => 'https://www.youtube.com/watch?v=5acopoZcYfw',
+			'img'    => 'https://img.youtube.com/vi/5acopoZcYfw/hqdefault.jpg',
+			'kind'   => 'video',
+			'alt_ja' => 'フィリピンの貧困と幸福度の現状',
+			'alt_en' => 'Poverty and happiness in the Philippines',
+		),
+		'reverse'    => array(
+			'url'    => 'https://www.amazon.co.jp/dp/4496053454',
+			'img'    => 'https://m.media-amazon.com/images/P/4496053454.01._SCLZZZZZZZ_.jpg',
+			'kind'   => 'book',
+			'alt_ja' => '中小企業のリバースイノベーション',
+			'alt_en' => 'Reverse Innovation of Japanese SMEs',
+		),
+		'quality'    => array(
+			'url'    => 'https://www.amazon.co.jp/dp/4788513969',
+			'img'    => 'https://cover.openbd.jp/9784788513969.jpg',
+			'kind'   => 'book',
+			'alt_ja' => '量から質に迫る',
+			'alt_en' => 'Approaching quality from quantity',
+		),
+		'coaching'   => array(
+			'url'    => 'https://amzn.asia/d/0boDUx9G',
+			'img'    => 'https://m.media-amazon.com/images/P/4779509823.01._SCLZZZZZZZ_.jpg',
+			'kind'   => 'book',
+			'alt_ja' => 'コーチング心理学概論',
+			'alt_en' => 'Introduction to Coaching Psychology',
+		),
+	);
+}
+
+function kocorolab_refresh_with_thumb( $html, $img, $url, $alt, $kind = 'book' ) {
+	$href  = function_exists( 'esc_url' ) ? esc_url( $url ) : $url;
+	$src   = function_exists( 'esc_url' ) ? esc_url( $img ) : $img;
+	$alt   = function_exists( 'esc_attr' ) ? esc_attr( $alt ) : htmlspecialchars( (string) $alt, ENT_QUOTES, 'UTF-8' );
+	$mod   = in_array( $kind, array( 'video', 'photo' ), true ) ? $kind : 'book';
+	$class = 'kl-pub-thumb kl-pub-thumb--' . $mod;
+	return '<span class="kl-pub-media"><a class="' . $class . '" href="' . $href . '"><img src="' . $src . '" alt="' . $alt . '" loading="lazy" decoding="async"></a><span class="kl-pub-text">' . $html . '</span></span>';
+}
+
+function kocorolab_refresh_media_item( $citation, $key, $lang = 'ja', $label = 'Amazon' ) {
+	$media = kocorolab_refresh_pub_media();
+	if ( ! isset( $media[ $key ] ) ) {
+		return $citation;
+	}
+	$m    = $media[ $key ];
+	$html = kocorolab_refresh_linked_item( $citation, $m['url'], $lang, $label );
+	$alt  = ( 'en' === $lang ) ? $m['alt_en'] : $m['alt_ja'];
+	return kocorolab_refresh_with_thumb( $html, $m['img'], $m['url'], $alt, $m['kind'] );
+}
+
+function kocorolab_refresh_publications_years( $lang = 'ja' ) {
+	$pdfs = kocorolab_refresh_jcss_pdfs();
+	$ja   = array(
+		'2026' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2026) 「現場が動かない…を解決！自己と組織を変えるU字カーブの歩き方」, グロービス知見録, 2026年5月20日.', kocorolab_refresh_globis_u_curve_url(), 'ja', '記事' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2026) 登壇, YOKOHAMA CONNÉCT #36 MIT Sloan IDEAS Asia Pacific session “Tri-sector innovation for sustainability in a VUCA/BANI world”, 2026年4月22日.', kocorolab_refresh_yokohama_connect_198_url(), 'ja', 'セッション' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2026) ゲスト「共助なき社会で、若者の未来はどうなるのか」, MBCC 未来をひらくラジオ, 2026年4月13日.', kocorolab_refresh_mbcc_spotify_episode_url(), 'ja', 'Spotify' ),
+			kocorolab_refresh_linked_item( '野田浩平, 竹内秀太郎 (2026) 聞き手, グロービス卒業生インタビュー 千代崎透我さん「すべての人が能力を発揮し、活躍できる社会へ」, 2026年3月25日.', kocorolab_refresh_globis_chiyozaki_url(), 'ja', '対談' ),
+		),
+		'2025' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2025) 聞き手, 福留大士氏「志の力」, グロービス知見録, 2025年12月10日.', kocorolab_refresh_globis_fukudome_url(), 'ja', '対談' ),
+			kocorolab_refresh_linked_paper( '野田浩平 (2025) U理論の認知感情モデル. 日本認知科学会第42回大会予稿集, pp. 466-469.', $pdfs['2025'], 'ja' ),
+			kocorolab_refresh_media_item( '野田浩平, まめ, 海下理恵 (2025) VUCA時代のストレス防衛術: うつにならない、ストレスをためない為のTIPs集. (Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress)', 'vuca', 'ja', 'Amazon' ),
+		),
+		'2024' => array(
+			kocorolab_refresh_media_item( '野田浩平 (2024)「私、うつになりやすいかも？」と思った時に読む本', 'depression', 'ja', 'Amazon' ),
+			kocorolab_refresh_media_item( '野田浩平, 松村憲, 小島美佳 (2024) ウェルビーイング時代のチェンジマネジメント (Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era)', 'change', 'ja', 'YouTubeシリーズ' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパン代表として超党派議連古川元久議員訪問, 2024年5月23日.', kocorolab_refresh_ccl_furukawa_2024_url(), 'ja', '訪問記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパン代表として、日本政府にグローバル・カーボンプライシング・チャレンジ（GCPC）への参加を要請, 2024年5月4日.', kocorolab_refresh_ccl_gcpc_2024_url(), 'ja', '要請' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパン代表として斎藤健・経済産業大臣と再エネ・エネルギー政策を議論, 2024年2月29日.', kocorolab_refresh_ccl_saito_2024_url(), 'ja', '訪問記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2024) 市民気候ロビージャパンから河野太郎・行政改革担当大臣と意見交換, 2024年1月24日.', kocorolab_refresh_ccl_kono_2024_url(), 'ja', '訪問記録' ),
+		),
+		'2022' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2022) 登壇, マンスリーMiLI「IDGｓと人間性の開発をめぐる対話」, 2022年10月25日.', kocorolab_refresh_mbcc_idgs_2022_url(), 'ja', '講演記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2022) 市民気候ロビージャパン代表として薗浦健太郎議員訪問, 2022年9月16日.', kocorolab_refresh_ccl_sonoura_2022_url(), 'ja', '訪問記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2022) 報告, CAN-Japanウェビナー「IPCC第6次評価報告書から気候危機を回避する道筋を考える」カーボンプライシング, 2022年5月19日.', kocorolab_refresh_can_japan_3263_url(), 'ja', 'ウェビナー' ),
+		),
+		'2021' => array(
+			kocorolab_refresh_linked_item( '野田浩平, 小島美佳 (2021) しあわせの学問2021 FR004「#myfuture 幸せな未来を描く ～未来の自分に会う」, 2021年3月21日.', kocorolab_refresh_shiawase_fr004_peatix_url(), 'ja', 'Peatix' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2021) しあわせの学問2021 WS050「日本の未来、より多くの人たち幸せに暮らせるように」フューチャーダイヤログ, 2021年3月20日.', kocorolab_refresh_shiawase_ws050_program_url(), 'ja', 'プログラム' ),
+		),
+		'2020' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2020) 登壇, 健康×幸福トーク, 2020年12月6日.', kocorolab_refresh_kenko_happiness_talk_url(), 'ja', '案内' ),
+			kocorolab_refresh_with_thumb(
+				'野田浩平, 平本あきお (2020) フィリピンの貧困と幸福度の現状 海外で働く日本人, YouTube 平本あきおチャンネル. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">動画</a>（<a href="https://www.youtube.com/@hiramotoakio">チャンネル</a>）',
+				kocorolab_refresh_pub_media()['hiramoto']['img'],
+				kocorolab_refresh_pub_media()['hiramoto']['url'],
+				kocorolab_refresh_pub_media()['hiramoto']['alt_ja'],
+				'video'
+			),
+			kocorolab_refresh_linked_item( '野田浩平 (2020) 対話イベント「フィジー人に学ぶ『幸福の習慣』」, ゲスト永崎裕麻, 2020年11月22日.', kocorolab_refresh_nagasaki_2020_peatix_url(), 'ja', 'Peatix' ),
+		),
+		'2019' => array(
+			kocorolab_refresh_linked_item( 'Maria Belinda Villavicencio, Joan Bondoc-Antonio, Eric Cruz, Connie Germono, 野田浩平, Kookie Consing-Gagui (2019) Big Idea: Embedding Systems Thinking in Philippine Education. Education that Matters / Benedictine International School. 2019年1–5月のプロジェクト。2019年5月、マニラのワークショップ Thriving in the Age of Disruption で発表.', kocorolab_refresh_etm_2019_poster_url(), 'ja', 'ポスター' ),
+		),
+		'2018' => array(
+			kocorolab_refresh_media_item( '吉田健太郎, 野田浩平 (2018) 第10章 サービス業「IT・コールセンター」の事例―フィリピン, 吉田健太郎(編), 中小企業のリバースイノベーション, 同友館', 'reverse', 'ja', 'Amazon' ),
+		),
+		'2017' => array(
+			kocorolab_refresh_linked_item( '野田浩平 (2017) 講師, 有限責任事業組合ビジネス推進機構 第139回月例「フィリピン（セブ）留学、そして異文化体験のおすすめ」, 2017年12月7日.', kocorolab_refresh_bps_139_url(), 'ja', '講演記録' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2017) 永崎裕麻氏来訪記念幸福論トークセッション, SPEA Dumaguete, 2017年10月26日.', kocorolab_refresh_spea_nagasaki_2017_event_url(), 'ja', 'Facebook' ),
+			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
+		),
+		'2016' => array(
+			kocorolab_refresh_linked_paper( '野田浩平, 松岡良彦 (2016) 第二言語としての英語学習におけるReal Life Experience法の提案. 第33回日本認知科学会年次大会', $pdfs['2016'], 'ja' ),
+			kocorolab_refresh_linked_paper( '野田浩平 (2016) なんでフィリピン人はいつも笑顔なの？「フィリピン人から学ぶしあわせワークショップ」, セブポットセミナー, 2016年3月24日, ヘンリーホテル2階セブポットラウンジ, セブ.', kocorolab_refresh_cebupot_2016_magazine_pdf(), 'ja' ),
+			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, 30 July – 3 August, Nagoya, Japan. (Cancelled)',
+		),
+		'2015' => array(
+			kocorolab_refresh_linked_paper( '野田浩平 (2015) About Filipino Business for Japanese, 第15回ミニ・フォーラム（フィリピンでの労務管理）, Neue Fahne, 2015年12月15日, 東京.', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'ja' ),
+			kocorolab_refresh_media_item( '野田浩平, 西垣悦代 (2015) 国際コーチング心理学会, 西垣悦代, 原正, 原口佳典（編）, 『コーチング心理学概論』, ナカニシヤ出版', 'coaching', 'ja', 'Amazon' ),
+		),
+		'2014' => array(
+			kocorolab_refresh_media_item( '野田浩平 (2014) 感情機構のシミュレーション, 村井源（編）, 『量から質に迫る―人間の複雑な感性をいかに「計る」か』, 新曜社', 'quality', 'ja', 'Amazon' ),
+		),
+		'2013' => array(
+			kocorolab_refresh_linked_paper( '野田浩平 (2013) グローバル人材400万人時代を見据えた人材育成―一部のエリート人材育成ではなく、厚みのある中間層の形成―, Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'ja' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2013) 講師, 福岡市・福岡商工会議所主催「会社合同説明会」内「就活応援セミナー」, 2013年5月28日, 福岡国際会議場.', kocorolab_refresh_fukuoka_2013_url(), 'ja', '報道' ),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'ja', '会議' ),
+				kocorolab_refresh_ice_2013_plenary_photo_url(),
+				kocorolab_refresh_ice_2013_url(),
+				'ICE 2013 plenary, Heritage Hotel Manila',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( '野田浩平, 武谷圭祐 (2013) ファシリテーター, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 2013年12月7日.', kocorolab_refresh_antipolo_2013_flyer_url(), 'ja', '案内' ),
+				kocorolab_refresh_antipolo_2013_workshop_photo_url(),
+				kocorolab_refresh_antipolo_2013_flyer_url(),
+				'TIME-IMAGE-CREATIVITY WORKSHOP, Antipolo',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_paper( '西垣悦代, 堀正, 本間正人, 野田浩平 (2013) 日本におけるコーチング心理学の確立に向けて, 公募シンポジウム, 日本心理学会第77回大会', kocorolab_refresh_jpa_2013_ss055_pdf(), 'ja' ),
+				kocorolab_refresh_jpa_2013_photo_url(),
+				kocorolab_refresh_jpa_2013_ss055_pdf(),
+				'日本心理学会第77回大会 公募シンポジウム',
+				'photo'
+			),
+		),
+		'2012' => array(
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( '野田浩平 (2012) 講師, 東京工業大学プロダクティブリーダー養成機構（PLIP）IDEAリーグ来日プログラム「日本の起業状況」, 2012年11月13日.', kocorolab_refresh_plip_url(), 'ja', '講演記録' ),
+				kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url(),
+				kocorolab_refresh_plip_url(),
+				'東工大PLIP IDEAリーグ講演',
+				'photo'
+			),
+			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
+		),
+		'2011' => array(
+			kocorolab_refresh_linked_paper( '野田浩平 (2011) 講師, 東京工業大学学生支援センター主催 就職ガイダンス（大岡山）「博士課程学生の就職」, 2011年11月9日, 70周年記念講堂.', kocorolab_refresh_tokyotech_2011_guidance_pdf(), 'ja' ),
+			kocorolab_refresh_linked_paper( '野田浩平 (2011) 世代間の「価値観」の相違を互いに認め合う ～これからの企業の人材育成課題を探る～, Neue Fahne Journal No. 20.', kocorolab_refresh_neue_fahne_journal_20_pdf(), 'ja' ),
+			kocorolab_refresh_linked_item( '野田浩平 (2011) 講師, 販売戦略検討会「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」, 2011年2月.', kocorolab_refresh_hansenken_url(), 'ja', '講演記録' ),
+			'野田浩平, 児玉義徳 (2011) 日本の起業家の特性及び背景要因の研究, 人材育成学会第9回大会予稿集',
+			'野田浩平 (2011) うつ病の増加を止め、絆を取り戻す社会への変化のきっかけ, 東京工業大学大学院社会理工学研究科価値システム専攻15周年記念論考 re-boot 0311→1130 VALDES OPINIONS.',
+			kocorolab_refresh_linked_paper( '野田浩平, 宮越大樹, 五十嵐久美子, 平本明武 (2011) 気付きを生み，動機付けを高めるシミュレーション方法の開発, 日本認知科学会第28回大会予稿集', $pdfs['2011'], 'ja' ),
+		),
+		'2010' => array(
+			'Noda K. and Agullo, B. (2010) Simulating Corporate Organizational Performance at the Cognitive Modeling/Architecture Level, Proceeding of the 32nd Annual Meeting of Cognitive Science Society.',
+			'野田浩平 (2010) いかに職業価値観を正しく測定するか −身体性記憶を用いた職業価値観の測定法とその知識表現−, 第8回日本人材育成学会年次大会予稿集',
+		),
+		'2009' => array(
+			'Agullo, B. and Noda K. (2009) Agent-based HR cost simulation to aid strategic HRM decision-making: Optimizing the cost balance of hiring and training, 第7回日本人材育成学会年次大会予稿集',
+			'野田浩平, 相崎明希子, 岩澤健久 (2009) 企業向け抑うつリスク検査開発の試み, 第14回日本産業カウンセリング学会年次大会予稿集, pp. 138-139.',
+		),
+		'2008' => array(
+			'Noda, K., Hisatsu, G., and Voss, K. (2008) An application of Cognitive Emotional Agent Architecture to model Emotional Intelligence, International Journal of Work, Organization and Emotion, 2(4) pp. 389-406.',
+			'Noda, K., Sasaki, K., Noguchi, A. and Yokoi, M. (2008) Modeling emotional intelligence from kansei informatics point of view, Proceedings of the Second International Workshop on Kansei, pp. 12-14.',
+			'Noda, K., Takeda, Y. and Yokoi, M. (2008) Cognitive Knowledge, Skills and Abilities (KSAs) to enhance emotional intelligence, Proceeding of the 30th Annual Meeting of Cognitive Science Society.',
+		),
+		'2007' => array(
+			kocorolab_refresh_linked_paper( '野田浩平 (2007) 脳に着想を得た感情機構エージェントとその企業人事管理システムへの応用, 東京工業大学博士学位論文.', kocorolab_refresh_dissertation_2007_pdf(), 'ja' ),
+			kocorolab_refresh_linked_paper( 'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.', kocorolab_refresh_cogsci_2007_pdf(), 'ja' ),
+			'Noda, K. (2007) An application of human resource evaluation ontology, Proceedings of Symposium on Large-scale Knowledge Resources (LKR 2007), Tokyo Institute of Technology.',
+			kocorolab_refresh_linked_paper( '野田浩平, Klaus Voss, 久津豪 (2007) 人事評価情報の可視化，知識共有への認知科学の応用 — エージェントモデリング及びオントロジーを用いて, 『認知科学』14(1) pp. 74-89.', kocorolab_refresh_cognitive_studies_2007_pdf(), 'ja' ),
+		),
+		'2006' => array(
+			'Noda, K., Voss, K. and Tokosumi, A. (2006) Emotion agent architecture simulating emotional reactions in a recruitment interview, Proceedings of international One-Day conference on “Emotion and Work: Ideas and Progress”, pp. 12-13.',
+			'Noda, K. (2006) Emotion Mechanism of Anxiety by Agent Based Simulation on Recruitment Interview, Proceedings of 6th annual meeting of the Japanese Association for Cognitive Therapy, 117.',
+			'Noda, K. (2006) Towards a Representational Model of Evaluation Ontology, Proceedings of International Symposium on Large Scale Knowledge Resources: LKR2006, 159-160.',
+		),
+		'2005' => array(
+			'Noda, K. (2005) Chapter 4 “DPI (Diamond Personality Inventory) test” and Recruitment Interview, in Honmyo, H., Oda, M., and Noguchi, K. (eds.), Attitude Ability Handbook, 50-57, 60. Tokyo: Diamond Inc.',
+			'Noda, K. and Tokosumi, A. (2005) The Development of Value Ontology, Proceedings of Symposium on Large Scale Knowledge Resources: LKR2005, 179-182.',
+		),
+		'2004' => array(
+			'Noda, K. and Tokosumi, A. (2004) An Embodied Computational Model of Simulating Depression, Proceedings of IEEE 13th International Workshop on Robot and Human Interactive Communication.',
+			kocorolab_refresh_linked_paper( 'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.', kocorolab_refresh_iccm_2004_pdf(), 'ja' ),
+		),
+		'2002' => array(
+			kocorolab_refresh_linked_paper( '橋田浩一, 内野八潮, 金井明人, 栗山直子, 小林由紀, Misa Grace Kwok, 小松孝徳, 野田浩平, 野村潤 (2002) 第3回認知科学国際会議 (ICCS 2001) 参加報告, 『認知科学』9(1) pp. 178-181.', kocorolab_refresh_iccs_2001_report_pdf(), 'ja' ),
+			'Noda, K. and Tokosumi, A. (2002) A simulated embodied agent model of depression by Artificial Brain Methodology, Proceeding of the 19th Annual Meeting of the Japanese Cognitive Science Society, 8-9.',
+			'Noda, K. (2002) A Computational Model of Depression by Design Approach, Master Thesis, Department of Value and Decision Science, Tokyo Institute of Technology.',
+		),
+		'2001' => array(
+			'Pfeifer, R., Iida, F., Noda, K. (2001) Joint Swiss-Japanese Projects of the AILab, Journal Quarterly Review of Swiss-Japanese Chamber of Commerce, 3.',
+			'Noda, K. and Tokosumi, A. (2001) A Double-layered Architecture of Emotion — Artificial Brain Methodology for Depression, Knowledge-Based Intelligent Information Engineering Systems & Allied Technologies KES’2001 Part 2, 1239-1242. Tokyo: Ohmsha.',
+			'Noda, K. and Tokosumi, A. (2001) The emergence of depression – A proposal for a methodology of emotion research, Proceedings of the Third International Conference on Cognitive Science, 164. Beijing.',
+		),
+		'2000' => array(
+			kocorolab_refresh_linked_paper( 'Noda, K. (2000) Leadership generation model from the perspective of emotion（感情から見たリーダーシップ発生モデル）, VALDES Technical paper, Tokyo Institute of Technology.', kocorolab_refresh_valdes_leadership_2000_url(), 'ja' ),
+			kocorolab_refresh_linked_item( '野田浩平ほか (2000) 役割アイデンティティのない状況下でのリーダーシップ, 新潟大・東工大交流ディスカッションプログラム 東工大側発表レジュメ. 野田「対人認知・対人感情の視点から見たリーダーシップ」.', kocorolab_refresh_niigata_tit_2000_resume_url(), 'ja', 'レジュメ' ),
+			'Noda, K. and Tokosumi, A. (2000) The cognitive model of thinking process under the depression（抑うつ気分における思考過程の認知モデル）, 認知療法ニュース, 15.',
+			'Tokosumi, A. and Noda, K. (2000) Design principle of an artificial brain for emotion and kansei. Proceedings of the 11th T.I.T. Brain Research Symposium, pp. 38-45.',
+			'Noda, K. and Tokosumi, A. (2000) Brain modeling of depressive feeling and thinking, Proceedings of the 1st Corpus informatics research meeting, pp. 8-11.',
+		),
+		'1997' => array(
+			kocorolab_refresh_linked_paper( '野田浩平, 根本真吾, 梅林正行, 狩野勝弘, Ezoubtchenko A.N., 鈴木正昭, 赤塚洋 (1997) マイクロ波加熱大気圧酸素プラズマの分光診断, 日本物理学会講演概要集 52(2-4), 908.', kocorolab_refresh_jps_1997_pdf(), 'ja' ),
+		),
+	);
+
+	$en = array(
+		'2026' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2026) GLOBIS article: how to walk the U-curve when the workplace will not move, 20 May 2026.', kocorolab_refresh_globis_u_curve_url(), 'en', 'article' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2026) Featured at YOKOHAMA CONNÉCT #36: MIT Sloan IDEAS Asia Pacific session “Tri-sector innovation for sustainability in a VUCA/BANI world,” 22 April 2026.', kocorolab_refresh_yokohama_connect_198_url(), 'en', 'session' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2026) Guest: “What happens to young people’s future in a society without mutual aid”, MBCC radio, 13 April 2026.', kocorolab_refresh_mbcc_spotify_episode_url(), 'en', 'Spotify' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda and Shutaro Takeuchi (2026) Interviewers, GLOBIS alumni interview with Toga Chiyozaki: toward a society where everyone can use their abilities, 25 March 2026.', kocorolab_refresh_globis_chiyozaki_url(), 'en', 'interview' ),
+		),
+		'2025' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2025) Interviewer, Daishi Fukudome on the power of kokorozashi, GLOBIS, 10 December 2025.', kocorolab_refresh_globis_fukudome_url(), 'en', 'interview' ),
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2025) The cognitive affective model of theory U. Proceedings of the 42nd Annual Meeting of the Japanese Cognitive Science Society, pp. 466-469.', $pdfs['2025'], 'en' ),
+			kocorolab_refresh_media_item( 'Kohei Noda, Mame, Rie Kaishita (2025) Stress Defense Strategies in the VUCA Era: Tips for Preventing Depression and Accumulating Stress', 'vuca', 'en', 'Amazon' ),
+		),
+		'2024' => array(
+			kocorolab_refresh_media_item( 'Kohei Noda (2024) The book you should read when you think you would be depression', 'depression', 'en', 'Amazon' ),
+			kocorolab_refresh_media_item( 'Kohei Noda, Ken Matsumura, and Mika Kojima (2024) Change Management under Well-being Era', 'change', 'en', 'YouTube series' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) CCL Japan visit with Motohisa Furukawa of the cross-party caucus, 23 May 2024.', kocorolab_refresh_ccl_furukawa_2024_url(), 'en', 'visit record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) Asked the Government of Japan to join the Global Carbon Pricing Challenge (GCPC), 4 May 2024.', kocorolab_refresh_ccl_gcpc_2024_url(), 'en', 'statement' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) CCL Japan dialogue with METI Minister Ken Saito, 29 February 2024.', kocorolab_refresh_ccl_saito_2024_url(), 'en', 'visit record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2024) CCL Japan dialogue with Minister Taro Kono for Administrative Reform, 24 January 2024.', kocorolab_refresh_ccl_kono_2024_url(), 'en', 'visit record' ),
+		),
+		'2022' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2022) Talk at Monthly MiLI: Inner Development Goals and developing humanity, 25 October 2022.', kocorolab_refresh_mbcc_idgs_2022_url(), 'en', 'talk record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2022) CCL Japan visit with Kentaro Sonoura, 16 September 2022.', kocorolab_refresh_ccl_sonoura_2022_url(), 'en', 'visit record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2022) Spoke on carbon pricing at the CAN-Japan webinar on IPCC AR6, 19 May 2022.', kocorolab_refresh_can_japan_3263_url(), 'en', 'webinar' ),
+		),
+		'2021' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda and Mika Kojima (2021) shiawase2021 FR004: #myfuture — meeting my future self, 21 March 2021.', kocorolab_refresh_shiawase_fr004_peatix_url(), 'en', 'Peatix' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2021) shiawase2021 WS050 Future Dialogue, 20 March 2021.', kocorolab_refresh_shiawase_ws050_program_url(), 'en', 'program' ),
+		),
+		'2020' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2020) Talk on health and happiness, 6 December 2020.', kocorolab_refresh_kenko_happiness_talk_url(), 'en', 'event page' ),
+			kocorolab_refresh_with_thumb(
+				'Kohei Noda and Akio Hiramoto (2020) The current status of poverty and happiness in the Philippines, YouTube Hiramoto Akio Channel. <a href="https://www.youtube.com/watch?v=5acopoZcYfw">Video</a> (<a href="https://www.youtube.com/@hiramotoakio">channel</a>)',
+				kocorolab_refresh_pub_media()['hiramoto']['img'],
+				kocorolab_refresh_pub_media()['hiramoto']['url'],
+				kocorolab_refresh_pub_media()['hiramoto']['alt_en'],
+				'video'
+			),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2020) Dialogue event: learning happiness habits from Fijians, with Yuma Nagasaki, 22 November 2020.', kocorolab_refresh_nagasaki_2020_peatix_url(), 'en', 'Peatix' ),
+		),
+		'2019' => array(
+			kocorolab_refresh_linked_item( 'Maria Belinda Villavicencio, Joan Bondoc-Antonio, Eric Cruz, Connie Germono, Kohei Noda, Kookie Consing-Gagui (2019) Big Idea: Embedding Systems Thinking in Philippine Education. Education that Matters / Benedictine International School. January–May 2019 project; presented at the May 2019 Manila workshop Thriving in the Age of Disruption.', kocorolab_refresh_etm_2019_poster_url(), 'en', 'poster' ),
+		),
+		'2018' => array(
+			kocorolab_refresh_media_item( 'Kentaro Yoshida and Kohei Noda (2018) Chapter 10 The Case of Service industry “IT and Call center” — the Philippines, Reverse Innovation of Japanese SMEs. Doyukan', 'reverse', 'en', 'Amazon' ),
+		),
+		'2017' => array(
+			kocorolab_refresh_linked_item( 'Kohei Noda (2017) Talk at the 139th monthly meeting of the Business Promotion LLP: “Philippines (Cebu) study abroad and intercultural experience,” 7 December 2017.', kocorolab_refresh_bps_139_url(), 'en', 'talk record' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2017) Talk on happiness with Yuma Nagasaki visiting SPEA Dumaguete, 26 October 2017.', kocorolab_refresh_spea_nagasaki_2017_event_url(), 'en', 'Facebook' ),
+			'Kohei Noda and Maria Katrina Taylo, Normalised purely psychological Happiness national comparisons by UN and Gallup surveys. Internal discussion meeting at Free Bird Institute in Fiji.',
+		),
+		'2016' => array(
+			kocorolab_refresh_linked_paper( 'Kohei Noda, Yoshihiko Matsuoka (2016) Proposal of Real Life Experience Method in English Language as Second Language. 33rd Annual Meeting of the Japanese Cognitive Science Society', $pdfs['2016'], 'en' ),
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2016) Happiness Workshop: learning from Filipino — Why Filipino People are always smiling, Cebu Pot Seminar, 24 March 2016, Henry Hotel, Cebu.', kocorolab_refresh_cebupot_2016_magazine_pdf(), 'en' ),
+			'Kohei Noda and Takashi Maeno, Trend in Happiness of Filipino From the Viewpoint of Comparison to Japanese, The 23rd Congress of the International Association for Cross-Cultural Psychology 2016, Nagoya, Japan. (Cancelled)',
+		),
+		'2015' => array(
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2015) About Filipino Business for Japanese, 15th Neue Fahne mini-forum on HR management in the Philippines, 15 December 2015, Tokyo.', kocorolab_refresh_neue_fahne_2015_forum_pdf(), 'en' ),
+			kocorolab_refresh_media_item( 'Kohei Noda and Etsuyo Nishigaki (2015) in Etsuyo Nishigaki et al. (eds.), Introduction to Coaching Psychology, Nakanishiya', 'coaching', 'en', 'Amazon' ),
+		),
+		'2014' => array(
+			kocorolab_refresh_media_item( 'Kohei Noda (2014) Simulation of emotional mechanism, in Gen Murai (ed.), Approaching quality from quantity, Shin-yo-sha', 'quality', 'en', 'Amazon' ),
+		),
+		'2013' => array(
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2013) Developing global talent for an era of four million: forming a thick middle layer, not only elites. Neue Fahne Journal No. 50.', kocorolab_refresh_neue_fahne_journal_50_pdf(), 'en' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2013) Lecturer, job-hunting support seminar at the company joint briefing hosted by Fukuoka City and the Fukuoka Chamber of Commerce, 28 May 2013, Fukuoka International Congress Center.', kocorolab_refresh_fukuoka_2013_url(), 'en', 'report' ),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda, Plenary Talk, ICE 2013: PELS International Congress on eLearning 2013, 6–7 December 2013, The Heritage Hotel Manila, Philippines', kocorolab_refresh_ice_2013_url(), 'en', 'conference' ),
+				kocorolab_refresh_ice_2013_plenary_photo_url(),
+				kocorolab_refresh_ice_2013_url(),
+				'ICE 2013 plenary, Heritage Hotel Manila',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda and Keisuke Takeya (2013) Facilitators, TIME-IMAGE-CREATIVITY WORKSHOP, Pinto Art Gallery, Antipolo, 7 December 2013.', kocorolab_refresh_antipolo_2013_flyer_url(), 'en', 'notice' ),
+				kocorolab_refresh_antipolo_2013_workshop_photo_url(),
+				kocorolab_refresh_antipolo_2013_flyer_url(),
+				'TIME-IMAGE-CREATIVITY WORKSHOP, Antipolo',
+				'photo'
+			),
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_paper( 'Etsuyo Nishigaki, Tadashi Hori, Masato Honma, Kohei Noda (2013) Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association', kocorolab_refresh_jpa_2013_ss055_pdf(), 'en' ),
+				kocorolab_refresh_jpa_2013_photo_url(),
+				kocorolab_refresh_jpa_2013_ss055_pdf(),
+				'Japanese Psychological Association symposium',
+				'photo'
+			),
+		),
+		'2012' => array(
+			kocorolab_refresh_with_thumb(
+				kocorolab_refresh_linked_item( 'Kohei Noda (2012) English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit, Tokyo Tech Productive Leader Incubation Platform (PLIP), 13 November 2012.', kocorolab_refresh_plip_url(), 'en', 'talk record' ),
+				kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url(),
+				kocorolab_refresh_plip_url(),
+				'Tokyo Tech PLIP IDEA League talk',
+				'photo'
+			),
+			'Noda K. (2012) A cognitive emotional model for “intrinsic motivation”, Proceeding of the 34th Annual Meeting of Cognitive Science Society.',
+		),
+		'2011' => array(
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2011) Lecture on PhD employment at the Tokyo Institute of Technology (Ookayama) career guidance, Student Support Center, 9 November 2011.', kocorolab_refresh_tokyotech_2011_guidance_pdf(), 'en' ),
+			kocorolab_refresh_linked_paper( 'Kohei Noda (2011) Recognizing generational differences in values: challenges for corporate talent development. Neue Fahne Journal No. 20.', kocorolab_refresh_neue_fahne_journal_20_pdf(), 'en' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda (2011) Talk at the Sales Strategy Study Group: “What is Motivation 3.0? New currents in organizations and motivation,” February 2011.', kocorolab_refresh_hansenken_url(), 'en', 'talk record' ),
+			'Noda, K., and Kodama, Y. (2011) Research on the Special Characteristics and Background Elements of Japanese Entrepreneurs, Proceedings of the 9th annual meeting of Japanese Academy of Human Resource Development.',
+			kocorolab_refresh_linked_paper( 'Noda, K., Miyakoshi, D., Igarashi, K., and Hiramoto (2011) The development of the mental simulation methodology which enhances mindfulness and motivation, Proceedings of the 28th annual meeting of Japanese Cognitive Science Society', $pdfs['2011'], 'en' ),
+		),
+		'2010' => array(
+			'Noda K. and Agullo, B. (2010) Simulating Corporate Organizational Performance at the Cognitive Modeling/Architecture Level, Proceeding of the 32nd Annual Meeting of Cognitive Science Society.',
+			'Noda K. (2010) How to assess work values correctly, Proceedings of the 8th Annual Meeting of the Japanese Academy of Human Resource Development.',
+		),
+		'2009' => array(
+			'Agullo, B. and Noda K. (2009) Agent-based HR cost simulation to aid strategic HRM decision-making, Proceedings of the 7th Annual Meeting of the Japanese Academy of Human Resource Development.',
+			'Noda, K., Aizaki, A. and Iwasawa, T. (2009) Attempt to develop a depression survey to use in organizations, Proceedings of the 14th Annual Meeting of the Japanese Association of Industrial Counselors, pp. 138-139.',
+		),
+		'2008' => array(
+			'Noda, K., Hisatsu, G., and Voss, K. (2008) An application of Cognitive Emotional Agent Architecture to model Emotional Intelligence, International Journal of Work, Organization and Emotion, 2(4) pp. 389-406.',
+			'Noda, K., Sasaki, K., Noguchi, A. and Yokoi, M. (2008) Modeling emotional intelligence from kansei informatics point of view, Proceedings of the Second International Workshop on Kansei, pp. 12-14.',
+			'Noda, K., Takeda, Y. and Yokoi, M. (2008) Cognitive Knowledge, Skills and Abilities (KSAs) to enhance emotional intelligence, Proceeding of the 30th Annual Meeting of Cognitive Science Society.',
+		),
+		'2007' => array(
+			kocorolab_refresh_linked_paper( 'Noda, K. (2007) Brain Inspired Cognitive Emotional Agent Architecture and its Application to Corporate Human Resource Management System. Doctoral Dissertation, Tokyo Institute of Technology.', kocorolab_refresh_dissertation_2007_pdf(), 'en' ),
+			kocorolab_refresh_linked_paper( 'Noda, K. and Hisatsu, G. (2007) An Application of Cognitive Emotional Agent Architecture to Corporate Human Resource Management, Proceedings of 29th annual conference of the cognitive science society, 1824.', kocorolab_refresh_cogsci_2007_pdf(), 'en' ),
+			'Noda, K. (2007) An application of human resource evaluation ontology, Proceedings of Symposium on Large-scale Knowledge Resources (LKR 2007), Tokyo Institute of Technology.',
+			kocorolab_refresh_linked_paper( 'Noda, K., Voss, K. and Hisatsu, G. (2007) An application of cognitive science research outcomes to the visualization and the knowledge sharing of human resource evaluation information, Cognitive Studies, 14(1) pp. 74-89.', kocorolab_refresh_cognitive_studies_2007_pdf(), 'en' ),
+		),
+		'2006' => array(
+			'Noda, K., Voss, K. and Tokosumi, A. (2006) Emotion agent architecture simulating emotional reactions in a recruitment interview, Proceedings of international One-Day conference on “Emotion and Work”.',
+			'Noda, K. (2006) Emotion Mechanism of Anxiety by Agent Based Simulation on Recruitment Interview, Proceedings of 6th annual meeting of the Japanese Association for Cognitive Therapy, 117.',
+			'Noda, K. (2006) Towards a Representational Model of Evaluation Ontology, Proceedings of International Symposium on Large Scale Knowledge Resources: LKR2006, 159-160.',
+		),
+		'2005' => array(
+			'Noda, K. (2005) Chapter 4 “DPI (Diamond Personality Inventory) test” and Recruitment Interview, Attitude Ability Handbook, 50-57. Tokyo: Diamond Inc.',
+			'Noda, K. and Tokosumi, A. (2005) The Development of Value Ontology, Proceedings of Symposium on Large Scale Knowledge Resources: LKR2005, 179-182.',
+		),
+		'2004' => array(
+			'Noda, K. and Tokosumi, A. (2004) An Embodied Computational Model of Simulating Depression, Proceedings of IEEE 13th International Workshop on Robot and Human Interactive Communication.',
+			kocorolab_refresh_linked_paper( 'Noda, K. and Tokosumi, A. (2004) “Artificial brain methodology” and an application of StarLogo, Proceedings of The Sixth International Conference on Cognitive Modeling, 374-375.', kocorolab_refresh_iccm_2004_pdf(), 'en' ),
+		),
+		'2002' => array(
+			kocorolab_refresh_linked_paper( 'Hashida, K. et al., including Kohei Noda (2002) Conference report on ICCS 2001, Cognitive Studies, 9(1) pp. 178-181.', kocorolab_refresh_iccs_2001_report_pdf(), 'en' ),
+			'Noda, K. and Tokosumi, A. (2002) A simulated embodied agent model of depression by Artificial Brain Methodology, Proceeding of the 19th Annual Meeting of the Japanese Cognitive Science Society, 8-9.',
+			'Noda, K. (2002) A Computational Model of Depression by Design Approach, Master Thesis, Tokyo Institute of Technology.',
+		),
+		'2001' => array(
+			'Pfeifer, R., Iida, F., Noda, K. (2001) Joint Swiss-Japanese Projects of the AILab, Journal Quarterly Review of Swiss-Japanese Chamber of Commerce, 3.',
+			'Noda, K. and Tokosumi, A. (2001) A Double-layered Architecture of Emotion, Knowledge-Based Intelligent Information Engineering Systems KES’2001 Part 2, 1239-1242. Tokyo: Ohmsha.',
+			'Noda, K. and Tokosumi, A. (2001) The emergence of depression – A proposal for a methodology of emotion research, Proceedings of the Third International Conference on Cognitive Science, 164.',
+		),
+		'2000' => array(
+			kocorolab_refresh_linked_paper( 'Noda, K. (2000) Leadership generation model from the perspective of emotion, VALDES Technical paper, Tokyo Institute of Technology.', kocorolab_refresh_valdes_leadership_2000_url(), 'en' ),
+			kocorolab_refresh_linked_item( 'Kohei Noda et al. (2000) Leadership in situations without role identity, Niigata University–Tokyo Tech Exchange Discussion Program resume. Noda: leadership from interpersonal cognition and emotion.', kocorolab_refresh_niigata_tit_2000_resume_url(), 'en', 'resume' ),
+			'Noda, K. and Tokosumi, A. (2000) The cognitive model of thinking process under the depression, cognitive therapy news, 15.',
+			'Tokosumi, A. and Noda, K. (2000) Design principle of an artificial brain for emotion and kansei. Proceedings of the 11th T.I.T. Brain Research Symposium, pp. 38-45.',
+		),
+		'1997' => array(
+			kocorolab_refresh_linked_paper( 'Noda, K. et al. (1997) Spectroscopic diagnosis of microwave-heated atmospheric-pressure oxygen plasma, Meeting abstracts of the Physical Society of Japan 52(2-4), 908.', kocorolab_refresh_jps_1997_pdf(), 'en' ),
+		),
+	);
+
+	return ( 'en' === $lang ) ? $en : $ja;
+}
+
+function kocorolab_refresh_publications_html( $lang = 'ja' ) {
+	$years = kocorolab_refresh_publications_years( $lang );
+	$intro = kocorolab_refresh_t( 'pub_intro', $lang );
+	ob_start();
+	?>
+	<div class="kl-page kl-pubs">
+		<p class="kl-lead"><?php echo esc_html( $intro ); ?></p>
+		<?php foreach ( $years as $year => $items ) : ?>
+			<h2><?php echo esc_html( $year ); ?></h2>
+			<?php foreach ( $items as $item ) : ?>
+				<p<?php echo ( false !== strpos( $item, 'kl-pub-media' ) ) ? ' class="kl-pub-row"' : ''; ?>><?php echo $item; ?></p>
+			<?php endforeach; ?>
+		<?php endforeach; ?>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
+function kocorolab_refresh_news_overlay_entries() {
+	return array(
+		array(
+			'date' => '2026-05-20',
+			'ja'   => 'グロービス知見録に「現場が動かない…を解決！自己と組織を変えるU字カーブの歩き方」を寄稿しました（2026年5月20日）',
+			'en'   => 'GLOBIS article: how to walk the U-curve when the workplace will not move (20 May 2026).',
+			'keys' => array( 'U字カーブ', 'hu8z0vv3bb_i', '現場が動かない', 'U-curve', 'workplace will not move' ),
+		),
+		array(
+			'date' => '2026-04-22',
+			'ja'   => 'YOKOHAMA CONNÉCT #36で Tri-sector innovation セッションに登壇しました（2026年4月22日）',
+			'en'   => 'Featured at YOKOHAMA CONNÉCT #36: Tri-sector innovation for sustainability (22 April 2026).',
+			'keys' => array( 'YOKOHAMA CONNÉCT', 'venturecafe-yokohamaconnect', 'Tri-sector innovation', 'sessions/198' ),
+		),
+		array(
+			'date' => '2026-04-13',
+			'ja'   => 'MBCC 未来をひらくラジオにゲスト出演しました。「共助なき社会で、若者の未来はどうなるのか」（2026年4月13日）',
+			'en'   => 'Guest on MBCC radio: “What happens to young people’s future in a society without mutual aid” (13 April 2026).',
+			'keys' => array( '共助なき社会', 'society without mutual aid', '03qbS6FrSXI0Bmg9bZWaLQ' ),
+		),
+		array(
+			'date' => '2026-03-25',
+			'ja'   => 'グロービス卒業生インタビューで千代崎透我さんに聞きました「すべての人が能力を発揮し、活躍できる社会へ」（2026年3月25日）',
+			'en'   => 'GLOBIS alumni interview with Toga Chiyozaki: toward a society where everyone can use their abilities (25 March 2026).',
+			'keys' => array( 'detail-25752', '千代崎', 'すべての人が能力を発揮', 'Toga Chiyozaki', 'everyone can use their abilities' ),
+		),
+		array(
+			'date' => '2025-12-10',
+			'ja'   => 'グロービス知見録で福留大士氏に「志の力」を聞きました（2025年12月10日）',
+			'en'   => 'Interviewed Daishi Fukudome on the power of kokorozashi for GLOBIS (10 December 2025).',
+			'keys' => array( 'xll9i38vmmjf', '志の力', '福留大士', 'Daishi Fukudome', 'power of kokorozashi' ),
+		),
+		array(
+			'date' => '2025-09-12',
+			'ja'   => '日本認知科学会第42回大会で「U理論の認知感情モデル」を発表しました。',
+			'en'   => 'Presented “The cognitive affective model of theory U” at the 42nd Annual Meeting of the Japanese Cognitive Science Society.',
+			'keys' => array( 'U理論の認知感情モデル', 'cognitive affective model of theory U', 'JCSS2025', '日本認知科学会第42回', '42nd JCSS' ),
+		),
+		array(
+			'date' => '2025-01-22',
+			'ja'   => '『VUCA時代のストレス防衛術』を刊行しました。',
+			'en'   => 'Published Stress Defense Strategies in the VUCA Era.',
+			'keys' => array( 'VUCA時代のストレス', 'Stress Defense Strategies in the VUCA', 'B0DTS8XLPD' ),
+		),
+		array(
+			'date' => '2024-09-29',
+			'ja'   => '『「私、うつになりやすいかも？」と思った時に読む本』を刊行しました。',
+			'en'   => 'Published The book you should read when you think you would be depression.',
+			'keys' => array( 'うつになりやすいかも', 'would be depression', 'B0DGFRYHMX' ),
+		),
+		array(
+			'date' => '2024-06-01',
+			'ja'   => 'ウェルビーイング時代のチェンジマネジメントのYouTubeシリーズを公開しました。',
+			'en'   => 'Published the YouTube series Change Management under Well-being Era.',
+			'keys' => array( 'ウェルビーイング時代のチェンジマネジメント', 'Change Management under Well-being', 'PLiSKEuDit5HplW8JI5fHlWPYA32wQwAxp' ),
+		),
+		array(
+			'date' => '2024-05-23',
+			'ja'   => '市民気候ロビージャパン代表として、超党派議連古川元久議員訪問を行いました（2024年5月23日）',
+			'en'   => 'CCL Japan visit with Motohisa Furukawa of the cross-party caucus (23 May 2024).',
+			'keys' => array( '古川元久議員訪問', 'Motohisa Furukawa', '超党派議連古川' ),
+		),
+		array(
+			'date' => '2024-05-04',
+			'ja'   => '市民気候ロビージャパン代表として、日本政府にグローバル・カーボンプライシング・チャレンジ（GCPC）への参加を求めました（2024年5月4日）',
+			'en'   => 'Asked the Government of Japan to join the Global Carbon Pricing Challenge (GCPC) (4 May 2024).',
+			'keys' => array( 'GCPC', 'carbonpricingchallenge', 'グローバル・カーボンプライシング・チャレンジ', 'Global Carbon Pricing Challenge' ),
+		),
+		array(
+			'date' => '2024-02-29',
+			'ja'   => '市民気候ロビージャパン代表として、斎藤健・経済産業大臣と再エネ・エネルギー政策を議論しました（2024年2月29日）',
+			'en'   => 'CCL Japan dialogue with METI Minister Ken Saito on renewable energy policy (29 February 2024).',
+			'keys' => array( '斎藤健・経済産業大臣', 'Ken Saito', '経済産業大臣訪問' ),
+		),
+		array(
+			'date' => '2024-01-24',
+			'ja'   => '市民気候ロビージャパンから、河野太郎・行政改革担当大臣と意見交換しました（2024年1月24日）',
+			'en'   => 'CCL Japan dialogue with Minister Taro Kono for Administrative Reform (24 January 2024).',
+			'keys' => array( '河野太郎・行政改革担当大臣', 'Taro Kono', '河野大臣と意見交換' ),
+		),
+		array(
+			'date' => '2022-10-25',
+			'ja'   => 'マンスリーMiLI「IDGｓと人間性の開発をめぐる対話」に登壇しました（2022年10月25日）',
+			'en'   => 'Talked at Monthly MiLI: Inner Development Goals and developing humanity (25 October 2022).',
+			'keys' => array( 'IDGｓと人間性', 'Inner Development Goals', '20220917', 'マンスリーMiLI' ),
+		),
+		array(
+			'date' => '2022-09-16',
+			'ja'   => '市民気候ロビージャパン代表として、薗浦健太郎議員訪問を行いました（2022年9月16日）',
+			'en'   => 'CCL Japan visit with Kentaro Sonoura (16 September 2022).',
+			'keys' => array( '薗浦健太郎議員訪問', 'Kentaro Sonoura', '衆院財務金融委員長' ),
+		),
+		array(
+			'date' => '2022-05-19',
+			'ja'   => 'CAN-Japanウェビナー「IPCC第6次評価報告書から気候危機を回避する道筋を考える」でカーボンプライシングについて報告しました（2022年5月19日）',
+			'en'   => 'Spoke on carbon pricing at the CAN-Japan webinar on IPCC AR6 (19 May 2022).',
+			'keys' => array( 'events-ja/3263', 'カーボンプライシング', 'IPCC第6次', 'carbon pricing', 'IPCC AR6' ),
+		),
+		array(
+			'date' => '2021-03-21',
+			'ja'   => 'しあわせの学問2021 FR004「#myfuture 幸せな未来を描く ～未来の自分に会う」（小島美佳とともに、2021年3月21日）',
+			'en'   => 'shiawase2021 FR004: #myfuture — meeting my future self, with Mika Kojima (21 March 2021).',
+			'keys' => array( '1848747', 'FR004', '#myfuture 幸せな未来を描く', 'meeting my future self' ),
+		),
+		array(
+			'date' => '2021-03-20',
+			'ja'   => 'しあわせの学問2021 WS050「日本の未来、より多くの人たち幸せに暮らせるように」フューチャーダイヤログ（2021年3月20日）',
+			'en'   => 'shiawase2021 WS050 Future Dialogue: expanding dialogue for Japan’s future (20 March 2021).',
+			'keys' => array( 'WS050', 'フューチャーダイヤログ', '2831301047187478', 'Future Dialogue' ),
+		),
+		array(
+			'date' => '2019-05-24',
+			'ja'   => 'マニラでフィリピン教育プロジェクトを発表',
+			'en'   => 'Philippine education project presented in Manila',
+			'keys' => array( 'Embedding Systems Thinking in Philippine Education', 'Education that Matters', 'Thriving in the Age of Disruption', 'etm-2019', 'マニラでフィリピン教育プロジェクト' ),
+			'img'  => kocorolab_refresh_etm_2019_poster_url(),
+			'gallery' => kocorolab_refresh_etm_2019_gallery(),
+		),
+		array(
+			'date' => '2019-02-01',
+			'ja'   => 'SPEAの学校案内PDF（2019、フィリピン留学プロ）',
+			'en'   => 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).',
+			'keys' => array( 'SPEAnew22019', '学校案内PDF（2019', 'school brochure PDF (2019' ),
+		),
+		array(
+			'date' => '2020-11-22',
+			'ja'   => '対話イベント「フィジー人に学ぶ幸福の習慣」（ゲスト永崎裕麻、2020年11月22日）',
+			'en'   => 'Dialogue event: learning happiness habits from Fijians, with Yuma Nagasaki (22 November 2020).',
+			'keys' => array( 'happiness1122', 'フィジー人に学ぶ幸福の習慣', 'learning happiness habits from Fijians', '1716882' ),
+		),
+		array(
+			'date' => '2017-12-07',
+			'ja'   => '有限責任事業組合ビジネス推進機構の第139回月例で「フィリピン（セブ）留学、そして異文化体験のおすすめ」を講演（2017年12月7日）',
+			'en'   => 'Talk at the 139th monthly meeting of the Business Promotion LLP: “Philippines (Cebu) study abroad and intercultural experience” (7 December 2017).',
+			'keys' => array( 'フィリピン（セブ）留学、そして異文化体験', 'Philippines (Cebu) study abroad', '第139回ＢＰＳ', 'llp-bps' ),
+		),
+		array(
+			'date' => '2017-10-26',
+			'ja'   => 'SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）',
+			'en'   => 'SPEA talk on happiness with Yuma Nagasaki visiting Dumaguete (26 October 2017).',
+			'keys' => array( '幸福論トークセッション', '1908002519517088', 'visiting Dumaguete', '来訪記念' ),
+		),
+		array(
+			'date' => '2017-05-22',
+			'ja'   => 'SPEAのフィリピン教育留学開始のプレスリリース',
+			'en'   => 'Press release: SPEA began a Philippines education study program.',
+			'keys' => array( 'フィリピン教育留学', 'Philippines education study', '183306' ),
+		),
+		array(
+			'date' => '2016-07-08',
+			'ja'   => 'SPEAの体験型学習（RLE）研究開始のプレスリリース',
+			'en'   => 'Press release: research began on SPEA’s Real Life Experience (RLE) method.',
+			'keys' => array( '体験型学習（RLE）', 'Real Life Experience (RLE)', '165730', 'RLE-Labo' ),
+		),
+		array(
+			'date' => '2016-03-24',
+			'ja'   => 'セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）',
+			'en'   => 'Cebu Pot seminar: Happiness Workshop — Why Filipino people are always smiling (magazine notice, 24 March 2016).',
+			'keys' => array( 'セブポットセミナー', 'しあわせワークショップ', 'Cebu Pot seminar', 'Happiness Workshop', 'cebupot-happiness-workshop-2016' ),
+		),
+		array(
+			'date' => '2015-12-15',
+			'ja'   => '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）',
+			'en'   => '15th mini-forum: About Filipino Business for Japanese (15 December 2015).',
+			'keys' => array( '第15回ミニ・フォーラム', '15th mini-forum', 'About Filipino Business', 'mini-forum-2015-12-15' ),
+		),
+		array(
+			'date' => '2013-12-07',
+			'ja'   => '武谷圭祐とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）',
+			'en'   => 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Takeya at Pinto Art Gallery, Antipolo (7 December 2013).',
+			'keys' => array( 'TIME-IMAGE-CREATIVITY', 'Pinto Art Gallery', 'Antipolo', '武谷圭祐', 'Keisuke Takeya' ),
+			'img'  => kocorolab_refresh_antipolo_2013_workshop_photo_url(),
+		),
+		array(
+			'date' => '2013-12-06',
+			'ja'   => 'ICE 2013（PELS International Congress on eLearning）プレナリー、Heritage Hotel Manila（2013年12月6–7日）',
+			'en'   => 'ICE 2013 plenary at Heritage Hotel Manila (6–7 December 2013).',
+			'keys' => array( 'ICE 2013', 'Heritage Hotel Manila', 'PELS International Congress', 'OnGq4xL8mDEoGt7E1' ),
+			'img'  => kocorolab_refresh_ice_2013_plenary_photo_url(),
+		),
+		array(
+			'date' => '2013-09-21',
+			'ja'   => '日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）',
+			'en'   => 'SS-055 Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association (21 September 2013).',
+			'keys' => array( 'SS-055', 'コーチング心理学の確立', '77th Annual Meeting of the Japanese Psychological Association' ),
+			'img'  => kocorolab_refresh_jpa_2013_photo_url(),
+		),
+		array(
+			'date' => '2013-07-30',
+			'ja'   => 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）',
+			'en'   => 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).',
+			'keys' => array( 'ヒトメディア', 'hitomedia', '20130725', 'アジアビジネス成功の4ステップ' ),
+		),
+		array(
+			'date' => '2013-07-26',
+			'ja'   => 'フィリピンでの Global Business eXperience（GBX）実施報告',
+			'en'   => 'Report on Global Business eXperience (GBX) in the Philippines.',
+			'keys' => array( 'GBX', 'Global Business eXperience', '37250' ),
+		),
+		array(
+			'date' => '2013-03-11',
+			'ja'   => 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」',
+			'en'   => 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.',
+			'keys' => array( 'グローバル人材400万人', 'Journal No.50', 'Journal No. 50', 'mid-level global talent' ),
+		),
+		array(
+			'date' => '2012-11-13',
+			'ja'   => '東京工業大学PLIPで、IDEAリーグ来日団に「日本の起業状況」を英語で講演（2012年11月13日）',
+			'en'   => 'English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit at Tokyo Tech PLIP (13 November 2012).',
+			'keys' => array( 'IDEAリーグ', 'IDEA League doctoral-school', '日本の起業状況', 'entrepreneurship in Japan', 'productiveleader' ),
+			'img'  => kocorolab_refresh_tokyo_tech_idea_league_2012_photo_url(),
+		),
+		array(
+			'date' => '2011-12-26',
+			'ja'   => 'Neue Fahne Journal No.20「世代間の「価値観」の相違を互いに認め合う」（2011年12月26日）',
+			'en'   => 'Neue Fahne Journal No. 20: recognizing generational differences in values (26 December 2011).',
+			'keys' => array( 'Journal No.20', 'Journal No. 20', '世代間の「価値観」', 'journal20' ),
+		),
+		array(
+			'date' => '2011-08-24',
+			'ja'   => '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）',
+			'en'   => 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).',
+			'keys' => array( 'n-fahne', 'mental01', 'ノイエ・ファーネ', '廣済堂×ココロラボ' ),
+		),
+		array(
+			'date' => '2011-02-01',
+			'ja'   => '販売戦略検討会で「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」を講演（2011年2月）',
+			'en'   => 'Talk at the Sales Strategy Study Group: “What is Motivation 3.0? New currents in organizations and motivation” (February 2011).',
+			'keys' => array( 'モチベーション3.0とは何か', 'What is Motivation 3.0', 'hansenken', '販売戦略検討会' ),
+		),
+		array(
+			'date' => '2010-06-22',
+			'ja'   => 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース',
+			'en'   => 'Press release: partnership with Shubiki on a workplace mental health service.',
+			'keys' => array( 'シュビキ', 'Shubiki', '3980', 'メンタルヘルス支援サービス開始' ),
+		),
+		array(
+			'date' => '2009-07-01',
+			'ja'   => 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース',
+			'en'   => 'MHQ version 1 press release',
+			'keys' => array( 'MHQ1', 'バージョン１発売', 'version 1 press', '3238' ),
+		),
+	);
+}
+
+function kocorolab_refresh_news_preview_items( $lang = 'ja' ) {
+	$ja = array(
+		array( '2026-05-20', 'グロービス知見録に「現場が動かない…を解決！自己と組織を変えるU字カーブの歩き方」を寄稿しました（2026年5月20日）' ),
+		array( '2026-04-22', 'YOKOHAMA CONNÉCT #36で Tri-sector innovation セッションに登壇しました（2026年4月22日）' ),
+		array( '2026-04-13', 'MBCC 未来をひらくラジオにゲスト出演しました。「共助なき社会で、若者の未来はどうなるのか」（2026年4月13日）' ),
+		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026参加者推薦を開始致しました。' ),
+		array( '2020-12-06', '健康×幸福トーク登壇' ),
+		array( '2020-11-22', '対話イベント「フィジー人に学ぶ幸福の習慣」（ゲスト永崎裕麻、2020年11月22日）' ),
+		array( '2020-04-01', 'コロナ禍でのストレスについての寄稿' ),
+		array( '2020-01-02', 'SDGs Learning Journey 2020の案内' ),
+		array( '2020-01-01', 'フィリピンの貧困と幸福度の現状' ),
+		array( '2019-05-24', 'マニラでフィリピン教育プロジェクトを発表' ),
+		array( '2018-01-01', 'SDGs Learning Journey 2018報告' ),
+		array( '2019-02-01', 'SPEAの学校案内PDF（2019、フィリピン留学プロ）' ),
+		array( '2017-12-07', '有限責任事業組合ビジネス推進機構の第139回月例で「フィリピン（セブ）留学、そして異文化体験のおすすめ」を講演（2017年12月7日）' ),
+		array( '2017-10-26', 'SPEAで永崎裕麻氏来訪記念の幸福論トークセッション（2017年10月26日）' ),
+		array( '2017-05-22', 'SPEAのフィリピン教育留学開始のプレスリリース' ),
+		array( '2016-07-08', 'SPEAの体験型学習（RLE）研究開始のプレスリリース' ),
+		array( '2016-03-24', 'セブポットセミナー「フィリピン人から学ぶしあわせワークショップ」（紙面原稿、2016年3月24日）' ),
+		array( '2015-12-15', '第15回ミニ・フォーラム About Filipino Business for Japanese（2015年12月15日）' ),
+		array( '2013-12-07', '武谷圭祐とともに TIME-IMAGE-CREATIVITY WORKSHOP（Pinto Art Gallery, Antipolo、2013年12月7日）' ),
+		array( '2013-12-06', 'ICE 2013（PELS International Congress on eLearning）プレナリー、Heritage Hotel Manila（2013年12月6–7日）' ),
+		array( '2013-09-21', '日本心理学会第77回大会 公募シンポジウム「日本におけるコーチング心理学の確立に向けて」（SS-055、2013年9月21日）' ),
+		array( '2013-07-30', 'ヒトメディア主催の海外ビジネス無料セミナーに登壇（2013年7月30日）' ),
+		array( '2013-07-26', 'フィリピンでの Global Business eXperience（GBX）実施報告' ),
+		array( '2013-03-11', 'Neue Fahne Journal No.50「グローバル人材400万人時代を見据えた人材育成」' ),
+		array( '2012-11-13', '東京工業大学PLIPで、IDEAリーグ来日団に「日本の起業状況」を英語で講演（2012年11月13日）' ),
+		array( '2011-12-26', 'Neue Fahne Journal No.20「世代間の「価値観」の相違を互いに認め合う」（2011年12月26日）' ),
+		array( '2011-08-24', '廣済堂×ココロラボのMHQセミナー案内（2011年8–9月、ノイエ・ファーネ協力）' ),
+		array( '2011-02-01', '販売戦略検討会で「モチベーション3.0とは何か？ 新しい組織とモチベーションの潮流」を講演（2011年2月）' ),
+		array( '2010-06-22', 'シュビキと提携し、メンタルヘルス支援サービスを開始したプレスリリース' ),
+		array( '2009-07-01', 'MHQ1（メンタルヘルス質問票）バージョン１発売のプレスリリース' ),
+	);
+	$en = array(
+		array( '2026-05-20', 'GLOBIS article: how to walk the U-curve when the workplace will not move (20 May 2026).' ),
+		array( '2026-04-22', 'Featured at YOKOHAMA CONNÉCT #36: Tri-sector innovation for sustainability (22 April 2026).' ),
+		array( '2026-04-13', 'Guest on MBCC radio: “What happens to young people’s future in a society without mutual aid” (13 April 2026).' ),
+		array( '2026-03-01', 'MIT Sloan/UID IDEAS Asia Pacific 3.0 2026 nominations open' ),
+		array( '2020-12-06', 'Talk on health and happiness' ),
+		array( '2020-11-22', 'Dialogue event: learning happiness habits from Fijians, with Yuma Nagasaki (22 November 2020).' ),
+		array( '2020-04-01', 'Note on stress during COVID' ),
+		array( '2020-01-02', 'SDGs Learning Journey 2020' ),
+		array( '2020-01-01', 'Poverty and happiness in the Philippines' ),
+		array( '2019-05-24', 'Philippine education project presented in Manila' ),
+		array( '2018-01-01', 'SDGs Learning Journey 2018 report' ),
+		array( '2019-02-01', 'SPEA school brochure PDF (2019; Philippine Ryugaku Pro).' ),
+		array( '2017-12-07', 'Talk at the 139th monthly meeting of the Business Promotion LLP: “Philippines (Cebu) study abroad and intercultural experience” (7 December 2017).' ),
+		array( '2017-10-26', 'SPEA talk on happiness with Yuma Nagasaki visiting Dumaguete (26 October 2017).' ),
+		array( '2017-05-22', 'Press release: SPEA began a Philippines education study program.' ),
+		array( '2016-07-08', 'Press release: research began on SPEA’s Real Life Experience (RLE) method.' ),
+		array( '2016-03-24', 'Cebu Pot seminar: Happiness Workshop — Why Filipino people are always smiling (magazine notice, 24 March 2016).' ),
+		array( '2015-12-15', '15th mini-forum: About Filipino Business for Japanese (15 December 2015).' ),
+		array( '2013-12-07', 'TIME-IMAGE-CREATIVITY WORKSHOP with Keisuke Takeya at Pinto Art Gallery, Antipolo (7 December 2013).' ),
+		array( '2013-12-06', 'ICE 2013 plenary at Heritage Hotel Manila (6–7 December 2013).' ),
+		array( '2013-09-21', 'SS-055 Toward establishing coaching psychology in Japan, 77th Annual Meeting of the Japanese Psychological Association (21 September 2013).' ),
+		array( '2013-07-30', 'Spoke at a free hitomedia seminar on working in Asia (30 July 2013).' ),
+		array( '2013-07-26', 'Report on Global Business eXperience (GBX) in the Philippines.' ),
+		array( '2013-03-11', 'Neue Fahne Journal No. 50: developing mid-level global talent, not only elites.' ),
+		array( '2012-11-13', 'English talk on entrepreneurship in Japan for an IDEA League doctoral-school visit at Tokyo Tech PLIP (13 November 2012).' ),
+		array( '2011-12-26', 'Neue Fahne Journal No. 20: recognizing generational differences in values (26 December 2011).' ),
+		array( '2011-08-24', 'Kosaido × Kocoro Lab MHQ seminar flyer (August–September 2011; Neue Fahne).' ),
+		array( '2011-02-01', 'Talk at the Sales Strategy Study Group: “What is Motivation 3.0? New currents in organizations and motivation” (February 2011).' ),
+		array( '2010-06-22', 'Press release: partnership with Shubiki on a workplace mental health service.' ),
+		array( '2009-07-01', 'MHQ version 1 press release' ),
+	);
+	return ( 'en' === $lang ) ? $en : $ja;
+}
+
+function kocorolab_refresh_news_text_has( $hay, $keys ) {
+	foreach ( $keys as $key ) {
+		$found = function_exists( 'mb_stripos' ) ? mb_stripos( $hay, $key ) : stripos( $hay, $key );
+		if ( false !== $found ) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function kocorolab_refresh_news_feed_items( $lang = 'ja', $wp_posts = array(), $limit = 0 ) {
+	$items = array();
+	$hay   = '';
+	foreach ( (array) $wp_posts as $post ) {
+		$title = isset( $post->post_title ) ? $post->post_title : '';
+		if ( function_exists( 'kocorolab_refresh_ml_text' ) ) {
+			$title = kocorolab_refresh_ml_text( $title, $lang );
+		}
+		$blob = $title;
+		if ( isset( $post->post_name ) ) {
+			$blob .= ' ' . $post->post_name;
+		}
+		if ( isset( $post->post_content ) ) {
+			$blob .= ' ' . $post->post_content;
+		}
+		$hay    .= ' ' . $blob;
+		$url     = '';
+		if ( ! empty( $post->permalink ) ) {
+			$url = $post->permalink;
+		} elseif ( function_exists( 'kocorolab_refresh_news_permalink' ) ) {
+			$url = kocorolab_refresh_news_permalink( $post );
+		}
+		$date = ! empty( $post->post_date ) ? substr( $post->post_date, 0, 10 ) : '';
+		$items[] = array(
+			'date'  => $date,
+			'title' => $title,
+			'url'   => $url,
+			'hay'   => $blob,
+		);
+	}
+	foreach ( kocorolab_refresh_news_overlay_entries() as $row ) {
+		if ( kocorolab_refresh_news_text_has( $hay, $row['keys'] ) ) {
+			continue;
+		}
+		$title   = ( 'en' === $lang ) ? $row['en'] : $row['ja'];
+		$items[] = array(
+			'date'    => $row['date'],
+			'title'   => $title,
+			'url'     => '',
+			'hay'     => $title,
+			'img'     => isset( $row['img'] ) ? $row['img'] : '',
+			'gallery' => isset( $row['gallery'] ) ? $row['gallery'] : array(),
+		);
+	}
+	if ( ! $wp_posts ) {
+		foreach ( kocorolab_refresh_news_preview_items( $lang ) as $row ) {
+			$dup = false;
+			foreach ( $items as $have ) {
+				if ( $have['title'] === $row[1] ) {
+					$dup = true;
+					break;
+				}
+			}
+			if ( $dup ) {
+				continue;
+			}
+			$items[] = array(
+				'date'  => $row[0],
+				'title' => $row[1],
+				'url'   => '',
+				'hay'   => $row[1],
+			);
+		}
+	}
+	usort(
+		$items,
+		function ( $a, $b ) {
+			return strcmp( $b['date'], $a['date'] );
+		}
+	);
+	if ( $limit > 0 ) {
+		$items = array_slice( $items, 0, $limit );
+	}
+	return $items;
+}
+
+function kocorolab_refresh_news_item_href( $item, $lang = 'ja' ) {
+	$hay = ! empty( $item['hay'] ) ? $item['hay'] : ( isset( $item['title'] ) ? $item['title'] : '' );
+	if ( function_exists( 'kocorolab_refresh_related_links_for' ) ) {
+		$links = kocorolab_refresh_related_links_for( $hay, $lang );
+		if ( $links ) {
+			return $links[0]['url'];
+		}
+	}
+	if ( ! empty( $item['url'] ) && '#' !== $item['url'] ) {
+		return $item['url'];
+	}
+	return '';
+}
+
+function kocorolab_refresh_news_list_html( $items, $lang = 'ja', $compact = false ) {
+	ob_start();
+	?>
+	<ul class="kl-news-list">
+		<?php foreach ( $items as $item ) : ?>
+			<?php
+			$href    = kocorolab_refresh_news_item_href( $item, $lang );
+			$gallery = ( ! $compact && ! empty( $item['gallery'] ) && is_array( $item['gallery'] ) ) ? $item['gallery'] : array();
+			$img     = ( ! $compact && ! $gallery && ! empty( $item['img'] ) ) ? $item['img'] : '';
+			$alt     = isset( $item['title'] ) ? $item['title'] : '';
+			$li_class = '';
+			if ( $gallery ) {
+				$li_class = ' class="kl-news-with-photos"';
+			} elseif ( $img ) {
+				$li_class = ' class="kl-news-has-photo"';
+			}
+			?>
+			<li<?php echo $li_class; ?>>
+				<time datetime="<?php echo esc_attr( $item['date'] ); ?>"><?php echo esc_html( str_replace( '-', '.', substr( $item['date'], 0, 10 ) ) ); ?></time>
+				<?php if ( $img ) : ?>
+					<?php if ( $href ) : ?>
+						<a class="kl-news-thumb" href="<?php echo esc_url( $href ); ?>"><img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" decoding="async"></a>
+					<?php else : ?>
+						<span class="kl-news-thumb"><img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" decoding="async"></span>
+					<?php endif; ?>
+				<?php endif; ?>
+				<?php if ( $compact ) : ?>
+					<?php if ( $href ) : ?>
+						<a href="<?php echo esc_url( $href ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
+					<?php else : ?>
+						<span><?php echo esc_html( $item['title'] ); ?></span>
+					<?php endif; ?>
+				<?php else : ?>
+					<div>
+						<?php if ( $href ) : ?>
+							<a href="<?php echo esc_url( $href ); ?>"><?php echo esc_html( $item['title'] ); ?></a>
+						<?php else : ?>
+							<span><?php echo esc_html( $item['title'] ); ?></span>
+						<?php endif; ?>
+						<?php echo kocorolab_refresh_related_links_html( $item['hay'], $lang ); ?>
+						<?php if ( $gallery ) : ?>
+							<div class="kl-news-photos">
+								<?php foreach ( $gallery as $i => $photo ) : ?>
+									<?php
+									$src      = isset( $photo['url'] ) ? $photo['url'] : '';
+									$photo_alt = isset( $photo['alt'] ) ? $photo['alt'] : $alt;
+									if ( ! $src ) {
+										continue;
+									}
+									$wide = ( 0 === $i ) ? ' class="is-wide"' : '';
+									?>
+									<figure<?php echo $wide; ?>><a href="<?php echo esc_url( $src ); ?>" target="_blank" rel="noopener"><img src="<?php echo esc_url( $src ); ?>" alt="<?php echo esc_attr( $photo_alt ); ?>" loading="lazy" decoding="async"></a></figure>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+	<?php
+	return ob_get_clean();
+}
+
+function kocorolab_refresh_mhq_book_cards_html( $c, $lang ) {
+	$media = kocorolab_refresh_pub_media();
+	$items = array(
+		array( 'depression', $c['mhq2_book_dep'] ),
+		array( 'vuca', $c['mhq2_book_vuca'] ),
+	);
+	$html = '';
+	foreach ( $items as $item ) {
+		$key = $item[0];
+		if ( ! isset( $media[ $key ] ) ) {
+			continue;
+		}
+		$m     = $media[ $key ];
+		$alt   = ( 'en' === $lang ) ? $m['alt_en'] : $m['alt_ja'];
+		$inner = '<a href="' . esc_url( $m['url'] ) . '">' . esc_html( $alt ) . '</a><p>' . esc_html( $item[1] ) . '</p>';
+		$html .= '<article class="kl-soft-card">' . kocorolab_refresh_with_thumb( $inner, $m['img'], $m['url'], $alt, 'book' ) . '</article>';
+	}
+	return $html;
+}
+
+function kocorolab_refresh_news_html( $lang = 'ja' ) {
+	$items = kocorolab_refresh_news_feed_items( $lang );
+	$c     = kocorolab_refresh_copy( $lang );
+	ob_start();
+	?>
+	<div class="kl-page">
+		<p class="kl-lead"><?php echo esc_html( $c['news_lead'] ); ?></p>
+		<?php echo kocorolab_refresh_news_list_html( $items, $lang ); ?>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
+}
