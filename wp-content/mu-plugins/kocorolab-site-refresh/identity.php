@@ -40,6 +40,7 @@ function kocorolab_refresh_nta_corporate_url() {
 
 function kocorolab_refresh_company_same_as() {
 	$urls = array(
+		kocorolab_refresh_company_wikidata_url(),
 		kocorolab_refresh_company_linkedin_url(),
 		kocorolab_refresh_gbizinfo_url(),
 		kocorolab_refresh_nta_corporate_url(),
@@ -49,6 +50,10 @@ function kocorolab_refresh_company_same_as() {
 
 function kocorolab_refresh_wikidata_url() {
 	return 'https://www.wikidata.org/wiki/Q141170552';
+}
+
+function kocorolab_refresh_company_wikidata_url() {
+	return 'https://www.wikidata.org/wiki/Q141298095';
 }
 
 function kocorolab_refresh_jglobal_url() {
@@ -209,10 +214,18 @@ function kocorolab_refresh_identity_graph() {
 				'email'         => 'info@kocorolab.com',
 				'foundingDate'  => '2008-12-01',
 				'identifier'    => array(
-					'@type'      => 'PropertyValue',
-					'propertyID' => '法人番号',
-					'value'      => kocorolab_refresh_corporate_number(),
-					'url'        => kocorolab_refresh_nta_corporate_url(),
+					array(
+						'@type'      => 'PropertyValue',
+						'propertyID' => '法人番号',
+						'value'      => kocorolab_refresh_corporate_number(),
+						'url'        => kocorolab_refresh_nta_corporate_url(),
+					),
+					array(
+						'@type'      => 'PropertyValue',
+						'propertyID' => 'Wikidata',
+						'value'      => 'Q141298095',
+						'url'        => kocorolab_refresh_company_wikidata_url(),
+					),
 				),
 				'iso6523Code'   => '0188:' . kocorolab_refresh_corporate_number(),
 				'address'       => array(
