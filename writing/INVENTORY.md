@@ -6,7 +6,7 @@ Public posts only. Medium RSS is the last ~10 stories; older Medium posts may be
 
 - Fri, 08 Oct 2021 — [誕生日にあたり（経済・金融の枠組みとか、通貨制度とか国家制度とか）](https://medium.com/@koheinoda_11596/%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A-%E7%B5%8C%E6%B8%88-%E9%87%91%E8%9E%8D%E3%81%AE%E6%9E%A0%E7%B5%84%E3%81%BF%E3%81%A8%E3%81%8B-%E9%80%9A%E8%B2%A8%E5%88%B6%E5%BA%A6%E3%81%A8%E3%81%8B%E5%9B%BD%E5%AE%B6%E5%88%B6%E5%BA%A6%E3%81%A8%E3%81%8B-3a49b2526355)
 - Tue, 13 Oct 2020 — [unauthorized translation (非公式翻訳）8つの新たな教訓：コロナウイルスから気候変動対策まで](https://medium.com/@koheinoda_11596/unauthorized-translation-%E9%9D%9E%E5%85%AC%E5%BC%8F%E7%BF%BB%E8%A8%B3-8%E3%81%A4%E3%81%AE%E6%96%B0%E3%81%9F%E3%81%AA%E6%95%99%E8%A8%93-%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E3%81%8B%E3%82%89%E6%B0%97%E5%80%99%E5%A4%89%E5%8B%95%E5%AF%BE%E7%AD%96%E3%81%BE%E3%81%A7-c970f47b7454) — do not auto-copy to note without checking the original licence.
-- Thu, 08 Oct 2020 — [SDGs 目標１絶対的貧困０達成チャレンジin Africa](https://medium.com/koheinoda-11596/sdgs-%E7%9B%AE%E6%A8%99%EF%BC%91%E7%B5%B6%E5%AF%BE%E7%9A%84%E8%B2%A7%E5%9B%B0%EF%BC%90%E9%81%94%E6%88%90%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8in-africa-fb887b5975e8)
+- Thu, 08 Oct 2020 — [SDGs 目標１絶対的貧困０達成チャレンジin Africa](https://medium.com/koheinoda-11596/sdgs-%E7%9B%AE%E6%A8%99%EF%BC%91%E7%B5%B6%E5%AF%BE%E7%9A%84%E8%B2%A7%E5%9B%B0%EF%BC%90%E9%81%94%E6%88%90%E3%83%81%E3%83%A3%E3%83%AC%E3%83%B3%E3%82%B8in-africa-fb887b5975e8) — draft: `writing/drafts/en-from-medium/2020-10-08-sdgs-goal-1-ending-extreme-poverty-in-africa.md`
 
 ## English on Medium
 

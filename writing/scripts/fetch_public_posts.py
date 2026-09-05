@@ -132,12 +132,30 @@ def fetch_medium() -> list[dict]:
     return items
 
 
+def draft_url(path: Path) -> str:
+    text = path.read_text(encoding="utf-8")[:1200]
+    for line in text.splitlines():
+        if line.startswith("url:"):
+            return line.split(":", 1)[1].strip().strip('"')
+    return ""
+
+
 def existing_en_draft(date: str) -> str | None:
     folder = ROOT / "writing" / "drafts" / "en-from-note"
     if not folder.is_dir() or not date:
         return None
     for path in sorted(folder.glob("*.md")):
         if path.name.startswith(date):
+            return path.relative_to(ROOT).as_posix()
+    return None
+
+
+def existing_en_from_medium(url: str) -> str | None:
+    folder = ROOT / "writing" / "drafts" / "en-from-medium"
+    if not folder.is_dir() or not url:
+        return None
+    for path in sorted(folder.glob("*.md")):
+        if draft_url(path) == url:
             return path.relative_to(ROOT).as_posix()
     return None
 
@@ -171,9 +189,13 @@ def inventory_md(notes: list[dict], medium: list[dict]) -> str:
     if not med_ja:
         lines.append("(none in the current RSS)")
     for m in med_ja:
-        extra = ""
+        extras = []
+        draft = existing_en_from_medium(m["url"])
+        if draft:
+            extras.append(f"draft: `{draft}`")
         if "unauthorized" in (m["title"] or "").lower() or "非公式翻訳" in (m["title"] or ""):
-            extra = " — do not auto-copy to note without checking the original licence."
+            extras.append("do not auto-copy to note without checking the original licence.")
+        extra = (" — " + " ".join(extras)) if extras else ""
         lines.append(f"- {m['date']} — [{m['title']}]({m['url']}){extra}")
     lines += ["", "## English on Medium", ""]
     for m in med_en:
