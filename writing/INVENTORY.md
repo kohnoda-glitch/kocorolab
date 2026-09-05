@@ -15,7 +15,7 @@ Public posts only. Medium RSS is the last ~10 stories; older Medium posts may be
 
 ## note (Japanese) with no obvious English Medium twin
 
-- 2026-09-04 — [目的関数を書き換える――ウェルビーイング時代のチェンジマネジメントと日本のユースの足元](https://note.com/koheinoda/n/nbbf6602c4344) — sequel drafts (not yet published): JA `writing/drafts/ja-to-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md`, EN `writing/drafts/en-from-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md`
+- 2026-09-04 — [目的関数を書き換える――ウェルビーイング時代のチェンジマネジメントと日本のユースの足元](https://note.com/koheinoda/n/nbbf6602c4344) — EN of the published note: `writing/drafts/en-from-note/2026-09-04-rewriting-the-objective-function.md`. Sequel drafts (not yet published): JA `writing/drafts/ja-to-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md`, EN `writing/drafts/en-from-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md`
 - 2026-08-25 — [昨年から今年にかけて考えていること——「これからの学び」のOSをアップデートする](https://note.com/koheinoda/n/ne5355b32099c) — draft: `writing/drafts/en-from-note/2026-08-25-updating-the-os-of-learning.md`
 - 2024-10-10 — [2024年誕生日FB投稿](https://note.com/koheinoda/n/nf906fb71705d)
 - 2022-11-02 — [COP27(エジプト）への道 Vol.3](https://note.com/koheinoda/n/n809068146e97) — English Medium already has [The Road to Sharm el-Sheikh (COP-27)](https://medium.com/@koheinoda_11596/the-road-to-cop27-cfffb3782701); not a line-by-line twin.
