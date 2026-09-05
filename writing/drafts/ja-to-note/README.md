@@ -1,12 +1,13 @@
 # 取り込みファイルを Mac に入れる
 
-XML のリンクは、Safari だと画面に文字が出るだけで保存されません。**zip** を使ってください。
+XML のリンクは、Chrome でも画面に文字が出るだけで保存されないことがあります。**zip** を使ってください。
 
-1. このリンクを開く  
+1. このリンクを **右クリック** する  
    https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf/writing/drafts/ja-to-note/note-import.zip
-2. `note-import.zip` がダウンロードフォルダに入る
-3. その zip をダブルクリックする
-4. 出てきた `note-import.xml` を、note の「自分の記事 → インポート → WordPress」に入れる
+2. **名前を付けてリンク先を保存**（Save link as）を押す
+3. 保存先は「ダウンロード」のままでよい
+4. 保存した `note-import.zip` をダブルクリックする
+5. 出てきた `note-import.xml` を、note の「自分の記事 → インポート → WordPress」に入れる
 
 ---
 
