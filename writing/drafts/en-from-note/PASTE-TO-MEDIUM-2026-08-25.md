@@ -1,3 +1,5 @@
+<!-- NEW Medium story at https://medium.com/new . Do not overwrite 2020/2021. Title box: What I have been thinking since last year — updating the OS of learning. Date will be today. Copy photos from OPEN-IN-BROWSER-2026-08-25.html. -->
+
 ---
 source: "note"
 lang: "en"

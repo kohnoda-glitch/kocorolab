@@ -3,8 +3,9 @@
 - `en-from-note/` — English drafts of Japanese note essays, for Medium
 - `en-from-medium/` — English drafts of Japanese Medium posts, still for Medium
 - `ja-to-note/` — Japanese Medium posts packaged as WordPress XML so note can keep the original date; also new Japanese note drafts as Markdown (paste into the note editor — do not use the SDGs import zip for those)
-- 2026-09-04 published note, English not yet on Medium: `en-from-note/2026-09-04-rewriting-the-objective-function.md`
-- 2026-09-05 sequel to that note: JA `ja-to-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new note), EN `en-from-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new Medium story)
+- 2026-08-25 published note → new English Medium story (do not overwrite 2020/2021; date will be today): [OPEN-IN-BROWSER-2026-08-25.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-note/OPEN-IN-BROWSER-2026-08-25.html)
+- 2026-09-04 published note → new English Medium story, photos included: [OPEN-IN-BROWSER-2026-09-04.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-note/OPEN-IN-BROWSER-2026-09-04.html)
+- 2026-09-05 sequel to that note: JA `ja-to-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new note), EN `en-from-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new Medium story; not this week)
 - `articles/2020-sdgs-goal-1/` — 2020 SDGs Goal 1 as JA/EN working-paper articles (abstract, keywords, references, campaign appendix)
 - `ja-from-medium/` — Japanese drafts of English Medium posts, for note
 

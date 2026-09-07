@@ -1,3 +1,5 @@
+<!-- NEW Medium story at https://medium.com/new . Do not overwrite 2020/2021. Title box: Rewriting the objective function — change management in the well-being era, and the ground under Japanese youth. Date will be today. Copy photos from OPEN-IN-BROWSER-2026-09-04.html. -->
+
 ---
 source: "note"
 lang: "en"
