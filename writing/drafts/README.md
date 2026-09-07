@@ -24,4 +24,8 @@ Japanese text inside figures was redrawn in English. Profile photos are 320×320
 
 To put the Japanese SDGs essay on note with the 2020-10-08 date, import the zip at `ja-to-note/note-import.zip` (see `ja-to-note/README.md`). The 2021 birthday Medium essay is a separate zip: `ja-to-note/birthday-2021-note-import.zip` (date 2021-10-08). Do not mix the two. The WXR file must include the WordPress `wfw` namespace or note rejects it. All images live under `ja-to-note/images/` on GitHub, not on Medium.
 
-The same 2020 essay, as a working paper rather than a blog post: `articles/2020-sdgs-goal-1/` (JA and EN, with abstract, keywords, references, and a 2020 campaign appendix).
+The 2021 birthday essay in English, for overwriting the same Medium URL (not a new story):
+
+https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/OPEN-IN-BROWSER-birthday-2021.html
+
+If the Medium profile card stays Japanese after you publish English, the listing title is not the big Title in the editor. In the editor click **…** then **More settings** (その他の設定). **Story Preview** Title / Subtitle is the card. Change those, then Publish / Update. Do not unpublish; the 2020/2021 dates would be at risk.

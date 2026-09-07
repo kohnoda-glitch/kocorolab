@@ -1,4 +1,4 @@
-<!-- Paste into the EXISTING Medium story (2020-10-08 URL). Do not open medium.com/new. Title box: SDGs Goal 1: A challenge to reach zero extreme poverty in Africa. Copy figures from OPEN-IN-BROWSER-sdgs-goal-1.html if photos do not come across. -->
+<!-- Paste into the EXISTING Medium story (2020-10-08 URL). Do not open medium.com/new. Title box: SDGs Goal 1: A challenge to reach zero extreme poverty in Africa. Profile card still Japanese? In the editor click … then More settings. Story Preview Title/Subtitle is the listing title. Then Publish/Update. Copy figures from OPEN-IN-BROWSER-sdgs-goal-1.html if photos do not come across. -->
 
 # SDGs Goal 1: A challenge to reach zero extreme poverty in Africa
 
