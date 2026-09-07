@@ -22,6 +22,6 @@ Select the photos and English text with the mouse, copy with ⌘C, then paste in
 
 Japanese text inside figures was redrawn in English. Profile photos are 320×320. Other photos are capped at 720px wide. Screenshot charts were redrawn.
 
-To put the Japanese SDGs essay on note with the 2020-10-08 date, import the zip at `ja-to-note/note-import.zip` (see `ja-to-note/README.md`). The WXR file must include the WordPress `wfw` namespace or note rejects it. All images live under `ja-to-note/images/` on GitHub, not on Medium, so replacing the Medium Japanese post with English will not break note.
+To put the Japanese SDGs essay on note with the 2020-10-08 date, import the zip at `ja-to-note/note-import.zip` (see `ja-to-note/README.md`). The 2021 birthday Medium essay is a separate zip: `ja-to-note/birthday-2021-note-import.zip` (date 2021-10-08). Do not mix the two. The WXR file must include the WordPress `wfw` namespace or note rejects it. All images live under `ja-to-note/images/` on GitHub, not on Medium.
 
 The same 2020 essay, as a working paper rather than a blog post: `articles/2020-sdgs-goal-1/` (JA and EN, with abstract, keywords, references, and a 2020 campaign appendix).
