@@ -22,7 +22,7 @@ Select the photos and English text with the mouse, copy with ⌘C, then paste in
 
 Japanese text inside figures was redrawn in English. Profile photos are 320×320. Other photos are capped at 720px wide. Screenshot charts were redrawn.
 
-To put the Japanese SDGs essay on note with the 2020-10-08 date, import the zip at `ja-to-note/note-import.zip` (see `ja-to-note/README.md`). The 2021 birthday Medium essay is a separate zip: `ja-to-note/birthday-2021-note-import.zip` (date 2021-10-08). Do not mix the two. The WXR file must include the WordPress `wfw` namespace or note rejects it. All images live under `ja-to-note/images/` on GitHub, not on Medium.
+To put the Japanese SDGs essay on note with the 2020-10-08 date, import the zip at `ja-to-note/note-import.zip` (see `ja-to-note/README.md`). The 2021 birthday Medium essay is a separate zip: `ja-to-note/birthday-2021-note-import.zip` (date 2021-10-08). The 2020 Otto Scharmer unofficial translation is a third zip: `ja-to-note/otto-2020-note-import.zip` (date 2020-10-13, eight photos embedded in the XML so note does not have to fetch URLs). Do not mix the three. The WXR file must include the WordPress `wfw` namespace or note rejects it. Preview images live under `ja-to-note/images/` on GitHub, not on Medium.
 
 The 2021 birthday essay in English, for overwriting the same Medium URL (not a new story):
 

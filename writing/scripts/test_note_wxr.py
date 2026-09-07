@@ -68,7 +68,31 @@ def test_generated_import_files() -> None:
         assert zf.read("note-import.xml") == dest.read_bytes()
 
 
+def test_embed_local_images_uses_data_uri() -> None:
+    from tempfile import TemporaryDirectory
+
+    from note_wxr import embed_local_images
+
+    jpeg = (
+        b"\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00"
+        b"\xff\xdb\x00C\x00" + bytes([8] * 64)
+        + b"\xff\xc0\x00\x0b\x08\x00\x01\x00\x01\x01\x01\x11\x00"
+        b"\xff\xc4\x00\x14\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00"
+        b"\x00\x00\x00\x00\x00\x00\x00\x00\x08"
+        b"\xff\xda\x00\x08\x01\x01\x00\x00?\x00\x7f\x00\xff\xd9"
+    )
+    with TemporaryDirectory() as tmp:
+        path = Path(tmp) / "01.jpg"
+        path.write_bytes(jpeg)
+        url = "https://example.test/01.jpg"
+        html = f'<p><img src="{url}" alt=""></p>'
+        out = embed_local_images(html, {url: path})
+        assert url not in out
+        assert "data:image/jpeg;base64," in out
+
+
 if __name__ == "__main__":
     test_wxr_declares_wordpress_namespaces()
     test_generated_import_files()
+    test_embed_local_images_uses_data_uri()
     print("ok")

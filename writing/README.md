@@ -52,7 +52,7 @@ note も公式の投稿 API が無いので、同じく編集画面へ貼りま�
 **日本語なのに Medium にある**
 
 - 誕生日にあたり（経済・金融の枠組みとか…）
-- unauthorized translation（非公式翻訳）8つの新たな教訓
+- unauthorized translation（非公式翻訳）8つの新たな教訓 → note 取り込み（写真込み）: `writing/drafts/ja-to-note/otto-2020-note-import.zip`（2020-10-13。公式翻訳ではない）
 - SDGs 目標１絶対的貧困０達成チャレンジ in Africa → 英訳: `writing/drafts/en-from-medium/`（既存 Medium URL を上書き）。作業論文: `writing/drafts/articles/2020-sdgs-goal-1/`
 
 **note にあって、英語 Medium が無い（例）**

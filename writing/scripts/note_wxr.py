@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import base64
 import re
 import sys
 import zipfile
@@ -47,6 +48,27 @@ def rewrite_img(
         raise ValueError("unmapped image (would break when Medium Japanese is replaced): " + url)
     style = "max-width:320px;height:auto" if name in prof else "max-width:100%;height:auto"
     return f"{base}/{name}", f'style="{style}"'
+
+
+def data_uri(path: Path) -> str:
+    """Embed a local image so note's WordPress import does not have to fetch a URL."""
+    raw = path.read_bytes()
+    mime = {
+        ".png": "image/png",
+        ".gif": "image/gif",
+        ".webp": "image/webp",
+    }.get(path.suffix.lower(), "image/jpeg")
+    return f"data:{mime};base64,{base64.b64encode(raw).decode('ascii')}"
+
+
+def embed_local_images(html: str, url_to_path: dict[str, Path]) -> str:
+    """Replace remote <img src> URLs with data URIs from files on disk."""
+    out = html
+    for url, path in url_to_path.items():
+        uri = data_uri(path)
+        out = out.replace(escape(url, quote=True), uri)
+        out = out.replace(url, uri)
+    return out
 
 
 def html_body(
