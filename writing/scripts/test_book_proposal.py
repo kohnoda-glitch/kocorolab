@@ -48,7 +48,16 @@ def test_build_emits_downloadable_editor_file():
     assert "ほかの候補" in blob
     assert "手垢" in blob
     assert md.index("昭和というロストテクノロジー") < md.index("感情力の時代")
-    assert blob.count("第1章") >= 1
+    assert md.index("1. 売り") < md.index("2. タイトル")
+    assert md.index("ケンブリッジ") < md.index("2. タイトル")
+    assert "東京大学" in blob
+    assert "東京科学大学" in blob
+    assert "中教審" in blob
+    assert "中央教育審議会" in blob
+    assert "身体性ロボット" in blob
+    assert "人工知能" in blob
+    assert "精密工学" in blob
+    assert "特別活動" in blob
 
 
 if __name__ == "__main__":
