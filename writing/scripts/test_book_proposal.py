@@ -43,7 +43,14 @@ def test_build_emits_downloadable_editor_file():
     assert "Palantir" not in blob
     assert "専任教員" in blob
     assert "代表取締役" in blob
-    assert "共同発起人" in blob
+    assert "共同発起人" not in blob
+    assert "感情とは何か" not in blob
+    assert "感情は身体から始まる" not in blob
+    assert "感情は人から人へ伝染する" not in blob
+    assert "ビジネスと研究のパートナー" in blob
+    assert "日本認知科学会" in blob
+    assert "SPEA" in blob
+    assert md.rindex("松岡良彦") > md.rindex("野田浩平（主著）")
     assert "昭和というロストテクノロジー" in blob
     assert "ほかの候補" in blob
     assert "手垢" in blob
