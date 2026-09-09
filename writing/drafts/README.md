@@ -1,6 +1,6 @@
 # Drafts
 
-- `book-proposal/` — 出版企画書『感情力の時代』（編集者提出用・第1案）。ブラウザ: [OPEN-IN-BROWSER.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/OPEN-IN-BROWSER.html)
+- `book-proposal/` — 出版企画書。渡すのは [出版企画書.zip](https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/出版企画書.zip)（右クリックで保存）。画面確認: [OPEN-IN-BROWSER.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/OPEN-IN-BROWSER.html)
 - `en-from-note/` — English drafts of Japanese note essays, for Medium
 - `en-from-medium/` — English drafts of Japanese Medium posts, still for Medium
 - `ja-to-note/` — Japanese Medium posts packaged as WordPress XML so note can keep the original date; also new Japanese note drafts as Markdown (paste into the note editor — do not use the SDGs import zip for those)
