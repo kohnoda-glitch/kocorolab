@@ -35,6 +35,8 @@ def main() -> int:
         errors.append(f"abstract compact length {n} not in 380–420")
 
     for needle in (
+        "生成AI",
+        "高等教育",
         "U理論",
         "IDEAS Asia Pacific 2026",
         "個人",
