@@ -53,15 +53,22 @@ def test_build_emits_downloadable_editor_file():
     assert md.rindex("松岡良彦") > md.rindex("野田浩平（主著）")
     assert "昭和というロストテクノロジー" in blob
     assert "ほかの候補" in blob
-    assert "手垢" in blob
-    assert md.index("昭和というロストテクノロジー") < md.index("感情力の時代")
+    assert "手垢" not in blob
+    assert "感情力" not in md
+    assert "一枚で言うと" not in md
+    assert "端的にいうと" in md
+    assert "学術的な背景" in blob
+    assert "著者表記" not in blob
+    assert "調整中" not in blob
+    assert "1,700" not in md
+    assert "280ページ" not in md
+    assert "手に取" in blob
     assert "1. 売り" not in md
     assert "プロデューサー" not in blob
     assert "肩書の書き方" not in blob
     assert "（野田）" not in md
-    assert "包括的" in blob
-    assert "多重知能" in blob
     assert "教育学" in blob
+    assert "多重知能" in blob
     assert "エリート教育" in blob
     assert "経営教育" in blob
     assert "ハーバード" not in xml and "ハーバード" not in md
