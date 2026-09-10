@@ -1,5 +1,6 @@
 # Drafts
 
+- `jahrd-2026/` — 人材育成学会 第24回（2026-12-13、締切 9/16）の演題と、IDEAS 日本8名への事例承諾依頼。AWARD に貼るのは [演題登録.md](jahrd-2026/演題登録.md)
 - `book-proposal/` — 出版企画書。渡すのは [出版企画書.zip](https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/出版企画書.zip)（右クリックで保存）。画面確認: [OPEN-IN-BROWSER.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/OPEN-IN-BROWSER.html)
 - `en-from-note/` — English drafts of Japanese note essays, for Medium
 - `en-from-medium/` — English drafts of Japanese Medium posts, still for Medium
