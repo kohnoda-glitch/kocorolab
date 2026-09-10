@@ -59,11 +59,16 @@ def test_build_emits_downloadable_editor_file():
     assert "プロデューサー" not in blob
     assert "肩書の書き方" not in blob
     assert "（野田）" not in md
+    assert "包括的" in blob
     assert "多重知能" in blob
-    assert "ガードナー" in blob
+    assert "教育学" in blob
+    assert "エリート教育" in blob
+    assert "経営教育" in blob
+    assert "ハーバード" not in xml and "ハーバード" not in md
+    assert "国連" not in xml and "国連" not in md
+    assert "ガードナー" not in blob
     assert "1. タイトル" in md
     assert "ケンブリッジ" in blob
-    assert "いまさら新しい" in blob
     assert "東京大学" in blob
     assert "東京科学大学" in blob
     assert "中央教育審議会" in blob
