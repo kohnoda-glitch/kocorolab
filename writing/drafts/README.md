@@ -1,0 +1,34 @@
+# Drafts
+
+- `jahrd-2026/` — 人材育成学会 第24回（2026-12-13、締切 9/16）。IDEAS AP 2026 の事例。氏名は原稿に書かない。AWARD に貼るのは [演題登録.md](jahrd-2026/演題登録.md)
+- `book-proposal/` — 出版企画書。渡すのは [出版企画書.zip](https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/出版企画書.zip)（右クリックで保存）。画面確認: [OPEN-IN-BROWSER.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/OPEN-IN-BROWSER.html)
+- `en-from-note/` — English drafts of Japanese note essays, for Medium
+- `en-from-medium/` — English drafts of Japanese Medium posts, still for Medium
+- `ja-to-note/` — Japanese Medium posts packaged as WordPress XML so note can keep the original date; also new Japanese note drafts as Markdown (paste into the note editor — do not use the SDGs import zip for those)
+- 2026-08-25 published note → new English Medium story (do not overwrite 2020/2021; date will be today): [OPEN-IN-BROWSER-2026-08-25.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-note/OPEN-IN-BROWSER-2026-08-25.html)
+- 2026-09-04 published note → new English Medium story, photos included: [OPEN-IN-BROWSER-2026-09-04.html](https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-note/OPEN-IN-BROWSER-2026-09-04.html)
+- 2026-09-05 sequel to that note: JA `ja-to-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new note), EN `en-from-note/2026-09-05-after-youth-mental-health-mhq-and-two-books.md` (new Medium story; not this week)
+- `articles/2020-sdgs-goal-1/` — 2020 SDGs Goal 1 as JA/EN working-paper articles (abstract, keywords, references, campaign appendix)
+- `ja-from-medium/` — Japanese drafts of English Medium posts, for note
+
+Do not publish until you have read them.
+
+In Cursor the editing tab shows `![](...)` as text. Open **Markdown Preview** to see photos: Mac `Cmd+Shift+V`, or the preview icon at the top right of the editor. If the preview is still blank, pull the latest files so `images/` sits next to the draft.
+
+Medium does not render Markdown. If you paste a `.md` file you will see `#`, `**`, and `![]()`. Do not save the HTML on the Mac.
+
+Open this page in Chrome or Safari (no download):
+
+https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/OPEN-IN-BROWSER-sdgs-goal-1.html
+
+Select the photos and English text with the mouse, copy with ⌘C, then paste into the Medium body with ⌘V. There is no special button. Type the title into Medium's title box separately.
+
+Japanese text inside figures was redrawn in English. Profile photos are 320×320. Other photos are capped at 720px wide. Screenshot charts were redrawn.
+
+To put the Japanese SDGs essay on note with the 2020-10-08 date, import the zip at `ja-to-note/note-import.zip` (see `ja-to-note/README.md`). The 2021 birthday Medium essay is a separate zip: `ja-to-note/birthday-2021-note-import.zip` (date 2021-10-08). The 2020 Otto Scharmer unofficial translation is a third zip: `ja-to-note/otto-2020-note-import.zip` (date 2020-10-13, eight photos embedded in the XML so note does not have to fetch URLs). Do not mix the three. The WXR file must include the WordPress `wfw` namespace or note rejects it. Preview images live under `ja-to-note/images/` on GitHub, not on Medium.
+
+The 2021 birthday essay in English, for overwriting the same Medium URL (not a new story):
+
+https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/en-from-medium/OPEN-IN-BROWSER-birthday-2021.html
+
+If the Medium profile card stays Japanese after you publish English, the listing title is not the big Title in the editor. In the editor click **…** then **More settings** (その他の設定). **Story Preview** Title / Subtitle is the card. Change those, then Publish / Update. Do not unpublish; the 2020/2021 dates would be at risk.
