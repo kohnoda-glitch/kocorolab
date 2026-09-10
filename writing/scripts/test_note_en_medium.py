@@ -27,12 +27,13 @@ def test_medium_new_stories() -> None:
     assert NOTE_0904 in html04 and "4 September 2026" in html04
     assert html25.count("<img") == 3
     assert html04.count("<img") == 4
-    assert "Redrawn in English" in html04
-    assert "Humanistic Management" in html04
+    assert "English labels on the figure I translated" in html04
+    assert "Pirson, Humanistic Management (2017)" in html04
     assert "updating the OS of learning" in html04
     assert NOTE_0825 in html04
     fig = Image.open(ROOT / "images/2026-09-04-objective-function/02-figure-en.jpg")
-    assert fig.size == (720, 980)
+    ja = Image.open(ROOT / "images/2026-09-04-objective-function/01-figure-ja.jpg")
+    assert fig.size == ja.size == (720, 788)
 
     for name in (
         "images/2026-08-25-os-of-learning/00-cover.jpg",

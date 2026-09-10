@@ -36,7 +36,7 @@ Still, if the OS of firms and the economy keeps running on the maximisation of w
 
 ![](https://raw.githubusercontent.com/kohnoda-glitch/kocorolab/cursor/note-medium-writing-4caf/writing/drafts/en-from-note/images/2026-09-04-objective-function/02-figure-en.jpg)
 
-*Redrawn in English from the figure I translated for the Japanese original, after Pirson and others (Humanistic Management).*
+*English labels on the figure I translated for the Japanese original, after Pirson, Humanistic Management (2017).*
 
 From *Humanistic Management*, in my translation:
 

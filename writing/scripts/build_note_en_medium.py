@@ -76,89 +76,125 @@ def wrap_text(draw: ImageDraw.ImageDraw, text: str, fnt, max_w: int) -> list[str
     return lines
 
 
+def _center(draw: ImageDraw.ImageDraw, text: str, cx: float, y: int, fnt, fill: str) -> None:
+    tw = draw.textlength(text, font=fnt)
+    draw.text((cx - tw / 2, y), text, fill=fill, font=fnt)
+
+
+def _arrow(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], fill: str) -> None:
+    x0, y0, x1, y1 = box
+    mid = (y0 + y1) / 2
+    body = x0 + int((x1 - x0) * 0.62)
+    draw.polygon(
+        [
+            (x0, y0 + 10),
+            (body, y0 + 10),
+            (body, y0),
+            (x1, mid),
+            (body, y1),
+            (body, y1 - 10),
+            (x0, y1 - 10),
+        ],
+        fill=fill,
+    )
+
+
+def _fit_center(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    cx: float,
+    cy: float,
+    fill,
+    sizes: tuple[int, ...],
+    max_w: int,
+) -> None:
+    for size in sizes:
+        fnt = font(EN_BOLD, size)
+        tw = draw.textlength(text, font=fnt)
+        if tw <= max_w:
+            bbox = fnt.getbbox(text)
+            th = bbox[3] - bbox[1]
+            draw.text((cx - tw / 2, cy - th / 2 - bbox[1]), text, fill=fill, font=fnt)
+            return
+    fnt = font(EN_BOLD, sizes[-1])
+    tw = draw.textlength(text, font=fnt)
+    bbox = fnt.getbbox(text)
+    th = bbox[3] - bbox[1]
+    draw.text((cx - tw / 2, cy - th / 2 - bbox[1]), text, fill=fill, font=fnt)
+
+
+def _flood_gray_interior(im: Image.Image, seed: tuple[int, int], fill) -> None:
+    """Fill one outlined gray shape, including white Japanese sitting on it."""
+    w, h = im.size
+    px = im.load()
+    sx, sy = seed
+    start = px[sx, sy]
+    if (start[0] + start[1] + start[2]) / 3 < 80:
+        raise SystemExit(f"flood seed {seed} is on an outline")
+    seen = {seed}
+    stack = [seed]
+    while stack:
+        x, y = stack.pop()
+        px[x, y] = fill
+        for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
+            if not (0 <= nx < w and 0 <= ny < h) or (nx, ny) in seen:
+                continue
+            r, g, b = px[nx, ny]
+            if (r + g + b) / 3 < 90:
+                continue
+            seen.add((nx, ny))
+            stack.append((nx, ny))
+            if len(seen) > 120000:
+                raise SystemExit(f"flood from {seed} leaked")
+
+
 def draw_hm_figure(dest: Path) -> None:
-    """English redraw of the Humanistic Management figure used on the Japanese note."""
-    w, h = 720, 980
-    im = Image.new("RGB", (w, h), "#f7f5f0")
+    """English labels on the Japanese note figure (same geometry as Pirson 2017).
+
+    The CUP book figure is not posted as a free image. Do not invent a new
+    diagram. Paint English onto the figure already used on note.
+    """
+    src = IMG_0904 / "01-figure-ja.jpg"
+    im = Image.open(src).convert("RGB")
+    white = (255, 255, 255)
+    black = (25, 25, 25)
+    gray = (122, 122, 122)
+
+    # Pixel ops first. ImageDraw after this, or the original bitmap is flushed back.
+    _flood_gray_interior(im, (130, 270), gray)
+    _flood_gray_interior(im, (300, 376), gray)
+    _flood_gray_interior(im, (130, 500), gray)
+    _flood_gray_interior(im, (350, 600), gray)
+    _flood_gray_interior(im, (130, 645), gray)
+    _flood_gray_interior(im, (310, 776), gray)
+
     draw = ImageDraw.Draw(im)
-    title_f = font(EN_BOLD, 18)
-    small_f = font(EN_FONT, 13)
-    tiny_f = font(EN_FONT, 11)
-    oval_f = font(EN_BOLD, 13)
-    bar_f = font(EN_FONT, 11)
 
-    def panel(y0: int, y1: int, header: str, base: str, header_fill: str) -> None:
-        draw.rounded_rectangle((18, y0, w - 18, y1), radius=12, fill="#ffffff", outline="#cfc8bc", width=1)
-        draw.rounded_rectangle((18, y0, w - 18, y0 + 46), radius=12, fill=header_fill)
-        draw.rectangle((18, y0 + 28, w - 18, y0 + 46), fill=header_fill)
-        draw.text((36, y0 + 12), header, fill="#ffffff", font=title_f)
-        draw.rounded_rectangle((36, y1 - 52, w - 36, y1 - 18), radius=8, fill=header_fill)
-        lines = wrap_text(draw, base, small_f, w - 90)
-        ty = y1 - 48 if len(lines) == 1 else y1 - 50
-        for line in lines:
-            tw = draw.textlength(line, font=small_f)
-            draw.text(((w - tw) / 2, ty), line, fill="#ffffff", font=small_f)
-            ty += 16
+    def blot(box, fill) -> None:
+        draw.rectangle(box, fill=fill)
 
-    panel(
-        16,
-        478,
-        "Economic model  —  operating logic: maximise",
-        "Freedom to satisfy a bottomless want",
-        "#4a4a4a",
-    )
-    panel(
-        498,
-        960,
-        "Humanistic model  —  practical wisdom + dignity",
-        "Freedom to regulate impulse",
-        "#2c3e50",
-    )
+    blot((140, 6, 390, 48), white)
+    blot((98, 50, 278, 96), white)
+    blot((372, 86, 640, 136), white)
+    blot((105, 402, 318, 450), white)
+    blot((368, 424, 652, 478), white)
 
-    # Economic: uneven bars and wealth oval
-    econ_bars = [(120, 90), (230, 150), (340, 70), (450, 120)]
-    base_y = 390
-    for i, (x, bh) in enumerate(econ_bars):
-        draw.rectangle((x, base_y - bh, x + 70, base_y), fill="#9aa0a6", outline="#5d6368")
-        draw.text((x + 18, base_y + 6), f"d{chr(65 + i)}", fill="#333333", font=bar_f)
-    draw.ellipse((230, 92, 490, 168), fill="#ececec", outline="#333333", width=2)
-    for i, line in enumerate(["Wealth / power / status"]):
-        tw = draw.textlength(line, font=oval_f)
-        draw.text(((w - tw) / 2, 118), line, fill="#222222", font=oval_f)
-    draw.polygon([(48, 228), (48, 272), (108, 250)], fill="#4a4a4a")
-    draw.text((118, 236), "Maximise", fill="#222222", font=small_f)
-    draw.text(
-        (36, 430),
-        "Uneven outcomes. No floor of dignity.",
-        fill="#555555",
-        font=tiny_f,
-    )
+    _fit_center(draw, "Economistic model", 248, 27, black, (22, 20, 18), 240)
+    _fit_center(draw, "Operating logic", 186, 73, black, (18, 16, 15), 170)
+    _fit_center(draw, "Maximization", 170, 227, white, (16, 15, 14), 108)
+    _fit_center(draw, "Wealth / Power / Status", 506, 111, black, (17, 15, 14), 255)
+    _fit_center(draw, "Freedom to satisfy unbounded wants", 468, 367, white, (13, 12, 11), 430)
+    _fit_center(draw, "Humanistic model", 208, 426, black, (20, 18, 16), 200)
+    _fit_center(draw, "Well-being", 510, 451, black, (18, 16, 14), 250)
+    _fit_center(draw, "Promotion of", 180, 520, white, (13, 12, 11), 130)
+    _fit_center(draw, "practical wisdom", 180, 538, white, (13, 12, 11), 130)
+    _fit_center(draw, "Dignity threshold", 495, 600, white, (16, 15, 14), 250)
+    _fit_center(draw, "Protection of", 180, 668, white, (13, 12, 11), 130)
+    _fit_center(draw, "dignity", 180, 686, white, (13, 12, 11), 130)
+    _fit_center(draw, "Freedom to balance the drives", 499, 760, white, (13, 12, 11), 350)
 
-    # Humanistic: equal bars, dignity threshold, well-being oval
-    hum_base = 868
-    bar_h = 118
-    for i, x in enumerate([120, 230, 340, 450]):
-        draw.rectangle((x, hum_base - bar_h, x + 70, hum_base), fill="#c5d0d8", outline="#2c3e50")
-        draw.text((x + 18, hum_base + 6), f"d{chr(65 + i)}", fill="#333333", font=bar_f)
-    thresh_y = hum_base - bar_h
-    draw.ellipse((90, thresh_y - 28, 630, thresh_y + 18), fill="#2c3e50")
-    tw = draw.textlength("Threshold of dignity", font=oval_f)
-    draw.text(((w - tw) / 2, thresh_y - 16), "Threshold of dignity", fill="#ffffff", font=oval_f)
-    draw.ellipse((230, 548, 490, 624), fill="#eef6ea", outline="#2c3e50", width=2)
-    tw = draw.textlength("Well-being", font=oval_f)
-    draw.text(((w - tw) / 2, 576), "Well-being", fill="#1a3a24", font=oval_f)
-    draw.polygon([(48, 618), (48, 662), (108, 640)], fill="#2c3e50")
-    draw.text((118, 628), "Promote practical wisdom", fill="#222222", font=small_f)
-    draw.polygon([(48, 698), (48, 742), (108, 720)], fill="#2c3e50")
-    draw.text((118, 708), "Protect dignity", fill="#222222", font=small_f)
-    draw.text(
-        (36, 900),
-        "A floor for everyone; well-being includes people and the living world.",
-        fill="#555555",
-        font=tiny_f,
-    )
     dest.parent.mkdir(parents=True, exist_ok=True)
-    im.save(dest, quality=90, optimize=True)
+    im.save(dest, quality=92, optimize=True)
 
 
 def raw(folder: str, name: str) -> str:
@@ -337,7 +373,7 @@ Still, if the OS of firms and the economy keeps running on the maximisation of w
 
 ![]({r04("02-figure-en.jpg")})
 
-*Redrawn in English from the figure I translated for the Japanese original, after Pirson and others (Humanistic Management).*
+*English labels on the figure I translated for the Japanese original, after Pirson, Humanistic Management (2017).*
 
 From *Humanistic Management*, in my translation:
 
