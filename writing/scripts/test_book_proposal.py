@@ -75,7 +75,14 @@ def test_build_emits_downloadable_editor_file():
     assert "身体性ロボット" in blob
     assert "人工知能" in blob
     assert "精密工学" in blob
-    assert "特別活動" in blob
+    assert "感情的になるな" not in blob
+    assert "不機嫌" not in blob
+    assert "上機嫌" not in blob
+    headings = [line for line in md.splitlines() if line.startswith("### 第") or line.startswith("### 序章") or line.startswith("### 終章")]
+    joined = "\n".join(headings)
+    assert "感情力" not in joined
+    assert "感情的" not in joined
+    assert "機嫌" not in joined
 
 
 if __name__ == "__main__":
