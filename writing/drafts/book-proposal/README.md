@@ -10,6 +10,14 @@ https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf/
 
 https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/OPEN-IN-BROWSER.html
 
+三人の、本書に効く仕事（一枚）。Chrome では右クリックで保存。
+
+https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/関連業績_一枚.zip
+
+画面確認:
+
+https://htmlpreview.github.io/?https://github.com/kohnoda-glitch/kocorolab/blob/cursor/note-medium-writing-4caf/writing/drafts/book-proposal/OPEN-IN-BROWSER-papers.html
+
 再生成:
 
 ```bash

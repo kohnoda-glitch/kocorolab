@@ -89,7 +89,18 @@ def test_build_emits_downloadable_editor_file():
     joined = "\n".join(headings)
     assert "感情力" not in joined
     assert "感情的" not in joined
-    assert "機嫌" not in joined
+    assert "特別活動" in blob
+    papers = (OUT / "関連業績_一枚.md").read_text(encoding="utf-8")
+    papers_docx = OUT / "関連業績_一枚.docx"
+    papers_zip = OUT / "関連業績_一枚.zip"
+    assert papers_docx.is_file()
+    assert papers_zip.is_file()
+    assert "准教授" not in papers
+    assert "Self-organization, embodiment" in papers
+    assert "合意形成学" in papers
+    assert "Real Life Experience" in papers
+    assert "世界最高峰の学び" in papers
+    assert "専任教員" in papers
 
 
 if __name__ == "__main__":

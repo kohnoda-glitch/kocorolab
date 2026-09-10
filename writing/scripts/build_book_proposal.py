@@ -176,6 +176,68 @@ BLOCKS: list[tuple[str, str]] = [
 ]
 
 
+PAPERS_STEM = "関連業績_一枚"
+PAPERS_DOCX = f"{PAPERS_STEM}.docx"
+PAPERS_ZIP = f"{PAPERS_STEM}.zip"
+PAPERS_BLOCKS: list[tuple[str, str]] = [
+    ("kicker", "本書に効く仕事（一枚）"),
+    ("title", "飯田史也／猪原健弘／野田浩平"),
+    ("catch", "網羅ではない。身体、人と場、学び、合意に近いものだけ。"),
+    ("meta", "2026年9月"),
+    ("h1", "飯田史也"),
+    (
+        "p",
+        "ケンブリッジ大学工学部ロボティクス教授。東京大学大学院工学系研究科教授（精密工学）。身体性ロボット、身体性AI。",
+    ),
+    (
+        "li",
+        "Pfeifer, Lungarella, Iida（2007）Science『Self-organization, embodiment, and biologically inspired robotics』。身体が知能をつくる、という芯。AIにお腹がない、の側。",
+    ),
+    (
+        "li",
+        "Iida, Giardina（2023）Annual Review of Control, Robotics, and Autonomous Systems『On the Timescales of Embodied Intelligence for Autonomous Adaptive Systems』。身体と時間と適応。",
+    ),
+    (
+        "li",
+        "著書『あなたの一生を支える 世界最高峰の学び』（日経BP、2026）。学びはひとりでやらない。人と話すことが中心。",
+    ),
+    ("h1", "猪原健弘"),
+    (
+        "p",
+        "東京科学大学リベラルアーツ研究教育院教授。中央教育審議会 特別活動ワーキンググループ専門委員。意思決定、合意形成。",
+    ),
+    (
+        "li",
+        "編著『合意形成学』（勁草書房、2011）。人と決めることの見取り図。",
+    ),
+    (
+        "li",
+        "中央教育審議会・特別活動WG（2025年2月16日）報告「合意形成と意思決定の捉え方」。学校で人と決める場。",
+    ),
+    (
+        "li",
+        "「合意形成 ―実行までの速さ・実行の質―」『中等教育資料』2025年12月号。話合いが、実行まで届くか。",
+    ),
+    ("h1", "野田浩平"),
+    (
+        "p",
+        "認知科学者（博士）。株式会社ココロラボ代表取締役。グロービス経営大学院専任教員。",
+    ),
+    (
+        "li",
+        "野田・Voss・久津（2007）「人事評価情報の可視化、知識共有への認知科学の応用」『認知科学』14巻1号。現場の判断を、認知の側から書く。",
+    ),
+    (
+        "li",
+        "Noda（2012）Cognitive Science Society『A cognitive emotional model for “intrinsic motivation”』。内から動く力。",
+    ),
+    (
+        "li",
+        "野田・松岡（2016）日本認知科学会第33回大会「第二言語としての英語学習におけるReal Life Experience法の提案」。現場で学ぶ。会う。",
+    ),
+]
+
+
 def set_run(run, *, size=11, bold=False, color=INK, name="Yu Mincho"):
     run.font.size = Pt(size)
     run.font.bold = bold
@@ -200,7 +262,8 @@ def add_p(doc, text, *, size=11, bold=False, color=INK, space_after=8, space_bef
     return p
 
 
-def build_docx(path: Path) -> None:
+def build_docx(path: Path, blocks: list[tuple[str, str]] | None = None) -> None:
+    blocks = blocks if blocks is not None else BLOCKS
     doc = Document()
     sec = doc.sections[0]
     sec.top_margin = Cm(2.2)
@@ -208,7 +271,7 @@ def build_docx(path: Path) -> None:
     sec.left_margin = Cm(2.2)
     sec.right_margin = Cm(2.2)
 
-    for kind, text in BLOCKS:
+    for kind, text in blocks:
         if kind == "kicker":
             add_p(doc, text, size=12, bold=True, color=MUTED, space_after=4, align=WD_ALIGN_PARAGRAPH.CENTER)
         elif kind == "title":
@@ -236,10 +299,11 @@ def build_docx(path: Path) -> None:
     doc.save(path)
 
 
-def build_md(path: Path) -> None:
+def build_md(path: Path, blocks: list[tuple[str, str]] | None = None) -> None:
+    blocks = blocks if blocks is not None else BLOCKS
     lines: list[str] = []
     prev = ""
-    for kind, text in BLOCKS:
+    for kind, text in blocks:
         if prev == "li" and kind != "li":
             lines.append("")
         if kind == "kicker":
@@ -280,14 +344,22 @@ RAW_ZIP = (
 )
 
 
-def build_html(path: Path) -> None:
+def build_html(
+    path: Path,
+    *,
+    blocks: list[tuple[str, str]] | None = None,
+    page_title: str = STEM,
+    zip_url: str = RAW_ZIP,
+    zip_name: str = ZIP_NAME,
+) -> None:
+    blocks = blocks if blocks is not None else BLOCKS
     parts = [
         "<!DOCTYPE html>",
         '<html lang="ja">',
         "<head>",
         '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
-        f"<title>{escape(STEM)}</title>",
+        f"<title>{escape(page_title)}</title>",
         "<style>",
         "body { font-family: 'Yu Mincho', 'Hiragino Mincho ProN', serif; max-width: 720px; margin: 24px auto; padding: 0 16px 48px; line-height: 1.75; color: #222; }",
         ".note { font-family: sans-serif; background: #fff6d8; border: 1px solid #e6d48a; padding: 12px 16px; margin-bottom: 24px; font-size: 0.95rem; }",
@@ -304,7 +376,7 @@ def build_html(path: Path) -> None:
         "<body>",
         '<div class="note">',
         "編集者に渡すのは Word です。Chrome では下のリンクを右クリック → 名前を付けてリンク先を保存。",
-        f'<br><a href="{escape(RAW_ZIP)}">{escape(ZIP_NAME)}</a>',
+        f'<br><a href="{escape(zip_url)}">{escape(zip_name)}</a>',
         "</div>",
         "<article>",
     ]
@@ -316,7 +388,7 @@ def build_html(path: Path) -> None:
             parts.append("</ul>")
             open_ul = False
 
-    for kind, text in BLOCKS:
+    for kind, text in blocks:
         t = escape(text)
         if kind != "li":
             close_ul()
@@ -348,9 +420,15 @@ def build_html(path: Path) -> None:
     path.write_text("\n".join(parts), encoding="utf-8")
 
 
-def build_zip(docx: Path, zpath: Path) -> None:
+def build_zip(docx: Path, zpath: Path, inner_name: str = DOCX_NAME) -> None:
     with zipfile.ZipFile(zpath, "w", compression=zipfile.ZIP_DEFLATED) as z:
-        z.write(docx, DOCX_NAME)
+        z.write(docx, inner_name)
+
+
+RAW_PAPERS_ZIP = (
+    "https://github.com/kohnoda-glitch/kocorolab/raw/cursor/note-medium-writing-4caf"
+    "/writing/drafts/book-proposal/関連業績_一枚.zip"
+)
 
 
 def main() -> None:
@@ -366,6 +444,24 @@ def main() -> None:
     print(docx)
     print(zpath)
     print(html)
+
+    papers_md = OUT / f"{PAPERS_STEM}.md"
+    papers_docx = OUT / PAPERS_DOCX
+    papers_zip = OUT / PAPERS_ZIP
+    papers_html = OUT / "OPEN-IN-BROWSER-papers.html"
+    build_md(papers_md, PAPERS_BLOCKS)
+    build_docx(papers_docx, PAPERS_BLOCKS)
+    build_zip(papers_docx, papers_zip, PAPERS_DOCX)
+    build_html(
+        papers_html,
+        blocks=PAPERS_BLOCKS,
+        page_title=PAPERS_STEM,
+        zip_url=RAW_PAPERS_ZIP,
+        zip_name=PAPERS_ZIP,
+    )
+    print(papers_docx)
+    print(papers_zip)
+    print(papers_html)
 
 
 if __name__ == "__main__":
