@@ -35,19 +35,20 @@ def main() -> int:
         errors.append(f"abstract compact length {n} not in 380–420")
 
     for needle in (
-        "8名",
+        "U理論",
+        "IDEAS Asia Pacific 2026",
+        "個人",
+        "社会変革",
         "プロトタイプ",
-        "倫理",
-        "LDP",
-        "IDEAS",
-        "コミュニケーションコスト",
-        "Transforming Business Education",
-        "ホリスティック",
+        "氏名は出さない",
         "事例発表",
         "専任教員",
     ):
         if needle not in reg:
             errors.append(f"演題登録 missing {needle!r}")
+
+    if "2026" not in title:
+        errors.append("title should name the 2026 case")
 
     for bad in (
         "准教授",
@@ -59,13 +60,15 @@ def main() -> int:
         "源泉",
         "MHQ",
         "感情力",
+        "共感覚",
     ):
         if bad in reg or bad in ask:
             errors.append(f"forbidden {bad!r}")
 
-    # 申込概要に個人名を置かない（依頼文の宛名プレースホルダは別）
     if re.search(r"[一-龥]{1,4}\s*[一-龥]{1,4}さん", abstract):
         errors.append("abstract looks like it names a person")
+    if "○○さん" in abstract or "○○さん" in title:
+        errors.append("placeholder name leaked into title/abstract")
 
     for needle in ("承諾", "氏名", "A.", "D."):
         if needle not in ask:
