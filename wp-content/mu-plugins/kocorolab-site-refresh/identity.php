@@ -384,6 +384,12 @@ function kocorolab_refresh_llms_txt() {
 - Media / comments JA: 取材・コメント / EN: Interview or comment
 - Individual MHQ2: https://kocorolab.com/mhqlp/ · https://kocorolab.com/mhqlp/?lang=en
 - Training / corporate MHQ JA: 研修・講演・MHQ導入 / EN: Training, talk, or corporate MHQ
+
+## Offers / 頼める単位
+- Half-day session for next-generation leaders and executives (Theory U) / 次世代リーダー・経営層向け 半日セッション
+- MHQ2 for teams: placement, development, workplace. Never a pass/fail hiring screen; not a diagnosis / MHQ2 組織導入（配置・育成・職場づくり。採用の合否判定には使わない。診断ではない）
+- HR sounding board for CEOs and HR leaders (pre-IPO and listed companies) / 人事の壁打ち（上場前後の人事・組織）
+- Fees quoted by headcount, sessions, and format. Details: https://kocorolab.com/service/#offers · https://kocorolab.com/en/service/#offers
 TXT;
 }
 

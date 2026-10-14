@@ -36,7 +36,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'domain3_title'  => '持続可能な未来とつなぐ',
 		'domain3_body'   => 'MIT Sloan IDEAS Asia Pacific や、市民気候ロビージャパンでの超党派の対話など、気候変動を社会のしくみの問題としても扱います。',
 		'section_work'   => 'サービス',
-		'work_lead'      => '細かい下層ページは増やしません。必要なものは、この一枚と新着にまとめます。',
+		'work_lead'      => 'リーダー向け半日セッション、MHQ2 の組織導入、人事の壁打ち。最初の一回として頼める形を、サービスページにまとめています。',
 		'card1_title'    => 'リーダーシップ教育',
 		'card1_body'     => 'グロービス経営大学院と MIT Sloan IDEAS Asia Pacific での教育・研究。U理論などを用いた学び。',
 		'card2_title'    => 'メンタルヘルス（MHQ2）',
@@ -111,11 +111,25 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'company_p_h'    => '代表',
 		'overview_h'     => '概要',
 		'service_h2'     => 'サービス',
-		'service_lead'   => 'サービスはこのページにまとめています。個人向け MHQ2 は案内ページへ。企業導入は問い合わせから資料または営業になります。',
+		'service_lead'   => 'サービスはこのページにまとめています。まずは下の三つのどれかから、メール一本で相談できます。個人向け MHQ2 は案内ページへ。',
+		'offers_h'       => '頼める単位',
+		'offers_lead'    => '最初の一回として頼みやすい形にしています。費用は人数・回数・形式に応じて見積もります。返信は info@kocorolab.com から。',
+		'offer1_h'       => '次世代リーダー・経営層向け 半日セッション',
+		'offer1_b'       => 'U理論を使い、チームの対話と意思決定を見直す3時間。対面またはオンライン、10〜30名程度。事前ヒアリングと事後の振り返りメモつき。',
+		'offer1_cta'     => '日程と人数を書いて相談する',
+		'mail_subject_offer1' => '相談：次世代リーダー・経営層向け半日セッション',
+		'offer2_h'       => 'MHQ2 組織導入（配置・育成・職場づくり）',
+		'offer2_b'       => '部署やチーム単位で MHQ2 を受験し、結果の読み方と職場での使い方を説明会で共有します。配置・育成・職場づくりのための材料で、採用の合否判定には使いません。診断ではありません。',
+		'offer2_cta'     => '対象人数を書いて資料を請求する',
+		'mail_subject_offer2' => '相談：MHQ2 組織導入（配置・育成）',
+		'offer3_h'       => '人事の壁打ち（上場前後の人事・組織）',
+		'offer3_b'       => '上場前と上場後の事業会社で人事責任者を務めた経験から、人事制度、評価、組織づくりの論点を一緒に整理します。経営者・人事責任者向け、単発60分または月1回の継続。',
+		'offer3_cta'     => '今の論点を一行書いて相談する',
+		'mail_subject_offer3' => '相談：人事の壁打ち（上場前後の人事・組織）',
 		'svc1_h'         => 'リーダーシップ開発',
 		'svc1_b'         => 'U理論などを用いた次世代リーダーシップ開発、組織開発、学びの設計。',
 		'svc2_h'         => 'メンタルヘルス検査（MHQ2）',
-		'svc2_b'         => 'うつリスク、ストレス環境・状況、ソーシャルサポート、発達障害の可能性などを測る MHQ2、および EQ 検査。120問、12〜15分。メンタル不調やコミュニケーション、仕事の進め方の困難に、自分の特性から注意を向けるためのものです。企業では採用・社内確認・人材育成に使えます。個人でも受験できます。診断の確定を目的としたものではありません。',
+		'svc2_b'         => 'うつリスク、ストレス環境・状況、ソーシャルサポート、発達障害の可能性などを測る MHQ2、および EQ 検査。120問、12〜15分。メンタル不調やコミュニケーション、仕事の進め方の困難に、自分の特性から注意を向けるためのものです。企業では配置・育成・職場づくりの材料として使えます。採用の合否判定には使いません。個人でも受験できます。診断ではありません。',
 		'svc2_link'      => '企業導入（資料・問い合わせ）',
 		'svc2_personal_link' => '個人向けランディング',
 		'svc2_read_link' => '結果の読み方（見本）',
@@ -224,7 +238,7 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'domain3_title'  => 'Connect to a livable future',
 		'domain3_body'   => 'Practice also between society and planet, including MIT Sloan IDEAS Asia Pacific and Citizens’ Climate Lobby Japan’s nonpartisan citizen dialogue on climate.',
 		'section_work'   => 'Services',
-		'work_lead'      => 'We keep this to one page. Updates and brochures go to News & activities.',
+		'work_lead'      => 'A half-day leadership session, MHQ2 for teams, and an HR sounding board. Each is sized as an easy first engagement on the Services page.',
 		'card1_title'    => 'Leadership education',
 		'card1_body'     => 'Teaching and research at GLOBIS University and MIT Sloan IDEAS Asia Pacific, including Theory U.',
 		'card2_title'    => 'Mental health (MHQ2)',
@@ -299,11 +313,25 @@ function kocorolab_refresh_copy( $lang = 'ja' ) {
 		'company_p_h'    => 'Founder',
 		'overview_h'     => 'Overview',
 		'service_h2'     => 'Services',
-		'service_lead'   => 'Everything sits on this one page. The individual MHQ2 landing is linked from here. Companies ask through contact for a brochure or a conversation.',
+		'service_lead'   => 'Everything sits on this one page. Start with one of the three offers below; a single email is enough. The individual MHQ2 landing is linked from here.',
+		'offers_h'       => 'Ways to work with us',
+		'offers_lead'    => 'Each one is sized as an easy first engagement. Fees are quoted by headcount, sessions, and format. Replies come from info@kocorolab.com.',
+		'offer1_h'       => 'Half-day session for next-generation leaders and executives',
+		'offer1_b'       => 'Three hours using Theory U to rethink how a team talks and decides. In person or online, about 10–30 people. Includes a pre-session interview and a follow-up note.',
+		'offer1_cta'     => 'Send dates and group size',
+		'mail_subject_offer1' => 'Inquiry: half-day session for leaders and executives',
+		'offer2_h'       => 'MHQ2 for teams (placement, development, workplace)',
+		'offer2_b'       => 'A department or team takes MHQ2, then a briefing explains how to read the results and use them at work. It is material for placement, development, and healthier workplaces, never a pass/fail hiring screen. Not a diagnosis.',
+		'offer2_cta'     => 'Request a brochure with headcount',
+		'mail_subject_offer2' => 'Inquiry: MHQ2 for teams (placement and development)',
+		'offer3_h'       => 'HR sounding board (before and after IPO)',
+		'offer3_b'       => 'Drawing on experience as head of HR at pre-IPO and listed companies, we sort out HR systems, evaluation, and organization design together. For CEOs and HR leaders: a single 60-minute session or monthly.',
+		'offer3_cta'     => 'Describe your issue in one line',
+		'mail_subject_offer3' => 'Inquiry: HR sounding board (before and after IPO)',
 		'svc1_h'         => 'Leadership development',
 		'svc1_b'         => 'Next-generation leadership, organization development, and learning design, including Theory U.',
 		'svc2_h'         => 'Mental health questionnaire (MHQ2)',
-		'svc2_b'         => 'MHQ2 and EQ assessments. MHQ2 covers depression risk, stress environment and situation, social support, and the possibility of developmental disorders. 120 questions, about 12–15 minutes. It is for noticing your own tendencies and turning attention toward what to improve. Companies use them for hiring, internal review, and development. Individuals can take MHQ2 too. Not a clinical diagnosis.',
+		'svc2_b'         => 'MHQ2 and EQ assessments. MHQ2 covers depression risk, stress environment and situation, social support, and the possibility of developmental disorders. 120 questions, about 12–15 minutes. It is for noticing your own tendencies and turning attention toward what to improve. Companies use them as material for placement, development, and healthier workplaces, never as a pass/fail hiring screen. Individuals can take MHQ2 too. Not a diagnosis.',
 		'svc2_link'      => 'Corporate inquiry (brochure)',
 		'svc2_personal_link' => 'Individual landing',
 		'svc2_read_link' => 'How to read results (sample)',
@@ -432,6 +460,30 @@ function kocorolab_refresh_ask_doors_html( $lang = null ) {
 				<p><?php echo esc_html( $c['ask_train_b'] ); ?></p>
 				<span><?php echo esc_html( $c['ask_train_cta'] ); ?></span>
 			</a>
+		</div>
+	</div>
+	<?php
+	return ob_get_clean();
+}
+
+function kocorolab_refresh_offers_html( $lang = null ) {
+	if ( null === $lang ) {
+		$lang = function_exists( 'kocorolab_refresh_lang' ) ? kocorolab_refresh_lang() : 'ja';
+	}
+	$c = kocorolab_refresh_copy( $lang );
+	ob_start();
+	?>
+	<div class="kl-ask kl-offers" id="offers">
+		<h2><?php echo esc_html( $c['offers_h'] ); ?></h2>
+		<p class="kl-lead"><?php echo esc_html( $c['offers_lead'] ); ?></p>
+		<div class="kl-photo-grid kl-text-grid">
+			<?php foreach ( array( 1, 2, 3 ) as $n ) : ?>
+			<a class="kl-soft-card" href="<?php echo esc_url( kocorolab_refresh_mailto_url( $c[ 'mail_subject_offer' . $n ] ) ); ?>">
+				<h3><?php echo esc_html( $c[ 'offer' . $n . '_h' ] ); ?></h3>
+				<p><?php echo esc_html( $c[ 'offer' . $n . '_b' ] ); ?></p>
+				<span><?php echo esc_html( $c[ 'offer' . $n . '_cta' ] ); ?></span>
+			</a>
+			<?php endforeach; ?>
 		</div>
 	</div>
 	<?php
@@ -695,6 +747,7 @@ function kocorolab_refresh_service_html( $c, $lang ) {
 	?>
 	<div class="kl-page">
 		<p class="kl-lead"><?php echo esc_html( $c['service_lead'] ); ?></p>
+		<?php echo kocorolab_refresh_offers_html( $lang ); ?>
 		<h2><?php echo esc_html( $c['svc1_h'] ); ?></h2>
 		<p><?php echo esc_html( $c['svc1_b'] ); ?></p>
 		<h2><?php echo esc_html( $c['svc2_h'] ); ?></h2>
