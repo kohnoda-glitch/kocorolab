@@ -185,7 +185,7 @@ $checks = array(
 		false !== strpos( $ja['card2_body'], '個人でも受験' )
 		&& false !== strpos( $ja['card2_body'], '特性' )
 		&& false !== strpos( $ja['svc2_b'], '個人でも受験' )
-		&& false !== strpos( $ja['svc2_b'], '診断の確定を目的としたものではありません' )
+		&& false !== strpos( $ja['svc2_b'], '診断ではありません' )
 		&& false !== strpos( $ja_service, '個人向けランディング' )
 		&& false !== strpos( $ja_service, '/mhqlp/' )
 		&& false === strpos( $ja_service, '/mhq2/' )
@@ -306,7 +306,25 @@ $checks = array(
 	'CSS covers bio tabs and contact' => ( false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-bio-tabs' ) && false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '.kl-contact' ) && false !== strpos( file_get_contents( dirname( __DIR__ ) . '/wp-content/mu-plugins/kocorolab-site-refresh/refresh.css' ), '@media (max-width: 900px)' ) ),
 	'JA mind society environment' => ( false !== strpos( $ja['hero_badge'], '精神' ) && false !== strpos( $ja['hero_badge'], '社会' ) && false !== strpos( $ja['hero_badge'], '環境' ) ),
 	'news is activities not diary' => false !== strpos( $ja['news_lead'], 'IDEAS' ) && false !== strpos( $ja['news_lead'], 'MHQ' ) && false !== strpos( $ja['news_lead'], '日記ブログではありません' ),
-	'services stay on one page' => false !== strpos( $ja['work_lead'], '下層ページは増やしません' ),
+	'home services lead names the offers' => false !== strpos( $ja['work_lead'], '半日セッション' ) && false !== strpos( $ja['work_lead'], 'MHQ2' ) && false !== strpos( $ja['work_lead'], '壁打ち' ),
+	'service page lists three orderable offers' => (
+		false !== strpos( $ja_service, 'id="offers"' )
+		&& false !== strpos( $ja_service, rawurlencode( $ja['mail_subject_offer1'] ) )
+		&& false !== strpos( $ja_service, rawurlencode( $ja['mail_subject_offer2'] ) )
+		&& false !== strpos( $ja_service, rawurlencode( $ja['mail_subject_offer3'] ) )
+		&& strpos( $ja_service, 'id="offers"' ) < strpos( $ja_service, $ja['svc1_h'] )
+		&& false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), rawurlencode( $en['mail_subject_offer2'] ) )
+	),
+	'MHQ2 is never a hiring pass/fail screen' => (
+		false !== strpos( $ja['offer2_b'], '合否判定には使いません' )
+		&& false !== strpos( $ja['offer2_b'], '診断ではありません' )
+		&& false !== strpos( $ja['svc2_b'], '合否判定には使いません' )
+		&& false === strpos( $ja['svc2_b'], '採用・' )
+		&& false !== strpos( $en['offer2_b'], 'never a pass/fail hiring screen' )
+		&& false !== strpos( $en['svc2_b'], 'never as a pass/fail hiring screen' )
+		&& false === strpos( $en['svc2_b'], 'for hiring' )
+	),
+	'offers do not invent prices' => false === strpos( $ja['offers_lead'] . $ja['offer1_b'] . $ja['offer2_b'] . $ja['offer3_b'], '円' ) && false !== strpos( $ja['offers_lead'], '見積' ),
 	'service page points to news' => false !== strpos( $ja_service, '/news/' ),
 	'service page links to MHQ2 LP' => false !== strpos( $ja_service, '/mhqlp/' ) && false !== strpos( $ja['svc2_h'], 'MHQ2' ),
 	'EN service links to MHQ2 LP' => false !== strpos( kocorolab_refresh_page_html( 'service', 'en' ), '/mhqlp/?lang=en' ),
